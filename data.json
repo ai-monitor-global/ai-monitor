@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "last_updated": "2026-04-02",
+    "next_update": "2026-04-03",
+    "update_notes": "Initial dataset. OpenAI $852B/$25B ARR (2026.3.31); Anthropic $380B/$19B ARR (2026.2.12); Cursor $50B target valuation in talks (2026.3.12)."
+  },
+  "models": [
+    {"name":"OpenAI",          "uc":"GPT-4o, o1, o3, Codex, Sora, DALL-E","region":"US","arr":25000,"arrg":300,"tokM":22,  "tokG":200,"trainPerRun":15,"runsPerYear":4,"val":852, "m":92},
+    {"name":"Anthropic",       "uc":"Claude Opus/Sonnet 4.6, Claude Code", "region":"US","arr":19000,"arrg":350,"tokM":7,   "tokG":300,"trainPerRun":12,"runsPerYear":3,"val":380, "m":92},
+    {"name":"Google Gemini",   "uc":"Gemini 2.0 Flash/Pro, Veo 2, Gemma",  "region":"US","arr":3000, "arrg":350,"tokM":20,  "tokG":300,"trainPerRun":20,"runsPerYear":4,"val":null,"m":86},
+    {"name":"xAI",             "uc":"Grok 3/4, Aurora图像, Colossus",       "region":"US","arr":500,  "arrg":400,"tokM":4,   "tokG":null,"trainPerRun":15,"runsPerYear":3,"val":230, "m":80},
+    {"name":"Kimi (Moonshot)", "uc":"Kimi k1.5, Kimi Chat, 长文本模型",    "region":"CN","arr":300,  "arrg":400,"tokM":5,   "tokG":380,"trainPerRun":8, "runsPerYear":3,"val":3.3, "m":85},
+    {"name":"MiniMax",         "uc":"ABAB 6.5, Hailuo视频生成",             "region":"CN","arr":200,  "arrg":350,"tokM":4,   "tokG":320,"trainPerRun":6, "runsPerYear":2,"val":2.5, "m":80},
+    {"name":"Zhipu AI",        "uc":"GLM-4, CogVideo, CogView",            "region":"CN","arr":150,  "arrg":280,"tokM":2.5, "tokG":250,"trainPerRun":5, "runsPerYear":2,"val":2,   "m":72},
+    {"name":"Mistral AI",      "uc":"Mistral Large 2, Codestral",           "region":"EU","arr":100,  "arrg":200,"tokM":1.5, "tokG":180,"trainPerRun":5, "runsPerYear":2,"val":2.3, "m":68},
+    {"name":"Cohere",          "uc":"Command R+, Embed, Rerank",            "region":"US","arr":80,   "arrg":150,"tokM":1,   "tokG":130,"trainPerRun":3, "runsPerYear":2,"val":2.2, "m":60},
+    {"name":"01.AI",           "uc":"Yi-Lightning, Yi-VL",                  "region":"CN","arr":50,   "arrg":250,"tokM":0.8, "tokG":200,"trainPerRun":4, "runsPerYear":2,"val":1,   "m":65}
+  ],
+  "apps": [
+    {"name":"Cursor",       "uc":"AI代码编辑器",     "cat":"coding",     "stage":"scale",  "arr":2000,"arrg":1100,"mau":3.0, "maug":200,"ti":"high", "biz":"B2B+B2C","val":50,  "m":97,"selfModel":false},
+    {"name":"Perplexity",   "uc":"AI搜索引擎",        "cat":"search",     "stage":"growth", "arr":200, "arrg":400, "mau":30,  "maug":250,"ti":"high", "biz":"B2C+B2B","val":20,  "m":90,"selfModel":false},
+    {"name":"Character.ai", "uc":"AI虚拟角色伴侣",    "cat":"consumer",   "stage":"scale",  "arr":200, "arrg":80,  "mau":25,  "maug":50, "ti":"high", "biz":"B2C",    "val":5,   "m":62,"selfModel":true},
+    {"name":"ElevenLabs",   "uc":"语音合成API",        "cat":"voice",      "stage":"growth", "arr":100, "arrg":250, "mau":1.2, "maug":200,"ti":"med",  "biz":"B2B+B2C","val":3,   "m":85,"selfModel":true},
+    {"name":"Midjourney",   "uc":"AI图像生成",         "cat":"creative",   "stage":"scale",  "arr":200, "arrg":40,  "mau":18,  "maug":20, "ti":"high", "biz":"B2C",    "val":10,  "m":50,"selfModel":true},
+    {"name":"Runway",       "uc":"AI视频生成",         "cat":"creative",   "stage":"growth", "arr":100, "arrg":200, "mau":2,   "maug":150,"ti":"ultra","biz":"B2B+B2C","val":4,   "m":82,"selfModel":true},
+    {"name":"Harvey",       "uc":"法律AI助手",         "cat":"vertical",   "stage":"growth", "arr":50,  "arrg":300, "mau":0.05,"maug":280,"ti":"med",  "biz":"B2B",    "val":3,   "m":88,"selfModel":false},
+    {"name":"Glean",        "uc":"企业AI知识搜索",     "cat":"enterprise", "stage":"scale",  "arr":200, "arrg":150, "mau":0.5, "maug":120,"ti":"med",  "biz":"B2B",    "val":7.2, "m":78,"selfModel":false},
+    {"name":"Gamma",        "uc":"AI演示文稿生成",     "cat":"enterprise", "stage":"growth", "arr":50,  "arrg":180, "mau":12,  "maug":150,"ti":"low",  "biz":"B2C+B2B","val":0.8, "m":74,"selfModel":false},
+    {"name":"HeyGen",       "uc":"AI视频数字人",       "cat":"creative",   "stage":"growth", "arr":60,  "arrg":280, "mau":0.5, "maug":230,"ti":"ultra","biz":"B2B+B2C","val":0.8, "m":84,"selfModel":true},
+    {"name":"Suno",         "uc":"AI音乐生成",         "cat":"creative",   "stage":"pmf",    "arr":40,  "arrg":350, "mau":10,  "maug":300,"ti":"high", "biz":"B2C",    "val":0.5, "m":87,"selfModel":true},
+    {"name":"Writer",       "uc":"企业内容AI平台",     "cat":"enterprise", "stage":"growth", "arr":100, "arrg":160, "mau":0.3, "maug":130,"ti":"med",  "biz":"B2B",    "val":2,   "m":70,"selfModel":false},
+    {"name":"Sierra",       "uc":"AI客服智能体",       "cat":"vertical",   "stage":"growth", "arr":100, "arrg":400, "mau":0.2, "maug":350,"ti":"med",  "biz":"B2B",    "val":10,  "m":92,"selfModel":false},
+    {"name":"Granola",      "uc":"AI会议记录",         "cat":"enterprise", "stage":"pmf",    "arr":20,  "arrg":600, "mau":0.3, "maug":500,"ti":"low",  "biz":"B2C+B2B","val":0.2, "m":91,"selfModel":false},
+    {"name":"Cognition",    "uc":"AI软件工程师Agent",  "cat":"coding",     "stage":"growth", "arr":50,  "arrg":500, "mau":0.1, "maug":400,"ti":"ultra","biz":"B2B",    "val":10.2,"m":88,"selfModel":false},
+    {"name":"Luma AI",      "uc":"视频&3D生成",        "cat":"creative",   "stage":"growth", "arr":40,  "arrg":280, "mau":3,   "maug":220,"ti":"ultra","biz":"B2B+B2C","val":0.4, "m":79,"selfModel":true},
+    {"name":"Speak",        "uc":"AI语言学习",         "cat":"consumer",   "stage":"pmf",    "arr":30,  "arrg":200, "mau":1,   "maug":150,"ti":"med",  "biz":"B2C",    "val":0.6, "m":70,"selfModel":false},
+    {"name":"Abridge",      "uc":"医疗文档AI",         "cat":"vertical",   "stage":"growth", "arr":30,  "arrg":350, "mau":0.05,"maug":300,"ti":"med",  "biz":"B2B",    "val":0.85,"m":82,"selfModel":false},
+    {"name":"Ideogram",     "uc":"AI图像生成2.0",      "cat":"creative",   "stage":"pmf",    "arr":25,  "arrg":400, "mau":5,   "maug":350,"ti":"high", "biz":"B2C+B2B","val":0.5, "m":80,"selfModel":true},
+    {"name":"Descript",     "uc":"AI视频剪辑",         "cat":"creative",   "stage":"growth", "arr":40,  "arrg":100, "mau":0.5, "maug":80, "ti":"high", "biz":"B2B+B2C","val":0.6, "m":55,"selfModel":true}
+  ]
+}
