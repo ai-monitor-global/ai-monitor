@@ -1,0 +1,38 @@
+name: Daily Data Update
+
+on:
+  schedule:
+    # 每天 UTC 08:00 运行（北京时间 16:00）
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+    # 也支持手动在 GitHub Actions 页面点击触发
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # 需要写权限来 commit data.json
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run daily update script
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python update_data.py
+
+      - name: Commit updated data.json
+        run: |
+          git config user.name  "ai-monitor-bot"
+          git config user.email "bot@ai-monitor"
+          git add data.json
+          # 只有 data.json 真的变化时才 commit，否则跳过
+          git diff --staged --quiet && echo "No changes to commit" || \
+            git commit -m "chore: daily data update $(date -u +%Y-%m-%d)"
+          git push
