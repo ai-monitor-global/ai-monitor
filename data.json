@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-04-16",
-    "next_update": "2026-04-17",
-    "update_notes": "2026-04-16: Auto-update ran, no changes (API error or no new data)"
+    "last_updated": "2026-04-17",
+    "next_update": "2026-04-18",
+    "update_notes": "2026-04-17: Anthropic达$30B ARR(TechCrunch/Bloomberg Apr7)超越OpenAI，为史上最快增长；OpenAI $25B ARR维持，$852B估值"
   },
   "models": [
     {
@@ -16,20 +16,20 @@
       "trainPerRun": 15,
       "runsPerYear": 4,
       "val": 852,
-      "m": 92
+      "m": 95
     },
     {
       "name": "Anthropic",
       "uc": "Claude Opus/Sonnet 4.6, Claude Code",
       "region": "US",
-      "arr": 19000,
-      "arrg": 350,
+      "arr": 30000,
+      "arrg": 900,
       "tokM": 7,
       "tokG": 300,
       "trainPerRun": 12,
       "runsPerYear": 3,
       "val": 380,
-      "m": 92
+      "m": 98
     },
     {
       "name": "Google Gemini",
@@ -46,7 +46,7 @@
     },
     {
       "name": "xAI",
-      "uc": "Grok 3/4, Aurora图像, Colossus",
+      "uc": "Grok 3/4, Auroraå¾å, Colossus",
       "region": "US",
       "arr": 500,
       "arrg": 400,
@@ -59,7 +59,7 @@
     },
     {
       "name": "Kimi (Moonshot)",
-      "uc": "Kimi k1.5, Kimi Chat, 长文本模型",
+      "uc": "Kimi k1.5, Kimi Chat, é¿ææ¬æ¨¡å",
       "region": "CN",
       "arr": 300,
       "arrg": 400,
@@ -72,7 +72,7 @@
     },
     {
       "name": "MiniMax",
-      "uc": "ABAB 6.5, Hailuo视频生成",
+      "uc": "ABAB 6.5, Hailuoè§é¢çæ",
       "region": "CN",
       "arr": 200,
       "arrg": 350,
@@ -139,12 +139,12 @@
   "apps": [
     {
       "name": "Cursor",
-      "uc": "AI代码编辑器",
+      "uc": "AIä»£ç ç¼è¾å¨",
       "cat": "coding",
       "stage": "scale",
       "arr": 2000,
       "arrg": 1100,
-      "mau": 3.0,
+      "mau": 3,
       "maug": 200,
       "ti": "high",
       "biz": "B2B+B2C",
@@ -154,7 +154,7 @@
     },
     {
       "name": "Perplexity",
-      "uc": "AI搜索引擎",
+      "uc": "AIæç´¢å¼æ",
       "cat": "search",
       "stage": "growth",
       "arr": 200,
@@ -169,7 +169,7 @@
     },
     {
       "name": "Character.ai",
-      "uc": "AI虚拟角色伴侣",
+      "uc": "AIèæè§è²ä¼´ä¾£",
       "cat": "consumer",
       "stage": "scale",
       "arr": 200,
@@ -184,7 +184,7 @@
     },
     {
       "name": "ElevenLabs",
-      "uc": "语音合成API",
+      "uc": "è¯­é³åæAPI",
       "cat": "voice",
       "stage": "growth",
       "arr": 100,
@@ -199,7 +199,7 @@
     },
     {
       "name": "Midjourney",
-      "uc": "AI图像生成",
+      "uc": "AIå¾åçæ",
       "cat": "creative",
       "stage": "scale",
       "arr": 200,
@@ -214,7 +214,7 @@
     },
     {
       "name": "Runway",
-      "uc": "AI视频生成",
+      "uc": "AIè§é¢çæ",
       "cat": "creative",
       "stage": "growth",
       "arr": 100,
@@ -229,7 +229,7 @@
     },
     {
       "name": "Harvey",
-      "uc": "法律AI助手",
+      "uc": "æ³å¾AIå©æ",
       "cat": "vertical",
       "stage": "growth",
       "arr": 50,
@@ -244,7 +244,7 @@
     },
     {
       "name": "Glean",
-      "uc": "企业AI知识搜索",
+      "uc": "ä¼ä¸AIç¥è¯æç´¢",
       "cat": "enterprise",
       "stage": "scale",
       "arr": 200,
@@ -259,7 +259,7 @@
     },
     {
       "name": "Gamma",
-      "uc": "AI演示文稿生成",
+      "uc": "AIæ¼ç¤ºæç¨¿çæ",
       "cat": "enterprise",
       "stage": "growth",
       "arr": 50,
@@ -274,7 +274,7 @@
     },
     {
       "name": "HeyGen",
-      "uc": "AI视频数字人",
+      "uc": "AIè§é¢æ°å­äºº",
       "cat": "creative",
       "stage": "growth",
       "arr": 60,
@@ -289,7 +289,7 @@
     },
     {
       "name": "Suno",
-      "uc": "AI音乐生成",
+      "uc": "AIé³ä¹çæ",
       "cat": "creative",
       "stage": "pmf",
       "arr": 40,
@@ -304,7 +304,7 @@
     },
     {
       "name": "Writer",
-      "uc": "企业内容AI平台",
+      "uc": "ä¼ä¸åå®¹AIå¹³å°",
       "cat": "enterprise",
       "stage": "growth",
       "arr": 100,
@@ -319,7 +319,7 @@
     },
     {
       "name": "Sierra",
-      "uc": "AI客服智能体",
+      "uc": "AIå®¢ææºè½ä½",
       "cat": "vertical",
       "stage": "growth",
       "arr": 100,
@@ -334,7 +334,7 @@
     },
     {
       "name": "Granola",
-      "uc": "AI会议记录",
+      "uc": "AIä¼è®®è®°å½",
       "cat": "enterprise",
       "stage": "pmf",
       "arr": 20,
@@ -349,7 +349,7 @@
     },
     {
       "name": "Cognition",
-      "uc": "AI软件工程师Agent",
+      "uc": "AIè½¯ä»¶å·¥ç¨å¸Agent",
       "cat": "coding",
       "stage": "growth",
       "arr": 50,
@@ -364,7 +364,7 @@
     },
     {
       "name": "Luma AI",
-      "uc": "视频&3D生成",
+      "uc": "è§é¢&3Dçæ",
       "cat": "creative",
       "stage": "growth",
       "arr": 40,
@@ -379,7 +379,7 @@
     },
     {
       "name": "Speak",
-      "uc": "AI语言学习",
+      "uc": "AIè¯­è¨å­¦ä¹ ",
       "cat": "consumer",
       "stage": "pmf",
       "arr": 30,
@@ -394,7 +394,7 @@
     },
     {
       "name": "Abridge",
-      "uc": "医疗文档AI",
+      "uc": "å»çææ¡£AI",
       "cat": "vertical",
       "stage": "growth",
       "arr": 30,
@@ -409,7 +409,7 @@
     },
     {
       "name": "Ideogram",
-      "uc": "AI图像生成2.0",
+      "uc": "AIå¾åçæ2.0",
       "cat": "creative",
       "stage": "pmf",
       "arr": 25,
@@ -424,7 +424,7 @@
     },
     {
       "name": "Descript",
-      "uc": "AI视频剪辑",
+      "uc": "AIè§é¢åªè¾",
       "cat": "creative",
       "stage": "growth",
       "arr": 40,
