@@ -159,7 +159,7 @@ function renderCharts(){
     y2:{position:"right",grid:{display:false},ticks:{font:{size:10},color:"#ccc",callback:v=>v!=null?v+"%":""},min:0,max:100}}}});
 }
 function renderModelTable(region,sk){
-  document.getElementById("thead").innerHTML="<tr><th style=\"min-width:165px\">Provider</th><th style=\"min-width:52px\">地区</th><th style=\"min-width:75px;text-align:right\">API Rev</th><th style=\"min-width:68px;text-align:right\">收入增长率</th><th style=\"min-width:82px;text-align:right\">Token T/月</th><th style=\"min-width:72px;text-align:right\">Token增长率</th><th style=\"min-width:85px;text-align:right\">年推训练 T</th><th style=\"min-width:115px;text-align:right\">训练量 &times; 次数/年</th><th style=\"min-width:68px;text-align:right\">估值 $B</th><th style=\"min-width:80px\">Momentum</th></tr>";
+  document.getElementById("thead").innerHTML="<tr><th style=\"min-width:165px\">Provider</th><th style=\"min-width:52px\">地区</th><th style=\"min-width:75px;text-align:right\">API Rev</th><th style=\"min-width:68px;text-align:right\">收入增长率</th><th style=\"min-width:82px;text-align:right\">Token T/月</th><th style=\"min-width:72px;text-align:right\">Token增长率</th><th style=\"min-width:85px;text-align:right\">年推训练 T</th><th style=\"min-width:115px;text-align:right\">训练量 &times; 次数/年</th><th style=\"min-width:68px;text-align:right\">估值 $B</th><th style=\"min-width:62px;text-align:right\">估值/ARR</th><th style=\"min-width:80px\">Momentum</th></tr>";
   let d=region==="all"?DATA.models:DATA.models.filter(a=>a.region===region);
   d=[...d].sort((a,b)=>{const av=a[sk]??-Infinity,bv=b[sk]??-Infinity;return bv-av;});
   document.getElementById("tbody").innerHTML=d.map(a=>{
@@ -173,11 +173,11 @@ function renderModelTable(region,sk){
       "<td style=\"text-align:right\" class=\"num up\">"+fna(a.tokG,"%")+"</td>"+
       "<td style=\"text-align:right\" class=\"num\">"+ann+"T</td>"+
       "<td style=\"text-align:right\" class=\"num\">"+a.trainPerRun+"T &times; "+a.runsPerYear+"</td>"+
-      "<td style=\"text-align:right\" class=\"num\">"+(a.val!=null?"$"+a.val+"B":"—")+"</td>"+
+      "<td style=\"text-align:right\" class=\"num\">"+(a.val!=null?"$"+a.val+"B":"—")+"</td>"+"<td style=\\"text-align:right\\" class=\\"num\\">"+(a.val!=null&&a.arr>0?(a.val*1000/a.arr).toFixed(1)+"x":"—")+"</td>"+
       "<td class=\"num\">"+a.m+"<div class=\"mbar\"><div class=\"mfill\" style=\"width:"+a.m+"%\"></div></div></td></tr>";
   }).join("");}
 function renderAppTable(cat,sk){
-  document.getElementById("thead").innerHTML="<tr><th style=\"min-width:155px\">App</th><th style=\"min-width:82px\">赛道</th><th style=\"min-width:62px;text-align:right\">ARR $M</th><th style=\"min-width:72px;text-align:right\">ARR YoY</th><th style=\"min-width:62px;text-align:right\">MAU</th><th style=\"min-width:68px;text-align:right\">MAU增长率</th><th style=\"min-width:82px\">Token密度</th><th style=\"min-width:75px\">自有模型</th><th style=\"min-width:65px;text-align:right\">估值 $B</th><th style=\"min-width:80px\">Momentum</th></tr>";
+  document.getElementById("thead").innerHTML="<tr><th style=\"min-width:155px\">App</th><th style=\"min-width:82px\">赛道</th><th style=\"min-width:62px;text-align:right\">ARR $M</th><th style=\"min-width:72px;text-align:right\">ARR YoY</th><th style=\"min-width:62px;text-align:right\">MAU</th><th style=\"min-width:68px;text-align:right\">MAU增长率</th><th style=\"min-width:82px\">Token密度</th><th style=\"min-width:75px\">自有模型</th><th style=\"min-width:65px;text-align:right\">估值 $B</th><th style=\"min-width:62px;text-align:right\">估值/ARR</th><th style=\"min-width:80px\">Momentum</th></tr>";
   let d=cat==="all"?DATA.apps:DATA.apps.filter(a=>a.cat===cat);
   d=[...d].sort((a,b)=>b[sk]-a[sk]);
   const TL={ultra:"&#9888;&#65039; Ultra",high:"&#9888; High",med:"&#9728; Medium",low:"&#128712; Low"};
@@ -190,7 +190,7 @@ function renderAppTable(cat,sk){
     "<td style=\"text-align:right\" class=\"num up\">+"+a.maug+"%</td>"+
     "<td>"+(TL[a.ti]||a.ti)+"</td>"+
     "<td style=\"font-size:11px\">"+(a.selfModel?"<span style=\"color:#16a34a;font-weight:600\">&#10003; 自有</span>":"<span style=\"color:#888\">API依赖</span>")+"</td>"+
-    "<td style=\"text-align:right\" class=\"num\">$"+a.val+"B</td>"+
+    "<td style=\"text-align:right\" class=\"num\">$"+a.val+"B</td>"+"<td style=\"text-align:right\" class=\"num\">"+(a.val>0&&a.arr>0?(a.val*1000/a.arr).toFixed(1)+"x":"—")+"</td>"+
     "<td class=\"num\">"+a.m+"<div class=\"mbar\"><div class=\"mfill\" style=\"width:"+a.m+"%\"></div></div></td></tr>"
   ).join("");}
 function switchLayer(l){
