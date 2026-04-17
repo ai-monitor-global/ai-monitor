@@ -2,7 +2,7 @@
   "meta": {
     "last_updated": "2026-04-17",
     "next_update": "2026-04-18",
-    "update_notes": "2026-04-17: Auto-update error: Expecting value: line 1 column 1 (char 0)"
+    "update_notes": "2026-04-17: Major Q1 2026 updates: OpenAI $852B val, Anthropic $380B/$30B ARR, xAI $20B raise, Harvey $11B, Cursor $50B talks, Perplexity $500M ARR, Suno $300M ARR, Luma $4B."
   },
   "models": [
     {
@@ -106,7 +106,7 @@
       "tokG": 180,
       "trainPerRun": 5,
       "runsPerYear": 2,
-      "val": 2.3,
+      "val": 14,
       "m": 68
     },
     {
@@ -157,13 +157,13 @@
       "uc": "AIæç´¢å¼æ",
       "cat": "search",
       "stage": "growth",
-      "arr": 200,
+      "arr": 500,
       "arrg": 400,
       "mau": 30,
       "maug": 250,
       "ti": "high",
       "biz": "B2C+B2B",
-      "val": 20,
+      "val": 21.21,
       "m": 90,
       "selfModel": false
     },
@@ -232,13 +232,13 @@
       "uc": "æ³å¾AIå©æ",
       "cat": "vertical",
       "stage": "growth",
-      "arr": 50,
+      "arr": 190,
       "arrg": 300,
       "mau": 0.05,
       "maug": 280,
       "ti": "med",
       "biz": "B2B",
-      "val": 3,
+      "val": 11,
       "m": 88,
       "selfModel": false
     },
@@ -247,7 +247,7 @@
       "uc": "ä¼ä¸AIç¥è¯æç´¢",
       "cat": "enterprise",
       "stage": "scale",
-      "arr": 200,
+      "arr": 250,
       "arrg": 150,
       "mau": 0.5,
       "maug": 120,
@@ -292,13 +292,13 @@
       "uc": "AIé³ä¹çæ",
       "cat": "creative",
       "stage": "pmf",
-      "arr": 40,
+      "arr": 300,
       "arrg": 350,
       "mau": 10,
       "maug": 300,
       "ti": "high",
       "biz": "B2C",
-      "val": 0.5,
+      "val": 2.45,
       "m": 87,
       "selfModel": true
     },
@@ -322,7 +322,7 @@
       "uc": "AIå®¢ææºè½ä½",
       "cat": "vertical",
       "stage": "growth",
-      "arr": 100,
+      "arr": 150,
       "arrg": 400,
       "mau": 0.2,
       "maug": 350,
@@ -373,7 +373,7 @@
       "maug": 220,
       "ti": "ultra",
       "biz": "B2B+B2C",
-      "val": 0.4,
+      "val": 4,
       "m": 79,
       "selfModel": true
     },
