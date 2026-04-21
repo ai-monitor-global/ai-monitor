@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-04-20",
-    "next_update": "2026-04-21",
-    "update_notes": "2026-04-20: OpenAI $122B/$852B (Mar 31); Anthropic $30B/$380B (Feb 12); xAI $20B/$230B (Jan 6); Cursor $2B ARR/$50B talks; Harvey $11B; ElevenLabs $11B/$330M ARR; Suno $300M ARR; Glean $200M ARR; Sierra $150M ARR; Mistral $830M debt"
+    "last_updated": "2026-04-21",
+    "next_update": "2026-04-22",
+    "update_notes": "2026-04-21: Major April 2026 updates: Anthropic hits $30B ARR (surpasses OpenAI); OpenAI at $24B ARR/$852B val; Cursor raises at $50B; Perplexity ARR hits $450M; Harvey $11B; Runway $5.3B; Luma $4B."
   },
   "models": [
     {
@@ -113,13 +113,13 @@
       "name": "Cohere",
       "uc": "Command R+, Embed, Rerank",
       "region": "US",
-      "arr": 80,
+      "arr": 240,
       "arrg": 150,
       "tokM": 1,
       "tokG": 130,
       "trainPerRun": 3,
       "runsPerYear": 2,
-      "val": 2.2,
+      "val": 7,
       "m": 60
     },
     {
@@ -157,13 +157,13 @@
       "uc": "AI搜索引擎",
       "cat": "search",
       "stage": "growth",
-      "arr": 200,
+      "arr": 450,
       "arrg": 400,
       "mau": 30,
       "maug": 250,
       "ti": "high",
       "biz": "B2C+B2B",
-      "val": 20,
+      "val": 21.2,
       "m": 90,
       "selfModel": false
     },
@@ -223,7 +223,7 @@
       "maug": 150,
       "ti": "ultra",
       "biz": "B2B+B2C",
-      "val": 4,
+      "val": 5.3,
       "m": 82,
       "selfModel": true
     },
@@ -247,7 +247,7 @@
       "uc": "企业AI知识搜索",
       "cat": "enterprise",
       "stage": "scale",
-      "arr": 200,
+      "arr": 100,
       "arrg": 150,
       "mau": 0.5,
       "maug": 120,
