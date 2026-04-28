@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-04-22",
-    "next_update": "2026-04-23",
-    "update_notes": "2026-04-22: Major updates: Anthropic ARR $30B, OpenAI val $852B, xAI $20B Series E, Mistral $830M debt, Cursor $2B ARR/$50B val talks, Perplexity $500M ARR, Harvey $11B val, Glean $200M ARR, Runway $5.3B val."
+    "last_updated": "2026-04-28",
+    "next_update": "2026-04-29",
+    "update_notes": "2026-04-28: Major Q1-Apr 2026 updates: Anthropic $30B ARR/$380B val; OpenAI $25B ARR; xAI $20B raise; Mistral $830M debt; ElevenLabs $500M/11B; Cursor $2B ARR/$50B raise talks; Perplexity $500M ARR; Harvey $11B val."
   },
   "models": [
     {
