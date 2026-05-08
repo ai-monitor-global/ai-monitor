@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-05-06",
-    "next_update": "2026-05-07",
-    "update_notes": "2026-05-06: Anthropic $30B ARR + $900B val round; OpenAI $24B ARR/$852B val; xAI $230B val; Cursor $2B ARR/$50B val; ElevenLabs $500M ARR/$11B; Harvey $11B; Glean $100M ARR/$7.2B; Runway $5.3B; Suno $2.45B; Luma $4B; Cognition $25B talks"
+    "last_updated": "2026-05-08",
+    "next_update": "2026-05-09",
+    "update_notes": "2026-05-08: Kimi $2B raise @$20B val (TechCrunch May 7); ElevenLabs $500M ARR (May 5); Anthropic $30B ARR + $900B val talks; Cursor $2B ARR + $50B raise in progress; Harvey $11B val confirmed."
   },
   "models": [
     {
