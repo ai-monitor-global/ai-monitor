@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-05-08",
-    "next_update": "2026-05-09",
-    "update_notes": "2026-05-08: Kimi $2B raise @$20B val (TechCrunch May 7); ElevenLabs $500M ARR (May 5); Anthropic $30B ARR + $900B val talks; Cursor $2B ARR + $50B raise in progress; Harvey $11B val confirmed."
+    "last_updated": "2026-05-13",
+    "next_update": "2026-05-14",
+    "update_notes": "2026-05-13: Moonshot $2B raise at $20B val (Bloomberg, May 7); Anthropic $900B round talks + $30B ARR; Suno Series D at $5B+; Cursor $2B ARR confirmed; ElevenLabs $500M ARR."
   },
   "models": [
     {
@@ -28,7 +28,7 @@
       "tokG": 300,
       "trainPerRun": 12,
       "runsPerYear": 3,
-      "val": 900,
+      "val": 380,
       "m": 98
     },
     {
@@ -80,7 +80,7 @@
       "tokG": 320,
       "trainPerRun": 6,
       "runsPerYear": 2,
-      "val": 2.5,
+      "val": 33,
       "m": 80
     },
     {
@@ -93,7 +93,7 @@
       "tokG": 250,
       "trainPerRun": 5,
       "runsPerYear": 2,
-      "val": 2,
+      "val": 55.9,
       "m": 72
     },
     {
@@ -298,7 +298,7 @@
       "maug": 300,
       "ti": "high",
       "biz": "B2C",
-      "val": 2.45,
+      "val": 5,
       "m": 87,
       "selfModel": true
     },
