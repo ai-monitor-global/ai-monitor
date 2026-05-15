@@ -1,15 +1,15 @@
 {
   "meta": {
-    "last_updated": "2026-05-13",
-    "next_update": "2026-05-14",
-    "update_notes": "2026-05-13: Moonshot $2B raise at $20B val (Bloomberg, May 7); Anthropic $900B round talks + $30B ARR; Suno Series D at $5B+; Cursor $2B ARR confirmed; ElevenLabs $500M ARR."
+    "last_updated": "2026-05-15",
+    "next_update": "2026-05-16",
+    "update_notes": "2026-05-15: Anthropic eyes $900B+ round/$30B ARR; OpenAI $25B ARR/$852B val; Kimi $2B raise/$20B val; ElevenLabs $500M ARR; Suno eyes $5B val; Cognition eyes $25B val; Cursor $2B ARR/$50B val"
   },
   "models": [
     {
       "name": "OpenAI",
       "uc": "GPT-4o, o1, o3, Codex, Sora, DALL-E",
       "region": "US",
-      "arr": 24000,
+      "arr": 25000,
       "arrg": 300,
       "tokM": 22,
       "tokG": 200,
@@ -28,7 +28,7 @@
       "tokG": 300,
       "trainPerRun": 12,
       "runsPerYear": 3,
-      "val": 380,
+      "val": 900,
       "m": 98
     },
     {
@@ -106,7 +106,7 @@
       "tokG": 180,
       "trainPerRun": 5,
       "runsPerYear": 2,
-      "val": 11,
+      "val": 13.7,
       "m": 68
     },
     {
@@ -358,7 +358,7 @@
       "maug": 400,
       "ti": "ultra",
       "biz": "B2B",
-      "val": 10.2,
+      "val": 25,
       "m": 88,
       "selfModel": false
     },
