@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-05-15",
-    "next_update": "2026-05-16",
-    "update_notes": "2026-05-15: Anthropic eyes $900B+ round/$30B ARR; OpenAI $25B ARR/$852B val; Kimi $2B raise/$20B val; ElevenLabs $500M ARR; Suno eyes $5B val; Cognition eyes $25B val; Cursor $2B ARR/$50B val"
+    "last_updated": "2026-05-24",
+    "next_update": "2026-05-25",
+    "update_notes": "2026-05-24: OpenAI S-1 filed May 22; Anthropic ~$900B round imminent; Sierra $950M@$15.8B; Kimi $2B@$20B; Cohere+AlephAlpha @$20B; Runway $315M@$5.3B; Harvey $200M@$11B"
   },
   "models": [
     {
@@ -298,7 +298,7 @@
       "maug": 300,
       "ti": "high",
       "biz": "B2C",
-      "val": 5,
+      "val": 2.5,
       "m": 87,
       "selfModel": true
     },
@@ -328,7 +328,7 @@
       "maug": 350,
       "ti": "med",
       "biz": "B2B",
-      "val": 10,
+      "val": 15.8,
       "m": 92,
       "selfModel": false
     },
