@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-05-24",
-    "next_update": "2026-05-25",
-    "update_notes": "2026-05-24: OpenAI S-1 filed May 22; Anthropic ~$900B round imminent; Sierra $950M@$15.8B; Kimi $2B@$20B; Cohere+AlephAlpha @$20B; Runway $315M@$5.3B; Harvey $200M@$11B"
+    "last_updated": "2026-05-25",
+    "next_update": "2026-05-26",
+    "update_notes": "2026-05-25: Anthropic $900B val talks + $30B ARR; OpenAI $25B ARR; Kimi $2B round/$20B val; Cursor $2B ARR/$50B val talks; ElevenLabs $500M ARR; Sierra $950M Series E/$15.8B; Harvey $11B; Suno $300M ARR"
   },
   "models": [
     {
@@ -247,7 +247,7 @@
       "uc": "企业AI知识搜索",
       "cat": "enterprise",
       "stage": "scale",
-      "arr": 100,
+      "arr": 200,
       "arrg": 150,
       "mau": 0.5,
       "maug": 120,
