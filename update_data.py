@@ -68,12 +68,14 @@ def call_claude(today_str: str) -> dict:
     print(f"stop_reason: {response.stop_reason}")
     print(f"blocks: {[getattr(b, 'type', '?') for b in response.content]}")
 
-    # Extract the final text block (web_search server-side: all in one response)
-    text = ""
-    for block in response.content:
-        block_type = getattr(block, "type", None)
-        if block_type == "text":
-            text = block.text
+    # Concatenate ALL text blocks. With web_search the model emits text across
+    # many blocks (commentary between searches + a final answer that may itself
+    # span multiple blocks or be followed by a trailing remark), so keeping only
+    # the last block hands json.loads a fragment.
+    text = "".join(
+        block.text for block in response.content
+        if getattr(block, "type", None) == "text"
+    ).strip()
 
     if not text:
         raise ValueError(
@@ -81,11 +83,20 @@ def call_claude(today_str: str) -> dict:
             f"blocks={[getattr(b,'type','?') for b in response.content]}"
         )
 
-    # Strip markdown fences if present
-    text = re.sub(r"^```json\s*", "", text.strip())
-    text = re.sub(r"\s*```$", "", text.strip())
+    return extract_json(text)
 
-    return json.loads(text)
+
+def extract_json(text: str) -> dict:
+    """Parse a JSON object from model output, tolerating fences or surrounding prose."""
+    s = re.sub(r"^```(?:json)?\s*", "", text.strip())
+    s = re.sub(r"\s*```$", "", s).strip()
+    try:
+        return json.loads(s)
+    except json.JSONDecodeError:
+        start, end = s.find("{"), s.rfind("}")
+        if start != -1 and end > start:
+            return json.loads(s[start:end + 1])
+        raise ValueError(f"No JSON object found in response. First 500 chars: {s[:500]!r}")
 
 
 def apply_patches(data: dict, patch: dict) -> tuple:
