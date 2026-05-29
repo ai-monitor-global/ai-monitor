@@ -2,14 +2,14 @@
   "meta": {
     "last_updated": "2026-05-29",
     "next_update": "2026-05-30",
-    "update_notes": "2026-05-29: Anthropic $965B valuation/$47B ARR; Cognition $26B/$492M ARR; Sierra $15.8B; Cohere+Aleph Alpha $20B merger; Kimi $20B/$200M ARR; Cursor $50B/$2B ARR; ElevenLabs $500M ARR; Perplexity $500M ARR."
+    "update_notes": "2026-05-29: Anthropic $65B raise at $965B val & $47B ARR; OpenAI $24B ARR; Cohere+Aleph Alpha $20B merger; Kimi $2B raise/$20B val; Cursor $50B talks/$2B ARR; Perplexity $500M ARR/100M MAU; ElevenLabs $500M ARR; Harvey $11B; Runway $5.3B; Suno Series D; Glean $200M ARR"
   },
   "models": [
     {
       "name": "OpenAI",
       "uc": "GPT-4o, o1, o3, Codex, Sora, DALL-E",
       "region": "US",
-      "arr": 25000,
+      "arr": 24000,
       "arrg": 300,
       "tokM": 22,
       "tokG": 200,
@@ -298,7 +298,7 @@
       "maug": 300,
       "ti": "high",
       "biz": "B2C",
-      "val": 2.5,
+      "val": 5,
       "m": 87,
       "selfModel": true
     },
