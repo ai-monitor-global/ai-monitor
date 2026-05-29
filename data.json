@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-05-25",
-    "next_update": "2026-05-26",
-    "update_notes": "2026-05-25: Anthropic $900B val talks + $30B ARR; OpenAI $25B ARR; Kimi $2B round/$20B val; Cursor $2B ARR/$50B val talks; ElevenLabs $500M ARR; Sierra $950M Series E/$15.8B; Harvey $11B; Suno $300M ARR"
+    "last_updated": "2026-05-29",
+    "next_update": "2026-05-30",
+    "update_notes": "2026-05-29: Anthropic $965B valuation/$47B ARR; Cognition $26B/$492M ARR; Sierra $15.8B; Cohere+Aleph Alpha $20B merger; Kimi $20B/$200M ARR; Cursor $50B/$2B ARR; ElevenLabs $500M ARR; Perplexity $500M ARR."
   },
   "models": [
     {
@@ -22,13 +22,13 @@
       "name": "Anthropic",
       "uc": "Claude Opus/Sonnet 4.6, Claude Code",
       "region": "US",
-      "arr": 30000,
+      "arr": 47000,
       "arrg": 900,
       "tokM": 7,
       "tokG": 300,
       "trainPerRun": 12,
       "runsPerYear": 3,
-      "val": 900,
+      "val": 965,
       "m": 98
     },
     {
@@ -157,7 +157,7 @@
       "uc": "AI搜索引擎",
       "cat": "search",
       "stage": "growth",
-      "arr": 200,
+      "arr": 500,
       "arrg": 400,
       "mau": 100,
       "maug": 250,
@@ -352,13 +352,13 @@
       "uc": "AI软件工程师Agent",
       "cat": "coding",
       "stage": "growth",
-      "arr": 50,
+      "arr": 492,
       "arrg": 500,
       "mau": 0.1,
       "maug": 400,
       "ti": "ultra",
       "biz": "B2B",
-      "val": 25,
+      "val": 26,
       "m": 88,
       "selfModel": false
     },
