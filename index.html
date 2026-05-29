@@ -173,7 +173,7 @@ function renderModelTable(region,sk){
       "<td style=\"text-align:right\" class=\"num up\">"+fna(a.tokG,"%")+"</td>"+
       "<td style=\"text-align:right\" class=\"num\">"+ann+"T</td>"+
       "<td style=\"text-align:right\" class=\"num\">"+a.trainPerRun+"T &times; "+a.runsPerYear+"</td>"+
-      "<td style=\"text-align:right\" class=\"num\">"+(a.val!=null?"$"+a.val+"B":"—")+"</td>"+"<td style=\\"text-align:right\\" class=\\"num\\">"+(a.val!=null&&a.arr>0?(a.val*1000/a.arr).toFixed(1)+"x":"—")+"</td>"+
+      "<td style=\"text-align:right\" class=\"num\">"+(a.val!=null?"$"+a.val+"B":"—")+"</td>"+"<td style=\"text-align:right\" class=\"num\">"+(a.val!=null&&a.arr>0?(a.val*1000/a.arr).toFixed(1)+"x":"—")+"</td>"+
       "<td class=\"num\">"+a.m+"<div class=\"mbar\"><div class=\"mfill\" style=\"width:"+a.m+"%\"></div></div></td></tr>";
   }).join("");}
 function renderAppTable(cat,sk){
