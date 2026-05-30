@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-05-29",
-    "next_update": "2026-05-30",
-    "update_notes": "2026-05-29: Anthropic $65B raise at $965B val & $47B ARR; OpenAI $24B ARR; Cohere+Aleph Alpha $20B merger; Kimi $2B raise/$20B val; Cursor $50B talks/$2B ARR; Perplexity $500M ARR/100M MAU; ElevenLabs $500M ARR; Harvey $11B; Runway $5.3B; Suno Series D; Glean $200M ARR"
+    "last_updated": "2026-05-30",
+    "next_update": "2026-05-31",
+    "update_notes": "2026-05-30: Anthropic $965B val/$47B ARR (May 28); OpenAI $852B val/$24B ARR; Glean $300M ARR; Perplexity $500M ARR; Harvey $11B val; Suno $300M ARR; Mistral $13.7B val; Kimi $20B val"
   },
   "models": [
     {
@@ -247,7 +247,7 @@
       "uc": "企业AI知识搜索",
       "cat": "enterprise",
       "stage": "scale",
-      "arr": 200,
+      "arr": 300,
       "arrg": 150,
       "mau": 0.5,
       "maug": 120,
@@ -298,7 +298,7 @@
       "maug": 300,
       "ti": "high",
       "biz": "B2C",
-      "val": 5,
+      "val": 2.45,
       "m": 87,
       "selfModel": true
     },
