@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-05-30",
-    "next_update": "2026-05-31",
-    "update_notes": "2026-05-30: Anthropic $965B val/$47B ARR (May 28); OpenAI $852B val/$24B ARR; Glean $300M ARR; Perplexity $500M ARR; Harvey $11B val; Suno $300M ARR; Mistral $13.7B val; Kimi $20B val"
+    "last_updated": "2026-05-31",
+    "next_update": "2026-06-01",
+    "update_notes": "2026-05-31: Anthropic $65B raise at $965B val, $47B ARR; Sierra $950M at $15.8B; Glean $300M ARR; Cursor $2B ARR/$50B val talks; Kimi $2B at $20B; Perplexity $500M ARR"
   },
   "models": [
     {
@@ -100,7 +100,7 @@
       "name": "Mistral AI",
       "uc": "Mistral Large 2, Codestral",
       "region": "EU",
-      "arr": 100,
+      "arr": 400,
       "arrg": 200,
       "tokM": 1.5,
       "tokG": 180,
@@ -187,7 +187,7 @@
       "uc": "语音合成API",
       "cat": "voice",
       "stage": "growth",
-      "arr": 500,
+      "arr": 330,
       "arrg": 250,
       "mau": 1.2,
       "maug": 200,
