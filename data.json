@@ -1,15 +1,15 @@
 {
   "meta": {
-    "last_updated": "2026-05-31",
-    "next_update": "2026-06-01",
-    "update_notes": "2026-05-31: Anthropic $65B raise at $965B val, $47B ARR; Sierra $950M at $15.8B; Glean $300M ARR; Cursor $2B ARR/$50B val talks; Kimi $2B at $20B; Perplexity $500M ARR"
+    "last_updated": "2026-06-01",
+    "next_update": "2026-06-02",
+    "update_notes": "2026-06-01: Anthropic $965B/Series H/$47B ARR dominates; Sierra $15.8B; ElevenLabs $500M ARR; Cursor $2B ARR/$60B SpaceX deal; Kimi $20B val; Harvey $11B; Suno Series D >$5B in talks."
   },
   "models": [
     {
       "name": "OpenAI",
       "uc": "GPT-4o, o1, o3, Codex, Sora, DALL-E",
       "region": "US",
-      "arr": 24000,
+      "arr": 22800,
       "arrg": 300,
       "tokM": 22,
       "tokG": 200,
@@ -187,7 +187,7 @@
       "uc": "语音合成API",
       "cat": "voice",
       "stage": "growth",
-      "arr": 330,
+      "arr": 500,
       "arrg": 250,
       "mau": 1.2,
       "maug": 200,
@@ -232,7 +232,7 @@
       "uc": "法律AI助手",
       "cat": "vertical",
       "stage": "growth",
-      "arr": 190,
+      "arr": 100,
       "arrg": 300,
       "mau": 0.05,
       "maug": 280,
@@ -247,7 +247,7 @@
       "uc": "企业AI知识搜索",
       "cat": "enterprise",
       "stage": "scale",
-      "arr": 300,
+      "arr": 200,
       "arrg": 150,
       "mau": 0.5,
       "maug": 120,
@@ -298,7 +298,7 @@
       "maug": 300,
       "ti": "high",
       "biz": "B2C",
-      "val": 2.45,
+      "val": 5,
       "m": 87,
       "selfModel": true
     },
