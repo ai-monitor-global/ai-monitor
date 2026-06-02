@@ -1,15 +1,15 @@
 {
   "meta": {
-    "last_updated": "2026-06-01",
-    "next_update": "2026-06-02",
-    "update_notes": "2026-06-01: Anthropic $965B/Series H/$47B ARR dominates; Sierra $15.8B; ElevenLabs $500M ARR; Cursor $2B ARR/$60B SpaceX deal; Kimi $20B val; Harvey $11B; Suno Series D >$5B in talks."
+    "last_updated": "2026-06-02",
+    "next_update": "2026-06-03",
+    "update_notes": "2026-06-02: Anthropic $65B raise at $965B val, $47B ARR; Cognition $1B raise at $26B val, $492M ARR; Anthropic now tops OpenAI in valuation; Moonshot $2B raise at $20B val."
   },
   "models": [
     {
       "name": "OpenAI",
       "uc": "GPT-4o, o1, o3, Codex, Sora, DALL-E",
       "region": "US",
-      "arr": 22800,
+      "arr": 24000,
       "arrg": 300,
       "tokM": 22,
       "tokG": 200,
@@ -163,7 +163,7 @@
       "maug": 250,
       "ti": "high",
       "biz": "B2C+B2B",
-      "val": 21.21,
+      "val": 22.6,
       "m": 90,
       "selfModel": false
     },
