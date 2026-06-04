@@ -13,7 +13,7 @@ UPDATE_INTERVAL_DAYS = 7  # weekly cadence
 import anthropic
 
 DATA_FILE = "data.json"
-MODEL = "claude-sonnet-4-6"
+MODEL = os.environ.get("CLAUDE_MODEL") or "claude-opus-4-8"
 
 SYSTEM_PROMPT = """You are a financial data analyst maintaining an AI industry monitor dashboard.
 Search for the latest news about AI company funding, valuations, and revenue milestones,
