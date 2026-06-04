@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-06-03",
-    "next_update": "2026-06-04",
-    "update_notes": "2026-06-03: Anthropic $65B Series H at $965B val, $47B ARR (May 28); OpenAI $2B/mo revenue, $852B val; SpaceX/xAI IPO roadshow live at $1.75T; Cursor $2B ARR/$50B val talks confirmed."
+    "last_updated": "2026-06-04",
+    "next_update": "2026-06-11",
+    "update_notes": "2026-06-04: Anthropic $965B val/$47B ARR; Suno $5.4B val/$300M ARR; Kimi $20B val/$200M ARR; Harvey $11B val; Mistral $830M debt; Cursor $2B ARR"
   },
   "models": [
     {
@@ -157,13 +157,13 @@
       "uc": "AI搜索引擎",
       "cat": "search",
       "stage": "growth",
-      "arr": 500,
+      "arr": 200,
       "arrg": 400,
       "mau": 100,
       "maug": 250,
       "ti": "high",
       "biz": "B2C+B2B",
-      "val": 22.6,
+      "val": 21.21,
       "m": 90,
       "selfModel": false
     },
@@ -298,7 +298,7 @@
       "maug": 300,
       "ti": "high",
       "biz": "B2C",
-      "val": 5,
+      "val": 5.4,
       "m": 87,
       "selfModel": true
     },
@@ -437,5 +437,112 @@
       "m": 55,
       "selfModel": true
     }
-  ]
+  ],
+  "ai_progress": {
+    "enterprise": [
+      {
+        "title": "印度三大 IT 巨头 Copilot 全员级落地，给出可量化产出数据",
+        "summary": "TCS、Infosys、Wipro 把 Microsoft 365 Copilot 推到员工核心工作流，并首次披露量化效果——说明大企业已从试点转向全员级部署且开始用'proof-over-promise'衡量价值。",
+        "example": "Wipro 称每季度节省超 25 万个全职当量工作日、内部已开发 2.9 万个自定义 agent；TCS 部分工作周期时间最多缩短 35%、已为超 10 万名员工配 Copilot；Infosys 部署用户月活率 91%。",
+        "company": "TCS / Infosys / Wipro",
+        "source": "Daily Pioneer（引用 Microsoft Work Trend Index 2026）",
+        "date": "2026-06-04",
+        "url": "https://dailypioneer.com/news/slug-lite/indian-firms-move-from-ai-experimenting-to-core-integration?year=2026"
+      },
+      {
+        "title": "Claude Opus 4.8 上线即被企业客户验证 agentic 产出与成本下降",
+        "summary": "Opus 4.8 发布同时，多家企业伙伴给出落地反馈，重点在 agentic 推理质量提升与 token 成本下降，反映企业采购正从'模型聪明度'转向可靠性与单位成本。",
+        "example": "Databricks 称 Opus 4.8 在其 Genie 数据 agent 上带来'agentic 推理的阶跃式提升'，且因多模态效率使 token 成本比 4.7 低 61%；法律 AI 公司 Harvey 称其内部 legal agent benchmark 创历史最高分；Hebbia 称在密集财务文件上引用精度更高。",
+        "company": "Databricks / Harvey / Hebbia",
+        "source": "VentureBeat / Inc.",
+        "date": "2026-05-28",
+        "url": "https://venturebeat.com/technology/anthropics-claude-opus-4-8-is-here-with-3x-cheaper-fast-mode-and-near-mythos-level-alignment"
+      },
+      {
+        "title": "NVIDIA Computex 2026：企业级 agent 基础设施集中落地，'基础设施借口'消失",
+        "summary": "NVIDIA 在 Computex 一口气发布六款面向 agent 的产品（Vera CPU、Nemotron 3 Ultra 500B 开源模型、NemoClaw 编排框架、OpenShell 安全运行时等），并联合企业软件厂商共建行业 agent；其中运行时治理沙箱是多数 agent 框架缺失的一环。",
+        "example": "Cadence、Dassault、Siemens、Synopsys 正构建自主工程 agent，把数周仿真压缩到数小时；Nemotron 3 Ultra 预计 6 月 4 日通过 Hugging Face、OpenRouter、build.nvidia.com 上线。但厂商分析指出，连接专有系统、领域数据训练、长期准确性与合规这些'工作流问题'才是真正的部署难点。",
+        "company": "NVIDIA（+ Cadence/Siemens/Synopsys 等）",
+        "source": "NVIDIA Newsroom / Beam.ai 分析",
+        "date": "2026-06-01",
+        "url": "https://nvidianews.nvidia.com/news/enterprise-software-leaders-build-ai-agents-with-nvidia"
+      },
+      {
+        "title": "企业 agent 仍卡在'落地执行'：86–89% 试点在投产前失败",
+        "summary": "多份 2026 报告交叉印证：企业 agent 采用极广但规模化变现稀少，瓶颈已从技术转向组织/治理/数据。这是评估企业端标的时必须打的折扣。",
+        "example": "FifthRow 引用调查称 86–89% 的 AI agent 试点在投产前失败，主因是治理缺口、无法盘点/追溯 agent 行为、监控不足；Stanford 51 例成功案例研究则显示 agentic 实现的中位生产率增益 71%（vs 高自动化 40%），但只占 20% 案例，且三分之二企业在成功前都经历过重大失败。",
+        "company": "（行业横截面：FifthRow / Stanford Digital Economy Lab）",
+        "source": "FifthRow / Stanford Enterprise AI Playbook",
+        "date": "2026-05-04",
+        "url": "https://www.fifthrow.com/blog/ai-agent-orchestration-goes-enterprise-the-april-2026-playbook-for-systematic-innovation-risk-and-value-at-scale"
+      }
+    ],
+    "models": [
+      {
+        "title": "Claude Opus 4.8 发布，多项 benchmark 反超 GPT-5.5 与 Gemini 3.1 Pro",
+        "summary": "Anthropic 自评为'温和但实在的提升'，价格不变（$5/$25 每百万 token）。重点不只是分数，还有效率（同任务更少 turn/token）与对齐/诚实度的改进。",
+        "kind": "sota",
+        "source": "Vellum / VentureBeat / Artificial Analysis",
+        "date": "2026-05-28",
+        "url": "https://artificialanalysis.ai/articles/claude-opus-4-8-analysis-and-benchmarks"
+      },
+      {
+        "title": "Opus 4.8 横向对比：编码与知识工作领先，终端/CLI 与前沿物理仍被 GPT-5.5 系咬住",
+        "summary": "横评清晰：Opus 4.8 在抗记忆的 SWE-Bench Pro 拿 69.2%（4.7 为 64.3%、GPT-5.5 为 58.6%），浏览器 agent（Online-Mind2Web 84%）领先；但 GPT-5.5 在终端/CLI 工作流胜出，且在前沿物理 CritPt 上 GPT-5.4/5.5 仍领先。GDPval-AA 上 Opus 4.8 以约 67% 对 GPT-5.5 的胜率重回第一。",
+        "kind": "eval",
+        "source": "Vellum / The Decoder / Artificial Analysis",
+        "date": "2026-05-28",
+        "url": "https://www.vellum.ai/blog/claude-opus-4-8-benchmarks-explained"
+      },
+      {
+        "title": "RL 后训练成为新护城河：开源 RL 训练栈本周持续放量",
+        "summary": "后训练（尤其 RL）已成前沿实验室主要 scaling 轴——Cursor 是唯一公开披露后训练算力超过预训练的案例（Composer 1.5），Composer 2.5 在开源 Kimi K2.5 底座上叠加约 85% 专有 RL 算力，构成'开源底座+专有 RL'两层范式的最清晰商业样本。配套开源工具本周更新。",
+        "kind": "training",
+        "source": "verl（GitHub）/ digitalapplied",
+        "date": "2026-05-30",
+        "url": "https://github.com/verl-project/verl"
+      },
+      {
+        "title": "训练新思路：经验回放重写 RL 后训练'必须 on-policy'的正统",
+        "summary": "Meta FAIR×NYU 论文论证：当生成成本高时严格 on-policy 采样其实次优，精心设计的 replay buffer 可在不降（有时反升）最终性能的前提下大幅削减推理算力并保持策略熵——把二十年成熟 RL 实践移植进 LLM 栈，可能是有后果的结果。",
+        "kind": "training",
+        "source": "Air Street Press（State of AI: May 2026）",
+        "date": "2026-05-04",
+        "url": "https://press.airstreet.com/p/state-of-ai-may-2026"
+      }
+    ],
+    "infra_invest": [
+      {
+        "layer": "Model Router / AI Gateway 层（按任务路由不同模型 + 治理观测）",
+        "thesis": "模型碎片化（400+ 模型、价格/质量/时延剧烈波动）使应用层需要一个 provider-无关的控制平面来做路由、失败转移、缓存、成本与合规治理；Gartner 已把 AI gateway 从可选工具升级为关键基础设施。本周资本与并购同时为该层定价：头部独立 router 完成大额融资、安全巨头并购入场，验证'路由+治理'是商业卡位点。这是研究观察，非投资建议。",
+        "players": [
+          "OpenRouter（5/29 完成 1.13 亿美元 B 轮，CapitalG 领投，Alphabet 投资臂背书；400+ 模型/60+ provider）",
+          "Portkey（被 Palo Alto Networks 收购，作为运行时安全/路由层）",
+          "LiteLLM（开源，3.3 万+ star）",
+          "Inworld Router / Braintrust Gateway / Merge Gateway（5/27 推出 Build Your Own Router）"
+        ],
+        "summary": "OpenRouter 本周宣布 1.13 亿美元 B 轮（CapitalG 领投，NVentures、ServiceNow/MongoDB/Snowflake/Databricks Ventures 等参投），并上线预算强制、零数据留存、注入防护等治理功能；同时 5/31 有分析把 Palo Alto Networks 收购 Portkey 定位为企业正在购买的'安全执行层'。逻辑是：买家偏好能在 Salesforce/ERP 等系统上安全执行、并给安全团队可见性与控制的系统，而非纯模型聪明度。",
+        "source": "OpenRouter / aiagentstore（TechTimes 分析）",
+        "url": "https://openrouter.ai/"
+      },
+      {
+        "layer": "AI Agent 编排 / 控制平面层（multi-agent orchestration + 治理观测）",
+        "thesis": "应用从单 agent 转向'专业 agent 编队'，价值与风险都集中在编排层——决定谁先跑、状态如何流转、失败如何恢复、人在哪里介入。多 agent 市场 2024 年 54 亿美元、预计 2034 年 2360 亿美元（CAGR ~46%），但 86–89% 试点死在投产前，治理/观测/审计成为真正的付费点与护城河。这是研究观察，非投资建议。",
+        "players": [
+          "IBM watsonx Orchestrate（向多 agent 控制平面演进）",
+          "Microsoft（Agent Framework / 开源 Conductor 确定性编排）",
+          "ServiceNow / UiPath（带控制塔与 RPA 执行）",
+          "LangGraph / CrewAI / AutoGen（框架层，已成 table stakes）",
+          "Asana×StackAI（5/31 收购，补执行/no-code 构建）"
+        ],
+        "summary": "本周信号密集：NVIDIA 发布 NemoClaw 编排框架与 OpenShell 运行时治理沙箱；Asana 收购 StackAI 补执行层、Palo Alto 收购 Portkey 补安全层，被分析定位为企业正在购买的两层；框架本身（LangGraph/CrewAI/AutoGen）已商品化，差异化转向治理、可观测、审计与运行时权限边界。",
+        "source": "Lushbinary / aiagentstore / Microsoft Open Source Blog",
+        "url": "https://www.codebridge.tech/articles/mastering-multi-agent-orchestration-coordination-is-the-new-scale-frontier"
+      }
+    ],
+    "takeaway": "本周主线是'范式落地'：模型侧 Opus 4.8 以效率与对齐（而非分数飞跃）重夺多榜第一并被企业客户即时验证降本，印度 IT 巨头给出可量化的全员级 Copilot 产出；而真正的资本卡位发生在 router 与编排两层——OpenRouter 1.13 亿美元 B 轮 + Portkey 被 Palo Alto 收购，印证'路由+治理+安全执行'正成为 agent 时代的关键基础设施层。",
+    "week_of": "2026-06-04",
+    "generated_at": "2026-06-04 04:31 UTC",
+    "model": "claude-opus-4-8"
+  }
 }
