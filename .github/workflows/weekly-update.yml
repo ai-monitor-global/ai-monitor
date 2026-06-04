@@ -1,8 +1,9 @@
-name: Daily Data Update
+name: Weekly Data Update
 
 on:
   schedule:
-    - cron: '0 8 * * *'
+    # 周日 13:00 UTC = 北京时间 周日 21:00（和宏观周报同节奏）
+    - cron: '0 13 * * 0'
   workflow_dispatch:
 
 jobs:
@@ -23,10 +24,13 @@ jobs:
       - name: Install dependencies
         run: pip install anthropic
 
-      - name: Run daily update script
+      - name: Update data + AI progress
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python update_data.py
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}
+        run: |
+          python update_data.py || echo "update_data failed (continuing to progress)"
+          python update_progress.py || echo "update_progress failed (continuing)"
 
       - name: Commit updated data.json
         run: |
@@ -34,5 +38,5 @@ jobs:
           git config user.email "bot@ai-monitor"
           git add data.json
           git diff --staged --quiet && echo "No changes to commit" || \
-            git commit -m "chore: daily data update $(date -u +%Y-%m-%d)"
+            git commit -m "chore: weekly data update $(date -u +%Y-%m-%d)"
           git push

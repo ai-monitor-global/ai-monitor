@@ -2,7 +2,7 @@
 
 全球 AI Native App + Foundation Model 实时监控 Dashboard。
 追踪 OpenAI、Anthropic、Cursor、Perplexity 等核心公司的 ARR、估值、Token 消耗等指标。
-每天 UTC 08:00（北京时间 16:00）自动更新数据。
+每周日 UTC 13:00（北京时间 21:00）自动更新数据，并在页面下方生成「AI 进展周报」模块。
 
 ---
 
@@ -57,10 +57,12 @@ https://你的用户名.github.io/ai-monitor
 4. Secret 填：你的 Anthropic API Key（从 [console.anthropic.com](https://console.anthropic.com) 获取）
 5. 点击 **Add secret**
 
-配置完成后，每天 UTC 08:00 会自动运行 `update_data.py`，用 Claude API 搜索最新 AI 行业新闻，有确认数据时更新 `data.json` 并自动部署。
+配置完成后，每周日 UTC 13:00 会自动运行 `update_data.py`（更新 ARR/估值等指标）+ `update_progress.py`（生成「AI 进展周报」：企业端应用、模型与训练范式、AI Infra 投资视角），更新 `data.json` 并自动部署。
+
+可选 Variable `CLAUDE_MODEL` 覆盖模型（默认 `claude-opus-4-8`）。
 
 **手动触发更新：**
-- 仓库页面 → **Actions** → **Daily Data Update** → **Run workflow**
+- 仓库页面 → **Actions** → **Weekly Data Update** → **Run workflow**
 
 ---
 
@@ -68,10 +70,11 @@ https://你的用户名.github.io/ai-monitor
 
 | 文件 | 说明 |
 |------|------|
-| `index.html` | Dashboard 前端，从 `data.json` 动态加载数据 |
-| `data.json` | 所有数据（每日自动更新） |
-| `update_data.py` | 每日更新脚本，调用 Claude API + web search |
-| `.github/workflows/daily-update.yml` | GitHub Actions 定时任务配置 |
+| `index.html` | Dashboard 前端，从 `data.json` 动态加载数据（含底部「AI 进展周报」模块） |
+| `data.json` | 所有数据（每周自动更新），含 `ai_progress` 块 |
+| `update_data.py` | 周更脚本：ARR/估值等指标，调用 Claude API + web search |
+| `update_progress.py` | 周更脚本：生成「AI 进展周报」(企业端/模型范式/Infra 投资) |
+| `.github/workflows/weekly-update.yml` | GitHub Actions 定时任务（每周日） |
 
 ---
 
@@ -94,9 +97,9 @@ https://你的用户名.github.io/ai-monitor
 
 **修改监控公司列表：** 编辑 `data.json` 的 `models` 或 `apps` 数组
 
-**调整更新频率：** 修改 `.github/workflows/daily-update.yml` 中的 cron 表达式
+**调整更新频率：** 修改 `.github/workflows/weekly-update.yml` 中的 cron 表达式
+- 当前每周日：`0 13 * * 0`（北京时间周日 21:00）
 - 每天一次：`0 8 * * *`
-- 每周一次：`0 8 * * 1`
-- 每 12 小时：`0 8,20 * * *`
+- 每周一：`0 8 * * 1`
 
-**每次更新 API 费用：** Claude Sonnet 约 $0.002–0.01/次（含 web search），每月 < $0.5
+**每次更新 API 费用：** 指标更新用 Claude Sonnet（约 $0.01/次）；AI 进展周报默认用 Opus（含 web search，约 $0.1–0.3/次），每周一次成本很低。

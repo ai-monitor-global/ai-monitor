@@ -54,12 +54,24 @@ td{padding:9px 12px;vertical-align:middle}
 .tline{width:24px;height:3px;border-radius:2px;display:inline-block}
 .chart-src{font-size:10px;color:#aaa;margin-top:8px}
 .note-box{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:14px 16px;font-size:12px;color:#78350f;line-height:1.7;margin-top:24px}
-@media(max-width:900px){.mtx{grid-template-columns:repeat(3,1fr)}.grid2eq{grid-template-columns:1fr}}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px}
+.pseg-t{font-size:12px;font-weight:600;color:#333;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #eee}
+.pseg-n{display:inline-block;font-size:10px;color:#888;background:#f3f4f6;border-radius:99px;padding:1px 7px;margin-left:4px;font-weight:500}
+.pcard{background:#fafafa;border:1px solid #eee;border-radius:8px;padding:10px 12px;margin-bottom:8px}
+.pc-h{font-size:13px;font-weight:600;color:#111;line-height:1.4}
+.pc-d{font-size:10px;color:#aaa;font-weight:400;margin-left:6px}
+.pc-s{font-size:12px;color:#444;line-height:1.6;margin-top:4px}
+.pc-x{font-size:11px;color:#555;margin-top:5px}
+.pc-x.inv{color:#2563eb}
+.pc-src{font-size:10px;color:#aaa;margin-top:6px}
+.pc-src a{color:#2563eb;text-decoration:none}
+.pc-empty{font-size:11px;color:#aaa;padding:4px 0}
+@media(max-width:900px){.mtx{grid-template-columns:repeat(3,1fr)}.grid2eq{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr}}
 @media(max-width:600px){.mtx{grid-template-columns:1fr 1fr}}
 </style></head><body><div class="wrap">
 <div class="hdr"><div>
 <div class="hdr-title">AI Native App &amp; Foundation Model Monitor</div>
-<div class="hdr-sub">追踪全球 Foundation Models + AI Native Apps &middot; <span class="warn">&#9888; 本站每日自动更新，用于追踪AI算力需求</span></div>
+<div class="hdr-sub">追踪全球 Foundation Models + AI Native Apps &middot; <span class="warn">&#9888; 本站每周自动更新（含 AI 进展周报），用于追踪AI算力需求</span></div>
 </div><div id="badge" class="badge">&#8987; 加载中...</div></div>
 <div class="mtx" id="mtx"><div style="color:#888;padding:14px">加载数据中...</div></div>
 <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;flex-wrap:wrap">
@@ -93,9 +105,16 @@ td{padding:9px 12px;vertical-align:middle}
 <div style="position:relative;height:260px"><canvas id="tokChart"></canvas></div>
 <div class="chart-src">数据来源：OpenAI API用量公告 (15B tokens/min, 2026.3)</div></div>
 </div>
+<div class="pnl" id="progress-pnl" style="margin-top:24px">
+<div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px">
+<div style="font-size:15px;font-weight:600;color:#111">&#128240; AI 进展周报 &middot; Weekly AI Progress</div>
+<span id="prog-week" class="badge"></span></div>
+<div id="prog-take" style="font-size:12px;color:#444;line-height:1.7;margin:10px 0 4px"></div>
+<div id="prog-body"></div>
+<div class="chart-src">每周由 Claude 联网检索整理，仅保留有来源的进展；研究观察，非投资建议。</div></div>
 <div class="note-box">
 <strong>&#9888; 投资免责：</strong>
-本 Dashboard 数据均为公开信息估算，包含不确定性。OpenAI ($852B/$25B ARR)、Anthropic ($380B/$19B ARR) 等估值来自媒体报道；Cursor $50B 尚在 close；Google/xAI/中国模型供应商算力投入持续上升。每日更新使用 Claude API + web search 自动判断，仅供参考。数据来源：The Information、Bloomberg、CNBC、Sacra、36氪、晚点 LatePost、彭博社估算。<strong>本文不构成任何投资建议。</strong>
+本 Dashboard 数据均为公开信息估算，包含不确定性。OpenAI ($852B/$25B ARR)、Anthropic ($380B/$19B ARR) 等估值来自媒体报道；Cursor $50B 尚在 close；Google/xAI/中国模型供应商算力投入持续上升。每周更新使用 Claude API + web search 自动判断，仅供参考。数据来源：The Information、Bloomberg、CNBC、Sacra、36氪、晚点 LatePost、彭博社估算。<strong>本文不构成任何投资建议。</strong>
 </div></div>
 <script>
 let DATA=null,cRI=null,cTI=null;
@@ -106,10 +125,37 @@ function fna(v,s){return v==null?"—":(v>0?"+":"")+v+s}
 async function loadData(){
   const r=await fetch("data.json?v="+Date.now());
   DATA=await r.json();
-  document.getElementById("badge").textContent="&#128197; 数据截至 "+DATA.meta.last_updated+" · 每日 UTC 08:00 更新";
+  document.getElementById("badge").innerHTML="&#128197; 数据截至 "+DATA.meta.last_updated+" · 每周日更新";
   renderMtx();
   renderCharts();
+  renderProgress();
   switchLayer("models");
+}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+function renderProgress(){
+  const p=DATA.ai_progress, body=document.getElementById("prog-body");
+  const wk=document.getElementById("prog-week"), take=document.getElementById("prog-take");
+  if(!p){ body.innerHTML="<div class=\"pc-empty\">本周内容生成中…</div>"; return; }
+  wk.innerHTML=p.week_of?("&#128197; 本周 "+esc(p.week_of)):"";
+  take.innerHTML=p.takeaway?("<strong>本周综述：</strong>"+esc(p.takeaway)):"";
+  const card=it=>{
+    const title=it.title||it.layer||"";
+    return "<div class=\"pcard\"><div class=\"pc-h\">"+esc(title)+(it.date?"<span class=\"pc-d\">"+esc(it.date)+"</span>":"")+"</div>"+
+      (it.summary?"<div class=\"pc-s\">"+esc(it.summary)+"</div>":"")+
+      (it.example?"<div class=\"pc-x\">&#128204; 实例："+esc(it.example)+"</div>":"")+
+      (it.company?"<div class=\"pc-x\">公司："+esc(it.company)+"</div>":"")+
+      (it.thesis?"<div class=\"pc-x inv\">投资逻辑："+esc(it.thesis)+"</div>":"")+
+      (it.players&&it.players.length?"<div class=\"pc-x inv\">代表标的："+it.players.map(esc).join(" · ")+"</div>":"")+
+      (it.source?"<div class=\"pc-src\">来源："+(it.url?"<a href=\""+esc(it.url)+"\" target=\"_blank\" rel=\"noopener\">"+esc(it.source)+" &#8599;</a>":esc(it.source))+"</div>":"")+
+      "</div>";
+  };
+  const seg=(t,items)=>{items=items||[];return "<div class=\"pseg\"><div class=\"pseg-t\">"+t+"<span class=\"pseg-n\">"+items.length+"</span></div>"+
+    (items.length?items.map(card).join(""):"<div class=\"pc-empty\">本周暂无</div>")+"</div>";};
+  body.innerHTML="<div class=\"pgrid\">"+
+    seg("&#127970; 企业端应用推广",p.enterprise)+
+    seg("&#129504; 模型与训练范式",p.models)+
+    seg("&#127959; AI Infra 投资视角",p.infra_invest)+
+    "</div>";
 }
 function renderMtx(){
   const mTot=DATA.models.reduce((s,a)=>s+a.arr,0);

@@ -8,6 +8,8 @@ import os
 import sys
 import re
 from datetime import date, timedelta
+
+UPDATE_INTERVAL_DAYS = 7  # weekly cadence
 import anthropic
 
 DATA_FILE = "data.json"
@@ -126,7 +128,7 @@ def apply_patches(data: dict, patch: dict) -> tuple:
                 break
 
     data["meta"]["last_updated"] = today
-    data["meta"]["next_update"] = str(date.today() + timedelta(days=1))
+    data["meta"]["next_update"] = str(date.today() + timedelta(days=UPDATE_INTERVAL_DAYS))
     if patch.get("update_notes"):
         data["meta"]["update_notes"] = f"{today}: {patch['update_notes']}"
 
@@ -146,7 +148,7 @@ def main():
     except Exception as e:
         print(f"Claude API error: {e}", file=sys.stderr)
         data["meta"]["last_updated"] = today_str
-        data["meta"]["next_update"] = str(date.today() + timedelta(days=1))
+        data["meta"]["next_update"] = str(date.today() + timedelta(days=UPDATE_INTERVAL_DAYS))
         data["meta"]["update_notes"] = f"{today_str}: Error: {str(e)[:150]}"
         with open(DATA_FILE, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
@@ -155,7 +157,7 @@ def main():
     if not patch.get("has_updates"):
         print("No confirmed updates today.")
         data["meta"]["last_updated"] = today_str
-        data["meta"]["next_update"] = str(date.today() + timedelta(days=1))
+        data["meta"]["next_update"] = str(date.today() + timedelta(days=UPDATE_INTERVAL_DAYS))
         data["meta"]["update_notes"] = f"{today_str}: No new confirmed data points found."
         with open(DATA_FILE, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
