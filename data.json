@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-06-21",
-    "next_update": "2026-06-28",
-    "update_notes": "2026-06-21: SpaceX to acquire Cursor/Anysphere at $60B val (Jun 16). Suno raised $400M Series D at $5.4B val, $300M ARR (Jun 2026)."
+    "last_updated": "2026-06-28",
+    "next_update": "2026-07-05",
+    "update_notes": "2026-06-28: Recent confirmed figures: Anthropic $47B ARR/$965B val (Series H), OpenAI $25B run-rate/$852B, Cursor $4B ARR/SpaceX $60B deal, Glean $300M ARR, Perplexity $500M ARR/$22.6B val, ElevenLabs $500M ARR."
   },
   "models": [
     {
@@ -142,7 +142,7 @@
       "uc": "AI代码编辑器",
       "cat": "coding",
       "stage": "scale",
-      "arr": 2000,
+      "arr": 4000,
       "arrg": 1100,
       "mau": 3,
       "maug": 200,
@@ -157,7 +157,7 @@
       "uc": "AI搜索引擎",
       "cat": "search",
       "stage": "growth",
-      "arr": 200,
+      "arr": 500,
       "arrg": 400,
       "mau": 100,
       "maug": 250,
@@ -232,7 +232,7 @@
       "uc": "法律AI助手",
       "cat": "vertical",
       "stage": "growth",
-      "arr": 195,
+      "arr": 200,
       "arrg": 300,
       "mau": 0.05,
       "maug": 280,
@@ -247,7 +247,7 @@
       "uc": "企业AI知识搜索",
       "cat": "enterprise",
       "stage": "scale",
-      "arr": 200,
+      "arr": 300,
       "arrg": 150,
       "mau": 0.5,
       "maug": 120,
@@ -441,106 +441,96 @@
   "ai_progress": {
     "enterprise": [
       {
-        "title": "Cognizant 让 ServiceNow AI Agent 接入 Neuro AI 平台，做跨系统编排控制层",
-        "summary": "Cognizant 宣布 ServiceNow 原生 AI Agent 现可与 Cognizant Neuro AI 互操作，把 Neuro AI 作为控制层去编排 ServiceNow 及其他企业系统的 agent，覆盖 IT、HR、运营，减少定制集成工作量。属于把 agent 从孤立机器人变成跨应用协同工作者的落地动作。",
-        "example": "企业同时使用 ServiceNow 和 Cognizant 时，可直接用预构建 agent 工作流跨 IT/HR/运营运行，无需从零搭集成。",
-        "company": "Cognizant / ServiceNow",
-        "source": "AI Agent Store（每周 AI Agent 新闻汇总）",
-        "date": "2026-06-18",
-        "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+        "title": "OpenAI GPT-5.6 系列受限发布，企业端营收已占四成",
+        "summary": "OpenAI 在政府监管框架未明确的过渡期下，先以受限预览方式向少数受信任伙伴推出 GPT-5.6（Sol/Terra/Luna），主因是该系列网络安全与生化能力被列为高风险等级。企业落地角度看，OpenAI 同期披露企业业务已超总营收 40%，并预计年底与消费端持平。",
+        "example": "GPT-5.6 Sol 在 Terminal-Bench 2.1 上创下命令行 agentic 工作流新 SOTA；公司称将在数周内更广泛开放 GA。受限启动只面向约 20 个伙伴。",
+        "company": "OpenAI",
+        "source": "Axios / OpenAI Releasebot",
+        "date": "2026-06-26",
+        "url": "https://www.axios.com/2026/06/26/openai-gpt-sol-terra-luna-trump"
       },
       {
-        "title": "企业软件巨头集中收购“执行层”能力：Asana 买 StackAI、Coupa 买 Rossum",
-        "summary": "ERP Today 梳理 6 月初的并购模式：厂商在抢购让 agent 能“动手做事”而非只“给建议”的能力。Asana 收购无代码工作流平台 StackAI（连接 ERP/CRM/Salesforce/AWS/DocuSign/Oracle），Coupa 收购在数千万文档上训练过的 Rossum，把智能文档处理带入 source-to-pay 全流程。核心逻辑是通用 AI 无法替代领域专有数据与工作流历史。",
-        "example": "Asana 把 StackAI 定位为“人-agent 团队”执行跨系统工作流，Asana 提供项目上下文与归属结构；Coupa 用 Rossum 的事务型 LLM 处理跨流程文档。",
-        "company": "Asana / Coupa（及 Salesforce、Vertice）",
-        "source": "ERP Today",
-        "date": "2026-06-19",
+        "title": "ERP 厂商集体抢占「AI 执行层」，6 月并购与集成密集落地",
+        "summary": "投研观察：6 月企业软件围绕「谁掌控 AI 决策变成行动的那一层」重构。四起针对执行层的并购（Asana 收 StackAI、Coupa 收 Rossum、Salesforce 收 Contentful、Vertice 收 Vendr）显示厂商在补齐 agent 真正执行所需的能力，而非仅停留在建议层。",
+        "example": "Google Cloud 将 Gemini Enterprise 深度集成进 Workday，Workday 的 Sana 自助 Agent 进入早期访问，Gemini 成为默认模型；员工可用自然语言触发审批、薪资输入等工作流，并支持 agent-to-agent 交接与 MCP。",
+        "company": "Asana / Coupa / Salesforce / Google Cloud / Workday",
+        "source": "ERP.today",
+        "date": "2026-06-21",
         "url": "https://erp.today/2026-erp-market-ai-agents-execution/"
       },
       {
-        "title": "MegaRouter 扩展智能路由平台，把“Router 层”定位为企业 AI 核心基础设施",
-        "summary": "MegaRouter 宣布扩展其智能 AI 路由平台，新增多模型接入、智能编排和企业级治理能力。它根据任务复杂度、成本、延迟和模型可用性自动做模型选择与资源分配，并通过多模型 fallback、自动容灾、跨厂商故障切换保障稳定性。同时支持四级组织结构、多角色 RBAC 和三层预算控制。",
-        "example": "在 GPT、Claude、Gemini、DeepSeek、xAI 等模型之上提供统一接入与按任务路由，并为 agent 自主调用模型提供实时资源协调。",
-        "company": "MegaRouter",
-        "source": "GlobeNewswire（via StreetInsider）",
-        "date": "2026-06-18",
-        "url": "https://www.streetinsider.com/Globe+Newswire/Beyond+the+Model:+MegaRouter+Establishes+the+Router+Layer+as+Core+AI+Infrastructure/26664236.html"
-      },
-      {
-        "title": "Konecta 推出 Kolibri 企业 agent 编排平台，主打“开箱即用 + FinOps 成本路由”",
-        "summary": "Konecta 发布 Kolibri，捆绑约 80% 预构建、按行业定制的 agent 用例（账单、预订、理赔等客户工作流）、治理控制和内置 FinOps 仪表盘，把工作负载路由到成本更优的模型。定位为一次性 pilot 的生产级替代方案，目标是缩短 agent 项目的 time-to-value。",
-        "example": "运营团队可把账单争议等高摩擦流程映射到 Kolibri 模板，做受控生产 pilot，先测错误率、自动化提升和每笔交易成本再扩量。",
-        "company": "Konecta",
-        "source": "AI Agent Store（每周汇总）",
-        "date": "2026-06-19",
-        "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+        "title": "Deloitte 2026 企业 AI 报告：试点时代结束，但治理与技能缺口拉大",
+        "summary": "投研观察：Deloitte 与 NVIDIA 报告均指向「试点结束、规模化开始」。但效益分布不均——效率提升是主要回报，营收提升仍稀缺，且治理缺口正成为真实运营风险。",
+        "example": "Deloitte 称 66% 组织报告生产力与效率提升，但仅 20% 称 AI 带来营收增长、仅 34% 在真正重塑业务；NVIDIA 在 3,200+ 受访组织中发现 64% 已在运营中实际使用 AI。Databricks 数据则显示有治理框架的公司把 12 倍更多项目推进到生产。",
+        "company": "Deloitte / NVIDIA",
+        "source": "MarketScale（引 Deloitte State of AI in the Enterprise 2026）",
+        "date": "2026-06-25",
+        "url": "https://www.marketscale.com/industries/software-and-technology/enterprise-ai-moves-from-pilot-to-production-in-2026-but-gaps-in-governance-and-talent-persist"
       }
     ],
     "models": [
       {
-        "title": "Epoch 发布 FrontierMath v2，修订并移除问题条目以重建数学评测难度",
-        "summary": "Epoch AI 于 6 月 12 日发布 FrontierMath v2，在更正并剔除有问题的题目后重建该研究级数学评测，最难的私有题集放在 Tier 4。背景是 MMLU/MMLU-Pro 等老牌 benchmark 已在前沿模型上趋于饱和（普遍 >88%，顶端差异接近噪声），逼迫评测向更难、抗污染的方向迭代。",
-        "kind": "eval",
-        "source": "LM Council（基于 Epoch AI / Scale AI 数据）",
-        "date": "2026-06-12",
-        "url": "https://lmcouncil.ai/benchmarks"
-      },
-      {
-        "title": "6 月 15 日快照：Claude Opus 4.8 登顶 AA 智能指数，但 GPT-5.5 仍守住编码",
-        "summary": "截至 6 月 15 日，Claude Opus 4.8 以 Artificial Analysis 智能指数 61.4 居首，并在 GDPval-AA 经济任务榜以 1890 Elo 领先；但 GPT-5.5 在纯编码/软件工程仍占优（约 59.1% vs Opus 4.8 的 56.7%）。榜单已按任务“碎片化”——没有单一模型通吃。Gemini 3.1 Pro 因 1M 上下文、强多模态加 2 美元/百万输入 token 的定价被视为被低估的性价比选项。",
+        "title": "Sakana Fugu / Fugu Ultra：用「学习型编排」而非更大模型逼近前沿",
+        "summary": "东京 Sakana AI 发布 Fugu 与 Fugu Ultra——一个被封装成单一 OpenAI 兼容 API 的多智能体编排系统，内部把模型分为 thinker/worker/verifier 协作。官方称 Fugu Ultra 在工程/科学/推理基准上与 Anthropic 顶级模型 Fable 5、Mythos Preview 比肩，且规避了出口管制风险。其核心范式建立在 ICLR 2026 的 Trinity 与 Conductor 两篇论文上，把编排智能放进模型权重而非外部控制器。",
         "kind": "sota",
-        "source": "Build Fast with AI 排行榜",
-        "date": "2026-06-15",
-        "url": "https://www.buildfastwithai.com/blogs/best-ai-models-june-2026"
+        "source": "Sakana AI 官方博客 / MarkTechPost",
+        "date": "2026-06-22",
+        "url": "https://www.marktechpost.com/2026/06/22/sakana-ai-launches-sakana-fugu-an-orchestration-model-that-routes-tasks-across-a-swappable-pool-of-frontier-llms/"
       },
       {
-        "title": "开源权重持续逼近闭源前沿：GLM-5.2 领跑开源，中美模型差距收窄",
-        "summary": "本月开源阵营继续施压：GLM-5.2 在 Artificial Analysis 智能指数登顶开源权重模型，缩小与闭源前沿的差距；MiniMax 3、Qwen 3.7 Max 等中国模型以大幅更低价格（如 MiniMax 3 约 0.53 美元/百万 token）匹配西方旗舰，呈现“美国靠算力堆叠 vs 中国靠超高效率”的两条路线。OpenAI 同期推出由 173 名科学家共建、750 任务的 LifeSciBench，最强模型仅约通过三分之一，给“AI 接近自主科研”降温。",
+        "title": "Fugu Ultra 基准声称遭独立测试质疑：实测落差明显",
+        "summary": "投研观察：发布 24 小时内，独立测试者（以 Ethan Mollick 的创意编程实验为代表）报告 Fugu 的基准声称与真实使用之间存在明显落差，社区主要质疑「这到底是不是个 router/wrapper」。截至 6 月底中立第三方的可复现结果尚未跟上，厂商「与 Fable 5 比肩」的定位应被视为待验证的营销主张。",
         "kind": "eval",
-        "source": "Value Add Pulse（综合 WaveSpeed 报道）",
-        "date": "2026-06-13",
-        "url": "https://valueaddvc.com/pulse/june-2026-biggest-ai-model-launch-month-ever"
+        "source": "explainx.ai / Remote OpenClaw",
+        "date": "2026-06-23",
+        "url": "https://www.explainx.ai/blog/sakana-fugu-multi-agent-orchestration-model-2026"
       },
       {
-        "title": "训练范式讨论：把后训练技术上移到预训练/中训练",
-        "summary": "学术与业界正讨论的一条主线是把后训练（尤其 RLVR）能力前移到 mid-training/pre-training。近期工作用强后训练模型反过来为预训练提供更优监督信号（改写流式预训练数据、充当评判），以及在预训练中引入 thinking token、对“下一 token/下一组 token”做 RL 优化。背景是 RLVR 已成为前沿模型后训练的主流范式，但后训练算力占比与规模化方法仍处早期。",
+        "title": "GPT-5.6 Sol：长程 agentic 与编码刷新高水位",
+        "summary": "OpenAI GPT-5.6 Sol 定位前沿推理与长程 agentic 工作；公司称它在 Terminal-Bench 2.1（命令行规划/迭代/工具协调）创下新 SOTA，并在 ExploitBench 上以约三分之一输出 token 达到有竞争力结果，推动漏洞研究的效率前沿。Terra 主打与 5.5 同级但成本约一半，Luna 主打最快最省。",
+        "kind": "sota",
+        "source": "Releasebot（OpenAI 发布说明）",
+        "date": "2026-06-26",
+        "url": "https://releasebot.io/updates/openai"
+      },
+      {
+        "title": "后训练范式持续向「RL 前置/中训练」与可验证奖励扩散",
+        "summary": "投研观察：近期 arXiv 工作显示后训练范式正在突破「SFT 后再 RL」的固定顺序。NVIDIA 等的 RLP 把强化学习作为预训练目标前置；另有方向把 RL 优化对象从输出 token 转向内部注意力分布（RAL），以及基于 rubric 的 RL 处理「部分可验证」的视觉语言任务，扩展了 RLVR 的边界。",
         "kind": "training",
-        "source": "arXiv（Self-Improving Pretraining 等）",
-        "date": "2026-06-15",
-        "url": "https://arxiv.org/html/2601.21343v1"
+        "source": "arXiv（RLP, ICLR 2026 / RAL / Rubric-Based Post-Training II）",
+        "date": "2026-06-24",
+        "url": "https://arxiv.org/pdf/2510.01265"
       }
     ],
     "infra_invest": [
       {
-        "layer": "Model Router / AI 网关层（按任务路由不同模型）",
-        "thesis": "在模型发布节奏极快、单模型领先期被压缩到数周、且没有模型通吃任务的格局下，企业不愿被单一模型厂商锁定，转而要“一套 API + 按成本/速度/精度/隐私路由多模型 + fallback”。这是一个收过路费、随推理量规模化的卡位生意——价值正从模型本身向编排/路由层转移。需注意风险：Alphabet/CapitalG 领投意味着大厂既是被路由方又是投资方，长期可能自建网关挤压利润；且路由层利润依赖推理量持续高增。这是研究观察，非投资建议。",
+        "layer": "Model Router 层（按任务/成本/合规路由不同模型）",
+        "thesis": "投研观察（非投资建议）：当推理成为大宗商品、开源模型不断逼近闭源、且企业 agent 把 token 消耗推成「无限成本中心」（OpenRouter 引 Uber CTO 称其 2026 AI 预算几个月就用尽），价值正从模型本身向编排/路由层迁移。Router 层的逻辑是：用单一统一 API 在成本、延迟、质量与出口管制风险间动态择优，并提供治理与用量可观测性——这是有真实付费意愿、且能产生切换成本的控制点。风险是「这是不是只是个 wrapper」的护城河质疑。",
         "players": [
-          "OpenRouter（CapitalG 领投 1.13 亿美元 Series B，估值约 13 亿美元；周处理约 25 万亿 token）",
-          "MegaRouter（企业级路由+治理）",
-          "Microsoft Conductor（确定性多模型编排，开源）"
+          "OpenRouter（CapitalG 领投 $113M，约 $1.3B 估值，周吞吐约 25T tokens）",
+          "Sakana AI（Fugu，把路由做进模型权重 + 可替换 agent pool 对冲单一供应商）",
+          "Martian / Not Diamond 等任务级路由（行业同类）"
         ],
-        "summary": "OpenRouter 5 月底完成 CapitalG 领投的 1.13 亿美元 Series B，估值约 13 亿美元，一年翻倍，投资方含 Nvidia、ServiceNow、MongoDB、Snowflake、Databricks 等的投资臂；其周处理 token 半年内增长 5 倍至约 25 万亿。MegaRouter 于 6 月 18 日扩展企业级路由+治理。微软 5 月开源 Conductor，主张编排应确定性、可审计，并可把廉价模型放在分流、强模型放在推理。",
-        "source": "TechCrunch / FinSMEs / GlobeNewswire / Microsoft Open Source Blog",
-        "url": "https://techcrunch.com/2026/05/26/openrouter-more-than-doubles-valuation-to-1-3b-in-a-year/"
+        "summary": "OpenRouter 完成由 CapitalG 领投的 $113M 融资，NVentures、ServiceNow、Snowflake、Databricks 等战投跟投；其 Auto-Exacto 按延迟/成本/质量自动路由，开源模型用量已多次登顶。Sakana Fugu 则把编排做成「一个模型指挥所有模型」，并明确把可替换 pool 作为对冲出口管制/单一供应商依赖的设计。",
+        "source": "SiliconANGLE / trendingtopics / marktechpost",
+        "url": "https://siliconangle.com/2026/05/26/openrouter-raises-113m-bring-order-enterprise-ai-inference-routing/"
       },
       {
-        "layer": "AI Agent 编排层（多 agent 控制平面 / “agent 界的 Kubernetes”）",
-        "thesis": "企业从部署单个 agent 转向管理由不同团队、不同平台构建的成千上万 agent，核心难题从“造 agent”变成“让 agent 在近实时下被治理与审计”。AWS、IBM 把编排层类比为容器管理的 Kubernetes——是协调专用 agent 完成销售闭环、事件响应、端到端客服的关键基础设施。投资逻辑落在控制平面（策略执行、可观测性、FinOps 成本路由）和互操作协议（MCP/A2A）。风险提示：Gartner 预计到 2027 年 40%+ agentic 项目会因成本失控/价值不清/治理失败被砍，胜出者是把 agent 当“有 KPI 的基础设施组件”来管的玩家。研究观察，非投资建议。",
+        "layer": "AI Agent 编排与「发现-编排-支付」基础设施层",
+        "thesis": "投研观察（非投资建议）：VC 正从「应用 wrapper」轮转到深层 agentic 基础设施——多智能体路由引擎、持久状态、人在环安全闸门、跨厂商互操作。逻辑是企业只有 11–14% 的 agent 试点真正进入生产，Series A 投资人开始要求专有路由/状态/安全的硬证据；资本高度集中在少数核心编排平台，feature-thin 的小玩家面临 down-round。新机会点在 agent-native 的『服务发现+编排+即时支付』轨道（agentic commerce）。",
         "players": [
-          "IBM watsonx Orchestrate（演进为多 agent 控制平面，Think 2026）",
-          "Microsoft Agent 365（KPMG 6 月 9 日全球部署）",
-          "Salesforce Agentforce / Agent Fabric",
-          "Cognizant Neuro AI（跨平台编排控制层）"
+          "Orthogonal（Pantera 领投 $4.3M seed，agent 服务发现/编排/支付层）",
+          "Wonderful（Insight 领投 $150M Series B，企业 agent 部署/编排）",
+          "IBM watsonx Orchestrate / Microsoft Agent 365（大厂企业级多 agent 编排）"
         ],
-        "summary": "本周/近周信号密集：6 月 9 日 KPMG 与微软扩展合作，KPMG 全球部署 Microsoft Agent 365 与 365 Copilot 来管理、监控、保护跨组织的 AI agent；Cognizant 6 月 18 日把 Neuro AI 作为编排控制层接入 ServiceNow agent。行业普遍把编排层视为下一阶段企业 AI 的关键卡位，但治理成熟度仍是项目存活的分水岭。",
-        "source": "Microsoft Source / AI Agent Store / IBM Newsroom",
-        "url": "https://news.microsoft.com/source/2026/06/09/kpmg-and-microsoft-scale-trusted-enterprise-ai-agents-globally-through-deployment-of-agent-365-and-copilot/"
+        "summary": "Orthogonal 完成 Pantera 领投、YC 等跟投的 $4.3M 种子轮，做让 agent 即时发现服务、编排并完成支付的层，已在 GTM 团队与 AI-native 创业公司投产、接入 35+ API。更广泛地，2026 年早期一级融资中安全、操作系统与企业编排是大额首轮的主战场。",
+        "source": "PRNewswire / New Market Pitch / SiliconANGLE",
+        "url": "https://www.prnewswire.com/news-releases/orthogonal-raises-4-3m-seed-for-ai-agent-service-discovery-orchestration-and-payments-across-the-internet-302806969.html"
       }
     ],
-    "takeaway": "本周主线是“执行与编排取代模型本身成为价值高地”：企业端密集收购执行层、部署多 agent 控制平面（KPMG×微软、Cognizant×ServiceNow），模型层因发布如洪流、领先期缩到数周而加速商品化（Opus 4.8 登顶但 GPT-5.5 守编码、开源 GLM-5.2/中国模型逼近），资金与卡位明显流向 Router/编排层（OpenRouter 13 亿估值、MegaRouter 扩张）。",
-    "week_of": "2026-06-21",
-    "generated_at": "2026-06-21 15:08 UTC",
+    "takeaway": "本周主线是「编排层」正式成为前沿与投资焦点：Sakana Fugu 用学习型路由逼近前沿（但实测存疑）、OpenRouter 巨额融资坐实 Model Router 价值迁移，而 OpenAI GPT-5.6 受限发布与 ERP 厂商抢占执行层，则共同标志企业 AI 已从试点转入由治理与控制点决定胜负的规模化阶段。",
+    "week_of": "2026-06-28",
+    "generated_at": "2026-06-28 14:45 UTC",
     "model": "claude-opus-4-8"
   }
 }
