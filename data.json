@@ -1,8 +1,9 @@
 {
   "meta": {
-    "last_updated": "2026-07-12",
-    "next_update": "2026-07-19",
-    "update_notes": "2026-07-12: No new confirmed data points found."
+    "last_updated": "2026-07-19",
+    "next_update": "2026-07-26",
+    "update_notes": "2026-07-19: Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API.",
+    "progress_error": "2026-07-19: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API."
   },
   "models": [
     {
