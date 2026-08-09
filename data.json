@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-08-02",
-    "next_update": "2026-08-09",
-    "update_notes": "2026-08-02: Past 7d: OpenAI ARR ~$41.3B & Anthropic ~$74.1B (tracking data); Moonshot closed $3.5B at $35B val; Mistral in talks ~$23B val (Samsung, not closed)."
+    "last_updated": "2026-08-09",
+    "next_update": "2026-08-16",
+    "update_notes": "2026-08-09: Moonshot/Kimi closed ~$3.5B round at ~$35B valuation (K3 launch, IPO prep); ARR ~$300M. Other major rounds predate the 7-day window."
   },
   "models": [
     {
@@ -441,111 +441,108 @@
   "ai_progress": {
     "enterprise": [
       {
-        "title": "Kyndryl 2026报告：企业AI部署率57%，但仅11%达成核心目标",
-        "summary": "企业AI渗透率一年内从35%跃升至57%，但只有11%同时达成前两大目标，且员工准备度不升反降——仅23%的商业领袖认为团队已充分准备，比2025年降6个点。落地能力（而非模型质量）成为真正瓶颈。",
-        "example": "Kyndryl调研1,100名领导者，发现近八成受访者担心AI发展速度将超越其组织的人力、治理和运营模型的承接能力。",
-        "company": "Kyndryl",
-        "source": "MarketScale / Kyndryl 2026 People Readiness Report",
-        "date": "2026-07-26",
-        "url": "https://www.marketscale.com/industries/software-and-technology/ai-is-deployed-in-57-of-enterprises-but-only-11-have-hit-their-top-two-goals"
+        "title": "Cisco 向全部 9 万名员工铺开个人 AI Agent，采用按任务路由模型控成本",
+        "summary": "8 月起 Cisco 给约 9 万名员工每人配一个 AI Agent，系统按任务性质动态选最合适的模型以平衡性能与成本，且大量基础设施自建/本地化以控成本和数据安全。财务侧 AI 已起草 80–90% 的 MD&A 披露初稿；同季度裁员约 4000 人，是迄今最大规模的企业内部 Agent 部署之一。",
+        "example": "CFO Mark Patterson 称自建 AI stack、按用例查询不同模型是最有效方式；Agent 任务动辄消耗数十万到百万 token，本地化部署用于控成本。",
+        "company": "Cisco",
+        "source": "Fortune / HRKatha / BusinessToday",
+        "date": "2026-08-01",
+        "url": "https://fortune.com/2026/07/01/cisco-cfo-ai-agents-finance-employees-mark-patterson/"
       },
       {
-        "title": "SAP调研：企业AI的ROI落在‘意外的地方’——出洞察而非省成本",
-        "summary": "企业AI支出普遍上升，但回报出现在最初商业论证没预期的地方。多数团队按‘减员增效/降本’立项，实际收益却体现在洞察生成与客户互动质量提升，迫使IT与财务重新设计KPI，否则即使技术真正见效也可能因对不上原指标而被砍预算。",
-        "example": "CIO Dive援引SAP调研：企业报告AI帮助挖掘商业洞察、改善客户互动，但未带来预期的成本节约或时间效率。",
-        "company": "SAP",
-        "source": "MarketScale / CIO Dive 引用 SAP survey",
-        "date": "2026-07-27",
-        "url": "https://www.marketscale.com/industries/software-and-technology/enterprise-ai-is-generating-business-insights-but-not-saving-money-and-the-governance-gap-is-widening"
+        "title": "Rippling 推出 AI Spend Console，追踪员工/团队 AI 花费",
+        "summary": "在自身 AI 使用失控后，Rippling 本周发布 AI Spend Console，用于追踪个人与团队层面的员工 AI 支出。反映企业端从'铺工具'转向'管成本与治理'——AI 支出正成为需要专门管控的新成本中心。",
+        "example": "该产品定位为企业 AI 花费可视化与管控工具，对应 Uber CTO 曾提到几个月就耗尽全年 AI 预算这类真实痛点。",
+        "company": "Rippling",
+        "source": "LLM Stats / Axios",
+        "date": "2026-08-05",
+        "url": "https://llm-stats.com/ai-news"
       },
       {
-        "title": "Encore AI（原Insait IO）融资3000万美元，把客服Agent做成收入引擎",
-        "summary": "本周Encore AI完成3000万美元A轮，由Team8、Planven、The Garage领投，用于扩张其企业级agentic客户交互平台。其差异化在于把agent定位为直接收入引擎而非‘挡电话’的降本工具，主打金融等强监管行业。",
-        "example": "其Interaction Mining技术拆解顶尖人工客服的具体动作，再部署AI agent在语音、聊天、IVR、表单渠道自主或协同地转化线索、完成申请、催收余额、驱动增购。",
-        "company": "Encore AI (原 Insait IO)",
-        "source": "aiagentstore.ai (Week of July 30, 2026)",
-        "date": "2026-07-30",
+        "title": "Cognizant 成立专门的 EMEA AI Unit，主推多 Agent 生产化",
+        "summary": "Cognizant 宣布设立面向欧洲、中东与非洲客户的专门 AI 单元，提供 Foundation / Accelerate / Transform 三档服务，覆盖战略、快速原型到多 Agent 生产化。信号意义在于大型系统集成商开始把客户推向多 Agent 工作流而非单模型试点。",
+        "example": "对卖入 EMEA 的厂商意味着企业 RFI 将默认要求多 Agent 设计；此前 7 月底 Cognizant 还与 Anthropic 扩大合作，把 Claude 带给企业客户。",
+        "company": "Cognizant",
+        "source": "AI Agents News (aiagentstore.ai)",
+        "date": "2026-08-03",
         "url": "https://aiagentstore.ai/ai-agent-news/this-week"
       },
       {
-        "title": "WAIC 2026：阿里从‘模型竞赛’转向‘已部署Agent系统’",
-        "summary": "在WAIC 2026上，阿里展示Qwen Office集成QoderWork、Wukong、MuleRun等agent产品，并推出带多agent编排的Agent Native Cloud及DAMO灵枢研究agent，明显从追模型转向落地agent系统，是国内大厂企业端Agent化的信号。",
-        "example": "阿里同时展示了Agent Native Cloud的多agent编排能力，凸显从模型竞赛向可部署agent系统的转向。",
-        "company": "阿里巴巴 / 通义千问",
-        "source": "aiagentstore.ai (Week of July 30, 2026)",
-        "date": "2026-07-30",
-        "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+        "title": "Anthropic × LogicGate 将 Agent 能力嵌入 GRC 合规软件",
+        "summary": "Anthropic、Ode 与 LogicGate 宣布合作，为 LogicGate 客户加速新的 Agent 能力，帮助企业更快构建、落地和更新 GRC（治理、风险与合规）程序。显示 Agent 正进入判断密集型、强合规的企业工作流，而不只是任务自动化。",
+        "example": "GRC 是高度依赖分析师判断的场景，把 Agent 嵌入意味着合规更新周期可被显著压缩。",
+        "company": "Anthropic / LogicGate",
+        "source": "Agentic AI News (agentic.ai)",
+        "date": "2026-08-04",
+        "url": "https://agentic.ai/news"
       }
     ],
     "models": [
       {
-        "title": "Anthropic发布Claude Opus 5：近前沿智能，价格砍半",
-        "summary": "Anthropic 7月24日发布Claude Opus 5，是其两个月内第四款模型。定位‘接近Fable 5前沿智能、价格只有其一半’，$5/$25每百万token（与Opus 4.8持平），1M上下文，带low/medium/high effort档位。在多数公开基准追平或超越Fable 5，agentic编码（Frontier-Bench 43.3%）和新颖推理（ARC-AGI-3 30.2%）上胜出，已成Claude Max默认模型。投资含义：前沿能力的价格快速下探，‘不必付前沿价就能拿近前沿结果’正在成为常态。",
+        "title": "OpenAI 新模型 Astra 被内部标为可能触及最高'Critical'网络安全风险，暂停部分开发",
+        "summary": "8 月 7 日 OpenAI 表示，Astra 内部评测在'agentic coding 与网络安全'上取得显著进展，强到公司无法排除其达到 Preparedness Framework 的 Critical 级别——这是 OpenAI 首次给自家模型打出这一最高档（此前 GPT-5.6-Sol 最高仅 High）。公司暂停部分开发、启用隔离测试环境与自动熔断监控，Sam Altman 称将推迟发布以确保安全。这是当前后训练把模型推向前所未有能力边界的直接证据。",
+        "kind": "eval",
+        "source": "The Decoder / Reuters / Yahoo Finance",
+        "date": "2026-08-07",
+        "url": "https://the-decoder.com/openai-flags-its-new-astra-model-as-potentially-reaching-the-highest-cybersecurity-risk-level-for-the-first-time/"
+      },
+      {
+        "title": "8 月榜单：Claude Opus 5 领跑 Intelligence 与 Agentic 双榜，并夺下编码王座",
+        "summary": "据 Artificial Analysis，8 月初 Claude Opus 5（7/24 发布）以 Intelligence Index 61、Agentic Index 55.3 居首，定价 $5/$25 每百万 token，约为 Fable 5 的一半，并在 Arena 两个投票制编码榜均排第一、GDPval-AA v2 专业交付榜以 1858 领先。横向看，Anthropic 6/30 起把 Sonnet 5 设为默认；Google 的 Gemini 3.5 Pro 仍未发布，据 Bloomberg 报道进度落后数月、编码尤其未达内部目标。",
         "kind": "sota",
-        "source": "explainx.ai / emergent.sh / codersera",
-        "date": "2026-07-24",
-        "url": "https://emergent.sh/news/claude-opus-5-launch"
+        "source": "Fello AI / Artificial Analysis",
+        "date": "2026-08-07",
+        "url": "https://felloai.com/best-ai-models/"
       },
       {
-        "title": "Kimi K3对决Claude Fable 5：开源2.8T挑战闭源前沿，8:6分胜负",
-        "summary": "Moonshot 7月16-17日发布Kimi K3，是史上最大开源权重模型（约2.8T参数），首次在Artificial Analysis智能指数上进入前四（~57，仅次于Fable 5约60、GPT-5.6约59）。厂商自报14项基准Fable 5赢8、K3赢6；K3在前端代码竞技场登顶、长周期agentic编码（SWE Marathon）领先，价格仅为Fable 5约1/3（$3/$15 vs $10/$50）。‘最强模型’已不再是一个连贯问题，‘特定工作负载约束下的最优模型’才是。",
-        "kind": "eval",
-        "source": "codersera / datasciencedojo / digitalapplied",
-        "date": "2026-07-17",
-        "url": "https://codersera.com/blog/kimi-k3-benchmarks-comparison-2026/"
+        "title": "DeepSeek V4-Flash 0731 成为新的性价比首选，压低推理价格",
+        "summary": "7 月 31 日发布的 DeepSeek V4-Flash 0731 以 $0.14/$0.28 每百万 token 成为价格-性能新标杆，本周持续在各追踪站点被列为廉价端首选。叠加 NVIDIA Nemotron 3 Nano Omni（外部实测约 324 tokens/s 最快）与 MiniMax M3（最佳开源权重）等，开源/廉价端正快速逼近前沿，强化'按任务选模型'的经济逻辑。",
+        "kind": "sota",
+        "source": "Fello AI / BenchLM / Evertune",
+        "date": "2026-08-05",
+        "url": "https://benchlm.ai/"
       },
       {
-        "title": "后训练新范式：Distilled RL 把教师监督融进RL目标",
-        "summary": "7月19日arXiv论文提出Distilled RL，针对纯RL‘粗粒度结果监督、信用分配难、难引入新知识’与on-policy蒸馏‘无条件模仿教师logits、跨模型族失效’两类范式的短板，将教师监督直接并入RL目标，含反向重要性采样带裁剪、负样本重置、序列级几何归一化三个组件，实现向学生迁移原本不可得的知识。反映后训练正从‘RL vs 蒸馏’二选一走向融合。",
+        "title": "训练范式共识：后训练 RL 已成前沿主要 scaling 轴，Agentic RL / RLVR 为焦点",
+        "summary": "业界与学界持续强调后训练已成主战场：Cursor 曾披露 Composer 1.5 的 RL 后训练算力超过基座预训练算力，o 系列、Constitutional AI、DeepSeek-R1 指向同一转向。当前研究热点从 RLHF 转向可验证奖励（RLVR）与长程工具使用的 Agentic RL，用编程验证器替代易被 reward hacking 的学习型奖励模型；NVIDIA/Nemotron Labs 本周还展示了基于 Prime Intellect 的托管 RLVR 训练流程。",
         "kind": "training",
-        "source": "arXiv:2607.17247",
-        "date": "2026-07-19",
-        "url": "https://arxiv.org/abs/2607.17247"
-      },
-      {
-        "title": "模型发布进入‘一周七款’节奏，横向评测已无法穷尽",
-        "summary": "7月17-23日一周内五家厂商连发七款模型（Kimi K3、三款Qwen、Gemini 3.6 Flash三件套、poolside的Laguna S 2.1、蚂蚁Ling-3.0-flash），外加Black Forest Labs预告首个多模态前沿模型FLUX 3。同一周Cline实测显示Fable 5比K3快3.4倍完成同一修bug任务，而K3整体便宜2.3倍——快、便宜、少token分属不同模型。这是Model Router层的直接催化剂。",
-        "kind": "eval",
-        "source": "digitalapplied.com",
-        "date": "2026-07-24",
-        "url": "https://www.digitalapplied.com/blog/seven-days-seven-releases-july-2026-model-wave"
+        "source": "digitalapplied.com / Frank's World (Prime Intellect + NVIDIA)",
+        "date": "2026-08-03",
+        "url": "https://www.franksworld.com/2026/08/03/unlocking-reinforcement-learning-potential-open-models-training-with-prime-intellect/"
       }
     ],
     "infra_invest": [
       {
-        "layer": "Model Router 层（按任务路由不同模型的AI Gateway）",
-        "thesis": "模型发布已到‘一周七款’，没有单一模型在成本/延迟/质量三维全胜，且各家价差与断供风险拉大——路由从‘可选优化’变成‘承重基础设施’。据行业统计2026年已有37%企业在生产环境用5个以上模型；调好路由的团队可在质量几乎不降的情况下降账单40-85%（复杂度分级路由把简单请求送廉价模型、推理任务送前沿模型）。护城河正从模型转向‘路由+评测闭环’——把路由决策绑定真实流量上的质量评分。研究观察，非投资建议。",
+        "layer": "Model Router 层（按任务/成本路由不同模型）",
+        "thesis": "多模型时代下，企业不愿被单一厂商锁定，且 Agent 大量吃 token 把 AI 变成'无限成本中心'，路由层能把简单请求打到便宜模型、复杂请求打到前沿模型，实测可降本 30–60%。中立不偏袒任一模型的定位在企业采购中是真实卖点，一旦成为连接层就很难被替换——这是典型的关键基础设施位置。研究观察，非投资建议。",
         "players": [
-          "OpenRouter (400+模型/60+供应商)",
-          "Portkey (250+模型)",
-          "Inworld Router",
-          "Braintrust Gateway (路由+评测一体)",
-          "Bifrost / Maxim AI (开源，企业VPC/气隙部署)",
-          "LiteLLM"
+          "OpenRouter",
+          "Portkey",
+          "Martian",
+          "Not Diamond"
         ],
-        "summary": "LLM router是应用与多家模型间的一层，按成本/延迟/质量/业务规则把每个请求分发到最合适的模型；AI gateway再叠加统一API、故障转移、负载均衡与可观测性。路由本身增加的延迟（规则<1ms、embedding约5ms、语义/ML分类器50-100ms）相对500-2000ms的推理时间只是个位数百分比，却能显著省钱。",
-        "source": "Braintrust / Inworld / digitalapplied / Swfte (2026)",
-        "url": "https://www.digitalapplied.com/blog/llm-model-routing-2026-cost-quality-optimization-engineering-guide"
+        "summary": "OpenRouter 5 月由 Alphabet 旗下 CapitalG 领投 $1.13 亿 B 轮、估值约 $13 亿，NVIDIA/Snowflake/Databricks 参投；平台周 token 量半年内从 5 万亿飙至 25 万亿，支持 8M+ 开发者、400+ 模型，靠在推理花费上抽约 5% 变现，ARR 约 $50M。Portkey 偏可观测/DevOps，Martian 偏成本优化路由。Cisco 9 万人自建路由是该逻辑的企业侧背书。",
+        "source": "TechCrunch / Sacra / SquaredTech",
+        "url": "https://techcrunch.com/2026/05/26/openrouter-more-than-doubles-valuation-to-1-3b-in-a-year/"
       },
       {
-        "layer": "AI Agent 编排层（多agent控制平面/编排引擎）",
-        "thesis": "随基础模型能力与定价趋同，防御性正转向agent编排、执行基础设施与企业控制点。2026年至今一级融资占比回升至约45%的deal、43%的资本，安全、操作系统、企业编排等‘控制平面’类别尤为吃香；投资人奖励‘可衡量的工作流替代’，对通用agent壳与宽泛自主性叙事失去耐心。7月AI agent赛道单月融资18亿美元、12+笔，企业自动化占58%，估值环比涨约40%。风险点：Gartner警告到2027年逾40%的agentic项目面临取消，仅约21%组织有成熟的自主agent治理模型。研究观察，非投资建议。",
+        "layer": "AI Agent 编排层（多 Agent 协调 / 交互协议）",
+        "thesis": "企业从单 Agent 试点转向'Agent 舰队'，多数生产失败源于编排设计而非单个 Agent 能力；编排层负责任务分解、Agent 间通信、状态持久化与失败恢复，是决定生产成败的中间件。MCP 与 A2A（由 Linux Foundation 治理）成为两层互操作骨干，87% IT 领导把互操作性列为优先级——协议标准化+治理正把编排固化为持久基础设施位。研究观察，非投资建议。",
         "players": [
-          "LangGraph",
+          "LangGraph / LangChain",
           "CrewAI",
-          "SAP AI Agent Hub",
-          "阿里 Agent Native Cloud",
-          "Ushur Agentic Platform",
-          "Quiq (Verified Intelligence 护栏层)"
+          "Google ADK",
+          "OpenAI Agents SDK",
+          "Composio（MCP Gateway）"
         ],
-        "summary": "编排系统部署一队各司其职的agent（Planner拆解、Specialist执行、Reviewer校验、Coordinator管交接），把AI从聊天机器人变成可运营的‘数字劳动力’；有LangGraph实现称多agent相比单agent任务准确率提升约70%。但需明确决策权与kill-switch，否则会放大而非扩展混乱。",
-        "source": "newmarketpitch / aifunding.me / viston.tech (2026)",
-        "url": "https://newmarketpitch.com/blogs/news/agentic-ai-funding-trends"
+        "summary": "A2A 协议已获 150+ 组织采用并进入主要云平台的企业生产；观测层 LangSmith / Langfuse / Arize Phoenix 成为最广泛部署的配套。Deloitte 估算自主 Agent 市场 2026 年约 $85 亿、2030 年达 $350–450 亿，编排质量是能否兑现的关键变量。",
+        "source": "FifthRow / ranksquire / thinking.inc / RAG Weaver（Deloitte TMT 2026）",
+        "url": "https://www.fifthrow.com/blog/ai-agent-orchestration-goes-enterprise-the-april-2026-playbook-for-systematic-innovation-risk-and-value-at-scale"
       }
     ],
-    "takeaway": "本周主线是‘价格战下探前沿+落地能力成瓶颈’：Anthropic用半价Opus 5把近前沿能力平民化、Moonshot开源K3以1/3价逼近闭源前沿，模型多到一周七款；而企业侧57%已部署却仅11%达标、ROI落在洞察而非降本——因此真正的投资价值正从‘造模型’上移到Model Router与Agent编排这两个把碎片化模型和乱糟糟流程收拢成可衡量结果的控制层。",
-    "week_of": "2026-08-02",
-    "generated_at": "2026-08-02 14:25 UTC",
+    "takeaway": "本周主线：模型能力冲到'安全刹车'边界（OpenAI 因 Astra 首次触及 Critical 网络安全档暂停开发、Anthropic Opus 5 登顶），而企业侧则从铺工具转向管成本与治理——Cisco 9 万人按任务路由的自建 Agent 舰队与 Rippling 的 AI 花费管控，正把'路由层+编排层'这两个 Infra 位置的投资逻辑坐实。",
+    "week_of": "2026-08-09",
+    "generated_at": "2026-08-09 13:43 UTC",
     "model": "claude-opus-4-8"
   }
 }
