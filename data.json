@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-08-23",
-    "next_update": "2026-08-30",
-    "update_notes": "2026-08-23: Anthropic run-rate revenue reached ~$65B end of July 2026 (Sacra/Reuters), up from $47B in May. OpenAI $852B valuation reaffirmed via $7B tender (Aug 18). No other confirmed changes in past 7 days."
+    "last_updated": "2026-08-30",
+    "next_update": "2026-09-06",
+    "update_notes": "2026-08-30: Past-7-day confirmed items: Anthropic ~$65B ARR (mid-Aug), OpenAI ~$40B ARR, Perplexity ARR ~$750M w/ Nvidia $30B+ round in talks (not closed). Cognition ARR ~$1B (round unclosed)."
   },
   "models": [
     {
@@ -157,7 +157,7 @@
       "uc": "AI搜索引擎",
       "cat": "search",
       "stage": "growth",
-      "arr": 500,
+      "arr": 750,
       "arrg": 400,
       "mau": 100,
       "maug": 250,
@@ -352,7 +352,7 @@
       "uc": "AI软件工程师Agent",
       "cat": "coding",
       "stage": "growth",
-      "arr": 492,
+      "arr": 1000,
       "arrg": 500,
       "mau": 0.1,
       "maug": 400,
@@ -441,99 +441,111 @@
   "ai_progress": {
     "enterprise": [
       {
-        "title": "Target 首设首席AI官，AI 治理正被提升到 C-suite 层级",
-        "summary": "Target 在 8 月设立首任 Chief AI Officer，并配一名专注用户体验的高管，是运营复苏战略的一部分而非孤立技术举措。这反映一个跨行业模式：AI 治理已重要到不能只作为 CTO 下的次要职能。带 P&L 责任、有跨部门权限的 CAIO，和只提建议不担责的卓越中心是完全不同的定位。",
-        "example": "Target 首任 CAIO + UX 高管双岗设立，AI 领导层与既有技术组织分离",
-        "company": "Target",
-        "source": "MarketScale（引 WSJ, Katherine Hamilton）",
-        "date": "2026-08-13",
-        "url": "https://www.marketscale.com/industries/software-and-technology/enterprise-ais-roi-reckoning-budget-discipline-open-weight-models-and-industrial-acquisitions-are-reshaping-how-operators-deploy"
+        "title": "McKinsey 2026 State of AI：部署在涨，盈利仍平",
+        "summary": "McKinsey 最新《State of AI 2026》调查显示，越来越多企业加大 AI 部署、相信投资终将回报，但真正报告盈利提升的比例基本没动；约 37% 受访者称 AI 对 EBIT 有一定影响，与 2025 年调查基本持平。核心矛盾是投入普遍、财务回报集中在少数头部组织。",
+        "example": "McKinsey 调查了全球跨行业 1,719 名专业人士与业务负责人，仅 37% 将部分 EBIT 影响归因于 AI 使用，与去年持平。",
+        "company": "McKinsey (调查对象为全球跨行业企业)",
+        "source": "The Register 报道 McKinsey State of AI 2026",
+        "date": "2026-08-25",
+        "url": "https://www.theregister.com/ai-and-ml/2026/08/25/mckinsey_says_enterprise_ai_is_finally_on_the_road_to_roi/"
       },
       {
-        "title": "Meta 发新开源权重模型，扎克伯格押注“常在线 AI 智能体”为企业下一阶段",
-        "summary": "8 月 10 日 Meta 发布新开源权重模型，扎克伯格公开力挺开源路线，并发表约 6500 字长文阐述 AI 战略，核心是把常在线 AI 智能体作为企业部署的下一阶段。对企业的现实意义在于成本结构：开源权重可自托管、去掉按 token 的 API 费用，规模化推理边际成本显著下降，但微调、托管和治理责任全部转移到企业自身。真正的成本问题不是 token 单价，而是用远超任务所需的强模型带来的组织成本。",
-        "example": "Meta 8/10 发布新开源权重模型 + 扎克伯格 6500 字 AI 战略长文",
-        "company": "Meta",
-        "source": "MarketScale（引 Reuters / WSJ）",
-        "date": "2026-08-15",
-        "url": "https://www.marketscale.com/industries/software-and-technology/74-of-enterprises-have-deployed-ai-but-half-still-cant-measure-what-its-worth"
+        "title": "制造业进入'治理即运行时'阶段：多智能体上生产线",
+        "summary": "过去一周制造业 agentic AI 落地更强调'把治理做进运行时'：ForceEquals 的 Agent Momentum 作为控制+运营层，拦截 agent 动作、把关键决策升级给人工审批、再把结果反馈回 agent 组合，专为跨业务单元批量管理多个 agent 设计；TestMu(原 LambdaTest)推出 Agent Assurance，从代码派生端到端测试、在 CI/CD 中给 agent 把关。反映企业端从单点 agent 转向'agent 舰队'的治理需求。",
+        "example": "ForceEquals 正式发布 Agent Momentum，作为拦截 agent 动作、升级人工审批并将结果回灌 agent 组合的控制与运营层，面向跨业务单元的多 agent 管理。",
+        "company": "ForceEquals / TestMu / Aily Labs",
+        "source": "AIAgentStore 制造业 agentic AI 周报(截至 2026-08-25)",
+        "date": "2026-08-25",
+        "url": "https://aiagentstore.ai/ai-agent-news/topic/manufacturing"
       },
       {
-        "title": "企业 AI 供给快于团队吸收能力，ROI 分化加剧",
-        "summary": "8 月 8 日一份基于 Forbes 调查的报告发现，企业收到厂商交付 AI 能力的速度，快于团队能够吸收或部署的速度。当前企业 AI 正被三股力量重塑：预算纪律、开源权重模型的普及、以及重大的产业并购。这解释了为何投入很高但回报分化——ROI 最强的用例集中在高频重复、有清晰成功指标、且设有人工复核例外流程的场景，文档处理是最明确的赢家。",
-        "example": "Forbes 调查报告 + Skycrumbs 汇总：文档/数据处理回本期常低于 12 个月，客服自动化在常规交易为正回报、复杂服务则参差",
-        "company": "多家（跨行业调查）",
-        "source": "MarketScale（引 Forbes, Jonathan Reichental）",
-        "date": "2026-08-13",
-        "url": "https://www.marketscale.com/industries/software-and-technology/enterprise-ais-roi-reckoning-budget-discipline-open-weight-models-and-industrial-acquisitions-are-reshaping-how-operators-deploy"
+        "title": "Google 给 Gemini Enterprise 加灵活定价与硬性花费上限",
+        "summary": "针对企业对 AI 成本不可预测的顾虑，Google Cloud 为 Gemini Enterprise 增加按量付费(替代按席位订阅)、可设月度项目花费上限并在触顶时暂停 agent API 调用，以及承诺用量折扣；还计划错峰任务处理最高打五折。目的是降低企业在摸清实际使用量前的试用门槛。这是把'成本可控'做成企业采购卖点的典型动作。",
+        "example": "企业可选择按量付费而非按席位订阅、设置月度项目花费上限以暂停 agent API 调用，并可享受承诺用量折扣及最高 50% 的错峰处理折扣。",
+        "company": "Google Cloud (Gemini Enterprise)",
+        "source": "MarketingProfs AI Update(过去一周综述)",
+        "date": "2026-08-28",
+        "url": "https://www.marketingprofs.com/opinions/2026/55727/ai-update-august-28-2026-ai-news-and-views-from-the-past-week"
       },
       {
-        "title": "Obsidian Security 8500 万美元融资，AI 智能体正催生新的企业安全层",
-        "summary": "Obsidian Security 8 月以 11 亿美元估值融资 8500 万美元，因监控 AI 智能体与企业数据交互的安全产品需求上升；公司称近 70% 的客户现已允许 AI 智能体与业务数据交互。含义是：AI 智能体正在围绕身份、权限和业务系统访问，催生一个新的企业安全层。同期 IBM 宣布与 Together AI 的多年合作，投入 2.4 亿美元在 IBM Cloud 部署 NVIDIA HGX B300 集群，面向高性能 AI 负载与开源模型推理。",
-        "example": "Obsidian Security：11 亿美元估值、8500 万美元融资，客户中约 70% 已放行 AI 智能体接触业务数据",
-        "company": "Obsidian Security（及 IBM × Together AI）",
-        "source": "Orevia News（引 Reuters）",
-        "date": "2026-08-16",
-        "url": "https://orevianews.com/enterprise-ai-news/"
+        "title": "Agent 身份与标准整合：Okta Agent SSO + A2A 并入 AAIF",
+        "summary": "企业把 agent 当作一等身份来管理正在成型：Okta 推出 Agent SSO，让 AI agent 在 Universal Directory 中被当作身份、用与人类员工相同的访问控制来管理；同时 Google 的 A2A 协议正式并入 Linux 基金会主导的 Agentic AI Foundation(AAIF)，与 Anthropic 的 MCP 同处中立治理之下。标准与身份层收敛降低了多厂商 agent 架构的集成摩擦，利好企业避免单一供应商锁定。",
+        "example": "AAIF 现有超过 250 家成员，包括 AWS、Anthropic、Block、Bloomberg、Cloudflare、Google、Microsoft、OpenAI 等云厂商与 AI 实验室，将关键 agent 标准整合进同一技术栈。",
+        "company": "Okta / Google (A2A) / Linux Foundation AAIF",
+        "source": "AIAgentStore 周报(Week of Aug 28, 2026)",
+        "date": "2026-08-28",
+        "url": "https://aiagentstore.ai/ai-agent-news/this-week"
       }
     ],
     "models": [
       {
-        "title": "后训练成为新护城河：前沿实验室 RL 算力正超越预训练",
-        "summary": "业界正形成共识：RL 后训练已成为每个前沿实验室的主要扩展轴。最有力的公开证据是 Cursor 披露 Composer 1.5 在 RL 后训练上花的算力超过了基座模型预训练的算力——这是首次有实验室用大白话写明这点。学术侧则指出 RLVR（可验证奖励强化学习）自 2024 秋在 Tülu 3 被提出后算力规模急剧膨胀；作为对比，DeepSeek R1 后训练仅用约 5% 总算力（RL 部分 14.7 万 H800 GPU 小时，vs 预训练 280 万）。奖励作弊仍是核心难题——模型只优化你度量的，而非你想要的。",
-        "kind": "training",
-        "source": "Digital Applied / arXiv 2504.12501 (RLHF 综述) / O'Reilly (Sharon Zhou 系列)",
-        "date": "2026-08-12",
-        "url": "https://www.oreilly.com/radar/the-two-pillars-of-post-training-reinforcement-learning-and-supervised-fine-tuning/"
-      },
-      {
-        "title": "前沿模型迭代提速：Claude Mythos Preview 领跑但非生产可用",
-        "summary": "截至 2026 年年中，Claude Mythos Preview 在 GPQA Diamond 上以 94.6% 领先，但它是 preview/研究版本，不面向生产负载。在安全基准 SANDBOX-ESCAPEBENCH 上，Claude Opus 4.5（2025/11/24 发布）成功率 56%，而 2026/4/7 公布的 Mythos Preview 在 100% 样本上至少成功一次——基准饱和速度明显快于早年 MMLU/GPQA 需 1–2 年。实务提示：预览模型属于观察名单而非上线技术栈，最终选型要在自有代表性数据上评测。",
+        "title": "8 月成模型发布'井喷月'，独立评测明显滞后",
+        "summary": "据行业追踪，2026 年 8 月创下 20 天内 5+ 家厂商发布 11 款主要模型的纪录，包括史上最大开源权重发布(Qwen3.8-Max，2.4T 参数)、匿名前沿模型 OX Alpha(据称在编码基准上超过 GPT-5.6 并在 24 小时内被生产采用)、Google Gemini 3.7 Flash(在 3.6 发布仅 3 周后)、Meta 重返开源权重等。发布速度已超过独立验证能力，'基准滞后'成为部署侧的现实难题。",
         "kind": "sota",
-        "source": "Mad Devs（SOTA 综述）/ arXiv 2603.02277（SANDBOX-ESCAPEBENCH）",
-        "date": "2026-08-18",
-        "url": "https://maddevs.io/glossary/state-of-the-art-models/"
+        "source": "Local AI Zone 8 月 AI 进展综述",
+        "date": "2026-08-23",
+        "url": "https://local-ai-zone.github.io/blog/ai-updates-august-2026.html"
       },
       {
-        "title": "“谁买 SOTA？”—OpenRouter 上 84% 的 token 并非最强模型",
-        "summary": "一份基于 Artificial Analysis 与 OpenRouter 数据的分析指出：8 月 10 日当周，承载约 80% 命名 token 的少数模型，token 加权智能水平约落后全球目录 SOTA 23%（约达前沿质量的 77%），混合单价约 0.50 美元/百万 token，而顶级模型（Fable 5）约 20 美元/百万 token，相差约 40 倍。结论是 84% 的 token 并非 SOTA；软件工程架构与安全设计是少数值得为最强模型付费的清晰用例。这为“按任务路由”的 router 论提供了硬数据支撑。",
+        "title": "Grok 4.6：不换底座，靠加长后训练买性能",
+        "summary": "SpaceXAI 于 8 月 12 日发布的 Grok 4.6 明确不是新基础模型：沿用 Grok 4.5 底座，通过更长的补充训练(后训练)运行换取能力提升，Intelligence Index 从 56 提到 61，而价格($2/$6)不变。这是'后训练成为主要 scaling 轴'趋势的又一佐证——前沿实验室越来越把增量算力投在后训练/RL 而非重训底座。",
+        "kind": "training",
+        "source": "Fello AI《Best AI Models August 2026》",
+        "date": "2026-08-27",
+        "url": "https://felloai.com/best-ai-models/"
+      },
+      {
+        "title": "后训练/RL 成为前沿'新护城河'：算力正从预训练转向后训练",
+        "summary": "业界与学界的共识正在强化：RL 后训练已悄然成为各前沿实验室的主要 scaling 轴。有据可查的最清晰案例是 Cursor 披露 Composer 1.5 在 RL 后训练上花的算力超过预训练底座；o 系列、Constitutional AI、DeepSeek-R1 都指向同一转向。这重构了对过去一年模型迭代的理解——护城河从预训练规模移向了后训练/RL 的方法与算力。",
+        "kind": "training",
+        "source": "Digital Applied《The Post-Training Revolution》",
+        "date": "2026-08-23",
+        "url": "https://www.digitalapplied.com/blog/post-training-revolution-rl-new-moat-2026"
+      },
+      {
+        "title": "BenchAlign/BenchLM 8 月榜：闭源前沿领跑，开源权重逼近",
+        "summary": "据 BenchAlign 榜单，Claude Mythos 5 以 83.04 总分居首，Claude Fable 5(82.79)、Claude Opus 5(82.59)紧随；同时 8 月 BenchLM 榜显示开源权重模型(MiniMax M3、Grok 4.5、NVIDIA Nemotron 等)在质量上与闭源旗舰直接竞争，并在速度与部署灵活性上更优。评测方也提示：模型出货速度快过独立验证，不少新模型尚无经独立核实的分数。",
         "kind": "eval",
-        "source": "Tomasz Tunguz（tomtunguz.com）",
-        "date": "2026-08-16",
-        "url": "https://tomtunguz.com/model-release-exhaustion/"
+        "source": "GMI Cloud《AI Model Benchmarks August 2026》",
+        "date": "2026-08-23",
+        "url": "https://www.gmicloud.ai/en/blog/ai-model-benchmarks-august-2026-open-weight-models-catch-the-frontier"
       }
     ],
     "infra_invest": [
       {
-        "layer": "Model Router / AI 网关层（按任务路由不同模型）",
-        "thesis": "随基础模型能力与定价趋同，防御力正从模型转移到编排与路由层。逻辑有二：一是成本——把每个请求发给能胜任的最便宜模型，各家报告可省 40–85% 的账单（RouteLLM 在受控评测中省 85% 成本、保留 95% 的 GPT-4 质量）；二是中立性与多模型——OpenRouter CEO 明言“智能将是多模型的，没有单一模型对所有任务最优，开发者需要一个中立层来编排管理”。Stripe 以约 75 亿美元收购 OpenRouter（较 3 个月前 13 亿估值溢价约 5.4 倍），把 token 路由变成了支付基础设施问题——这是该层被巨头验证的最强信号。风险：路由本身增加延迟，且巨头正在整合该层，独立玩家窗口在收窄。",
+        "layer": "Model Router / AI 网关层(按任务/成本/质量路由多模型)",
+        "thesis": "当各家基础模型在能力与定价上趋同、企业普遍多模型并用时，'把每个请求路由到最便宜且达标的模型'成为可量化的降本控制点，路由层因此成为聚合流量与议价权的战略位置。投资逻辑：占据请求入口=占据支出可见性与计费入口，天然具备网络效应与低替换动机；风险是被支付/云厂商吞并或商品化。近一周的标志性事件是 Stripe 以约 70 亿美元收购 OpenRouter，把模型路由变成'支付基础设施'问题。",
         "players": [
-          "OpenRouter（被 Stripe 收购）",
-          "Ramp Router（8/20 新发）",
+          "OpenRouter(被 Stripe 收购)",
+          "Stripe",
+          "Ramp Router",
+          "Snowflake Cortex AI Gateway",
           "Azure AI Foundry Model Router",
-          "Not Diamond / RouteLLM / LiteLLM",
-          "Inworld Router"
+          "Not Diamond / LiteLLM / RouteLLM"
         ],
-        "summary": "Stripe 于 8 月 16–19 日宣布收购 OpenRouter，Bloomberg 报道价格逾 70 亿美元（NYT 约 75 亿、Axios 逾 80 亿含股，其中约 15 亿分配给创始人）；OpenRouter 跨 80+ 提供方、400+ 模型做路由优化。8 月 20 日 Ramp 也推出自有 model router“Router”，2026 年内免费。这是研究观察、非投资建议。",
-        "source": "Bloomberg / Stripe Newsroom / Axios / CNBC / TechCrunch",
+        "summary": "Stripe 确认收购 OpenRouter(据 Bloomberg 8/16 报道约 70 亿美元+，较 5 月 13 亿美元估值溢价约 5.4x)，OpenRouter 可跨 80+ 提供方的 400+ 模型路由与优化 token 使用；同期 Ramp 于 8/19-20 开放自研 Router(称平均省 40% 推理成本)、Snowflake 于 8/18 为 Cortex AI Gateway 上线动态模型路由。多方入场印证路由层正从工具走向控制点。",
+        "source": "Stripe 官方公告 / TechCrunch / CNBC / Bloomberg / Ramp(TechCrunch) / Artificial Intelligence News(Snowflake)",
         "url": "https://stripe.com/newsroom/news/stripe-agrees-to-acquire-openrouter"
       },
       {
-        "layer": "AI Agent 编排 / 控制平面层",
-        "thesis": "企业不再部署单一超级智能体，而是多个专业化智能体（规划/执行/复核/协调）协同，天然创造“智能体编排”平台的机会；LangGraph 的实现显示多智能体相较单智能体任务准确率提升约 70%。资本正从通用 chatbot 转向垂直智能体与控制点：2026 年至今北美吃下约 82% 的资金（约 8.63 亿美元/23 笔），智能体开发平台类别到 5 月约 1.24 亿美元/5 笔，反映对控制平面、安全操作系统、治理基座与企业编排的重新关注。投资人正奖励可度量的工作流替代、安全与执行基础设施，而对泛用 agent wrapper 越来越没耐心。风险：多智能体易“放大混乱”，需明确决策权与 kill-switch。这是研究观察、非投资建议。",
+        "layer": "AI Agent 编排 / 治理运行时层(控制平面、agent 身份与审计)",
+        "thesis": "企业从单 agent 走向'agent 舰队'后，真正的瓶颈从'能否嵌入'变成'能否安全运行与治理'——嵌入容易、运营难(约 80% 企业嵌入 agent，仅约 31% 上生产)。投资逻辑:控制平面/治理运行时/agent 身份与审计是新的企业控制点，投资人正奖励'可衡量的工作流替代、安全、执行基础设施与企业控制点'，而对通用 agent 壳越来越没耐心;风险是被基础模型厂商或云平台内建功能吞噬('wrapper 风险')。近一周有 Okta Agent SSO、ForceEquals Agent Momentum、AccuKnox AgentZ、TestMu Agent Assurance 等密集发布。",
         "players": [
-          "LangGraph",
-          "CrewAI",
-          "企业级 agent 控制平面/治理基座类初创（含 2026 上半年多笔首轮融资）"
+          "Okta (Agent SSO)",
+          "ForceEquals (Agent Momentum)",
+          "AccuKnox (AgentZ)",
+          "TestMu (Agent Assurance)",
+          "Obsidian Security",
+          "Aily Labs"
         ],
-        "summary": "New Market Pitch（7/13）与 Viston（多智能体指南）显示 agent 编排/控制平面成为资本新焦点；2026 上半年首轮融资占比回升至约 45%，安全、操作系统与企业编排是大额首轮的集中方向。（注：本条底层数据多为过去数周内的行业分析而非过去 7 天的单一事件，权重低于 Router 层。）",
-        "source": "New Market Pitch / Viston.tech（行业分析）",
+        "summary": "投资人正奖励可衡量的工作流替代、安全、执行基础设施与企业控制点，对通用 agent 壳与宽泛自主性宣称失去耐心;2026 年至今 agent 开发平台/控制平面类融资回暖(截至 5 月约 5 笔、约 1.24 亿美元)。过去一周治理与身份层新品密集(Okta Agent SSO、ForceEquals、AccuKnox AgentZ、TestMu),显示控制平面成为兵家必争之地。",
+        "source": "New Market Pitch(agentic 融资趋势) / AIAgentStore 周报 / Agentic.ai",
         "url": "https://newmarketpitch.com/blogs/news/agentic-ai-funding-trends"
       }
     ],
-    "takeaway": "本周主线是「路由层被支付巨头验证」：Stripe 约 75 亿美元收购 OpenRouter、Ramp 自建 Router，坐实“多模型 + 按任务路由”是新基础设施控制点；同时企业端 AI 从试点转向治理与 ROI 硬核算账（Target 设 CAIO、Meta 押注常在线智能体、开源权重重塑成本结构），而模型侧共识是后训练/RL 算力已成新护城河。",
-    "week_of": "2026-08-23",
-    "generated_at": "2026-08-23 13:27 UTC",
+    "takeaway": "本周主线是'控制点争夺'：Stripe 70 亿美元收 OpenRouter 把模型路由抬成支付级基础设施，Ramp/Snowflake 同步入局；企业端从'能否用 AI'转向'能否治理 agent 舰队并算清 ROI'(McKinsey 显示盈利仍平)，Okta 身份、A2A 并入 AAIF、各家治理运行时密集发布；模型侧 8 月成井喷月、独立评测明显滞后，后训练/RL 作为新护城河被进一步验证。以上为研究观察，非投资建议。",
+    "week_of": "2026-08-30",
+    "generated_at": "2026-08-30 17:06 UTC",
     "model": "claude-opus-4-8"
   }
 }
