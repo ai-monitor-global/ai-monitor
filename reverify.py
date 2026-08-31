@@ -32,6 +32,9 @@ Rules:
 - Every patch needs a real source (Bloomberg, The Information, Reuters, CNBC,
   TechCrunch, Sacra, a company announcement, an official blog) plus the date
   that source reported it.
+- When a company's OWN official disclosure conflicts with a media estimate,
+  use the official figure, and say in `notes` what the media number was and
+  why you did not use it. Do not prefer the larger number.
 - {units}
 - Emit a patch ONLY where your verified value differs from the current value
   shown below. If a field is already right, leave it out.
@@ -68,13 +71,28 @@ APP_EXTRA = """4. Own-model status -> one entry in `own_model_patches`: `status`
    itself); `models` lists their names; `token_share` is the disclosed share of
    token calls served by its own models, as text, or an empty string if it has
    never been disclosed. Only emit this if the status differs from what is
-   stored above.
+   stored above. Search specifically for a disclosed share ("X% of tokens",
+   "majority of requests", "most of our inference") - that share is the single
+   most useful number here, so look for it before settling for an empty
+   token_share. Use "primary" when the company says its own models serve most
+   inference, not merely that they exist.
+7. Patchable fields here are only: arr, arrg, mau, maug, val, uc, cat, stage,
+   biz, ti, ownModel. `tokM`/`tokG` do not exist on an app.
 5. Monthly active users -> `mau` (millions), and `maug` (%)
 6. `cat` (one of: {cats}), `stage` (pmf|growth|scale), `biz`
    (B2B|B2C|B2B+B2C|B2C+B2B), `ti` token intensity (low|med|high|ultra)
 """
 MODEL_EXTRA = """4. Monthly inference token volume -> `tokM` (trillions/month), `tokG` (%)
 5. `region` (US|CN|EU)
+
+For a model provider, `arr` means annualised revenue from serving models -
+model API plus first-party model subscriptions. It EXCLUDES compute or
+infrastructure leasing, cloud/hosting resale, hardware, and any unrelated
+revenue of a parent company or sibling division. If the only figure you can
+find is a blended segment that mixes model revenue with compute leasing,
+do NOT patch `arr`; say so in `notes` instead.
+Patchable fields here are only: arr, arrg, tokM, tokG, trainPerRun,
+runsPerYear, val, uc, region. `mau` does not exist on a model provider.
 """
 
 SCHEMA = {
