@@ -563,13 +563,24 @@ def ask(system: str, user: str, schema: dict, max_uses: int = 8,
     if not api_key:
         raise RuntimeError("ANTHROPIC_API_KEY not set")
 
+    # Escape hatch: if constraining the response format ever conflicts with the
+    # server-side search tool, set DISABLE_STRUCTURED_OUTPUT=1 to fall back to
+    # asking for JSON in the prompt. _extract_json handles both, and the
+    # validation gate is unaffected either way.
+    output_config = {"effort": effort}
+    if os.environ.get("DISABLE_STRUCTURED_OUTPUT") in (None, "", "0"):
+        output_config["format"] = {"type": "json_schema", "schema": schema}
+    else:
+        system = system + ("\n\nReturn ONLY a JSON object matching this schema, "
+                           "with no prose and no markdown fences:\n"
+                           + json.dumps(schema, ensure_ascii=False))
+
     response = anthropic.Anthropic(api_key=api_key).messages.create(
         model=MODEL,
         max_tokens=max_tokens,
         system=system,
         thinking={"type": "adaptive"},
-        output_config={"effort": effort,
-                       "format": {"type": "json_schema", "schema": schema}},
+        output_config=output_config,
         tools=[_web_search(max_uses)],
         messages=[{"role": "user", "content": user}],
     )

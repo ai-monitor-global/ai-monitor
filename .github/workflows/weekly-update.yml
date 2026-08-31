@@ -56,6 +56,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}
+          DISABLE_STRUCTURED_OUTPUT: ${{ vars.DISABLE_STRUCTURED_OUTPUT }}
           MODE: ${{ inputs.mode || 'weekly' }}
           DRY: ${{ inputs.dry_run && '--dry-run' || '' }}
         run: |
