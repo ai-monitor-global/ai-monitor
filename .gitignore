@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+_log.txt
+_dom*.html
