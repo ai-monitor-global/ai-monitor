@@ -596,23 +596,111 @@ def ask(system: str, user: str, schema: dict, max_uses: int = 8,
     return _extract_json(response.content)
 
 
-# The patch object every pass emits. Kept in one place so all three passes go
-# through an identical, fully-required schema.
-PATCH_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "section":   {"type": "string", "enum": ["models", "apps"]},
-        "name":      {"type": "string", "description": "exact name as it appears in the dataset"},
-        "field":     {"type": "string"},
-        "new_value": {"description": "number for metric fields, string for enum/text fields, object for ownModel"},
-        "as_of":     {"type": "string", "description": "YYYY-MM-DD the figure was reported"},
-        "source":    {"type": "string", "description": "publication + date; state the FX conversion if the figure was not quoted in USD"},
-        "url":       {"type": "string"},
-        "conf":      {"type": "string", "enum": ["high", "medium"]},
-    },
-    "required": ["section", "name", "field", "new_value", "as_of", "source", "url", "conf"],
-    "additionalProperties": False,
+# --------------------------------------------------------------------------
+# Response schemas.
+#
+# Structured outputs compile the schema into a closed grammar, so every
+# subschema needs a concrete `type`. A single `new_value` that could be a
+# number, a string or an object has no such type - that is a 400, not a
+# warning. So patches are split by value type instead, and "unknown" is
+# encoded as an empty string rather than a nullable/union type (neither
+# `["number","null"]` nor `anyOf` is used anywhere here).
+# --------------------------------------------------------------------------
+_PROV_PROPS = {
+    "as_of":  {"type": "string", "description": "YYYY-MM-DD the figure was reported"},
+    "source": {"type": "string", "description": "publication + date; state the FX conversion if the figure was not quoted in USD"},
+    "url":    {"type": "string", "description": "link to the source, or an empty string"},
+    "conf":   {"type": "string", "enum": ["high", "medium"]},
 }
+OPTIONAL_NUMBER = {
+    "type": "string",
+    "description": "a plain number as text, or an empty string when unknown/unsourced",
+}
+
+
+def _patch_item(value_schema: dict, with_section: bool) -> dict:
+    props = {"name": {"type": "string",
+                      "description": "exact name as it appears in the dataset"},
+             "field": {"type": "string"},
+             "new_value": value_schema}
+    if with_section:
+        props["section"] = {"type": "string", "enum": ["models", "apps"]}
+    props.update(_PROV_PROPS)
+    return {"type": "object", "properties": props,
+            "required": sorted(props), "additionalProperties": False}
+
+
+def _own_item(with_section: bool) -> dict:
+    props = {
+        "name": {"type": "string"},
+        "status": {"type": "string", "enum": sorted(OWN_MODEL_STATUS)},
+        "token_share": dict(OPTIONAL_NUMBER,
+                            description="share of token calls served by its own "
+                                        "models, 0-100 as text; empty if undisclosed"),
+        "models": {"type": "array", "items": {"type": "string"}},
+    }
+    if with_section:
+        props["section"] = {"type": "string", "enum": ["models", "apps"]}
+    props.update(_PROV_PROPS)
+    return {"type": "object", "properties": props,
+            "required": sorted(props), "additionalProperties": False}
+
+
+def patch_properties(with_section: bool = True) -> dict:
+    """The three patch arrays every pass shares."""
+    return {
+        "metric_patches": {
+            "type": "array",
+            "description": "numeric fields: arr, arrg, val, mau, maug, tokM, "
+                           "tokG, trainPerRun, runsPerYear",
+            "items": _patch_item({"type": "number"}, with_section),
+        },
+        "text_patches": {
+            "type": "array",
+            "description": "text/enum fields: uc, cat, stage, biz, ti, region",
+            "items": _patch_item({"type": "string"}, with_section),
+        },
+        "own_model_patches": {
+            "type": "array",
+            "description": "own-model status for an app (apps only)",
+            "items": _own_item(with_section),
+        },
+    }
+
+
+def opt_number(raw):
+    """'' -> None, '70' -> 70.0. Used for every optional numeric in a response."""
+    if raw is None:
+        return None
+    if isinstance(raw, (int, float)) and not isinstance(raw, bool):
+        return float(raw)
+    text = str(raw).strip().replace(",", "")
+    if not text or text.lower() in ("null", "none", "n/a", "unknown", "-"):
+        return None
+    match = re.search(r"-?\d+(?:\.\d+)?", text)
+    return float(match.group()) if match else None
+
+
+def flatten_patches(result: dict, section: str = None) -> list:
+    """Fold the three typed arrays back into one uniform patch list."""
+    out = []
+    for key in ("metric_patches", "text_patches"):
+        for item in result.get(key) or []:
+            patch = dict(item)
+            if section:
+                patch["section"] = section
+            out.append(patch)
+    for item in result.get("own_model_patches") or []:
+        patch = {k: item.get(k) for k in ("name", "as_of", "source", "url", "conf")}
+        patch["section"] = section or item.get("section") or "apps"
+        patch["field"] = "ownModel"
+        patch["new_value"] = {
+            "status": item.get("status"),
+            "tokenShare": opt_number(item.get("token_share")),
+            "models": item.get("models") or [],
+        }
+        out.append(patch)
+    return out
 
 UNITS_RULE = (
     "Units are absolute: arr in USD millions ($M), val in USD billions ($B), "

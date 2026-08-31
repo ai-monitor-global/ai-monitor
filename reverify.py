@@ -36,7 +36,9 @@ Rules:
 - Emit a patch ONLY where your verified value differs from the current value
   shown below. If a field is already right, leave it out.
 - If you cannot verify a field at all, leave it out. Never guess to fill a gap.
-- Echo `name` exactly as given and `section` exactly as given."""
+- Numeric fields go in `metric_patches`, text/enum fields in `text_patches`,
+  own-model status in `own_model_patches`. An array with nothing to say stays
+  empty. Echo `name` exactly as given."""
 
 USER = """Today is {today}. Re-verify this entry.
 
@@ -60,10 +62,13 @@ Also sanity-check the descriptive fields: `uc` should name the company's
 current flagship products in Chinese, short (under ~30 chars) - if it still
 names a product generation that has been superseded, patch it."""
 
-APP_EXTRA = """4. Own-model status -> `ownModel` as {{"status": "none"|"hybrid"|"primary",
-   "tokenShare": <0-100 or null>, "models": [...]}}. "primary" means most of
-   its inference now runs on models it trained itself. Include the token share
-   if the company has disclosed one.
+APP_EXTRA = """4. Own-model status -> one entry in `own_model_patches`: `status` is "none"
+   (all third-party API), "hybrid" (own model shipped but most traffic still
+   third-party), or "primary" (most inference now runs on models it trained
+   itself); `models` lists their names; `token_share` is the disclosed share of
+   token calls served by its own models, as text, or an empty string if it has
+   never been disclosed. Only emit this if the status differs from what is
+   stored above.
 5. Monthly active users -> `mau` (millions), and `maug` (%)
 6. `cat` (one of: {cats}), `stage` (pmf|growth|scale), `biz`
    (B2B|B2C|B2B+B2C|B2C+B2B), `ti` token intensity (low|med|high|ultra)
@@ -74,12 +79,12 @@ MODEL_EXTRA = """4. Monthly inference token volume -> `tokM` (trillions/month), 
 
 SCHEMA = {
     "type": "object",
-    "properties": {
+    "properties": dict(common.patch_properties(with_section=False), **{
         "name": {"type": "string"},
         "notes": {"type": "string", "description": "what you could not verify, and why; Chinese"},
-        "patches": {"type": "array", "items": common.PATCH_SCHEMA},
-    },
-    "required": ["name", "notes", "patches"],
+    }),
+    "required": ["name", "notes", "metric_patches", "text_patches",
+                 "own_model_patches"],
     "additionalProperties": False,
 }
 
@@ -160,9 +165,9 @@ def main() -> int:
             print("   FAILED: {}".format(exc), file=sys.stderr)
             failures.append("{}: {}".format(entity["name"], exc))
             continue
-        found = result.get("patches") or []
-        # The model is told the section, but pin it anyway so a mislabelled
-        # patch can never be applied to the wrong table.
+        found = common.flatten_patches(result, section=section)
+        # The model is told which entity it is looking at, but pin the identity
+        # anyway so a mislabelled patch can never hit the wrong row.
         for patch in found:
             patch["section"] = section
             patch["name"] = entity["name"]

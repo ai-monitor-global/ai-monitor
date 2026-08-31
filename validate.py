@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import copy
 import json
+import os
 import sys
 
 import common
@@ -288,14 +289,152 @@ def selftest() -> int:
         print("{} {}".format("PASS" if ok else "FAIL", label))
         failures += 0 if ok else 1
 
-    total = len(CASES) + len(FORCE_CASES) + len(checks)
+    # the schema lint must catch every shape that has actually broken
+    for label, bad in BAD_SCHEMAS:
+        found = lint_schema(bad)
+        ok = bool(found)
+        print("{} lint catches: {}".format("PASS" if ok else "FAIL", label))
+        failures += 0 if ok else 1
+    for name, schema in _live_schemas():
+        found = lint_schema(schema)
+        ok = not found
+        print("{} lint clean: {} schema".format("PASS" if ok else "FAIL", name))
+        if not ok:
+            failures += 1
+            for p in found:
+                print("      {}".format(p))
+
+    total = (len(CASES) + len(FORCE_CASES) + len(checks)
+             + len(BAD_SCHEMAS) + len(_live_schemas()))
     print("\n{} / {} self-test checks passed".format(total - failures, total))
+    return 1 if failures else 0
+
+
+# --------------------------------------------------------------------------
+# Schema preflight. An invalid response schema is rejected by the API before
+# any inference happens, so this costs ~nothing and catches the class of bug
+# that otherwise only shows up 30 wasted search calls into a backfill.
+# --------------------------------------------------------------------------
+def lint_schema(node, path=""):
+    """Mirror of the rules structured outputs enforces: every subschema needs
+    one concrete `type`, no unions, objects fully `required` and closed.
+
+    The live 400 this was written for:
+      output_config.format.schema: Invalid schema: Schema type is missing for
+      schema: {'description': 'number for metric fields, ...'}
+    """
+    problems = []
+    if not isinstance(node, dict):
+        return problems
+    if any(k in node for k in ("properties", "items", "enum", "type",
+                               "description", "additionalProperties")):
+        kind = node.get("type")
+        if kind is None:
+            problems.append("{}: no `type`".format(path or "<root>"))
+        elif not isinstance(kind, str):
+            problems.append("{}: `type` is a union {!r}".format(path or "<root>", kind))
+        for key in ("anyOf", "oneOf", "allOf"):
+            if key in node:
+                problems.append("{}: uses {}".format(path or "<root>", key))
+        if node.get("type") == "object":
+            props = node.get("properties") or {}
+            missing = sorted(set(props) - set(node.get("required") or []))
+            if missing:
+                problems.append("{}: not in `required`: {}".format(
+                    path or "<root>", missing))
+            if node.get("additionalProperties") is not False:
+                problems.append("{}: additionalProperties is not False".format(
+                    path or "<root>"))
+    for name, sub in (node.get("properties") or {}).items():
+        problems += lint_schema(sub, "{}.{}".format(path, name))
+    if isinstance(node.get("items"), dict):
+        problems += lint_schema(node["items"], path + "[]")
+    return problems
+
+
+# The two shapes that actually broke, kept as regression fixtures.
+BAD_SCHEMAS = [
+    ("untyped property (the real 400)", {
+        "type": "object",
+        "properties": {"new_value": {"description": "number or string or object"}},
+        "required": ["new_value"], "additionalProperties": False}),
+    ("union type", {
+        "type": "object",
+        "properties": {"val": {"type": ["number", "null"]}},
+        "required": ["val"], "additionalProperties": False}),
+    ("property missing from required", {
+        "type": "object",
+        "properties": {"a": {"type": "string"}, "b": {"type": "string"}},
+        "required": ["a"], "additionalProperties": False}),
+    ("open object", {
+        "type": "object",
+        "properties": {"a": {"type": "string"}}, "required": ["a"]}),
+    ("untyped nested inside an array", {
+        "type": "object",
+        "properties": {"xs": {"type": "array", "items": {
+            "type": "object", "properties": {"v": {"description": "?"}},
+            "required": ["v"], "additionalProperties": False}}},
+        "required": ["xs"], "additionalProperties": False}),
+]
+def _live_schemas():
+    import update_data
+    import reverify
+    import discover
+    import update_progress
+    return [("update_data", update_data.SCHEMA),
+            ("reverify", reverify.SCHEMA),
+            ("discover", discover.SCHEMA),
+            ("update_progress", update_progress.SCHEMA)]
+
+
+def schema_check() -> int:
+    schemas = _live_schemas()
+    failures = 0
+    for name, schema in schemas:
+        local = lint_schema(schema)
+        print("{} {} (local lint)".format("PASS" if not local else "FAIL", name))
+        for p in local:
+            print("      {}".format(p))
+            failures += 1
+
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        print("\nno ANTHROPIC_API_KEY: skipped the live API check")
+        return 1 if failures else 0
+
+    import anthropic
+    client = anthropic.Anthropic()
+    for name, schema in schemas:
+        try:
+            # Mirror the real request's parameter combination (thinking +
+            # effort + format + the search tool), minus any actual searching,
+            # so the preflight tests what the passes actually send.
+            client.messages.create(
+                model=common.MODEL, max_tokens=2048,
+                thinking={"type": "adaptive"},
+                output_config={"effort": "low",
+                               "format": {"type": "json_schema", "schema": schema}},
+                tools=[common._web_search(1)],
+                messages=[{"role": "user", "content":
+                           "Do not search. Reply with a minimal object of "
+                           "empty strings, zeros and empty arrays."}],
+            )
+            print("PASS {} (API accepted the schema)".format(name))
+        except Exception as exc:  # noqa: BLE001
+            text = str(exc)
+            if "Invalid schema" in text or "invalid_request_error" in text:
+                print("FAIL {} (API rejected the schema)\n      {}".format(name, text[:400]))
+                failures += 1
+            else:
+                # a rate limit or transient error is not a schema verdict
+                print("WARN {} (inconclusive): {}".format(name, text[:160]))
     return 1 if failures else 0
 
 
 def main() -> int:
     if "--selftest" in sys.argv:
         return selftest()
+    if "--schema-check" in sys.argv:
+        return schema_check()
     with open(common.DATA_FILE, "r", encoding="utf-8") as f:
         data = json.load(f)
     errors, warnings = check(data)

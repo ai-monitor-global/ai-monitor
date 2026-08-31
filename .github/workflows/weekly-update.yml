@@ -47,6 +47,15 @@ jobs:
       - name: Self-test the validation gate
         run: python validate.py --selftest
 
+      # Structured outputs reject an invalid response schema before any
+      # inference runs, so this is ~free and it is a hard gate: a bad schema
+      # otherwise only surfaces 30 wasted search calls into a backfill.
+      - name: Preflight response schemas
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}
+        run: python validate.py --schema-check
+
       # Each pass records its own outcome into data.json (meta.runs) so the
       # dashboard can say so out loud. Failures are collected rather than
       # aborting, so one dead pass cannot block the others from committing -

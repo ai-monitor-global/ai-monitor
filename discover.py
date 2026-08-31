@@ -62,11 +62,13 @@ or not at all: {focus}.
 For each company return: exact `name`; `uc` = a short Chinese description of
 what it does (under ~30 chars); `cat` from {cats}; `stage` (pmf|growth|scale);
 `biz` (B2B|B2C|B2B+B2C|B2C+B2B); `ti` token intensity (low|med|high|ultra);
-`arr` ($M, mandatory); `val` ($B, null if no closed round); `arrg` (%, null if
-unknown); `mau` (millions, null if unknown); `maug` (%, null if unknown);
-`ownModel` = {{"status": "none"|"hybrid"|"primary", "tokenShare": <0-100 or
-null>, "models": [...]}}; `aiNative` and `independent` booleans; `why` = one
-Chinese sentence on why it matters; and `source` / `url` / `as_of` / `conf`.
+`arr` ($M, a real number, mandatory); `val` ($B); `arrg` (%); `mau`
+(millions); `maug` (%) - these four are text: give the number as text, or an
+EMPTY STRING when you could not source it. Never write "null" or a guess.
+`ownModel` = {{"status": "none"|"hybrid"|"primary", "token_share": "<0-100 as
+text, empty if undisclosed>", "models": [...]}}; `aiNative` and `independent`
+booleans; `why` = one Chinese sentence on why it matters; and `source` / `url`
+/ `as_of` / `conf`.
 
 Separately, in `retire`, list any company in the tracked universe above that
 has been acquired and no longer reports independently, or has shut down."""
@@ -80,19 +82,21 @@ CANDIDATE_SCHEMA = {
         "stage": {"type": "string", "enum": sorted(common.ENUMS["stage"])},
         "biz":   {"type": "string", "enum": sorted(common.ENUMS["biz"])},
         "ti":    {"type": "string", "enum": sorted(common.ENUMS["ti"])},
-        "arr":   {"type": "number"},
-        "val":   {"type": ["number", "null"]},
-        "arrg":  {"type": ["number", "null"]},
-        "mau":   {"type": ["number", "null"]},
-        "maug":  {"type": ["number", "null"]},
+        # Unknowns are empty strings, not nulls: a union/nullable type has no
+        # single concrete type and structured outputs rejects it.
+        "arr":   {"type": "number", "description": "annualised revenue in $M; mandatory"},
+        "val":   dict(common.OPTIONAL_NUMBER, description="valuation in $B from a CLOSED round; empty if none"),
+        "arrg":  dict(common.OPTIONAL_NUMBER, description="revenue YoY growth %; empty if unknown"),
+        "mau":   dict(common.OPTIONAL_NUMBER, description="monthly actives in millions; empty if unknown"),
+        "maug":  dict(common.OPTIONAL_NUMBER, description="MAU growth %; empty if unknown"),
         "ownModel": {
             "type": "object",
             "properties": {
                 "status": {"type": "string", "enum": sorted(common.OWN_MODEL_STATUS)},
-                "tokenShare": {"type": ["number", "null"]},
+                "token_share": dict(common.OPTIONAL_NUMBER, description="0-100 as text; empty if undisclosed"),
                 "models": {"type": "array", "items": {"type": "string"}},
             },
-            "required": ["status", "tokenShare", "models"],
+            "required": ["status", "token_share", "models"],
             "additionalProperties": False,
         },
         "aiNative":    {"type": "boolean"},
@@ -136,6 +140,22 @@ SCHEMA = {
 
 def _num(v):
     return isinstance(v, (int, float)) and not isinstance(v, bool)
+
+
+def normalise(cand: dict) -> dict:
+    """Coerce the response's empty-string-means-unknown numerics into real
+    numbers/None, and rename token_share to the stored `tokenShare`."""
+    out = dict(cand)
+    for field in ("arr", "val", "arrg", "mau", "maug"):
+        out[field] = common.opt_number(out.get(field))
+    own = dict(out.get("ownModel") or {})
+    if "token_share" in own:
+        own["tokenShare"] = common.opt_number(own.pop("token_share"))
+    own.setdefault("status", "none")
+    own.setdefault("tokenShare", None)
+    own.setdefault("models", [])
+    out["ownModel"] = own
+    return out
 
 
 def gate(data: dict, cand: dict):
@@ -240,7 +260,8 @@ def main() -> int:
         return 1
 
     promoted, queued, skipped = [], [], []
-    for cand in result.get("candidates") or []:
+    for raw in result.get("candidates") or []:
+        cand = normalise(raw)
         verdict, reason = gate(data, cand)
         label = "{} ({})".format(cand.get("name"), reason)
         if verdict == "promote":

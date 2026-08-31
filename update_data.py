@@ -43,18 +43,18 @@ Look for: closed funding rounds, ARR/revenue milestones, valuation marks,
 token-volume disclosures, and a launch that means an app now serves a
 meaningful share of its traffic from its own model (patch `ownModel`).
 
-`ownModel` value shape: {{"status": "none"|"hybrid"|"primary", "tokenShare":
-<0-100 or null>, "models": ["name", ...]}} - "primary" means most inference is
-now its own model."""
+Put numeric changes in `metric_patches`, text/enum changes in `text_patches`,
+and own-model changes in `own_model_patches`. Leave an array empty if it has
+nothing in it."""
 
 SCHEMA = {
     "type": "object",
-    "properties": {
+    "properties": dict(common.patch_properties(with_section=True), **{
         "has_updates": {"type": "boolean"},
         "summary": {"type": "string", "description": "max 200 chars, Chinese"},
-        "patches": {"type": "array", "items": common.PATCH_SCHEMA},
-    },
-    "required": ["has_updates", "summary", "patches"],
+    }),
+    "required": ["has_updates", "summary", "metric_patches", "text_patches",
+                 "own_model_patches"],
     "additionalProperties": False,
 }
 
@@ -78,7 +78,7 @@ def main() -> int:
             common.save(data)
         return 1
 
-    patches = result.get("patches") or []
+    patches = common.flatten_patches(result)
     applied, rejected = common.apply_patches(data, patches, PASS, dry_run=dry)
     common.recompute_momentum(data)
     common.note_updates(data, applied)
