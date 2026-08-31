@@ -37,8 +37,15 @@ Rules:
   why you did not use it. Do not prefer the larger number.
 - {units}
 - Emit a patch ONLY where your verified value differs from the current value
-  shown below. If a field is already right, leave it out.
-- If you cannot verify a field at all, leave it out. Never guess to fill a gap.
+  shown below.
+- CRITICAL: when a stored value turns out to be ALREADY CORRECT, do not stay
+  silent - put it in `confirmations` with the source and date that establishes
+  it. A confirmation matters as much as a patch: a value carrying no recorded
+  source is treated downstream as never verified, so skipping this makes the
+  dashboard claim the number is stale when you just confirmed it. At minimum,
+  every field you looked at should end up in either a patch or a confirmation.
+- If you genuinely cannot source a field at all, leave it out of both and say
+  so in `notes`. Never guess to fill a gap.
 - Numeric fields go in `metric_patches`, text/enum fields in `text_patches`,
   own-model status in `own_model_patches`. An array with nothing to say stays
   empty. Echo `name` exactly as given."""
@@ -100,9 +107,26 @@ SCHEMA = {
     "properties": dict(common.patch_properties(with_section=False), **{
         "name": {"type": "string"},
         "notes": {"type": "string", "description": "what you could not verify, and why; Chinese"},
+        "confirmations": {
+            "type": "array",
+            "description": "fields you checked and found ALREADY correct - "
+                           "record the source anyway",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "field": {"type": "string"},
+                    "as_of": {"type": "string", "description": "YYYY-MM-DD the source reported it"},
+                    "source": {"type": "string"},
+                    "url": {"type": "string"},
+                    "conf": {"type": "string", "enum": ["high", "medium"]},
+                },
+                "required": ["field", "as_of", "source", "url", "conf"],
+                "additionalProperties": False,
+            },
+        },
     }),
     "required": ["name", "notes", "metric_patches", "text_patches",
-                 "own_model_patches"],
+                 "own_model_patches", "confirmations"],
     "additionalProperties": False,
 }
 
@@ -167,7 +191,7 @@ def main() -> int:
         len(targets), "y" if len(targets) == 1 else "ies",
         ", ".join(e["name"] for _, e in targets)))
 
-    all_patches, failures = [], []
+    all_patches, failures, confirmed = [], [], []
     for section, entity in targets:
         print("\n-- {} ({})".format(entity["name"], section))
         extra = (APP_EXTRA.format(cats="|".join(sorted(common.CATEGORIES)))
@@ -189,7 +213,15 @@ def main() -> int:
         for patch in found:
             patch["section"] = section
             patch["name"] = entity["name"]
-        print("   {} patch(es); notes: {}".format(len(found), result.get("notes", "")))
+        ok, refused = common.apply_confirmations(
+            data, entity, result.get("confirmations"), PASS, dry_run=dry)
+        confirmed.extend(ok)
+        if not dry:
+            entity["checked_at"] = str(common.today())
+        print("   {} patch(es), {} confirmed; notes: {}".format(
+            len(found), len(ok), result.get("notes", "")))
+        for line in refused:
+            print("   ? {}".format(line))
         all_patches.extend(found)
 
     applied, rejected = common.apply_patches(
@@ -199,12 +231,14 @@ def main() -> int:
     common.record_run(data, PASS, ok=bool(targets) and len(failures) < len(targets),
                       error="; ".join(failures) if failures else None,
                       checked=len(targets) - len(failures), failed=len(failures),
-                      applied=len(applied), rejected=len(rejected))
+                      applied=len(applied), rejected=len(rejected),
+                      confirmed=len(confirmed))
     if not dry:
         common.save(data)
 
-    print("\nchecked {} / failed {} / applied {} / rejected {}".format(
-        len(targets) - len(failures), len(failures), len(applied), len(rejected)))
+    print("\nchecked {} / failed {} / applied {} / confirmed {} / rejected {}".format(
+        len(targets) - len(failures), len(failures), len(applied),
+        len(confirmed), len(rejected)))
     for line in applied:
         print("  + {}".format(line))
     for line in rejected:

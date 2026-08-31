@@ -271,6 +271,39 @@ def selftest() -> int:
             failures += 1
             print("      applied={} rejected={}".format(applied, rejected))
 
+    # confirmations record provenance without touching the value - the thing
+    # that makes the freshness rotation converge instead of re-picking the
+    # same entities forever
+    data = common.migrate(_fixture())
+    app = data["apps"][0]
+    before = app["val"]
+    ok, refused = common.apply_confirmations(data, app, [
+        {"field": "val", "as_of": str(common.today()), "source": "CNBC",
+         "url": "", "conf": "high"},
+        {"field": "nope", "as_of": str(common.today()), "source": "x",
+         "url": "", "conf": "high"},
+        {"field": "arr", "as_of": "not-a-date", "source": "x", "url": "",
+         "conf": "high"},
+        {"field": "mau", "as_of": str(common.today()), "source": "  ",
+         "url": "", "conf": "high"},
+    ], "selftest")
+    conf_checks = [
+        ("confirmation records provenance", bool(app["prov"].get("val"))),
+        ("confirmation leaves the value alone", app["val"] == before),
+        ("confirmation does not touch the changelog",
+         not data["meta"].get("changelog")),
+        ("bad confirmations refused", len(ok) == 1 and len(refused) == 3),
+    ]
+    data["apps"][0]["prov"]["val"]["as_of"] = str(common.today())
+    common.apply_confirmations(data, app, [
+        {"field": "val", "as_of": "2020-01-01", "source": "STALE", "url": "",
+         "conf": "high"}], "selftest")
+    conf_checks.append(("an older confirmation cannot overwrite a fresher one",
+                        app["prov"]["val"]["source"] != "STALE"))
+    for label, ok_flag in conf_checks:
+        print("{} {}".format("PASS" if ok_flag else "FAIL", label))
+        failures += 0 if ok_flag else 1
+
     # momentum: derived, respects m_manual, survives missing inputs
     data = common.migrate(_fixture())
     data["apps"].append({"name": "Sparse", "uc": "?", "cat": "other",
@@ -304,7 +337,7 @@ def selftest() -> int:
             for p in found:
                 print("      {}".format(p))
 
-    total = (len(CASES) + len(FORCE_CASES) + len(checks)
+    total = (len(CASES) + len(FORCE_CASES) + len(checks) + len(conf_checks)
              + len(BAD_SCHEMAS) + len(_live_schemas()))
     print("\n{} / {} self-test checks passed".format(total - failures, total))
     return 1 if failures else 0

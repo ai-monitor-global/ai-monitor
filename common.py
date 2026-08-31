@@ -30,7 +30,7 @@ for _stream in (sys.stdout, sys.stderr):
 SCHEMA_VERSION = 2
 MODEL = os.environ.get("CLAUDE_MODEL") or "claude-opus-5"
 STALE_DAYS_DEFAULT = 120
-CHANGELOG_MAX = 80
+CHANGELOG_MAX = 250   # a full 30-entity backfill produces ~110 entries
 REVIEW_QUEUE_MAX = 60
 
 # --------------------------------------------------------------------------
@@ -396,6 +396,57 @@ def apply_patches(data: dict, patches: list, pass_name: str, dry_run: bool = Fal
     return applied, rejected
 
 
+def apply_confirmations(data: dict, entity: dict, items: list, pass_name: str,
+                        dry_run: bool = False):
+    """Record provenance for fields that were checked and found already correct.
+
+    Without this the freshness system never converges: a value that is right
+    gets no source, so it reads as unverified forever, and reverify_targets
+    keeps re-picking the same entities instead of rotating onward.
+    """
+    meta = data.setdefault("meta", {})
+    stamp = str(today())
+    confirmed, refused = [], []
+    for item in items or []:
+        field = item.get("field")
+        if field not in PROV_TRACKED and field not in (
+                NUMERIC_FIELDS["models"] | NUMERIC_FIELDS["apps"]
+                | QUALITATIVE_FIELDS["models"] | QUALITATIVE_FIELDS["apps"]):
+            refused.append("{}: unknown field {!r}".format(entity["name"], field))
+            continue
+        if field not in entity:
+            refused.append("{}: {} is not set on this entity".format(
+                entity["name"], field))
+            continue
+        source = str(item.get("source") or "").strip()
+        as_of = _parse_day(item.get("as_of"))
+        conf = str(item.get("conf", "")).lower()
+        if not source or as_of is None or conf not in ("high", "medium"):
+            refused.append("{}.{}: confirmation needs source + valid as_of + "
+                           "conf".format(entity["name"], field))
+            continue
+        if as_of > today() + timedelta(days=1):
+            refused.append("{}.{}: as_of {} is in the future".format(
+                entity["name"], field, as_of))
+            continue
+        prior = _parse_day((entity.get("prov", {}).get(field) or {}).get("as_of"))
+        if prior and as_of < prior:
+            continue  # already have something at least as fresh
+        if not dry_run:
+            entity.setdefault("prov", {})[field] = {
+                "as_of": str(as_of), "source": source,
+                "url": str(item.get("url") or "").strip() or None,
+                "conf": conf,
+            }
+        confirmed.append("{}.{} confirmed unchanged ({})".format(
+            entity["name"], field, source))
+    if refused:
+        for line in refused:
+            _queue(meta, stamp, entity["name"], "confirmation", None, line,
+                   {}, pass_name)
+    return confirmed, refused
+
+
 def _queue(meta, stamp, name, field, proposed, reason, patch, pass_name):
     meta.setdefault("review_queue", []).append({
         "date": stamp, "pass": pass_name, "entity": name, "field": field,
@@ -470,8 +521,17 @@ def oldest_as_of(entity: dict):
     return min(days)
 
 
+RECHECK_COOLDOWN_DAYS = 21
+
+
 def reverify_targets(data: dict, k: int):
-    """Stalest first. Names above $500M ARR get a tighter 28-day SLA."""
+    """Stalest first. Names above $500M ARR get a tighter 28-day SLA.
+
+    A cooldown on `checked_at` keeps the queue rotating: some figures simply
+    are not publicly sourceable, and without it those entities would score
+    9999 forever and monopolise every run. The cooldown is relaxed only if it
+    would otherwise leave the run with nothing to do.
+    """
     scored = []
     for index, (section, entity) in enumerate(iter_entities(data)):
         if entity.get("retired"):
@@ -480,9 +540,11 @@ def reverify_targets(data: dict, k: int):
         age = 9999 if as_of is None else (today() - as_of).days
         big = (entity.get("arr") or 0) >= 500
         effective = age * 2.0 if (big and age >= 28) else float(age)
-        scored.append((-effective, index, section, entity))
-    scored.sort(key=lambda t: (t[0], t[1]))
-    return [(s, e) for _, _, s, e in scored[:k]]
+        checked = _parse_day(entity.get("checked_at"))
+        cooling = bool(checked and (today() - checked).days < RECHECK_COOLDOWN_DAYS)
+        scored.append((cooling, -effective, index, section, entity))
+    scored.sort(key=lambda t: (t[0], t[1], t[2]))
+    return [(s, e) for _, _, _, s, e in scored[:k]]
 
 
 # --------------------------------------------------------------------------
