@@ -5,6 +5,24 @@ on:
     # 周日 13:00 UTC = 北京时间 周日 21:00（和宏观周报同节奏）
     - cron: '0 13 * * 0'
   workflow_dispatch:
+    inputs:
+      mode:
+        description: '要跑哪些 pass'
+        type: choice
+        default: weekly
+        options:
+          - weekly          # 增量 + 轮转复核 (+ 每月第一周的覆盖发现) + 进展周报
+          - reverify-all    # 一次性全量回填：重核每一家的 ARR/估值/自有模型
+          - discover-seed   # 一次性覆盖发现：补齐空白垂直
+          - validate-only   # 不调 API，只跑校验和自检
+      dry_run:
+        description: '只打印拟改动，不写 data.json'
+        type: boolean
+        default: false
+
+concurrency:
+  group: ai-monitor-data
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -22,21 +40,75 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install anthropic
+        run: pip install --upgrade anthropic
 
-      - name: Update data + AI progress
+      # Cheap, no API key: if the validation gate itself is broken, find out
+      # before spending a single search call.
+      - name: Self-test the validation gate
+        run: python validate.py --selftest
+
+      # Each pass records its own outcome into data.json (meta.runs) so the
+      # dashboard can say so out loud. Failures are collected rather than
+      # aborting, so one dead pass cannot block the others from committing -
+      # but the job is still failed at the end, which is what actually sends
+      # a notification.
+      - name: Run passes
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}
+          MODE: ${{ inputs.mode || 'weekly' }}
+          DRY: ${{ inputs.dry_run && '--dry-run' || '' }}
         run: |
-          python update_data.py || echo "update_data failed (continuing to progress)"
-          python update_progress.py || echo "update_progress failed (continuing)"
+          set +e
+          FAILED=""
+          DAY=$((10#$(date -u +%d)))
+          case "$MODE" in
+            reverify-all)
+              python reverify.py --all $DRY || FAILED="$FAILED reverify-all"
+              ;;
+            discover-seed)
+              python discover.py --seed $DRY || FAILED="$FAILED discover-seed"
+              ;;
+            validate-only)
+              echo "skipping API passes"
+              ;;
+            *)
+              python update_data.py $DRY     || FAILED="$FAILED incremental"
+              python reverify.py $DRY        || FAILED="$FAILED reverify"
+              if [ "$DAY" -le 7 ]; then
+                python discover.py $DRY      || FAILED="$FAILED discovery"
+              else
+                echo "discovery runs in the first week of the month only (today is day $DAY)"
+              fi
+              python update_progress.py      || FAILED="$FAILED progress"
+              ;;
+          esac
+          echo "FAILED_PASSES=$FAILED" >> "$GITHUB_ENV"
+          [ -n "$FAILED" ] && echo "::warning::failed passes:$FAILED"
+          exit 0
+
+      # Hard gate: a malformed data.json must never reach GitHub Pages.
+      - name: Validate data.json
+        run: python validate.py
 
       - name: Commit updated data.json
+        if: ${{ !inputs.dry_run }}
         run: |
           git config user.name  "ai-monitor-bot"
           git config user.email "bot@ai-monitor"
           git add data.json
-          git diff --staged --quiet && echo "No changes to commit" || \
-            git commit -m "chore: weekly data update $(date -u +%Y-%m-%d)"
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: data update $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      # Runs last so the commit above still happens. Without this the job went
+      # green even when both scripts had crashed, so nobody ever found out.
+      - name: Fail the run if any pass errored
+        if: ${{ env.FAILED_PASSES != '' }}
+        run: |
+          echo "these passes failed:${FAILED_PASSES}"
+          echo "see meta.runs in data.json (and the dashboard banner) for the reason"
+          exit 1

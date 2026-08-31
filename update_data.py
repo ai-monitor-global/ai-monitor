@@ -1,178 +1,101 @@
+"""Weekly incremental pass: what changed in the last 7 days.
+
+This is the news-driven differ. It is deliberately narrow - it only catches
+things that were *reported this week*. Correcting a number that went stale
+months ago is reverify.py's job, not this one's.
+
+  python update_data.py [--dry-run]
 """
-Daily data updater for AI Native App Monitor.
-Uses Anthropic SDK with web_search built-in tool.
-Fix: use client.messages.create + extra_headers for web-search beta.
-"""
-import json
-import os
+from __future__ import annotations
+
 import sys
-import re
-from datetime import date, timedelta
 
-UPDATE_INTERVAL_DAYS = 7  # weekly cadence
-import anthropic
+import common
 
-DATA_FILE = "data.json"
-MODEL = os.environ.get("CLAUDE_MODEL") or "claude-opus-4-8"
+PASS = "incremental"
+WINDOW_DAYS = 7
 
-SYSTEM_PROMPT = """You are a financial data analyst maintaining an AI industry monitor dashboard.
-Search for the latest news about AI company funding, valuations, and revenue milestones,
-then return a structured JSON patch with ONLY confirmed, sourced changes.
+SYSTEM = """You are a financial data analyst maintaining an AI industry monitor dashboard.
 
 Rules:
-- Only update a field if you find a credible source (Bloomberg, TechCrunch, CNBC, Sacra, The Information, company announcement).
-- Do NOT speculate. If unsure, skip the field.
-- Return ONLY valid JSON, no prose, no markdown fences.
-"""
+- Only report a change you can attribute to a credible source (Bloomberg, The
+  Information, Reuters, CNBC, TechCrunch, Sacra, a company announcement, an
+  official blog). No speculation, no "reportedly in talks" as a confirmed figure.
+- A round that is rumoured or unclosed is NOT a valuation change. Say so in the
+  summary instead of patching `val`.
+- {units}
+- Use the exact entity name from the dataset in `name`, and set `section` to
+  "models" or "apps" to match where it appears.
+- Emit nothing rather than something you are unsure of. An empty patch list is
+  a perfectly good answer."""
 
-USER_PROMPT = """Today is {today}. Search the web for AI company news from the past 7 days.
+USER = """Today is {today}. Search for AI company news from the past {window} days
+that changes any tracked metric below.
 
-Focus on:
-MODELS: OpenAI, Anthropic, Google Gemini, xAI/Grok, Mistral AI, Cohere, Kimi/Moonshot, MiniMax, Zhipu AI
-APPS: Cursor/Anysphere, Perplexity, Character.ai, ElevenLabs, Midjourney, Runway, Harvey, Glean, Sierra, Cognition, HeyGen, Suno, Luma AI
+Tracked universe (patch only these; do not invent new companies here):
+{universe}
 
-Look for: new funding rounds, ARR/revenue milestones, valuation updates.
+Patchable fields
+  models: arr, arrg, tokM, tokG, trainPerRun, runsPerYear, val
+  apps:   arr, arrg, mau, maug, val, uc, cat, stage, biz, ti, ownModel
 
-Return JSON (omit sections with no confirmed updates):
-{{
-  "has_updates": true or false,
-  "update_notes": "Brief summary max 200 chars",
-  "model_patches": [
-    {{"name": "exact name in dataset", "field": "arr|val|arrg|tokM", "new_value": <number>, "source": "source + date", "confidence": "high|medium"}}
-  ],
-  "app_patches": [
-    {{"name": "exact name in dataset", "field": "arr|val|arrg|mau", "new_value": <number>, "source": "source + date", "confidence": "high|medium"}}
-  ]
-}}
+Look for: closed funding rounds, ARR/revenue milestones, valuation marks,
+token-volume disclosures, and a launch that means an app now serves a
+meaningful share of its traffic from its own model (patch `ownModel`).
 
-arr unit: $M. val unit: $B. arrg unit: %. Include only high/medium confidence changes with verifiable sources.
-"""
+`ownModel` value shape: {{"status": "none"|"hybrid"|"primary", "tokenShare":
+<0-100 or null>, "models": ["name", ...]}} - "primary" means most inference is
+now its own model."""
 
-
-def call_claude(today_str: str) -> dict:
-    """Call Claude with web_search using correct beta header via extra_headers."""
-    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
-    if not api_key:
-        raise RuntimeError("ANTHROPIC_API_KEY not set")
-
-    client = anthropic.Anthropic(api_key=api_key)
-
-    # Correct usage: client.messages.create + extra_headers for web-search beta
-    response = client.messages.create(
-        model=MODEL,
-        max_tokens=8000,
-        system=SYSTEM_PROMPT,
-        tools=[{"type": "web_search_20250305", "name": "web_search"}],
-        messages=[{"role": "user", "content": USER_PROMPT.format(today=today_str)}],
-        extra_headers={"anthropic-beta": "web-search-2025-03-05"},
-    )
-
-    print(f"stop_reason: {response.stop_reason}")
-    print(f"blocks: {[getattr(b, 'type', '?') for b in response.content]}")
-
-    # Concatenate ALL text blocks. With web_search the model emits text across
-    # many blocks (commentary between searches + a final answer that may itself
-    # span multiple blocks or be followed by a trailing remark), so keeping only
-    # the last block hands json.loads a fragment.
-    text = "".join(
-        block.text for block in response.content
-        if getattr(block, "type", None) == "text"
-    ).strip()
-
-    if not text:
-        raise ValueError(
-            f"No text block found. stop_reason={response.stop_reason}, "
-            f"blocks={[getattr(b,'type','?') for b in response.content]}"
-        )
-
-    return extract_json(text)
+SCHEMA = {
+    "type": "object",
+    "properties": {
+        "has_updates": {"type": "boolean"},
+        "summary": {"type": "string", "description": "max 200 chars, Chinese"},
+        "patches": {"type": "array", "items": common.PATCH_SCHEMA},
+    },
+    "required": ["has_updates", "summary", "patches"],
+    "additionalProperties": False,
+}
 
 
-def extract_json(text: str) -> dict:
-    """Parse a JSON object from model output, tolerating fences or surrounding prose."""
-    s = re.sub(r"^```(?:json)?\s*", "", text.strip())
-    s = re.sub(r"\s*```$", "", s).strip()
+def main() -> int:
+    dry = "--dry-run" in sys.argv
+    data = common.load()
+    print("=== {} pass: {} (model={}){} ===".format(
+        PASS, common.today(), common.MODEL, " [DRY RUN]" if dry else ""))
+
     try:
-        return json.loads(s)
-    except json.JSONDecodeError:
-        start, end = s.find("{"), s.rfind("}")
-        if start != -1 and end > start:
-            return json.loads(s[start:end + 1])
-        raise ValueError(f"No JSON object found in response. First 500 chars: {s[:500]!r}")
+        result = common.ask(
+            system=SYSTEM.format(units=common.UNITS_RULE),
+            user=USER.format(today=common.today(), window=WINDOW_DAYS,
+                             universe=common.universe_block(data)),
+            schema=SCHEMA, max_uses=12, max_tokens=12000)
+    except Exception as exc:  # noqa: BLE001 - any failure must stay visible
+        print("FAILED: {}".format(exc), file=sys.stderr)
+        common.record_run(data, PASS, ok=False, error=exc)
+        if not dry:
+            common.save(data)
+        return 1
 
+    patches = result.get("patches") or []
+    applied, rejected = common.apply_patches(data, patches, PASS, dry_run=dry)
+    common.recompute_momentum(data)
+    common.note_updates(data, applied)
+    common.record_run(data, PASS, ok=True, applied=len(applied),
+                      rejected=len(rejected), proposed=len(patches))
+    if not dry:
+        common.save(data)
 
-def apply_patches(data: dict, patch: dict) -> tuple:
-    changes = []
-    today = str(date.today())
-
-    for mp in patch.get("model_patches", []):
-        name, field, val = mp.get("name"), mp.get("field"), mp.get("new_value")
-        if not all([name, field, val is not None]):
-            continue
-        for m in data["models"]:
-            if name.lower() in m["name"].lower():
-                old = m.get(field)
-                m[field] = val
-                changes.append(f"MODEL {m['name']}.{field}: {old} -> {val} ({mp.get('source','')})")
-                break
-
-    for ap in patch.get("app_patches", []):
-        name, field, val = ap.get("name"), ap.get("field"), ap.get("new_value")
-        if not all([name, field, val is not None]):
-            continue
-        for a in data["apps"]:
-            if name.lower() in a["name"].lower():
-                old = a.get(field)
-                a[field] = val
-                changes.append(f"APP {a['name']}.{field}: {old} -> {val} ({ap.get('source','')})")
-                break
-
-    data["meta"]["last_updated"] = today
-    data["meta"]["next_update"] = str(date.today() + timedelta(days=UPDATE_INTERVAL_DAYS))
-    if patch.get("update_notes"):
-        data["meta"]["update_notes"] = f"{today}: {patch['update_notes']}"
-
-    return data, changes
-
-
-def main():
-    today_str = str(date.today())
-    print(f"=== AI Monitor daily update: {today_str} ===")
-
-    with open(DATA_FILE, "r", encoding="utf-8") as f:
-        data = json.load(f)
-
-    print("Calling Claude API with web_search (extra_headers beta)...")
-    try:
-        patch = call_claude(today_str)
-    except Exception as e:
-        print(f"Claude API error: {e}", file=sys.stderr)
-        data["meta"]["last_updated"] = today_str
-        data["meta"]["next_update"] = str(date.today() + timedelta(days=UPDATE_INTERVAL_DAYS))
-        data["meta"]["update_notes"] = f"{today_str}: Error: {str(e)[:150]}"
-        with open(DATA_FILE, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        sys.exit(1)  # Exit with error so GitHub Actions marks it as failed
-
-    if not patch.get("has_updates"):
-        print("No confirmed updates today.")
-        data["meta"]["last_updated"] = today_str
-        data["meta"]["next_update"] = str(date.today() + timedelta(days=UPDATE_INTERVAL_DAYS))
-        data["meta"]["update_notes"] = f"{today_str}: No new confirmed data points found."
-        with open(DATA_FILE, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        return
-
-    updated_data, changes = apply_patches(data, patch)
-
-    with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(updated_data, f, ensure_ascii=False, indent=2)
-
-    print(f"Applied {len(changes)} changes:")
-    for c in changes:
-        print(f"  {c}")
-    print("data.json updated successfully.")
+    print("\nsummary: {}".format(result.get("summary", "")))
+    print("proposed {} / applied {} / rejected {}".format(
+        len(patches), len(applied), len(rejected)))
+    for line in applied:
+        print("  + {}".format(line))
+    for line in rejected:
+        print("  - {}".format(line))
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

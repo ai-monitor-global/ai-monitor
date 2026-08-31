@@ -2,7 +2,123 @@
   "meta": {
     "last_updated": "2026-08-30",
     "next_update": "2026-09-06",
-    "update_notes": "2026-08-30: Past-7-day confirmed items: Anthropic ~$65B ARR (mid-Aug), OpenAI ~$40B ARR, Perplexity ARR ~$750M w/ Nvidia $30B+ round in talks (not closed). Cognition ARR ~$1B (round unclosed)."
+    "update_notes": "2026-08-30: Past-7-day confirmed items: Anthropic ~$65B ARR (mid-Aug), OpenAI ~$40B ARR, Perplexity ARR ~$750M w/ Nvidia $30B+ round in talks (not closed). Cognition ARR ~$1B (round unclosed).",
+    "schema": 2,
+    "last_run": "2026-08-30",
+    "stale_days": 120,
+    "categories": {
+      "coding": {
+        "label": "Coding",
+        "fg": "#1d4ed8",
+        "bg": "#dbeafe"
+      },
+      "search": {
+        "label": "Search",
+        "fg": "#15803d",
+        "bg": "#dcfce7"
+      },
+      "creative": {
+        "label": "Creative",
+        "fg": "#9d174d",
+        "bg": "#fce7f3"
+      },
+      "voice": {
+        "label": "Voice",
+        "fg": "#065f46",
+        "bg": "#d1fae5"
+      },
+      "consumer": {
+        "label": "Consumer",
+        "fg": "#991b1b",
+        "bg": "#fee2e2"
+      },
+      "enterprise": {
+        "label": "Enterprise",
+        "fg": "#6d28d9",
+        "bg": "#ede9fe"
+      },
+      "finance": {
+        "label": "Finance",
+        "fg": "#0f766e",
+        "bg": "#ccfbf1"
+      },
+      "legal": {
+        "label": "Legal",
+        "fg": "#92400e",
+        "bg": "#fef3c7"
+      },
+      "health": {
+        "label": "Health",
+        "fg": "#0e7490",
+        "bg": "#cffafe"
+      },
+      "gtm": {
+        "label": "Marketing/GTM",
+        "fg": "#c2410c",
+        "bg": "#ffedd5"
+      },
+      "support": {
+        "label": "Support",
+        "fg": "#4338ca",
+        "bg": "#e0e7ff"
+      },
+      "hr": {
+        "label": "HR/招聘",
+        "fg": "#7e22ce",
+        "bg": "#f3e8ff"
+      },
+      "security": {
+        "label": "Security",
+        "fg": "#b91c1c",
+        "bg": "#ffe4e6"
+      },
+      "other": {
+        "label": "Other",
+        "fg": "#374151",
+        "bg": "#f3f4f6"
+      }
+    },
+    "regions": {
+      "US": {
+        "label": "🇺🇸 美国",
+        "fg": "#1d4ed8",
+        "bg": "#dbeafe"
+      },
+      "CN": {
+        "label": "🇨🇳 中国",
+        "fg": "#991b1b",
+        "bg": "#fee2e2"
+      },
+      "EU": {
+        "label": "🇪🇺 欧洲",
+        "fg": "#6d28d9",
+        "bg": "#ede9fe"
+      }
+    },
+    "changelog": [],
+    "review_queue": [],
+    "runs": {
+      "incremental": {
+        "at": null,
+        "ok": null,
+        "error": null
+      },
+      "reverify": {
+        "at": null,
+        "ok": null,
+        "error": null
+      },
+      "discovery": {
+        "at": null,
+        "ok": null,
+        "error": null
+      },
+      "progress": {
+        "at": null,
+        "ok": null,
+        "error": null
+      }
+    }
   },
   "models": [
     {
@@ -16,7 +132,9 @@
       "trainPerRun": 15,
       "runsPerYear": 4,
       "val": 852,
-      "m": 95
+      "m": 67,
+      "retired": false,
+      "prov": {}
     },
     {
       "name": "Anthropic",
@@ -29,7 +147,9 @@
       "trainPerRun": 12,
       "runsPerYear": 3,
       "val": 965,
-      "m": 98
+      "m": 100,
+      "retired": false,
+      "prov": {}
     },
     {
       "name": "Google Gemini",
@@ -42,7 +162,9 @@
       "trainPerRun": 20,
       "runsPerYear": 4,
       "val": null,
-      "m": 86
+      "m": 68,
+      "retired": false,
+      "prov": {}
     },
     {
       "name": "xAI",
@@ -55,7 +177,9 @@
       "trainPerRun": 15,
       "runsPerYear": 3,
       "val": 230,
-      "m": 80
+      "m": 57,
+      "retired": false,
+      "prov": {}
     },
     {
       "name": "Kimi (Moonshot)",
@@ -68,7 +192,9 @@
       "trainPerRun": 8,
       "runsPerYear": 3,
       "val": 3.3,
-      "m": 85
+      "m": 73,
+      "retired": false,
+      "prov": {}
     },
     {
       "name": "MiniMax",
@@ -81,7 +207,9 @@
       "trainPerRun": 6,
       "runsPerYear": 2,
       "val": 33,
-      "m": 80
+      "m": 42,
+      "retired": false,
+      "prov": {}
     },
     {
       "name": "Zhipu AI",
@@ -94,7 +222,9 @@
       "trainPerRun": 5,
       "runsPerYear": 2,
       "val": 55.9,
-      "m": 72
+      "m": 17,
+      "retired": false,
+      "prov": {}
     },
     {
       "name": "Mistral AI",
@@ -107,7 +237,9 @@
       "trainPerRun": 5,
       "runsPerYear": 2,
       "val": 23,
-      "m": 68
+      "m": 36,
+      "retired": false,
+      "prov": {}
     },
     {
       "name": "Cohere",
@@ -120,7 +252,9 @@
       "trainPerRun": 3,
       "runsPerYear": 2,
       "val": 20,
-      "m": 60
+      "m": 18,
+      "retired": false,
+      "prov": {}
     },
     {
       "name": "01.AI",
@@ -133,7 +267,9 @@
       "trainPerRun": 4,
       "runsPerYear": 2,
       "val": 1,
-      "m": 65
+      "m": 28,
+      "retired": false,
+      "prov": {}
     }
   ],
   "apps": [
@@ -149,8 +285,14 @@
       "ti": "high",
       "biz": "B2B+B2C",
       "val": 60,
-      "m": 97,
-      "selfModel": false
+      "m": 100,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "none",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Perplexity",
@@ -164,8 +306,14 @@
       "ti": "high",
       "biz": "B2C+B2B",
       "val": 22.6,
-      "m": 90,
-      "selfModel": false
+      "m": 79,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "none",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Character.ai",
@@ -179,8 +327,14 @@
       "ti": "high",
       "biz": "B2C",
       "val": 5,
-      "m": 62,
-      "selfModel": true
+      "m": 23,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "primary",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "ElevenLabs",
@@ -194,8 +348,14 @@
       "ti": "med",
       "biz": "B2B+B2C",
       "val": 22,
-      "m": 85,
-      "selfModel": true
+      "m": 51,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "primary",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Midjourney",
@@ -209,8 +369,14 @@
       "ti": "high",
       "biz": "B2C",
       "val": 10,
-      "m": 50,
-      "selfModel": true
+      "m": 24,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "primary",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Runway",
@@ -224,13 +390,19 @@
       "ti": "ultra",
       "biz": "B2B+B2C",
       "val": 5.3,
-      "m": 82,
-      "selfModel": true
+      "m": 32,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "primary",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Harvey",
       "uc": "法律AI助手",
-      "cat": "vertical",
+      "cat": "legal",
       "stage": "growth",
       "arr": 200,
       "arrg": 300,
@@ -239,8 +411,14 @@
       "ti": "med",
       "biz": "B2B",
       "val": 11,
-      "m": 88,
-      "selfModel": false
+      "m": 49,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "none",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Glean",
@@ -254,8 +432,14 @@
       "ti": "med",
       "biz": "B2B",
       "val": 7.2,
-      "m": 78,
-      "selfModel": false
+      "m": 39,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "none",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Gamma",
@@ -269,8 +453,14 @@
       "ti": "low",
       "biz": "B2C+B2B",
       "val": 0.8,
-      "m": 74,
-      "selfModel": false
+      "m": 37,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "none",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "HeyGen",
@@ -284,8 +474,14 @@
       "ti": "ultra",
       "biz": "B2B+B2C",
       "val": 0.8,
-      "m": 84,
-      "selfModel": true
+      "m": 58,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "primary",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Suno",
@@ -299,8 +495,14 @@
       "ti": "high",
       "biz": "B2C",
       "val": 5.4,
-      "m": 87,
-      "selfModel": true
+      "m": 71,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "primary",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Writer",
@@ -314,13 +516,19 @@
       "ti": "med",
       "biz": "B2B",
       "val": 2,
-      "m": 70,
-      "selfModel": false
+      "m": 36,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "none",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Sierra",
       "uc": "AI客服智能体",
-      "cat": "vertical",
+      "cat": "support",
       "stage": "growth",
       "arr": 150,
       "arrg": 400,
@@ -329,8 +537,14 @@
       "ti": "med",
       "biz": "B2B",
       "val": 15,
-      "m": 92,
-      "selfModel": false
+      "m": 54,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "none",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Granola",
@@ -344,8 +558,14 @@
       "ti": "low",
       "biz": "B2C+B2B",
       "val": 0.2,
-      "m": 91,
-      "selfModel": false
+      "m": 66,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "none",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Cognition",
@@ -359,8 +579,14 @@
       "ti": "ultra",
       "biz": "B2B",
       "val": 26,
-      "m": 88,
-      "selfModel": false
+      "m": 86,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "none",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Luma AI",
@@ -374,8 +600,14 @@
       "ti": "ultra",
       "biz": "B2B+B2C",
       "val": 4,
-      "m": 79,
-      "selfModel": true
+      "m": 29,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "primary",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Speak",
@@ -389,13 +621,19 @@
       "ti": "med",
       "biz": "B2C",
       "val": 0.6,
-      "m": 70,
-      "selfModel": false
+      "m": 33,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "none",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Abridge",
       "uc": "医疗文档AI",
-      "cat": "vertical",
+      "cat": "health",
       "stage": "growth",
       "arr": 30,
       "arrg": 350,
@@ -404,8 +642,14 @@
       "ti": "med",
       "biz": "B2B",
       "val": 0.85,
-      "m": 82,
-      "selfModel": false
+      "m": 49,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "none",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Ideogram",
@@ -419,8 +663,14 @@
       "ti": "high",
       "biz": "B2C+B2B",
       "val": 0.5,
-      "m": 80,
-      "selfModel": true
+      "m": 58,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "primary",
+        "tokenShare": null,
+        "models": []
+      }
     },
     {
       "name": "Descript",
@@ -434,8 +684,14 @@
       "ti": "high",
       "biz": "B2B+B2C",
       "val": 0.6,
-      "m": 55,
-      "selfModel": true
+      "m": 24,
+      "retired": false,
+      "prov": {},
+      "ownModel": {
+        "status": "primary",
+        "tokenShare": null,
+        "models": []
+      }
     }
   ],
   "ai_progress": {
@@ -547,5 +803,83 @@
     "week_of": "2026-08-30",
     "generated_at": "2026-08-30 17:06 UTC",
     "model": "claude-opus-4-8"
+  },
+  "candidates": [],
+  "series": {
+    "qtr": [
+      "Q1'23",
+      "Q2'23",
+      "Q3'23",
+      "Q4'23",
+      "Q1'24",
+      "Q2'24",
+      "Q3'24",
+      "Q4'24",
+      "Q1'25",
+      "Q2'25",
+      "Q3'25",
+      "Q4'25",
+      "Q1'26"
+    ],
+    "mARR": [
+      0.7,
+      1.2,
+      1.9,
+      2.8,
+      4.5,
+      7.0,
+      10.0,
+      14.5,
+      21.0,
+      30.0,
+      38.5,
+      47.0,
+      48.5
+    ],
+    "aARR": [
+      0.06,
+      0.15,
+      0.28,
+      0.6,
+      1.1,
+      2.0,
+      3.4,
+      5.2,
+      7.8,
+      10.5,
+      13.5,
+      17.0,
+      18.5
+    ],
+    "tokUS": [
+      0.4,
+      0.8,
+      1.4,
+      2.4,
+      4.0,
+      6.5,
+      10.0,
+      15.0,
+      22.0,
+      30.0,
+      38.0,
+      45.0,
+      49.0
+    ],
+    "tokCN": [
+      0.02,
+      0.05,
+      0.12,
+      0.25,
+      0.6,
+      1.2,
+      2.2,
+      3.8,
+      6.0,
+      8.5,
+      11.5,
+      14.5,
+      17.0
+    ]
   }
 }

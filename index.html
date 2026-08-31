@@ -40,10 +40,19 @@ td{padding:9px 12px;vertical-align:middle}
 .an{font-weight:600;font-size:13px}.uc2{font-size:11px;color:#888;margin-top:1px}
 .num{font-variant-numeric:tabular-nums;font-size:12px}
 .bdg{display:inline-block;font-size:10px;padding:2px 7px;border-radius:99px;font-weight:500;white-space:nowrap}
-.bdg-US{background:#dbeafe;color:#1d4ed8}.bdg-CN{background:#fee2e2;color:#991b1b}.bdg-EU{background:#ede9fe;color:#6d28d9}
-.bdg-coding{background:#dbeafe;color:#1d4ed8}.bdg-search{background:#dcfce7;color:#15803d}
-.bdg-creative{background:#fce7f3;color:#9d174d}.bdg-enterprise{background:#ede9fe;color:#6d28d9}
-.bdg-vertical{background:#fef3c7;color:#92400e}.bdg-consumer{background:#fee2e2;color:#991b1b}.bdg-voice{background:#d1fae5;color:#065f46}
+/* Badge colours now come from data.json (meta.categories / meta.regions) as
+   inline styles, so adding a vertical needs no CSS edit. */
+.pdot{font-size:9px;vertical-align:super;margin-left:3px;color:#cbd5e1;text-decoration:none}
+a.pdot:hover{color:#2563eb}
+.pdot.old{color:#f59e0b}
+.stale{color:#b45309}
+.rq{display:inline-block;font-size:9px;color:#92400e;background:#fffbeb;border:1px solid #fde68a;border-radius:99px;padding:0 5px;margin-left:4px;white-space:nowrap}
+.hb{border-radius:10px;padding:10px 14px;font-size:12px;line-height:1.6;margin-bottom:16px}
+.hb-bad{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.hb-warn{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.om-primary{color:#16a34a;font-weight:600}
+.om-hybrid{color:#ca8a04;font-weight:600}
+.om-none{color:#888}
 .mbar{height:4px;border-radius:2px;background:#e5e7eb;overflow:hidden;margin-top:4px;width:60px}
 .mfill{height:100%;border-radius:2px;background:#2563eb}
 .grid2eq{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
@@ -73,28 +82,19 @@ td{padding:9px 12px;vertical-align:middle}
 <div class="hdr-title">AI Native App &amp; Foundation Model Monitor</div>
 <div class="hdr-sub">追踪全球 Foundation Models + AI Native Apps &middot; <span class="warn">&#9888; 本站每周自动更新（含 AI 进展周报），用于追踪AI算力需求</span></div>
 </div><div id="badge" class="badge">&#8987; 加载中...</div></div>
+<div id="health"></div>
 <div class="mtx" id="mtx"><div style="color:#888;padding:14px">加载数据中...</div></div>
 <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;flex-wrap:wrap">
-<div class="ltabs"><div class="ltab on" data-layer="models">&#129952; Foundation Models</div><div class="ltab" data-layer="apps">&#128241; AI Native Apps</div></div>
-<span style="font-size:11px;color:#888">Foundation Models=模型API收入，AI Apps=依赖API的应用ARR</span></div>
+<div class="ltabs"><div class="ltab on" data-layer="models">&#129952; Foundation Models</div><div class="ltab" data-layer="apps">&#128241; AI Native Apps</div><div class="ltab" data-layer="candidates">&#128203; 候选池</div></div>
+<span style="font-size:11px;color:#888" id="layer-hint">Foundation Models=模型API收入，AI Apps=依赖API的应用ARR</span></div>
 <div class="fbar" id="app-filters" style="display:none">
-<button class="fb on" data-cat="all">全部</button>
-<button class="fb" data-cat="coding">Coding</button>
-<button class="fb" data-cat="search">Search</button>
-<button class="fb" data-cat="creative">Creative</button>
-<button class="fb" data-cat="enterprise">Enterprise</button>
-<button class="fb" data-cat="vertical">Vertical AI</button>
-<button class="fb" data-cat="consumer">Consumer</button>
-<button class="fb" data-cat="voice">Voice</button>
-<select class="ssel" id="app-sort"><option value="m">排序: Momentum</option><option value="arr">排序: ARR</option><option value="arrg">排序: ARR增长率</option><option value="mau">排序: MAU</option><option value="val">排序: 估值</option></select></div>
+<span id="app-chips" style="display:contents"></span>
+<select class="ssel" id="app-sort"><option value="m">排序: Momentum</option><option value="arr">排序: ARR</option><option value="arrg">排序: ARR增长率</option><option value="mau">排序: MAU</option><option value="val">排序: 估值</option><option value="fresh">排序: 数据新鲜度</option></select></div>
 <div class="fbar" id="model-filters">
-<button class="fb on" data-region="all">全部</button>
-<button class="fb" data-region="US">&#127482;&#127480; 美国</button>
-<button class="fb" data-region="CN">&#127464;&#127475; 中国</button>
-<button class="fb" data-region="EU">&#127466;&#127482; 欧洲</button>
-<select class="ssel" id="model-sort"><option value="m">排序: Momentum</option><option value="arr">排序: API Revenue</option><option value="arrg">排序: 收入增长率</option><option value="tokM">排序: Token量</option><option value="val">排序: 估值</option></select></div>
+<span id="model-chips" style="display:contents"></span>
+<select class="ssel" id="model-sort"><option value="m">排序: Momentum</option><option value="arr">排序: API Revenue</option><option value="arrg">排序: 收入增长率</option><option value="tokM">排序: Token量</option><option value="val">排序: 估值</option><option value="fresh">排序: 数据新鲜度</option></select></div>
 <div class="tw"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
-<div style="font-size:13px;font-weight:600;color:#111;margin-bottom:14px">趋势图（估算，Q1 2023 &#8594; Q1 2026）</div>
+<div style="font-size:13px;font-weight:600;color:#111;margin-bottom:14px" id="trend-title">趋势图（估算）</div>
 <div class="grid2eq">
 <div class="pnl"><div class="pt">模型收入 + 应用ARR 增长趋势（$B）</div>
 <div class="tleg"><span><span class="tline" style="background:#2563eb"></span>模型收入 ARR</span><span><span class="tline" style="background:#7c3aed"></span>应用收入 ARR</span><span style="color:#aaa">&#9654; YoY 增长率（右轴）</span></div>
@@ -112,26 +112,129 @@ td{padding:9px 12px;vertical-align:middle}
 <div id="prog-take" style="font-size:12px;color:#444;line-height:1.7;margin:10px 0 4px"></div>
 <div id="prog-body"></div>
 <div class="chart-src">每周由 Claude 联网检索整理，仅保留有来源的进展；研究观察，非投资建议。</div></div>
-<div class="note-box">
-<strong>&#9888; 投资免责：</strong>
-本 Dashboard 数据均为公开信息估算，包含不确定性。OpenAI ($852B/$25B ARR)、Anthropic ($380B/$19B ARR) 等估值来自媒体报道；Cursor $50B 尚在 close；Google/xAI/中国模型供应商算力投入持续上升。每周更新使用 Claude API + web search 自动判断，仅供参考。数据来源：The Information、Bloomberg、CNBC、Sacra、36氪、晚点 LatePost、彭博社估算。<strong>本文不构成任何投资建议。</strong>
-</div></div>
+<div class="note-box" id="disclaimer"></div></div>
 <script>
 let DATA=null,cRI=null,cTI=null;
 let layer="models",appCat="all",appSort="m",modelRegion="all",modelSort="m";
-const CNC={coding:"Coding",search:"Search",creative:"Creative",enterprise:"Enterprise",vertical:"Vertical AI",consumer:"Consumer",voice:"Voice"};
-function fmau(v){return v>=1?v.toFixed(1)+"M":Math.round(v*1000)+"K"}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+function meta(){return DATA&&DATA.meta||{}}
+function cats(){return meta().categories||{}}
+function regs(){return meta().regions||{}}
+function staleDays(){return meta().stale_days||120}
+/* every numeric cell may legitimately be null on a newly discovered company */
+function fmau(v){return v==null?"—":(v>=1?v.toFixed(1)+"M":Math.round(v*1000)+"K")}
 function fna(v,s){return v==null?"—":(v>0?"+":"")+v+s}
+function fmoney(v,unit){return v==null?"—":"$"+v+unit}
+function farr(v){return v==null?"—":(v>=1000?"$"+(v/1000).toFixed(1)+"B":"$"+v+"M")}
+function fmult(val,arr){return (val!=null&&arr!=null&&arr>0)?(val*1000/arr).toFixed(1)+"x":"—"}
+function tagged(map,key,fallback){
+  const d=map[key];
+  if(!d) return "<span class=\"bdg\" style=\"background:#f3f4f6;color:#374151\">"+esc(fallback||key)+"</span>";
+  return "<span class=\"bdg\" style=\"background:"+esc(d.bg)+";color:"+esc(d.fg)+"\">"+esc(d.label)+"</span>";
+}
+/* ---- provenance / freshness ---------------------------------------- */
+function ageDays(iso){
+  if(!iso) return null;
+  const t=Date.parse(iso+"T00:00:00Z");
+  if(isNaN(t)) return null;
+  return Math.floor((Date.now()-t)/86400000);
+}
+function provOf(e,f){return (e.prov||{})[f]||null}
+function isOld(e,f){
+  const p=provOf(e,f);
+  if(!p) return true;
+  const a=ageDays(p.as_of);
+  return a==null||a>staleDays();
+}
+function provCls(e,f){return isOld(e,f)?" stale":""}
+function provMark(e,f){
+  const p=provOf(e,f);
+  if(!p) return "<span class=\"pdot old\" title=\"尚未核实来源\">&#9679;</span><span class=\"rq\">待复核</span>";
+  const a=ageDays(p.as_of),old=isOld(e,f);
+  const t=[p.source,p.as_of,p.conf,(a!=null?a+"天前":null)].filter(Boolean).join(" · ");
+  const cls="pdot"+(old?" old":"");
+  const dot=p.url
+    ?"<a class=\""+cls+"\" href=\""+esc(p.url)+"\" target=\"_blank\" rel=\"noopener\" title=\""+esc(t)+"\">&#9679;</a>"
+    :"<span class=\""+cls+"\" title=\""+esc(t)+"\">&#9679;</span>";
+  return dot+(old?"<span class=\"rq\">待复核</span>":"");
+}
+/* freshness as a sort key: larger = fresher, never-verified sorts last */
+function freshOf(e){
+  const ds=["arr","val","ownModel"].map(f=>{const p=provOf(e,f);return p?ageDays(p.as_of):null;});
+  if(ds.some(d=>d==null)) return -1e9;
+  return -Math.max.apply(null,ds);
+}
+function sortVal(e,sk){return sk==="fresh"?freshOf(e):e[sk]}
 async function loadData(){
   const r=await fetch("data.json?v="+Date.now());
   DATA=await r.json();
-  document.getElementById("badge").innerHTML="&#128197; 数据截至 "+DATA.meta.last_updated+" · 每周日更新";
+  renderBadge();
+  renderHealth();
+  buildChips();
   renderMtx();
   renderCharts();
   renderProgress();
+  renderDisclaimer();
   switchLayer("models");
 }
-function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+function renderBadge(){
+  const m=meta(),runs=m.runs||{};
+  const failed=Object.keys(runs).filter(k=>runs[k]&&runs[k].ok===false);
+  const mark=failed.length?"&#9888;":"&#128197;";
+  document.getElementById("badge").innerHTML=mark+" 数据截至 "+esc(m.last_updated||"?")+
+    (m.last_run&&m.last_run!==m.last_updated?"（最后运行 "+esc(m.last_run)+"）":"")+" · 每周日更新";
+}
+/* The old badge printed today's date even when the update had crashed. Now a
+   failed pass is stated on the page instead of being hidden. */
+function renderHealth(){
+  const m=meta(),runs=m.runs||{},out=[];
+  const NAMES={incremental:"周增量",reverify:"轮转复核",discovery:"覆盖发现",progress:"进展周报"};
+  const bad=Object.keys(runs).filter(k=>runs[k]&&runs[k].ok===false);
+  if(bad.length) out.push("<div class=\"hb hb-bad\"><strong>&#9888; 数据管道有失败：</strong>"+
+    bad.map(k=>esc(NAMES[k]||k)+"（"+esc(runs[k].at||"?")+"）："+esc(runs[k].error||"未知错误")).join("；")+
+    "<br>表中数值仍是上一次成功运行的结果。</div>");
+  const q=(m.review_queue||[]).length;
+  if(q) out.push("<div class=\"hb hb-warn\">&#9873; 有 "+q+" 条改动被校验层拦下等待人工复核（量级异常/币种未换算/名称对不上）。见 data.json 的 <code>meta.review_queue</code>。</div>");
+  document.getElementById("health").innerHTML=out.join("");
+}
+function renderDisclaimer(){
+  const m=meta(),n=(DATA.models||[]).length,a=(DATA.apps||[]).length;
+  document.getElementById("disclaimer").innerHTML=
+    "<strong>&#9888; 投资免责：</strong>本 Dashboard 数据均为公开信息估算，包含不确定性。"+
+    "当前覆盖 "+n+" 家模型厂商 + "+a+" 个 AI native app；每格数值旁的圆点即其来源与报道日期，"+
+    "超过 "+staleDays()+" 天未复核会标「待复核」。估值只采用已完成的轮次/二级/市值，"+
+    "传闻或未 close 的轮次不计入。每周由 Claude API + web search 自动复核，逐字段留存来源。"+
+    "数据来源：The Information、Bloomberg、CNBC、Reuters、Sacra、36氪、晚点 LatePost。"+
+    "<strong>本文不构成任何投资建议。</strong>";
+}
+/* Filter chips are generated from the data, and only for categories that
+   actually have members - so a new vertical needs no HTML edit. */
+function buildChips(){
+  const apps=DATA.apps||[],models=DATA.models||[];
+  const used={};apps.forEach(a=>{used[a.cat]=(used[a.cat]||0)+1});
+  const order=Object.keys(cats()).filter(c=>used[c]);
+  document.getElementById("app-chips").innerHTML=
+    "<button class=\"fb on\" data-cat=\"all\">全部 "+apps.length+"</button>"+
+    order.map(c=>"<button class=\"fb\" data-cat=\""+esc(c)+"\">"+
+      esc((cats()[c]||{}).label||c)+" "+used[c]+"</button>").join("");
+  const rused={};models.forEach(m=>{rused[m.region]=(rused[m.region]||0)+1});
+  const rorder=Object.keys(regs()).filter(r=>rused[r]);
+  document.getElementById("model-chips").innerHTML=
+    "<button class=\"fb on\" data-region=\"all\">全部 "+models.length+"</button>"+
+    rorder.map(r=>"<button class=\"fb\" data-region=\""+esc(r)+"\">"+
+      esc((regs()[r]||{}).label||r)+" "+rused[r]+"</button>").join("");
+  wireChips();
+}
+function wireChips(){
+  document.querySelectorAll("#app-filters .fb").forEach(b=>b.addEventListener("click",()=>{
+    appCat=b.dataset.cat;
+    document.querySelectorAll("#app-filters .fb").forEach(x=>x.classList.remove("on"));
+    b.classList.add("on");renderAppTable(appCat,appSort);}));
+  document.querySelectorAll("#model-filters .fb").forEach(b=>b.addEventListener("click",()=>{
+    modelRegion=b.dataset.region;
+    document.querySelectorAll("#model-filters .fb").forEach(x=>x.classList.remove("on"));
+    b.classList.add("on");renderModelTable(modelRegion,modelSort);}));
+}
 function renderProgress(){
   const p=DATA.ai_progress, body=document.getElementById("prog-body");
   const wk=document.getElementById("prog-week"), take=document.getElementById("prog-take");
@@ -157,28 +260,37 @@ function renderProgress(){
     seg("&#127959; AI Infra 投资视角",p.infra_invest)+
     "</div>";
 }
+function live(rows){return (rows||[]).filter(r=>!r.retired)}
+function sumOf(rows,f){return rows.reduce((s,a)=>s+(a[f]||0),0)}
+function avgOf(rows,f){
+  const v=rows.filter(a=>a[f]!=null);
+  return v.length?Math.round(v.reduce((s,a)=>s+a[f],0)/v.length):null;
+}
 function renderMtx(){
-  const mTot=DATA.models.reduce((s,a)=>s+a.arr,0);
-  const aTot=DATA.apps.reduce((s,a)=>s+a.arr,0);
-  const tokTot=DATA.models.reduce((s,a)=>s+a.tokM,0);
-  const mAvgG=Math.round(DATA.models.filter(a=>a.arrg).reduce((s,a)=>s+a.arrg,0)/DATA.models.filter(a=>a.arrg).length);
-  const aAvgG=Math.round(DATA.apps.reduce((s,a)=>s+a.arrg,0)/DATA.apps.length);
+  const M=live(DATA.models),A=live(DATA.apps);
+  const mTot=sumOf(M,"arr"),aTot=sumOf(A,"arr"),tokTot=sumOf(M,"tokM");
+  /* both averages now skip nulls; the apps branch used to divide by the full
+     row count, which silently understated growth as soon as one app had no
+     figure on file. */
+  const mAvgG=avgOf(M,"arrg"),aAvgG=avgOf(A,"arrg");
   document.getElementById("mtx").innerHTML=
-    "<div class=\"mc\"><div class=\"mc-l\">模型收入 Est. Revenue</div><div class=\"mc-v neu\">$"+(mTot/1000).toFixed(1)+"B</div><div class=\"mc-s\">"+DATA.models.length+"家顶级模型供应商</div></div>"+
-    "<div class=\"mc\"><div class=\"mc-l\">App收入 Est. ARR</div><div class=\"mc-v\" style=\"color:#6d28d9\">$"+(aTot/1000).toFixed(1)+"B</div><div class=\"mc-s\">"+DATA.apps.length+"个AI native apps</div></div>"+
+    "<div class=\"mc\"><div class=\"mc-l\">模型收入 Est. Revenue</div><div class=\"mc-v neu\">$"+(mTot/1000).toFixed(1)+"B</div><div class=\"mc-s\">"+M.length+"家顶级模型供应商</div></div>"+
+    "<div class=\"mc\"><div class=\"mc-l\">App收入 Est. ARR</div><div class=\"mc-v\" style=\"color:#6d28d9\">$"+(aTot/1000).toFixed(1)+"B</div><div class=\"mc-s\">"+A.length+"个AI native apps</div></div>"+
     "<div class=\"mc\"><div class=\"mc-l\">模型总 Token量</div><div class=\"mc-v\">~"+Math.round(tokTot)+"T</div><div class=\"mc-s\">万亿tokens/月（估算）</div></div>"+
-    "<div class=\"mc\"><div class=\"mc-l\">模型收入增长率</div><div class=\"mc-v up\">+"+mAvgG+"%</div><div class=\"mc-s\">API Revenue YoY</div></div>"+
-    "<div class=\"mc\"><div class=\"mc-l\">App收入增长率</div><div class=\"mc-v up\">+"+aAvgG+"%</div><div class=\"mc-s\">ARR YoY</div></div>";
+    "<div class=\"mc\"><div class=\"mc-l\">模型收入增长率</div><div class=\"mc-v up\">"+fna(mAvgG,"%")+"</div><div class=\"mc-s\">API Revenue YoY</div></div>"+
+    "<div class=\"mc\"><div class=\"mc-l\">App收入增长率</div><div class=\"mc-v up\">"+fna(aAvgG,"%")+"</div><div class=\"mc-s\">ARR YoY</div></div>";
 }
 function renderCharts(){
-  const QTR=["Q1'23","Q2'23","Q3'23","Q4'23","Q1'24","Q2'24","Q3'24","Q4'24","Q1'25","Q2'25","Q3'25","Q4'25","Q1'26"];
-  const mARR=[0.7,1.2,1.9,2.8,4.5,7.0,10.0,14.5,21.0,30.0,38.5,47.0,48.5];
-  const aARR=[0.06,0.15,0.28,0.6,1.1,2.0,3.4,5.2,7.8,10.5,13.5,17.0,18.5];
-  const total=mARR.map((v,i)=>+(v+aARR[i]).toFixed(1));
+  /* These series used to be literal arrays here, which meant no script could
+     ever extend them. They now live in data.json under `series`. */
+  const S=DATA.series||{};
+  const QTR=S.qtr||[],mARR=S.mARR||[],aARR=S.aARR||[],tokUS=S.tokUS||[],tokCN=S.tokCN||[];
+  document.getElementById("trend-title").textContent=QTR.length
+    ?"趋势图（估算，"+QTR[0]+" → "+QTR[QTR.length-1]+"）":"趋势图（估算）";
+  if(!QTR.length) return;
+  const total=mARR.map((v,i)=>+(v+(aARR[i]||0)).toFixed(1));
   const yoy=total.map((v,i)=>i<4?null:Math.round((v/total[i-4]-1)*100));
-  const tokUS=[0.4,0.8,1.4,2.4,4.0,6.5,10.0,15.0,22.0,30.0,38.0,45.0,49.0];
-  const tokCN=[0.02,0.05,0.12,0.25,0.6,1.2,2.2,3.8,6.0,8.5,11.5,14.5,17.0];
-  const tokTot=tokUS.map((v,i)=>+(v+tokCN[i]).toFixed(1));
+  const tokTot=tokUS.map((v,i)=>+(v+(tokCN[i]||0)).toFixed(1));
   const tokQoQ=tokTot.map((v,i)=>i===0?null:Math.round((v/tokTot[i-1]-1)*100));
   const gc="rgba(0,0,0,.04)",tc="#aaa",base={responsive:true,maintainAspectRatio:false,interaction:{mode:"index",intersect:false}};
   if(cRI){cRI.destroy();} 
@@ -206,52 +318,92 @@ function renderCharts(){
 }
 function renderModelTable(region,sk){
   document.getElementById("thead").innerHTML="<tr><th style=\"min-width:165px\">Provider</th><th style=\"min-width:52px\">地区</th><th style=\"min-width:75px;text-align:right\">API Rev</th><th style=\"min-width:68px;text-align:right\">收入增长率</th><th style=\"min-width:82px;text-align:right\">Token T/月</th><th style=\"min-width:72px;text-align:right\">Token增长率</th><th style=\"min-width:85px;text-align:right\">年推训练 T</th><th style=\"min-width:115px;text-align:right\">训练量 &times; 次数/年</th><th style=\"min-width:68px;text-align:right\">估值 $B</th><th style=\"min-width:62px;text-align:right\">估值/ARR</th><th style=\"min-width:80px\">Momentum</th></tr>";
-  let d=region==="all"?DATA.models:DATA.models.filter(a=>a.region===region);
-  d=[...d].sort((a,b)=>{const av=a[sk]??-Infinity,bv=b[sk]??-Infinity;return bv-av;});
+  let d=live(DATA.models);
+  if(region!=="all") d=d.filter(a=>a.region===region);
+  d=[...d].sort((a,b)=>{const av=sortVal(a,sk)??-Infinity,bv=sortVal(b,sk)??-Infinity;return bv-av;});
   document.getElementById("tbody").innerHTML=d.map(a=>{
-    const ann=Math.round(a.tokM*12);
-    const af=a.arr>=1000?"$"+(a.arr/1000).toFixed(1)+"B":"$"+a.arr+"M";
-    return "<tr><td><div class=\"an\">"+a.name+"</div><div class=\"uc2\">"+a.uc+"</div></td>"+
-      "<td><span class=\"bdg bdg-"+a.region+"\">"+a.region+"</span></td>"+
-      "<td style=\"text-align:right\" class=\"num\">"+af+"</td>"+
+    const ann=a.tokM!=null?Math.round(a.tokM*12)+"T":"—";
+    return "<tr><td><div class=\"an\">"+esc(a.name)+"</div><div class=\"uc2\">"+esc(a.uc)+"</div></td>"+
+      "<td>"+tagged(regs(),a.region,a.region)+"</td>"+
+      "<td style=\"text-align:right\" class=\"num"+provCls(a,"arr")+"\">"+farr(a.arr)+provMark(a,"arr")+"</td>"+
       "<td style=\"text-align:right\" class=\"num up\">"+fna(a.arrg,"%")+"</td>"+
-      "<td style=\"text-align:right\" class=\"num\"><strong>"+a.tokM+"T</strong></td>"+
+      "<td style=\"text-align:right\" class=\"num\"><strong>"+(a.tokM!=null?a.tokM+"T":"—")+"</strong></td>"+
       "<td style=\"text-align:right\" class=\"num up\">"+fna(a.tokG,"%")+"</td>"+
-      "<td style=\"text-align:right\" class=\"num\">"+ann+"T</td>"+
-      "<td style=\"text-align:right\" class=\"num\">"+a.trainPerRun+"T &times; "+a.runsPerYear+"</td>"+
-      "<td style=\"text-align:right\" class=\"num\">"+(a.val!=null?"$"+a.val+"B":"—")+"</td>"+"<td style=\"text-align:right\" class=\"num\">"+(a.val!=null&&a.arr>0?(a.val*1000/a.arr).toFixed(1)+"x":"—")+"</td>"+
+      "<td style=\"text-align:right\" class=\"num\">"+ann+"</td>"+
+      "<td style=\"text-align:right\" class=\"num\">"+(a.trainPerRun!=null?a.trainPerRun+"T":"—")+" &times; "+(a.runsPerYear!=null?a.runsPerYear:"—")+"</td>"+
+      "<td style=\"text-align:right\" class=\"num"+provCls(a,"val")+"\">"+fmoney(a.val,"B")+provMark(a,"val")+"</td>"+
+      "<td style=\"text-align:right\" class=\"num\">"+fmult(a.val,a.arr)+"</td>"+
       "<td class=\"num\">"+a.m+"<div class=\"mbar\"><div class=\"mfill\" style=\"width:"+a.m+"%\"></div></div></td></tr>";
   }).join("");}
 function renderAppTable(cat,sk){
-  document.getElementById("thead").innerHTML="<tr><th style=\"min-width:155px\">App</th><th style=\"min-width:82px\">赛道</th><th style=\"min-width:62px;text-align:right\">ARR $M</th><th style=\"min-width:72px;text-align:right\">ARR YoY</th><th style=\"min-width:62px;text-align:right\">MAU</th><th style=\"min-width:68px;text-align:right\">MAU增长率</th><th style=\"min-width:82px\">Token密度</th><th style=\"min-width:75px\">自有模型</th><th style=\"min-width:65px;text-align:right\">估值 $B</th><th style=\"min-width:62px;text-align:right\">估值/ARR</th><th style=\"min-width:80px\">Momentum</th></tr>";
-  let d=cat==="all"?DATA.apps:DATA.apps.filter(a=>a.cat===cat);
-  d=[...d].sort((a,b)=>b[sk]-a[sk]);
+  document.getElementById("thead").innerHTML="<tr><th style=\"min-width:155px\">App</th><th style=\"min-width:82px\">赛道</th><th style=\"min-width:62px;text-align:right\">ARR $M</th><th style=\"min-width:72px;text-align:right\">ARR YoY</th><th style=\"min-width:62px;text-align:right\">MAU</th><th style=\"min-width:68px;text-align:right\">MAU增长率</th><th style=\"min-width:82px\">Token密度</th><th style=\"min-width:130px\">自有模型</th><th style=\"min-width:65px;text-align:right\">估值 $B</th><th style=\"min-width:62px;text-align:right\">估值/ARR</th><th style=\"min-width:80px\">Momentum</th></tr>";
+  let d=live(DATA.apps);
+  if(cat!=="all") d=d.filter(a=>a.cat===cat);
+  /* was a bare `b[sk]-a[sk]`, which puts NaN rows in arbitrary order the
+     moment any app has an unknown metric */
+  d=[...d].sort((a,b)=>{const av=sortVal(a,sk)??-Infinity,bv=sortVal(b,sk)??-Infinity;return bv-av;});
   const TL={ultra:"&#9888;&#65039; Ultra",high:"&#9888; High",med:"&#9728; Medium",low:"&#128712; Low"};
   document.getElementById("tbody").innerHTML=d.map(a=>
-    "<tr><td><div class=\"an\">"+a.name+"</div><div class=\"uc2\">"+a.uc+"</div></td>"+
-    "<td><span class=\"bdg bdg-"+a.cat+"\">"+CNC[a.cat]+"</span></td>"+
-    "<td style=\"text-align:right\" class=\"num\">$"+a.arr+"</td>"+
-    "<td style=\"text-align:right\" class=\"num up\">+"+a.arrg+"%</td>"+
+    "<tr><td><div class=\"an\">"+esc(a.name)+"</div><div class=\"uc2\">"+esc(a.uc)+"</div></td>"+
+    "<td>"+tagged(cats(),a.cat,a.cat)+"</td>"+
+    "<td style=\"text-align:right\" class=\"num"+provCls(a,"arr")+"\">"+fmoney(a.arr,"")+provMark(a,"arr")+"</td>"+
+    "<td style=\"text-align:right\" class=\"num up\">"+fna(a.arrg,"%")+"</td>"+
     "<td style=\"text-align:right\" class=\"num\">"+fmau(a.mau)+"</td>"+
-    "<td style=\"text-align:right\" class=\"num up\">+"+a.maug+"%</td>"+
-    "<td>"+(TL[a.ti]||a.ti)+"</td>"+
-    "<td style=\"font-size:11px\">"+(a.selfModel?"<span style=\"color:#16a34a;font-weight:600\">&#10003; 自有</span>":"<span style=\"color:#888\">API依赖</span>")+"</td>"+
-    "<td style=\"text-align:right\" class=\"num\">$"+a.val+"B</td>"+"<td style=\"text-align:right\" class=\"num\">"+(a.val>0&&a.arr>0?(a.val*1000/a.arr).toFixed(1)+"x":"—")+"</td>"+
+    "<td style=\"text-align:right\" class=\"num up\">"+fna(a.maug,"%")+"</td>"+
+    "<td>"+(TL[a.ti]||esc(a.ti))+"</td>"+
+    "<td class=\""+("om-"+((a.ownModel||{}).status||"none"))+provCls(a,"ownModel")+"\" style=\"font-size:11px\">"+ownModelCell(a)+provMark(a,"ownModel")+"</td>"+
+    "<td style=\"text-align:right\" class=\"num"+provCls(a,"val")+"\">"+fmoney(a.val,"B")+provMark(a,"val")+"</td>"+
+    "<td style=\"text-align:right\" class=\"num\">"+fmult(a.val,a.arr)+"</td>"+
     "<td class=\"num\">"+a.m+"<div class=\"mbar\"><div class=\"mfill\" style=\"width:"+a.m+"%\"></div></div></td></tr>"
   ).join("");}
+/* The old boolean could not express "has its own model AND most tokens run on
+   it", which is the whole point for something like Cursor. */
+function ownModelCell(a){
+  const om=a.ownModel||{status:"none"},names=(om.models||[]).join(", ");
+  const tip=names?" title=\""+esc(names)+"\"":"";
+  if(om.status==="none") return "<span"+tip+">API依赖</span>";
+  const label=om.status==="primary"?"&#10003; 自有":"&#9702; 混合";
+  const share=om.tokenShare!=null?" · "+om.tokenShare+"% token":"";
+  return "<span"+tip+">"+label+share+"</span>";
+}
+/* The sourcing funnel: what discover.py found but did not auto-promote. */
+function renderCandidateTable(){
+  const rows=DATA.candidates||[];
+  document.getElementById("thead").innerHTML="<tr><th style=\"min-width:150px\">候选</th><th style=\"min-width:92px\">赛道</th><th style=\"min-width:70px;text-align:right\">ARR $M</th><th style=\"min-width:70px;text-align:right\">估值 $B</th><th style=\"min-width:190px\">为什么值得看</th><th style=\"min-width:130px\">未自动入池的原因</th><th style=\"min-width:96px\">发现于</th><th style=\"min-width:70px\">状态</th></tr>";
+  if(!rows.length){
+    document.getElementById("tbody").innerHTML="<tr><td colspan=\"8\" style=\"color:#aaa;padding:16px\">候选池为空。下一次月度 discover 跑完会填充；灰区标的（ARR $10-30M 或估值 $0.5-2B）会停在这里等你裁决。</td></tr>";
+    return;
+  }
+  const V={pending:"待裁决",approved:"已批",rejected:"已否"};
+  document.getElementById("tbody").innerHTML=rows.map(c=>
+    "<tr><td><div class=\"an\">"+esc(c.name)+"</div><div class=\"uc2\">"+esc(c.uc)+"</div></td>"+
+    "<td>"+tagged(cats(),c.cat,c.cat)+"</td>"+
+    "<td style=\"text-align:right\" class=\"num\">"+fmoney(c.arr,"")+"</td>"+
+    "<td style=\"text-align:right\" class=\"num\">"+fmoney(c.val,"B")+"</td>"+
+    "<td style=\"font-size:11px;color:#444\">"+esc(c.why)+"</td>"+
+    "<td style=\"font-size:11px;color:#92400e\">"+esc(c.reason)+"</td>"+
+    "<td style=\"font-size:11px;color:#888\">"+esc(c.found_at||c.as_of)+
+      (c.url?" <a href=\""+esc(c.url)+"\" target=\"_blank\" rel=\"noopener\" title=\""+esc(c.source)+"\">&#8599;</a>":"")+"</td>"+
+    "<td style=\"font-size:11px\">"+esc(V[c.verdict]||c.verdict)+"</td></tr>"
+  ).join("");
+}
+const HINTS={
+  models:"Foundation Models=模型API收入，AI Apps=依赖API的应用ARR",
+  apps:"每格数值旁的圆点＝来源与报道日期；灰色+「待复核」＝超过复核周期",
+  candidates:"discover.py 每月扫出的灰区标的，等你一句话裁决后再进主表"
+};
 function switchLayer(l){
   layer=l;
   document.querySelectorAll(".ltab").forEach(t=>t.classList.toggle("on",t.dataset.layer===l));
-  const isM=l==="models";
-  document.getElementById("app-filters").style.display=isM?"none":"flex";
-  document.getElementById("model-filters").style.display=isM?"flex":"none";
-  if(isM) renderModelTable(modelRegion,modelSort);
-  else renderAppTable(appCat,appSort);
+  document.getElementById("app-filters").style.display=l==="apps"?"flex":"none";
+  document.getElementById("model-filters").style.display=l==="models"?"flex":"none";
+  document.getElementById("layer-hint").textContent=HINTS[l]||"";
+  if(l==="models") renderModelTable(modelRegion,modelSort);
+  else if(l==="apps") renderAppTable(appCat,appSort);
+  else renderCandidateTable();
 }
 document.querySelectorAll(".ltab").forEach(t=>t.addEventListener("click",()=>switchLayer(t.dataset.layer)));
-document.querySelectorAll("#app-filters .fb").forEach(b=>b.addEventListener("click",()=>{appCat=b.dataset.cat;document.querySelectorAll("#app-filters .fb").forEach(x=>x.classList.remove("on"));b.classList.add("on");renderAppTable(appCat,appSort);}));
 document.getElementById("app-sort").addEventListener("change",e=>{appSort=e.target.value;renderAppTable(appCat,appSort);});
-document.querySelectorAll("#model-filters .fb").forEach(b=>b.addEventListener("click",()=>{modelRegion=b.dataset.region;document.querySelectorAll("#model-filters .fb").forEach(x=>x.classList.remove("on"));b.classList.add("on");renderModelTable(modelRegion,modelSort);}));
 document.getElementById("model-sort").addEventListener("change",e=>{modelSort=e.target.value;renderModelTable(modelRegion,modelSort);});
-loadData().catch(err=>{document.getElementById("mtx").innerHTML="<div style=\"color:#dc2626;padding:16px\">加载失败: "+err.message+"</div>";});
+loadData().catch(err=>{document.getElementById("mtx").innerHTML="<div style=\"color:#dc2626;padding:16px\">加载失败: "+esc(err.message)+"</div>";});
 </script></body></html>
