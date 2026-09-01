@@ -16,12 +16,15 @@ import sys
 import common
 
 # The frontend sums these, so they may never be null.
-REQUIRED_NUMERIC = {"models": ("arr",), "apps": ("arr",)}
+# A model provider may have no separable revenue at all (Qwen inside
+# Alibaba, Llama inside Meta): excluding those would leave the landscape
+# view with holes where the biggest players belong.
+REQUIRED_NUMERIC = {"models": (), "apps": ("arr",)}
 # Everything else may legitimately be unknown on a newly discovered company.
 OPTIONAL_NUMERIC = {
     # tokM is optional: hardly any provider discloses monthly token volume,
     # and requiring it kept DeepSeek out of the dashboard entirely.
-    "models": ("arrg", "tokM", "tokG", "trainPerRun", "runsPerYear", "val"),
+    "models": ("arr", "arrg", "tokM", "tokG", "trainPerRun", "runsPerYear", "val"),
     "apps":   ("arrg", "mau", "maug", "val"),
 }
 CONCENTRATION_LIMIT = 0.25

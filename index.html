@@ -299,8 +299,11 @@ function renderMtx(){
      row count, which silently understated growth as soon as one app had no
      figure on file. */
   const mAvgG=avgOf(M,"arrg"),aAvgG=avgOf(A,"arrg");
+  /* several providers are divisions whose parent never breaks out model
+     revenue, so the total covers fewer rows than the table shows */
+  const mRev=M.filter(a=>a.arr!=null).length;
   document.getElementById("mtx").innerHTML=
-    "<div class=\"mc\"><div class=\"mc-l\">模型收入 Est. Revenue</div><div class=\"mc-v neu\">$"+(mTot/1000).toFixed(1)+"B</div><div class=\"mc-s\">"+M.length+"家顶级模型供应商</div></div>"+
+    "<div class=\"mc\"><div class=\"mc-l\">模型收入 Est. Revenue</div><div class=\"mc-v neu\">$"+(mTot/1000).toFixed(1)+"B</div><div class=\"mc-s\">"+M.length+"家供应商"+(mRev<M.length?"（其中 "+mRev+" 家有收入数据）":"")+"</div></div>"+
     "<div class=\"mc\"><div class=\"mc-l\">App收入 Est. ARR</div><div class=\"mc-v\" style=\"color:#6d28d9\">$"+(aTot/1000).toFixed(1)+"B</div><div class=\"mc-s\">"+A.length+"个AI native apps</div></div>"+
     "<div class=\"mc\"><div class=\"mc-l\">模型总 Token量</div><div class=\"mc-v\">~"+Math.round(tokTot)+"T</div><div class=\"mc-s\">万亿tokens/月（估算）</div></div>"+
     "<div class=\"mc\"><div class=\"mc-l\">模型收入增长率</div><div class=\"mc-v up\">"+fna(mAvgG,"%")+"</div><div class=\"mc-s\">API Revenue YoY</div></div>"+

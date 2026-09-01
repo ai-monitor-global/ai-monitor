@@ -337,7 +337,10 @@ def _add_schema(section: str) -> dict:
 
 
 def add_entities(data: dict, names: list, section: str, dry: bool) -> int:
-    required = ("arr",)   # tokM is rarely disclosed; do not gate on it
+    # For a model provider nothing is mandatory: a megacap-embedded lab has
+    # no separable revenue, and dropping it would be a worse error than
+    # showing it with an unknown one. Apps must still have revenue.
+    required = () if section == "models" else ("arr",)
     added, skipped = [], []
     for name in names:
         name = name.strip()
