@@ -16,8 +16,9 @@ on:
           - discover-seed   # 一次性覆盖发现：补齐空白垂直
           - validate-only   # 不调 API，只跑校验和自检
           - add-model-seeds # 一次性：补 DeepSeek/Qwen/Doubao/Meta 等模型厂商
+          - reverify-some  # 只复核 names 里列出的几家（便宜，几毛钱）
       names:
-        description: '仅 mode=add-* 用：要补的公司，逗号分隔（留空则用内置名单）'
+        description: 'mode=add-* / reverify-some 用：公司名，逗号分隔'
         type: string
         default: ''
       section:
@@ -93,6 +94,9 @@ jobs:
               ;;
             validate-only)
               echo "skipping API passes"
+              ;;
+            reverify-some)
+              python reverify.py --only "$NAMES" $DRY || FAILED="$FAILED reverify-some"
               ;;
             add-model-seeds)
               if [ -n "${NAMES}" ]; then

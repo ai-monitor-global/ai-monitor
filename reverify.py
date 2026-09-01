@@ -8,7 +8,7 @@ cannot corrupt the batch.
 
   python reverify.py [-k 10] [--dry-run]
   python reverify.py --all            # one-time backfill of the whole roster
-  python reverify.py --only "Kimi"    # a single entity
+  python reverify.py --only "Kimi,MiniMax"   # just these entities
 """
 from __future__ import annotations
 
@@ -186,14 +186,21 @@ def main() -> int:
     data = common.load()
 
     if only:
-        targets = []
-        for section in ("models", "apps"):
-            entity, err = common.resolve(data[section], only)
-            if entity:
-                targets = [(section, entity)]
-                break
+        targets, misses = [], []
+        for name in [n.strip() for n in only.split(",") if n.strip()]:
+            found = None
+            for section in ("models", "apps"):
+                entity, _ = common.resolve(data[section], name)
+                if entity:
+                    found = (section, entity)
+                    break
+            if found:
+                targets.append(found)
+            else:
+                misses.append(name)
+        for name in misses:
+            print("no entity matches {!r}".format(name), file=sys.stderr)
         if not targets:
-            print("no entity matches {!r}".format(only), file=sys.stderr)
             return 1
     elif backfill:
         targets = [(s, e) for s, e in common.iter_entities(data)
