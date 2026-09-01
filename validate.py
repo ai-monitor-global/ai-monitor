@@ -71,6 +71,9 @@ def check(data: dict):
                 errors.append("{}.retired must be a bool".format(tag))
             if not isinstance(entity.get("prov"), dict):
                 errors.append("{}.prov must be an object".format(tag))
+            if str(entity.get("parent") or "").strip() and entity.get("val") is not None:
+                errors.append("{}: parent={!r} but val={} - an embedded lab must not carry its parent's valuation".format(
+                    tag, entity.get("parent"), entity.get("val")))
             if "selfModel" in entity:
                 errors.append("{}: legacy selfModel survived migration".format(tag))
             m = entity.get("m")

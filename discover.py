@@ -257,10 +257,13 @@ Rules:
   company.
 - If the subject is a model, product line or division INSIDE a larger company
   (e.g. Doubao inside ByteDance, Nova inside Amazon, Llama inside Meta), it has
-  no valuation of its own: leave `val` and `listed` empty. Do NOT put the
-  parent company's valuation or market cap there - that is the parent's number,
-  not this row's. The same applies to `arr`: report only revenue from serving
-  models, never the parent's total.
+  set `parent` to that company and leave BOTH `val` AND `listed` empty. The
+  parent's valuation or market cap is the parent's number, not this row's -
+  putting it here is the single most common error on these rows and it will be
+  rejected. `arr` is likewise only model-serving revenue, never the parent's
+  total; leave it empty if the parent does not break it out.
+- Set `parent` to an empty string only for a genuinely standalone company
+  (OpenAI, Anthropic, Mistral, DeepSeek).
 - {units}
 - For a model provider, `arr` is annualised revenue from serving models (API +
   first-party model subscriptions). It EXCLUDES compute/infrastructure leasing,
@@ -298,7 +301,8 @@ def _add_schema(section: str) -> dict:
         "arr":    dict(common.OPTIONAL_NUMBER, description="$M; empty if unsourceable"),
         "arrg":   common.OPTIONAL_NUMBER,
         "val":    dict(common.OPTIONAL_NUMBER, description="$B; market cap if listed"),
-        "listed": {"type": "string", "description": "EXCHANGE:TICKER, or empty if private"},
+        "listed": {"type": "string", "description": "EXCHANGE:TICKER, or empty if private/embedded"},
+        "parent": {"type": "string", "description": "the company this lab sits inside (e.g. Meta, Baidu), or empty if it is an independent company"},
         "notes":  {"type": "string"},
         "source": {"type": "string"},
         "url":    {"type": "string"},
@@ -394,10 +398,14 @@ def _to_entity(got: dict, section: str) -> dict:
         "uc": (got.get("uc") or "").strip() or got["name"].strip(),
         "arr": got.get("arr"), "arrg": got.get("arrg"),
         "val": got.get("val"), "listed": str(got.get("listed") or "").strip(),
+        "parent": str(got.get("parent") or "").strip(),
         "m": 0, "retired": False, "checked_at": str(common.today()),
         "prov": {"arr": dict(prov)},
     }
-    if got.get("val") is not None:
+    # belt and braces: the prompt asks, the code enforces
+    if entity["parent"]:
+        entity["val"], entity["listed"] = None, ""
+    if entity["val"] is not None:
         entity["prov"]["val"] = dict(prov)
     if section == "models":
         entity.update({

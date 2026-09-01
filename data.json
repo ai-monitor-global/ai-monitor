@@ -1476,7 +1476,8 @@
         }
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Anthropic",
@@ -1529,7 +1530,8 @@
         }
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Google Gemini",
@@ -1575,7 +1577,8 @@
         }
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": "Google"
     },
     {
       "name": "xAI",
@@ -1628,7 +1631,8 @@
         }
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Kimi (Moonshot)",
@@ -1681,7 +1685,8 @@
         }
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "MiniMax",
@@ -1741,7 +1746,8 @@
         }
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Zhipu AI",
@@ -1794,7 +1800,8 @@
         }
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Mistral AI",
@@ -1847,7 +1854,8 @@
         }
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Cohere",
@@ -1900,7 +1908,8 @@
         }
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "01.AI",
@@ -1953,7 +1962,8 @@
         }
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "DeepSeek",
@@ -1985,7 +1995,8 @@
       "tokM": null,
       "tokG": null,
       "trainPerRun": null,
-      "runsPerYear": null
+      "runsPerYear": null,
+      "parent": ""
     },
     {
       "name": "Doubao (ByteDance)",
@@ -2010,7 +2021,8 @@
       "tokM": 5400.0,
       "tokG": 900.0,
       "trainPerRun": null,
-      "runsPerYear": null
+      "runsPerYear": null,
+      "parent": "ByteDance"
     },
     {
       "name": "Alibaba Qwen (通义千问)",
@@ -2035,7 +2047,8 @@
       "tokM": null,
       "tokG": null,
       "trainPerRun": null,
-      "runsPerYear": null
+      "runsPerYear": null,
+      "parent": "Alibaba"
     },
     {
       "name": "Meta (Llama)",
@@ -2060,7 +2073,8 @@
       "tokM": null,
       "tokG": null,
       "trainPerRun": 30.0,
-      "runsPerYear": 2.0
+      "runsPerYear": 2.0,
+      "parent": "Meta"
     },
     {
       "name": "Amazon Nova",
@@ -2085,27 +2099,21 @@
       "tokM": null,
       "tokG": null,
       "trainPerRun": null,
-      "runsPerYear": null
+      "runsPerYear": null,
+      "parent": "Amazon"
     },
     {
       "name": "Baidu (ERNIE)",
       "uc": "文心5.1、文心App、千帆平台",
       "arr": null,
       "arrg": null,
-      "val": 32.9,
-      "listed": "NASDAQ:BIDU",
+      "val": null,
+      "listed": "",
       "m": 0,
       "retired": false,
       "checked_at": "2026-09-01",
       "prov": {
         "arr": {
-          "as_of": "2026-09-01",
-          "checked": "2026-09-01",
-          "source": "Baidu Q2 2026 results, Form 6-K exhibit filed with SEC 2026-08-18 (segment RMB figures; RMB converted at the company-implied 6.78 RMB/USD: RMB 31.33B = $4.62B, RMB 12.5B = $1.84B, RMB 7.3B = $1.08B); Reuters 2026-08-18 'Baidu CEO vows to return Ernie to AI frontier as revenue miss sinks shares'; market cap from Investing.com 2026-08-31 (BIDU $97.12 x 339.19M shares = $32.9B), cross-checked with stockanalysis.com HKEX:9888 HK$258.27B on 2026-08-31 (~$33B at 7.8); ERNIE 5.1 launch details QbitAI 2026-05-09; app rename to 文心 Sina Tech 2025-11-01; China nationwide 140T tokens/day cited by National Data Administration 2026-03-23 (not used).",
-          "url": "https://www.sec.gov/Archives/edgar/data/0001329099/000119312526355431/d112854dex991.htm",
-          "conf": "medium"
-        },
-        "val": {
           "as_of": "2026-09-01",
           "checked": "2026-09-01",
           "source": "Baidu Q2 2026 results, Form 6-K exhibit filed with SEC 2026-08-18 (segment RMB figures; RMB converted at the company-implied 6.78 RMB/USD: RMB 31.33B = $4.62B, RMB 12.5B = $1.84B, RMB 7.3B = $1.08B); Reuters 2026-08-18 'Baidu CEO vows to return Ernie to AI frontier as revenue miss sinks shares'; market cap from Investing.com 2026-08-31 (BIDU $97.12 x 339.19M shares = $32.9B), cross-checked with stockanalysis.com HKEX:9888 HK$258.27B on 2026-08-31 (~$33B at 7.8); ERNIE 5.1 launch details QbitAI 2026-05-09; app rename to 文心 Sina Tech 2025-11-01; China nationwide 140T tokens/day cited by National Data Administration 2026-03-23 (not used).",
@@ -2117,7 +2125,8 @@
       "tokM": null,
       "tokG": null,
       "trainPerRun": null,
-      "runsPerYear": null
+      "runsPerYear": null,
+      "parent": "Baidu"
     },
     {
       "name": "Tencent Hunyuan (腾讯混元)",
@@ -2142,7 +2151,8 @@
       "tokM": null,
       "tokG": null,
       "trainPerRun": null,
-      "runsPerYear": 3.0
+      "runsPerYear": 3.0,
+      "parent": "Tencent"
     }
   ],
   "apps": [
@@ -2237,7 +2247,8 @@
         ]
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Perplexity",
@@ -2328,7 +2339,8 @@
         ]
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Character.ai",
@@ -2429,7 +2441,8 @@
         "models": []
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "ElevenLabs",
@@ -2509,7 +2522,8 @@
         "models": []
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Midjourney",
@@ -2582,7 +2596,8 @@
         "models": []
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Runway",
@@ -2662,7 +2677,8 @@
         "models": []
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Harvey",
@@ -2763,7 +2779,8 @@
         "models": []
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Glean",
@@ -2850,7 +2867,8 @@
         "models": []
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Gamma",
@@ -2937,7 +2955,8 @@
         "models": []
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "HeyGen",
@@ -3024,7 +3043,8 @@
         "models": []
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Suno",
@@ -3097,7 +3117,8 @@
         "models": []
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Writer",
@@ -3191,7 +3212,8 @@
         ]
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Sierra",
@@ -3238,7 +3260,8 @@
         "tokenShare": null,
         "models": []
       },
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Granola",
@@ -3311,7 +3334,8 @@
         "models": []
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Cognition",
@@ -3403,7 +3427,8 @@
         ]
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Luma AI",
@@ -3483,7 +3508,8 @@
         "models": []
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Speak",
@@ -3565,7 +3591,8 @@
         ]
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Abridge",
@@ -3649,7 +3676,8 @@
         ]
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Ideogram",
@@ -3722,7 +3750,8 @@
         "models": []
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     },
     {
       "name": "Descript",
@@ -3811,7 +3840,8 @@
         ]
       },
       "checked_at": "2026-09-01",
-      "listed": ""
+      "listed": "",
+      "parent": ""
     }
   ],
   "ai_progress": {

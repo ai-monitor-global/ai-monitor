@@ -70,8 +70,8 @@ NUMERIC_FIELDS = {
     "apps":   {"arr", "arrg", "mau", "maug", "val"},
 }
 QUALITATIVE_FIELDS = {
-    "models": {"uc", "region", "listed"},
-    "apps":   {"uc", "cat", "stage", "biz", "ti", "ownModel", "listed"},
+    "models": {"uc", "region", "listed", "parent"},
+    "apps":   {"uc", "cat", "stage", "biz", "ti", "ownModel", "listed", "parent"},
 }
 
 # "EXCHANGE:TICKER" for a public company, "" for private. For a listed company
@@ -121,6 +121,11 @@ ENUMS = {
     "cat":    set(CATEGORIES),
 }
 OWN_MODEL_STATUS = {"none", "hybrid", "primary"}
+
+# `parent` names the company a lab sits inside ("Meta", "Baidu"), else "".
+# An embedded lab has no valuation of its own. This is enforced in code
+# rather than only requested in a prompt, because asking produced Baidu's
+# entire $32.9B market cap on the ERNIE row.
 
 # v1 lumped every vertical into a single `vertical` bucket. v2 splits it, so a
 # blanket rename is impossible - these are its three members at the time of
@@ -207,6 +212,7 @@ def migrate(data: dict) -> dict:
     for section, entity in iter_entities(data):
         entity.setdefault("retired", False)
         entity.setdefault("listed", "")
+        entity.setdefault("parent", "")
         entity.setdefault("prov", {})
         # prov.checked (when we last verified) is distinct from prov.as_of
         # (when the source reported it). Seed it from the entity's checked_at
@@ -340,6 +346,10 @@ def _failures(section: str, entity: dict, field: str, new, patch: dict):
         if not low <= new <= high:
             bad("{}={} is outside the plausible range [{}, {}]".format(
                 field, new, low, high))
+        if field == "val" and str(entity.get("parent") or "").strip():
+            bad("{} sits inside {}, which has no valuation of its own - "
+                "do not record the parent's".format(
+                    entity.get("name"), entity.get("parent")))
         if field in MONEY_FIELDS and CURRENCY_RE.search(source) \
                 and not CONVERTED_RE.search(source):
             bad("source quotes a non-USD figure with no conversion shown; "
@@ -359,6 +369,13 @@ def _failures(section: str, entity: dict, field: str, new, patch: dict):
         problem = _check_own_model(new)
         if problem:
             bad(problem)
+        return out
+    if field == "parent":
+        if not isinstance(new, str):
+            bad("parent must be a string")
+        elif new.strip() and entity.get("val") is not None:
+            bad("parent={!r} but val is set; an embedded lab has no "
+                "valuation of its own".format(new))
         return out
     if field == "listed":
         if not isinstance(new, str):

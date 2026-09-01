@@ -44,6 +44,9 @@ Rules:
   when it is well sourced. Always say which round/date you used in `source`,
   and if you saw an older conflicting figure, name it in `notes` so it is
   clear you chose deliberately.
+- If `parent` below is non-empty, this row is a lab INSIDE that company. It
+  has no valuation of its own: never patch `val` or `listed` for it, and
+  `arr` is only its model-serving revenue, never the parent's.
 - IF THE COMPANY IS PUBLICLY LISTED, its valuation is its CURRENT MARKET CAP.
   Set `listed` to "EXCHANGE:TICKER" (e.g. "HKEX:2513") and set `val` from the
   latest market cap you can find, with the quote date in `as_of`. Never use a
@@ -147,7 +150,7 @@ SCHEMA = {
     "additionalProperties": False,
 }
 
-SHOWN_FIELDS = ("uc", "arr", "arrg", "val", "listed", "mau", "maug", "tokM", "tokG",
+SHOWN_FIELDS = ("uc", "arr", "arrg", "val", "listed", "parent", "mau", "maug", "tokM", "tokG",
                 "cat", "stage", "biz", "ti", "region", "ownModel")
 
 
