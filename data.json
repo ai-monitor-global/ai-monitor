@@ -1398,9 +1398,10 @@
         "confirmed": 185
       },
       "discovery": {
-        "at": null,
-        "ok": null,
-        "error": null
+        "at": "2026-09-01",
+        "ok": true,
+        "error": null,
+        "added": 2
       },
       "progress": {
         "at": null,
@@ -1421,7 +1422,7 @@
       "trainPerRun": 15,
       "runsPerYear": 4,
       "val": 852,
-      "m": 47,
+      "m": 48,
       "retired": false,
       "prov": {
         "tokM": {
@@ -1541,7 +1542,7 @@
       "trainPerRun": 20,
       "runsPerYear": 4,
       "val": null,
-      "m": 65,
+      "m": 61,
       "retired": false,
       "prov": {
         "tokM": {
@@ -1587,7 +1588,7 @@
       "trainPerRun": 15,
       "runsPerYear": 3,
       "val": 250,
-      "m": 49,
+      "m": 43,
       "retired": false,
       "prov": {
         "val": {
@@ -1640,7 +1641,7 @@
       "trainPerRun": 8,
       "runsPerYear": 3,
       "val": 35,
-      "m": 46,
+      "m": 45,
       "retired": false,
       "prov": {
         "val": {
@@ -1693,7 +1694,7 @@
       "trainPerRun": 6,
       "runsPerYear": 2,
       "val": 13.0,
-      "m": 56,
+      "m": 53,
       "retired": false,
       "prov": {
         "arr": {
@@ -1753,7 +1754,7 @@
       "trainPerRun": 5,
       "runsPerYear": 2,
       "val": 60.8,
-      "m": 3,
+      "m": 5,
       "retired": false,
       "prov": {
         "arr": {
@@ -1912,7 +1913,7 @@
       "trainPerRun": 4,
       "runsPerYear": 2,
       "val": 1,
-      "m": 23,
+      "m": 26,
       "retired": false,
       "prov": {
         "arr": {
@@ -1953,6 +1954,63 @@
       },
       "checked_at": "2026-09-01",
       "listed": ""
+    },
+    {
+      "name": "DeepSeek",
+      "uc": "DeepSeek-V4-Pro、V4-Flash（含视觉）",
+      "arr": 70.0,
+      "arrg": 900.0,
+      "val": 74.0,
+      "listed": "",
+      "m": 38,
+      "retired": false,
+      "checked_at": "2026-09-01",
+      "prov": {
+        "arr": {
+          "as_of": "2026-09-01",
+          "checked": "2026-09-01",
+          "source": "Bloomberg 2026-08-06 (valuation nears $74B in reopened ~$8B round); The Information via Reuters/TradingView ~2026-08-26 ($70M revenue as of July, tenfold jump from 2025); DeepSeek official API change log 2026-08-13/2026-08-21 and Caixin 2026-08-01 (V4-Pro / V4-Flash / V4-Flash-Vision-Exp); TechCrunch 2026-07-14 (prior $71B mark, superseded). All figures already USD as reported; no currency conversion applied.",
+          "url": "https://www.bloomberg.com/news/articles/2026-08-06/deepseek-resumes-8-billion-round-with-monolith-in-the-running",
+          "conf": "medium"
+        },
+        "val": {
+          "as_of": "2026-09-01",
+          "checked": "2026-09-01",
+          "source": "Bloomberg 2026-08-06 (valuation nears $74B in reopened ~$8B round); The Information via Reuters/TradingView ~2026-08-26 ($70M revenue as of July, tenfold jump from 2025); DeepSeek official API change log 2026-08-13/2026-08-21 and Caixin 2026-08-01 (V4-Pro / V4-Flash / V4-Flash-Vision-Exp); TechCrunch 2026-07-14 (prior $71B mark, superseded). All figures already USD as reported; no currency conversion applied.",
+          "url": "https://www.bloomberg.com/news/articles/2026-08-06/deepseek-resumes-8-billion-round-with-monolith-in-the-running",
+          "conf": "medium"
+        }
+      },
+      "region": "CN",
+      "tokM": null,
+      "tokG": null,
+      "trainPerRun": null,
+      "runsPerYear": null
+    },
+    {
+      "name": "Doubao (ByteDance)",
+      "uc": "豆包App、豆包大模型2.1、Seedance 2.0",
+      "arr": 2110.0,
+      "arrg": 900.0,
+      "val": null,
+      "listed": "",
+      "m": 75,
+      "retired": false,
+      "checked_at": "2026-09-01",
+      "prov": {
+        "arr": {
+          "as_of": "2026-09-01",
+          "checked": "2026-09-01",
+          "source": "36Kr/kr-asia 2026-06-03 (MaaS 2026 target RMB 15B, converted at 7.1 = $2.11B; 2025 actual RMB 1.5B = ~$211M; Seedance 2.0 >RMB 1B/month = ~$141M); Volcano Engine FORCE conference via Jiemian/TechNode 2026-06-23 (180T tokens/day, >10x YoY, >1,500x since May 2024 launch); TechNode 2026-04-07 (120T tokens/day as of March 2026); QuestMobile 2026 Q1/H1 (Doubao MAU 345M Mar 2026, 382M Jun 2026)",
+          "url": "https://kr-asia.com/bytedance-raises-volcano-engines-maas-revenue-target-on-seedance-2-0-growth",
+          "conf": "medium"
+        }
+      },
+      "region": "CN",
+      "tokM": 5400.0,
+      "tokG": 900.0,
+      "trainPerRun": null,
+      "runsPerYear": null
     }
   ],
   "apps": [
