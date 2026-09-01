@@ -2,7 +2,7 @@
   "meta": {
     "last_updated": "2026-09-01",
     "next_update": "2026-09-06",
-    "update_notes": "2026-09-01: 6 项已核实更新 — MODEL MiniMax.listed:  -> HKEX:0100; MODEL Zhipu AI.arr: 239 -> 269; MODEL Zhipu AI.arrg: 132 -> 399.7; MODEL Zhipu AI.val: 60.8 -> 62.0; MODEL Zhipu AI.uc: GLM-5.2、GLM-5V、AutoGLM -> GLM-5.3、GLM-5V、AutoGLM; MODEL Zhipu AI.listed:  -> HKEX:2513",
+    "update_notes": "2026-09-01: 1 项已核实更新 — MODEL Kimi",
     "schema": 2,
     "last_run": "2026-09-01",
     "stale_days": 120,
@@ -1429,6 +1429,18 @@
         "source": "财新 2026-01-08：智谱（02513.HK）2026年1月8日于港交所主板挂牌；Google Finance/Investing.com 2026年8月报价页确认代码2513.HK仍在交易",
         "conf": "high",
         "forced": null
+      },
+      {
+        "date": "2026-09-01",
+        "pass": "reverify",
+        "section": "models",
+        "entity": "Kimi (Moonshot)",
+        "field": "valPending",
+        "old": null,
+        "new": 50,
+        "source": "财联社《科创板日报》2026-08-05 独家《月之暗面500亿美元Pre-IPO轮开闸》：G 轮（Pre-IPO）已启动，本轮投前估值 500 亿美元（原文即美元计价，另注约合人民币 3381 亿元）；彭博 2026-07-21 同口径「至多 500 亿美元投前估值」；36氪 2026-08-16 报道该轮仍在进行中、尚未交割",
+        "conf": "high",
+        "forced": null
       }
     ],
     "review_queue": [
@@ -1463,11 +1475,11 @@
         "at": "2026-09-01",
         "ok": true,
         "error": null,
-        "checked": 3,
+        "checked": 1,
         "failed": 0,
-        "applied": 6,
+        "applied": 1,
         "rejected": 0,
-        "confirmed": 13
+        "confirmed": 5
       },
       "discovery": {
         "at": "2026-09-01",
@@ -1727,8 +1739,8 @@
         "val": {
           "as_of": "2026-07-29",
           "checked": "2026-09-01",
-          "source": "Bloomberg 2026-07-29《Moonshot AI Surpasses Funding Goal to Hit $35 Billion Value》：完成 35 亿美元融资，投后估值 350 亿美元（原文即美元计价）；财联社《科创板日报》/澎湃新闻同日同口径",
-          "url": "https://news.bloomberglaw.com/antitrust/chinas-moonshot-ai-passes-funding-goal-to-hit-35-billion-value",
+          "source": "Bloomberg 2026-07-29《China's Moonshot AI Passes Funding Goal to Hit $35 Billion Value》：F 轮已完成，募资 35 亿美元，投后估值 350 亿美元；澎湃新闻/中国基金报 2026-07-29 同口径（原文即美元计价）",
+          "url": "https://www.bloomberg.com/news/articles/2026-07-29/china-s-moonshot-ai-passes-funding-goal-to-hit-35-billion-value",
           "conf": "high"
         },
         "uc": {
@@ -1739,10 +1751,10 @@
           "checked": "2026-09-01"
         },
         "arr": {
-          "as_of": "2026-06-15",
+          "as_of": "2026-07-22",
           "checked": "2026-09-01",
-          "source": "每日经济新闻/财联社《科创板日报》2026-06-30：6 月中旬 ARR 突破 3 亿美元，API 收入占七成以上（原文即美元计价）；彭博 2026-07-22 经 IT之家转述同一数字",
-          "url": "https://www.nbd.com.cn/articles/2026-06-30/4441850.html",
+          "source": "彭博 2026-07-21/22（经 IT之家 2026-07-22 转述）+ 澎湃新闻 2026-07-20：2026 年 6 月 ARR 达 3 亿美元（3 月破 1 亿、5 月破 2 亿），API 收入占七成以上；原文即美元计价",
+          "url": "https://www.ithome.com/0/979/817.htm",
           "conf": "high"
         },
         "arrg": {
@@ -1765,12 +1777,19 @@
           "source": "澎湃新闻/洞察IPO 2026-08-07 + 36氪 2026-08-16：8 月 3 日路透 IFR 传其拟向港交所递表募资约 30 亿美元，公司回应“消息不实”，仍为非上市公司",
           "url": "https://m.thepaper.cn/newsDetail_forward_33735523",
           "conf": "high"
+        },
+        "valPending": {
+          "as_of": "2026-08-05",
+          "checked": "2026-09-01",
+          "source": "财联社《科创板日报》2026-08-05 独家《月之暗面500亿美元Pre-IPO轮开闸》：G 轮（Pre-IPO）已启动，本轮投前估值 500 亿美元（原文即美元计价，另注约合人民币 3381 亿元）；彭博 2026-07-21 同口径「至多 500 亿美元投前估值」；36氪 2026-08-16 报道该轮仍在进行中、尚未交割",
+          "url": "https://www.cls.cn/",
+          "conf": "high"
         }
       },
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": 50
     },
     {
       "name": "MiniMax",
