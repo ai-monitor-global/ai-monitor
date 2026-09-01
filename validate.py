@@ -24,8 +24,9 @@ REQUIRED_NUMERIC = {"models": (), "apps": ("arr",)}
 OPTIONAL_NUMERIC = {
     # tokM is optional: hardly any provider discloses monthly token volume,
     # and requiring it kept DeepSeek out of the dashboard entirely.
-    "models": ("arr", "arrg", "tokM", "tokG", "trainPerRun", "runsPerYear", "val"),
-    "apps":   ("arrg", "mau", "maug", "val"),
+    "models": ("arr", "arrg", "tokM", "tokG", "trainPerRun", "runsPerYear",
+               "val", "valPending"),
+    "apps":   ("arrg", "mau", "maug", "val", "valPending"),
 }
 CONCENTRATION_LIMIT = 0.25
 
@@ -155,6 +156,20 @@ def check(data: dict):
                                 "(limit {:.0%})".format(cat, n, len(apps),
                                                         n / len(apps),
                                                         CONCENTRATION_LIMIT))
+    for section in ("models", "apps"):
+        for entity in common.active(data, section):
+            if not str(entity.get("listed") or "").strip():
+                continue
+            prov = (entity.get("prov") or {}).get("val") or {}
+            day = common._parse_day(prov.get("checked")) or common._parse_day(prov.get("as_of"))
+            age = None if day is None else (common.today() - day).days
+            if entity.get("val") is None or age is None or age > 30:
+                warnings.append("{}[{}] is listed ({}) but its market cap is "
+                                "{} - a listed valuation must be refreshed".format(
+                                    section, entity["name"], entity["listed"],
+                                    "missing" if entity.get("val") is None
+                                    else "{} days old".format(age)))
+
     queue = (data.get("meta") or {}).get("review_queue") or []
     if queue:
         warnings.append("{} patch(es) parked in meta.review_queue".format(len(queue)))

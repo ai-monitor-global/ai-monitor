@@ -282,6 +282,11 @@ function renderProgress(){
     seg("&#127959; AI Infra 投资视角",p.infra_invest)+
     "</div>";
 }
+function valCell(a,cls){
+  let h=fmoney(a.val,"B")+provMark(a,"val");
+  if(a.valPending!=null) h+="<div style=\"font-size:10px;color:#c2410c;white-space:nowrap\" title=\"已报道但尚未交割的轮次，不计入估值\">洽谈中 $"+a.valPending+"B</div>";
+  return "<td style=\"text-align:right\" class=\"num"+cls+"\">"+h+"</td>";
+}
 function listedTag(a){
   const t=(a.listed||"").trim();
   return t?"<span class=\"bdg\" style=\"background:#e0f2fe;color:#0369a1;margin-left:5px\" title=\"已上市，估值列为实时市值\">"+esc(t)+"</span>":"";
@@ -367,7 +372,7 @@ function renderModelTable(region,sk){
       "<td style=\"text-align:right\" class=\"num up\">"+fna(a.tokG,"%")+"</td>"+
       "<td style=\"text-align:right\" class=\"num\">"+ann+"</td>"+
       "<td style=\"text-align:right\" class=\"num\">"+(a.trainPerRun!=null?a.trainPerRun+"T":"—")+" &times; "+(a.runsPerYear!=null?a.runsPerYear:"—")+"</td>"+
-      "<td style=\"text-align:right\" class=\"num"+provCls(a,"val")+"\">"+fmoney(a.val,"B")+provMark(a,"val")+"</td>"+
+      valCell(a,provCls(a,"val"))+
       "<td style=\"text-align:right\" class=\"num\">"+fmult(a.val,a.arr)+"</td>"+
       "<td class=\"num\">"+a.m+"<div class=\"mbar\"><div class=\"mfill\" style=\"width:"+a.m+"%\"></div></div></td></tr>";
   }).join("");}
@@ -388,7 +393,7 @@ function renderAppTable(cat,sk){
     "<td style=\"text-align:right\" class=\"num up\">"+fna(a.maug,"%")+"</td>"+
     "<td>"+(TL[a.ti]||esc(a.ti))+"</td>"+
     "<td class=\""+("om-"+((a.ownModel||{}).status||"none"))+provCls(a,"ownModel")+"\" style=\"font-size:11px\">"+ownModelCell(a)+provMark(a,"ownModel")+"</td>"+
-    "<td style=\"text-align:right\" class=\"num"+provCls(a,"val")+"\">"+fmoney(a.val,"B")+provMark(a,"val")+"</td>"+
+    valCell(a,provCls(a,"val"))+
     "<td style=\"text-align:right\" class=\"num\">"+fmult(a.val,a.arr)+"</td>"+
     "<td class=\"num\">"+a.m+"<div class=\"mbar\"><div class=\"mfill\" style=\"width:"+a.m+"%\"></div></div></td></tr>"
   ).join("");}

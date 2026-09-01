@@ -1549,7 +1549,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Anthropic",
@@ -1603,7 +1604,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Google Gemini",
@@ -1650,7 +1652,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": "Google"
+      "parent": "Google",
+      "valPending": null
     },
     {
       "name": "xAI",
@@ -1704,7 +1707,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Kimi (Moonshot)",
@@ -1765,7 +1769,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "MiniMax",
@@ -1833,7 +1838,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "HKEX:0100",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Zhipu AI",
@@ -1894,7 +1900,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "HKEX:2513",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Mistral AI",
@@ -1948,7 +1955,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Cohere",
@@ -2002,7 +2010,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "01.AI",
@@ -2056,7 +2065,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "DeepSeek",
@@ -2089,7 +2099,8 @@
       "tokG": null,
       "trainPerRun": null,
       "runsPerYear": null,
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Doubao (ByteDance)",
@@ -2115,7 +2126,8 @@
       "tokG": 900.0,
       "trainPerRun": null,
       "runsPerYear": null,
-      "parent": "ByteDance"
+      "parent": "ByteDance",
+      "valPending": null
     },
     {
       "name": "Alibaba Qwen (通义千问)",
@@ -2141,7 +2153,8 @@
       "tokG": null,
       "trainPerRun": null,
       "runsPerYear": null,
-      "parent": "Alibaba"
+      "parent": "Alibaba",
+      "valPending": null
     },
     {
       "name": "Meta (Llama)",
@@ -2167,7 +2180,8 @@
       "tokG": null,
       "trainPerRun": 30.0,
       "runsPerYear": 2.0,
-      "parent": "Meta"
+      "parent": "Meta",
+      "valPending": null
     },
     {
       "name": "Amazon Nova",
@@ -2193,7 +2207,8 @@
       "tokG": null,
       "trainPerRun": null,
       "runsPerYear": null,
-      "parent": "Amazon"
+      "parent": "Amazon",
+      "valPending": null
     },
     {
       "name": "Baidu (ERNIE)",
@@ -2219,7 +2234,8 @@
       "tokG": null,
       "trainPerRun": null,
       "runsPerYear": null,
-      "parent": "Baidu"
+      "parent": "Baidu",
+      "valPending": null
     },
     {
       "name": "Tencent Hunyuan (腾讯混元)",
@@ -2245,7 +2261,8 @@
       "tokG": null,
       "trainPerRun": null,
       "runsPerYear": 3.0,
-      "parent": "Tencent"
+      "parent": "Tencent",
+      "valPending": null
     }
   ],
   "apps": [
@@ -2341,7 +2358,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Perplexity",
@@ -2433,7 +2451,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Character.ai",
@@ -2535,7 +2554,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "ElevenLabs",
@@ -2616,7 +2636,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Midjourney",
@@ -2690,7 +2711,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Runway",
@@ -2771,7 +2793,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Harvey",
@@ -2873,7 +2896,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Glean",
@@ -2961,7 +2985,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Gamma",
@@ -3049,7 +3074,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "HeyGen",
@@ -3137,7 +3163,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Suno",
@@ -3211,7 +3238,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Writer",
@@ -3306,7 +3334,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Sierra",
@@ -3354,7 +3383,8 @@
         "models": []
       },
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Granola",
@@ -3428,7 +3458,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Cognition",
@@ -3521,7 +3552,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Luma AI",
@@ -3602,7 +3634,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Speak",
@@ -3685,7 +3718,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Abridge",
@@ -3770,7 +3804,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Ideogram",
@@ -3844,7 +3879,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Descript",
@@ -3934,7 +3970,8 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": ""
+      "parent": "",
+      "valPending": null
     }
   ],
   "ai_progress": {

@@ -85,13 +85,18 @@ Establish, as of today:
    unclosed or rumoured round is not a valuation; skip it and say so in notes.
    Check explicitly whether a newer round has happened since the figure stored
    below - a stale round is the most common error here.
-3. Year-over-year revenue growth -> `arrg` (%)
+3. If a NEWER round is reported but not yet closed (in talks, term sheet,
+   pre-IPO discussions), put that headline number in `valPending` ($B) and
+   still leave `val` on the last closed round. Do not silently drop it - an
+   unclosed mark is information, it just is not the same number as a closed
+   one. If there is no such round, leave `valPending` out.
+4. Year-over-year revenue growth -> `arrg` (%)
 {extra_fields}
 Also sanity-check the descriptive fields: `uc` should name the company's
 current flagship products in Chinese, short (under ~30 chars) - if it still
 names a product generation that has been superseded, patch it."""
 
-APP_EXTRA = """4. Own-model status -> one entry in `own_model_patches`: `status` is "none"
+APP_EXTRA = """5. Own-model status -> one entry in `own_model_patches`: `status` is "none"
    (all third-party API), "hybrid" (own model shipped but most traffic still
    third-party), or "primary" (most inference now runs on models it trained
    itself); `models` lists their names; `token_share` is the disclosed share of
@@ -102,15 +107,15 @@ APP_EXTRA = """4. Own-model status -> one entry in `own_model_patches`: `status`
    most useful number here, so look for it before settling for an empty
    token_share. Use "primary" when the company says its own models serve most
    inference, not merely that they exist.
-5. Monthly active users -> `mau` (millions), and `maug` (%)
-6. `cat` (one of: {cats}), `stage` (pmf|growth|scale), `biz`
+6. Monthly active users -> `mau` (millions), and `maug` (%)
+7. `cat` (one of: {cats}), `stage` (pmf|growth|scale), `biz`
    (B2B|B2C|B2B+B2C|B2C+B2B), `ti` token intensity (low|med|high|ultra)
 
 Patchable fields here are only: arr, arrg, mau, maug, val, uc, cat, stage,
-biz, ti, ownModel, listed. `tokM`/`tokG` do not exist on an app.
+biz, ti, ownModel, listed, valPending. `tokM`/`tokG` do not exist on an app.
 """
-MODEL_EXTRA = """4. Monthly inference token volume -> `tokM` (trillions/month), `tokG` (%)
-5. `region` (US|CN|EU)
+MODEL_EXTRA = """5. Monthly inference token volume -> `tokM` (trillions/month), `tokG` (%)
+6. `region` (US|CN|EU)
 
 For a model provider, `arr` means annualised revenue from serving models -
 model API plus first-party model subscriptions. It EXCLUDES compute or
@@ -119,7 +124,8 @@ revenue of a parent company or sibling division. If the only figure you can
 find is a blended segment that mixes model revenue with compute leasing,
 do NOT patch `arr`; say so in `notes` instead.
 Patchable fields here are only: arr, arrg, tokM, tokG, trainPerRun,
-runsPerYear, val, uc, region. `mau` does not exist on a model provider.
+runsPerYear, val, valPending, uc, region. `mau` does not exist on a model
+provider.
 """
 
 SCHEMA = {
@@ -150,7 +156,7 @@ SCHEMA = {
     "additionalProperties": False,
 }
 
-SHOWN_FIELDS = ("uc", "arr", "arrg", "val", "listed", "parent", "mau", "maug", "tokM", "tokG",
+SHOWN_FIELDS = ("uc", "arr", "arrg", "val", "valPending", "listed", "parent", "mau", "maug", "tokM", "tokG",
                 "cat", "stage", "biz", "ti", "region", "ownModel")
 
 

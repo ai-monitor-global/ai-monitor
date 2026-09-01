@@ -66,8 +66,9 @@ REGIONS = {
 # `prov` is written by this module only.
 # --------------------------------------------------------------------------
 NUMERIC_FIELDS = {
-    "models": {"arr", "arrg", "tokM", "tokG", "trainPerRun", "runsPerYear", "val"},
-    "apps":   {"arr", "arrg", "mau", "maug", "val"},
+    "models": {"arr", "arrg", "tokM", "tokG", "trainPerRun", "runsPerYear",
+               "val", "valPending"},
+    "apps":   {"arr", "arrg", "mau", "maug", "val", "valPending"},
 }
 QUALITATIVE_FIELDS = {
     "models": {"uc", "region", "listed", "parent"},
@@ -98,7 +99,8 @@ def section_of(data: dict, entity: dict) -> str:
 
 BOUNDS = {
     "arr":         (0, 500000),   # $M
-    "val":         (0, 5000),     # $B
+    "val":         (0, 5000),     # $B, last CLOSED round / market cap
+    "valPending":  (0, 5000),     # $B, reported but unclosed round
     "mau":         (0, 5000),     # M users
     "tokM":        (0, 100000),   # T tokens / month
     "trainPerRun": (0, 10000),    # T tokens / run
@@ -213,6 +215,7 @@ def migrate(data: dict) -> dict:
         entity.setdefault("retired", False)
         entity.setdefault("listed", "")
         entity.setdefault("parent", "")
+        entity.setdefault("valPending", None)
         entity.setdefault("prov", {})
         # prov.checked (when we last verified) is distinct from prov.as_of
         # (when the source reported it). Seed it from the entity's checked_at
