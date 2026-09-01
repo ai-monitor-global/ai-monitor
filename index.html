@@ -140,27 +140,49 @@ function ageDays(iso){
   return Math.floor((Date.now()-t)/86400000);
 }
 function provOf(e,f){return (e.prov||{})[f]||null}
-function isOld(e,f){
+/* Staleness is about how long since WE looked (prov.checked), not how old the
+   underlying fact is (prov.as_of). A valuation last disclosed in 2022 can be
+   both genuinely old and completely current - it is the latest that exists,
+   so calling it 待复核 would be wrong. */
+function checkedAge(e,f){
   const p=provOf(e,f);
-  if(!p) return true;
-  const a=ageDays(p.as_of);
+  if(!p) return null;
+  return ageDays(p.checked||p.as_of);
+}
+function isOld(e,f){
+  const a=checkedAge(e,f);
   return a==null||a>staleDays();
 }
 function provCls(e,f){return isOld(e,f)?" stale":""}
 function provMark(e,f){
   const p=provOf(e,f);
+  /* nothing to source and nothing sourced: the cell already reads "—" */
+  if(!p&&e[f]==null) return "";
   if(!p) return "<span class=\"pdot old\" title=\"尚未核实来源\">&#9679;</span><span class=\"rq\">待复核</span>";
-  const a=ageDays(p.as_of),old=isOld(e,f);
-  const t=[p.source,p.as_of,p.conf,(a!=null?a+"天前":null)].filter(Boolean).join(" · ");
+  const old=isOld(e,f), ca=checkedAge(e,f), ra=ageDays(p.as_of);
+  const t=[p.source,
+           p.as_of?("报道 "+p.as_of+(ra!=null?"（"+ra+"天前）":"")):null,
+           p.checked?("复核 "+p.checked+(ca!=null?"（"+ca+"天前）":"")):null,
+           p.conf].filter(Boolean).join(" · ");
   const cls="pdot"+(old?" old":"");
   const dot=p.url
     ?"<a class=\""+cls+"\" href=\""+esc(p.url)+"\" target=\"_blank\" rel=\"noopener\" title=\""+esc(t)+"\">&#9679;</a>"
     :"<span class=\""+cls+"\" title=\""+esc(t)+"\">&#9679;</span>";
   return dot+(old?"<span class=\"rq\">待复核</span>":"");
 }
-/* freshness as a sort key: larger = fresher, never-verified sorts last */
+/* freshness as a sort key: larger = fresher, never-verified sorts last.
+   Model providers have no ownModel, so tracking it for them would mark every
+   one of them permanently unverified. */
+function trackedFields(e){
+  const base=e.region!==undefined?["arr","val"]:["arr","val","ownModel"];
+  /* a field with no value needs no source - Google Gemini has no standalone
+     valuation, so requiring one would pin it at "unverified" forever */
+  return base.filter(f=>e[f]!=null);
+}
 function freshOf(e){
-  const ds=["arr","val","ownModel"].map(f=>{const p=provOf(e,f);return p?ageDays(p.as_of):null;});
+  const fs=trackedFields(e);
+  if(!fs.length) return -1e9;
+  const ds=fs.map(f=>checkedAge(e,f));
   if(ds.some(d=>d==null)) return -1e9;
   return -Math.max.apply(null,ds);
 }

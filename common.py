@@ -74,8 +74,22 @@ QUALITATIVE_FIELDS = {
     "apps":   {"uc", "cat", "stage", "biz", "ti", "ownModel"},
 }
 
-# Fields whose freshness the dashboard surfaces per-cell.
-PROV_TRACKED = ("arr", "val", "ownModel")
+# Fields whose freshness the dashboard surfaces per-cell. Section-specific:
+# a model provider has no ownModel, and treating it as a missing tracked field
+# marked every model "never verified" forever.
+PROV_TRACKED_BY_SECTION = {
+    "models": ("arr", "val"),
+    "apps":   ("arr", "val", "ownModel"),
+}
+PROV_TRACKED = ("arr", "val", "ownModel")  # union, for whitelist checks
+
+
+def prov_fields(section: str) -> tuple:
+    return PROV_TRACKED_BY_SECTION.get(section, PROV_TRACKED)
+
+
+def section_of(data: dict, entity: dict) -> str:
+    return "models" if any(e is entity for e in data.get("models", [])) else "apps"
 
 BOUNDS = {
     "arr":         (0, 500000),   # $M
@@ -188,6 +202,14 @@ def migrate(data: dict) -> dict:
     for section, entity in iter_entities(data):
         entity.setdefault("retired", False)
         entity.setdefault("prov", {})
+        # prov.checked (when we last verified) is distinct from prov.as_of
+        # (when the source reported it). Seed it from the entity's checked_at
+        # for provenance written before that distinction existed.
+        stamped = entity.get("checked_at")
+        if stamped:
+            for prov in (entity.get("prov") or {}).values():
+                if isinstance(prov, dict) and not prov.get("checked"):
+                    prov["checked"] = stamped
         if section == "apps":
             if "ownModel" not in entity:
                 had = bool(entity.get("selfModel"))
@@ -384,6 +406,7 @@ def apply_patches(data: dict, patches: list, pass_name: str, dry_run: bool = Fal
             entity[field] = new
             entity.setdefault("prov", {})[field] = {
                 "as_of": str(_parse_day(patch["as_of"])),
+                "checked": stamp,
                 "source": str(patch["source"]).strip(),
                 "url": str(patch.get("url") or "").strip() or None,
                 "conf": str(patch["conf"]).lower(),
@@ -435,12 +458,18 @@ def apply_confirmations(data: dict, entity: dict, items: list, pass_name: str,
             refused.append("{}.{}: as_of {} is in the future".format(
                 entity["name"], field, as_of))
             continue
-        prior = _parse_day((entity.get("prov", {}).get(field) or {}).get("as_of"))
+        existing = (entity.get("prov") or {}).get(field) or {}
+        prior = _parse_day(existing.get("as_of"))
         if prior and as_of < prior:
-            continue  # already have something at least as fresh
+            # keep the better as_of, but still record that we looked today
+            if not dry_run and existing:
+                existing["checked"] = stamp
+            confirmed.append("{}.{} re-checked ({})".format(
+                entity["name"], field, source))
+            continue
         if not dry_run:
             entity.setdefault("prov", {})[field] = {
-                "as_of": str(as_of), "source": source,
+                "as_of": str(as_of), "checked": stamp, "source": source,
                 "url": str(item.get("url") or "").strip() or None,
                 "conf": conf,
             }
@@ -518,12 +547,27 @@ def _num(v):
 # --------------------------------------------------------------------------
 # Freshness
 # --------------------------------------------------------------------------
-def oldest_as_of(entity: dict):
-    days = [_parse_day((entity.get("prov", {}).get(f) or {}).get("as_of"))
-            for f in PROV_TRACKED]
-    days = [d for d in days if d]
-    if len(days) < len(PROV_TRACKED):
-        return None  # at least one tracked field has never been verified
+def oldest_checked(entity: dict, section: str = "apps"):
+    """When did we last *verify* every tracked field? None = not all verified.
+
+    Distinct from `as_of`, which is when the source reported the figure. A
+    valuation last disclosed in 2022 can be both genuinely old and perfectly
+    up to date - it is the latest that exists. Staleness is about how long
+    since we looked, not how old the underlying fact is.
+    """
+    # A field with no value needs no source: Google Gemini has no standalone
+    # valuation, so demanding one would mark it unverified forever.
+    fields = [f for f in prov_fields(section) if entity.get(f) is not None]
+    if not fields:
+        return None
+    days = []
+    for field in fields:
+        prov = (entity.get("prov") or {}).get(field) or {}
+        day = _parse_day(prov.get("checked")) or _parse_day(prov.get("as_of"))
+        if day:
+            days.append(day)
+    if len(days) < len(fields):
+        return None
     return min(days)
 
 
@@ -542,8 +586,8 @@ def reverify_targets(data: dict, k: int):
     for index, (section, entity) in enumerate(iter_entities(data)):
         if entity.get("retired"):
             continue
-        as_of = oldest_as_of(entity)
-        age = 9999 if as_of is None else (today() - as_of).days
+        last = oldest_checked(entity, section)
+        age = 9999 if last is None else (today() - last).days
         big = (entity.get("arr") or 0) >= 500
         effective = age * 2.0 if (big and age >= 28) else float(age)
         checked = _parse_day(entity.get("checked_at"))

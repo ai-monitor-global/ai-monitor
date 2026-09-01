@@ -1428,43 +1428,50 @@
           "as_of": "2026-03-31",
           "source": "OpenAI 官方博客 2026-03-31《OpenAI raises $122 billion to accelerate the next phase of AI》：API 处理量超 150 亿 tokens/分钟；15e9×1440×30≈648 万亿 tokens/月（非货币指标，无需汇率换算）",
           "url": "https://openai.com/index/accelerating-the-next-phase-ai/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2026-08-14",
           "source": "Bloomberg 2026-08-14（跑率超 400 亿美元）结合 TechSpot 2026-06 报道的泄露财务数据（2025 全年收入 130.7 亿美元、2024 为 37 亿美元），推算同比约 +200%，均为美元口径",
           "url": "https://www.techspot.com/news/112794-openai-made-13-billion-2025-lost-21-billion.html",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-07-09",
           "source": "OpenAI 官方博客 2026-07-09《GPT-5.6: Frontier intelligence that scales with your ambition》，发布 GPT-5.6 系列（旗舰 Sol，另有 Terra/Luna），在 ChatGPT、Codex 与 API 全面上线；原值中的 GPT-5.4 已被取代，DALL·E 亦已由 gpt-image-2 承接（非独立旗舰产品线）",
           "url": "https://openai.com/index/gpt-5-6/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arr": {
           "as_of": "2026-08-14",
           "source": "Bloomberg 2026-08-14《OpenAI's Annualized Revenue Tops $40 Billion Ahead of IPO》（经 Quartz/Yahoo Finance 转载）；Sacra 公司页（2026-07）亦估 400 亿美元年化收入，原文为美元口径",
           "url": "https://finance.yahoo.com/technology/ai/articles/openai-annualized-revenue-tops-40-111122841.html",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2026-03-31",
           "source": "CNBC 2026-03-31：OpenAI 宣布已完成（closed）1220 亿美元融资，投后估值 8520 亿美元；TechCrunch 同日、OpenAI 官方公告一致，美元口径",
           "url": "https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "tokG": {
           "as_of": "2026-03-31",
           "source": "对比 OpenAI DevDay 2025（2025-10，60 亿 tokens/分钟）与 OpenAI 官方博客 2026-03-31（150 亿 tokens/分钟），半年增长 150%，年化同比约 200% 或更高",
           "url": "https://openai.com/index/accelerating-the-next-phase-ai/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "region": {
           "as_of": "2026-03-31",
           "source": "OpenAI 官方公告与 CNBC 2026-03-31 报道，OpenAI Group PBC 总部位于美国旧金山，归属 US",
           "url": "https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         }
       },
       "checked_at": "2026-09-01"
@@ -1487,31 +1494,36 @@
           "as_of": "2026-08-15",
           "source": "Bloomberg 2026-08-15（内部文件，CNBC 2026-08-15 转述）：Q2 2026 收入 >$11.5B vs Q2 2025 $787M ≈ 14.6 倍，即约 +1361%",
           "url": "https://www.cnbc.com/2026/08/15/anthropic-revenue-jumps-to-over-11point5-billion-in-q2-report.html",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-07-24",
           "source": "Axios 2026-07-24《Anthropic releases new model, Opus 5》及 Anthropic Claude Developer Platform 更新日志（2026-07-24 上线 Claude Opus 5，取代 Opus 4.8）",
           "url": "https://www.axios.com/2026/07/24/anthropic-releases-new-model-opus-5",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arr": {
           "as_of": "2026-08-17",
           "source": "Bloomberg 2026-08-17（经 CNBC 2026-08-17《Anthropic tells investors annualized revenue run rate climbed to $65 billion in July》、TechCrunch 2026-08-17 转述）：截至 7 月底年化运行率超 $65B，原始即美元",
           "url": "https://www.cnbc.com/2026/08/17/anthropic-says-annualized-revenue-climbed-to-65-billion-in-july.html",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2026-05-28",
           "source": "Anthropic 官方公告《Anthropic raises $65B in Series H funding at $965B post-money valuation》2026-05-28；Bloomberg/CNBC/TechCrunch 同日报道，轮次已关闭，原始即美元",
           "url": "https://www.anthropic.com/news/series-h",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "region": {
           "as_of": "2026-07-08",
           "source": "Sacra 公司档案（总部：美国旧金山）；Anthropic 官网公司信息一致",
           "url": "https://sacra.com/c/anthropic/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         }
       },
       "checked_at": "2026-09-01"
@@ -1534,25 +1546,29 @@
           "as_of": "2026-05-22",
           "source": "Google I/O 2026 Pichai 主题演讲（2026-05-19）；Cryptobriefing 2026-05-22「Google processes over 3.2 quadrillion tokens monthly, a 7x increase」转述同一官方数字；keepingupwith.ai 2026-05 同源",
           "url": "https://cryptobriefing.com/google-3-2-quadrillion-tokens-monthly/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "tokG": {
           "as_of": "2026-05-22",
           "source": "同上，官方称约 7x YoY（I/O 2025 约 480 万亿/月 → I/O 2026 3,200 万亿/月，精算 +567%）",
           "url": "https://cryptobriefing.com/google-3-2-quadrillion-tokens-monthly/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-08-29",
           "source": "Google Cloud 官方文档（Gemini Enterprise Agent Platform 模型页「Gemini 3.1 Pro」，抓取于 2026-08-29）；tech-insider 2026-04 报道 Gemini 3.1 Pro 已发布；Codersera 2026-08-23 追踪显示 Gemini 3.5 Pro 截至 8 月底仍未发布。故 Pro 档旗舰应为 3.1 Pro 而非已被取代的 Gemini 3 Pro",
           "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-1-pro",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "region": {
           "as_of": "2026-02-04",
           "source": "Alphabet Inc. 8-K / 2025Q4 及全年业绩公告（2026-02-04），总部美国加州 Mountain View",
           "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         }
       },
       "checked_at": "2026-09-01"
@@ -1575,31 +1591,36 @@
           "as_of": "2026-02-02",
           "source": "Bloomberg 2026-02-02/CNBC 2026-02-03（SpaceX 收购 xAI 完成，合并实体 $1.25T，其中 SpaceX $1T、xAI $250B，Reuters 口径见 Sacra 公司档案）；原始为美元，无需汇率换算",
           "url": "https://www.bloomberg.com/news/articles/2026-02-02/elon-musk-s-spacex-said-to-combine-with-xai-ahead-of-mega-ipo",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-08-13",
           "source": "GEO Toolbox 2026-08-13（Grok 5 截至2026年8月仍在训练、未发布）与 NxCode 2026-07-12（2026-03-03 发布 Grok 4.20 Beta 2 为当前公开旗舰模型）；图像/视频产品已由 Aurora 迭代为 Grok Imagine，算力集群为 Colossus/Colossus 2",
           "url": "https://geotoolbox.ai/blog/grok-5",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "arr": {
           "as_of": "2026-05-26",
           "source": "StartupHub 2026-05-26 引 Bloomberg：xAI 年化收入约 $500M、月烧钱约 $10 亿；Gradually.ai《Grok Statistics 2026》(2026-08) 亦列 xAI 独立 ARR ~$500M。美元原币",
           "url": "https://www.startuphub.ai/ai-news/ai-figures/2026/figure-elon-musk-xai-company-financial-breakdown-2026-05-26",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2026-05-26",
           "source": "由 Wikipedia/xAI 官方口径 2024-12 年化收入 $100M 与 Bloomberg 口径 2026 年 ~$500M 年化收入推算得约 +400%；均为美元原币",
           "url": "https://en.wikipedia.org/wiki/XAI_(company)",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "region": {
           "as_of": "2026-08-01",
           "source": "Wikipedia XAI (company)（总部 Palo Alto, California；母公司 SpaceX，美国德州/加州）",
           "url": "https://en.wikipedia.org/wiki/XAI_(company)",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         }
       },
       "checked_at": "2026-09-01"
@@ -1622,31 +1643,36 @@
           "as_of": "2026-07-29",
           "source": "财联社《科创板日报》独家 2026-07-29 / 澎湃新闻 2026-07-29：F 轮完成，融资超 35 亿美元，投后估值 350 亿美元（原文即美元计价）",
           "url": "https://www.thepaper.cn/newsDetail_forward_33682828",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-07-29",
           "source": "Kimi API Platform 官方模型文档（kimi-k2 系列已于 2026-05-25 下线，官方建议改用 kimi-k3）+ Wikipedia \"Kimi (AI)\"（K3 于 2026 年 7 月发布）+ 报道提及基于 K2.6 的通用智能体 Kimi Work",
           "url": "https://platform.kimi.ai/docs/models",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arr": {
           "as_of": "2026-06-15",
           "source": "科创板日报/每日经济新闻 2026-06-30：截至 6 月中旬 ARR 突破 3 亿美元（API 收入占七成以上）；彭博经 IT之家 2026-07-22 转述同一口径（原文即美元计价）",
           "url": "https://www.nbd.com.cn/articles/2026-06-30/4441850.html",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2026-06-30",
           "source": "每日经济新闻 2026-06-30 引月之暗面 B 端负责人黄震昕：API 收入增长 400%、海外付费用户增长 400%（增速为百分比，无货币换算问题）",
           "url": "https://www.nbd.com.cn/articles/2026-06-30/4441850.html",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "region": {
           "as_of": "2026-07-30",
           "source": "投资界 2026-07-30：月之暗面（Moonshot AI）为 2023 年 3 月创立于北京的中国大模型公司，计划赴港上市",
           "url": "https://news.pedaily.cn/202607/566986.shtml",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         }
       },
       "checked_at": "2026-09-01"
@@ -1669,37 +1695,43 @@
           "as_of": "2026-08-26",
           "source": "量子位（QbitAI）2026-08（\"MiniMax ARR暴涨500%，token暴涨2000%\"）引述公司随2026年中期业绩披露的最新数据：截至2026年8月ARR已超过8亿美元（对照2026年2月业绩会披露的1.5亿美元）；原始数据以美元披露，无需汇率换算",
           "url": "https://www.qbitai.com/2026/08/480092.html",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2026-08-26",
           "source": "MiniMax Group (0100.HK) 官方公告《MiniMax Announces First Half 2026 Financial Results》2026-08-26：2026上半年收入由3,040万美元增至1.166亿美元，同比增长283.1%（公司以美元披露）；Bloomberg 2026-08-26 亦报道同一数字",
           "url": "https://www.minimax.io/news/minimax-announces-first-half-2026-financial-results-1787744160",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2026-08-19",
           "source": "Yahoo Finance 与 Investing.com 香港站 0100.HK 报价页（2026-08-19 至 08-21）：MiniMax-W 市值约1,011–1,021亿港元（股价约310–329港元、已发行股份约3.14亿股），按1美元=7.79港元换算约合130亿美元（上市公司市值，非传闻融资估值）；Caixin 2026-08-06 亦报道纳入港股通当日市值\"重回千亿港元\"",
           "url": "https://finance.yahoo.com/quote/0100.HK/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-07-31",
           "source": "MiniMax 官方 API 文档 Release Notes（模型更新日志）：M 系列已迭代至 MiniMax-M3（继 M2、M2.1、M2.5、M2.7 之后的最新语言模型），视频模型为 Hailuo/海螺 02；ABAB 6.5 已停止作为旗舰",
           "url": "https://platform.minimax.io/docs/release-notes/models",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "region": {
           "as_of": "2026-08-26",
           "source": "MiniMax Group Inc.（稀宇科技）官方中期业绩公告 2026-08-26 及 Google Finance 公司简介：总部位于中国上海，港交所主板上市（00100.HK），另于2026-05-29向上海证监局申报A股IPO辅导",
           "url": "https://www.minimax.io/news/minimax-announces-first-half-2026-financial-results-1787744160",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "tokG": {
           "as_of": "2026-08-26",
           "source": "量子位（QbitAI）2026-08 引述公司中期业绩披露数据：token 调用量\"暴涨2000%\"（与ARR自2026年2月1.5亿美元增至8亿美元同一披露口径，即约2026年2月至8月的增幅）；比例数据无货币换算问题",
           "url": "https://www.qbitai.com/2026/08/480092.html",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         }
       },
       "checked_at": "2026-09-01"
@@ -1722,31 +1754,36 @@
           "as_of": "2026-03-31",
           "source": "公司2025年年报披露(2026-03-31)，经财新 Caixin Global 2026-05-29 及钛媒体 2026-06-26 引述：MaaS平台API业务ARR达人民币17亿元；按1美元=7.1人民币折算 = 约2.39亿美元",
           "url": "https://www.caixinglobal.com/2026-05-29/china-ai-developer-zhipu-hits-record-112-billion-valuation-102449295.html",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2026-03-31",
           "source": "SCMP 2026-03-31（智谱上市后首份年报：2025年收入人民币7.2433亿元，同比+131.9%≈132%）；The Information 同日简报亦称收入翻番至7.24亿元（约1.05亿美元）",
           "url": "https://www.scmp.com/tech/tech-trends/article/3348555/zhipu-ai-revenue-jumps-132-first-post-ipo-report-missing-estimates",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2026-08-20",
           "source": "PitchBook 公司档案（数据日2026-08-20）：股价130.47美元、4.66亿股、市值608亿美元，即60.8十亿美元；为港交所02513已上市市值",
           "url": "https://pitchbook.com/profiles/company/481268-17",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-06-17",
           "source": "中国日报 2026-06-17（智谱发布并开源新一代旗舰大模型GLM-5.2，Artificial Analysis 51分）；财新 2026-06-23 亦以GLM-5.2为最新旗舰；PitchBook 档案（2026-08-20）列核心产品含GLM-5V-Turbo、AutoGLM",
           "url": "http://cn.chinadaily.com.cn/a/202606/17/WS6a3274d9a310d709c2fb8b81.html",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "region": {
           "as_of": "2026-03-31",
           "source": "SCMP 2026-03-31：智谱（知识图谱科技）为北京公司，2026年1月于香港联交所上市（02513）",
           "url": "https://www.scmp.com/tech/tech-trends/article/3348555/zhipu-ai-revenue-jumps-132-first-post-ipo-report-missing-estimates",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         }
       },
       "checked_at": "2026-09-01"
@@ -1769,31 +1806,36 @@
           "as_of": "2025-09-09",
           "source": "Mistral 官方公告/TechCrunch 2026-06-12、TechRepublic 2026-07-24 复述：2025年9月由 ASML 领投的 17 亿欧元 C 轮已完成交割，投后估值 117 亿欧元；按当时 EUR/USD≈1.17 折算 ≈ 137 亿美元（Tracxn 亦列 $13.7B）",
           "url": "https://techcrunch.com/2026/06/12/mistral-is-rumored-to-be-raising-e3b-at-e20-valuation/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2026-02-28",
           "source": "TechCrunch 2026-07-04 转述 Mensch：$20M→$400M+ 约 20 倍，即约 +1900% YoY；Sacra 同口径（2025-01 约 $20M → 2026-01 $400M）",
           "url": "https://sacra.com/c/mistral/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-05-28",
           "source": "heise online 2026-06-01 / the-decoder 2026-05-29：Mistral 在 AI Now Summit 上将 Le Chat 更名为 Vibe，合并聊天、Work Mode 与编码代理；旗舰模型仍为 2025-12-02 发布的 Mistral 3 系列（Mistral Large 3），2026-04-29 另发布 Medium 3.5（中端档，非旗舰）",
           "url": "https://the-decoder.com/mistral-rebrands-lechat-as-vibe-betting-its-chatbots-future-is-as-a-full-blown-work-agent/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arr": {
           "as_of": "2026-02-28",
           "source": "TechCrunch 2026-07-04（CEO Arthur Mensch 表示 ARR 由一年前约 $20M 增至 2026 年 2 月的 $400M 以上）；Sacra 公司页 2026-03 估算 2026-01 ARR $400M",
           "url": "https://sacra.com/c/mistral/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "region": {
           "as_of": "2026-06-01",
           "source": "公司总部位于法国巴黎（Mistral 官方站点、Bloomberg 2026-06-12 称其为法国初创企业），属 EU",
           "url": "https://mistral.ai/news/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         }
       },
       "checked_at": "2026-09-01"
@@ -1816,31 +1858,36 @@
           "as_of": "2025-09-24",
           "source": "Sacra 公司页/研究报告（2026-05-31 更新）：2025 年 8 月 5 亿美元轮估值 68 亿美元，9 月追加 1 亿美元后估值 70 亿美元；PitchBook 显示 2026-04-24 的 6 亿美元 E 轮仍为 In Progress，故最新已交割估值仍为 70 亿美元（均为美元）",
           "url": "https://sacra.com/c/cohere/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2026-05-31",
           "source": "Sacra 股权研究报告 2026-05-31 及 Sacra 公司页：2025 年底 ARR 2.4 亿美元，较 2024 年底 6200 万美元同比 +287%（均为美元）",
           "url": "https://sacra.com/c/cohere/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-08-04",
           "source": "IntuitionLabs《Cohere: A Profile of its LLMs and Enterprise AI Strategy》2026年8月版（称2026年发布节奏为1月 Model Vault、2月 Tiny Aya、5月 Command A+）；Futurum Group 2026年报道 Rerank 4 与 Model Vault 发布",
           "url": "https://intuitionlabs.ai/articles/cohere-enterprise-ai-llm-profile",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "arr": {
           "as_of": "2026-02-13",
           "source": "CNBC 2026-02-13《Enterprise AI startup Cohere tops revenue target...Investor memo》：2025 年 ARR 约 2.40 亿美元（原文即美元）；The Globe and Mail 2026-02-13 同源佐证",
           "url": "https://www.cnbc.com/2026/02/13/ai-startup-cohere-revenue-ipo.html",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "region": {
           "as_of": "2026-02-13",
           "source": "The Globe and Mail 2026-02-13：Cohere 为多伦多（加拿大）公司；TechCrunch 2026-04-24/25 亦称 Canada-based，归入北美 US 分类",
           "url": "https://www.theglobeandmail.com/business/technology/article-cohere-artificial-intelligence-forecast-recurring-revenue-llms/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         }
       },
       "checked_at": "2026-09-01"
@@ -1863,31 +1910,36 @@
           "as_of": "2026-05-27",
           "source": "腾讯新闻/晚点LatePost 2026-05-27、虎嗅 2026-05-28（李开复三周年内部讲话）、中华网 2026-07-21复述：截至2026年5月锁定订单超15亿元人民币，其中近一半为ARR≈7亿元；按1美元=7.1元人民币折算≈$98.6M ≈ $100M",
           "url": "https://news.qq.com/rain/a/20260527A0216400",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2026-05-27",
           "source": "虎嗅 2026-05-28 / 网易转载（2025年经审计收入2.5亿元人民币、订单5亿元）对比 21世纪经济报道 2025-03-17（2024年收入“超1亿元”人民币），同比约+150%；人民币按7.1折美元后增速不变",
           "url": "https://www.163.com/dy/article/KU20PA89051188EA.html",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-07-07",
           "source": "央广网 2026-07-07 / 智东西(163)2026-07-07：零一万物在北京举办“万策AI”发布会，推出企业AI决策中枢万策平台及“一号位AI”矩阵（老板AI、销冠AI、投资官AI），公司官网产品页现以“万策决策中枢平台 + 老板AI/销冠AI/投资官AI”为首位产品线，万智2.5平台退居底层企业大模型平台",
           "url": "https://www.sohu.com/a/1047097213_362042",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2023-11-06",
           "source": "界面新闻 2023-11（李开复受访：零一万物一轮融资后估值已超10亿美元）；Tracxn 公司档案(2026-06)亦列 current valuation $1B；2026年Pre-IPO轮未交割故不计",
           "url": "https://www.jiemian.com/article/10341447.html",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "region": {
           "as_of": "2026-07-21",
           "source": "中华网/凤凰网科技 2026-07-21、Wikipedia 01.AI：公司注册及总部位于中国北京，计划2027年赴港上市",
           "url": "https://news.china.com/socialgd/10000169/20260721/49623930.html",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         }
       },
       "checked_at": "2026-09-01"
@@ -1913,55 +1965,64 @@
           "as_of": "2026-06-10",
           "source": "Dealroom 2026-06-10 (Cursor 年化收入于 2026 年 6 月初突破 $4B) 与 TechCrunch 2025-06-05 (2025 年 6 月超过 $500M ARR) 对比,得出约 700% 同比增速;两项均为美元原币,无需换算",
           "url": "https://app.dealroom.co/news/note/cursor-tops-4b-annualized-revenue-june-2026",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-08-16",
           "source": "Cursor 官方文档 Models & Pricing(2026 年 8 月)+ Composer 2 技术报告(cursor.com/resources/Composer2.pdf):AI 代码编辑器且已自研 Composer 系列模型",
           "url": "https://cursor.com/docs/models-and-pricing",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2026-08-16",
           "source": "Cursor 官方文档 Models & Pricing(2026 年 8 月):Cursor Models 池含 Composer 2.5、Cursor Grok 4.6/4.5(first-party),第三方 Other Models 仍在服务;未披露自研 token 占比",
           "url": "https://cursor.com/docs/models-and-pricing",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arr": {
           "as_of": "2026-06-08",
           "source": "Forbes(Richard Nieva)2026-06-08 与 Dealroom 快讯 2026-06:Cursor 年化收入突破 $4B(4 月底 $3B),原币美元",
           "url": "https://app.dealroom.co/news/note/cursor-tops-4b-annualized-revenue-june-2026",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2026-08-14",
           "source": "Bloomberg 2026-08-14:SpaceX 完成对 Cursor(Anysphere)$60B 全股票收购,交易于 8 月 14 日生效(监管 8-K),美元原币",
           "url": "https://www.bloomberg.com/news/articles/2026-08-14/spacex-completes-its-60-billion-cursor-acquisition",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2026-05-19",
           "source": "CNBC Disruptor 50 2026-05-19:Cursor 为 AI 编程助手/代码编辑器",
           "url": "https://www.cnbc.com/2026/05/19/cursor-cnbc-disruptor-50-ranking.html",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2026-06-08",
           "source": "Forbes 2026-06-08:$4B 年化收入、5 万+企业团队,处于规模化阶段",
           "url": "https://app.dealroom.co/news/note/cursor-tops-4b-annualized-revenue-june-2026",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2026-06-08",
           "source": "Dealroom 快讯 2026-06:约 75% 运行率来自企业客户(约 $2.6B B2B),其余为个人 Pro/Ultra 订阅,故 B2B+B2C",
           "url": "https://app.dealroom.co/news/note/cursor-tops-4b-annualized-revenue-june-2026",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ti": {
           "as_of": "2026-03-25",
           "source": "Cursor 官方博客《Improving Composer through real-time RL》(2026):推理量出现 10–100 倍增长、涉及\"数万亿 token\",属高 token 强度",
           "url": "https://cursor.com/blog/real-time-rl-for-composer",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -1996,55 +2057,64 @@
           "as_of": "2025-09-10",
           "source": "The Information/FT（经 Yahoo Finance 2026-04-08 与 Hustle Fund 2026-05 复述）：2025 年 9 月完成 $200M 融资，投后估值约 $20B（$69.54/股）；2026-08 英伟达拟以 >$30B 投资的轮次尚未完成，不采用（美元计价）",
           "url": "https://www.hustlefund.vc/post/angel-squad-perplexity-ai-pre-ipo-shares-what-accredited-investors-should-know-in-2026",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-08-01",
           "source": "Sacra 2026-08（2026-02 上线的 AI 智能体产品 Computer 为增长主力）＋Comet 浏览器（2025-07 上线、2025-10 全量免费）仍为在售旗舰，描述未过时",
           "url": "https://sacra.com/c/perplexity/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2026-08-25",
           "source": "The Information 2026-08-25 与 Sacra 2026-08：年化收入 $750M、逾 1 亿 MAU、数万家企业客户，规模化阶段（scale）",
           "url": "https://sacra.com/c/perplexity/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2025-02-11",
           "source": "Perplexity 官方博客 2025-02-11（Sonar/Sonar Pro 自研后训练模型作为默认搜索模型）＋2026 年模型清单报道显示 Pro/Research 仍大量调用 GPT/Claude/Gemini，占比未披露，维持 hybrid",
           "url": "https://www.glbgpt.com/hub/what-llm-does-perplexity-use/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "arr": {
           "as_of": "2026-08-25",
           "source": "The Information（经 Benzinga 与 Finimize 2026-08-25 转述）：年化收入已超过 $750M，年初不足 $250M；Sacra 公司页 2026-08 估算 $750M（均以美元计价，无需汇率换算）",
           "url": "https://www.benzinga.com/markets/tech/26/08/61374579/nvidia-perplexity-30-billion-valuation-750-million-revenue-bezos",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2026-08-25",
           "source": "依 The Information 2026-08-25（$750M 年化，年初 <$250M）与 Sacra 2025-06（$148M 年化）推算的同比约 +400%；GetLatka 公司页（2026-04-15 更新）亦列 YOY 400%",
           "url": "https://sacra.com/c/perplexity/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "mau": {
           "as_of": "2026-08-01",
           "source": "Sacra 公司页 2026-08：搜索与智能体产品合计服务超过 1 亿月活用户，并含数万家企业客户",
           "url": "https://sacra.com/c/perplexity/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2026-08-01",
           "source": "Sacra 2026-08 公司描述：AI 搜索/问答引擎为核心产品线，归类 search",
           "url": "https://sacra.com/c/perplexity/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2026-08-01",
           "source": "Sacra 2026-08：以 Pro/Max 个人订阅为主，同时有数万家企业客户与 Enterprise/API 业务，符合 B2C+B2B",
           "url": "https://sacra.com/c/perplexity/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -2077,67 +2147,78 @@
           "as_of": "2025-12-31",
           "source": "Business of Apps, character.ai Revenue and Usage Statistics, 2026-07-16（2025 年营收 5,000 万美元，美元计价）；stockanalysis.com 私司页 2026-07 亦列 Revenue $50M (run rate)",
           "url": "https://www.businessofapps.com/data/character-ai-statistics/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2025-12-31",
           "source": "Business of Apps 2026-07-16：2025 年 5,000 万美元、同比 +66%（2024 年约 3,000 万美元）；Sacra 2025-12-14 报告亦称 2025-07 年化约 3,000 万、年底目标 5,000 万",
           "url": "https://www.businessofapps.com/data/character-ai-statistics/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2023-03-23",
           "source": "Tracxn 公司融资页（2026 年更新）与 Pulse 2.0 2023-03-28：最近一次已完成融资为 a16z 领投 1.5 亿美元 A 轮，投后估值 10 亿美元，美元计价",
           "url": "https://tracxn.com/d/companies/characterai/__n7znlTkG7wRMEQ5fPboRSGJJKofYiuu1hfAIQkMX-jo/funding-and-investors",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "mau": {
           "as_of": "2026-08-13",
           "source": "DemandSage, Character AI Statistics 2026, 2026-08-13：全球月活超 2,000 万；与 startuphub.ai 2026 评测（2,000 万月活）及公司 MWC 2026 口径一致",
           "url": "https://www.demandsage.com/character-ai-statistics/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "maug": {
           "as_of": "2026-08-13",
           "source": "对比口径：2025 年初约 2,000 万月活（The Information 经 PYMNTS 2025-08-20）与 2026-08 DemandSage 的 2,000 万月活，同比基本零增长",
           "url": "https://www.demandsage.com/character-ai-statistics/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-04-01",
           "source": "StartupHub.ai, Character AI Review 2026（2026 年 4 月抓取）：定位为全球最大的 AI 角色扮演/娱乐平台，含多模态创作（图像/视频）与社交信息流",
           "url": "https://www.startuphub.ai/ai-news/reviews/2026/character-ai-review-2026",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2026-01-14",
           "source": "AiThority 2026-01-14（DigitalOcean 推理云 + AMD Instinct 为 Character.ai 提供 2 倍生产推理性能）＋ Character.AI 官方博客所述以自有训练管线微调开源架构生成各\"chat style\"模型：推理主要跑在自训模型与自建推理集群上，status=primary 成立；token 占比从未披露",
           "url": "https://tracxn.com/d/companies/characterai/__n7znlTkG7wRMEQ5fPboRSGJJKofYiuu1hfAIQkMX-jo",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2026-07-16",
           "source": "Business of Apps 2026-07-16：面向个人用户的聊天/娱乐消费级 App，收入主要来自 c.ai+ 订阅与广告 → consumer",
           "url": "https://www.businessofapps.com/data/character-ai-statistics/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2026-07-16",
           "source": "Business of Apps 2026-07-16：2025 年 5,000 万美元营收、下载量超 7,500 万、约 2,000 万月活，属规模化阶段（scale）",
           "url": "https://www.businessofapps.com/data/character-ai-statistics/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2026-07-16",
           "source": "Business of Apps 2026-07-16 与 Sacra 公司页：收入来自 9.99 美元/月的个人订阅 c.ai+ 及广告，无企业销售 → B2C",
           "url": "https://sacra.com/c/character-ai/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "ti": {
           "as_of": "2025-12-14",
           "source": "Sacra 公司报告 2025-12-14：成本结构由推理支出主导，用户日均使用约 75 分钟、每月数十亿聊天分钟 → token 强度 high",
           "url": "https://sacra.com/c/character-ai/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -2166,49 +2247,57 @@
           "as_of": "2026-02-04",
           "source": "ElevenLabs official blog 'ElevenLabs raises $500M Series D at $11B valuation' 2026-02-04, closed round led by Sequoia (USD); Forge Global profile 2026-06 lists post-money $11B",
           "url": "https://elevenlabs.io/blog/series-d",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-08-08",
           "source": "ElevenLabs blog product updates 2026 + invideo model overview 2026-08 (Eleven v3 仍为旗舰 TTS；Agents 语音智能体为营收增长主因，见官方 2026-05-05 博客)",
           "url": "https://elevenlabs.io/blog/eleven-v3-is-now-generally-available",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2026-06-17",
           "source": "ElevenLabs official blog 2026-06-17: 2025 年底 ARR 3.5 亿美元，2026 年前四个月已超 5 亿美元；TechCrunch 2026-05-05 同步确认超 5 亿美元 ARR、约 400 名员工、企业客户含 Deutsche Telekom/Revolut/Klarna",
           "url": "https://elevenlabs.io/blog/500m-arr-and-new-investors",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "arr": {
           "as_of": "2026-05-05",
           "source": "ElevenLabs official blog 'ElevenLabs crosses $500M ARR and welcomes new investors' 2026-05-05 (USD figure, 'in the first four months of 2026, we have already surpassed $500 million ARR')",
           "url": "https://elevenlabs.io/blog/500m-arr-and-new-investors",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2026-05-05",
           "source": "ElevenLabs official blog 2026-05-05 (ended 2025 at $350M ARR) vs ~$100M ARR around end-2024/April-2025 per Turing Post 2026-08 and GetLatka revenue timeline; implies ~250% y/y (USD)",
           "url": "https://elevenlabs.io/blog/500m-arr-and-new-investors",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2026-05-05",
           "source": "ElevenLabs official blog 2026-05-05 (AI audio/voice platform, voice agents for enterprises)",
           "url": "https://elevenlabs.io/blog/500m-arr-and-new-investors",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2026-05-05",
           "source": "ElevenLabs official blog 2026-05-05（企业客户 Deutsche Telekom/Santander/Revolut 等）+ 官方定价页创作者订阅自 $22/月起，B2B 与 B2C 并存",
           "url": "https://elevenlabs.io/blog/500m-arr-and-new-investors",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2026-02-03",
           "source": "ElevenLabs official blog 'Eleven v3 is Now Generally Available' 2026-02（自研 Eleven v3/Flash v2.5/Multilingual v2/Scribe/Music 承载全部推理）；未披露 token 占比",
           "url": "https://elevenlabs.io/blog/eleven-v3-is-now-generally-available",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -2237,43 +2326,50 @@
           "as_of": "2026-03-29",
           "source": "The Information 2026-03-29「Midjourney Revenue Now ‘Significantly’ Above $200 Million」（CEO David Holz 口径，原文为美元，无需换算）；Sacra Equity Research 2025-12-14 估算 $200M+ ARR",
           "url": "https://www.theinformation.com/briefings/midjourney-revenue-now-significantly-200-million",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-04-14",
           "source": "Midjourney 官方更新博客 2026-04-14（V8.1 Alpha 发布）+ Midjourney 官方帮助文档 Version 页（V8.0 于 2026-03-17 上线、2026-07-24 下线，V8.1 为当前版本）+ TechCrunch 2025-06-18（V1 视频模型）",
           "url": "https://updates.midjourney.com/v8-1-alpha/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2026-04-14",
           "source": "Midjourney 官方产品页/更新博客 2026-04-14：文本到图像与视频生成创作工具，归类 creative",
           "url": "https://updates.midjourney.com/v8-1-alpha/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2026-03-29",
           "source": "The Information 2026-03-29（营收显著高于 $200M、已盈利）+ Sacra 2025-12-14（$200M+ ARR、自筹盈利），属 scale 阶段",
           "url": "https://sacra.com/c/midjourney/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2025-12-14",
           "source": "Sacra Equity Research 2025-12-14 + Contrary Research 公司报告：以 Discord/网页端个人订阅为主的消费者订阅业务，B2C",
           "url": "https://research.contrary.com/company/midjourney",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "ti": {
           "as_of": "2026-04-14",
           "source": "Midjourney 官方更新博客 2026-04-14（V8 系列扩散模型自研推理、V8 未蒸馏时成本为前代 4–10 倍；图像+视频生成推理密集），token 强度 high",
           "url": "https://updates.midjourney.com/v8-1-alpha/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2026-04-14",
           "source": "Midjourney 官方更新博客 2026-04-14（V8.1）与官方文档 Version 页：全部推理运行在自研模型（V7、V8.0/V8.1 图像模型、V1 视频模型），不依赖第三方 API；公司从未披露 token 份额比例",
           "url": "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -2302,49 +2398,57 @@
           "as_of": "2026-02-10",
           "source": "TechCrunch 2026-02-10（新资金用于预训练下一代世界模型）+ SiliconANGLE 2026-02-10（GWM-1，2025 年 12 月）+ Sacra 公司页（Adobe Firefly 独家早期接入自 Gen-4.5 起）；未发现 Gen-5 等更高世代官方发布",
           "url": "https://sacra.com/c/runway/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2026-02-10",
           "source": "Bloomberg 2026-02-10 / TechCrunch 2026-02-10：已完成的 3.15 亿美元 E 轮，投后估值 53 亿美元（美元报价，无需换算）",
           "url": "https://techcrunch.com/2026/02/10/ai-video-startup-runway-raises-315m-at-5-3b-valuation-eyes-more-capable-world-models/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2026-02-10",
           "source": "TechCrunch 2026-02-10：AI 视频生成/创意内容生成公司，客户为影视、广告、创意团队",
           "url": "https://techcrunch.com/2026/02/10/ai-video-startup-runway-raises-315m-at-5-3b-valuation-eyes-more-capable-world-models/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2026-07-23",
           "source": "Sacra 公司页（12–95 美元/席位/月自助订阅 + 大型工作室预购算力包）与 TechCrunch 2026-07-23（Media Router 面向外部开发者/企业 API）——同时面向 B2C 创作者与 B2B 企业",
           "url": "https://techcrunch.com/2026/07/23/runway-bets-on-ai-model-routing-as-generative-media-gets-crowded/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2026-06-30",
           "source": "Tracxn 公司页（Series E、员工 516 人 @2026-06-30、累计融资 8.6 亿美元）+ Sacra 年化收入约 1 亿美元量级——处于 growth 阶段而非 scale",
           "url": "https://tracxn.com/d/companies/runway/__YJRXAM3_qhw8sHb_MGKQpeME5TjwsPw8p7TiYBSHHgM",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ti": {
           "as_of": "2026-04-01",
           "source": "Sacra 公司页：收入含按 GPU 分钟计费，2024 年 EBITDA 亏损 1.55 亿美元主因云算力与模型训练成本——视频/世界模型推理属超高 token（算力）强度",
           "url": "https://sacra.com/c/runway/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2026-02-10",
           "source": "TechCrunch 2026-02-10 + SiliconANGLE 2026-02-10：Runway 自研并自训 Gen-4.5 视频模型与 GWM-1 世界模型，自家产品推理主要基于自研模型（status=primary）；官方从未披露 token 份额",
           "url": "https://siliconangle.com/2026/02/10/world-model-startup-runway-closes-315m-funding-round/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arr": {
           "as_of": "2025-06-30",
           "source": "Sacra 公司页面（最近更新约 2026-04）：Sacra estimates Runway hit $90M in annualized revenue in June 2025, up from ~$70M at year-end 2024；Runway 官方拒绝披露收入（Crunchbase News 2026-02-10）",
           "url": "https://sacra.com/c/runway/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -2373,67 +2477,78 @@
           "as_of": "2026-08-07",
           "source": "The Information 2026-08-07（转载 SiliconANGLE 2026-08-07、PYMNTS 2026-08-07）：年化收入超过 $350M；Sacra 2026-07-13 亦估 $350M ARR",
           "url": "https://siliconangle.com/2026/08/07/legal-ai-startup-harvey-reportedly-raising-500m-15-5b-valuation/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2026-08-07",
           "source": "CNBC 2025-08-04（官方 $100M ARR）与 The Information 2026-08-07（>$350M 年化收入）推算同比 +250%",
           "url": "https://www.cnbc.com/2025/08/04/legal-ai-startup-harvey-revenue.html",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "mau": {
           "as_of": "2026-07-13",
           "source": "Sacra 2026-07-13 Harvey 公司页：142,000+ 名律师、1,500+ 客户、60+ 国家（席位/活跃用户口径）",
           "url": "https://sacra.com/c/harvey/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "maug": {
           "as_of": "2026-07-13",
           "source": "Sacra 2026-07-13：周活跃用户同比 4 倍（=+300%）；CNBC 2025-08-04 亦称 WAU 一年翻两番",
           "url": "https://sacra.com/c/harvey/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2026-08-07",
           "source": "The Information 2026-08-07（>$350M 年化收入）+ Sacra 2026-07-13（1,500+ 客户、60+ 国家）：已属规模化阶段",
           "url": "https://sacra.com/c/harvey/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-03-25",
           "source": "Bloomberg 2026-03-25 / Harvey 官方博客 2026-03-25：融资用于扩展 AI agents 与法律工程团队，主力形态为端到端法律 AI 智能体平台（Workflows/Vault/Assistant）",
           "url": "https://www.bloomberg.com/news/articles/2026-03-25/legal-ai-startup-harvey-raises-funds-at-11-billion-valuation",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ti": {
           "as_of": "2026-06-16",
           "source": "Startup Riders Growth Index 2026（引用 Sourcery 2026-06-16）：约 13 万亿 tokens/月；长文档 + 多步 agent 工作流属高 token 消耗",
           "url": "https://www.startupriders.com/p/harvey-ai-growth-playbook",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2026-03-25",
           "source": "CNBC 2026-03-25 / Bloomberg 2026-03-25：已完成 $200M 融资，投后估值 $11B",
           "url": "https://www.cnbc.com/2026/03/25/legal-ai-startup-harvey-raises-200-million-at-11-billion-valuation.html",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2026-03-25",
           "source": "CNBC 2026-03-25：Harvey 为面向律所与法务团队的法律 AI 公司",
           "url": "https://www.cnbc.com/2026/03/25/legal-ai-startup-harvey-raises-200-million-at-11-billion-valuation.html",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2026-03-25",
           "source": "CNBC 2026-03-25 / Harvey 官方博客：客户为律所、企业法务与专业服务机构，纯 B2B 订阅",
           "url": "https://www.harvey.ai/blog/harvey-raises-series-e",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2026-07-13",
           "source": "Sacra 2026-07-13：前沿推理模型商品化后 Harvey 已弃用其自研微调法律模型，改为调用第三方前沿模型；无自有模型 token 占比披露",
           "url": "https://sacra.com/research/harvey-at-195m-arr/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -2462,55 +2577,64 @@
           "as_of": "2026-05-29",
           "source": "Sacra equity research on Glean, 2026-05-29（2025 年底 $208M → 2026-05 $300M，同比约 +89%）；美元计价",
           "url": "https://sacra.com/c/glean/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-05-28",
           "source": "Glean 官方新闻稿 2026-05-28（Enterprise Context Intelligence、Model Hub、MCP Gateway、智能体平台）及 Business Wire 2026 年 Agent Development Lifecycle 发布稿",
           "url": "https://www.businesswire.com/news/home/20260528505530/en/Glean-Surpasses-$300M-ARR-Unrivaled-Enterprise-Context-Fuels-AI-Adoption",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arr": {
           "as_of": "2026-05-28",
           "source": "Glean 官方新闻稿 via Business Wire, 2026-05-28 (\"Glean Surpasses $300M ARR\")，金额以美元计价，无需汇率换算",
           "url": "https://www.businesswire.com/news/home/20260528505530/en/Glean-Surpasses-$300M-ARR-Unrivaled-Enterprise-Context-Fuels-AI-Adoption",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2025-06-10",
           "source": "Forge Global 公司页（融资历史表，Series F $150M、投后 $7.2B，2025-06-10 完成）与 Tracxn 公司页 2026-05 更新一致；美元计价",
           "url": "https://forgeglobal.com/glean_stock/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2026-05-28",
           "source": "Glean 官方新闻稿 2026-05-28，定位为面向大型企业的 Work AI / 企业搜索与智能体平台",
           "url": "https://www.businesswire.com/news/home/20260528505530/en/Glean-Surpasses-$300M-ARR-Unrivaled-Enterprise-Context-Fuels-AI-Adoption",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2026-05-28",
           "source": "Glean 官方新闻稿 2026-05-28（$300M ARR、F 轮、约 1,650 员工）—— 属规模化阶段",
           "url": "https://www.businesswire.com/news/home/20260528505530/en/Glean-Surpasses-$300M-ARR-Unrivaled-Enterprise-Context-Fuels-AI-Adoption",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2026-05-28",
           "source": "Glean 官方新闻稿 2026-05-28（客户为 Fortune 500 企业，纯企业订阅），无 C 端业务",
           "url": "https://www.businesswire.com/news/home/20260528505530/en/Glean-Surpasses-$300M-ARR-Unrivaled-Enterprise-Context-Fuels-AI-Adoption",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "ti": {
           "as_of": "2026-05-28",
           "source": "定性判断：Glean 官方 2026-05-28 稿件强调 RAG 检索 + 多步智能体任务（win rate 66%→73%），token 消耗中等；官方未披露 token 量",
           "url": "https://www.businesswire.com/news/home/20260528505530/en/Glean-Surpasses-$300M-ARR-Unrivaled-Enterprise-Context-Fuels-AI-Adoption",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2026-05-28",
           "source": "Glean 官方新闻稿 2026-05-28（Model Hub 提供跨模型选择）及 Business Wire 支持 NVIDIA Nemotron 3 Ultra 公告 —— 推理全部使用第三方模型，无自研 LLM，未披露自有 token 占比",
           "url": "https://www.businesswire.com/news/home/20260528505530/en/Glean-Surpasses-$300M-ARR-Unrivaled-Enterprise-Context-Fuels-AI-Adoption",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -2539,55 +2663,64 @@
           "as_of": "2025-11-10",
           "source": "Gamma 官方博客《How we built a $100M business differently》/ Business Wire 2025-11-10；TechCrunch 2025-11-10 转述 CEO Grant Lee：盈利状态下 ARR 达 $100M（美元原币）",
           "url": "https://gamma.app/insights/how-we-built-a-usd100m-business-differently",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2025-11-10",
           "source": "TechCrunch 2025-11-10 + Gamma 官方公告：$68M B 轮由 a16z 领投，投后估值 $21 亿（已完成交割，PitchBook 记录为 Completed，2025-11-10）；美元计价",
           "url": "https://techcrunch.com/2025/11/10/ai-powerpoint-killer-gamma-hits-2-1b-valuation-100m-arr-founder-says/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2026-03-17",
           "source": "Sacra 公司页（约 2026-03 更新）：2025年10月 ARR 约 $102M，2024年底约 $30.5M ARR，推算同比约 +234%；均为美元，无需汇率换算",
           "url": "https://sacra.com/c/gamma/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-08-06",
           "source": "Gamma 产品说明与 2026 年评测（fast.io Gamma AI Review 2026；getalai 2026-08）：仍为一句话生成演示文稿/文档/网站/社媒内容，未出现被取代的新产品代际名称",
           "url": "https://getalai.com/blog/gamma-alternatives",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2026-03-17",
           "source": "Sacra 公司页：信用点制 freemium、自助获客的视觉叙事创作工具，60 万付费订阅、以个人/小团队创作者为主 —— 属 creative 类",
           "url": "https://sacra.com/c/gamma/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2025-11-10",
           "source": "Gamma 官方公告 2025-11-10：$100M ARR、连续两年盈利、7,000 万用户、$2.1B 估值 —— 按 ARR/规模惯例属 scale",
           "url": "https://gamma.app/insights/how-we-built-a-usd100m-business-differently",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2026-03-17",
           "source": "Sacra 公司页 + Gamma 官方公告：以自助订阅的个人/prosumer 付费为主（60 万付费订阅），同时提供团队/企业版（Business、SSO 等），即 B2C 为主、B2B 为辅",
           "url": "https://sacra.com/c/gamma/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ti": {
           "as_of": "2026-06-05",
           "source": "eesel.ai《Gamma pricing in 2026》：单次生成输入上限 5 万–10 万 token、按信用点计费（Plus 4,000 点/月），单用户月度调用量有限，属低 token 强度",
           "url": "https://www.eesel.ai/blog/gamma-pricing",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2025-11-10",
           "source": "Gamma 官方公告与 TechCrunch 2025-11-10 及 2026 年评测：全部依赖第三方模型 API（含 OpenAI/Anthropic/Google 及第三方图像模型），无自研模型、无 token 份额披露",
           "url": "https://techcrunch.com/2025/11/10/ai-powerpoint-killer-gamma-hits-2-1b-valuation-100m-arr-founder-says/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -2616,55 +2749,64 @@
           "as_of": "2026-06-25",
           "source": "HeyGen 官方公告（Business Wire / heygen.com 博客）2026-06-25：ARR 突破 2 亿美元、八个月翻倍、现金流打平；Upstarts Media 2026-06-25 对 CEO Joshua Xu 的独家专访予以印证；原文即美元口径",
           "url": "https://www.businesswire.com/news/home/20260625305891/en/HeyGen-Doubles-to-$200M-ARR-in-Eight-Months-on-the-Rise-of-Identity-First-AI-Video",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2024-06-20",
           "source": "Bloomberg 2024-06-20：Benchmark 领投 6000 万美元 A 轮，投后估值 5 亿美元（美元口径）；PitchBook 与 Tracxn（2026 年页面）显示此后无新的已完成轮次",
           "url": "https://www.bloomberg.com/news/articles/2024-06-20/ai-video-startup-heygen-valued-at-500-million-in-funding-round",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2026-06-25",
           "source": "由两次 HeyGen 官方美元口径披露推导：2025-10 约 1 亿美元 ARR、2026-06-25 超 2 亿美元 ARR（八个月翻倍），年化约 183%，与存量 185% 一致",
           "url": "https://www.heygen.com/blog/heygen-surpasses-200m-arr",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2026-06-25",
           "source": "HeyGen 官方公告 2026-06-25：ARR 超 2 亿美元、3000 万+用户、85% 的 Fortune 100 采用、现金流打平；Tracxn/PitchBook 员工数约 200-430 人，符合 scale 阶段",
           "url": "https://www.heygen.com/blog/heygen-surpasses-200m-arr",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2026-06-25",
           "source": "HeyGen 官方站点与公告 2026-06-25：定位为 identity-first AI 视频创作/本地化平台，属 creative 类",
           "url": "https://www.heygen.com/blog/heygen-surpasses-200m-arr",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2026-06-25",
           "source": "HeyGen 官方公告 2026-06-25：既有 3000 万+个人/小微自助用户，也有覆盖 85% Fortune 100 的企业客户与 API/Enterprise 方案，B2B+B2C 成立",
           "url": "https://www.heygen.com/blog/heygen-surpasses-200m-arr",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-06-25",
           "source": "HeyGen 官方产品页与公告 2026-06-25：旗舰为 Avatar V/Avatar IV 数字人视频、视频翻译与实时互动数字人，\"AI视频数字人\"仍为当前主营描述",
           "url": "https://www.heygen.com/avatars/avatar-v",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "ti": {
           "as_of": "2026-06-08",
           "source": "HeyGen 研究博客《Avatar Inference at Scale》与《HeyGen x Google Cloud: Bringing Avatar IV to TPUs》：Avatar IV 扩散模型超 180 亿参数、长时流式视频生成，单位输出算力消耗极高，token/算力强度属 ultra",
           "url": "https://www.heygen.com/research/avatar-inference-at-scale",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2026-08-14",
           "source": "HeyGen 研究博客（Avatar Inference at Scale 2026-06 前后；HeyGen x Google Cloud TPU 文章约 2026-08-14）：平台数字人视频由自研自训的 Avatar IV（>18B 参数扩散栈）与 Avatar V 模型族生成，绝大部分推理跑在自研模型上，status=primary；公司从未披露自研模型的 token/请求占比",
           "url": "https://www.heygen.com/research/heygen-x-google-cloud-bringing-avatar-iv-to-tpus",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -2693,43 +2835,50 @@
           "as_of": "2026-02-25",
           "source": "Sacra 公司页估算：2026 年 2 月 ARR $300M，同比增长约 404%（第三方估算，非官方）",
           "url": "https://sacra.com/c/suno/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2026-06-03",
           "source": "官方 $300M ARR + 200 万付费订阅（2026-02-26）与 $5.4B 估值 D 轮（2026-06-03），规模与融资阶段符合 scale",
           "url": "https://www.musicbusinessworldwide.com/suno-raises-over-400-million-pushing-valuation-to-5-4-billion/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arr": {
           "as_of": "2026-02-26",
           "source": "Billboard Pro 2026-02-26 及 The Hollywood Reporter 2026-02-26，引用 CEO Mikey Shulman 官方公布 $300M ARR、200 万付费订阅（美元原币）",
           "url": "https://www.billboard.com/pro/suno-2-million-paid-subscribers-300m-arr-revenue/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2026-06-03",
           "source": "Music Business Worldwide 2026-06-03 / Digital Music News 2026-06-03：公司正式宣布已完成逾 $400M D 轮，投后估值 $5.4B（美元原币）",
           "url": "https://www.musicbusinessworldwide.com/suno-raises-over-400-million-pushing-valuation-to-5-4-billion/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2026-03-26",
           "source": "Suno 官方博客/产品页：面向消费者的 AI 音乐创作平台（v5.5、Voices、Custom Models、Studio），属 creative 类",
           "url": "https://about.suno.com/blog/v5-5",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2026-02-26",
           "source": "Sacra 公司页 + Billboard 2026-02-26：收入几乎全部来自个人 freemium 订阅（$10/$30 月费、200 万付费用户），主体为 B2C",
           "url": "https://sacra.com/c/suno/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-03-26",
           "source": "Suno 官方博客《Suno v5.5: More Expressive. More You.》2026-03-26 + Suno 官方 Release Notes（Introducing Suno Studio / Introducing v5）",
           "url": "https://about.suno.com/blog/v5-5",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -2758,55 +2907,64 @@
           "as_of": "2024-11-12",
           "source": "WRITER 官方新闻稿 2024-11-12(2 亿美元 C 轮,投后估值 19 亿美元);TechCrunch 2024-11-12 印证;此后无新一轮关闭",
           "url": "https://writer.com/blog/series-c-funding-writer-press-release/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arr": {
           "as_of": "2024-11-30",
           "source": "Sacra 公司页(估算:2024 年 11 月 ARR 4700 万美元);Contrary Research 报告 2025-04-17 沿用同一数字",
           "url": "https://sacra.com/c/writer/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2024-11-30",
           "source": "Sacra 公司页(2023 年 1600 万 → 2024 年 11 月 4700 万,同比 +194%);Contrary Research 2025-04-17",
           "url": "https://sacra.com/c/writer/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-08-13",
           "source": "WRITER blog/press release 2026-08-13 (Palmyra X6 旗舰模型 + WRITER Agent harness 重大升级);WRITER 产品更新日志 2026-05/2026-08(AI Studio 成为控制面板、WRITER Agent UX 更新);CMSWire 2026-08-13",
           "url": "https://writer.com/blog/palmyra-x6-major-harness-release/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ti": {
           "as_of": "2026-08-13",
           "source": "VentureBeat 2026-08-13(企业 token 支出激增、Palmyra X6 使 agent 成本降 52%);SiliconANGLE 2026-08-13(可无人值守连续运行最长 8 小时的多步任务)",
           "url": "https://venturebeat.com/orchestration/writer-says-its-new-palmyra-x6-model-cuts-ai-agent-costs-by-52-as-token-spending-surges",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2026-08-13",
           "source": "WRITER 官方新闻稿 2026-08-13(Palmyra X6 为自研旗舰模型,运行于 WRITER Agent harness)+ WRITER newsroom 样板文(agents 由 WRITER 自有企业级 LLM 驱动);token 份额从未披露",
           "url": "https://writer.com/blog/palmyra-x6-major-harness-release/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2026-08-13",
           "source": "WRITER 新闻稿/BusinessWire 2026-08-13:面向 Fortune 500 的企业级 AI 智能体平台(KPMG、Intuit、Mars、Uber、Vanguard 等客户)",
           "url": "https://writer.com/blog/palmyra-x6-major-harness-release/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2026-08-13",
           "source": "WRITER newsroom/官方新闻稿 2026-08-13:纯企业订阅销售(数百家企业客户),无面向消费者业务",
           "url": "https://writer.com/newsroom/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2024-11-30",
           "source": "Sacra(2024 年 11 月 ARR 约 4700 万美元、同比 +194%)+ WRITER 官方 C 轮公告 2024-11-12:收入规模与阶段符合 growth",
           "url": "https://sacra.com/c/writer/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -2888,43 +3046,50 @@
           "as_of": "2026-03-25",
           "source": "Granola 官方博客 2026-03-25 + Bloomberg 2026-03-25 + TechCrunch 2026-03-25：$125M C 轮，投后 $1.5B（前轮 $250M）",
           "url": "https://www.granola.ai/blog/series-c",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2026-03-25",
           "source": "TechCrunch / SiliconANGLE / Sifted 2026-03-25：完成 C 轮，累计融资 1.92 亿美元，员工约 116 人（Tracxn 2026-05），推出 Spaces 与企业 API，处于规模化增长期",
           "url": "https://techcrunch.com/2026/03/25/granola-raises-125m-hits-1-5b-valuation-as-it-expands-from-meeting-notetaker-to-enterprise-ai-app/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2026-03-25",
           "source": "TechCrunch 2026-03-25（企业 API/Spaces/Enterprise 控制）＋ Granola 定价页报道（Basic 免费个人档、Business $14/席/月、Enterprise $35/席/月）：收入以 B2B 为主，仍保留免费个人端入口",
           "url": "https://www.reworked.co/digital-workplace/granola-raises-125m-launches-enterprise-context-tools/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2026-03-25",
           "source": "TechCrunch 2026-03-25：由会议记录工具转向企业 AI 应用，主打企业上下文层、企业 API 与管理控制",
           "url": "https://techcrunch.com/2026/03/25/granola-raises-125m-hits-1-5b-valuation-as-it-expands-from-meeting-notetaker-to-enterprise-ai-app/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "ti": {
           "as_of": "2026-03-25",
           "source": "Granola 官方博客 2026-03-25 及产品评测（单场会议转写＋摘要/问答，非长时 agent 推理），token 强度属低档",
           "url": "https://www.granola.ai/blog/series-c",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2026-05-08",
           "source": "Granola 官方博客 2026-05-08（Granola MCP：接入 Claude、ChatGPT、Cursor）＋ 第三方评测指其由 GPT-4o/Claude 驱动；无自研模型披露",
           "url": "https://www.granola.ai/blog/granola-mcp-claude-chatgpt-cursor",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-03-25",
           "source": "Granola 官方博客 2026-03-25（Series C 公告：推出 Spaces、企业 API，将会议记录定位为企业上下文层）＋ TechCrunch 2026-03-25「from meeting notetaker to enterprise AI app」",
           "url": "https://www.granola.ai/blog/series-c",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -2953,55 +3118,64 @@
           "as_of": "2026-05-27",
           "source": "Cognition 官方融资公告，经 TechCrunch 2026-05-27 报道：年化收入运行率 4.92 亿美元（USD 原始计价）",
           "url": "https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2026-05-27",
           "source": "Cognition 官方口径转述（KuCoin 快讯 2026-05-27 / Sacra 公司页）：2025 年 5 月 3700 万美元 → 2026 年 5 月 4.92 亿美元，同比约 +1230%",
           "url": "https://sacra.com/c/cognition/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-08-11",
           "source": "Cognition 官网 windsurf.com 首页（抓取于 2026-08 中旬）标题已改为 \"Devin Desktop\"，并注明\"legacy Windsurf Enterprise plans\"沿用原价，显示 Windsurf IDE 已并入 Devin 品牌线；参照 dev.to 2026-06 的 Windsurf 2.0（2026-04-15）整合报道",
           "url": "https://windsurf.com/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2026-04-07",
           "source": "Cognition 官方 X 2026-04-07 发布 SWE-1.6（Windsurf 内免费档 200 tok/s、快速档 950 tok/s）；Cerebras 官方案例（2026-05）确认 SWE-1.5/SWE-1.6/SWE-grep 自研并由 Cerebras 承载，但第三方模型仍在产品内并行提供，故为 hybrid、token 占比未披露",
           "url": "https://www.cerebras.ai/blog/case-study-cognition-x-cerebras",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2026-05-27",
           "source": "TechCrunch 2026-05-27：已完成融资超 10 亿美元，投前 250 亿美元、投后 260 亿美元（USD 原始计价）",
           "url": "https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2026-05-27",
           "source": "TechCrunch 2026-05-27 将其定义为 AI coding startup（Devin 编码 Agent + Windsurf IDE）",
           "url": "https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2026-05-27",
           "source": "TechCrunch 2026-05-27：ARR 4.92 亿美元、企业用量连续六个月环比 +50%，仍处高速扩张的 growth 阶段（尚未到成熟 scale）",
           "url": "https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2026-05-27",
           "source": "TechCrunch 2026-05-27 列举 Mercedes-Benz、NASA、Goldman Sachs、Santander 等企业客户；windsurf.com 称 4000+ 企业客户，收入主体为 B2B",
           "url": "https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ti": {
           "as_of": "2026-05-27",
           "source": "Cognition 官方博客 2025-10-29 / Cerebras 案例 2026-05：自主编码 Agent 长轨迹推理，SWE-1.5/1.6 以 950 tok/s 服务，token 消耗极高",
           "url": "https://www.cerebras.ai/blog/case-study-cognition-x-cerebras",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -3035,49 +3209,57 @@
           "as_of": "2024-12-31",
           "source": "Sacra 公司档案（页面截至本次核查仍为最新版）：估算 Luma AI 2024 年 12 月年化收入 800 万美元；原文美元计价",
           "url": "https://sacra.com/c/luma-ai/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-06-26",
           "source": "Fastio《Luma AI Review 2026》2026-06-26（Ray3/Ray3.14 视频模型 + 2026 年 3 月上线的 Agents 编排层）；AI Wiki 2026-06-09 记载 Ray3.2 发布，3D 采集已非旗舰",
           "url": "https://fast.io/resources/luma-ai-review-2026/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2025-11-19",
           "source": "BusinessWire 2025-11-19 官方稿确认 9 亿美元 C 轮由 HUMAIN 领投并已完成；Seedtable（引 The Letter Two 2025-11-19）与 Forge Global 报该轮估值约 40 亿美元（Forge：投后 38.5 亿美元）。原文美元计价",
           "url": "https://www.businesswire.com/news/home/20251119678010/en/Luma-AI-Raises-%24900-Million-Series-C-Led-by-HUMAIN-And-Partners-on-2-Gigawatt-AI-Supercluster-in-Saudi-Arabia",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2025-09-18",
           "source": "Luma AI 官方发布稿 2025-09-18《Luma AI launches Ray3》：自研 Ray3（Ray2 两倍规模）为 Dream Machine 内全部视频生成推理提供服务，属自有模型主导；未披露 token 占比",
           "url": "https://lumalabs.ai/news/ray3",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2025-09-18",
           "source": "Luma 官方/BusinessWire 2025-09-18：面向影视、广告、游戏创作者的生成式视频产品，归类 creative",
           "url": "https://lumalabs.ai/news/ray3",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2026-01-01",
           "source": "Luma 官方 Learning Hub 订阅页（Lite/Plus/Unlimited 个人订阅）+ Enterprise 报价，及 2025-11-19 与 HUMAIN 的企业/政府合作，属 B2B+B2C",
           "url": "https://lumalabs.ai/learning-hub/payments-subscriptions",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2025-11-19",
           "source": "BusinessWire 2025-11-19：完成 9 亿美元 C 轮、累计融资超 10 亿美元，但公开收入体量仍在千万美元级，处于 growth 阶段",
           "url": "https://www.businesswire.com/news/home/20251119678010/en/Luma-AI-Raises-%24900-Million-Series-C-Led-by-HUMAIN-And-Partners-on-2-Gigawatt-AI-Supercluster-in-Saudi-Arabia",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ti": {
           "as_of": "2025-11-19",
           "source": "BusinessWire 2025-11-19：与 HUMAIN 共建 2GW AI 超算集群用于多模态视频模型训练与推理；视频生成属极高算力/token 强度，ti=ultra",
           "url": "https://www.businesswire.com/news/home/20251119678010/en/Luma-AI-Raises-%24900-Million-Series-C-Led-by-HUMAIN-And-Partners-on-2-Gigawatt-AI-Supercluster-in-Saudi-Arabia",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -3106,49 +3288,57 @@
           "as_of": "2025-11-17",
           "source": "Forbes 2025-11-17（Speak 年化收入超 $100M），Yahoo Finance 2025-11-17 转载",
           "url": "https://finance.yahoo.com/news/1-billion-ai-startup-backed-144613265.html",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2025-11-17",
           "source": "由公司口径 2024 年底约 $50M 增至 Forbes 2025-11-17 报道的 $100M+，约 +100% 同比（公司未直接披露增速）",
           "url": "https://finance.yahoo.com/news/1-billion-ai-startup-backed-144613265.html",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2024-12-10",
           "source": "Speak 官方博客 2024-12-10《Raising $78M Series C at a $1B valuation》（已交割）；Bloomberg 2024-12-10 同日报道",
           "url": "https://www.speak.com/blog/series-c",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2025-11-17",
           "source": "Forbes 2025-11-17：年化收入超 $100M、下载 1500 万+、多市场扩张，处于 growth 阶段",
           "url": "https://finance.yahoo.com/news/1-billion-ai-startup-backed-144613265.html",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2025-11-17",
           "source": "Forbes 2025-11-17：收入主要来自消费者业务，同时 2024 年起推出 Speak for Business 企业版（TechCrunch 2024-12-10 称已有 200+ 企业客户）",
           "url": "https://techcrunch.com/2024/12/10/openai-backed-speak-raises-78m-at-1b-valuation-to-help-users-learn-languages-by-talking-out-loud/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-04-20",
           "source": "Speak 官网/App Store 产品页与 Clay 公司档案（2026-04-20 快照）：旗舰仍为 AI 口语学习 App（含 Speak Tutor）与 Speak for Business 企业版，无更名或代际更替",
           "url": "https://www.speak.com/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2024-06-10",
           "source": "Speak 官方工程博客 2024-06-10《Leveling up our core speech recognition systems at Speak》：自训 Conformer 系列 ASR；对话/课程生成仍依赖 OpenAI 模型（OpenAI Startup Fund 案例说明）",
           "url": "https://www.speak.com/blog",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2025-11-17",
           "source": "Forbes 2025-11-17：收入主体为消费者语言学习订阅（六种语言的 AI 口语学习 App）",
           "url": "https://finance.yahoo.com/news/1-billion-ai-startup-backed-144613265.html",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -3179,49 +3369,57 @@
           "as_of": "2025-03-31",
           "source": "TechCrunch 2025-06-24（引用 The Information 2025-05）：2025 年 Q1 签约 ARR 1.17 亿美元；valueaddvc 2026-08 复核称 Abridge 迄今未公布更新的 ARR，仍以约 1 亿美元级别为基准；美元计价",
           "url": "https://valueaddvc.com/blog/abridge-valuation-2026-5-3b-100m-arr-and-how-the-ai-scribe-beat-nuance-and-ambience",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2026-05-19",
           "source": "CNBC Disruptor 50 榜单 2026-05-19：Abridge 估值 53 亿美元、累计融资约 8.3 亿美元（源自已完成的 2025-06 a16z 领投 3 亿美元 E 轮）；美元计价无需换算",
           "url": "https://www.cnbc.com/2026/05/19/abridge-cnbc-disruptor-50-ranking.html",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-05-19",
           "source": "Abridge 官方新闻稿 2025-10-16（UPMC 全院部署环境临床记录）+ CNBC 2026-05-19（业务已延伸至收入周期/医疗编码 AI），旗舰产品口径未变",
           "url": "https://www.abridge.com/press-release/upmc-scales-abridge",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2025-10-16",
           "source": "Abridge 官方新闻稿 2025-10-16：200+ 家医疗系统在用、UPMC 全院 12,000 名临床医生；deepcura 2026-08 评测称 250+ 家医疗系统，规模化阶段成立",
           "url": "https://www.abridge.com/press-release/upmc-scales-abridge",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "ti": {
           "as_of": "2025-10-16",
           "source": "Abridge 官方新闻稿 2025-10-16 及 technical.ly 2025 报道：全院级长音频实时转写＋病历生成＋编码，年支撑数千万次医患对话，单位 token 消耗高",
           "url": "https://www.abridge.com/press-release/upmc-scales-abridge",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2026-06-12",
           "source": "Fierce Healthcare 2026-06-12（Abridge 与 NVIDIA 基于 Nemotron 训练医疗专用基础模型）+ Abridge 官方博客 2025-09-18（说明为何自训模型，如幻觉检测不用 GPT-5）",
           "url": "https://www.fiercehealthcare.com/ai-and-machine-learning/nvidia-abridge-collaborate-develop-healthcare-specific-ai-model",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2025-07-23",
           "source": "Sacra Abridge 公司档案（2025-07 更新）：面向医疗机构的临床对话生成式 AI，属健康医疗类",
           "url": "https://sacra.com/c/abridge/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2025-07-23",
           "source": "Sacra Abridge 公司档案：B2B SaaS，按医生数/就诊量向医疗机构销售企业许可，不面向个人医生自助订阅",
           "url": "https://sacra.com/c/abridge/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -3254,43 +3452,50 @@
           "as_of": "2026-06-03",
           "source": "Ideogram 官方新闻稿 2026-06-03：发布 Ideogram 4.0 开源权重旗舰图像模型（9.3B 参数，含文字/版式渲染与 2K 原生输出）",
           "url": "https://ideogram.ai/news/ideogram-4.0/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2026-06-03",
           "source": "Ideogram 官方模型页 / Wikipedia：文生图与设计创作工具，归类 creative",
           "url": "https://ideogram.ai/models/4.0/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2026-01-01",
           "source": "usagepricing.com Ideogram 定价蓝图：Free/Plus/Pro/Team 与 API 为自助 PLG，Enterprise 及企业自定义模型训练为销售驱动，即消费者为主、企业为辅",
           "url": "https://www.usagepricing.com/blueprint/ideogram",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2026-01-01",
           "source": "Tracxn 2026 公司档案：Ideogram 仍处 Series A（累计融资 9650 万美元，最近一轮 2024-02-28），约 50 名员工，收入规模个位数百万美元，符合 pmf 阶段",
           "url": "https://tracxn.com/d/companies/ideogram",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ti": {
           "as_of": "2026-06-03",
           "source": "Ideogram 4.0 技术说明 2026-06-03：9.3B 参数图像模型、文本与图像 token 共享自注意力序列、原生 2K 输出，单次生成算力消耗高",
           "url": "https://ideogram.ai/blog/ideogram-4.0/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2026-06-03",
           "source": "Ideogram 官方新闻稿 2026-06-03：Ideogram 4.0 为公司自研、从零训练的旗舰基础模型，全部产品推理均基于自研模型（未披露 token 份额百分比）",
           "url": "https://ideogram.ai/news/ideogram-4.0/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "arr": {
           "as_of": "2026-06-04",
           "source": "kocpc.com.tw 2026-06-04（Ideogram 4.0 开源报道）称截至2025年该公司约49名员工、年经常性收入约700万美元；GetLatka 公司页亦列 Ideogram 2025 年营收 7M USD。原始披露即为美元，无需汇率换算",
           "url": "https://en.kocpc.com.tw/archives/1725",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {
@@ -3319,55 +3524,64 @@
           "as_of": "2024-12-31",
           "source": "Sacra 公司档案（2025年更新）：估算 Descript 于 2024 年末达到约 $55M ARR，2024年8月约 $31M；金额以美元计价",
           "url": "https://sacra.com/c/descript/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "arrg": {
           "as_of": "2024-12-31",
           "source": "Sacra 公司档案（2025年更新）：$55M ARR 对应同比 +75%；美元计价",
           "url": "https://sacra.com/c/descript/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "val": {
           "as_of": "2022-11-15",
           "source": "TechCrunch 2022-11-15（引 The Information）$50M C 轮由 OpenAI Startup Fund 领投、投后约 $5.5亿；Forge Global 档案列 post-money $543.78M；美元计价",
           "url": "https://forgeglobal.com/descript_ipo/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "ownModel": {
           "as_of": "2022-11-15",
           "source": "TechCrunch 2022-11-15: Descript ships in-house speech/voice-cloning models from its Lyrebird acquisition, but took investment from the OpenAI Startup Fund and builds its generative/LLM features on OpenAI technology; no disclosure that own models serve most inference",
           "url": "https://techcrunch.com/2022/11/15/ai-powered-media-editing-app-descript-lands-fresh-cash-from-openai/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "cat": {
           "as_of": "2025-09-25",
           "source": "Sacra 公司档案：Descript 为文本式视频/音频剪辑与生成工具，面向创作者，属 creative 类",
           "url": "https://sacra.com/c/descript/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-01"
         },
         "stage": {
           "as_of": "2024-12-31",
           "source": "Sacra：约 $55M ARR、同比 +75%，处于 growth 阶段（尚未达规模化阶段）",
           "url": "https://sacra.com/c/descript/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "biz": {
           "as_of": "2026-08-25",
           "source": "Descript 定价（Castmagic 2026 评测汇总）：Free/Hobbyist/Creator 面向个人创作者，Business 与 Enterprise 面向团队与企业，Sacra 亦列 Enterprise 席位约 $600/年，属 B2B+B2C",
           "url": "https://www.castmagic.io/software-reviews/descript",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "ti": {
           "as_of": "2026-08-25",
           "source": "Descript 定价与 Underlord 产品页：按月 AI credits（400–1,500/月）驱动的代理式视频剪辑、转写、语音生成，token/推理消耗高",
           "url": "https://www.descript.com/underlord",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         },
         "uc": {
           "as_of": "2026-07-29",
           "source": "Descript 官方博客《How to get started with Underlord: an AI video editor primer》(约2026-07-29) 及 Underlord 产品页：Underlord 已成为 Descript 的旗舰 AI 剪辑代理，与文本式视频/音频剪辑器一同为当前主力产品",
           "url": "https://www.descript.com/blog/article/underlord-ai-video-editor-primer",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-01"
         }
       },
       "ownModel": {

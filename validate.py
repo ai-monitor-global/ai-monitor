@@ -117,8 +117,9 @@ def check(data: dict):
                 if str(prov.get("conf", "")).lower() not in ("high", "medium"):
                     errors.append("{}.prov.{}.conf={!r} is not high/medium".format(
                         tag, field, prov.get("conf")))
-            missing = [f for f in common.PROV_TRACKED
-                       if f in entity and not (entity.get("prov") or {}).get(f)]
+            missing = [f for f in common.prov_fields(section)
+                       if entity.get(f) is not None
+                       and not (entity.get("prov") or {}).get(f)]
             if missing:
                 warnings.append("{}: no provenance yet for {}".format(
                     tag, ", ".join(missing)))
