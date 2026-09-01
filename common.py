@@ -70,9 +70,14 @@ NUMERIC_FIELDS = {
     "apps":   {"arr", "arrg", "mau", "maug", "val"},
 }
 QUALITATIVE_FIELDS = {
-    "models": {"uc", "region"},
-    "apps":   {"uc", "cat", "stage", "biz", "ti", "ownModel"},
+    "models": {"uc", "region", "listed"},
+    "apps":   {"uc", "cat", "stage", "biz", "ti", "ownModel", "listed"},
 }
+
+# "EXCHANGE:TICKER" for a public company, "" for private. For a listed company
+# `val` is its current market cap, which moves daily - so these are exempt from
+# the recheck cooldown and refreshed every run.
+LISTED_RE = re.compile(r"^[A-Za-z.]{2,10}:[A-Za-z0-9.\-]{1,10}$")
 
 # Fields whose freshness the dashboard surfaces per-cell. Section-specific:
 # a model provider has no ownModel, and treating it as a missing tracked field
@@ -197,10 +202,11 @@ def migrate(data: dict) -> dict:
     # sourced per-provider tokM (they disagree by ~80x), so the panel stays
     # withdrawn rather than showing the page contradicting itself. Set this
     # true once there is a sourced historical series.
-    data["series"].setdefault("tokens_enabled", False)
+    data["series"].setdefault("tokens_enabled", True)
 
     for section, entity in iter_entities(data):
         entity.setdefault("retired", False)
+        entity.setdefault("listed", "")
         entity.setdefault("prov", {})
         # prov.checked (when we last verified) is distinct from prov.as_of
         # (when the source reported it). Seed it from the entity's checked_at
@@ -353,6 +359,13 @@ def _failures(section: str, entity: dict, field: str, new, patch: dict):
         problem = _check_own_model(new)
         if problem:
             bad(problem)
+        return out
+    if field == "listed":
+        if not isinstance(new, str):
+            bad("listed must be a string")
+        elif new.strip() and not LISTED_RE.match(new.strip()):
+            bad("listed must look like 'HKEX:2513' or be an empty string, "
+                "got {!r}".format(new))
         return out
     if not isinstance(new, str) or not new.strip():
         bad("{} must be a non-empty string".format(field))
@@ -591,7 +604,10 @@ def reverify_targets(data: dict, k: int):
         big = (entity.get("arr") or 0) >= 500
         effective = age * 2.0 if (big and age >= 28) else float(age)
         checked = _parse_day(entity.get("checked_at"))
-        cooling = bool(checked and (today() - checked).days < RECHECK_COOLDOWN_DAYS)
+        # A listed company's `val` is its market cap and moves daily, so it is
+        # never "recently enough" checked.
+        cooling = bool(checked and not str(entity.get("listed") or "").strip()
+                       and (today() - checked).days < RECHECK_COOLDOWN_DAYS)
         scored.append((cooling, -effective, index, section, entity))
     scored.sort(key=lambda t: (t[0], t[1], t[2]))
     return [(s, e) for _, _, _, s, e in scored[:k]]

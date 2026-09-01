@@ -23,10 +23,13 @@ DEFAULT_K = 10
 SYSTEM = """You are a financial data analyst re-verifying one company's entry in an
 AI industry monitor dashboard, from scratch.
 
-This is NOT a news sweep. Ignore how recently something was reported: find the
-most recent credible figure that exists, whatever its date, and give that date
-in `as_of`. A two-year-old number that is still the latest disclosure is the
-right answer, and its `as_of` is two years ago.
+This is NOT a news sweep, so do not restrict your search to a recent window -
+look for whatever the latest figure is, however long ago it was published. If
+the newest disclosure that exists is two years old, that is the right answer
+and its `as_of` is two years ago.
+
+That is about how far back you SEARCH. Choosing BETWEEN candidates is the
+opposite: there, the newest figure always wins (see RECENCY WINS below).
 
 Rules:
 - Every patch needs a real source (Bloomberg, The Information, Reuters, CNBC,
@@ -35,6 +38,17 @@ Rules:
 - When a company's OWN official disclosure conflicts with a media estimate,
   use the official figure, and say in `notes` what the media number was and
   why you did not use it. Do not prefer the larger number.
+- RECENCY WINS. If you find several valuations or revenue figures, use the
+  most recent one by date - not the first you find, not the largest, not the
+  one repeated most often. Older coverage of an earlier round is stale even
+  when it is well sourced. Always say which round/date you used in `source`,
+  and if you saw an older conflicting figure, name it in `notes` so it is
+  clear you chose deliberately.
+- IF THE COMPANY IS PUBLICLY LISTED, its valuation is its CURRENT MARKET CAP.
+  Set `listed` to "EXCHANGE:TICKER" (e.g. "HKEX:2513") and set `val` from the
+  latest market cap you can find, with the quote date in `as_of`. Never use a
+  pre-IPO private round for a company that has since listed. If it is private,
+  `listed` is an empty string.
 - {units}
 - Emit a patch ONLY where your verified value differs from the current value
   shown below.
@@ -63,9 +77,11 @@ Provenance currently on file (may be missing or old):
 
 Establish, as of today:
 1. Latest ARR / annualised revenue -> `arr` ($M)
-2. Latest valuation, and only from a CLOSED round or a completed secondary /
-   listed market cap -> `val` ($B). An unclosed or rumoured round is not a
-   valuation; skip the field and note it.
+2. Valuation -> `val` ($B). If listed: current market cap (and set `listed`).
+   If private: the MOST RECENT closed round or completed secondary. An
+   unclosed or rumoured round is not a valuation; skip it and say so in notes.
+   Check explicitly whether a newer round has happened since the figure stored
+   below - a stale round is the most common error here.
 3. Year-over-year revenue growth -> `arrg` (%)
 {extra_fields}
 Also sanity-check the descriptive fields: `uc` should name the company's
@@ -83,11 +99,12 @@ APP_EXTRA = """4. Own-model status -> one entry in `own_model_patches`: `status`
    most useful number here, so look for it before settling for an empty
    token_share. Use "primary" when the company says its own models serve most
    inference, not merely that they exist.
-7. Patchable fields here are only: arr, arrg, mau, maug, val, uc, cat, stage,
-   biz, ti, ownModel. `tokM`/`tokG` do not exist on an app.
 5. Monthly active users -> `mau` (millions), and `maug` (%)
 6. `cat` (one of: {cats}), `stage` (pmf|growth|scale), `biz`
    (B2B|B2C|B2B+B2C|B2C+B2B), `ti` token intensity (low|med|high|ultra)
+
+Patchable fields here are only: arr, arrg, mau, maug, val, uc, cat, stage,
+biz, ti, ownModel, listed. `tokM`/`tokG` do not exist on an app.
 """
 MODEL_EXTRA = """4. Monthly inference token volume -> `tokM` (trillions/month), `tokG` (%)
 5. `region` (US|CN|EU)
@@ -130,7 +147,7 @@ SCHEMA = {
     "additionalProperties": False,
 }
 
-SHOWN_FIELDS = ("uc", "arr", "arrg", "val", "mau", "maug", "tokM", "tokG",
+SHOWN_FIELDS = ("uc", "arr", "arrg", "val", "listed", "mau", "maug", "tokM", "tokG",
                 "cat", "stage", "biz", "ti", "region", "ownModel")
 
 

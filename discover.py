@@ -146,8 +146,10 @@ def normalise(cand: dict) -> dict:
     """Coerce the response's empty-string-means-unknown numerics into real
     numbers/None, and rename token_share to the stored `tokenShare`."""
     out = dict(cand)
-    for field in ("arr", "val", "arrg", "mau", "maug"):
-        out[field] = common.opt_number(out.get(field))
+    for field in ("arr", "val", "arrg", "mau", "maug",
+                  "tokM", "tokG", "trainPerRun", "runsPerYear"):
+        if field in out:
+            out[field] = common.opt_number(out.get(field))
     own = dict(out.get("ownModel") or {})
     if "token_share" in own:
         own["tokenShare"] = common.opt_number(own.pop("token_share"))
@@ -232,9 +234,207 @@ def composition(data: dict):
             sorted(counts.items(), key=lambda kv: -kv[1])] if apps else []
 
 
+# --------------------------------------------------------------------------
+# Explicit adds. Discovery only searches for AI-native *applications*, so a
+# model provider could never enter the roster no matter how important it got -
+# which is how DeepSeek stayed missing. This researches named entities in
+# either section and appends them with full provenance.
+# --------------------------------------------------------------------------
+MODEL_SEEDS = "DeepSeek, Alibaba Qwen, ByteDance Doubao, Meta (Llama), " \
+              "Amazon (Nova), Baidu (ERNIE), Tencent (Hunyuan)"
+
+ADD_SYSTEM = """You are a research analyst adding one company to an AI industry monitor
+dashboard. Establish its current figures from scratch.
+
+Rules:
+- Every figure needs a real source (Bloomberg, The Information, Reuters,
+  TechCrunch, Sacra, a company announcement, an official filing) with the date
+  it reported the figure.
+- RECENCY WINS: if several valuations or revenue figures exist, use the most
+  recent by date, not the largest and not the most repeated.
+- If the company is publicly LISTED, `val` is its CURRENT MARKET CAP and
+  `listed` is "EXCHANGE:TICKER". Never use a pre-IPO round for a listed
+  company. If it is a division of a listed megacap and has no separate
+  valuation, leave `val` empty and `listed` empty.
+- {units}
+- For a model provider, `arr` is annualised revenue from serving models (API +
+  first-party model subscriptions). It EXCLUDES compute/infrastructure leasing,
+  cloud resale, hardware, and unrelated parent-company revenue. If only a
+  blended segment figure exists, leave `arr` empty and explain in `notes`.
+- Leave a field empty rather than guessing."""
+
+ADD_USER = """Today is {today}. Research this company for the "{section}" table.
+
+name: {name}
+
+Return, with sources:
+- `uc`: current flagship products, in Chinese, under ~30 chars
+- `arr` ($M) and `arrg` (%)
+- `val` ($B) and `listed`
+{fields}
+If this company is already better known under a different exact name, use the
+name most readers would recognise."""
+
+MODEL_ADD_FIELDS = """- `region` (US|CN|EU)
+- `tokM` (trillions of tokens served per month) and `tokG` (%)
+- `trainPerRun` (trillions of tokens per training run) and `runsPerYear`
+"""
+APP_ADD_FIELDS = """- `cat` (one of: {cats}), `stage` (pmf|growth|scale),
+  `biz` (B2B|B2C|B2B+B2C|B2C+B2B), `ti` (low|med|high|ultra)
+- `mau` (millions) and `maug` (%)
+- `ownModel`: status (none|hybrid|primary), token_share, models
+"""
+
+
+def _add_schema(section: str) -> dict:
+    props = {
+        "name":   {"type": "string"},
+        "uc":     {"type": "string"},
+        "arr":    dict(common.OPTIONAL_NUMBER, description="$M; empty if unsourceable"),
+        "arrg":   common.OPTIONAL_NUMBER,
+        "val":    dict(common.OPTIONAL_NUMBER, description="$B; market cap if listed"),
+        "listed": {"type": "string", "description": "EXCHANGE:TICKER, or empty if private"},
+        "notes":  {"type": "string"},
+        "source": {"type": "string"},
+        "url":    {"type": "string"},
+        "as_of":  {"type": "string"},
+        "conf":   {"type": "string", "enum": ["high", "medium"]},
+    }
+    if section == "models":
+        props.update({
+            "region":      {"type": "string", "enum": sorted(common.REGIONS)},
+            "tokM":        common.OPTIONAL_NUMBER,
+            "tokG":        common.OPTIONAL_NUMBER,
+            "trainPerRun": common.OPTIONAL_NUMBER,
+            "runsPerYear": common.OPTIONAL_NUMBER,
+        })
+    else:
+        props.update({
+            "cat":   {"type": "string", "enum": sorted(common.CATEGORIES)},
+            "stage": {"type": "string", "enum": sorted(common.ENUMS["stage"])},
+            "biz":   {"type": "string", "enum": sorted(common.ENUMS["biz"])},
+            "ti":    {"type": "string", "enum": sorted(common.ENUMS["ti"])},
+            "mau":   common.OPTIONAL_NUMBER,
+            "maug":  common.OPTIONAL_NUMBER,
+            "ownModel": {
+                "type": "object",
+                "properties": {
+                    "status": {"type": "string", "enum": sorted(common.OWN_MODEL_STATUS)},
+                    "token_share": common.OPTIONAL_NUMBER,
+                    "models": {"type": "array", "items": {"type": "string"}},
+                },
+                "required": ["status", "token_share", "models"],
+                "additionalProperties": False,
+            },
+        })
+    return {"type": "object", "properties": props,
+            "required": sorted(props), "additionalProperties": False}
+
+
+def add_entities(data: dict, names: list, section: str, dry: bool) -> int:
+    required = ("arr", "tokM") if section == "models" else ("arr",)
+    added, skipped = [], []
+    for name in names:
+        name = name.strip()
+        if not name:
+            continue
+        existing, _ = common.resolve(data.get(section, []), name)
+        if existing:
+            skipped.append("{} (already tracked as {})".format(name, existing["name"]))
+            continue
+        print("\n-- researching {} ({})".format(name, section))
+        fields = (MODEL_ADD_FIELDS if section == "models"
+                  else APP_ADD_FIELDS.format(cats="|".join(sorted(common.CATEGORIES))))
+        try:
+            got = common.ask(
+                system=ADD_SYSTEM.format(units=common.UNITS_RULE),
+                user=ADD_USER.format(today=common.today(), section=section,
+                                     name=name, fields=fields),
+                schema=_add_schema(section), max_uses=10, max_tokens=8000)
+        except Exception as exc:  # noqa: BLE001
+            print("   FAILED: {}".format(exc), file=sys.stderr)
+            skipped.append("{} (research failed)".format(name))
+            continue
+        got = normalise(got)
+        missing = [f for f in required if not _num(got.get(f))]
+        if missing:
+            skipped.append("{} (no sourceable {})".format(name, ", ".join(missing)))
+            print("   skipped: could not source {}".format(", ".join(missing)))
+            continue
+        entity = _to_entity(got, section)
+        print("   {} | arr ${}M | val {} | {}".format(
+            entity["name"], entity["arr"],
+            "${}B".format(entity["val"]) if entity.get("val") is not None else "n/a",
+            entity.get("listed") or "private"))
+        if not dry:
+            data[section].append(entity)
+        added.append(entity["name"])
+    print("\nadded {} / skipped {}".format(len(added), len(skipped)))
+    for line in skipped:
+        print("  .  {}".format(line))
+    return len(added)
+
+
+def _to_entity(got: dict, section: str) -> dict:
+    prov = {"as_of": str(common._parse_day(got.get("as_of")) or common.today()),
+            "checked": str(common.today()),
+            "source": str(got.get("source") or "").strip() or "seeded",
+            "url": str(got.get("url") or "").strip() or None,
+            "conf": str(got.get("conf") or "medium").lower()}
+    entity = {
+        "name": got["name"].strip(),
+        "uc": (got.get("uc") or "").strip() or got["name"].strip(),
+        "arr": got.get("arr"), "arrg": got.get("arrg"),
+        "val": got.get("val"), "listed": str(got.get("listed") or "").strip(),
+        "m": 0, "retired": False, "checked_at": str(common.today()),
+        "prov": {"arr": dict(prov)},
+    }
+    if got.get("val") is not None:
+        entity["prov"]["val"] = dict(prov)
+    if section == "models":
+        entity.update({
+            "region": got.get("region") or "US",
+            "tokM": got.get("tokM"), "tokG": got.get("tokG"),
+            "trainPerRun": got.get("trainPerRun"),
+            "runsPerYear": got.get("runsPerYear"),
+        })
+    else:
+        entity.update({
+            "cat": got.get("cat") or "other", "stage": got.get("stage") or "growth",
+            "biz": got.get("biz") or "B2B", "ti": got.get("ti") or "med",
+            "mau": got.get("mau"), "maug": got.get("maug"),
+            "ownModel": got.get("ownModel") or {
+                "status": "none", "tokenShare": None, "models": []},
+        })
+        entity["prov"]["ownModel"] = dict(prov)
+    return entity
+
+
+def _arg(flag, default=None):
+    if flag in sys.argv:
+        i = sys.argv.index(flag)
+        if i + 1 < len(sys.argv):
+            return sys.argv[i + 1]
+    return default
+
+
 def main() -> int:
     dry = "--dry-run" in sys.argv
     seed = "--seed" in sys.argv
+
+    if "--add" in sys.argv or "--add-model-seeds" in sys.argv:
+        data = common.load()
+        section = _arg("--section", "models")
+        names = (MODEL_SEEDS if "--add-model-seeds" in sys.argv
+                 else _arg("--add", "")).split(",")
+        print("=== add pass: {} (model={}){} ===".format(
+            common.today(), common.MODEL, " [DRY RUN]" if dry else ""))
+        n = add_entities(data, names, section, dry)
+        common.recompute_momentum(data)
+        common.record_run(data, PASS, ok=True, added=n)
+        if not dry:
+            common.save(data)
+        return 0
     data = common.load()
     print("=== {} pass: {} (model={}){}{} ===".format(
         PASS, common.today(), common.MODEL,

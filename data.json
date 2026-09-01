@@ -1474,7 +1474,8 @@
           "checked": "2026-09-01"
         }
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Anthropic",
@@ -1526,7 +1527,8 @@
           "checked": "2026-09-01"
         }
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Google Gemini",
@@ -1571,7 +1573,8 @@
           "checked": "2026-09-01"
         }
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "xAI",
@@ -1623,7 +1626,8 @@
           "checked": "2026-09-01"
         }
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Kimi (Moonshot)",
@@ -1675,7 +1679,8 @@
           "checked": "2026-09-01"
         }
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "MiniMax",
@@ -1734,7 +1739,8 @@
           "checked": "2026-09-01"
         }
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Zhipu AI",
@@ -1786,7 +1792,8 @@
           "checked": "2026-09-01"
         }
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Mistral AI",
@@ -1838,7 +1845,8 @@
           "checked": "2026-09-01"
         }
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Cohere",
@@ -1890,7 +1898,8 @@
           "checked": "2026-09-01"
         }
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "01.AI",
@@ -1942,7 +1951,8 @@
           "checked": "2026-09-01"
         }
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     }
   ],
   "apps": [
@@ -2036,7 +2046,8 @@
           "Cursor Grok 4.6"
         ]
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Perplexity",
@@ -2126,7 +2137,8 @@
           "R1-1776"
         ]
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Character.ai",
@@ -2226,7 +2238,8 @@
         "tokenShare": null,
         "models": []
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "ElevenLabs",
@@ -2305,7 +2318,8 @@
         "tokenShare": null,
         "models": []
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Midjourney",
@@ -2377,7 +2391,8 @@
         "tokenShare": null,
         "models": []
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Runway",
@@ -2456,7 +2471,8 @@
         "tokenShare": null,
         "models": []
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Harvey",
@@ -2556,7 +2572,8 @@
         "tokenShare": null,
         "models": []
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Glean",
@@ -2642,7 +2659,8 @@
         "tokenShare": null,
         "models": []
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Gamma",
@@ -2728,7 +2746,8 @@
         "tokenShare": null,
         "models": []
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "HeyGen",
@@ -2814,7 +2833,8 @@
         "tokenShare": null,
         "models": []
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Suno",
@@ -2886,7 +2906,8 @@
         "tokenShare": null,
         "models": []
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Writer",
@@ -2979,7 +3000,8 @@
           "Palmyra-mini"
         ]
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Sierra",
@@ -3025,7 +3047,8 @@
         "status": "none",
         "tokenShare": null,
         "models": []
-      }
+      },
+      "listed": ""
     },
     {
       "name": "Granola",
@@ -3097,7 +3120,8 @@
         "tokenShare": null,
         "models": []
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Cognition",
@@ -3188,7 +3212,8 @@
           "SWE-1"
         ]
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Luma AI",
@@ -3267,7 +3292,8 @@
         "tokenShare": null,
         "models": []
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Speak",
@@ -3348,7 +3374,8 @@
           "Speak 自研 Conformer 系列流式语音识别(ASR)模型"
         ]
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Abridge",
@@ -3431,7 +3458,8 @@
           "Abridge×NVIDIA Nemotron 医疗基础模型（2026-06 宣布训练中）"
         ]
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Ideogram",
@@ -3503,7 +3531,8 @@
         "tokenShare": null,
         "models": []
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     },
     {
       "name": "Descript",
@@ -3591,7 +3620,8 @@
           "Lyrebird / Overdub voice cloning (in-house speech model from the 2019 Lyrebird acquisition)"
         ]
       },
-      "checked_at": "2026-09-01"
+      "checked_at": "2026-09-01",
+      "listed": ""
     }
   ],
   "ai_progress": {
@@ -3781,6 +3811,6 @@
       14.5,
       17.0
     ],
-    "tokens_enabled": false
+    "tokens_enabled": true
   }
 }

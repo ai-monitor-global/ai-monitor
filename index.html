@@ -89,10 +89,10 @@ a.pdot:hover{color:#2563eb}
 <span style="font-size:11px;color:#888" id="layer-hint">Foundation Models=模型API收入，AI Apps=依赖API的应用ARR</span></div>
 <div class="fbar" id="app-filters" style="display:none">
 <span id="app-chips" style="display:contents"></span>
-<select class="ssel" id="app-sort"><option value="m">排序: Momentum</option><option value="arr">排序: ARR</option><option value="arrg">排序: ARR增长率</option><option value="mau">排序: MAU</option><option value="val">排序: 估值</option><option value="fresh">排序: 数据新鲜度</option></select></div>
+<select class="ssel" id="app-sort"><option value="arr">排序: ARR</option><option value="m">排序: Momentum</option><option value="arrg">排序: ARR增长率</option><option value="mau">排序: MAU</option><option value="val">排序: 估值</option><option value="fresh">排序: 数据新鲜度</option></select></div>
 <div class="fbar" id="model-filters">
 <span id="model-chips" style="display:contents"></span>
-<select class="ssel" id="model-sort"><option value="m">排序: Momentum</option><option value="arr">排序: API Revenue</option><option value="arrg">排序: 收入增长率</option><option value="tokM">排序: Token量</option><option value="val">排序: 估值</option><option value="fresh">排序: 数据新鲜度</option></select></div>
+<select class="ssel" id="model-sort"><option value="arr">排序: API Revenue</option><option value="m">排序: Momentum</option><option value="arrg">排序: 收入增长率</option><option value="tokM">排序: Token量</option><option value="val">排序: 估值</option><option value="fresh">排序: 数据新鲜度</option></select></div>
 <div class="tw"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
 <div style="font-size:13px;font-weight:600;color:#111;margin-bottom:14px" id="trend-title">趋势图（估算）</div>
 <div class="grid2eq">
@@ -103,7 +103,7 @@ a.pdot:hover{color:#2563eb}
 <div class="pnl" id="tok-pnl"><div class="pt">全球 AI Token 用量增长趋势（T / 月）</div>
 <div class="tleg"><span><span class="tline" style="background:#2563eb"></span>美国模型</span><span><span class="tline" style="background:#dc2626"></span>中国模型</span><span style="color:#aaa">&#9654; QoQ 增长率（右轴）</span></div>
 <div style="position:relative;height:260px"><canvas id="tokChart"></canvas></div>
-<div class="chart-src">数据来源：OpenAI API用量公告 (15B tokens/min, 2026.3)</div></div>
+<div class="chart-src">看趋势形状，不要读绝对值：本序列为早期估算口径，与上表<strong>逐家已溯源</strong>的 Token/月量级不同（上表合计更高）。两者不可直接相加或比较。</div></div>
 </div>
 <div class="pnl" id="progress-pnl" style="margin-top:24px">
 <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px">
@@ -115,7 +115,7 @@ a.pdot:hover{color:#2563eb}
 <div class="note-box" id="disclaimer"></div></div>
 <script>
 let DATA=null,cRI=null,cTI=null;
-let layer="models",appCat="all",appSort="m",modelRegion="all",modelSort="m";
+let layer="models",appCat="all",appSort="arr",modelRegion="all",modelSort="arr";
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
 function meta(){return DATA&&DATA.meta||{}}
 function cats(){return meta().categories||{}}
@@ -282,6 +282,10 @@ function renderProgress(){
     seg("&#127959; AI Infra 投资视角",p.infra_invest)+
     "</div>";
 }
+function listedTag(a){
+  const t=(a.listed||"").trim();
+  return t?"<span class=\"bdg\" style=\"background:#e0f2fe;color:#0369a1;margin-left:5px\" title=\"已上市，估值列为实时市值\">"+esc(t)+"</span>":"";
+}
 function live(rows){return (rows||[]).filter(r=>!r.retired)}
 function sumOf(rows,f){return rows.reduce((s,a)=>s+(a[f]||0),0)}
 function avgOf(rows,f){
@@ -310,18 +314,12 @@ function renderCharts(){
   document.getElementById("trend-title").textContent=QTR.length
     ?"趋势图（估算，"+QTR[0]+" → "+QTR[QTR.length-1]+"）":"趋势图（估算）";
   if(!QTR.length) return;
-  /* The token series is an early estimate on a different basis from the table
-     (the table's tokM is now sourced, and disagrees by ~80x). Rescaling the
-     history would mean inventing it, so the panel stays withdrawn until there
-     is a sourced series. Flip series.tokens_enabled to bring it back. */
-  const tokOn=S.tokens_enabled===true, tp=document.getElementById("tok-pnl");
-  if(!tokOn&&tp){
-    tp.innerHTML="<div class=\"pt\">全球 AI Token 用量增长趋势</div>"+
-      "<div style=\"font-size:12px;color:#888;line-height:1.7\">暂不展示。"+
-      "原季度序列是早期估算，与上表已溯源的 Token 量口径相差约 80 倍；"+
-      "按比例重算历史点等于编造数据，因此先撤下，等有可溯源的历史序列再放回。"+
-      "<br>上表每家的 Token/月仍是可溯源的当期值。</div>";
-  }
+  /* The token series and the table's tokM are on different bases (the series
+     is an earlier estimate; tokM is now sourced per provider and totals far
+     higher). The chart is kept for the SHAPE of the trend, with the basis
+     stated, rather than rescaled - rescaling would mean inventing history. */
+  const tokOn=S.tokens_enabled!==false, tp=document.getElementById("tok-pnl");
+  if(tp) tp.style.display=tokOn?"":"none";
   const total=mARR.map((v,i)=>+(v+(aARR[i]||0)).toFixed(1));
   const yoy=total.map((v,i)=>i<4?null:Math.round((v/total[i-4]-1)*100));
   const tokTot=tokUS.map((v,i)=>+(v+(tokCN[i]||0)).toFixed(1));
@@ -358,7 +356,7 @@ function renderModelTable(region,sk){
   d=[...d].sort((a,b)=>{const av=sortVal(a,sk)??-Infinity,bv=sortVal(b,sk)??-Infinity;return bv-av;});
   document.getElementById("tbody").innerHTML=d.map(a=>{
     const ann=a.tokM!=null?Math.round(a.tokM*12)+"T":"—";
-    return "<tr><td><div class=\"an\">"+esc(a.name)+"</div><div class=\"uc2\">"+esc(a.uc)+"</div></td>"+
+    return "<tr><td><div class=\"an\">"+esc(a.name)+listedTag(a)+"</div><div class=\"uc2\">"+esc(a.uc)+"</div></td>"+
       "<td>"+tagged(regs(),a.region,a.region)+"</td>"+
       "<td style=\"text-align:right\" class=\"num"+provCls(a,"arr")+"\">"+farr(a.arr)+provMark(a,"arr")+"</td>"+
       "<td style=\"text-align:right\" class=\"num up\">"+fna(a.arrg,"%")+"</td>"+
@@ -379,7 +377,7 @@ function renderAppTable(cat,sk){
   d=[...d].sort((a,b)=>{const av=sortVal(a,sk)??-Infinity,bv=sortVal(b,sk)??-Infinity;return bv-av;});
   const TL={ultra:"&#9888;&#65039; Ultra",high:"&#9888; High",med:"&#9728; Medium",low:"&#128712; Low"};
   document.getElementById("tbody").innerHTML=d.map(a=>
-    "<tr><td><div class=\"an\">"+esc(a.name)+"</div><div class=\"uc2\">"+esc(a.uc)+"</div></td>"+
+    "<tr><td><div class=\"an\">"+esc(a.name)+listedTag(a)+"</div><div class=\"uc2\">"+esc(a.uc)+"</div></td>"+
     "<td>"+tagged(cats(),a.cat,a.cat)+"</td>"+
     "<td style=\"text-align:right\" class=\"num"+provCls(a,"arr")+"\">"+fmoney(a.arr,"")+provMark(a,"arr")+"</td>"+
     "<td style=\"text-align:right\" class=\"num up\">"+fna(a.arrg,"%")+"</td>"+
