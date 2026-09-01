@@ -15,6 +15,16 @@ on:
           - reverify-all    # 一次性全量回填：重核每一家的 ARR/估值/自有模型
           - discover-seed   # 一次性覆盖发现：补齐空白垂直
           - validate-only   # 不调 API，只跑校验和自检
+          - add-model-seeds # 一次性：补 DeepSeek/Qwen/Doubao/Meta 等模型厂商
+      names:
+        description: '仅 mode=add-* 用：要补的公司，逗号分隔（留空则用内置名单）'
+        type: string
+        default: ''
+      section:
+        description: '仅 mode=add-* 用：加到哪张表'
+        type: choice
+        default: models
+        options: [models, apps]
       dry_run:
         description: '只打印拟改动，不写 data.json'
         type: boolean
@@ -67,6 +77,8 @@ jobs:
           CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}
           DISABLE_STRUCTURED_OUTPUT: ${{ vars.DISABLE_STRUCTURED_OUTPUT }}
           MODE: ${{ inputs.mode || 'weekly' }}
+          NAMES: ${{ inputs.names }}
+          SECTION: ${{ inputs.section || 'models' }}
           DRY: ${{ inputs.dry_run && '--dry-run' || '' }}
         run: |
           set +e
@@ -81,6 +93,13 @@ jobs:
               ;;
             validate-only)
               echo "skipping API passes"
+              ;;
+            add-model-seeds)
+              if [ -n "${NAMES}" ]; then
+                python discover.py --add "$NAMES" --section "$SECTION" $DRY                   || FAILED="$FAILED add"
+              else
+                python discover.py --add-model-seeds $DRY || FAILED="$FAILED add"
+              fi
               ;;
             *)
               python update_data.py $DRY     || FAILED="$FAILED incremental"
