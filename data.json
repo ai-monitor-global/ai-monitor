@@ -2,7 +2,7 @@
   "meta": {
     "last_updated": "2026-09-01",
     "next_update": "2026-09-06",
-    "update_notes": "2026-09-01: 18 项已核实更新 — MODEL OpenAI.uc: GPT-5.4、Codex、Sora、DALL·E -> GPT-5.6 Sol、ChatGPT、Codex、Sora; MODEL Anthropic.uc: Claude Opus 4.8、Claude Code -> Claude Opus 5、Claude Code; MODEL Google Gemini.uc: Gemini 3 Pro／3.6 Flash、Gemma -> Gemini 3.1 Pro／3.6 Flash、Gemma; MODEL MiniMax.arr: 300 -> 800; MODEL MiniMax.arrg: 159 -> 283; MODEL MiniMax.val: 10.8 -> 13.0",
+    "update_notes": "2026-09-01: 6 项已核实更新 — MODEL MiniMax.listed:  -> HKEX:0100; MODEL Zhipu AI.arr: 239 -> 269; MODEL Zhipu AI.arrg: 132 -> 399.7; MODEL Zhipu AI.val: 60.8 -> 62.0; MODEL Zhipu AI.uc: GLM-5.2、GLM-5V、AutoGLM -> GLM-5.3、GLM-5V、AutoGLM; MODEL Zhipu AI.listed:  -> HKEX:2513",
     "schema": 2,
     "last_run": "2026-09-01",
     "stale_days": 120,
@@ -1357,6 +1357,78 @@
         "source": "Descript 官方博客《How to get started with Underlord: an AI video editor primer》(约2026-07-29) 及 Underlord 产品页：Underlord 已成为 Descript 的旗舰 AI 剪辑代理，与文本式视频/音频剪辑器一同为当前主力产品",
         "conf": "medium",
         "forced": null
+      },
+      {
+        "date": "2026-09-01",
+        "pass": "reverify",
+        "section": "models",
+        "entity": "MiniMax",
+        "field": "listed",
+        "old": "",
+        "new": "HKEX:0100",
+        "source": "MiniMax Group Inc.（稀宇科技）2026年中期业绩公告 2026-08-26；新京报 2026-01-09 报道其于港交所主板挂牌（发行价165港元）；维基百科公司条目列示股票代号 港交所：0100",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-09-01",
+        "pass": "reverify",
+        "section": "models",
+        "entity": "Zhipu AI",
+        "field": "arr",
+        "old": 239,
+        "new": 269,
+        "source": "智谱(02513.HK)2026年中期业绩公告 2026-08-31（经IT之家/科创板日报 2026-08-31 报道）：2026上半年营业总收入人民币9.54亿元，其中开放平台及API（云端部署）占86.5%；按半年收入年化 9.54×2=人民币19.08亿元，按1美元=7.1人民币折算≈2.69亿美元",
+        "conf": "medium",
+        "forced": null
+      },
+      {
+        "date": "2026-09-01",
+        "pass": "reverify",
+        "section": "models",
+        "entity": "Zhipu AI",
+        "field": "arrg",
+        "old": 132,
+        "new": 399.7,
+        "source": "智谱2026年半年报（2026-08-31披露，IT之家/科创板日报引述）：上半年营业总收入人民币9.54亿元，同比增长399.7%；开放平台及API收入同比增长超27倍",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-09-01",
+        "pass": "reverify",
+        "section": "models",
+        "entity": "Zhipu AI",
+        "field": "val",
+        "old": 60.8,
+        "new": 62.0,
+        "source": "Google Finance 2513:HKG 报价 2026-08-25：股价HK$1,038，市值港币4,833.17亿元；按1美元=7.8港元折算≈620亿美元（另 Investing.com 同期报价HK$1,023，市值约HK$4,512-4,760亿，量级一致）",
+        "conf": "medium",
+        "forced": null
+      },
+      {
+        "date": "2026-09-01",
+        "pass": "reverify",
+        "section": "models",
+        "entity": "Zhipu AI",
+        "field": "uc",
+        "old": "GLM-5.2、GLM-5V、AutoGLM",
+        "new": "GLM-5.3、GLM-5V、AutoGLM",
+        "source": "财新 2026-08-14《智谱发布新模型GLM-5.3 强调模型编程与网络安全能力》；科技日报 2026-08-14《智谱发布新一代基座模型GLM-5.3》——GLM-5.2（2026年6月）已被GLM-5.3取代为最新旗舰",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-09-01",
+        "pass": "reverify",
+        "section": "models",
+        "entity": "Zhipu AI",
+        "field": "listed",
+        "old": "",
+        "new": "HKEX:2513",
+        "source": "财新 2026-01-08：智谱（02513.HK）2026年1月8日于港交所主板挂牌；Google Finance/Investing.com 2026年8月报价页确认代码2513.HK仍在交易",
+        "conf": "high",
+        "forced": null
       }
     ],
     "review_queue": [
@@ -1390,12 +1462,12 @@
       "reverify": {
         "at": "2026-09-01",
         "ok": true,
-        "error": "Sierra: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Invalid request data'}, 'request_id': 'req_011Cec5Bs3KjohE8tz6mQfof'}",
-        "checked": 29,
-        "failed": 1,
-        "applied": 18,
-        "rejected": 1,
-        "confirmed": 185
+        "error": null,
+        "checked": 3,
+        "failed": 0,
+        "applied": 6,
+        "rejected": 0,
+        "confirmed": 13
       },
       "discovery": {
         "at": "2026-09-01",
@@ -1422,7 +1494,7 @@
       "trainPerRun": 15,
       "runsPerYear": 4,
       "val": 852,
-      "m": 48,
+      "m": 44,
       "retired": false,
       "prov": {
         "tokM": {
@@ -1544,7 +1616,7 @@
       "trainPerRun": 20,
       "runsPerYear": 4,
       "val": null,
-      "m": 61,
+      "m": 56,
       "retired": false,
       "prov": {
         "tokM": {
@@ -1591,7 +1663,7 @@
       "trainPerRun": 15,
       "runsPerYear": 3,
       "val": 250,
-      "m": 43,
+      "m": 40,
       "retired": false,
       "prov": {
         "val": {
@@ -1650,10 +1722,10 @@
       "prov": {
         "val": {
           "as_of": "2026-07-29",
-          "source": "财联社《科创板日报》独家 2026-07-29 / 澎湃新闻 2026-07-29：F 轮完成，融资超 35 亿美元，投后估值 350 亿美元（原文即美元计价）",
-          "url": "https://www.thepaper.cn/newsDetail_forward_33682828",
-          "conf": "high",
-          "checked": "2026-09-01"
+          "checked": "2026-09-01",
+          "source": "Bloomberg 2026-07-29《Moonshot AI Surpasses Funding Goal to Hit $35 Billion Value》：完成 35 亿美元融资，投后估值 350 亿美元（原文即美元计价）；财联社《科创板日报》/澎湃新闻同日同口径",
+          "url": "https://news.bloomberglaw.com/antitrust/chinas-moonshot-ai-passes-funding-goal-to-hit-35-billion-value",
+          "conf": "high"
         },
         "uc": {
           "as_of": "2026-07-29",
@@ -1664,24 +1736,31 @@
         },
         "arr": {
           "as_of": "2026-06-15",
-          "source": "科创板日报/每日经济新闻 2026-06-30：截至 6 月中旬 ARR 突破 3 亿美元（API 收入占七成以上）；彭博经 IT之家 2026-07-22 转述同一口径（原文即美元计价）",
+          "checked": "2026-09-01",
+          "source": "每日经济新闻/财联社《科创板日报》2026-06-30：6 月中旬 ARR 突破 3 亿美元，API 收入占七成以上（原文即美元计价）；彭博 2026-07-22 经 IT之家转述同一数字",
           "url": "https://www.nbd.com.cn/articles/2026-06-30/4441850.html",
-          "conf": "high",
-          "checked": "2026-09-01"
+          "conf": "high"
         },
         "arrg": {
           "as_of": "2026-06-30",
-          "source": "每日经济新闻 2026-06-30 引月之暗面 B 端负责人黄震昕：API 收入增长 400%、海外付费用户增长 400%（增速为百分比，无货币换算问题）",
+          "checked": "2026-09-01",
+          "source": "每日经济新闻 2026-06-30 引月之暗面 B 端负责人黄震昕：API 收入增长 400%、海外付费用户增长 400%（百分比，无货币换算）",
           "url": "https://www.nbd.com.cn/articles/2026-06-30/4441850.html",
-          "conf": "medium",
-          "checked": "2026-09-01"
+          "conf": "medium"
         },
         "region": {
-          "as_of": "2026-07-30",
-          "source": "投资界 2026-07-30：月之暗面（Moonshot AI）为 2023 年 3 月创立于北京的中国大模型公司，计划赴港上市",
-          "url": "https://news.pedaily.cn/202607/566986.shtml",
-          "conf": "high",
-          "checked": "2026-09-01"
+          "as_of": "2026-08-04",
+          "checked": "2026-09-01",
+          "source": "21财经 2026-08-04 / 澎湃新闻 2026-08-07：北京月之暗面科技股份有限公司，中国大模型公司，筹备赴港上市",
+          "url": "https://m.21jingji.com/article/20260804/herald/2e0e062fe890ffea7438d81b5d299b03.html",
+          "conf": "high"
+        },
+        "listed": {
+          "as_of": "2026-08-07",
+          "checked": "2026-09-01",
+          "source": "澎湃新闻/洞察IPO 2026-08-07 + 36氪 2026-08-16：8 月 3 日路透 IFR 传其拟向港交所递表募资约 30 亿美元，公司回应“消息不实”，仍为非上市公司",
+          "url": "https://m.thepaper.cn/newsDetail_forward_33735523",
+          "conf": "high"
         }
       },
       "checked_at": "2026-09-01",
@@ -1699,29 +1778,29 @@
       "trainPerRun": 6,
       "runsPerYear": 2,
       "val": 13.0,
-      "m": 53,
+      "m": 50,
       "retired": false,
       "prov": {
         "arr": {
           "as_of": "2026-08-26",
-          "source": "量子位（QbitAI）2026-08（\"MiniMax ARR暴涨500%，token暴涨2000%\"）引述公司随2026年中期业绩披露的最新数据：截至2026年8月ARR已超过8亿美元（对照2026年2月业绩会披露的1.5亿美元）；原始数据以美元披露，无需汇率换算",
-          "url": "https://www.qbitai.com/2026/08/480092.html",
-          "conf": "medium",
-          "checked": "2026-09-01"
+          "checked": "2026-09-01",
+          "source": "虎嗅 2026-08-28《MiniMax市值五个月蒸发76%》引述公司2026年中期业绩披露：8月ARR突破8亿美元（公司以美元披露，无需汇率换算）",
+          "url": "https://www.huxiu.com/article/4886381.html",
+          "conf": "high"
         },
         "arrg": {
           "as_of": "2026-08-26",
-          "source": "MiniMax Group (0100.HK) 官方公告《MiniMax Announces First Half 2026 Financial Results》2026-08-26：2026上半年收入由3,040万美元增至1.166亿美元，同比增长283.1%（公司以美元披露）；Bloomberg 2026-08-26 亦报道同一数字",
-          "url": "https://www.minimax.io/news/minimax-announces-first-half-2026-financial-results-1787744160",
-          "conf": "high",
-          "checked": "2026-09-01"
+          "checked": "2026-09-01",
+          "source": "凤凰网科技 2026-08-26 / 动点科技 2026-08-27 引述MiniMax港交所2026年中期业绩公告：上半年收入1.17亿美元，同比+283.1%（美元披露）",
+          "url": "https://tech.ifeng.com/c/8vuMOxzFIOc",
+          "conf": "high"
         },
         "val": {
           "as_of": "2026-08-19",
-          "source": "Yahoo Finance 与 Investing.com 香港站 0100.HK 报价页（2026-08-19 至 08-21）：MiniMax-W 市值约1,011–1,021亿港元（股价约310–329港元、已发行股份约3.14亿股），按1美元=7.79港元换算约合130亿美元（上市公司市值，非传闻融资估值）；Caixin 2026-08-06 亦报道纳入港股通当日市值\"重回千亿港元\"",
+          "checked": "2026-09-01",
+          "source": "Yahoo Finance 0100.HK 估值页（As of 8/19/2026，市值1,021亿港元）及虎嗅 2026-08-28（市值约1,000亿港元），按1美元=7.79港元换算约合128–131亿美元",
           "url": "https://finance.yahoo.com/quote/0100.HK/",
-          "conf": "medium",
-          "checked": "2026-09-01"
+          "conf": "medium"
         },
         "uc": {
           "as_of": "2026-07-31",
@@ -1732,75 +1811,89 @@
         },
         "region": {
           "as_of": "2026-08-26",
-          "source": "MiniMax Group Inc.（稀宇科技）官方中期业绩公告 2026-08-26 及 Google Finance 公司简介：总部位于中国上海，港交所主板上市（00100.HK），另于2026-05-29向上海证监局申报A股IPO辅导",
-          "url": "https://www.minimax.io/news/minimax-announces-first-half-2026-financial-results-1787744160",
-          "conf": "high",
-          "checked": "2026-09-01"
+          "checked": "2026-09-01",
+          "source": "维基百科“稀宇科技”条目（总部上海市徐汇区，港交所0100）与MiniMax 2026年中期业绩公告；中金公司公告 2026-01-09 上市信息",
+          "url": "https://zh.wikipedia.org/wiki/%E7%A8%80%E5%AE%87%E7%A7%91%E6%8A%80",
+          "conf": "high"
         },
         "tokG": {
           "as_of": "2026-08-26",
-          "source": "量子位（QbitAI）2026-08 引述公司中期业绩披露数据：token 调用量\"暴涨2000%\"（与ARR自2026年2月1.5亿美元增至8亿美元同一披露口径，即约2026年2月至8月的增幅）；比例数据无货币换算问题",
-          "url": "https://www.qbitai.com/2026/08/480092.html",
-          "conf": "medium",
-          "checked": "2026-09-01"
+          "checked": "2026-09-01",
+          "source": "虎嗅 2026-08-28 引述中期业绩：7月Token消耗量为1月的20倍（约+1,900%），与量子位2026-08“token暴涨2000%”同源；比例数据无汇率问题",
+          "url": "https://www.huxiu.com/article/4886381.html",
+          "conf": "medium"
+        },
+        "listed": {
+          "as_of": "2026-08-26",
+          "checked": "2026-09-01",
+          "source": "MiniMax Group Inc.（稀宇科技）2026年中期业绩公告 2026-08-26；新京报 2026-01-09 报道其于港交所主板挂牌（发行价165港元）；维基百科公司条目列示股票代号 港交所：0100",
+          "url": "https://m.bjnews.com.cn/detail/1767929437129588.html",
+          "conf": "high"
         }
       },
       "checked_at": "2026-09-01",
-      "listed": "",
+      "listed": "HKEX:0100",
       "parent": ""
     },
     {
       "name": "Zhipu AI",
-      "uc": "GLM-5.2、GLM-5V、AutoGLM",
+      "uc": "GLM-5.3、GLM-5V、AutoGLM",
       "region": "CN",
-      "arr": 239,
-      "arrg": 132,
+      "arr": 269,
+      "arrg": 399.7,
       "tokM": 2.5,
       "tokG": 250,
       "trainPerRun": 5,
       "runsPerYear": 2,
-      "val": 60.8,
-      "m": 5,
+      "val": 62.0,
+      "m": 33,
       "retired": false,
       "prov": {
         "arr": {
-          "as_of": "2026-03-31",
-          "source": "公司2025年年报披露(2026-03-31)，经财新 Caixin Global 2026-05-29 及钛媒体 2026-06-26 引述：MaaS平台API业务ARR达人民币17亿元；按1美元=7.1人民币折算 = 约2.39亿美元",
-          "url": "https://www.caixinglobal.com/2026-05-29/china-ai-developer-zhipu-hits-record-112-billion-valuation-102449295.html",
-          "conf": "medium",
-          "checked": "2026-09-01"
+          "as_of": "2026-08-31",
+          "checked": "2026-09-01",
+          "source": "智谱(02513.HK)2026年中期业绩公告 2026-08-31（经IT之家/科创板日报 2026-08-31 报道）：2026上半年营业总收入人民币9.54亿元，其中开放平台及API（云端部署）占86.5%；按半年收入年化 9.54×2=人民币19.08亿元，按1美元=7.1人民币折算≈2.69亿美元",
+          "url": "https://www.ithome.com/0/996/626.htm",
+          "conf": "medium"
         },
         "arrg": {
-          "as_of": "2026-03-31",
-          "source": "SCMP 2026-03-31（智谱上市后首份年报：2025年收入人民币7.2433亿元，同比+131.9%≈132%）；The Information 同日简报亦称收入翻番至7.24亿元（约1.05亿美元）",
-          "url": "https://www.scmp.com/tech/tech-trends/article/3348555/zhipu-ai-revenue-jumps-132-first-post-ipo-report-missing-estimates",
-          "conf": "high",
-          "checked": "2026-09-01"
+          "as_of": "2026-08-31",
+          "checked": "2026-09-01",
+          "source": "智谱2026年半年报（2026-08-31披露，IT之家/科创板日报引述）：上半年营业总收入人民币9.54亿元，同比增长399.7%；开放平台及API收入同比增长超27倍",
+          "url": "https://www.ithome.com/0/996/626.htm",
+          "conf": "high"
         },
         "val": {
-          "as_of": "2026-08-20",
-          "source": "PitchBook 公司档案（数据日2026-08-20）：股价130.47美元、4.66亿股、市值608亿美元，即60.8十亿美元；为港交所02513已上市市值",
-          "url": "https://pitchbook.com/profiles/company/481268-17",
-          "conf": "medium",
-          "checked": "2026-09-01"
+          "as_of": "2026-08-25",
+          "checked": "2026-09-01",
+          "source": "Google Finance 2513:HKG 报价 2026-08-25：股价HK$1,038，市值港币4,833.17亿元；按1美元=7.8港元折算≈620亿美元（另 Investing.com 同期报价HK$1,023，市值约HK$4,512-4,760亿，量级一致）",
+          "url": "https://www.google.com/finance/beta/quote/2513:HKG",
+          "conf": "medium"
         },
         "uc": {
-          "as_of": "2026-06-17",
-          "source": "中国日报 2026-06-17（智谱发布并开源新一代旗舰大模型GLM-5.2，Artificial Analysis 51分）；财新 2026-06-23 亦以GLM-5.2为最新旗舰；PitchBook 档案（2026-08-20）列核心产品含GLM-5V-Turbo、AutoGLM",
-          "url": "http://cn.chinadaily.com.cn/a/202606/17/WS6a3274d9a310d709c2fb8b81.html",
-          "conf": "high",
-          "checked": "2026-09-01"
+          "as_of": "2026-08-14",
+          "checked": "2026-09-01",
+          "source": "财新 2026-08-14《智谱发布新模型GLM-5.3 强调模型编程与网络安全能力》；科技日报 2026-08-14《智谱发布新一代基座模型GLM-5.3》——GLM-5.2（2026年6月）已被GLM-5.3取代为最新旗舰",
+          "url": "https://companies.caixin.com/2026-08-14/102474172.html",
+          "conf": "high"
         },
         "region": {
-          "as_of": "2026-03-31",
-          "source": "SCMP 2026-03-31：智谱（知识图谱科技）为北京公司，2026年1月于香港联交所上市（02513）",
-          "url": "https://www.scmp.com/tech/tech-trends/article/3348555/zhipu-ai-revenue-jumps-132-first-post-ipo-report-missing-estimates",
-          "conf": "high",
-          "checked": "2026-09-01"
+          "as_of": "2026-08-31",
+          "checked": "2026-09-01",
+          "source": "维基百科/财新：北京智谱华章科技有限公司总部位于北京市海淀区，2026年1月8日在香港联交所上市（02513），主体与营收均在中国",
+          "url": "https://m.caixin.com/m/2026-01-08/102401574.html",
+          "conf": "high"
+        },
+        "listed": {
+          "as_of": "2026-08-25",
+          "checked": "2026-09-01",
+          "source": "财新 2026-01-08：智谱（02513.HK）2026年1月8日于港交所主板挂牌；Google Finance/Investing.com 2026年8月报价页确认代码2513.HK仍在交易",
+          "url": "https://m.caixin.com/m/2026-01-08/102401574.html",
+          "conf": "high"
         }
       },
       "checked_at": "2026-09-01",
-      "listed": "",
+      "listed": "HKEX:2513",
       "parent": ""
     },
     {
@@ -1868,7 +1961,7 @@
       "trainPerRun": 3,
       "runsPerYear": 2,
       "val": 7,
-      "m": 39,
+      "m": 33,
       "retired": false,
       "prov": {
         "val": {
@@ -1922,7 +2015,7 @@
       "trainPerRun": 4,
       "runsPerYear": 2,
       "val": 1,
-      "m": 26,
+      "m": 23,
       "retired": false,
       "prov": {
         "arr": {
@@ -1972,7 +2065,7 @@
       "arrg": 900.0,
       "val": 74.0,
       "listed": "",
-      "m": 38,
+      "m": 34,
       "retired": false,
       "checked_at": "2026-09-01",
       "prov": {
