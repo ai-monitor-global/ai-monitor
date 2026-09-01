@@ -254,8 +254,13 @@ Rules:
   recent by date, not the largest and not the most repeated.
 - If the company is publicly LISTED, `val` is its CURRENT MARKET CAP and
   `listed` is "EXCHANGE:TICKER". Never use a pre-IPO round for a listed
-  company. If it is a division of a listed megacap and has no separate
-  valuation, leave `val` empty and `listed` empty.
+  company.
+- If the subject is a model, product line or division INSIDE a larger company
+  (e.g. Doubao inside ByteDance, Nova inside Amazon, Llama inside Meta), it has
+  no valuation of its own: leave `val` and `listed` empty. Do NOT put the
+  parent company's valuation or market cap there - that is the parent's number,
+  not this row's. The same applies to `arr`: report only revenue from serving
+  models, never the parent's total.
 - {units}
 - For a model provider, `arr` is annualised revenue from serving models (API +
   first-party model subscriptions). It EXCLUDES compute/infrastructure leasing,
@@ -332,7 +337,7 @@ def _add_schema(section: str) -> dict:
 
 
 def add_entities(data: dict, names: list, section: str, dry: bool) -> int:
-    required = ("arr", "tokM") if section == "models" else ("arr",)
+    required = ("arr",)   # tokM is rarely disclosed; do not gate on it
     added, skipped = [], []
     for name in names:
         name = name.strip()

@@ -16,10 +16,12 @@ import sys
 import common
 
 # The frontend sums these, so they may never be null.
-REQUIRED_NUMERIC = {"models": ("arr", "tokM"), "apps": ("arr",)}
+REQUIRED_NUMERIC = {"models": ("arr",), "apps": ("arr",)}
 # Everything else may legitimately be unknown on a newly discovered company.
 OPTIONAL_NUMERIC = {
-    "models": ("arrg", "tokG", "trainPerRun", "runsPerYear", "val"),
+    # tokM is optional: hardly any provider discloses monthly token volume,
+    # and requiring it kept DeepSeek out of the dashboard entirely.
+    "models": ("arrg", "tokM", "tokG", "trainPerRun", "runsPerYear", "val"),
     "apps":   ("arrg", "mau", "maug", "val"),
 }
 CONCENTRATION_LIMIT = 0.25

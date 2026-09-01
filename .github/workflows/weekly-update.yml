@@ -132,10 +132,24 @@ jobs:
           git add data.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
-          else
-            git commit -m "chore: data update $(date -u +%Y-%m-%d)"
-            git push
+            exit 0
           fi
+          git commit -m "chore: data update $(date -u +%Y-%m-%d)"
+          # A long pass can easily overlap a human push; without a rebase the
+          # push is rejected and the entire run's research is thrown away.
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "pushed on attempt $attempt"
+              exit 0
+            fi
+            echo "push rejected, rebasing onto origin/main (attempt $attempt)"
+            git pull --rebase --autostash origin main || {
+              echo "::error::rebase conflict on data.json - resolve manually"
+              exit 1
+            }
+          done
+          echo "::error::could not push after 3 attempts"
+          exit 1
 
       # Runs last so the commit above still happens. Without this the job went
       # green even when both scripts had crashed, so nobody ever found out.
