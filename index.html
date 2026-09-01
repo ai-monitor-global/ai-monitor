@@ -100,7 +100,7 @@ a.pdot:hover{color:#2563eb}
 <div class="tleg"><span><span class="tline" style="background:#2563eb"></span>模型收入 ARR</span><span><span class="tline" style="background:#7c3aed"></span>应用收入 ARR</span><span style="color:#aaa">&#9654; YoY 增长率（右轴）</span></div>
 <div style="position:relative;height:260px"><canvas id="revChart"></canvas></div>
 <div class="chart-src">数据来源：The Information、Sacra、Bloomberg</div></div>
-<div class="pnl"><div class="pt">全球 AI Token 用量增长趋势（T / 月）</div>
+<div class="pnl" id="tok-pnl"><div class="pt">全球 AI Token 用量增长趋势（T / 月）</div>
 <div class="tleg"><span><span class="tline" style="background:#2563eb"></span>美国模型</span><span><span class="tline" style="background:#dc2626"></span>中国模型</span><span style="color:#aaa">&#9654; QoQ 增长率（右轴）</span></div>
 <div style="position:relative;height:260px"><canvas id="tokChart"></canvas></div>
 <div class="chart-src">数据来源：OpenAI API用量公告 (15B tokens/min, 2026.3)</div></div>
@@ -288,6 +288,18 @@ function renderCharts(){
   document.getElementById("trend-title").textContent=QTR.length
     ?"趋势图（估算，"+QTR[0]+" → "+QTR[QTR.length-1]+"）":"趋势图（估算）";
   if(!QTR.length) return;
+  /* The token series is an early estimate on a different basis from the table
+     (the table's tokM is now sourced, and disagrees by ~80x). Rescaling the
+     history would mean inventing it, so the panel stays withdrawn until there
+     is a sourced series. Flip series.tokens_enabled to bring it back. */
+  const tokOn=S.tokens_enabled===true, tp=document.getElementById("tok-pnl");
+  if(!tokOn&&tp){
+    tp.innerHTML="<div class=\"pt\">全球 AI Token 用量增长趋势</div>"+
+      "<div style=\"font-size:12px;color:#888;line-height:1.7\">暂不展示。"+
+      "原季度序列是早期估算，与上表已溯源的 Token 量口径相差约 80 倍；"+
+      "按比例重算历史点等于编造数据，因此先撤下，等有可溯源的历史序列再放回。"+
+      "<br>上表每家的 Token/月仍是可溯源的当期值。</div>";
+  }
   const total=mARR.map((v,i)=>+(v+(aARR[i]||0)).toFixed(1));
   const yoy=total.map((v,i)=>i<4?null:Math.round((v/total[i-4]-1)*100));
   const tokTot=tokUS.map((v,i)=>+(v+(tokCN[i]||0)).toFixed(1));
@@ -304,7 +316,8 @@ function renderCharts(){
   }}}},scales:{x:{grid:{color:gc},ticks:{font:{size:10},color:tc}},
     y:{position:"left",grid:{color:gc},ticks:{font:{size:10},color:tc,callback:v=>"$"+v+"B"},min:0},
     y2:{position:"right",grid:{display:false},ticks:{font:{size:10},color:"#ccc",callback:v=>v!=null?v+"%":""},min:0,max:600}}}});
-  if(cTI){cTI.destroy();}
+  if(cTI){cTI.destroy();cTI=null;}
+  if(!tokOn) return;
   cTI=new Chart(document.getElementById("tokChart"),{data:{labels:QTR,datasets:[
     {type:"line",data:tokUS,yAxisID:"y",borderColor:"#2563eb",backgroundColor:"rgba(37,99,235,.08)",fill:true,tension:.3,pointRadius:3,borderWidth:2,label:"美国"},
     {type:"line",data:tokCN,yAxisID:"y",borderColor:"#dc2626",backgroundColor:"rgba(220,38,38,.07)",fill:true,tension:.3,pointRadius:3,borderWidth:2,label:"中国"},

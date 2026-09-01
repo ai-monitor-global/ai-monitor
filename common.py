@@ -179,6 +179,12 @@ def migrate(data: dict) -> dict:
             "tokCN": [0.02, 0.05, 0.12, 0.25, 0.6, 1.2, 2.2, 3.8, 6.0, 8.5, 11.5, 14.5, 17.0],
         }
 
+    # The token series is an early estimate on a different basis from the
+    # sourced per-provider tokM (they disagree by ~80x), so the panel stays
+    # withdrawn rather than showing the page contradicting itself. Set this
+    # true once there is a sourced historical series.
+    data["series"].setdefault("tokens_enabled", False)
+
     for section, entity in iter_entities(data):
         entity.setdefault("retired", False)
         entity.setdefault("prov", {})
