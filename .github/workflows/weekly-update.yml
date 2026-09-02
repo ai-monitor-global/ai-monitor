@@ -17,6 +17,7 @@ on:
           - validate-only   # 不调 API，只跑校验和自检
           - add-model-seeds # 一次性：补 DeepSeek/Qwen/Doubao/Meta 等模型厂商
           - reverify-some  # 只复核 names 里列出的几家（便宜，几毛钱）
+          - openrouter-only # 只拉 OpenRouter 周度 token 序列（不调 Claude）
       names:
         description: 'mode=add-* / reverify-some 用：公司名，逗号分隔'
         type: string
@@ -79,6 +80,7 @@ jobs:
       - name: Run passes
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}
           DISABLE_STRUCTURED_OUTPUT: ${{ vars.DISABLE_STRUCTURED_OUTPUT }}
           MODE: ${{ inputs.mode || 'weekly' }}
@@ -100,6 +102,9 @@ jobs:
             validate-only)
               echo "skipping API passes"
               ;;
+            openrouter-only)
+              python fetch_openrouter.py || FAILED="$FAILED openrouter"
+              ;;
             reverify-some)
               python reverify.py --only "$NAMES" $FORCE $DRY || FAILED="$FAILED reverify-some"
               ;;
@@ -119,6 +124,7 @@ jobs:
                 echo "discovery runs in the first week of the month only (today is day $DAY)"
               fi
               python update_progress.py      || FAILED="$FAILED progress"
+              python fetch_openrouter.py     || FAILED="$FAILED openrouter"
               ;;
           esac
           echo "FAILED_PASSES=$FAILED" >> "$GITHUB_ENV"

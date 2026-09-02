@@ -105,6 +105,10 @@ a.pdot:hover{color:#2563eb}
 <div style="position:relative;height:260px"><canvas id="tokChart"></canvas></div>
 <div class="chart-src">看趋势形状，不要读绝对值：本序列为早期估算口径，与上表<strong>逐家已溯源</strong>的 Token/月量级不同（上表合计更高）。两者不可直接相加或比较。</div></div>
 </div>
+<div class="pnl" id="or-pnl" style="margin-top:16px;display:none">
+<div class="pt">OpenRouter 周度 Token 用量 · 市场代理指标</div>
+<div style="position:relative;height:200px"><canvas id="orChart"></canvas></div>
+<div class="chart-src" id="or-src"></div></div>
 <div class="pnl" id="progress-pnl" style="margin-top:24px">
 <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px">
 <div style="font-size:15px;font-weight:600;color:#111">&#128240; AI 进展周报 &middot; Weekly AI Progress</div>
@@ -196,6 +200,7 @@ async function loadData(){
   renderMtx();
   renderCharts();
   renderProgress();
+  renderOpenRouter();
   renderDisclaimer();
   switchLayer("models");
 }
@@ -210,7 +215,7 @@ function renderBadge(){
    failed pass is stated on the page instead of being hidden. */
 function renderHealth(){
   const m=meta(),runs=m.runs||{},out=[];
-  const NAMES={incremental:"周增量",reverify:"轮转复核",discovery:"覆盖发现",progress:"进展周报"};
+  const NAMES={incremental:"周增量",reverify:"轮转复核",discovery:"覆盖发现",progress:"进展周报",openrouter:"OpenRouter"};
   const bad=Object.keys(runs).filter(k=>runs[k]&&runs[k].ok===false);
   if(bad.length) out.push("<div class=\"hb hb-bad\"><strong>&#9888; 数据管道有失败：</strong>"+
     bad.map(k=>esc(NAMES[k]||k)+"（"+esc(runs[k].at||"?")+"）："+esc(runs[k].error||"未知错误")).join("；")+
@@ -218,6 +223,25 @@ function renderHealth(){
   const q=(m.review_queue||[]).length;
   if(q) out.push("<div class=\"hb hb-warn\">&#9873; 有 "+q+" 条改动被校验层拦下等待人工复核（量级异常/币种未换算/名称对不上）。见 data.json 的 <code>meta.review_queue</code>。</div>");
   document.getElementById("health").innerHTML=out.join("");
+}
+let cOR=null;
+function renderOpenRouter(){
+  const o=DATA.openrouter,p=document.getElementById("or-pnl");
+  if(!p) return;
+  if(!o||!(o.weekly||[]).length){p.style.display="none";return;}
+  p.style.display="";
+  const w=o.weekly.slice(-52);
+  document.getElementById("or-src").innerHTML=
+    "数据截至 "+esc(o.as_of)+"（周为完整 ISO 周）· 最新周 "+esc(String(w[w.length-1].tok))+"T"
+    +(o.wow_pct!=null?"，环比 "+(o.wow_pct>0?"+":"")+esc(String(o.wow_pct))+"%":"")
+    +" · 口径：经 OpenRouter 平台路由的 token（top50+other），是<strong>市场活跃度的代理指标</strong>，不等于全市场总量 · 来源：<a href=\""+esc(o.url||"https://openrouter.ai/rankings")+"\" target=\"_blank\" rel=\"noopener\">"+esc(o.source||"OpenRouter")+"</a>";
+  if(cOR)cOR.destroy();
+  cOR=new Chart(document.getElementById("orChart"),{data:{labels:w.map(x=>x.week.slice(5)),datasets:[
+    {type:"line",data:w.map(x=>x.tok),borderColor:"#2563eb",backgroundColor:"rgba(37,99,235,.08)",fill:true,tension:.25,pointRadius:2,borderWidth:2,label:"OpenRouter tokens"}
+  ]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:"index",intersect:false},
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>" "+c.parsed.y+" T / 周"}}},
+    scales:{x:{grid:{color:"rgba(0,0,0,.04)"},ticks:{font:{size:10},color:"#aaa"}},
+      y:{grid:{color:"rgba(0,0,0,.04)"},ticks:{font:{size:10},color:"#aaa",callback:v=>v+"T"},min:0}}}});
 }
 function renderDisclaimer(){
   const m=meta(),n=(DATA.models||[]).length,a=(DATA.apps||[]).length;

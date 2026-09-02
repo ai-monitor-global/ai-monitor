@@ -674,7 +674,7 @@ def reverify_targets(data: dict, k: int):
 # --------------------------------------------------------------------------
 def record_run(data: dict, pass_name: str, ok: bool, error=None, **extra) -> None:
     meta = data.setdefault("meta", {})
-    entry = {"at": str(today()), "ok": bool(ok),
+    entry = {"at": str(today()), "ok": None if ok is None else bool(ok),
              "error": (str(error)[:200] if error else None)}
     entry.update(extra)
     meta.setdefault("runs", {})[pass_name] = entry
