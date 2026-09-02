@@ -4181,5 +4181,16 @@
       17.0
     ],
     "tokens_enabled": true
-  }
+  },
+  "snapshots": [
+    {
+      "date": "2026-09-01",
+      "mARR": 112.79,
+      "aARR": 7.84,
+      "tok": 9273.8,
+      "nM": 17,
+      "nA": 20,
+      "nMrev": 12
+    }
+  ]
 }

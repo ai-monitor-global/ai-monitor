@@ -159,7 +159,36 @@ def load(path: str = DATA_FILE) -> dict:
         return migrate(json.load(f))
 
 
+SNAPSHOT_MAX = 160  # ~3 years of weekly points
+
+
+def take_snapshot(data: dict) -> None:
+    """One aggregate point per save-day: the tracked universe's totals.
+
+    The quarterly series was hand-typed history no script could move; this is
+    the opposite - derived from per-entity sourced values on every run, so it
+    is weekly by construction and always on the same basis as the table.
+    Coverage growth shows up as a step, so counts are stored with each point.
+    """
+    models, apps = active(data, "models"), active(data, "apps")
+    point = {
+        "date": str(today()),
+        "mARR": round(sum(e.get("arr") or 0 for e in models) / 1000, 2),  # $B
+        "aARR": round(sum(e.get("arr") or 0 for e in apps) / 1000, 2),    # $B
+        "tok":  round(sum(e.get("tokM") or 0 for e in models), 1),        # T/mo
+        "nM": len(models), "nA": len(apps),
+        "nMrev": sum(1 for e in models if e.get("arr") is not None),
+    }
+    snaps = data.setdefault("snapshots", [])
+    if snaps and snaps[-1]["date"] == point["date"]:
+        snaps[-1] = point  # several runs a day collapse to the latest
+    else:
+        snaps.append(point)
+    del snaps[:-SNAPSHOT_MAX]
+
+
 def save(data: dict, path: str = DATA_FILE) -> None:
+    take_snapshot(data)
     trim(data)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -857,5 +886,14 @@ UNITS_RULE = (
     "figure you MUST convert to USD and say so in `source` (e.g. 'Reuters "
     "2026-07-02, RMB 40B converted at 7.1 = $5.6B'). A figure whose currency "
     "you cannot establish must be omitted, not guessed. Never emit a field you "
-    "could not source; omitting is always correct."
+    "could not source; omitting is always correct. "
+    "`arr` means CURRENT RUN-RATE ARR: the company's own stated ARR, or its "
+    "most recent single month x12 / single quarter x4. For a company growing "
+    "several hundred percent a year, a half-year or full-year total averaged "
+    "into a rate badly understates the present pace - NEVER compute arr as "
+    "H1x2 or FYx1 when any more recent run-rate exists. Before converting any "
+    "revenue figure, resolve WHAT PERIOD it covers (one month? a quarter? "
+    "cumulative year-to-date?); if the period is ambiguous, do not use it - a "
+    "monthly figure written into an annual field is a 12x error. State the "
+    "period and the x12/x4 arithmetic in `source`."
 )

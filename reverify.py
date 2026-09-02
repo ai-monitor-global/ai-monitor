@@ -9,6 +9,7 @@ cannot corrupt the batch.
   python reverify.py [-k 10] [--dry-run]
   python reverify.py --all            # one-time backfill of the whole roster
   python reverify.py --only "Kimi,MiniMax"   # just these entities
+  python reverify.py --only "Zhipu" --force  # known-wrong value: waive the 5x gate
 """
 from __future__ import annotations
 
@@ -35,9 +36,18 @@ Rules:
 - Every patch needs a real source (Bloomberg, The Information, Reuters, CNBC,
   TechCrunch, Sacra, a company announcement, an official blog) plus the date
   that source reported it.
-- When a company's OWN official disclosure conflicts with a media estimate,
-  use the official figure, and say in `notes` what the media number was and
-  why you did not use it. Do not prefer the larger number.
+- When a company's OWN official disclosure conflicts with a media estimate
+  OF THE SAME METRIC OVER THE SAME PERIOD, use the official figure and note
+  the media number. But first check they really are the same metric: official
+  trailing revenue (H1, FY) and current run-rate ARR are DIFFERENT metrics,
+  and the trailing one never overrides a newer credible run-rate - it only
+  sets a plausibility floor. Companies often state ARR on the earnings call
+  or in the results presentation rather than in the report itself - for a
+  listed company, check the latest earnings call coverage specifically.
+- Cross-check: for `arr` and `val`, consult at least TWO independent recent
+  sources before settling. For a Chinese company, search Chinese media too
+  (36氪, 晚点LatePost, 虎嗅, 科创板日报, 财新) - the freshest figures usually
+  appear there first.
 - RECENCY WINS. If you find several valuations or revenue figures, use the
   most recent one by date - not the first you find, not the largest, not the
   one repeated most often. Older coverage of an earlier round is stale even
@@ -189,6 +199,7 @@ def _arg(flag: str, default):
 def main() -> int:
     dry = "--dry-run" in sys.argv
     backfill = "--all" in sys.argv
+    force = "--force" in sys.argv  # deliberate correction of a known-wrong value
     only = _arg("--only", None)
     k = int(_arg("-k", DEFAULT_K))
 
@@ -258,7 +269,8 @@ def main() -> int:
         all_patches.extend(found)
 
     applied, rejected = common.apply_patches(
-        data, all_patches, PASS, dry_run=dry, allow_magnitude=backfill)
+        data, all_patches, PASS, dry_run=dry,
+        allow_magnitude=backfill or force)
     common.recompute_momentum(data)
     common.note_updates(data, applied)
     common.record_run(data, PASS, ok=bool(targets) and len(failures) < len(targets),

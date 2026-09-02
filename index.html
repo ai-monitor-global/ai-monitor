@@ -314,13 +314,18 @@ function renderMtx(){
     "<div class=\"mc\"><div class=\"mc-l\">模型收入增长率</div><div class=\"mc-v up\">"+fna(mAvgG,"%")+"</div><div class=\"mc-s\">API Revenue YoY</div></div>"+
     "<div class=\"mc\"><div class=\"mc-l\">App收入增长率</div><div class=\"mc-v up\">"+fna(aAvgG,"%")+"</div><div class=\"mc-s\">ARR YoY</div></div>";
 }
+const SNAP_MIN=5; /* points needed before the weekly series replaces the quarterly estimate */
 function renderCharts(){
+  const snaps=DATA.snapshots||[];
+  if(snaps.length>=SNAP_MIN) return renderWeeklyCharts(snaps);
+
   /* These series used to be literal arrays here, which meant no script could
      ever extend them. They now live in data.json under `series`. */
   const S=DATA.series||{};
   const QTR=S.qtr||[],mARR=S.mARR||[],aARR=S.aARR||[],tokUS=S.tokUS||[],tokCN=S.tokCN||[];
-  document.getElementById("trend-title").textContent=QTR.length
-    ?"趋势图（估算，"+QTR[0]+" → "+QTR[QTR.length-1]+"）":"趋势图（估算）";
+  document.getElementById("trend-title").textContent=(QTR.length
+    ?"趋势图（估算，"+QTR[0]+" → "+QTR[QTR.length-1]+"）":"趋势图（估算）")
+    +(snaps.length?"　·　周度序列累积中 "+snaps.length+"/"+SNAP_MIN+" 点，随后自动切换为周度":"");
   if(!QTR.length) return;
   /* The token series and the table's tokM are on different bases (the series
      is an earlier estimate; tokM is now sourced per provider and totals far
@@ -356,6 +361,39 @@ function renderCharts(){
   }}}},scales:{x:{grid:{color:gc},ticks:{font:{size:10},color:tc}},
     y:{position:"left",grid:{color:gc},ticks:{font:{size:10},color:tc,callback:v=>v+"T"},min:0},
     y2:{position:"right",grid:{display:false},ticks:{font:{size:10},color:"#ccc",callback:v=>v!=null?v+"%":""},min:0,max:100}}}});
+}
+function renderWeeklyCharts(snaps){
+  /* same basis as the table: per-entity sourced values, summed weekly */
+  const L=snaps.map(s=>s.date.slice(5)),gc="rgba(0,0,0,.04)",tc="#aaa";
+  const base={responsive:true,maintainAspectRatio:false,interaction:{mode:"index",intersect:false}};
+  document.getElementById("trend-title").textContent=
+    "趋势图（追踪池合计 · 每周更新 · "+snaps[0].date+" → "+snaps[snaps.length-1].date+"）";
+  /* the static legends describe the quarterly datasets; hide them here */
+  document.querySelectorAll(".grid2eq .tleg").forEach(el=>el.style.display="none");
+  const foot=(sel,txt)=>{const el=document.querySelector(sel);if(el)el.textContent=txt;};
+  foot("#revChart~ .chart-src, .grid2eq .pnl:first-child .chart-src",
+    "追踪池合计（逐家可溯源，等于上表求和）。覆盖扩池时曲线会出现台阶——悬停可见当期覆盖家数。");
+  if(cRI)cRI.destroy();
+  cRI=new Chart(document.getElementById("revChart"),{data:{labels:L,datasets:[
+    {type:"line",data:snaps.map(s=>s.mARR),yAxisID:"y",borderColor:"#2563eb",backgroundColor:"rgba(37,99,235,.08)",fill:true,tension:.25,pointRadius:3,borderWidth:2,label:"模型收入"},
+    {type:"line",data:snaps.map(s=>s.aARR),yAxisID:"y",borderColor:"#7c3aed",backgroundColor:"rgba(124,58,237,.07)",fill:true,tension:.25,pointRadius:3,borderWidth:2,label:"应用收入"}
+  ]},options:{...base,plugins:{legend:{display:false},tooltip:{callbacks:{
+    label:c=>" "+c.dataset.label+": $"+c.parsed.y.toFixed(1)+"B",
+    afterBody:it=>{const s=snaps[it[0].dataIndex];return "覆盖: "+s.nM+" 模型（"+(s.nMrev||s.nM)+" 家有收入）/ "+s.nA+" apps";}
+  }}},scales:{x:{grid:{color:gc},ticks:{font:{size:10},color:tc}},
+    y:{grid:{color:gc},ticks:{font:{size:10},color:tc,callback:v=>"$"+v+"B"},min:0}}}});
+  if(cTI){cTI.destroy();cTI=null;}
+  const tp=document.getElementById("tok-pnl");
+  if(tp){tp.style.display="";
+    const pt=tp.querySelector(".pt");if(pt)pt.textContent="追踪池 Token 用量（T / 月 · 每周更新）";
+    const cs=tp.querySelector(".chart-src");if(cs)cs.textContent="追踪池内各模型厂商已溯源 Token/月 之和；未披露的不计入。";
+    cTI=new Chart(document.getElementById("tokChart"),{data:{labels:L,datasets:[
+      {type:"line",data:snaps.map(s=>s.tok),yAxisID:"y",borderColor:"#dc2626",backgroundColor:"rgba(220,38,38,.07)",fill:true,tension:.25,pointRadius:3,borderWidth:2,label:"Token 用量"}
+    ]},options:{...base,plugins:{legend:{display:false},tooltip:{callbacks:{
+      label:c=>" "+c.parsed.y.toFixed(0)+" T/月",
+      afterBody:it=>{const s=snaps[it[0].dataIndex];return "覆盖: "+s.nM+" 家模型厂商";}
+    }}},scales:{x:{grid:{color:gc},ticks:{font:{size:10},color:tc}},
+      y:{grid:{color:gc},ticks:{font:{size:10},color:tc,callback:v=>v+"T"},min:0}}}});}
 }
 function renderModelTable(region,sk){
   document.getElementById("thead").innerHTML="<tr><th style=\"min-width:165px\">Provider</th><th style=\"min-width:52px\">地区</th><th style=\"min-width:75px;text-align:right\">API Rev</th><th style=\"min-width:68px;text-align:right\">收入增长率</th><th style=\"min-width:82px;text-align:right\">Token T/月</th><th style=\"min-width:72px;text-align:right\">Token增长率</th><th style=\"min-width:85px;text-align:right\">年推训练 T</th><th style=\"min-width:115px;text-align:right\">训练量 &times; 次数/年</th><th style=\"min-width:68px;text-align:right\">估值 $B</th><th style=\"min-width:62px;text-align:right\">估值/ARR</th><th style=\"min-width:80px\">Momentum</th></tr>";

@@ -26,6 +26,10 @@ on:
         type: choice
         default: models
         options: [models, apps]
+      force_magnitude:
+        description: '仅 reverify-some 用：明知现值错得离谱时，放行 >5x 修正（会记 forced）'
+        type: boolean
+        default: false
       dry_run:
         description: '只打印拟改动，不写 data.json'
         type: boolean
@@ -81,6 +85,7 @@ jobs:
           NAMES: ${{ inputs.names }}
           SECTION: ${{ inputs.section || 'models' }}
           DRY: ${{ inputs.dry_run && '--dry-run' || '' }}
+          FORCE: ${{ inputs.force_magnitude && '--force' || '' }}
         run: |
           set +e
           FAILED=""
@@ -96,7 +101,7 @@ jobs:
               echo "skipping API passes"
               ;;
             reverify-some)
-              python reverify.py --only "$NAMES" $DRY || FAILED="$FAILED reverify-some"
+              python reverify.py --only "$NAMES" $FORCE $DRY || FAILED="$FAILED reverify-some"
               ;;
             add-model-seeds)
               if [ -n "${NAMES}" ]; then
