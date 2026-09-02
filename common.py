@@ -904,5 +904,10 @@ UNITS_RULE = (
     "a cumulative year-to-date total is NOT an ARR and can never fill `arr`, "
     "no matter how recent - first keep only figures that are the right metric "
     "for the field, THEN pick the newest among those. A newer figure of the "
-    "wrong metric never beats an older figure of the right one."
+    "wrong metric never beats an older figure of the right one. For a "
+    "marketplace or staffing business, GROSS volume (GMV, total payments "
+    "passing through, gross revenue including pass-through labour costs) is "
+    "NOT arr either - arr is NET revenue the company keeps. If a source "
+    "labels a figure gross, find the net figure or leave arr alone and "
+    "explain in notes."
 )
