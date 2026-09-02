@@ -1609,6 +1609,11 @@
         "at": null,
         "ok": null,
         "error": null
+      },
+      "openrouter": {
+        "at": "2026-09-02",
+        "ok": false,
+        "error": "HTTP Error 400: Bad Request"
       }
     }
   },
