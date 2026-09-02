@@ -2,7 +2,7 @@
   "meta": {
     "last_updated": "2026-09-02",
     "next_update": "2026-09-06",
-    "update_notes": "2026-09-02: 12 项已核实更新 — APP Legora; APP OpenEvidence; APP Lovable; APP Cresta; APP Clay; APP AlphaSense",
+    "update_notes": "2026-09-02: 2 项已核实更新 — APP Mercor.arr: 2000.0 -> 600.0; APP Mercor.valPending: None -> 20.0",
     "schema": 2,
     "last_run": "2026-09-02",
     "stale_days": 120,
@@ -1525,6 +1525,30 @@
         "source": "The Information 2026-07-15（PYMNTS/Crypto Briefing 转述）：年化收入接近 5 亿美元（annualized revenue approaching $500M），run-rate 口径，符合 arr 定义，取 480。另见 The Information 2026-08-26：2026 前 7 个月累计收入人民币 4.75 亿（≈$67M）——累计口径，不适用于 arr 字段；两份报道数量级互斥，已择 run-rate 口径并在此留痕。人工复核落定（Crystal 独立佐证 $400-500M 量级）。",
         "conf": "medium",
         "forced": true
+      },
+      {
+        "date": "2026-09-02",
+        "pass": "reverify",
+        "section": "apps",
+        "entity": "Mercor",
+        "field": "arr",
+        "old": 2000.0,
+        "new": 600.0,
+        "source": "The Information 2026-07-07（6月总收入年化超20亿美元，且披露承包商分走总收入的60–70%）+ 36氪 2026-07/08 测算（按约30%平台抽成，实际年化净收入约6亿美元）；Sacra 2026-06 PDF 亦称H1净收入约1.8–2.5亿美元。口径换算：净ARR = 20亿美元总收入年化 × 约30% ≈ 6亿美元（原存值2000为含劳务支付的gross口径，非净收入ARR）",
+        "conf": "medium",
+        "forced": null
+      },
+      {
+        "date": "2026-09-02",
+        "pass": "reverify",
+        "section": "apps",
+        "entity": "Mercor",
+        "field": "valPending",
+        "old": null,
+        "new": 20.0,
+        "source": "The Information 2026-08-19（英伟达洽谈参投，投后估值200亿美元，General Catalyst牵头）；Bloomberg/新浪财经 2026-07-11 亦报道拟融5亿美元、估值200亿美元，仍在谈判、未交割",
+        "conf": "high",
+        "forced": null
       }
     ],
     "review_queue": [
@@ -1569,11 +1593,11 @@
         "at": "2026-09-02",
         "ok": true,
         "error": null,
-        "checked": 2,
+        "checked": 1,
         "failed": 0,
-        "applied": 3,
+        "applied": 2,
         "rejected": 0,
-        "confirmed": 9
+        "confirmed": 8
       },
       "discovery": {
         "at": "2026-09-02",
@@ -2521,7 +2545,7 @@
       "ti": "high",
       "biz": "B2C+B2B",
       "val": 20,
-      "m": 80,
+      "m": 81,
       "retired": false,
       "prov": {
         "val": {
@@ -4363,7 +4387,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 7.5,
-      "m": 91,
+      "m": 94,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -4533,14 +4557,14 @@
       "uc": "AI训练数据专家匹配市场",
       "cat": "hr",
       "stage": "scale",
-      "arr": 2000.0,
+      "arr": 600.0,
       "arrg": null,
       "mau": null,
       "maug": null,
       "ti": "low",
       "biz": "B2B",
       "val": 10.0,
-      "m": 97,
+      "m": 91,
       "ownModel": {
         "status": "none",
         "models": [],
@@ -4550,26 +4574,79 @@
       "prov": {
         "arr": {
           "as_of": "2026-06-30",
-          "source": "Sacra 公司页（2026-09 更新）估算 2026年6月年化“总收入(gross revenue)”20 亿美元（2025年底 7.6 亿美元）；估值 100 亿美元来自 2025年10月 3.5 亿美元 C 轮（已交割）。注意为含劳务支付的总额口径",
-          "url": "https://sacra.com/c/mercor/",
+          "checked": "2026-09-02",
+          "source": "The Information 2026-07-07（6月总收入年化超20亿美元，且披露承包商分走总收入的60–70%）+ 36氪 2026-07/08 测算（按约30%平台抽成，实际年化净收入约6亿美元）；Sacra 2026-06 PDF 亦称H1净收入约1.8–2.5亿美元。口径换算：净ARR = 20亿美元总收入年化 × 约30% ≈ 6亿美元（原存值2000为含劳务支付的gross口径，非净收入ARR）",
+          "url": "https://www.theinformation.com/briefings/exclusive-mercor-hit-2-billion-gross-annualized-revenue",
           "conf": "medium"
         },
         "ownModel": {
           "as_of": "2026-06-30",
           "source": "Sacra 公司页（2026-09 更新）估算 2026年6月年化“总收入(gross revenue)”20 亿美元（2025年底 7.6 亿美元）；估值 100 亿美元来自 2025年10月 3.5 亿美元 C 轮（已交割）。注意为含劳务支付的总额口径",
           "url": "https://sacra.com/c/mercor/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-02"
         },
         "val": {
           "as_of": "2026-06-30",
           "source": "Sacra 公司页（2026-09 更新）估算 2026年6月年化“总收入(gross revenue)”20 亿美元（2025年底 7.6 亿美元）；估值 100 亿美元来自 2025年10月 3.5 亿美元 C 轮（已交割）。注意为含劳务支付的总额口径",
           "url": "https://sacra.com/c/mercor/",
+          "conf": "medium",
+          "checked": "2026-09-02"
+        },
+        "listed": {
+          "as_of": "2026-08-19",
+          "checked": "2026-09-02",
+          "source": "The Information 2026-08-19：仍为私有公司、正在洽谈私募新轮，无上市代码",
+          "url": "https://www.pymnts.com/news/investment-tracker/2026/nvidia-weighs-investment-in-round-valuing-mercor-at-20-billion/",
+          "conf": "high"
+        },
+        "uc": {
+          "as_of": "2026-07-07",
+          "checked": "2026-09-02",
+          "source": "The Information 2026-07-07 / Sacra 2026-06：主营为向AI实验室与大型企业提供专家（物理、金融等）标注、评测与rubric数据的匹配市场，描述“AI训练数据专家匹配市场”仍准确",
+          "url": "https://sacra.com/c/mercor/",
+          "conf": "high"
+        },
+        "cat": {
+          "as_of": "2026-08-26",
+          "checked": "2026-09-02",
+          "source": "Tracxn 公司页（2026-08）标注 HR Tech；业务为专家人才匹配市场",
+          "url": "https://tracxn.com/d/companies/mercor/__764DkS7wJgmA1B8PuOw3_4HUbgJcaKjh8xY9UxvBIpY/funding-and-investors",
           "conf": "medium"
+        },
+        "stage": {
+          "as_of": "2026-07-07",
+          "checked": "2026-09-02",
+          "source": "The Information 2026-07-07：总收入年化超20亿美元、H1已实现盈利/正向自由现金流（Sacra 2026-06），属scale阶段",
+          "url": "https://www.theinformation.com/briefings/exclusive-mercor-hit-2-billion-gross-annualized-revenue",
+          "conf": "high"
+        },
+        "biz": {
+          "as_of": "2026-07-07",
+          "checked": "2026-09-02",
+          "source": "The Information 2026-07-07：客户为OpenAI、谷歌、Anthropic、英伟达及财富500强企业，纯B2B（专家为供给侧承包商）",
+          "url": "https://www.theinformation.com/briefings/exclusive-mercor-hit-2-billion-gross-annualized-revenue",
+          "conf": "high"
+        },
+        "ti": {
+          "as_of": "2026-06-03",
+          "checked": "2026-09-02",
+          "source": "Sacra 权益研究PDF 2026-06-03：收入来自人力专家交付，模型调用仅用于AI面试与筛选，token强度低",
+          "url": "https://sacra-pdfs.s3.us-east-2.amazonaws.com/mercor.pdf",
+          "conf": "medium"
+        },
+        "valPending": {
+          "as_of": "2026-08-19",
+          "checked": "2026-09-02",
+          "source": "The Information 2026-08-19（英伟达洽谈参投，投后估值200亿美元，General Catalyst牵头）；Bloomberg/新浪财经 2026-07-11 亦报道拟融5亿美元、估值200亿美元，仍在谈判、未交割",
+          "url": "https://www.pymnts.com/news/investment-tracker/2026/nvidia-weighs-investment-in-round-valuing-mercor-at-20-billion/",
+          "conf": "high"
         }
       },
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": 20.0,
+      "checked_at": "2026-09-02"
     },
     {
       "name": "Ambience Healthcare",
@@ -4711,7 +4788,8 @@
           "frontier base models: OpenAI o-series, Anthropic Claude"
         ],
         "tokenShare": null
-      }
+      },
+      "valPending": null
     }
   ],
   "ai_progress": {
@@ -4916,7 +4994,7 @@
     {
       "date": "2026-09-02",
       "mARR": 114.53,
-      "aARR": 12.78,
+      "aARR": 11.38,
       "tok": 9273.8,
       "nM": 17,
       "nA": 33,
