@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_updated": "2026-09-01",
+    "last_updated": "2026-09-02",
     "next_update": "2026-09-06",
-    "update_notes": "2026-09-01: 1 项已核实更新 — MODEL Kimi",
+    "update_notes": "2026-09-02: 3 项已核实更新 — MODEL Zhipu AI.val: 62.0 -> 60.5; MODEL Zhipu AI.uc: GLM-5.3、GLM-5V、AutoGLM -> GLM-5.3、ZCode、AutoClaw; MODEL DeepSeek.valPending: None -> 74.0",
     "schema": 2,
-    "last_run": "2026-09-01",
+    "last_run": "2026-09-02",
     "stale_days": 120,
     "categories": {
       "coding": {
@@ -1441,6 +1441,42 @@
         "source": "财联社《科创板日报》2026-08-05 独家《月之暗面500亿美元Pre-IPO轮开闸》：G 轮（Pre-IPO）已启动，本轮投前估值 500 亿美元（原文即美元计价，另注约合人民币 3381 亿元）；彭博 2026-07-21 同口径「至多 500 亿美元投前估值」；36氪 2026-08-16 报道该轮仍在进行中、尚未交割",
         "conf": "high",
         "forced": null
+      },
+      {
+        "date": "2026-09-02",
+        "pass": "reverify",
+        "section": "models",
+        "entity": "Zhipu AI",
+        "field": "val",
+        "old": 62.0,
+        "new": 60.5,
+        "source": "老虎证券(itiger.com) 02513 报价页（检索于2026-09-02，公司行动栏已显示2026-08-31中期业绩）：股价1,012港元、总市值4,715.9亿港元、总股本4.66亿股；按1美元=7.8港元折算≈605亿美元。交叉验证：PitchBook 2026-08-20 报价页给出市值605-608亿美元（US$130.47/股×4.66亿股=$60.8B）。较存量值（2026-08-25 港币4,833亿≈620亿美元）小幅回落",
+        "conf": "medium",
+        "forced": null
+      },
+      {
+        "date": "2026-09-02",
+        "pass": "reverify",
+        "section": "models",
+        "entity": "Zhipu AI",
+        "field": "uc",
+        "old": "GLM-5.3、GLM-5V、AutoGLM",
+        "new": "GLM-5.3、ZCode、AutoClaw",
+        "source": "界面新闻/北京商报 2026-08-14《智谱发布GLM-5.3模型》：GLM-5.3为最新旗舰基座模型，即日起上线智谱官方编程工具ZCode、效率工具AutoClaw，并对GLM Coding Plan全量用户开放；智谱开放平台文档(docs.bigmodel.cn) 亦标注“GLM-5.3 是智谱最新旗舰模型”。原值中的AutoGLM未见于2026年官方最新产品线，已由AutoClaw/ZCode取代为主力商业化产品",
+        "conf": "medium",
+        "forced": null
+      },
+      {
+        "date": "2026-09-02",
+        "pass": "reverify",
+        "section": "models",
+        "entity": "DeepSeek",
+        "field": "valPending",
+        "old": null,
+        "new": 74.0,
+        "source": "Bloomberg 2026-08-06《DeepSeek Resumes $8 Billion Round With Monolith in the Running》：重启第二轮融资，拟募资近80亿美元，估值接近740亿美元，Monolith Management仍在洽谈中——尚未交割，故只入valPending；此前Reuters 2026-07-15亦报道目标估值人民币5000亿元（≈740亿美元，7.1汇率）",
+        "conf": "high",
+        "forced": null
       }
     ],
     "review_queue": [
@@ -1463,6 +1499,16 @@
         "reason": "as_of 2026-08-12 is older than the value already on file (2026-08-13)",
         "source": "DataNorth AI 2026-08-13（xAI/SpaceXAI 于 2026-08-12 发布 Grok 4.6 为当前旗舰模型，Artificial Analysis 智能指数 61）；TechCrunch 2026-07-08（Grok 4.5 发布，被 Grok 4.6 取代）。原 uc 中的 Grok 4.20 已被 4.3/4.5/4.6 迭代取代",
         "url": "https://datanorth.ai/news/xai-releases-grok-4-6"
+      },
+      {
+        "date": "2026-09-02",
+        "pass": "reverify",
+        "entity": "DeepSeek",
+        "field": "val",
+        "proposed": 56.0,
+        "reason": "as_of 2026-06-16 is older than the value already on file (2026-09-01)",
+        "source": "太平洋科技/搜狐 2026-06-18，引用企查查工商登记：杭州深度求索于2026-06-16完成首轮外部融资约人民币510亿元，投后整体估值接近人民币4000亿元；按1 USD = 7.1 RMB折算 ≈ 563亿美元，取56.0；同日紫荊網引外電亦称本轮后估值突破500亿美元（HK$3,900亿）。这是目前唯一已完成（closed）的一轮",
+        "url": "https://www.sohu.com/a/1038418676_223764"
       }
     ],
     "runs": {
@@ -1472,14 +1518,14 @@
         "error": null
       },
       "reverify": {
-        "at": "2026-09-01",
+        "at": "2026-09-02",
         "ok": true,
         "error": null,
-        "checked": 1,
+        "checked": 2,
         "failed": 0,
-        "applied": 1,
-        "rejected": 0,
-        "confirmed": 5
+        "applied": 3,
+        "rejected": 1,
+        "confirmed": 9
       },
       "discovery": {
         "at": "2026-09-01",
@@ -1862,7 +1908,7 @@
     },
     {
       "name": "Zhipu AI",
-      "uc": "GLM-5.3、GLM-5V、AutoGLM",
+      "uc": "GLM-5.3、ZCode、AutoClaw",
       "region": "CN",
       "arr": 269,
       "arrg": 399.7,
@@ -1870,54 +1916,54 @@
       "tokG": 250,
       "trainPerRun": 5,
       "runsPerYear": 2,
-      "val": 62.0,
+      "val": 60.5,
       "m": 33,
       "retired": false,
       "prov": {
         "arr": {
           "as_of": "2026-08-31",
-          "checked": "2026-09-01",
-          "source": "智谱(02513.HK)2026年中期业绩公告 2026-08-31（经IT之家/科创板日报 2026-08-31 报道）：2026上半年营业总收入人民币9.54亿元，其中开放平台及API（云端部署）占86.5%；按半年收入年化 9.54×2=人民币19.08亿元，按1美元=7.1人民币折算≈2.69亿美元",
+          "checked": "2026-09-02",
+          "source": "智谱(02513.HK) 2026年中期业绩公告 2026-08-31（IT之家/网易财经 2026-08-31 引述）：H1收入人民币9.54亿元，API 8.25亿元占86.5%、本地化部署1.29亿元占13.5%；9.54×2=19.08亿元人民币，按1美元=7.1元≈2.69亿美元",
           "url": "https://www.ithome.com/0/996/626.htm",
           "conf": "medium"
         },
         "arrg": {
           "as_of": "2026-08-31",
-          "checked": "2026-09-01",
-          "source": "智谱2026年半年报（2026-08-31披露，IT之家/科创板日报引述）：上半年营业总收入人民币9.54亿元，同比增长399.7%；开放平台及API收入同比增长超27倍",
+          "checked": "2026-09-02",
+          "source": "智谱2026年半年报（IT之家 2026-08-31）：2026上半年营业总收入9.54亿元人民币，同比增长399.7%；开放平台及API收入占比由15.2%升至86.5%",
           "url": "https://www.ithome.com/0/996/626.htm",
           "conf": "high"
         },
         "val": {
-          "as_of": "2026-08-25",
-          "checked": "2026-09-01",
-          "source": "Google Finance 2513:HKG 报价 2026-08-25：股价HK$1,038，市值港币4,833.17亿元；按1美元=7.8港元折算≈620亿美元（另 Investing.com 同期报价HK$1,023，市值约HK$4,512-4,760亿，量级一致）",
-          "url": "https://www.google.com/finance/beta/quote/2513:HKG",
+          "as_of": "2026-09-02",
+          "checked": "2026-09-02",
+          "source": "老虎证券(itiger.com) 02513 报价页（检索于2026-09-02，公司行动栏已显示2026-08-31中期业绩）：股价1,012港元、总市值4,715.9亿港元、总股本4.66亿股；按1美元=7.8港元折算≈605亿美元。交叉验证：PitchBook 2026-08-20 报价页给出市值605-608亿美元（US$130.47/股×4.66亿股=$60.8B）。较存量值（2026-08-25 港币4,833亿≈620亿美元）小幅回落",
+          "url": "https://www.itiger.com/stock/02513",
           "conf": "medium"
         },
         "uc": {
           "as_of": "2026-08-14",
-          "checked": "2026-09-01",
-          "source": "财新 2026-08-14《智谱发布新模型GLM-5.3 强调模型编程与网络安全能力》；科技日报 2026-08-14《智谱发布新一代基座模型GLM-5.3》——GLM-5.2（2026年6月）已被GLM-5.3取代为最新旗舰",
-          "url": "https://companies.caixin.com/2026-08-14/102474172.html",
-          "conf": "high"
+          "checked": "2026-09-02",
+          "source": "界面新闻/北京商报 2026-08-14《智谱发布GLM-5.3模型》：GLM-5.3为最新旗舰基座模型，即日起上线智谱官方编程工具ZCode、效率工具AutoClaw，并对GLM Coding Plan全量用户开放；智谱开放平台文档(docs.bigmodel.cn) 亦标注“GLM-5.3 是智谱最新旗舰模型”。原值中的AutoGLM未见于2026年官方最新产品线，已由AutoClaw/ZCode取代为主力商业化产品",
+          "url": "https://www.163.com/dy/article/L4A1C7ET0534A4SC.html",
+          "conf": "medium"
         },
         "region": {
           "as_of": "2026-08-31",
-          "checked": "2026-09-01",
-          "source": "维基百科/财新：北京智谱华章科技有限公司总部位于北京市海淀区，2026年1月8日在香港联交所上市（02513），主体与营收均在中国",
-          "url": "https://m.caixin.com/m/2026-01-08/102401574.html",
+          "checked": "2026-09-02",
+          "source": "MIT科技评论中文站 2026-01-08：北京智谱华章科技股份有限公司，总部北京，2026-01-08于港交所上市；营收主体在中国",
+          "url": "https://www.mittrchina.com/news/detail/15747",
           "conf": "high"
         },
         "listed": {
-          "as_of": "2026-08-25",
-          "checked": "2026-09-01",
-          "source": "财新 2026-01-08：智谱（02513.HK）2026年1月8日于港交所主板挂牌；Google Finance/Investing.com 2026年8月报价页确认代码2513.HK仍在交易",
-          "url": "https://m.caixin.com/m/2026-01-08/102401574.html",
+          "as_of": "2026-09-02",
+          "checked": "2026-09-02",
+          "source": "21世纪经济报道 2026-01-08《智谱港股上市首日》+ 老虎证券02513报价页（检索于2026-09-02，仍在交易，466M股）：港交所主板代码2513",
+          "url": "https://www.itiger.com/stock/02513",
           "conf": "high"
         }
       },
-      "checked_at": "2026-09-01",
+      "checked_at": "2026-09-02",
       "listed": "HKEX:2513",
       "parent": "",
       "valPending": null
@@ -2096,11 +2142,11 @@
       "listed": "",
       "m": 34,
       "retired": false,
-      "checked_at": "2026-09-01",
+      "checked_at": "2026-09-02",
       "prov": {
         "arr": {
           "as_of": "2026-09-01",
-          "checked": "2026-09-01",
+          "checked": "2026-09-02",
           "source": "Bloomberg 2026-08-06 (valuation nears $74B in reopened ~$8B round); The Information via Reuters/TradingView ~2026-08-26 ($70M revenue as of July, tenfold jump from 2025); DeepSeek official API change log 2026-08-13/2026-08-21 and Caixin 2026-08-01 (V4-Pro / V4-Flash / V4-Flash-Vision-Exp); TechCrunch 2026-07-14 (prior $71B mark, superseded). All figures already USD as reported; no currency conversion applied.",
           "url": "https://www.bloomberg.com/news/articles/2026-08-06/deepseek-resumes-8-billion-round-with-monolith-in-the-running",
           "conf": "medium"
@@ -2111,6 +2157,41 @@
           "source": "Bloomberg 2026-08-06 (valuation nears $74B in reopened ~$8B round); The Information via Reuters/TradingView ~2026-08-26 ($70M revenue as of July, tenfold jump from 2025); DeepSeek official API change log 2026-08-13/2026-08-21 and Caixin 2026-08-01 (V4-Pro / V4-Flash / V4-Flash-Vision-Exp); TechCrunch 2026-07-14 (prior $71B mark, superseded). All figures already USD as reported; no currency conversion applied.",
           "url": "https://www.bloomberg.com/news/articles/2026-08-06/deepseek-resumes-8-billion-round-with-monolith-in-the-running",
           "conf": "medium"
+        },
+        "arrg": {
+          "as_of": "2026-08-26",
+          "checked": "2026-09-02",
+          "source": "The Information / Reuters（The Standard 2026-08-26）：前七个月收入较2025年约增长十倍，即同比+900%，与存储值900.0一致",
+          "url": "https://www.thestandard.com.hk/finance/article/341002/DeepSeeks-first-seven-month-revenue-surged-tenfold-to-475-million-yuan-report-says",
+          "conf": "medium"
+        },
+        "uc": {
+          "as_of": "2026-08-21",
+          "checked": "2026-09-02",
+          "source": "DeepSeek官方API更新日志/新闻（2026-04-24 V4预览版发布：V4-Pro 1.6T总参/49B激活、V4-Flash；2026-08-13、08-21变更日志含V4-Pro与V4-Flash-Vision）；中文维基DeepSeek-V4条目（V4-Flash正式版2026-07-31公测）；腾讯云开发者社区2026-07正式版报道。无更新代际（V4.1/V5）发布",
+          "url": "https://api-docs.deepseek.com/news/news260424/",
+          "conf": "medium"
+        },
+        "region": {
+          "as_of": "2026-08-06",
+          "checked": "2026-09-02",
+          "source": "Bloomberg 2026-08-06 称其为杭州（Hangzhou-based）公司；企查查登记主体为杭州深度求索人工智能基础技术研究有限公司",
+          "url": "https://www.bloomberg.com/news/articles/2026-08-06/deepseek-resumes-8-billion-round-with-monolith-in-the-running",
+          "conf": "high"
+        },
+        "listed": {
+          "as_of": "2026-08-06",
+          "checked": "2026-09-02",
+          "source": "Bloomberg 2026-08-06 / Reuters 2026-07-15：公司仍为私有，正筹划最早2027年（或今年底）科创板IPO，尚未上市，listed保持空字符串",
+          "url": "https://techcrunch.com/2026/07/14/deepseek-reportedly-in-talks-to-raise-1-5b-then-ipo/",
+          "conf": "high"
+        },
+        "valPending": {
+          "as_of": "2026-08-06",
+          "checked": "2026-09-02",
+          "source": "Bloomberg 2026-08-06《DeepSeek Resumes $8 Billion Round With Monolith in the Running》：重启第二轮融资，拟募资近80亿美元，估值接近740亿美元，Monolith Management仍在洽谈中——尚未交割，故只入valPending；此前Reuters 2026-07-15亦报道目标估值人民币5000亿元（≈740亿美元，7.1汇率）",
+          "url": "https://www.bloomberg.com/news/articles/2026-08-06/deepseek-resumes-8-billion-round-with-monolith-in-the-running",
+          "conf": "high"
         }
       },
       "region": "CN",
@@ -2119,7 +2200,7 @@
       "trainPerRun": null,
       "runsPerYear": null,
       "parent": "",
-      "valPending": null
+      "valPending": 74.0
     },
     {
       "name": "Doubao (ByteDance)",
@@ -4185,6 +4266,15 @@
   "snapshots": [
     {
       "date": "2026-09-01",
+      "mARR": 112.79,
+      "aARR": 7.84,
+      "tok": 9273.8,
+      "nM": 17,
+      "nA": 20,
+      "nMrev": 12
+    },
+    {
+      "date": "2026-09-02",
       "mARR": 112.79,
       "aARR": 7.84,
       "tok": 9273.8,
