@@ -1513,6 +1513,18 @@
         "source": "The Information via Silicon Republic / Asia Financial 2026-06（约2026-06-18）：DeepSeek首轮融资完成，募资约74亿美元（人民币500亿），投后估值“超过500亿美元”；财经/网易 2026-08-05 亦称首轮4月启动、6月完成交割，募资500亿元、估值超3500亿元人民币（按The Information自身换算隐含汇率约6.76，3500亿元≈518亿美元；若按投后4000亿元则≈592亿美元）。取媒体口径“逾500亿美元”作为最近一轮已交割估值",
         "conf": "medium",
         "forced": true
+      },
+      {
+        "date": "2026-09-01",
+        "pass": "manual-correction",
+        "section": "models",
+        "entity": "DeepSeek",
+        "field": "arr",
+        "old": 70.0,
+        "new": 480,
+        "source": "The Information 2026-07-15（PYMNTS/Crypto Briefing 转述）：年化收入接近 5 亿美元（annualized revenue approaching $500M），run-rate 口径，符合 arr 定义，取 480。另见 The Information 2026-08-26：2026 前 7 个月累计收入人民币 4.75 亿（≈$67M）——累计口径，不适用于 arr 字段；两份报道数量级互斥，已择 run-rate 口径并在此留痕。人工复核落定（Crystal 独立佐证 $400-500M 量级）。",
+        "conf": "medium",
+        "forced": true
       }
     ],
     "review_queue": [
@@ -1815,7 +1827,7 @@
       "trainPerRun": 8,
       "runsPerYear": 3,
       "val": 35,
-      "m": 38,
+      "m": 32,
       "retired": false,
       "prov": {
         "val": {
@@ -2015,7 +2027,7 @@
       "trainPerRun": 5,
       "runsPerYear": 2,
       "val": 13.7,
-      "m": 78,
+      "m": 75,
       "retired": false,
       "prov": {
         "val": {
@@ -2070,7 +2082,7 @@
       "trainPerRun": 3,
       "runsPerYear": 2,
       "val": 7,
-      "m": 33,
+      "m": 30,
       "retired": false,
       "prov": {
         "val": {
@@ -2125,7 +2137,7 @@
       "trainPerRun": 4,
       "runsPerYear": 2,
       "val": 1,
-      "m": 23,
+      "m": 20,
       "retired": false,
       "prov": {
         "arr": {
@@ -2172,19 +2184,19 @@
     {
       "name": "DeepSeek",
       "uc": "DeepSeek-V4-Pro、V4-Flash（含视觉）",
-      "arr": 70.0,
+      "arr": 480,
       "arrg": 900.0,
       "val": 50.0,
       "listed": "",
-      "m": 34,
+      "m": 48,
       "retired": false,
       "checked_at": "2026-09-02",
       "prov": {
         "arr": {
-          "as_of": "2026-09-01",
-          "checked": "2026-09-02",
-          "source": "Bloomberg 2026-08-06 (valuation nears $74B in reopened ~$8B round); The Information via Reuters/TradingView ~2026-08-26 ($70M revenue as of July, tenfold jump from 2025); DeepSeek official API change log 2026-08-13/2026-08-21 and Caixin 2026-08-01 (V4-Pro / V4-Flash / V4-Flash-Vision-Exp); TechCrunch 2026-07-14 (prior $71B mark, superseded). All figures already USD as reported; no currency conversion applied.",
-          "url": "https://www.bloomberg.com/news/articles/2026-08-06/deepseek-resumes-8-billion-round-with-monolith-in-the-running",
+          "as_of": "2026-07-15",
+          "checked": "2026-09-01",
+          "source": "The Information 2026-07-15（PYMNTS/Crypto Briefing 转述）：年化收入接近 5 亿美元（annualized revenue approaching $500M），run-rate 口径，符合 arr 定义，取 480。另见 The Information 2026-08-26：2026 前 7 个月累计收入人民币 4.75 亿（≈$67M）——累计口径，不适用于 arr 字段；两份报道数量级互斥，已择 run-rate 口径并在此留痕。人工复核落定（Crystal 独立佐证 $400-500M 量级）。",
+          "url": "https://www.pymnts.com/artificial-intelligence-2/2026/deepseek-annualized-revenue-approaches-500-million/",
           "conf": "medium"
         },
         "val": {
@@ -4312,6 +4324,15 @@
     {
       "date": "2026-09-02",
       "mARR": 114.12,
+      "aARR": 7.84,
+      "tok": 9273.8,
+      "nM": 17,
+      "nA": 20,
+      "nMrev": 12
+    },
+    {
+      "date": "2026-09-01",
+      "mARR": 114.53,
       "aARR": 7.84,
       "tok": 9273.8,
       "nM": 17,
