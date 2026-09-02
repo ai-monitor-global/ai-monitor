@@ -49,6 +49,12 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v6
+        with:
+          # A queued dispatch run otherwise checks out the SHA from when it
+          # was CREATED, not when it STARTS - so a run that waited behind
+          # another one starts from a stale base and its data.json commit
+          # conflicts with the run that just finished. Track the branch tip.
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v6
