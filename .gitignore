@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 _log.txt
 _dom*.html
+_*.py
+_*.js
+_*.json
+_*.html
