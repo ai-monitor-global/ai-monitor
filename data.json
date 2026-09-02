@@ -2,7 +2,7 @@
   "meta": {
     "last_updated": "2026-09-02",
     "next_update": "2026-09-06",
-    "update_notes": "2026-09-02: 3 项已核实更新 — MODEL Zhipu AI.arr: 269 -> 1600 [FORCED]; MODEL Zhipu AI.val: 60.5 -> 71.4 [FORCED]; MODEL DeepSeek.val: 74.0 -> 50.0 [FORCED]",
+    "update_notes": "2026-09-02: 12 项已核实更新 — APP Legora; APP OpenEvidence; APP Lovable; APP Cresta; APP Clay; APP AlphaSense",
     "schema": 2,
     "last_run": "2026-09-02",
     "stale_days": 120,
@@ -1576,10 +1576,12 @@
         "confirmed": 9
       },
       "discovery": {
-        "at": "2026-09-01",
+        "at": "2026-09-02",
         "ok": true,
         "error": null,
-        "added": 5
+        "promoted": 12,
+        "queued": 0,
+        "skipped": 0
       },
       "progress": {
         "at": null,
@@ -2521,7 +2523,7 @@
       "ti": "high",
       "biz": "B2C+B2B",
       "val": 20,
-      "m": 82,
+      "m": 81,
       "retired": false,
       "prov": {
         "val": {
@@ -2614,7 +2616,7 @@
       "ti": "high",
       "biz": "B2C",
       "val": 1,
-      "m": 12,
+      "m": 10,
       "retired": false,
       "prov": {
         "arr": {
@@ -2717,7 +2719,7 @@
       "ti": "med",
       "biz": "B2B+B2C",
       "val": 11,
-      "m": 69,
+      "m": 68,
       "retired": false,
       "prov": {
         "val": {
@@ -2799,7 +2801,7 @@
       "ti": "high",
       "biz": "B2C",
       "val": 10,
-      "m": 20,
+      "m": 19,
       "retired": false,
       "prov": {
         "arr": {
@@ -2874,7 +2876,7 @@
       "ti": "ultra",
       "biz": "B2B+B2C",
       "val": 5.3,
-      "m": 29,
+      "m": 27,
       "retired": false,
       "prov": {
         "uc": {
@@ -2956,7 +2958,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 11,
-      "m": 59,
+      "m": 58,
       "retired": false,
       "prov": {
         "arr": {
@@ -3059,7 +3061,7 @@
       "ti": "med",
       "biz": "B2B",
       "val": 7.2,
-      "m": 34,
+      "m": 32,
       "retired": false,
       "prov": {
         "arrg": {
@@ -3148,7 +3150,7 @@
       "ti": "low",
       "biz": "B2C+B2B",
       "val": 2.1,
-      "m": 49,
+      "m": 47,
       "retired": false,
       "prov": {
         "arr": {
@@ -3237,7 +3239,7 @@
       "ti": "ultra",
       "biz": "B2B+B2C",
       "val": 0.5,
-      "m": 59,
+      "m": 57,
       "retired": false,
       "prov": {
         "arr": {
@@ -3326,7 +3328,7 @@
       "ti": "high",
       "biz": "B2C",
       "val": 5.4,
-      "m": 80,
+      "m": 79,
       "retired": false,
       "prov": {
         "arrg": {
@@ -3401,7 +3403,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 1.9,
-      "m": 27,
+      "m": 26,
       "retired": false,
       "prov": {
         "val": {
@@ -3497,7 +3499,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 15.8,
-      "m": 53,
+      "m": 51,
       "retired": false,
       "prov": {
         "val": {
@@ -3546,7 +3548,7 @@
       "ti": "low",
       "biz": "B2B+B2C",
       "val": 1.5,
-      "m": 56,
+      "m": 55,
       "retired": false,
       "prov": {
         "val": {
@@ -3621,7 +3623,7 @@
       "ti": "ultra",
       "biz": "B2B",
       "val": 26,
-      "m": 92,
+      "m": 91,
       "retired": false,
       "prov": {
         "arr": {
@@ -3715,7 +3717,7 @@
       "ti": "ultra",
       "biz": "B2B+B2C",
       "val": 4,
-      "m": 25,
+      "m": 24,
       "retired": false,
       "prov": {
         "arr": {
@@ -3797,7 +3799,7 @@
       "ti": "med",
       "biz": "B2C+B2B",
       "val": 1.0,
-      "m": 39,
+      "m": 37,
       "retired": false,
       "prov": {
         "arr": {
@@ -3881,7 +3883,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 5.3,
-      "m": 54,
+      "m": 51,
       "retired": false,
       "prov": {
         "arr": {
@@ -4042,7 +4044,7 @@
       "ti": "high",
       "biz": "B2B+B2C",
       "val": 0.55,
-      "m": 25,
+      "m": 23,
       "retired": false,
       "prov": {
         "arr": {
@@ -4120,6 +4122,512 @@
       "listed": "",
       "parent": "",
       "valPending": null
+    },
+    {
+      "name": "Legora",
+      "uc": "律师协作式AI法律工作平台",
+      "cat": "legal",
+      "stage": "growth",
+      "arr": 150.0,
+      "arrg": null,
+      "mau": null,
+      "maug": null,
+      "ti": "high",
+      "biz": "B2B",
+      "val": 5.55,
+      "m": 47,
+      "ownModel": {
+        "status": "none",
+        "models": [
+          "OpenAI GPT",
+          "Anthropic Claude"
+        ],
+        "tokenShare": null
+      },
+      "retired": false,
+      "prov": {
+        "arr": {
+          "as_of": "2026-06-30",
+          "source": "Sacra 公司页（2026-08 更新）估算 Legora 2026年6月 ARR 达 1.5 亿美元（较2025年底 5000 万美元）；Lawyer Monthly 2026-08 报道 ARR 1.5 亿美元、正洽谈100亿美元以上估值；估值 55.5 亿美元来自 2026-03-10 公司公告的 5.5 亿美元 D 轮（已交割）",
+          "url": "https://sacra.com/c/legora/",
+          "conf": "high"
+        },
+        "ownModel": {
+          "as_of": "2026-06-30",
+          "source": "Sacra 公司页（2026-08 更新）估算 Legora 2026年6月 ARR 达 1.5 亿美元（较2025年底 5000 万美元）；Lawyer Monthly 2026-08 报道 ARR 1.5 亿美元、正洽谈100亿美元以上估值；估值 55.5 亿美元来自 2026-03-10 公司公告的 5.5 亿美元 D 轮（已交割）",
+          "url": "https://sacra.com/c/legora/",
+          "conf": "high"
+        },
+        "val": {
+          "as_of": "2026-06-30",
+          "source": "Sacra 公司页（2026-08 更新）估算 Legora 2026年6月 ARR 达 1.5 亿美元（较2025年底 5000 万美元）；Lawyer Monthly 2026-08 报道 ARR 1.5 亿美元、正洽谈100亿美元以上估值；估值 55.5 亿美元来自 2026-03-10 公司公告的 5.5 亿美元 D 轮（已交割）",
+          "url": "https://sacra.com/c/legora/",
+          "conf": "high"
+        }
+      }
+    },
+    {
+      "name": "OpenEvidence",
+      "uc": "面向医生的循证医学问答引擎",
+      "cat": "health",
+      "stage": "scale",
+      "arr": 300.0,
+      "arrg": null,
+      "mau": null,
+      "maug": null,
+      "ti": "ultra",
+      "biz": "B2B",
+      "val": 12.0,
+      "m": 66,
+      "ownModel": {
+        "status": "hybrid",
+        "models": [
+          "proprietary medical reasoning models",
+          "OpenAI GPT"
+        ],
+        "tokenShare": null
+      },
+      "retired": false,
+      "prov": {
+        "arr": {
+          "as_of": "2026-07-31",
+          "source": "Sacra 公司页（2026-01 更新）估算 2026年7月年化收入 3 亿美元（2025年底 1.5 亿美元）；STAT News 2026-01-21 报道 2.5 亿美元 D 轮、投后估值 120 亿美元（已交割）",
+          "url": "https://sacra.com/c/openevidence/",
+          "conf": "high"
+        },
+        "ownModel": {
+          "as_of": "2026-07-31",
+          "source": "Sacra 公司页（2026-01 更新）估算 2026年7月年化收入 3 亿美元（2025年底 1.5 亿美元）；STAT News 2026-01-21 报道 2.5 亿美元 D 轮、投后估值 120 亿美元（已交割）",
+          "url": "https://sacra.com/c/openevidence/",
+          "conf": "high"
+        },
+        "val": {
+          "as_of": "2026-07-31",
+          "source": "Sacra 公司页（2026-01 更新）估算 2026年7月年化收入 3 亿美元（2025年底 1.5 亿美元）；STAT News 2026-01-21 报道 2.5 亿美元 D 轮、投后估值 120 亿美元（已交割）",
+          "url": "https://sacra.com/c/openevidence/",
+          "conf": "high"
+        }
+      }
+    },
+    {
+      "name": "Lovable",
+      "uc": "自然语言生成全栈网页应用",
+      "cat": "coding",
+      "stage": "scale",
+      "arr": 500.0,
+      "arrg": null,
+      "mau": null,
+      "maug": null,
+      "ti": "ultra",
+      "biz": "B2C+B2B",
+      "val": 13.3,
+      "m": 85,
+      "ownModel": {
+        "status": "none",
+        "models": [
+          "Anthropic Claude",
+          "OpenAI GPT"
+        ],
+        "tokenShare": null
+      },
+      "retired": false,
+      "prov": {
+        "arr": {
+          "as_of": "2026-05-31",
+          "source": "Sacra 公司页（2026-08 更新）估算 2026年5月年化收入 5 亿美元（2025年7月为 1 亿美元）；Lovable 官方 2026-08-12 公告 4 亿美元 C 轮、估值 133 亿美元（已交割）",
+          "url": "https://sacra.com/c/lovable/",
+          "conf": "high"
+        },
+        "ownModel": {
+          "as_of": "2026-05-31",
+          "source": "Sacra 公司页（2026-08 更新）估算 2026年5月年化收入 5 亿美元（2025年7月为 1 亿美元）；Lovable 官方 2026-08-12 公告 4 亿美元 C 轮、估值 133 亿美元（已交割）",
+          "url": "https://sacra.com/c/lovable/",
+          "conf": "high"
+        },
+        "val": {
+          "as_of": "2026-05-31",
+          "source": "Sacra 公司页（2026-08 更新）估算 2026年5月年化收入 5 亿美元（2025年7月为 1 亿美元）；Lovable 官方 2026-08-12 公告 4 亿美元 C 轮、估值 133 亿美元（已交割）",
+          "url": "https://sacra.com/c/lovable/",
+          "conf": "high"
+        }
+      }
+    },
+    {
+      "name": "Cresta",
+      "uc": "呼叫中心AI坐席与实时辅助",
+      "cat": "support",
+      "stage": "growth",
+      "arr": 100.0,
+      "arrg": null,
+      "mau": null,
+      "maug": null,
+      "ti": "high",
+      "biz": "B2B",
+      "val": 1.6,
+      "m": 32,
+      "ownModel": {
+        "status": "hybrid",
+        "models": [
+          "proprietary fine-tuned contact-center models",
+          "OpenAI GPT"
+        ],
+        "tokenShare": null
+      },
+      "retired": false,
+      "prov": {
+        "arr": {
+          "as_of": "2026-04-30",
+          "source": "Axios Pro 2026-04-30 独家：Cresta 公司自述 ARR 超过 1 亿美元；估值 16 亿美元来自 2024 年 1.25 亿美元 D 轮（已交割）",
+          "url": "https://www.axios.com/pro/enterprise-software-deals/2026/04/30/a16z-sequoia-ai-startup-cresta-100-million-arr",
+          "conf": "high"
+        },
+        "ownModel": {
+          "as_of": "2026-04-30",
+          "source": "Axios Pro 2026-04-30 独家：Cresta 公司自述 ARR 超过 1 亿美元；估值 16 亿美元来自 2024 年 1.25 亿美元 D 轮（已交割）",
+          "url": "https://www.axios.com/pro/enterprise-software-deals/2026/04/30/a16z-sequoia-ai-startup-cresta-100-million-arr",
+          "conf": "high"
+        },
+        "val": {
+          "as_of": "2026-04-30",
+          "source": "Axios Pro 2026-04-30 独家：Cresta 公司自述 ARR 超过 1 亿美元；估值 16 亿美元来自 2024 年 1.25 亿美元 D 轮（已交割）",
+          "url": "https://www.axios.com/pro/enterprise-software-deals/2026/04/30/a16z-sequoia-ai-startup-cresta-100-million-arr",
+          "conf": "high"
+        }
+      }
+    },
+    {
+      "name": "Clay",
+      "uc": "AI销售数据增强与GTM自动化",
+      "cat": "gtm",
+      "stage": "growth",
+      "arr": 150.0,
+      "arrg": null,
+      "mau": null,
+      "maug": null,
+      "ti": "high",
+      "biz": "B2B",
+      "val": 5.0,
+      "m": 47,
+      "ownModel": {
+        "status": "none",
+        "models": [
+          "OpenAI GPT",
+          "Anthropic Claude"
+        ],
+        "tokenShare": null
+      },
+      "retired": false,
+      "prov": {
+        "arr": {
+          "as_of": "2026-05-31",
+          "source": "Sacra 公司页（2026-06 更新）估算 Clay 2026年5月 ARR 1.5 亿美元（2025年底 1.08 亿美元）；估值 50 亿美元为 2026年1月 DST 领投的 5500 万美元员工要约收购已完成价（2025年8月 C 轮为 31 亿美元）",
+          "url": "https://sacra.com/c/clay/",
+          "conf": "high"
+        },
+        "ownModel": {
+          "as_of": "2026-05-31",
+          "source": "Sacra 公司页（2026-06 更新）估算 Clay 2026年5月 ARR 1.5 亿美元（2025年底 1.08 亿美元）；估值 50 亿美元为 2026年1月 DST 领投的 5500 万美元员工要约收购已完成价（2025年8月 C 轮为 31 亿美元）",
+          "url": "https://sacra.com/c/clay/",
+          "conf": "high"
+        },
+        "val": {
+          "as_of": "2026-05-31",
+          "source": "Sacra 公司页（2026-06 更新）估算 Clay 2026年5月 ARR 1.5 亿美元（2025年底 1.08 亿美元）；估值 50 亿美元为 2026年1月 DST 领投的 5500 万美元员工要约收购已完成价（2025年8月 C 轮为 31 亿美元）",
+          "url": "https://sacra.com/c/clay/",
+          "conf": "high"
+        }
+      }
+    },
+    {
+      "name": "AlphaSense",
+      "uc": "金融投研AI搜索与摘要平台",
+      "cat": "finance",
+      "stage": "scale",
+      "arr": 700.0,
+      "arrg": null,
+      "mau": null,
+      "maug": null,
+      "ti": "high",
+      "biz": "B2B",
+      "val": 7.5,
+      "m": 90,
+      "ownModel": {
+        "status": "hybrid",
+        "models": [
+          "proprietary search/summarization models",
+          "OpenAI GPT"
+        ],
+        "tokenShare": null
+      },
+      "retired": false,
+      "prov": {
+        "arr": {
+          "as_of": "2026-06-30",
+          "source": "Sacra 公司页（2026-07 更新）估算 2026年6月 ARR 7 亿美元；fintech.global 2026-06-04 报道公司确认 2026 年 Q1 ARR 超 6 亿美元、3.5 亿美元轮次估值 75 亿美元（已交割）",
+          "url": "https://sacra.com/c/alphasense/",
+          "conf": "medium"
+        },
+        "ownModel": {
+          "as_of": "2026-06-30",
+          "source": "Sacra 公司页（2026-07 更新）估算 2026年6月 ARR 7 亿美元；fintech.global 2026-06-04 报道公司确认 2026 年 Q1 ARR 超 6 亿美元、3.5 亿美元轮次估值 75 亿美元（已交割）",
+          "url": "https://sacra.com/c/alphasense/",
+          "conf": "medium"
+        },
+        "val": {
+          "as_of": "2026-06-30",
+          "source": "Sacra 公司页（2026-07 更新）估算 2026年6月 ARR 7 亿美元；fintech.global 2026-06-04 报道公司确认 2026 年 Q1 ARR 超 6 亿美元、3.5 亿美元轮次估值 75 亿美元（已交割）",
+          "url": "https://sacra.com/c/alphasense/",
+          "conf": "medium"
+        }
+      }
+    },
+    {
+      "name": "Synthesia",
+      "uc": "企业级AI数字人视频生成",
+      "cat": "creative",
+      "stage": "growth",
+      "arr": 150.0,
+      "arrg": null,
+      "mau": null,
+      "maug": null,
+      "ti": "high",
+      "biz": "B2B",
+      "val": 4.0,
+      "m": 47,
+      "ownModel": {
+        "status": "primary",
+        "models": [
+          "EXPRESS avatar/video models"
+        ],
+        "tokenShare": null
+      },
+      "retired": false,
+      "prov": {
+        "arr": {
+          "as_of": "2026-01-31",
+          "source": "Sacra 公司页估算 2025年9月 ARR 1.46 亿美元；Unite.ai 2026-01 报道 2 亿美元 E 轮（GV 领投）时 ARR 1.5 亿美元、投后估值 40 亿美元（已交割）",
+          "url": "https://sacra.com/c/synthesia/",
+          "conf": "medium"
+        },
+        "ownModel": {
+          "as_of": "2026-01-31",
+          "source": "Sacra 公司页估算 2025年9月 ARR 1.46 亿美元；Unite.ai 2026-01 报道 2 亿美元 E 轮（GV 领投）时 ARR 1.5 亿美元、投后估值 40 亿美元（已交割）",
+          "url": "https://sacra.com/c/synthesia/",
+          "conf": "medium"
+        },
+        "val": {
+          "as_of": "2026-01-31",
+          "source": "Sacra 公司页估算 2025年9月 ARR 1.46 亿美元；Unite.ai 2026-01 报道 2 亿美元 E 轮（GV 领投）时 ARR 1.5 亿美元、投后估值 40 亿美元（已交割）",
+          "url": "https://sacra.com/c/synthesia/",
+          "conf": "medium"
+        }
+      }
+    },
+    {
+      "name": "Manus",
+      "uc": "通用自主AI智能体",
+      "cat": "consumer",
+      "stage": "scale",
+      "arr": 450.0,
+      "arrg": null,
+      "mau": null,
+      "maug": null,
+      "ti": "ultra",
+      "biz": "B2C+B2B",
+      "val": null,
+      "m": 77,
+      "ownModel": {
+        "status": "none",
+        "models": [
+          "Anthropic Claude",
+          "Alibaba Qwen"
+        ],
+        "tokenShare": null
+      },
+      "retired": false,
+      "prov": {
+        "arr": {
+          "as_of": "2026-06-30",
+          "source": "Sacra 公司页（2026-06 更新）估算 2026年6月年化收入 4.5 亿美元；TechNode 2025-08-21 报道联合创始人披露年化收入 9000 万美元",
+          "url": "https://sacra.com/c/manus/",
+          "conf": "medium"
+        },
+        "ownModel": {
+          "as_of": "2026-06-30",
+          "source": "Sacra 公司页（2026-06 更新）估算 2026年6月年化收入 4.5 亿美元；TechNode 2025-08-21 报道联合创始人披露年化收入 9000 万美元",
+          "url": "https://sacra.com/c/manus/",
+          "conf": "medium"
+        }
+      }
+    },
+    {
+      "name": "Replit",
+      "uc": "云端AI Agent应用开发平台",
+      "cat": "coding",
+      "stage": "scale",
+      "arr": 300.0,
+      "arrg": null,
+      "mau": null,
+      "maug": null,
+      "ti": "ultra",
+      "biz": "B2C+B2B",
+      "val": 9.0,
+      "m": 66,
+      "ownModel": {
+        "status": "none",
+        "models": [
+          "Anthropic Claude",
+          "OpenAI GPT"
+        ],
+        "tokenShare": null
+      },
+      "retired": false,
+      "prov": {
+        "arr": {
+          "as_of": "2026-01-14",
+          "source": "getLatka 公司页（2026-01-14 更新）：Replit 2025 年 ARR 3 亿美元，2026 年 4 亿美元轮次估值 90 亿美元",
+          "url": "https://getlatka.com/companies/replit.com",
+          "conf": "medium"
+        },
+        "ownModel": {
+          "as_of": "2026-01-14",
+          "source": "getLatka 公司页（2026-01-14 更新）：Replit 2025 年 ARR 3 亿美元，2026 年 4 亿美元轮次估值 90 亿美元",
+          "url": "https://getlatka.com/companies/replit.com",
+          "conf": "medium"
+        },
+        "val": {
+          "as_of": "2026-01-14",
+          "source": "getLatka 公司页（2026-01-14 更新）：Replit 2025 年 ARR 3 亿美元，2026 年 4 亿美元轮次估值 90 亿美元",
+          "url": "https://getlatka.com/companies/replit.com",
+          "conf": "medium"
+        }
+      }
+    },
+    {
+      "name": "Mercor",
+      "uc": "AI训练数据专家匹配市场",
+      "cat": "hr",
+      "stage": "scale",
+      "arr": 2000.0,
+      "arrg": null,
+      "mau": null,
+      "maug": null,
+      "ti": "low",
+      "biz": "B2B",
+      "val": 10.0,
+      "m": 97,
+      "ownModel": {
+        "status": "none",
+        "models": [],
+        "tokenShare": null
+      },
+      "retired": false,
+      "prov": {
+        "arr": {
+          "as_of": "2026-06-30",
+          "source": "Sacra 公司页（2026-09 更新）估算 2026年6月年化“总收入(gross revenue)”20 亿美元（2025年底 7.6 亿美元）；估值 100 亿美元来自 2025年10月 3.5 亿美元 C 轮（已交割）。注意为含劳务支付的总额口径",
+          "url": "https://sacra.com/c/mercor/",
+          "conf": "medium"
+        },
+        "ownModel": {
+          "as_of": "2026-06-30",
+          "source": "Sacra 公司页（2026-09 更新）估算 2026年6月年化“总收入(gross revenue)”20 亿美元（2025年底 7.6 亿美元）；估值 100 亿美元来自 2025年10月 3.5 亿美元 C 轮（已交割）。注意为含劳务支付的总额口径",
+          "url": "https://sacra.com/c/mercor/",
+          "conf": "medium"
+        },
+        "val": {
+          "as_of": "2026-06-30",
+          "source": "Sacra 公司页（2026-09 更新）估算 2026年6月年化“总收入(gross revenue)”20 亿美元（2025年底 7.6 亿美元）；估值 100 亿美元来自 2025年10月 3.5 亿美元 C 轮（已交割）。注意为含劳务支付的总额口径",
+          "url": "https://sacra.com/c/mercor/",
+          "conf": "medium"
+        }
+      }
+    },
+    {
+      "name": "Ambience Healthcare",
+      "uc": "医院级AI病历与编码助手",
+      "cat": "health",
+      "stage": "growth",
+      "arr": 64.1,
+      "arrg": null,
+      "mau": null,
+      "maug": null,
+      "ti": "high",
+      "biz": "B2B",
+      "val": 1.0,
+      "m": 23,
+      "ownModel": {
+        "status": "hybrid",
+        "models": [
+          "proprietary fine-tuned clinical models",
+          "OpenAI GPT"
+        ],
+        "tokenShare": null
+      },
+      "retired": false,
+      "prov": {
+        "arr": {
+          "as_of": "2025-11-28",
+          "source": "getLatka 公司页（2025-11 更新）：Ambience 2025 年 ARR 6410 万美元；Sacra 估算 2025年5月 ARR 3000 万美元；估值 10 亿美元来自 2025年7月 2.43 亿美元 C 轮（a16z/Oak HC-FT 领投，已交割）",
+          "url": "https://getlatka.com/companies/ambiencehealthcare.com",
+          "conf": "medium"
+        },
+        "ownModel": {
+          "as_of": "2025-11-28",
+          "source": "getLatka 公司页（2025-11 更新）：Ambience 2025 年 ARR 6410 万美元；Sacra 估算 2025年5月 ARR 3000 万美元；估值 10 亿美元来自 2025年7月 2.43 亿美元 C 轮（a16z/Oak HC-FT 领投，已交割）",
+          "url": "https://getlatka.com/companies/ambiencehealthcare.com",
+          "conf": "medium"
+        },
+        "val": {
+          "as_of": "2025-11-28",
+          "source": "getLatka 公司页（2025-11 更新）：Ambience 2025 年 ARR 6410 万美元；Sacra 估算 2025年5月 ARR 3000 万美元；估值 10 亿美元来自 2025年7月 2.43 亿美元 C 轮（a16z/Oak HC-FT 领投，已交割）",
+          "url": "https://getlatka.com/companies/ambiencehealthcare.com",
+          "conf": "medium"
+        }
+      }
+    },
+    {
+      "name": "Decagon",
+      "uc": "企业自主客服AI智能体",
+      "cat": "support",
+      "stage": "growth",
+      "arr": 35.0,
+      "arrg": null,
+      "mau": null,
+      "maug": null,
+      "ti": "high",
+      "biz": "B2B",
+      "val": 4.5,
+      "m": 10,
+      "ownModel": {
+        "status": "none",
+        "models": [
+          "OpenAI GPT",
+          "Anthropic Claude"
+        ],
+        "tokenShare": null
+      },
+      "retired": false,
+      "prov": {
+        "arr": {
+          "as_of": "2025-12-31",
+          "source": "Sacra 公司页/研究报告（2026-04-13 更新）：Decagon 2025 年 ARR 约 3500 万美元；2026年1月 2.5 亿美元 D 轮（Coatue、Index 领投）估值 45 亿美元（已交割）",
+          "url": "https://sacra.com/c/decagon/",
+          "conf": "medium"
+        },
+        "ownModel": {
+          "as_of": "2025-12-31",
+          "source": "Sacra 公司页/研究报告（2026-04-13 更新）：Decagon 2025 年 ARR 约 3500 万美元；2026年1月 2.5 亿美元 D 轮（Coatue、Index 领投）估值 45 亿美元（已交割）",
+          "url": "https://sacra.com/c/decagon/",
+          "conf": "medium"
+        },
+        "val": {
+          "as_of": "2025-12-31",
+          "source": "Sacra 公司页/研究报告（2026-04-13 更新）：Decagon 2025 年 ARR 约 3500 万美元；2026年1月 2.5 亿美元 D 轮（Coatue、Index 领投）估值 45 亿美元（已交割）",
+          "url": "https://sacra.com/c/decagon/",
+          "conf": "medium"
+        }
+      }
     }
   ],
   "ai_progress": {
@@ -4324,10 +4832,10 @@
     {
       "date": "2026-09-02",
       "mARR": 114.53,
-      "aARR": 7.84,
+      "aARR": 12.74,
       "tok": 9273.8,
       "nM": 17,
-      "nA": 20,
+      "nA": 32,
       "nMrev": 12
     }
   ]
