@@ -1579,9 +1579,7 @@
         "at": "2026-09-02",
         "ok": true,
         "error": null,
-        "promoted": 12,
-        "queued": 0,
-        "skipped": 0
+        "added": 1
       },
       "progress": {
         "at": null,
@@ -2523,7 +2521,7 @@
       "ti": "high",
       "biz": "B2C+B2B",
       "val": 20,
-      "m": 81,
+      "m": 80,
       "retired": false,
       "prov": {
         "val": {
@@ -2616,7 +2614,7 @@
       "ti": "high",
       "biz": "B2C",
       "val": 1,
-      "m": 10,
+      "m": 11,
       "retired": false,
       "prov": {
         "arr": {
@@ -2719,7 +2717,7 @@
       "ti": "med",
       "biz": "B2B+B2C",
       "val": 11,
-      "m": 68,
+      "m": 67,
       "retired": false,
       "prov": {
         "val": {
@@ -2958,7 +2956,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 11,
-      "m": 58,
+      "m": 56,
       "retired": false,
       "prov": {
         "arr": {
@@ -3328,7 +3326,7 @@
       "ti": "high",
       "biz": "B2C",
       "val": 5.4,
-      "m": 79,
+      "m": 78,
       "retired": false,
       "prov": {
         "arrg": {
@@ -3499,7 +3497,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 15.8,
-      "m": 51,
+      "m": 50,
       "retired": false,
       "prov": {
         "val": {
@@ -3548,7 +3546,7 @@
       "ti": "low",
       "biz": "B2B+B2C",
       "val": 1.5,
-      "m": 55,
+      "m": 54,
       "retired": false,
       "prov": {
         "val": {
@@ -3717,7 +3715,7 @@
       "ti": "ultra",
       "biz": "B2B+B2C",
       "val": 4,
-      "m": 24,
+      "m": 23,
       "retired": false,
       "prov": {
         "arr": {
@@ -3799,7 +3797,7 @@
       "ti": "med",
       "biz": "B2C+B2B",
       "val": 1.0,
-      "m": 37,
+      "m": 38,
       "retired": false,
       "prov": {
         "arr": {
@@ -3883,7 +3881,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 5.3,
-      "m": 51,
+      "m": 50,
       "retired": false,
       "prov": {
         "arr": {
@@ -3969,7 +3967,7 @@
       "ti": "high",
       "biz": "B2C+B2B",
       "val": 0.5,
-      "m": 41,
+      "m": 38,
       "retired": false,
       "prov": {
         "uc": {
@@ -4135,7 +4133,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 5.55,
-      "m": 47,
+      "m": 48,
       "ownModel": {
         "status": "none",
         "models": [
@@ -4164,7 +4162,10 @@
           "url": "https://sacra.com/c/legora/",
           "conf": "high"
         }
-      }
+      },
+      "listed": "",
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "OpenEvidence",
@@ -4178,7 +4179,7 @@
       "ti": "ultra",
       "biz": "B2B",
       "val": 12.0,
-      "m": 66,
+      "m": 67,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -4207,7 +4208,10 @@
           "url": "https://sacra.com/c/openevidence/",
           "conf": "high"
         }
-      }
+      },
+      "listed": "",
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Lovable",
@@ -4221,7 +4225,7 @@
       "ti": "ultra",
       "biz": "B2C+B2B",
       "val": 13.3,
-      "m": 85,
+      "m": 86,
       "ownModel": {
         "status": "none",
         "models": [
@@ -4250,7 +4254,10 @@
           "url": "https://sacra.com/c/lovable/",
           "conf": "high"
         }
-      }
+      },
+      "listed": "",
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Cresta",
@@ -4264,7 +4271,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 1.6,
-      "m": 32,
+      "m": 34,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -4293,7 +4300,10 @@
           "url": "https://www.axios.com/pro/enterprise-software-deals/2026/04/30/a16z-sequoia-ai-startup-cresta-100-million-arr",
           "conf": "high"
         }
-      }
+      },
+      "listed": "",
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Clay",
@@ -4307,7 +4317,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 5.0,
-      "m": 47,
+      "m": 48,
       "ownModel": {
         "status": "none",
         "models": [
@@ -4336,7 +4346,10 @@
           "url": "https://sacra.com/c/clay/",
           "conf": "high"
         }
-      }
+      },
+      "listed": "",
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "AlphaSense",
@@ -4350,7 +4363,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 7.5,
-      "m": 90,
+      "m": 91,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -4379,7 +4392,10 @@
           "url": "https://sacra.com/c/alphasense/",
           "conf": "medium"
         }
-      }
+      },
+      "listed": "",
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Synthesia",
@@ -4393,7 +4409,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 4.0,
-      "m": 47,
+      "m": 48,
       "ownModel": {
         "status": "primary",
         "models": [
@@ -4421,7 +4437,10 @@
           "url": "https://sacra.com/c/synthesia/",
           "conf": "medium"
         }
-      }
+      },
+      "listed": "",
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Manus",
@@ -4435,7 +4454,7 @@
       "ti": "ultra",
       "biz": "B2C+B2B",
       "val": null,
-      "m": 77,
+      "m": 78,
       "ownModel": {
         "status": "none",
         "models": [
@@ -4458,7 +4477,10 @@
           "url": "https://sacra.com/c/manus/",
           "conf": "medium"
         }
-      }
+      },
+      "listed": "",
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Replit",
@@ -4472,7 +4494,7 @@
       "ti": "ultra",
       "biz": "B2C+B2B",
       "val": 9.0,
-      "m": 66,
+      "m": 67,
       "ownModel": {
         "status": "none",
         "models": [
@@ -4501,7 +4523,10 @@
           "url": "https://getlatka.com/companies/replit.com",
           "conf": "medium"
         }
-      }
+      },
+      "listed": "",
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Mercor",
@@ -4541,7 +4566,10 @@
           "url": "https://sacra.com/c/mercor/",
           "conf": "medium"
         }
-      }
+      },
+      "listed": "",
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Ambience Healthcare",
@@ -4555,7 +4583,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 1.0,
-      "m": 23,
+      "m": 25,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -4584,7 +4612,10 @@
           "url": "https://getlatka.com/companies/ambiencehealthcare.com",
           "conf": "medium"
         }
-      }
+      },
+      "listed": "",
+      "parent": "",
+      "valPending": null
     },
     {
       "name": "Decagon",
@@ -4598,7 +4629,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 4.5,
-      "m": 10,
+      "m": 9,
       "ownModel": {
         "status": "none",
         "models": [
@@ -4627,6 +4658,59 @@
           "url": "https://sacra.com/c/decagon/",
           "conf": "medium"
         }
+      },
+      "listed": "",
+      "parent": "",
+      "valPending": null
+    },
+    {
+      "name": "Rogo",
+      "uc": "Felix 金融智能体、AI 投研分析平台",
+      "arr": 40.0,
+      "arrg": 406.0,
+      "val": 2.0,
+      "listed": "",
+      "parent": "",
+      "m": 56,
+      "retired": false,
+      "checked_at": "2026-09-02",
+      "prov": {
+        "arr": {
+          "as_of": "2026-09-02",
+          "checked": "2026-09-02",
+          "source": "PR Newswire (company release) 2026-04-29: $160M Series D led by Kleiner Perkins, 250+ institutions; TipRanks 2026-04-29 and beri.net 2026-05: round at ~$2B post-money (val, USD, no FX conversion needed); Sacra company page: $75M Series C Jan-2026 at $750M post-money, $50M Series B Apr-2025 at $350M (superseded — Series D is the most recent and is used). arr: Dealroom company profile, Apr-2026 Series D line, '$160m, Valuation: $2.0b, 50.0x EV/Revenue' => 2000/50 = ~$40M revenue run-rate at the round (estimate, company does not disclose ARR); cross-checked against Contrary research 2026-07-30 ('revenue grew from $2M in 2024 to more than $15M in 2025... over 50% quarter-over-quarter growth in ARR entering mid-2026'), i.e. $15M exiting 2025 compounding at >50%/quarter lands in the $30-40M range by mid-2026 — FY2025's $15M is deliberately NOT used as arr because it is a full-year total, not a run-rate. arrg: Contrary 2026-07-30, >50% QoQ ARR => 1.5^4 - 1 = 406% annualised. mau: Series D release 2026-04-29 / Contrary 2026-07-30, 35,000+ users => 0.035M. ownModel: OpenAI customer story (Dec-2024) 'scales AI-driven financial research with OpenAI o1' and Rogo's stated fine-tuning of LLMs for finance, plus in-house Felix agent and a joint Q&A with Anthropic at the Series D — hence hybrid; no token-split disclosed.",
+          "url": "https://www.prnewswire.com/news-releases/rogo-raises-160m-series-d-to-scale-the-agentic-platform-for-finance-302756546.html",
+          "conf": "medium"
+        },
+        "val": {
+          "as_of": "2026-09-02",
+          "checked": "2026-09-02",
+          "source": "PR Newswire (company release) 2026-04-29: $160M Series D led by Kleiner Perkins, 250+ institutions; TipRanks 2026-04-29 and beri.net 2026-05: round at ~$2B post-money (val, USD, no FX conversion needed); Sacra company page: $75M Series C Jan-2026 at $750M post-money, $50M Series B Apr-2025 at $350M (superseded — Series D is the most recent and is used). arr: Dealroom company profile, Apr-2026 Series D line, '$160m, Valuation: $2.0b, 50.0x EV/Revenue' => 2000/50 = ~$40M revenue run-rate at the round (estimate, company does not disclose ARR); cross-checked against Contrary research 2026-07-30 ('revenue grew from $2M in 2024 to more than $15M in 2025... over 50% quarter-over-quarter growth in ARR entering mid-2026'), i.e. $15M exiting 2025 compounding at >50%/quarter lands in the $30-40M range by mid-2026 — FY2025's $15M is deliberately NOT used as arr because it is a full-year total, not a run-rate. arrg: Contrary 2026-07-30, >50% QoQ ARR => 1.5^4 - 1 = 406% annualised. mau: Series D release 2026-04-29 / Contrary 2026-07-30, 35,000+ users => 0.035M. ownModel: OpenAI customer story (Dec-2024) 'scales AI-driven financial research with OpenAI o1' and Rogo's stated fine-tuning of LLMs for finance, plus in-house Felix agent and a joint Q&A with Anthropic at the Series D — hence hybrid; no token-split disclosed.",
+          "url": "https://www.prnewswire.com/news-releases/rogo-raises-160m-series-d-to-scale-the-agentic-platform-for-finance-302756546.html",
+          "conf": "medium"
+        },
+        "ownModel": {
+          "as_of": "2026-09-02",
+          "checked": "2026-09-02",
+          "source": "PR Newswire (company release) 2026-04-29: $160M Series D led by Kleiner Perkins, 250+ institutions; TipRanks 2026-04-29 and beri.net 2026-05: round at ~$2B post-money (val, USD, no FX conversion needed); Sacra company page: $75M Series C Jan-2026 at $750M post-money, $50M Series B Apr-2025 at $350M (superseded — Series D is the most recent and is used). arr: Dealroom company profile, Apr-2026 Series D line, '$160m, Valuation: $2.0b, 50.0x EV/Revenue' => 2000/50 = ~$40M revenue run-rate at the round (estimate, company does not disclose ARR); cross-checked against Contrary research 2026-07-30 ('revenue grew from $2M in 2024 to more than $15M in 2025... over 50% quarter-over-quarter growth in ARR entering mid-2026'), i.e. $15M exiting 2025 compounding at >50%/quarter lands in the $30-40M range by mid-2026 — FY2025's $15M is deliberately NOT used as arr because it is a full-year total, not a run-rate. arrg: Contrary 2026-07-30, >50% QoQ ARR => 1.5^4 - 1 = 406% annualised. mau: Series D release 2026-04-29 / Contrary 2026-07-30, 35,000+ users => 0.035M. ownModel: OpenAI customer story (Dec-2024) 'scales AI-driven financial research with OpenAI o1' and Rogo's stated fine-tuning of LLMs for finance, plus in-house Felix agent and a joint Q&A with Anthropic at the Series D — hence hybrid; no token-split disclosed.",
+          "url": "https://www.prnewswire.com/news-releases/rogo-raises-160m-series-d-to-scale-the-agentic-platform-for-finance-302756546.html",
+          "conf": "medium"
+        }
+      },
+      "cat": "finance",
+      "stage": "growth",
+      "biz": "B2B",
+      "ti": "high",
+      "mau": 0.035,
+      "maug": null,
+      "ownModel": {
+        "status": "hybrid",
+        "models": [
+          "Felix (in-house agent framework)",
+          "Rogo finance-tuned LLMs / financial reasoning models",
+          "frontier base models: OpenAI o-series, Anthropic Claude"
+        ],
+        "tokenShare": null
       }
     }
   ],
@@ -4832,10 +4916,10 @@
     {
       "date": "2026-09-02",
       "mARR": 114.53,
-      "aARR": 12.74,
+      "aARR": 12.78,
       "tok": 9273.8,
       "nM": 17,
-      "nA": 32,
+      "nA": 33,
       "nMrev": 12
     }
   ]
