@@ -10,6 +10,7 @@ cannot corrupt the batch.
   python reverify.py --all            # one-time backfill of the whole roster
   python reverify.py --only "Kimi,MiniMax"   # just these entities
   python reverify.py --only "Zhipu" --force  # known-wrong value: waive the 5x gate
+  python reverify.py --list -k 10            # print this week's rotation (no API)
 """
 from __future__ import annotations
 
@@ -198,6 +199,22 @@ def _arg(flag: str, default):
     return default
 
 
+def list_targets(data, k: int) -> int:
+    """Print this week's rotation as JSON for the subscription routine."""
+    out = []
+    for section, entity in common.reverify_targets(data, k):
+        out.append({
+            "section": section,
+            "name": entity["name"],
+            "current": {f: entity.get(f) for f in SHOWN_FIELDS if f in entity},
+            "prov": {f: {"as_of": p.get("as_of"), "checked": p.get("checked"),
+                         "source": (p.get("source") or "")[:80]}
+                     for f, p in (entity.get("prov") or {}).items()},
+        })
+    print(json.dumps(out, ensure_ascii=False, indent=1))
+    return 0
+
+
 def main() -> int:
     dry = "--dry-run" in sys.argv
     backfill = "--all" in sys.argv
@@ -206,6 +223,9 @@ def main() -> int:
     k = int(_arg("-k", DEFAULT_K))
 
     data = common.load()
+
+    if "--list" in sys.argv:
+        return list_targets(data, k)
 
     if only:
         targets, misses = [], []

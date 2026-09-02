@@ -2,8 +2,10 @@ name: Weekly Data Update
 
 on:
   schedule:
-    # 周日 13:00 UTC = 北京时间 周日 21:00（和宏观周报同节奏）
-    - cron: '0 13 * * 0'
+    # 周日 14:30 UTC —— 只拉 OpenRouter 序列（零 Claude 成本）。
+    # 研究部分 2026-09-02 起移交订阅 routine（周日 13:00 UTC，见 ROUTINE_PROMPT.md），
+    # API 版全流程保留为下方 workflow_dispatch 的手动后备。
+    - cron: '30 14 * * 0'
   workflow_dispatch:
     inputs:
       mode:
@@ -11,7 +13,7 @@ on:
         type: choice
         default: weekly
         options:
-          - weekly          # 增量 + 轮转复核 (+ 每月第一周的覆盖发现) + 进展周报
+          - weekly          # 【手动后备】API 版全流程：增量+轮转复核(+月度发现)+周报
           - reverify-all    # 一次性全量回填：重核每一家的 ARR/估值/自有模型
           - discover-seed   # 一次性覆盖发现：补齐空白垂直
           - validate-only   # 不调 API，只跑校验和自检
@@ -89,7 +91,8 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}
           DISABLE_STRUCTURED_OUTPUT: ${{ vars.DISABLE_STRUCTURED_OUTPUT }}
-          MODE: ${{ inputs.mode || 'weekly' }}
+          # 定时触发只跑 cron 分支（OpenRouter）；weekly 全流程改为手动后备
+          MODE: ${{ inputs.mode || 'cron' }}
           NAMES: ${{ inputs.names }}
           SECTION: ${{ inputs.section || 'models' }}
           DRY: ${{ inputs.dry_run && '--dry-run' || '' }}
@@ -108,7 +111,7 @@ jobs:
             validate-only)
               echo "skipping API passes"
               ;;
-            openrouter-only)
+            cron|openrouter-only)
               python fetch_openrouter.py || FAILED="$FAILED openrouter"
               ;;
             reverify-some)
