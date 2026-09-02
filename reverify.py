@@ -43,7 +43,9 @@ Rules:
   and the trailing one never overrides a newer credible run-rate - it only
   sets a plausibility floor. Companies often state ARR on the earnings call
   or in the results presentation rather than in the report itself - for a
-  listed company, check the latest earnings call coverage specifically.
+  listed company your FIRST search must be its latest earnings-call /
+  results-presentation coverage ("<company> 业绩会 ARR", "<company> earnings
+  call ARR") before you spend budget on anything else.
 - Cross-check: for `arr` and `val`, consult at least TWO independent recent
   sources before settling. For a Chinese company, search Chinese media too
   (36氪, 晚点LatePost, 虎嗅, 科创板日报, 财新) - the freshest figures usually
@@ -89,7 +91,7 @@ Provenance currently on file (may be missing or old):
 {prov}
 
 Establish, as of today:
-1. Latest ARR / annualised revenue -> `arr` ($M)
+1. Current run-rate ARR -> `arr` ($M); see the arr definition in the rules
 2. Valuation -> `val` ($B). If listed: current market cap (and set `listed`).
    If private: the MOST RECENT closed round or completed secondary. An
    unclosed or rumoured round is not a valuation; skip it and say so in notes.
@@ -246,7 +248,7 @@ def main() -> int:
                 user=USER.format(today=common.today(), section=section,
                                  name=entity["name"], current=_snapshot(entity),
                                  prov=_prov(entity), extra_fields=extra),
-                schema=SCHEMA, max_uses=8, max_tokens=8000)
+                schema=SCHEMA, max_uses=12, max_tokens=8000)
         except Exception as exc:  # noqa: BLE001
             print("   FAILED: {}".format(exc), file=sys.stderr)
             failures.append("{}: {}".format(entity["name"], exc))

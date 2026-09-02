@@ -368,7 +368,7 @@ def _failures(section: str, entity: dict, field: str, new, patch: dict):
         prior = _parse_day((entity.get("prov", {}).get(field) or {}).get("as_of"))
         if prior and as_of < prior:
             bad("as_of {} is older than the value already on file ({})".format(
-                as_of, prior))
+                as_of, prior), "backdate")
 
     if field in NUMERIC_FIELDS[section]:
         if isinstance(new, bool) or not isinstance(new, (int, float)):
@@ -428,10 +428,13 @@ def apply_patches(data: dict, patches: list, pass_name: str, dry_run: bool = Fal
                   allow_magnitude: bool = False):
     """Validate, then apply. Returns (applied, rejected) as printable strings.
 
-    allow_magnitude=True lets a fully-sourced patch through the >5x gate. Only
-    the one-time backfill (`reverify.py --all`) sets it, because the whole
-    point of that run is to correct values that are wrong by an order of
-    magnitude; such patches are flagged `forced` in the changelog.
+    allow_magnitude=True waives the two correction-class gates - the >5x
+    magnitude gate and the as_of-monotonicity gate - because a deliberate
+    correction of a wrong entry may be both a large jump and carry an OLDER
+    as_of than the bad record it replaces (a mis-recorded unclosed round has a
+    newer date than the real closed one). Only `--all` backfills and explicit
+    `--force` runs set it; such patches are flagged `forced` in the changelog.
+    All other gates (source, currency, bounds, enums, parent) still apply.
     """
     meta = data.setdefault("meta", {})
     stamp = str(today())
@@ -449,7 +452,8 @@ def apply_patches(data: dict, patches: list, pass_name: str, dry_run: bool = Fal
             continue
 
         failures = _failures(section, entity, field, new, patch)
-        waived = [f for f in failures if f[1] == "magnitude"] if allow_magnitude else []
+        waived = ([f for f in failures if f[1] in ("magnitude", "backdate")]
+                  if allow_magnitude else [])
         blocking = [f for f in failures if f not in waived]
         if blocking:
             reason = "; ".join(r for r, _ in blocking)
@@ -895,5 +899,9 @@ UNITS_RULE = (
     "revenue figure, resolve WHAT PERIOD it covers (one month? a quarter? "
     "cumulative year-to-date?); if the period is ambiguous, do not use it - a "
     "monthly figure written into an annual field is a 12x error. State the "
-    "period and the x12/x4 arithmetic in `source`."
+    "period and the x12/x4 arithmetic in `source`. METRIC BEFORE RECENCY: "
+    "a cumulative year-to-date total is NOT an ARR and can never fill `arr`, "
+    "no matter how recent - first keep only figures that are the right metric "
+    "for the field, THEN pick the newest among those. A newer figure of the "
+    "wrong metric never beats an older figure of the right one."
 )

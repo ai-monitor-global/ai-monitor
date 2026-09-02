@@ -262,6 +262,9 @@ FORCE_CASES = [
             source="第一财经 2026-08-01，估值 400 亿元"), False),
     ("backfill override does NOT bypass bounds",
      _patch(section="models", name="Zhipu AI", field="val", new_value=9999), False),
+    ("force also waives the backdate gate (correcting a mis-dated entry)",
+     _patch(section="models", name="Zhipu AI", field="val", new_value=50,
+            as_of="2026-01-01", source="Reuters 2026-01-01, $50B"), True),
 ]
 
 
