@@ -18,6 +18,7 @@ import json
 import math
 import os
 import sys
+import urllib.error
 import urllib.request
 from datetime import date, datetime, timedelta, timezone
 
@@ -26,11 +27,14 @@ import common
 PASS = "openrouter"
 URL = ("https://openrouter.ai/api/v1/datasets/rankings-daily"
        "?start_date={start}&end_date={end}&period=day")
-LOOKBACK_DAYS = 400   # bounded by whatever the API actually returns
+# The API rejects too-wide date ranges with a 400 (a plain 400, no detail),
+# and the allowed window is undocumented - so probe from wide to narrow.
+# History beyond the window accumulates in data.json across weekly runs.
+LOOKBACKS = (365, 180, 90, 60)
 WEEKS_KEPT = 104
 
 
-def fetch_daily(key: str, days: int = LOOKBACK_DAYS) -> dict:
+def fetch_daily(key: str, days: int) -> dict:
     """date -> platform total tokens (sum over all rows for that date)."""
     end = datetime.now(timezone.utc).date()
     start = end - timedelta(days=days)
@@ -51,6 +55,22 @@ def fetch_daily(key: str, days: int = LOOKBACK_DAYS) -> dict:
         day = str(row.get("date"))[:10]
         daily[day] = daily.get(day, 0.0) + n
     return dict(sorted(daily.items()))
+
+
+def fetch_daily_adaptive(key: str):
+    last_err = None
+    for days in LOOKBACKS:
+        try:
+            daily = fetch_daily(key, days)
+            print("lookback {}d accepted: {} data days".format(days, len(daily)))
+            return daily
+        except urllib.error.HTTPError as exc:
+            if exc.code == 400:
+                print("lookback {}d rejected (400), narrowing".format(days))
+                last_err = exc
+                continue
+            raise
+    raise last_err
 
 
 def to_weeks(daily: dict) -> list:
@@ -81,10 +101,16 @@ def main() -> int:
         return 0
 
     try:
-        daily = fetch_daily(key)
-        weeks = to_weeks(daily)
+        daily = fetch_daily_adaptive(key)
+        fetched = to_weeks(daily)
+        # merge with what we already hold: the API window is short, the
+        # series in data.json is the long-term memory
+        held = {w["week"]: w for w in
+                ((data.get("openrouter") or {}).get("weekly") or [])}
+        held.update({w["week"]: w for w in fetched})
+        weeks = [held[k] for k in sorted(held)][-WEEKS_KEPT:]
         if len(weeks) < 2:
-            raise RuntimeError("only {} complete week(s) in the response"
+            raise RuntimeError("only {} complete week(s) available"
                                .format(len(weeks)))
     except Exception as exc:  # noqa: BLE001 - visible, never silent
         print("FAILED: {}".format(exc), file=sys.stderr)
