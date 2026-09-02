@@ -170,21 +170,22 @@ def take_snapshot(data: dict) -> None:
     is weekly by construction and always on the same basis as the table.
     Coverage growth shows up as a step, so counts are stored with each point.
     """
+    from datetime import datetime, timezone
     models, apps = active(data, "models"), active(data, "apps")
     point = {
-        "date": str(today()),
+        # UTC, not local: CI runs in UTC while a laptop may still be on
+        # yesterday (Pacific), which interleaved out-of-order points.
+        "date": str(datetime.now(timezone.utc).date()),
         "mARR": round(sum(e.get("arr") or 0 for e in models) / 1000, 2),  # $B
         "aARR": round(sum(e.get("arr") or 0 for e in apps) / 1000, 2),    # $B
         "tok":  round(sum(e.get("tokM") or 0 for e in models), 1),        # T/mo
         "nM": len(models), "nA": len(apps),
         "nMrev": sum(1 for e in models if e.get("arr") is not None),
     }
-    snaps = data.setdefault("snapshots", [])
-    if snaps and snaps[-1]["date"] == point["date"]:
-        snaps[-1] = point  # several runs a day collapse to the latest
-    else:
-        snaps.append(point)
-    del snaps[:-SNAPSHOT_MAX]
+    snaps = [p for p in data.get("snapshots", []) if p["date"] != point["date"]]
+    snaps.append(point)          # several runs a day collapse to the latest
+    snaps.sort(key=lambda p: p["date"])
+    data["snapshots"] = snaps[-SNAPSHOT_MAX:]
 
 
 def save(data: dict, path: str = DATA_FILE) -> None:
