@@ -48,6 +48,13 @@
 3. **`force: true` 只用于"明知库存值错得离谱"的定点修正**，且必须在来源里写清理由
    （它只豁免 >5x 量级闸门和日期倒退闸门，其余闸门照旧）。
 
+## 一次性设置（创建 routine 时必须做对）
+
+1. **把 `ai-monitor-global/ai-monitor` 加进 routine 的 sources（授权仓库列表）**。
+   沙箱的 git 代理只允许推送授权列表内的仓库 —— 首跑（2026-09-02）就是因为漏了
+   这一步，研究全部完成、commit 停在临时沙箱里推不出去。
+2. Cron `0 13 * * 0`，Model 选 Opus，prompt 用下方 bootstrap。
+
 ## 改 routine 怎么办
 
 - **改研究口径/规则/节奏内容** → 只改本文件（及 `CRITERIA.md`），push 即生效。
@@ -128,6 +135,13 @@
 
 ## 注意事项
 
+- **沙箱的 WebFetch 被网络策略全量拦截**（sacra.com、CNBC、公司官网、curl 一律
+  403），研究只能靠 WebSearch 的结果摘要（首跑实测）。因此：同一个数字换 2-3 个
+  不同关键词搜索来交叉，摘要间冲突时在 source 里写明取舍；仅有单一摘要支撑的
+  数字 conf 一律 medium。这不改变"绝不编数"铁律。
+- **push 被拒时的正确行为**（首跑已按此执行，保持）：不绕过、不找替代凭据；把
+  changes.json 和 commit patch 作为文件发到会话里留底，然后报告"需要把仓库加进
+  routine sources"。研究成果可在有权限的环境用 apply.py 重放，不必重跑。
 - 沙箱 egress 代理会拦部分外网（如飞书 403）。**OpenRouter 数据不归 routine 管**——
   Actions cron（周日 UTC 14:30）用仓库 secret 自己拉，routine 不要碰 `fetch_openrouter.py`。
 - 一次运行的研究预算把轮转 10 家做扎实优先，增量扫描其次；宁可少核两家，
