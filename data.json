@@ -1549,6 +1549,28 @@
         "source": "The Information 2026-08-19（英伟达洽谈参投，投后估值200亿美元，General Catalyst牵头）；Bloomberg/新浪财经 2026-07-11 亦报道拟融5亿美元、估值200亿美元，仍在谈判、未交割",
         "conf": "high",
         "forced": null
+      },
+      {
+        "date": "2026-09-02",
+        "pass": "manual-correction",
+        "section": "apps",
+        "entity": "Cursor",
+        "field": "parent",
+        "old": "",
+        "new": "SpaceX",
+        "source": "SpaceX 完成对 Anysphere/Cursor 的 $60B 全股票收购，2026-08-14 交割，并入 SpaceXAI（satnews 2026-08-13 / TheNextWeb / Yahoo Finance；8-K：2026-06-16 签约，X67 Inc. 合并，Cursor 为全资子公司）。Crystal 2026-09-02 裁决：保留追踪，按父公司规则估值清空。",
+        "conf": "high"
+      },
+      {
+        "date": "2026-09-02",
+        "pass": "manual-correction",
+        "section": "apps",
+        "entity": "Cursor",
+        "field": "val",
+        "old": 60,
+        "new": null,
+        "source": "SpaceX 完成对 Anysphere/Cursor 的 $60B 全股票收购，2026-08-14 交割，并入 SpaceXAI（satnews 2026-08-13 / TheNextWeb / Yahoo Finance；8-K：2026-06-16 签约，X67 Inc. 合并，Cursor 为全资子公司）。Crystal 2026-09-02 裁决：保留追踪，按父公司规则估值清空。",
+        "conf": "high"
       }
     ],
     "review_queue": [
@@ -2456,8 +2478,8 @@
       "maug": 200,
       "ti": "high",
       "biz": "B2B+B2C",
-      "val": 60,
-      "m": 96,
+      "val": null,
+      "m": 97,
       "retired": false,
       "prov": {
         "arrg": {
@@ -2485,13 +2507,6 @@
           "as_of": "2026-06-08",
           "source": "Forbes(Richard Nieva)2026-06-08 与 Dealroom 快讯 2026-06:Cursor 年化收入突破 $4B(4 月底 $3B),原币美元",
           "url": "https://app.dealroom.co/news/note/cursor-tops-4b-annualized-revenue-june-2026",
-          "conf": "high",
-          "checked": "2026-09-01"
-        },
-        "val": {
-          "as_of": "2026-08-14",
-          "source": "Bloomberg 2026-08-14:SpaceX 完成对 Cursor(Anysphere)$60B 全股票收购,交易于 8 月 14 日生效(监管 8-K),美元原币",
-          "url": "https://www.bloomberg.com/news/articles/2026-08-14/spacex-completes-its-60-billion-cursor-acquisition",
           "conf": "high",
           "checked": "2026-09-01"
         },
@@ -2537,7 +2552,7 @@
       },
       "checked_at": "2026-09-01",
       "listed": "",
-      "parent": "",
+      "parent": "SpaceX",
       "valPending": null
     },
     {
@@ -2552,7 +2567,7 @@
       "ti": "high",
       "biz": "B2C+B2B",
       "val": 20,
-      "m": 81,
+      "m": 82,
       "retired": false,
       "prov": {
         "val": {
@@ -2748,7 +2763,7 @@
       "ti": "med",
       "biz": "B2B+B2C",
       "val": 11,
-      "m": 67,
+      "m": 68,
       "retired": false,
       "prov": {
         "val": {
@@ -2987,7 +3002,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 11,
-      "m": 56,
+      "m": 57,
       "retired": false,
       "prov": {
         "arr": {
@@ -3179,7 +3194,7 @@
       "ti": "low",
       "biz": "B2C+B2B",
       "val": 2.1,
-      "m": 47,
+      "m": 48,
       "retired": false,
       "prov": {
         "arr": {
@@ -3357,7 +3372,7 @@
       "ti": "high",
       "biz": "B2C",
       "val": 5.4,
-      "m": 78,
+      "m": 79,
       "retired": false,
       "prov": {
         "arrg": {
@@ -3577,7 +3592,7 @@
       "ti": "low",
       "biz": "B2B+B2C",
       "val": 1.5,
-      "m": 54,
+      "m": 55,
       "retired": false,
       "prov": {
         "val": {
@@ -3652,7 +3667,7 @@
       "ti": "ultra",
       "biz": "B2B",
       "val": 26,
-      "m": 91,
+      "m": 93,
       "retired": false,
       "prov": {
         "arr": {
@@ -3828,7 +3843,7 @@
       "ti": "med",
       "biz": "B2C+B2B",
       "val": 1.0,
-      "m": 38,
+      "m": 39,
       "retired": false,
       "prov": {
         "arr": {
@@ -3998,7 +4013,7 @@
       "ti": "high",
       "biz": "B2C+B2B",
       "val": 0.5,
-      "m": 38,
+      "m": 39,
       "retired": false,
       "prov": {
         "uc": {
@@ -4755,7 +4770,7 @@
       "val": 2.0,
       "listed": "",
       "parent": "",
-      "m": 56,
+      "m": 57,
       "retired": false,
       "checked_at": "2026-09-02",
       "prov": {
@@ -5000,6 +5015,15 @@
     },
     {
       "date": "2026-09-02",
+      "mARR": 114.53,
+      "aARR": 11.38,
+      "tok": 9273.8,
+      "nM": 17,
+      "nA": 33,
+      "nMrev": 12
+    },
+    {
+      "date": "2026-09-03",
       "mARR": 114.53,
       "aARR": 11.38,
       "tok": 9273.8,
