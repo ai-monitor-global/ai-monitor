@@ -6,3 +6,7 @@ _*.py
 _*.js
 _*.json
 _*.html
+
+# the routine's per-run input to apply.py: regenerated every week, and the
+# audit trail it carries already lands in data.json (prov sources + changelog)
+changes.json
