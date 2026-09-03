@@ -2,7 +2,7 @@
   "meta": {
     "last_updated": "2026-09-03",
     "next_update": "2026-09-06",
-    "update_notes": "2026-09-03: 8 项已核实更新 — APP Sierra.arr: 150 -> 200; APP Decagon.arr: 35.0 -> 100; APP Replit.arr: 300.0 -> 525; APP Replit.arrg: None -> 1775; APP AlphaSense.arrg: None -> 40; APP Legora.val: 5.55 -> 5.6",
+    "update_notes": "2026-09-03: 1 项已核实更新 — APP Ambience Healthcare.val: 1.0 -> 1.25 [FORCED]",
     "schema": 2,
     "last_run": "2026-09-03",
     "stale_days": 120,
@@ -1655,50 +1655,21 @@
         "source": "Bloomberg 2026-09-02《AI Startup Cognition Set to Raise Around $1 Billion at a $47 Billion Value》；此前 Bloomberg/TechCrunch/PYMNTS 2026-08-12 报道以 $40B 估值洽谈，三周内抬升至 $47B。轮次尚未交割，按口径写入 valPending，val 维持已交割的 $26B 不动",
         "conf": "high",
         "forced": null
-      }
-    ],
-    "review_queue": [
-      {
-        "date": "2026-09-01",
-        "pass": "reverify",
-        "entity": "Suno",
-        "field": "confirmation",
-        "proposed": null,
-        "reason": "Suno: unknown field 'ownModel.status'",
-        "source": null,
-        "url": null
-      },
-      {
-        "date": "2026-09-01",
-        "pass": "reverify",
-        "entity": "xAI",
-        "field": "uc",
-        "proposed": "Grok 4.6、Grok Imagine、Colossus 2",
-        "reason": "as_of 2026-08-12 is older than the value already on file (2026-08-13)",
-        "source": "DataNorth AI 2026-08-13（xAI/SpaceXAI 于 2026-08-12 发布 Grok 4.6 为当前旗舰模型，Artificial Analysis 智能指数 61）；TechCrunch 2026-07-08（Grok 4.5 发布，被 Grok 4.6 取代）。原 uc 中的 Grok 4.20 已被 4.3/4.5/4.6 迭代取代",
-        "url": "https://datanorth.ai/news/xai-releases-grok-4-6"
-      },
-      {
-        "date": "2026-09-02",
-        "pass": "reverify",
-        "entity": "DeepSeek",
-        "field": "val",
-        "proposed": 56.0,
-        "reason": "as_of 2026-06-16 is older than the value already on file (2026-09-01)",
-        "source": "太平洋科技/搜狐 2026-06-18，引用企查查工商登记：杭州深度求索于2026-06-16完成首轮外部融资约人民币510亿元，投后整体估值接近人民币4000亿元；按1 USD = 7.1 RMB折算 ≈ 563亿美元，取56.0；同日紫荊網引外電亦称本轮后估值突破500亿美元（HK$3,900亿）。这是目前唯一已完成（closed）的一轮",
-        "url": "https://www.sohu.com/a/1038418676_223764"
       },
       {
         "date": "2026-09-03",
-        "pass": "routine-weekly",
+        "pass": "manual-review",
+        "section": "apps",
         "entity": "Ambience Healthcare",
         "field": "val",
-        "proposed": 1.25,
-        "reason": "as_of 2025-07-29 is older than the value already on file (2025-11-28)",
-        "source": "Becker's Hospital Review / Modern Healthcare / Fierce Healthcare 2025-07-29 三家独立报道：Ambience 完成 $243M C 轮，由 Oak HC/FT 与 a16z 联合领投，post-money 估值 $1.25B（库存值 1.0 对应 pre-money 口径，Sacra 亦按 $1B pre 计算倍数）。2026 年内未见新轮次，这仍是最近一次已交割估值",
-        "url": "https://www.beckershospitalreview.com/healthcare-information-technology/ai/ambience-healthcare-reaches-1-25b-valuation/"
+        "old": 1.0,
+        "new": 1.25,
+        "source": "C 轮 $243M 投后 $1.25B，2025-07-29 交割（Modern Healthcare / Becker's / Fierce Healthcare / MedCity / STAT 多源一致；Oak HC/FT 与 a16z 领投，OpenAI Startup Fund 参投）。原值 1.0 为 getLatka 聚合页的 pre-money 口径且日期误记。routine 2026-09-03 提出，操作侧独立核实后 force 落地（豁免日期倒退闸门）。",
+        "conf": "high",
+        "forced": true
       }
     ],
+    "review_queue": [],
     "runs": {
       "incremental": {
         "at": null,
@@ -1740,6 +1711,16 @@
         "applied": 8,
         "rejected": 1,
         "confirmed": 26,
+        "promoted": 0,
+        "queued": 0
+      },
+      "manual-review": {
+        "at": "2026-09-03",
+        "ok": true,
+        "error": null,
+        "applied": 1,
+        "rejected": 0,
+        "confirmed": 0,
         "promoted": 0,
         "queued": 0
       }
@@ -4853,7 +4834,7 @@
       "maug": null,
       "ti": "high",
       "biz": "B2B",
-      "val": 1.0,
+      "val": 1.25,
       "m": 22,
       "ownModel": {
         "status": "hybrid",
@@ -4869,19 +4850,22 @@
           "as_of": "2025-11-28",
           "source": "getLatka 公司页（2025-11 更新）：Ambience 2025 年 ARR 6410 万美元；Sacra 估算 2025年5月 ARR 3000 万美元；估值 10 亿美元来自 2025年7月 2.43 亿美元 C 轮（a16z/Oak HC-FT 领投，已交割）",
           "url": "https://getlatka.com/companies/ambiencehealthcare.com",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-03"
         },
         "ownModel": {
           "as_of": "2025-11-28",
           "source": "getLatka 公司页（2025-11 更新）：Ambience 2025 年 ARR 6410 万美元；Sacra 估算 2025年5月 ARR 3000 万美元；估值 10 亿美元来自 2025年7月 2.43 亿美元 C 轮（a16z/Oak HC-FT 领投，已交割）",
           "url": "https://getlatka.com/companies/ambiencehealthcare.com",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-03"
         },
         "val": {
-          "as_of": "2025-11-28",
-          "source": "getLatka 公司页（2025-11 更新）：Ambience 2025 年 ARR 6410 万美元；Sacra 估算 2025年5月 ARR 3000 万美元；估值 10 亿美元来自 2025年7月 2.43 亿美元 C 轮（a16z/Oak HC-FT 领投，已交割）",
-          "url": "https://getlatka.com/companies/ambiencehealthcare.com",
-          "conf": "medium"
+          "as_of": "2025-07-29",
+          "checked": "2026-09-03",
+          "source": "C 轮 $243M 投后 $1.25B，2025-07-29 交割（Modern Healthcare / Becker's / Fierce Healthcare / MedCity / STAT 多源一致；Oak HC/FT 与 a16z 领投，OpenAI Startup Fund 参投）。原值 1.0 为 getLatka 聚合页的 pre-money 口径且日期误记。routine 2026-09-03 提出，操作侧独立核实后 force 落地（豁免日期倒退闸门）。",
+          "url": "https://www.beckershospitalreview.com/healthcare-information-technology/ai/ambience-healthcare-reaches-1-25b-valuation/",
+          "conf": "high"
         }
       },
       "listed": "",
