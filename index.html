@@ -312,8 +312,11 @@ function valCell(a,cls){
   return "<td style=\"text-align:right\" class=\"num"+cls+"\">"+h+"</td>";
 }
 function listedTag(a){
-  const t=(a.listed||"").trim();
-  return t?"<span class=\"bdg\" style=\"background:#e0f2fe;color:#0369a1;margin-left:5px\" title=\"已上市，估值列为实时市值\">"+esc(t)+"</span>":"";
+  const t=(a.listed||"").trim(), p=(a.parent||"").trim();
+  let h="";
+  if(t) h+="<span class=\"bdg\" style=\"background:#e0f2fe;color:#0369a1;margin-left:5px\" title=\"已上市，估值列为实时市值\">"+esc(t)+"</span>";
+  if(p) h+="<span class=\"bdg\" style=\"background:#f3f4f6;color:#4b5563;margin-left:5px\" title=\"隶属于 "+esc(p)+"，无独立估值；收入仅计模型/产品自身业务\">属 "+esc(p)+"</span>";
+  return h;
 }
 function live(rows){return (rows||[]).filter(r=>!r.retired)}
 function sumOf(rows,f){return rows.reduce((s,a)=>s+(a[f]||0),0)}

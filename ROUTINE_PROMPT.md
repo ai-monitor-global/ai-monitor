@@ -127,8 +127,7 @@
    （"<公司> 业绩会 ARR"），公司往往在那里而非财报正文披露 ARR。
 4. **估值口径**：`val` = 最近**已交割**轮次 / 已完成二级 / 上市公司**实时市值**
    （同时把 `listed` 写成 `"HKEX:2513"` 格式）。已报道但未交割的轮次写 `valPending`，
-   不进 `val`。**有 `parent` 的内嵌 lab（Gemini/Doubao/Qwen/Llama/Nova/ERNIE/Hunyuan）
-   没有自己的估值，val/listed 永远留空**，arr 只算模型服务收入。
+   不进 `val`。**有 `parent` 的内嵌实体（Gemini/Doubao/Qwen/Llama/Nova/ERNIE/Hunyuan，以及 2026-08 被 SpaceX 收购后的 Cursor）没有自己的估值，val/valPending/listed 永远留空**，arr 只算该业务自身收入。
 5. **来源纪律**：每个数字带 来源名+报道日期+URL+conf(high/medium)；`arr`/`val`
    至少两个独立近期来源交叉；中国公司必搜中文媒体（36氪/晚点/虎嗅/科创板日报/财新）；
    非美元一律换算并在 source 里写明汇率；查不到就空着，**绝不编数**。
