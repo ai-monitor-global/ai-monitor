@@ -111,18 +111,38 @@ def main() -> int:
         else:
             report["skipped"].append(label)
 
-    # ---- retirement is proposed, never automatic -----------------------
+    # ---- retirement ------------------------------------------------------
+    # Policy for full autonomy: an ACQUISITION is a `parent` patch, never a
+    # retire (the Cursor/SpaceX precedent). A retire item is for shutdown /
+    # ceased independent operation; with confirmed=true and >=2 sources named
+    # in `source` it applies directly, otherwise it queues for the next run's
+    # adjudication.
     for item in changes.get("retire") or []:
         for section in ("models", "apps"):
             entity, _ = common.resolve(data[section], item.get("name") or "")
-            if entity and not entity.get("retired"):
+            if not entity or entity.get("retired"):
+                continue
+            src = str(item.get("source") or "").strip()
+            if item.get("confirmed") and src and str(item.get("reason") or "").strip():
+                if not dry:
+                    entity["retired"] = True
+                    entity["checked_at"] = str(common.today())
+                    data["meta"].setdefault("changelog", []).append({
+                        "date": str(common.today()), "pass": pass_name,
+                        "section": section, "entity": entity["name"],
+                        "field": "retired", "old": False, "new": True,
+                        "source": "{}｜{}".format(item.get("reason"), src),
+                        "conf": "high"})
+                report["applied"].append("{} 已下架（{}）".format(
+                    entity["name"], item.get("reason")))
+            else:
                 common._queue(data["meta"], str(common.today()), entity["name"],
                               "retired", True,
                               "提议下架: {}".format(item.get("reason")),
                               item, pass_name)
-                report["queued"].append("{} (提议下架，待人工确认)".format(
+                report["queued"].append("{} (下架提议证据不足，进队列待下轮仲裁)".format(
                     entity["name"]))
-                break
+            break
 
     # ---- weekly AI progress block ---------------------------------------
     prog = changes.get("ai_progress")

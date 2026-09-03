@@ -221,7 +221,7 @@ function renderHealth(){
     bad.map(k=>esc(NAMES[k]||k)+"（"+esc(runs[k].at||"?")+"）："+esc(runs[k].error||"未知错误")).join("；")+
     "<br>表中数值仍是上一次成功运行的结果。</div>");
   const q=(m.review_queue||[]).length;
-  if(q) out.push("<div class=\"hb hb-warn\">&#9873; 有 "+q+" 条改动被校验层拦下等待人工复核（量级异常/币种未换算/名称对不上）。见 data.json 的 <code>meta.review_queue</code>。</div>");
+  if(q) out.push("<div class=\"hb hb-warn\">&#9873; 有 "+q+" 条改动被校验闸门暂扣（量级异常/日期冲突等），后续每周运行会自动仲裁复核，28 天未决自动过期。明细见 data.json 的 <code>meta.review_queue</code>。</div>");
   document.getElementById("health").innerHTML=out.join("");
 }
 let cOR=null;

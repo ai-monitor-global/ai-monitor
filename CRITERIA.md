@@ -27,14 +27,15 @@
 队列里的条目带 `verdict: "pending"`，看板「候选池」tab 直接可见。批了就手工搬进 `apps[]`，
 否决就把 `verdict` 改成 `rejected`。
 
-### 出池
-不删除，标 `retired: true` 保留历史（同 homerun 项目护 track record 的做法）：
-
-- 被收购且不再独立披露经营数据
-- 连续两次全量复核 `arr` 跌幅 > 50%
-- 停止运营
-
-`discover.py` **不会自动下架**，它只把提议写进 `meta.review_queue`。
+### 出池与收购（全自动政策）
+- **被收购** → **不下架**：标 `parent=收购方`（系统自动清 val/valPending/listed，
+  子公司无独立估值），继续追踪 ARR / 自有模型。先例：Cursor/SpaceX（2026-08-14
+  交割，2026-09-02 定策）。
+- **停运 / 不再独立经营**（≥2 个独立来源确认）→ 标 `retired: true`。不删除数据，
+  保留历史护 track record。
+- 连续两次全量复核 `arr` 跌幅 > 50% → 同上，retire。
+- 证据不足时进 `meta.review_queue`，由下周运行按仲裁协议（见 ROUTINE_PROMPT.md）
+  自动重核；28 天未决自动过期。
 
 ### 组成守恒
 - 任一 `cat` 占活跃 app 总数 ≤ **25%**（`validate.py` 超限会告警）

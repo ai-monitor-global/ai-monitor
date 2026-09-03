@@ -196,8 +196,30 @@ def save(data: dict, path: str = DATA_FILE) -> None:
         f.write("\n")
 
 
+QUEUE_EXPIRY_DAYS = 28
+
+
 def trim(data: dict) -> None:
     meta = data.setdefault("meta", {})
+    # a fully autonomous pipeline cannot let the queue wait for a human
+    # forever: entries the weekly adjudication could not resolve within four
+    # runs expire, loudly, into the changelog
+    queue = meta.get("review_queue") or []
+    kept = []
+    for item in queue:
+        day = _parse_day(item.get("date"))
+        if day and (today() - day).days > QUEUE_EXPIRY_DAYS:
+            meta.setdefault("changelog", []).append({
+                "date": str(today()), "pass": "queue-expiry",
+                "section": "meta", "entity": item.get("entity"),
+                "field": item.get("field"), "old": item.get("proposed"),
+                "new": None,
+                "source": "review_queue 条目 {} 天未决，自动过期（原因：{}）".format(
+                    QUEUE_EXPIRY_DAYS, str(item.get("reason"))[:120]),
+                "conf": "medium"})
+        else:
+            kept.append(item)
+    meta["review_queue"] = kept
     if len(meta.get("changelog", [])) > CHANGELOG_MAX:
         meta["changelog"] = meta["changelog"][-CHANGELOG_MAX:]
     if len(meta.get("review_queue", [])) > REVIEW_QUEUE_MAX:
@@ -406,9 +428,9 @@ def _failures(section: str, entity: dict, field: str, new, patch: dict):
     if field == "parent":
         if not isinstance(new, str):
             bad("parent must be a string")
-        elif new.strip() and entity.get("val") is not None:
-            bad("parent={!r} but val is set; an embedded lab has no "
-                "valuation of its own".format(new))
+        # setting a parent while val is populated is handled mechanically in
+        # apply_patches: the valuation fields are cleared in the same step
+        # (acquisition policy - the Cursor/SpaceX precedent)
         return out
     if field == "listed":
         if not isinstance(new, str):
@@ -453,8 +475,11 @@ def apply_patches(data: dict, patches: list, pass_name: str, dry_run: bool = Fal
             continue
 
         failures = _failures(section, entity, field, new, patch)
+        # file-level allow_magnitude (backfills) or per-patch force (a
+        # single adjudicated correction) waives the correction-class gates
+        waivable = allow_magnitude or bool(patch.get("force"))
         waived = ([f for f in failures if f[1] in ("magnitude", "backdate")]
-                  if allow_magnitude else [])
+                  if waivable else [])
         blocking = [f for f in failures if f not in waived]
         if blocking:
             reason = "; ".join(r for r, _ in blocking)
@@ -489,6 +514,20 @@ def apply_patches(data: dict, patches: list, pass_name: str, dry_run: bool = Fal
         applied.append("{} {}.{}: {} -> {}{} ({})".format(
             section[:-1].upper(), entity["name"], field, old, new,
             " [FORCED]" if forced else "", patch["source"]))
+        # acquisition policy: an entity gaining a parent has no valuation of
+        # its own, so the valuation fields clear in the same application
+        if field == "parent" and str(new).strip() and not dry_run:
+            for cleared in ("val", "valPending"):
+                if entity.get(cleared) is not None:
+                    meta.setdefault("changelog", []).append({
+                        "date": stamp, "pass": pass_name, "section": section,
+                        "entity": entity["name"], "field": cleared,
+                        "old": entity[cleared], "new": None,
+                        "source": "自动联动：parent={} 后，内嵌实体无独立估值".format(new),
+                        "conf": "high"})
+                    entity[cleared] = None
+            entity["listed"] = ""
+            (entity.get("prov") or {}).pop("val", None)
     return applied, rejected
 
 

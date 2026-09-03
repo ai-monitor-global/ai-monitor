@@ -331,6 +331,51 @@ def selftest() -> int:
         print("{} {}".format("PASS" if ok_flag else "FAIL", label))
         failures += 0 if ok_flag else 1
 
+    # per-patch force is surgical: it lands its own item and must not leak
+    # a waiver to an unforced sibling in the same batch
+    data = common.migrate(_fixture())
+    ok_patch = _patch(section="models", name="Zhipu AI", field="val",
+                      new_value=5.6, force=True,
+                      source="Reuters 2026-08-01, RMB 40B converted at 7.1 = $5.6B")
+    sibling = _patch(field="arr", new_value=25000)   # >5x, NOT forced
+    applied, rejected = common.apply_patches(data, [ok_patch, sibling], "selftest")
+    checks2 = [
+        ("per-patch force lands its own item",
+         any("Zhipu" in a for a in applied)),
+        ("per-patch force does not leak to siblings",
+         len(rejected) == 1 and "arr" in rejected[0]),
+    ]
+    # acquisition policy: a parent patch clears the valuation fields itself
+    data = common.migrate(_fixture())
+    data["apps"][0]["valPending"] = 50
+    applied, rejected = common.apply_patches(data, [
+        _patch(field="parent", new_value="SpaceX",
+               source="acquisition closed, 2 sources")], "selftest")
+    app = data["apps"][0]
+    checks2 += [
+        ("parent patch applies while val is set",
+         len(applied) >= 1 and not rejected),
+        ("parent patch clears val/valPending/listed",
+         app["val"] is None and app["valPending"] is None and app["listed"] == ""),
+    ]
+    # queue expiry: old unresolved items leave, with a changelog trace
+    data = common.migrate(_fixture())
+    data["meta"]["review_queue"] = [
+        {"date": "2020-01-01", "entity": "Old", "field": "val",
+         "proposed": 1, "reason": "ancient", "source": None},
+        {"date": str(common.today()), "entity": "New", "field": "val",
+         "proposed": 2, "reason": "fresh", "source": None}]
+    common.trim(data)
+    checks2 += [
+        ("stale queue items expire", len(data["meta"]["review_queue"]) == 1
+         and data["meta"]["review_queue"][0]["entity"] == "New"),
+        ("expiry leaves a changelog trace",
+         any(c.get("pass") == "queue-expiry" for c in data["meta"]["changelog"])),
+    ]
+    for label, ok_flag in checks2:
+        print("{} {}".format("PASS" if ok_flag else "FAIL", label))
+        failures += 0 if ok_flag else 1
+
     # momentum: derived, respects m_manual, survives missing inputs
     data = common.migrate(_fixture())
     data["apps"].append({"name": "Sparse", "uc": "?", "cat": "other",
@@ -365,7 +410,7 @@ def selftest() -> int:
                 print("      {}".format(p))
 
     total = (len(CASES) + len(FORCE_CASES) + len(checks) + len(conf_checks)
-             + len(BAD_SCHEMAS) + len(_live_schemas()))
+             + len(checks2) + len(BAD_SCHEMAS) + len(_live_schemas()))
     print("\n{} / {} self-test checks passed".format(total - failures, total))
     return 1 if failures else 0
 
@@ -490,11 +535,28 @@ def schema_check() -> int:
     return 1 if failures else 0
 
 
+def freshness(max_days: int) -> int:
+    """Watchdog for the autonomous pipeline: red if the routine stopped
+    pushing, so the failure email arrives without anyone watching a page."""
+    with open(common.DATA_FILE, "r", encoding="utf-8") as f:
+        meta = (json.load(f).get("meta") or {})
+    last = common._parse_day(meta.get("last_run"))
+    age = None if last is None else (common.today() - last).days
+    print("meta.last_run = {} ({} 天前)".format(meta.get("last_run"), age))
+    if age is None or age > max_days:
+        print("STALE: 数据超过 {} 天没有任何 pass 运行过 - routine 可能已停摆".format(max_days))
+        return 1
+    return 0
+
+
 def main() -> int:
     if "--selftest" in sys.argv:
         return selftest()
     if "--schema-check" in sys.argv:
         return schema_check()
+    if "--freshness" in sys.argv:
+        idx = sys.argv.index("--freshness")
+        return freshness(int(sys.argv[idx + 1]) if idx + 1 < len(sys.argv) else 8)
     with open(common.DATA_FILE, "r", encoding="utf-8") as f:
         data = json.load(f)
     errors, warnings = check(data)

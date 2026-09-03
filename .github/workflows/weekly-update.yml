@@ -6,6 +6,9 @@ on:
     # 研究部分 2026-09-02 起移交订阅 routine（周日 13:00 UTC，见 ROUTINE_PROMPT.md），
     # API 版全流程保留为下方 workflow_dispatch 的手动后备。
     - cron: '30 14 * * 0'
+    # 周一 02:00 UTC —— 看门狗：routine 若停摆（数据 >2 天没动）本 run 变红，
+    # GitHub 自动发失败邮件；正常时顺手把 OpenRouter 再合并一次（幂等）。
+    - cron: '0 2 * * 1'
   workflow_dispatch:
     inputs:
       mode:
@@ -113,6 +116,9 @@ jobs:
               ;;
             cron|openrouter-only)
               python fetch_openrouter.py || FAILED="$FAILED openrouter"
+              if [ "$(date -u +%u)" = "1" ]; then
+                python validate.py --freshness 2 || FAILED="$FAILED routine-watchdog"
+              fi
               ;;
             reverify-some)
               python reverify.py --only "$NAMES" $FORCE $DRY || FAILED="$FAILED reverify-some"
