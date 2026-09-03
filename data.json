@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_updated": "2026-09-02",
+    "last_updated": "2026-09-03",
     "next_update": "2026-09-06",
-    "update_notes": "2026-09-02: 2 项已核实更新 — APP Mercor.arr: 2000.0 -> 600.0; APP Mercor.valPending: None -> 20.0",
+    "update_notes": "2026-09-03: 8 项已核实更新 — APP Sierra.arr: 150 -> 200; APP Decagon.arr: 35.0 -> 100; APP Replit.arr: 300.0 -> 525; APP Replit.arrg: None -> 1775; APP AlphaSense.arrg: None -> 40; APP Legora.val: 5.55 -> 5.6",
     "schema": 2,
-    "last_run": "2026-09-02",
+    "last_run": "2026-09-03",
     "stale_days": 120,
     "categories": {
       "coding": {
@@ -1571,6 +1571,90 @@
         "new": null,
         "source": "SpaceX 完成对 Anysphere/Cursor 的 $60B 全股票收购，2026-08-14 交割，并入 SpaceXAI（satnews 2026-08-13 / TheNextWeb / Yahoo Finance；8-K：2026-06-16 签约，X67 Inc. 合并，Cursor 为全资子公司）。Crystal 2026-09-02 裁决：保留追踪，按父公司规则估值清空。",
         "conf": "high"
+      },
+      {
+        "date": "2026-09-03",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "Sierra",
+        "field": "arr",
+        "old": 150,
+        "new": 200,
+        "source": "ARR Club 专题《Sierra ARR surpasses $200M, doubling from $100M in just two quarters》：2026年5月 ARR 达 $200M；getLatka 公司页同步显示 $200M ARR / $15.8B 估值；Sacra 公司页称 2025 年底约 $130M、2024 年底约 $26M。三处独立摘要一致，口径为 run-rate ARR（按解决量计费的经常性收入），非累计收入",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-09-03",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "Decagon",
+        "field": "arr",
+        "old": 35.0,
+        "new": 100,
+        "source": "Sacra 公司页/研究报告：Decagon 2026 年 7 月年化收入（annualized revenue）达 $100M，2025 年底为 $44M；Q3 2025 GAAP 收入与 ARR 同比均增长 3 倍以上；2025 年新增 100+ 全球企业客户（Avis、Mercado Libre、Deutsche Telekom 等）。口径为年化 run-rate。主力来源为 Sacra 单一机构，故 conf=medium",
+        "conf": "medium",
+        "forced": null
+      },
+      {
+        "date": "2026-09-03",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "Replit",
+        "field": "arr",
+        "old": 300.0,
+        "new": 525,
+        "source": "Sacra 公司页：Replit 2026 年 4 月年化收入 $525M，2025 年底 $300M；Value Add VC《How Does Replit Make Money: $525M ARR, $9B Valuation》独立复述同一数字。时间线自洽：2025-09 TechCrunch 报道 $150M 年化 → 2025 年底 $300M → 2026-04 $525M。公司自述'2026 年底达到 $1B ARR'为前瞻指引，按规则不采用",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-09-03",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "Replit",
+        "field": "arrg",
+        "old": null,
+        "new": 1775,
+        "source": "Sacra 公司页：2026 年 4 月年化收入 $525M，同比 +1,775%（即 2025 年 4 月约 $28M）。与 2025-09-10 TechCrunch《Replit hits $3B valuation on $150M annualized revenue》及'不到一年从 $2.8M 涨到 $150M'的公开叙述自洽。单一来源，conf=medium",
+        "conf": "medium",
+        "forced": null
+      },
+      {
+        "date": "2026-09-03",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "AlphaSense",
+        "field": "arrg",
+        "old": null,
+        "new": 40,
+        "source": "The Information《AlphaSense Tops $700 Million in Annual Recurring Revenue, Takes IPO Steps》(2026-08) 与 Enterprise DNA AI Pulse 2026-08-30：ARR 突破 $700M，同比 +40%，Q2 2026 客户 7,800 家，并开始把部分定价从 $10–20K/席位年费转向按用量计费",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-09-03",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "Legora",
+        "field": "val",
+        "old": 5.55,
+        "new": 5.6,
+        "source": "TechCrunch 2026-04-30《Legal AI startup Legora hits $5.6B valuation》：D 轮追加 $50M（合计 $600M）后 post-money 估值 $5.6B（3 月首次 close 时为 $5.55B，Accel 领投）；Tech Startups 2026-08-13 复述'较四个月前的 $5.6B 估值'，为当前最新已交割口径。注：公司另于 2026-08 在早期接触中寻求 ≥$100 亿估值（Bloomberg/Tech Startups 2026-08-13），尚无条款、未交割，按口径不写入 valPending",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-09-03",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "Cognition",
+        "field": "valPending",
+        "old": null,
+        "new": 47,
+        "source": "Bloomberg 2026-09-02《AI Startup Cognition Set to Raise Around $1 Billion at a $47 Billion Value》；此前 Bloomberg/TechCrunch/PYMNTS 2026-08-12 报道以 $40B 估值洽谈，三周内抬升至 $47B。轮次尚未交割，按口径写入 valPending，val 维持已交割的 $26B 不动",
+        "conf": "high",
+        "forced": null
       }
     ],
     "review_queue": [
@@ -1603,6 +1687,16 @@
         "reason": "as_of 2026-06-16 is older than the value already on file (2026-09-01)",
         "source": "太平洋科技/搜狐 2026-06-18，引用企查查工商登记：杭州深度求索于2026-06-16完成首轮外部融资约人民币510亿元，投后整体估值接近人民币4000亿元；按1 USD = 7.1 RMB折算 ≈ 563亿美元，取56.0；同日紫荊網引外電亦称本轮后估值突破500亿美元（HK$3,900亿）。这是目前唯一已完成（closed）的一轮",
         "url": "https://www.sohu.com/a/1038418676_223764"
+      },
+      {
+        "date": "2026-09-03",
+        "pass": "routine-weekly",
+        "entity": "Ambience Healthcare",
+        "field": "val",
+        "proposed": 1.25,
+        "reason": "as_of 2025-07-29 is older than the value already on file (2025-11-28)",
+        "source": "Becker's Hospital Review / Modern Healthcare / Fierce Healthcare 2025-07-29 三家独立报道：Ambience 完成 $243M C 轮，由 Oak HC/FT 与 a16z 联合领投，post-money 估值 $1.25B（库存值 1.0 对应 pre-money 口径，Sacra 亦按 $1B pre 计算倍数）。2026 年内未见新轮次，这仍是最近一次已交割估值",
+        "url": "https://www.beckershospitalreview.com/healthcare-information-technology/ai/ambience-healthcare-reaches-1-25b-valuation/"
       }
     ],
     "runs": {
@@ -1638,6 +1732,16 @@
         "error": null,
         "weeks": 51,
         "wow_pct": 21.0
+      },
+      "routine-weekly": {
+        "at": "2026-09-03",
+        "ok": true,
+        "error": null,
+        "applied": 8,
+        "rejected": 1,
+        "confirmed": 26,
+        "promoted": 0,
+        "queued": 0
       }
     }
   },
@@ -2479,7 +2583,7 @@
       "ti": "high",
       "biz": "B2B+B2C",
       "val": null,
-      "m": 97,
+      "m": 95,
       "retired": false,
       "prov": {
         "arrg": {
@@ -2567,7 +2671,7 @@
       "ti": "high",
       "biz": "B2C+B2B",
       "val": 20,
-      "m": 82,
+      "m": 81,
       "retired": false,
       "prov": {
         "val": {
@@ -2763,7 +2867,7 @@
       "ti": "med",
       "biz": "B2B+B2C",
       "val": 11,
-      "m": 68,
+      "m": 67,
       "retired": false,
       "prov": {
         "val": {
@@ -2920,7 +3024,7 @@
       "ti": "ultra",
       "biz": "B2B+B2C",
       "val": 5.3,
-      "m": 27,
+      "m": 26,
       "retired": false,
       "prov": {
         "uc": {
@@ -3002,7 +3106,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 11,
-      "m": 57,
+      "m": 56,
       "retired": false,
       "prov": {
         "arr": {
@@ -3105,7 +3209,7 @@
       "ti": "med",
       "biz": "B2B",
       "val": 7.2,
-      "m": 32,
+      "m": 33,
       "retired": false,
       "prov": {
         "arrg": {
@@ -3283,7 +3387,7 @@
       "ti": "ultra",
       "biz": "B2B+B2C",
       "val": 0.5,
-      "m": 57,
+      "m": 56,
       "retired": false,
       "prov": {
         "arr": {
@@ -3372,7 +3476,7 @@
       "ti": "high",
       "biz": "B2C",
       "val": 5.4,
-      "m": 79,
+      "m": 76,
       "retired": false,
       "prov": {
         "arrg": {
@@ -3447,7 +3551,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 1.9,
-      "m": 26,
+      "m": 25,
       "retired": false,
       "prov": {
         "val": {
@@ -3536,38 +3640,56 @@
       "uc": "Agent OS企业客服与语音智能体",
       "cat": "support",
       "stage": "scale",
-      "arr": 150,
+      "arr": 200,
       "arrg": 400,
       "mau": 0.2,
       "maug": 350,
       "ti": "high",
       "biz": "B2B",
       "val": 15.8,
-      "m": 50,
+      "m": 54,
       "retired": false,
       "prov": {
         "val": {
           "as_of": "2026-05-04",
-          "source": "CNBC 2026-05-04（\"Bret Taylor's Sierra raises nearly $1B\"，$950M Series E 由 Tiger Global 与 GV 领投，投后估值 $15.8B；CNBC 视频同日标题为 \"Sierra closes latest funding round at nearly $16 billion valuation\"，公司官方博客称 \"valuation of over $15 billion\"，均为美元报价，无需汇率换算）",
+          "checked": "2026-09-03",
+          "source": "CNBC 2026-05-04《Bret Taylor's Sierra raises nearly $1B in latest AI capital push》与 Tech Startups 2026-05-04：$950M E 轮已完成，post-money $15.8B。复核未见更新轮次，值不变",
           "url": "https://www.cnbc.com/2026/05/04/bret-taylor-sierra-fundraise-openai.html",
           "conf": "high"
         },
         "stage": {
           "as_of": "2026-05-04",
-          "source": "Sierra 官方博客 2026-02-06 与 CNBC 2026-05-04：ARR 超过 $150M、累计融资约 $1.58B、客户覆盖 40% 的《财富》50 强，已超出 growth 区间",
-          "url": "https://sierra.ai/blog/better-customer-experiences-built-on-sierra",
+          "checked": "2026-09-03",
+          "source": "ARR Club / CNBC 2026-05-04：8 个季度做到 $200M ARR、累计融资约 $1.58B、客户中 50% 收入超 $10 亿，仍属 scale 阶段",
+          "url": "https://www.arr.club/sierra",
           "conf": "medium"
         },
         "ti": {
           "as_of": "2026-05-04",
-          "source": "Sacra 公司页（语音代理 2025-10 起超过文本成为主渠道，2025 年预计承载数亿次 AI 通话）+ CNBC 2026-05-04（代理已处理数十亿次交互）；语音+多轮企业代理属高 token 消耗",
+          "checked": "2026-09-03",
+          "source": "CNBC 2026-05-04 与 Sacra 公司页：语音代理已成主渠道、累计处理数十亿次交互，token 密度维持 high",
           "url": "https://sacra.com/c/sierra/",
           "conf": "medium"
         },
         "uc": {
           "as_of": "2026-05-04",
-          "source": "Sierra 官方博客 2026-02-06 / 2026-05-04：旗舰为 Agent OS、Agent Data Platform 与全渠道语音代理，覆盖售前到留存全生命周期，不再只是\"客服\"",
-          "url": "https://sierra.ai/blog/better-customer-experiences-built-on-sierra",
+          "checked": "2026-09-03",
+          "source": "Sierra 官方博客与 CNBC 2026-05-04：旗舰仍为 Agent OS 与全渠道语音/文本客服智能体，覆盖 40% 的《财富》50 强，按每次成功解决约 $1.50 计费",
+          "url": "https://sierra.ai/blog/year-two-in-review",
+          "conf": "medium"
+        },
+        "arr": {
+          "as_of": "2026-05-31",
+          "checked": "2026-09-03",
+          "source": "ARR Club 专题《Sierra ARR surpasses $200M, doubling from $100M in just two quarters》：2026年5月 ARR 达 $200M；getLatka 公司页同步显示 $200M ARR / $15.8B 估值；Sacra 公司页称 2025 年底约 $130M、2024 年底约 $26M。三处独立摘要一致，口径为 run-rate ARR（按解决量计费的经常性收入），非累计收入",
+          "url": "https://www.arr.club/sierra/sierra-arr-surpasses-200m-doubling-from-100m-in-just-two-quarters",
+          "conf": "high"
+        },
+        "ownModel": {
+          "as_of": "2026-05-04",
+          "checked": "2026-09-03",
+          "source": "CNBC 2026-05-04：Sierra 定位为'构建在 OpenAI 与 Anthropic 基础模型之上的新一类软件公司'，未见自训基座模型披露，status 维持 none",
+          "url": "https://www.cnbc.com/2026/05/04/bret-taylor-sierra-fundraise-openai.html",
           "conf": "medium"
         }
       },
@@ -3578,7 +3700,8 @@
       },
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "checked_at": "2026-09-03"
     },
     {
       "name": "Granola",
@@ -3592,7 +3715,7 @@
       "ti": "low",
       "biz": "B2B+B2C",
       "val": 1.5,
-      "m": 55,
+      "m": 54,
       "retired": false,
       "prov": {
         "val": {
@@ -3667,7 +3790,7 @@
       "ti": "ultra",
       "biz": "B2B",
       "val": 26,
-      "m": 93,
+      "m": 89,
       "retired": false,
       "prov": {
         "arr": {
@@ -3732,6 +3855,13 @@
           "url": "https://www.cerebras.ai/blog/case-study-cognition-x-cerebras",
           "conf": "medium",
           "checked": "2026-09-01"
+        },
+        "valPending": {
+          "as_of": "2026-09-02",
+          "checked": "2026-09-03",
+          "source": "Bloomberg 2026-09-02《AI Startup Cognition Set to Raise Around $1 Billion at a $47 Billion Value》；此前 Bloomberg/TechCrunch/PYMNTS 2026-08-12 报道以 $40B 估值洽谈，三周内抬升至 $47B。轮次尚未交割，按口径写入 valPending，val 维持已交割的 $26B 不动",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-02/ai-startup-cognition-set-to-raise-around-1-billion-at-a-47-billion-value",
+          "conf": "high"
         }
       },
       "ownModel": {
@@ -3744,10 +3874,10 @@
           "SWE-1"
         ]
       },
-      "checked_at": "2026-09-01",
+      "checked_at": "2026-09-03",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": 47
     },
     {
       "name": "Luma AI",
@@ -4088,7 +4218,7 @@
       "ti": "high",
       "biz": "B2B+B2C",
       "val": 0.55,
-      "m": 23,
+      "m": 24,
       "retired": false,
       "prov": {
         "arr": {
@@ -4178,8 +4308,8 @@
       "maug": null,
       "ti": "high",
       "biz": "B2B",
-      "val": 5.55,
-      "m": 48,
+      "val": 5.6,
+      "m": 47,
       "ownModel": {
         "status": "none",
         "models": [
@@ -4191,27 +4321,31 @@
       "retired": false,
       "prov": {
         "arr": {
-          "as_of": "2026-06-30",
-          "source": "Sacra 公司页（2026-08 更新）估算 Legora 2026年6月 ARR 达 1.5 亿美元（较2025年底 5000 万美元）；Lawyer Monthly 2026-08 报道 ARR 1.5 亿美元、正洽谈100亿美元以上估值；估值 55.5 亿美元来自 2026-03-10 公司公告的 5.5 亿美元 D 轮（已交割）",
-          "url": "https://sacra.com/c/legora/",
+          "as_of": "2026-08-13",
+          "checked": "2026-09-03",
+          "source": "Tech Startups 2026-08-13：Legora 2026 年二季度 ARR 环比 +50% 至 $150M；Sacra 公司页同步（2026-06 达 $150M，2025 年底 $50M，2024 年底 $3M）。两处独立摘要一致，库存值 150 正确",
+          "url": "https://techstartups.com/2026/08/13/legal-ai-startup-legora-seeks-10-billion-valuation-nearly-doubling-its-worth-in-just-four-months/",
           "conf": "high"
         },
         "ownModel": {
-          "as_of": "2026-06-30",
-          "source": "Sacra 公司页（2026-08 更新）估算 Legora 2026年6月 ARR 达 1.5 亿美元（较2025年底 5000 万美元）；Lawyer Monthly 2026-08 报道 ARR 1.5 亿美元、正洽谈100亿美元以上估值；估值 55.5 亿美元来自 2026-03-10 公司公告的 5.5 亿美元 D 轮（已交割）",
+          "as_of": "2026-08-13",
+          "checked": "2026-09-03",
+          "source": "Sacra 公司页与 TechCrunch 报道：Legora 的协作式法律工作台构建在第三方前沿模型之上（OpenAI / Anthropic），未披露自训基座，status 维持 none",
           "url": "https://sacra.com/c/legora/",
-          "conf": "high"
+          "conf": "medium"
         },
         "val": {
-          "as_of": "2026-06-30",
-          "source": "Sacra 公司页（2026-08 更新）估算 Legora 2026年6月 ARR 达 1.5 亿美元（较2025年底 5000 万美元）；Lawyer Monthly 2026-08 报道 ARR 1.5 亿美元、正洽谈100亿美元以上估值；估值 55.5 亿美元来自 2026-03-10 公司公告的 5.5 亿美元 D 轮（已交割）",
-          "url": "https://sacra.com/c/legora/",
+          "as_of": "2026-08-13",
+          "checked": "2026-09-03",
+          "source": "TechCrunch 2026-04-30《Legal AI startup Legora hits $5.6B valuation》：D 轮追加 $50M（合计 $600M）后 post-money 估值 $5.6B（3 月首次 close 时为 $5.55B，Accel 领投）；Tech Startups 2026-08-13 复述'较四个月前的 $5.6B 估值'，为当前最新已交割口径。注：公司另于 2026-08 在早期接触中寻求 ≥$100 亿估值（Bloomberg/Tech Startups 2026-08-13），尚无条款、未交割，按口径不写入 valPending",
+          "url": "https://techcrunch.com/2026/04/30/legal-ai-startup-legora-hits-5-6-valuation-and-its-battle-with-harvey-just-got-hotter/",
           "conf": "high"
         }
       },
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "checked_at": "2026-09-03"
     },
     {
       "name": "OpenEvidence",
@@ -4225,7 +4359,7 @@
       "ti": "ultra",
       "biz": "B2B",
       "val": 12.0,
-      "m": 67,
+      "m": 66,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -4271,7 +4405,7 @@
       "ti": "ultra",
       "biz": "B2C+B2B",
       "val": 13.3,
-      "m": 86,
+      "m": 83,
       "ownModel": {
         "status": "none",
         "models": [
@@ -4283,27 +4417,31 @@
       "retired": false,
       "prov": {
         "arr": {
-          "as_of": "2026-05-31",
-          "source": "Sacra 公司页（2026-08 更新）估算 2026年5月年化收入 5 亿美元（2025年7月为 1 亿美元）；Lovable 官方 2026-08-12 公告 4 亿美元 C 轮、估值 133 亿美元（已交割）",
-          "url": "https://sacra.com/c/lovable/",
+          "as_of": "2026-06-09",
+          "checked": "2026-09-03",
+          "source": "TechCrunch 2026-06-09《Lovable says it has hit $500M in annualized revenue, with 1 million new projects a week》。2026-08-12 的 C 轮报道（Tech Startups / Dealroom / Techzine）称 ARR '接近'/'预计 8 月底达到' $600M，属公司口径的前瞻目标、无已实现确认，按规则不采用，arr 维持 500",
+          "url": "https://techcrunch.com/2026/06/09/lovable-says-it-has-hit-500m-in-annualized-revenue-with-1-million-new-projects-a-week/",
           "conf": "high"
         },
         "ownModel": {
-          "as_of": "2026-05-31",
-          "source": "Sacra 公司页（2026-08 更新）估算 2026年5月年化收入 5 亿美元（2025年7月为 1 亿美元）；Lovable 官方 2026-08-12 公告 4 亿美元 C 轮、估值 133 亿美元（已交割）",
-          "url": "https://sacra.com/c/lovable/",
-          "conf": "high"
+          "as_of": "2026-08-12",
+          "checked": "2026-09-03",
+          "source": "Stripe/OpenRouter 收购报道列 Lovable 为 OpenRouter 路由的重度用户（跨 80+ 提供方的 400+ 模型），公开材料未见自训基座模型，status 维持 none",
+          "url": "https://stripe.com/newsroom/news/stripe-agrees-to-acquire-openrouter",
+          "conf": "medium"
         },
         "val": {
-          "as_of": "2026-05-31",
-          "source": "Sacra 公司页（2026-08 更新）估算 2026年5月年化收入 5 亿美元（2025年7月为 1 亿美元）；Lovable 官方 2026-08-12 公告 4 亿美元 C 轮、估值 133 亿美元（已交割）",
-          "url": "https://sacra.com/c/lovable/",
+          "as_of": "2026-08-12",
+          "checked": "2026-09-03",
+          "source": "Tech Startups 2026-08-12、Techzine、Dealroom：$400M C 轮由 Menlo Ventures 与 EQT 管理的 Scaleup Europe Fund 联合领投，post-money $13.3B 已交割（8 个月内自 $6B+ 翻倍）。与库存值一致",
+          "url": "https://techstartups.com/2026/08/12/swedish-vibe-coding-startup-lovable-raises-400-million-at-13-3-billion-valuation-as-arr-nears-600-million/",
           "conf": "high"
         }
       },
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "checked_at": "2026-09-03"
     },
     {
       "name": "Cresta",
@@ -4317,7 +4455,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 1.6,
-      "m": 34,
+      "m": 33,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -4329,27 +4467,31 @@
       "retired": false,
       "prov": {
         "arr": {
-          "as_of": "2026-04-30",
-          "source": "Axios Pro 2026-04-30 独家：Cresta 公司自述 ARR 超过 1 亿美元；估值 16 亿美元来自 2024 年 1.25 亿美元 D 轮（已交割）",
-          "url": "https://www.axios.com/pro/enterprise-software-deals/2026/04/30/a16z-sequoia-ai-startup-cresta-100-million-arr",
-          "conf": "high"
+          "as_of": "2026-05-01",
+          "checked": "2026-09-03",
+          "source": "ARR Club 公司页《Cresta ARR 2026: $100M Revenue》：ARR 于 2026-05-01 达 $100M。getLatka 仍显示 2025 年 $52M 估算（旧期间，按'先指标后新旧'不采用）。库存值 100 正确",
+          "url": "https://www.arr.club/cresta",
+          "conf": "medium"
         },
         "ownModel": {
-          "as_of": "2026-04-30",
-          "source": "Axios Pro 2026-04-30 独家：Cresta 公司自述 ARR 超过 1 亿美元；估值 16 亿美元来自 2024 年 1.25 亿美元 D 轮（已交割）",
-          "url": "https://www.axios.com/pro/enterprise-software-deals/2026/04/30/a16z-sequoia-ai-startup-cresta-100-million-arr",
-          "conf": "high"
+          "as_of": "2026-05-01",
+          "checked": "2026-09-03",
+          "source": "Cresta 产品材料与 getMacha 2026 评测：实时坐席辅助基于自研微调的呼叫中心专用模型，叠加第三方通用模型，status 维持 hybrid",
+          "url": "https://www.getmacha.com/blog/cresta-ai-complete-guide",
+          "conf": "medium"
         },
         "val": {
-          "as_of": "2026-04-30",
-          "source": "Axios Pro 2026-04-30 独家：Cresta 公司自述 ARR 超过 1 亿美元；估值 16 亿美元来自 2024 年 1.25 亿美元 D 轮（已交割）",
-          "url": "https://www.axios.com/pro/enterprise-software-deals/2026/04/30/a16z-sequoia-ai-startup-cresta-100-million-arr",
-          "conf": "high"
+          "as_of": "2026-09-03",
+          "checked": "2026-09-03",
+          "source": "复核当日 getLatka 与 Tracxn 公司页均显示 $1.6B。该值来自 2022-03 的 C 轮（PRNewswire：估值四倍至 $1.6B）；此后 2024-11 的 $125M D 轮（WiL 与 QIA 联合领投）未披露估值，累计融资约 $2.82 亿。无更新的已交割定价轮次，故维持 1.6",
+          "url": "https://getlatka.com/companies/cresta",
+          "conf": "medium"
         }
       },
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "checked_at": "2026-09-03"
     },
     {
       "name": "Clay",
@@ -4363,7 +4505,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 5.0,
-      "m": 48,
+      "m": 47,
       "ownModel": {
         "status": "none",
         "models": [
@@ -4376,7 +4518,8 @@
       "prov": {
         "arr": {
           "as_of": "2026-05-31",
-          "source": "Sacra 公司页（2026-06 更新）估算 Clay 2026年5月 ARR 1.5 亿美元（2025年底 1.08 亿美元）；估值 50 亿美元为 2026年1月 DST 领投的 5500 万美元员工要约收购已完成价（2025年8月 C 轮为 31 亿美元）",
+          "checked": "2026-09-03",
+          "source": "Sacra 公司页：Clay 2026 年 5 月 ARR 达 $150M，2025 年底为 $108M；Startup Riders Growth Index 同步。getLatka 的 $100M 为更早期间，未采用。库存值 150 正确",
           "url": "https://sacra.com/c/clay/",
           "conf": "high"
         },
@@ -4384,18 +4527,21 @@
           "as_of": "2026-05-31",
           "source": "Sacra 公司页（2026-06 更新）估算 Clay 2026年5月 ARR 1.5 亿美元（2025年底 1.08 亿美元）；估值 50 亿美元为 2026年1月 DST 领投的 5500 万美元员工要约收购已完成价（2025年8月 C 轮为 31 亿美元）",
           "url": "https://sacra.com/c/clay/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-03"
         },
         "val": {
           "as_of": "2026-05-31",
           "source": "Sacra 公司页（2026-06 更新）估算 Clay 2026年5月 ARR 1.5 亿美元（2025年底 1.08 亿美元）；估值 50 亿美元为 2026年1月 DST 领投的 5500 万美元员工要约收购已完成价（2025年8月 C 轮为 31 亿美元）",
           "url": "https://sacra.com/c/clay/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-03"
         }
       },
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "checked_at": "2026-09-03"
     },
     {
       "name": "AlphaSense",
@@ -4403,13 +4549,13 @@
       "cat": "finance",
       "stage": "scale",
       "arr": 700.0,
-      "arrg": null,
+      "arrg": 40,
       "mau": null,
       "maug": null,
       "ti": "high",
       "biz": "B2B",
       "val": 7.5,
-      "m": 94,
+      "m": 36,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -4421,27 +4567,38 @@
       "retired": false,
       "prov": {
         "arr": {
-          "as_of": "2026-06-30",
-          "source": "Sacra 公司页（2026-07 更新）估算 2026年6月 ARR 7 亿美元；fintech.global 2026-06-04 报道公司确认 2026 年 Q1 ARR 超 6 亿美元、3.5 亿美元轮次估值 75 亿美元（已交割）",
-          "url": "https://sacra.com/c/alphasense/",
-          "conf": "medium"
+          "as_of": "2026-08-30",
+          "checked": "2026-09-03",
+          "source": "The Information《AlphaSense Tops $700 Million in Annual Recurring Revenue, Takes IPO Steps》(2026-08) + Enterprise DNA AI Pulse 2026-08-30 + industry-lens 2026-08 报告：Q2 2026 ARR 突破 $700M、同比 +40%、7,800 家客户，并已启动 IPO 准备。库存值 700 正确，来源更新为 8 月口径（getLatka 仍显示 $600M，为 2026-06 轮次时的旧值，未采用）",
+          "url": "https://www.theinformation.com/articles/alphasense-tops-700-million-annual-recurring-revenue-takes-ipo-steps",
+          "conf": "high"
         },
         "ownModel": {
           "as_of": "2026-06-30",
           "source": "Sacra 公司页（2026-07 更新）估算 2026年6月 ARR 7 亿美元；fintech.global 2026-06-04 报道公司确认 2026 年 Q1 ARR 超 6 亿美元、3.5 亿美元轮次估值 75 亿美元（已交割）",
           "url": "https://sacra.com/c/alphasense/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-03"
         },
         "val": {
           "as_of": "2026-06-30",
           "source": "Sacra 公司页（2026-07 更新）估算 2026年6月 ARR 7 亿美元；fintech.global 2026-06-04 报道公司确认 2026 年 Q1 ARR 超 6 亿美元、3.5 亿美元轮次估值 75 亿美元（已交割）",
           "url": "https://sacra.com/c/alphasense/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-03"
+        },
+        "arrg": {
+          "as_of": "2026-08-30",
+          "checked": "2026-09-03",
+          "source": "The Information《AlphaSense Tops $700 Million in Annual Recurring Revenue, Takes IPO Steps》(2026-08) 与 Enterprise DNA AI Pulse 2026-08-30：ARR 突破 $700M，同比 +40%，Q2 2026 客户 7,800 家，并开始把部分定价从 $10–20K/席位年费转向按用量计费",
+          "url": "https://enterprisedna.co/resources/ai-pulse/ai-pulse-2026-08-30-alphasense-hedges-away-from-pure-seat-pricing-at-700m-arr/",
+          "conf": "high"
         }
       },
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "checked_at": "2026-09-03"
     },
     {
       "name": "Synthesia",
@@ -4455,7 +4612,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 4.0,
-      "m": 48,
+      "m": 47,
       "ownModel": {
         "status": "primary",
         "models": [
@@ -4466,27 +4623,31 @@
       "retired": false,
       "prov": {
         "arr": {
-          "as_of": "2026-01-31",
-          "source": "Sacra 公司页估算 2025年9月 ARR 1.46 亿美元；Unite.ai 2026-01 报道 2 亿美元 E 轮（GV 领投）时 ARR 1.5 亿美元、投后估值 40 亿美元（已交割）",
+          "as_of": "2026-04-30",
+          "checked": "2026-09-03",
+          "source": "Sacra 公司页（含 2026-04 数据点：NRR 超过 140%、$100K+ 合同数 12 个月内三倍）仍将当前 ARR 记为 $150M，CFO Daniel Kim 表示预计 2026 年内越过 $200M。$200M 属年内目标而非当前 run-rate，按规则不采用，arr 维持 150",
           "url": "https://sacra.com/c/synthesia/",
           "conf": "medium"
         },
         "ownModel": {
           "as_of": "2026-01-31",
-          "source": "Sacra 公司页估算 2025年9月 ARR 1.46 亿美元；Unite.ai 2026-01 报道 2 亿美元 E 轮（GV 领投）时 ARR 1.5 亿美元、投后估值 40 亿美元（已交割）",
-          "url": "https://sacra.com/c/synthesia/",
+          "checked": "2026-09-03",
+          "source": "Synthesia 官方 E 轮公告：自研 EXPRESS 系列数字人/视频生成模型仍是产品核心，正扩展到对话式 agent 驱动的学习体验，status 维持 primary",
+          "url": "https://www.synthesia.io/post/series-e-200-million-4-billion-valuation-future-work",
           "conf": "medium"
         },
         "val": {
           "as_of": "2026-01-31",
-          "source": "Sacra 公司页估算 2025年9月 ARR 1.46 亿美元；Unite.ai 2026-01 报道 2 亿美元 E 轮（GV 领投）时 ARR 1.5 亿美元、投后估值 40 亿美元（已交割）",
-          "url": "https://sacra.com/c/synthesia/",
-          "conf": "medium"
+          "checked": "2026-09-03",
+          "source": "Synthesia 官方 2026-01 公告、CNBC 2026-01-26、TechCrunch 2026-01-26：$200M E 轮由 GV 领投（Nvidia NVentures、Alphabet 参与），估值 $4B 已交割并含员工老股变现，较 2025-01 的 $2.1B 近乎翻倍。复核未见更新轮次",
+          "url": "https://www.synthesia.io/post/series-e-200-million-4-billion-valuation-future-work",
+          "conf": "high"
         }
       },
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "checked_at": "2026-09-03"
     },
     {
       "name": "Manus",
@@ -4500,7 +4661,7 @@
       "ti": "ultra",
       "biz": "B2C+B2B",
       "val": null,
-      "m": 78,
+      "m": 75,
       "ownModel": {
         "status": "none",
         "models": [
@@ -4533,14 +4694,14 @@
       "uc": "云端AI Agent应用开发平台",
       "cat": "coding",
       "stage": "scale",
-      "arr": 300.0,
-      "arrg": null,
+      "arr": 525,
+      "arrg": 1775,
       "mau": null,
       "maug": null,
       "ti": "ultra",
       "biz": "B2C+B2B",
       "val": 9.0,
-      "m": 67,
+      "m": 96,
       "ownModel": {
         "status": "none",
         "models": [
@@ -4552,27 +4713,38 @@
       "retired": false,
       "prov": {
         "arr": {
-          "as_of": "2026-01-14",
-          "source": "getLatka 公司页（2026-01-14 更新）：Replit 2025 年 ARR 3 亿美元，2026 年 4 亿美元轮次估值 90 亿美元",
-          "url": "https://getlatka.com/companies/replit.com",
-          "conf": "medium"
+          "as_of": "2026-04-30",
+          "checked": "2026-09-03",
+          "source": "Sacra 公司页：Replit 2026 年 4 月年化收入 $525M，2025 年底 $300M；Value Add VC《How Does Replit Make Money: $525M ARR, $9B Valuation》独立复述同一数字。时间线自洽：2025-09 TechCrunch 报道 $150M 年化 → 2025 年底 $300M → 2026-04 $525M。公司自述'2026 年底达到 $1B ARR'为前瞻指引，按规则不采用",
+          "url": "https://sacra.com/c/replit/",
+          "conf": "high"
         },
         "ownModel": {
-          "as_of": "2026-01-14",
-          "source": "getLatka 公司页（2026-01-14 更新）：Replit 2025 年 ARR 3 亿美元，2026 年 4 亿美元轮次估值 90 亿美元",
-          "url": "https://getlatka.com/companies/replit.com",
+          "as_of": "2026-03-31",
+          "checked": "2026-09-03",
+          "source": "Replit 官方融资公告与 Sacra 公司页：Agent 依赖 Anthropic Claude / OpenAI GPT，未披露自训基座模型，status 维持 none",
+          "url": "https://sacra.com/c/replit/",
           "conf": "medium"
         },
         "val": {
-          "as_of": "2026-01-14",
-          "source": "getLatka 公司页（2026-01-14 更新）：Replit 2025 年 ARR 3 亿美元，2026 年 4 亿美元轮次估值 90 亿美元",
-          "url": "https://getlatka.com/companies/replit.com",
+          "as_of": "2026-03-31",
+          "checked": "2026-09-03",
+          "source": "Replit 官方公告《Replit Raises $400M at a $9B Valuation》与 FNEX、CryptoRank 复述：2026 年 3 月 D 轮由 Georgian 领投，$9B 已交割，较半年前（2025-09 Prysm 领投的 $3B）三倍。复核未见更新轮次",
+          "url": "https://replit.com/news/funding-announcement",
+          "conf": "high"
+        },
+        "arrg": {
+          "as_of": "2026-04-30",
+          "checked": "2026-09-03",
+          "source": "Sacra 公司页：2026 年 4 月年化收入 $525M，同比 +1,775%（即 2025 年 4 月约 $28M）。与 2025-09-10 TechCrunch《Replit hits $3B valuation on $150M annualized revenue》及'不到一年从 $2.8M 涨到 $150M'的公开叙述自洽。单一来源，conf=medium",
+          "url": "https://sacra.com/c/replit/",
           "conf": "medium"
         }
       },
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "checked_at": "2026-09-03"
     },
     {
       "name": "Mercor",
@@ -4682,7 +4854,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 1.0,
-      "m": 25,
+      "m": 22,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -4714,21 +4886,22 @@
       },
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "checked_at": "2026-09-03"
     },
     {
       "name": "Decagon",
       "uc": "企业自主客服AI智能体",
       "cat": "support",
       "stage": "growth",
-      "arr": 35.0,
+      "arr": 100,
       "arrg": null,
       "mau": null,
       "maug": null,
       "ti": "high",
       "biz": "B2B",
       "val": 4.5,
-      "m": 9,
+      "m": 33,
       "ownModel": {
         "status": "none",
         "models": [
@@ -4740,27 +4913,31 @@
       "retired": false,
       "prov": {
         "arr": {
-          "as_of": "2025-12-31",
-          "source": "Sacra 公司页/研究报告（2026-04-13 更新）：Decagon 2025 年 ARR 约 3500 万美元；2026年1月 2.5 亿美元 D 轮（Coatue、Index 领投）估值 45 亿美元（已交割）",
+          "as_of": "2026-07-31",
+          "checked": "2026-09-03",
+          "source": "Sacra 公司页/研究报告：Decagon 2026 年 7 月年化收入（annualized revenue）达 $100M，2025 年底为 $44M；Q3 2025 GAAP 收入与 ARR 同比均增长 3 倍以上；2025 年新增 100+ 全球企业客户（Avis、Mercado Libre、Deutsche Telekom 等）。口径为年化 run-rate。主力来源为 Sacra 单一机构，故 conf=medium",
           "url": "https://sacra.com/c/decagon/",
           "conf": "medium"
         },
         "ownModel": {
-          "as_of": "2025-12-31",
-          "source": "Sacra 公司页/研究报告（2026-04-13 更新）：Decagon 2025 年 ARR 约 3500 万美元；2026年1月 2.5 亿美元 D 轮（Coatue、Index 领投）估值 45 亿美元（已交割）",
-          "url": "https://sacra.com/c/decagon/",
+          "as_of": "2026-01-28",
+          "checked": "2026-09-03",
+          "source": "Decagon 官方 Series D 公告与 Sacra 公司页：产品构建在第三方前沿模型之上（OpenAI / Anthropic），按会话或按成功解决计费，未披露自训基座，status 维持 none",
+          "url": "https://decagon.ai/blog/series-d-announcement",
           "conf": "medium"
         },
         "val": {
-          "as_of": "2025-12-31",
-          "source": "Sacra 公司页/研究报告（2026-04-13 更新）：Decagon 2025 年 ARR 约 3500 万美元；2026年1月 2.5 亿美元 D 轮（Coatue、Index 领投）估值 45 亿美元（已交割）",
-          "url": "https://sacra.com/c/decagon/",
-          "conf": "medium"
+          "as_of": "2026-01-28",
+          "checked": "2026-09-03",
+          "source": "Bloomberg 2026-01-28《AI Customer Support Startup Decagon Valued at $4.5 Billion》与 Forbes 2026-02-06：$250M D 轮由 Coatue 与 Index 领投，估值自 $1.5B 三倍至 $4.5B，已交割。复核未见更新轮次",
+          "url": "https://www.bloomberg.com/news/articles/2026-01-28/ai-customer-support-startup-decagon-valued-at-4-5-billion",
+          "conf": "high"
         }
       },
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "checked_at": "2026-09-03"
     },
     {
       "name": "Rogo",
@@ -4770,7 +4947,7 @@
       "val": 2.0,
       "listed": "",
       "parent": "",
-      "m": 57,
+      "m": 54,
       "retired": false,
       "checked_at": "2026-09-02",
       "prov": {
@@ -4817,112 +4994,111 @@
   "ai_progress": {
     "enterprise": [
       {
-        "title": "McKinsey 2026 State of AI：部署在涨，盈利仍平",
-        "summary": "McKinsey 最新《State of AI 2026》调查显示，越来越多企业加大 AI 部署、相信投资终将回报，但真正报告盈利提升的比例基本没动；约 37% 受访者称 AI 对 EBIT 有一定影响，与 2025 年调查基本持平。核心矛盾是投入普遍、财务回报集中在少数头部组织。",
-        "example": "McKinsey 调查了全球跨行业 1,719 名专业人士与业务负责人，仅 37% 将部分 EBIT 影响归因于 AI 使用，与去年持平。",
-        "company": "McKinsey (调查对象为全球跨行业企业)",
-        "source": "The Register 报道 McKinsey State of AI 2026",
-        "date": "2026-08-25",
-        "url": "https://www.theregister.com/ai-and-ml/2026/08/25/mckinsey_says_enterprise_ai_is_finally_on_the_road_to_roi/"
+        "title": "Cisco 给全部 9 万员工每人配一个 agent，靠分级路由压成本",
+        "summary": "Cisco 于 8 月 27 日的官方博客宣布把个人 AI 助理 MyAgent 铺给全球约 9 万名员工，自新财年（7 月底）起分批开通。MyAgent 跑在 Cisco 自建的多模型、可治理平台 Circuit 上，能在 Outlook、Webex、Jira、SharePoint 之间执行受监督的自主工作流——员工给目标，系统自己拆步骤。真正值得看的是成本设计：例行任务走普通自动化脚本，中等复杂度走跑在 Cisco 自有服务器上的开源模型，只有最复杂的推理才送到昂贵的前沿模型。这是'全员 agent'第一次以可复制的单位成本结构公开落地，也印证了模型路由正在从工具变成企业标配。",
+        "example": "Cisco 运营副总裁 Thimaya Subaiya 8 月 27 日撰文披露 MyAgent 面向约 90,000 名员工铺开，按任务复杂度三级路由：脚本 → 自托管开源模型 → 前沿模型。",
+        "company": "Cisco",
+        "source": "Cisco 官方博客 2026-08-27；PYMNTS 报道",
+        "date": "2026-08-27",
+        "url": "https://blogs.cisco.com/news/my-agent-and-the-rise-of-ambient-intelligence-ciscos-next-step-in-enterprise-ai"
       },
       {
-        "title": "制造业进入'治理即运行时'阶段：多智能体上生产线",
-        "summary": "过去一周制造业 agentic AI 落地更强调'把治理做进运行时'：ForceEquals 的 Agent Momentum 作为控制+运营层，拦截 agent 动作、把关键决策升级给人工审批、再把结果反馈回 agent 组合，专为跨业务单元批量管理多个 agent 设计；TestMu(原 LambdaTest)推出 Agent Assurance，从代码派生端到端测试、在 CI/CD 中给 agent 把关。反映企业端从单点 agent 转向'agent 舰队'的治理需求。",
-        "example": "ForceEquals 正式发布 Agent Momentum，作为拦截 agent 动作、升级人工审批并将结果回灌 agent 组合的控制与运营层，面向跨业务单元的多 agent 管理。",
-        "company": "ForceEquals / TestMu / Aily Labs",
-        "source": "AIAgentStore 制造业 agentic AI 周报(截至 2026-08-25)",
-        "date": "2026-08-25",
-        "url": "https://aiagentstore.ai/ai-agent-news/topic/manufacturing"
+        "title": "McKinsey 新切面：32% 的组织已因能自建而放弃采购软件",
+        "summary": "《State of AI 2026》上周被引用的是'部署在涨、盈利仍平'，本周被拆出的是更锋利的一面：32% 的受访组织表示，因为可以用 agentic 编码工具自己造，已经放弃购买至少一个软件产品或功能；同时'在一个及以上职能规模化部署 agent'的大企业占比从 27% 升至 40%。前者是 SaaS 侧需求端第一次出现可量化的替代证据，后者说明规模化不再是少数先锋的专利。两条合起来解释了为什么'盈利提升'的比例还没动——预算是从采购转移的，不是新增的。",
+        "example": "调查显示 32% 的组织已跳过至少一个软件产品/功能的采购，改为用 agentic 编码工具内部自建；大企业在一个及以上职能规模化 agent 的比例由 27% 升至 40%。",
+        "company": "McKinsey（调查对象为全球跨行业企业）",
+        "source": "AIAgentStore 每周 AI Agent 新闻（Week of September 2, 2026）引 McKinsey State of AI 2026",
+        "date": "2026-09-02",
+        "url": "https://aiagentstore.ai/ai-agent-news/this-week"
       },
       {
-        "title": "Google 给 Gemini Enterprise 加灵活定价与硬性花费上限",
-        "summary": "针对企业对 AI 成本不可预测的顾虑，Google Cloud 为 Gemini Enterprise 增加按量付费(替代按席位订阅)、可设月度项目花费上限并在触顶时暂停 agent API 调用，以及承诺用量折扣；还计划错峰任务处理最高打五折。目的是降低企业在摸清实际使用量前的试用门槛。这是把'成本可控'做成企业采购卖点的典型动作。",
-        "example": "企业可选择按量付费而非按席位订阅、设置月度项目花费上限以暂停 agent API 调用，并可享受承诺用量折扣及最高 50% 的错峰处理折扣。",
-        "company": "Google Cloud (Gemini Enterprise)",
-        "source": "MarketingProfs AI Update(过去一周综述)",
-        "date": "2026-08-28",
-        "url": "https://www.marketingprofs.com/opinions/2026/55727/ai-update-august-28-2026-ai-news-and-views-from-the-past-week"
+        "title": "CIO 侧预算确认：60% 计划一年内投 agentic AI",
+        "summary": "Logicalis 的全球 CIO 调研显示，60% 的受访 CIO 计划在未来一年投资 agentic AI，53% 预期生成式与 agentic AI 会在两年内颠覆现有商业模式。这条的价值不在数字本身，而在它与 McKinsey 那条互相咬合：采购意愿从'AI 功能'转向'agent 与其治理运行时'，而同期真正进入生产的比例仍远低于嵌入比例。对卖方而言，未来一年的增量预算是明确的；对买方而言，瓶颈已经从'要不要买'挪到'能不能安全跑起来'。",
+        "example": "Logicalis 调研：60% 全球 CIO 计划未来一年投资 agentic AI，53% 预期两年内颠覆现有商业模式。",
+        "company": "Logicalis（调查对象为全球 CIO）",
+        "source": "AIAgentStore 每周 AI Agent 新闻（Week of September 2, 2026）引 Logicalis CIO 调研",
+        "date": "2026-09-02",
+        "url": "https://aiagentstore.ai/ai-agent-news/this-week"
       },
       {
-        "title": "Agent 身份与标准整合：Okta Agent SSO + A2A 并入 AAIF",
-        "summary": "企业把 agent 当作一等身份来管理正在成型：Okta 推出 Agent SSO，让 AI agent 在 Universal Directory 中被当作身份、用与人类员工相同的访问控制来管理；同时 Google 的 A2A 协议正式并入 Linux 基金会主导的 Agentic AI Foundation(AAIF)，与 Anthropic 的 MCP 同处中立治理之下。标准与身份层收敛降低了多厂商 agent 架构的集成摩擦，利好企业避免单一供应商锁定。",
-        "example": "AAIF 现有超过 250 家成员，包括 AWS、Anthropic、Block、Bloomberg、Cloudflare、Google、Microsoft、OpenAI 等云厂商与 AI 实验室，将关键 agent 标准整合进同一技术栈。",
-        "company": "Okta / Google (A2A) / Linux Foundation AAIF",
-        "source": "AIAgentStore 周报(Week of Aug 28, 2026)",
-        "date": "2026-08-28",
+        "title": "亚太金融业 agent 化：KT 中标重做 Woori Bank 的对话与任务交接",
+        "summary": "韩国 KT 拿下重建 Woori Bank AI 客服与咨询机器人的项目，核心不是换一个更聪明的 bot，而是通过新的 Agent Connect 方案把对话与任务处理正式交接给 AI agent，并与银行的'AI banker'金融咨询服务打通。值得注意的是形态：不是在旧客服系统上加 AI 功能，而是把 agent 作为可被路由和交接的一等参与方重做架构。受监管的金融机构愿意这么改，是 agent 从试点走向核心系统的一个偏硬的信号。",
+        "example": "KT 中标 Woori Bank 项目，用 Agent Connect 让对话与任务处理在人工与 AI agent 之间交接，并接入'AI banker'金融咨询服务。",
+        "company": "KT / Woori Bank",
+        "source": "AIAgentStore 每周 AI Agent 新闻（Week of September 2, 2026）",
+        "date": "2026-09-02",
         "url": "https://aiagentstore.ai/ai-agent-news/this-week"
       }
     ],
     "models": [
       {
-        "title": "8 月成模型发布'井喷月'，独立评测明显滞后",
-        "summary": "据行业追踪，2026 年 8 月创下 20 天内 5+ 家厂商发布 11 款主要模型的纪录，包括史上最大开源权重发布(Qwen3.8-Max，2.4T 参数)、匿名前沿模型 OX Alpha(据称在编码基准上超过 GPT-5.6 并在 24 小时内被生产采用)、Google Gemini 3.7 Flash(在 3.6 发布仅 3 周后)、Meta 重返开源权重等。发布速度已超过独立验证能力，'基准滞后'成为部署侧的现实难题。",
-        "kind": "sota",
-        "source": "Local AI Zone 8 月 AI 进展综述",
-        "date": "2026-08-23",
-        "url": "https://local-ai-zone.github.io/blog/ai-updates-august-2026.html"
+        "title": "Gemini 3.8 Flash：又一次'不换底座、靠后训练买性能'",
+        "summary": "Google 于 9 月 2 日发布 Gemini 3.8 Flash（并附一个安全强化的姊妹版 3.8 Flash Cyber），是四个月内的第四个 Flash 型号、六周内的第三个。Google 自己的模型卡承认它建在 Gemini 3.7 Flash 之上而非新底座——与上周 Grok 4.6 完全同一套路。收益是实的：Terminal-Bench 2.1 从 3.7 Flash 的 81.6% 提到 90.8%，在 DeepSWE v1.1 的长周期编码上超过多数更大的前沿模型，Artificial Analysis 智能指数 59（+3）。定价 $0.75/$3.75 每百万输入/输出 token，但明确只到 2026-12-31，2027 年元旦双双翻倍至 $1.50/$7.50——限时价被写进发布本身，是新出现的商业化动作。",
+        "example": "Terminal-Bench 2.1 得分 90.8%（3.7 Flash 为 81.6%）；1M token 上下文、64K 输出；限时定价 $0.75/$3.75，2027-01-01 起翻倍。",
+        "company": "Google（Gemini）",
+        "source": "Artificial Analysis / The Register 2026-09-02 / 9to5Google 2026-09-02",
+        "date": "2026-09-02",
+        "url": "https://artificialanalysis.ai/articles/gemini-3-8-flash"
       },
       {
-        "title": "Grok 4.6：不换底座，靠加长后训练买性能",
-        "summary": "SpaceXAI 于 8 月 12 日发布的 Grok 4.6 明确不是新基础模型：沿用 Grok 4.5 底座，通过更长的补充训练(后训练)运行换取能力提升，Intelligence Index 从 56 提到 61，而价格($2/$6)不变。这是'后训练成为主要 scaling 轴'趋势的又一佐证——前沿实验室越来越把增量算力投在后训练/RL 而非重训底座。",
-        "kind": "training",
-        "source": "Fello AI《Best AI Models August 2026》",
-        "date": "2026-08-27",
-        "url": "https://felloai.com/best-ai-models/"
+        "title": "Anthropic Fable 5.1 转 GA：同价升级，缓存读价降到 $0.25",
+        "summary": "Anthropic 的 Fable 5.1 于 9 月 1 日正式可用，定价与 Fable 5 持平，但缓存读取（cache read）单价降至 $0.25/百万 token。方向和 Gemini 3.8 Flash 是同一个：前沿厂商这一轮的竞争面正从'基准分'挪到'把同等能力的单位成本压到多低'，而缓存读价直接决定长上下文 agent 的经济性——agent 循环里绝大部分 token 是重复读的上下文，不是新生成的。这条依赖模型发布追踪站的汇总，缺少厂商原文交叉，置信度按 medium 处理。",
+        "example": "Fable 5.1 于 2026-09-01 GA，价格与 Fable 5 相同，cache read 降至 $0.25/百万 token。",
+        "company": "Anthropic",
+        "source": "LLM Gateway 模型发布时间线 / llm-stats 2026-09（未获厂商原文交叉，conf medium）",
+        "date": "2026-09-01",
+        "url": "https://llmgateway.io/timeline",
+        "conf": "medium"
       },
       {
-        "title": "后训练/RL 成为前沿'新护城河'：算力正从预训练转向后训练",
-        "summary": "业界与学界的共识正在强化：RL 后训练已悄然成为各前沿实验室的主要 scaling 轴。有据可查的最清晰案例是 Cursor 披露 Composer 1.5 在 RL 后训练上花的算力超过预训练底座；o 系列、Constitutional AI、DeepSeek-R1 都指向同一转向。这重构了对过去一年模型迭代的理解——护城河从预训练规模移向了后训练/RL 的方法与算力。",
-        "kind": "training",
-        "source": "Digital Applied《The Post-Training Revolution》",
-        "date": "2026-08-23",
-        "url": "https://www.digitalapplied.com/blog/post-training-revolution-rl-new-moat-2026"
-      },
-      {
-        "title": "BenchAlign/BenchLM 8 月榜：闭源前沿领跑，开源权重逼近",
-        "summary": "据 BenchAlign 榜单，Claude Mythos 5 以 83.04 总分居首，Claude Fable 5(82.79)、Claude Opus 5(82.59)紧随；同时 8 月 BenchLM 榜显示开源权重模型(MiniMax M3、Grok 4.5、NVIDIA Nemotron 等)在质量上与闭源旗舰直接竞争，并在速度与部署灵活性上更优。评测方也提示：模型出货速度快过独立验证，不少新模型尚无经独立核实的分数。",
-        "kind": "eval",
-        "source": "GMI Cloud《AI Model Benchmarks August 2026》",
-        "date": "2026-08-23",
-        "url": "https://www.gmicloud.ai/en/blog/ai-model-benchmarks-august-2026-open-weight-models-catch-the-frontier"
+        "title": "9 月首周三天三款：8 月的'井喷'没有降速，评测仍然滞后",
+        "summary": "9 月 1–2 日三天内至少三款新模型落地：Anthropic Fable 5.1（9/1）、Google Gemini 3.8 Flash 与 Qwen3.8 27B（均 9/2）。这直接承接了上周记录的'8 月成模型发布井喷月、独立评测明显滞后'——发布节奏进一步压缩到以周为单位，而第三方评测机构的覆盖速度没有同步提高，多数新型号在发布后数日内只有厂商自报基准可查。对使用方的实际含义是：短期内选型只能靠自己的任务集实测，公开榜单的参考价值在这个节奏下持续下降。",
+        "example": "2026-09-01 Fable 5.1 GA；2026-09-02 Gemini 3.8 Flash 与 Qwen3.8 27B 同日发布。",
+        "company": "Anthropic / Google / 阿里 Qwen 生态",
+        "source": "LLM Gateway 模型发布时间线（2026-09）/ llm-stats AI news",
+        "date": "2026-09-02",
+        "url": "https://llmgateway.io/timeline"
       }
     ],
     "infra_invest": [
       {
-        "layer": "Model Router / AI 网关层(按任务/成本/质量路由多模型)",
-        "thesis": "当各家基础模型在能力与定价上趋同、企业普遍多模型并用时，'把每个请求路由到最便宜且达标的模型'成为可量化的降本控制点，路由层因此成为聚合流量与议价权的战略位置。投资逻辑：占据请求入口=占据支出可见性与计费入口，天然具备网络效应与低替换动机；风险是被支付/云厂商吞并或商品化。近一周的标志性事件是 Stripe 以约 70 亿美元收购 OpenRouter，把模型路由变成'支付基础设施'问题。",
+        "layer": "Neocloud / GPU 专营云的供给侧（算力租赁与电力接入）",
+        "thesis": "推理占比上升正把 GPU 租赁从'训练峰值生意'改造成'持续负载生意'：ABI 预计到 2030 年推理将占 neocloud 市场约 80%，该品类 2025 年收入已超 $250 亿、被预测在 2031 年逼近 $4,000 亿。投资逻辑的关键位移在于——真正的护城河不是 GPU，而是 GW 级电力与并网时点，谁锁定电力谁定价（这也是 SoftBank 把 SB Neo 的目标直接写成 2030 年 10GW 的原因）。风险有三层：一是超大厂自己下场外售（Meta Compute、SB Neo 均已宣布），把纯租赁商的差价压平；二是纯租赁模型对利率与 GPU 残值假设高度敏感；三是当前 A100 约 $1.09/GPU 小时、H100 约 $3.20/GPU 小时的市场价，本身就说明上一代硬件的定价权衰减得很快。",
         "players": [
-          "OpenRouter(被 Stripe 收购)",
-          "Stripe",
-          "Ramp Router",
-          "Snowflake Cortex AI Gateway",
-          "Azure AI Foundry Model Router",
-          "Not Diamond / LiteLLM / RouteLLM"
+          "CoreWeave",
+          "Nebius",
+          "Crusoe",
+          "Lambda",
+          "SB Neo（SoftBank，目标 2030 年 10GW）",
+          "Meta Compute",
+          "Thunder Compute"
         ],
-        "summary": "Stripe 确认收购 OpenRouter(据 Bloomberg 8/16 报道约 70 亿美元+，较 5 月 13 亿美元估值溢价约 5.4x)，OpenRouter 可跨 80+ 提供方的 400+ 模型路由与优化 token 使用；同期 Ramp 于 8/19-20 开放自研 Router(称平均省 40% 推理成本)、Snowflake 于 8/18 为 Cortex AI Gateway 上线动态模型路由。多方入场印证路由层正从工具走向控制点。",
-        "source": "Stripe 官方公告 / TechCrunch / CNBC / Bloomberg / Ramp(TechCrunch) / Artificial Intelligence News(Snowflake)",
-        "url": "https://stripe.com/newsroom/news/stripe-agrees-to-acquire-openrouter"
+        "summary": "neocloud 品类 2025 年收入超 $250 亿、被预测 2031 年接近 $4,000 亿，推理到 2030 年将占约 80%；市场价 A100 约 $1.09/GPU·小时、H100 约 $3.20/GPU·小时，较 AWS 便宜约 60–85%。供给侧同时出现两个方向相反的力量：专营商继续扩张，而 Meta 与 SoftBank 这类超大玩家开始把自有算力对外销售，SB Neo 计划自 FY2027 起向包括超大厂在内的美国企业供给。",
+        "source": "ABI Research neocloud 市场趋势 / Computer Weekly / Thunder Compute（2026-09）/ SoftBank 集团官方公告 2026-07-02",
+        "url": "https://www.abiresearch.com/blog/neocloud-market-trends"
       },
       {
-        "layer": "AI Agent 编排 / 治理运行时层(控制平面、agent 身份与审计)",
-        "thesis": "企业从单 agent 走向'agent 舰队'后，真正的瓶颈从'能否嵌入'变成'能否安全运行与治理'——嵌入容易、运营难(约 80% 企业嵌入 agent，仅约 31% 上生产)。投资逻辑:控制平面/治理运行时/agent 身份与审计是新的企业控制点，投资人正奖励'可衡量的工作流替代、安全、执行基础设施与企业控制点'，而对通用 agent 壳越来越没耐心;风险是被基础模型厂商或云平台内建功能吞噬('wrapper 风险')。近一周有 Okta Agent SSO、ForceEquals Agent Momentum、AccuKnox AgentZ、TestMu Agent Assurance 等密集发布。",
+        "layer": "AI 算力的表外融资层（第三方资本与债务结构）",
+        "thesis": "2026 年 Big-5 超大厂的 AI 基建资本开支约 $7,750–8,000 亿，全球前 14 大数据中心运营商合计接近 $7,500 亿（上年不到 $4,500 亿）——这个规模已超出经营性现金流可自持的边界，融资结构因此系统性外移到资管机构与私募信贷。标志动作是 NVIDIA 与 Apollo、BlackRock、Blackstone、Brookfield、Goldman Sachs、KKR 共建独立算力融资平台，目标撬动逾 $5,000 亿第三方资本；俄亥俄州的 OpenAI 数据中心由 NVIDIA 背书约 $1,050 亿融资。投资逻辑：稀缺资源正从'芯片供给'转向'能以合理成本承担 GW 级折旧的资产负债表'，融资平台、数据中心资产与私募信贷是新的收租位置。风险集中在三点——芯片残值假设、供应商融资的循环性（NVIDIA 既是卖方又是出资方），以及整条结构对利率的敏感度。",
         "players": [
-          "Okta (Agent SSO)",
-          "ForceEquals (Agent Momentum)",
-          "AccuKnox (AgentZ)",
-          "TestMu (Agent Assurance)",
-          "Obsidian Security",
-          "Aily Labs"
+          "NVIDIA",
+          "Apollo",
+          "BlackRock",
+          "Blackstone",
+          "Brookfield",
+          "Goldman Sachs",
+          "KKR",
+          "SB Energy"
         ],
-        "summary": "投资人正奖励可衡量的工作流替代、安全、执行基础设施与企业控制点，对通用 agent 壳与宽泛自主性宣称失去耐心;2026 年至今 agent 开发平台/控制平面类融资回暖(截至 5 月约 5 笔、约 1.24 亿美元)。过去一周治理与身份层新品密集(Okta Agent SSO、ForceEquals、AccuKnox AgentZ、TestMu),显示控制平面成为兵家必争之地。",
-        "source": "New Market Pitch(agentic 融资趋势) / AIAgentStore 周报 / Agentic.ai",
-        "url": "https://newmarketpitch.com/blogs/news/agentic-ai-funding-trends"
+        "summary": "NVIDIA 联合六家大型资管设立独立算力融资平台，目标动员逾 $5,000 亿第三方资本；NVIDIA 为 OpenAI 俄亥俄数据中心背书约 $1,050 亿融资，初期支持 4.25GW、可追加 3.75GW，SB Energy 与 SoftBank 配套建设支撑 10GW 的电源并向区域电网投入至少 $42 亿。在建数据中心 IT 容量已超 23GW。",
+        "source": "NVIDIA Newsroom / CNBC 2026-08-17 / Futurum AI Capex 2026 / BloombergNEF",
+        "url": "https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital"
       }
     ],
-    "takeaway": "本周主线是'控制点争夺'：Stripe 70 亿美元收 OpenRouter 把模型路由抬成支付级基础设施，Ramp/Snowflake 同步入局；企业端从'能否用 AI'转向'能否治理 agent 舰队并算清 ROI'(McKinsey 显示盈利仍平)，Okta 身份、A2A 并入 AAIF、各家治理运行时密集发布；模型侧 8 月成井喷月、独立评测明显滞后，后训练/RL 作为新护城河被进一步验证。以上为研究观察，非投资建议。",
-    "week_of": "2026-08-30",
-    "generated_at": "2026-08-30 17:06 UTC",
-    "model": "claude-opus-4-8"
+    "takeaway": "本周三条线指向同一件事：成本结构正在取代能力叙事，成为决定谁能规模化的变量。企业端 Cisco 给 9 万人全员配 agent，公开的重点不是能力而是三级路由的单位成本；McKinsey 拆出 32% 的组织已因能自建而放弃采购软件，说明 AI 预算是从 SaaS 采购转移来的、不是新增的，这也解释了为何盈利提升的比例迟迟不动。模型侧 Gemini 3.8 Flash 与 Fable 5.1 是同一动作的两个版本——不换底座、靠后训练与缓存定价压单位成本，而 Google 把限时价与 2027 年翻倍条款写进发布本身，是这一轮商业化的新东西；发布节奏压到以周计，独立评测继续滞后，选型只能靠自有任务集实测。基建侧的稀缺资源已从芯片挪到电力与资产负债表：NVIDIA 联合六家资管撬动逾 $5,000 亿第三方资本，把 GW 级折旧移出超大厂表内，同时 Meta 与 SoftBank 开始外售自有算力，压缩纯租赁商的差价。以上为研究观察，非投资建议。",
+    "week_of": "2026-09-03",
+    "generated_at": "2026-09-03 09:55 UTC",
+    "model": "subscription-routine"
   },
   "candidates": [],
   "series": {
@@ -5025,7 +5201,7 @@
     {
       "date": "2026-09-03",
       "mARR": 114.53,
-      "aARR": 11.38,
+      "aARR": 11.72,
       "tok": 9273.8,
       "nM": 17,
       "nA": 33,
