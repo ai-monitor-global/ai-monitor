@@ -1781,7 +1781,7 @@
         "error": null
       },
       "openrouter": {
-        "at": "2026-09-02",
+        "at": "2026-09-06",
         "ok": true,
         "error": null,
         "weeks": 51,
@@ -4490,7 +4490,8 @@
           "as_of": "2026-07-31",
           "source": "Sacra 公司页（2026-01 更新）估算 2026年7月年化收入 3 亿美元（2025年底 1.5 亿美元）；STAT News 2026-01-21 报道 2.5 亿美元 D 轮、投后估值 120 亿美元（已交割）",
           "url": "https://sacra.com/c/openevidence/",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-09-06"
         },
         "val": {
           "as_of": "2026-07-31",
@@ -4795,7 +4796,8 @@
           "as_of": "2026-06-30",
           "source": "Sacra 公司页（2026-06 更新）估算 2026年6月年化收入 4.5 亿美元；TechNode 2025-08-21 报道联合创始人披露年化收入 9000 万美元",
           "url": "https://sacra.com/c/manus/",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-06"
         },
         "parent": {
           "as_of": "2026-08-21",
@@ -5154,7 +5156,10 @@
           "url": "https://abnormal.ai/newsroom/press-releases/series-d-5b-valuation",
           "conf": "medium"
         }
-      }
+      },
+      "listed": "",
+      "parent": "",
+      "valPending": null
     }
   ],
   "ai_progress": {
@@ -5424,8 +5429,8 @@
     }
   ],
   "openrouter": {
-    "as_of": "2026-09-01",
-    "fetched": "2026-09-02",
+    "as_of": "2026-09-05",
+    "fetched": "2026-09-06",
     "wow_pct": 21.0,
     "weekly": [
       {
