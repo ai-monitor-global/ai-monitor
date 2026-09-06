@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_updated": "2026-09-03",
+    "last_updated": "2026-09-06",
     "next_update": "2026-09-06",
-    "update_notes": "2026-09-03: 1 项已核实更新 — APP Ambience Healthcare.val: 1.0 -> 1.25 [FORCED]",
+    "update_notes": "2026-09-06: 7 项已核实更新 — MODEL Zhipu AI.val: 71.4 -> 64.2; MODEL xAI.parent:  -> SpaceX; MODEL xAI.uc: Grok 4.20、Grok Imagine、Colossus -> Grok 4.6、Grok Imagine、Colossus; MODEL OpenAI.uc: GPT-5.6 Sol、ChatGPT、Codex、Sora -> GPT-6 Astra、ChatGPT、Codex、Sora; MODEL Google Gemini.uc: Gemini 3.1 Pro／3.6 Flash、Gemma -> Gemini 3.1 Pro／3.8 Flash、Gemma; MODEL Meta",
     "schema": 2,
-    "last_run": "2026-09-03",
+    "last_run": "2026-09-06",
     "stale_days": 120,
     "categories": {
       "coding": {
@@ -1667,6 +1667,89 @@
         "source": "C 轮 $243M 投后 $1.25B，2025-07-29 交割（Modern Healthcare / Becker's / Fierce Healthcare / MedCity / STAT 多源一致；Oak HC/FT 与 a16z 领投，OpenAI Startup Fund 参投）。原值 1.0 为 getLatka 聚合页的 pre-money 口径且日期误记。routine 2026-09-03 提出，操作侧独立核实后 force 落地（豁免日期倒退闸门）。",
         "conf": "high",
         "forced": true
+      },
+      {
+        "date": "2026-09-06",
+        "pass": "routine-weekly-2026-09-06",
+        "section": "models",
+        "entity": "Zhipu AI",
+        "field": "val",
+        "old": 71.4,
+        "new": 64.2,
+        "source": "上市公司现价市值：02513.HK 最近交易日（2026-09-04）收报 1,075.00 港元（检索于 2026-09-06 的 Yahoo Finance / CNBC / Google Finance 行情页，前一收盘 1,108.00），按在册总股本 4.66 亿股计市值约 5,010 亿港元，按 1 美元 = 7.80 港元汇率换算约合 642 亿美元；交叉验证：英文维基 Z.ai 条目载其 2026-08 市值约 620 亿美元（美元原币），同一量级。股价自 6 月 2,094 港元高点回落，与港股 9 月解禁潮一致",
+        "conf": "medium",
+        "forced": null
+      },
+      {
+        "date": "2026-09-06",
+        "pass": "routine-weekly-2026-09-06",
+        "section": "models",
+        "entity": "xAI",
+        "field": "parent",
+        "old": "",
+        "new": "SpaceX",
+        "source": "CNBC 2026-02-03《Musk's xAI, SpaceX combo is the biggest merger of all time, valued at $1.25 trillion》：全股票收购已于 2026 年 2 月初交割，xAI 作价 2,500 亿美元并入 SpaceX，成为全资子公司（1 股 xAI 换 0.1433 股 SpaceX）；Sacra 研究《Why SpaceX acquired xAI》与 The D&O Diary 2026-03 同口径；SpaceX 已于 2026-06 在纳斯达克上市（SPCX），xAI 并入 SpaceXAI 部门。按收购政策（Cursor/SpaceX 先例），内嵌实体不再保留独立估值，val 随本 patch 自动清空",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-09-06",
+        "pass": "routine-weekly-2026-09-06",
+        "section": "models",
+        "entity": "xAI",
+        "field": "val",
+        "old": 250,
+        "new": null,
+        "source": "自动联动：parent=SpaceX 后，内嵌实体无独立估值",
+        "conf": "high"
+      },
+      {
+        "date": "2026-09-06",
+        "pass": "routine-weekly-2026-09-06",
+        "section": "models",
+        "entity": "xAI",
+        "field": "uc",
+        "old": "Grok 4.20、Grok Imagine、Colossus",
+        "new": "Grok 4.6、Grok Imagine、Colossus",
+        "source": "库存旗舰记为 Grok 4.20 有误：llm-stats.com《Grok 4.6 Release, Benchmarks And Agent Loops》与 CometAPI/Basenor 一致载 Grok 4.6 于 2026-08-12 发布并取代 4.20 成为当前旗舰（500K 上下文、Opus 级编码/agent 定位）；Releasebot xAI 更新日志（2026-09 版，检索于 2026-09-06）仍以 4.6 为最新公开模型，Grok 4.7 与 Grok 5 尚未发布",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-09-06",
+        "pass": "routine-weekly-2026-09-06",
+        "section": "models",
+        "entity": "OpenAI",
+        "field": "uc",
+        "old": "GPT-5.6 Sol、ChatGPT、Codex、Sora",
+        "new": "GPT-6 Astra、ChatGPT、Codex、Sora",
+        "source": "Bloomberg 2026-09-03《OpenAI Launches GPT-6 Astra With Enhanced Cybersecurity Safeguards》、CNBC 2026-09-03、Fortune 2026-09-03 一致报道：GPT-6 Astra 于 9 月 3 日先向受信任伙伴限量预览、次日向付费用户开放，主打 computer use，105 万 token 上下文，API 定价 10/50 美元每百万输入/输出 token（美元原币），取代 GPT-5.6 Sol 成为旗舰",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-09-06",
+        "pass": "routine-weekly-2026-09-06",
+        "section": "models",
+        "entity": "Google Gemini",
+        "field": "uc",
+        "old": "Gemini 3.1 Pro／3.6 Flash、Gemma",
+        "new": "Gemini 3.1 Pro／3.8 Flash、Gemma",
+        "source": "Artificial Analysis / The Register / 9to5Google 2026-09-02：Gemini 3.8 Flash 发布（建于 3.7 Flash 之上，Terminal-Bench 2.1 90.8%），为四个月内第四个 Flash 型号，Flash 档旗舰由 3.6 更新为 3.8；Pro 档仍为 Gemini 3.1 Pro（Google Cloud 官方模型页，检索于 2026-09-06，Gemini 3.5/4 Pro 未发布）",
+        "conf": "medium",
+        "forced": null
+      },
+      {
+        "date": "2026-09-06",
+        "pass": "routine-weekly-2026-09-06",
+        "section": "models",
+        "entity": "Meta (Llama)",
+        "field": "uc",
+        "old": "Muse Spark、Muse Image、Llama 4、Meta AI",
+        "new": "Muse Spark 1.3、Muse Glimmer 30B、Meta AI",
+        "source": "Artificial Analysis 模型发布页《Muse Spark 1.3》与 Meta 官方新闻室：Meta Superintelligence Labs 于 2026-09-02 发布 Muse Spark 1.3（闭源、100 万 token 上下文、面向长周期 agent 与编码），2026-09-01 发布首个实时音频感知模型 Muse Voice Transcribe，2026-08-10 开源 Muse Glimmer 30B（Apache 2.0，Llama 4 之后首个可下载前沿模型）；Llama 4 已非当前旗舰，故 uc 由 Llama 线更新为 Muse 线",
+        "conf": "medium",
+        "forced": null
       }
     ],
     "review_queue": [],
@@ -1723,13 +1806,23 @@
         "confirmed": 0,
         "promoted": 0,
         "queued": 0
+      },
+      "routine-weekly-2026-09-06": {
+        "at": "2026-09-06",
+        "ok": true,
+        "error": null,
+        "applied": 7,
+        "rejected": 0,
+        "confirmed": 14,
+        "promoted": 1,
+        "queued": 3
       }
     }
   },
   "models": [
     {
       "name": "OpenAI",
-      "uc": "GPT-5.6 Sol、ChatGPT、Codex、Sora",
+      "uc": "GPT-6 Astra、ChatGPT、Codex、Sora",
       "region": "US",
       "arr": 40000,
       "arrg": 200,
@@ -1738,7 +1831,7 @@
       "trainPerRun": 15,
       "runsPerYear": 4,
       "val": 852,
-      "m": 44,
+      "m": 38,
       "retired": false,
       "prov": {
         "tokM": {
@@ -1756,11 +1849,11 @@
           "checked": "2026-09-01"
         },
         "uc": {
-          "as_of": "2026-07-09",
-          "source": "OpenAI 官方博客 2026-07-09《GPT-5.6: Frontier intelligence that scales with your ambition》，发布 GPT-5.6 系列（旗舰 Sol，另有 Terra/Luna），在 ChatGPT、Codex 与 API 全面上线；原值中的 GPT-5.4 已被取代，DALL·E 亦已由 gpt-image-2 承接（非独立旗舰产品线）",
-          "url": "https://openai.com/index/gpt-5-6/",
-          "conf": "high",
-          "checked": "2026-09-01"
+          "as_of": "2026-09-03",
+          "checked": "2026-09-06",
+          "source": "Bloomberg 2026-09-03《OpenAI Launches GPT-6 Astra With Enhanced Cybersecurity Safeguards》、CNBC 2026-09-03、Fortune 2026-09-03 一致报道：GPT-6 Astra 于 9 月 3 日先向受信任伙伴限量预览、次日向付费用户开放，主打 computer use，105 万 token 上下文，API 定价 10/50 美元每百万输入/输出 token（美元原币），取代 GPT-5.6 Sol 成为旗舰",
+          "url": "https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html",
+          "conf": "high"
         },
         "arr": {
           "as_of": "2026-08-14",
@@ -1791,7 +1884,7 @@
           "checked": "2026-09-01"
         }
       },
-      "checked_at": "2026-09-01",
+      "checked_at": "2026-09-06",
       "listed": "",
       "parent": "",
       "valPending": null
@@ -1853,7 +1946,7 @@
     },
     {
       "name": "Google Gemini",
-      "uc": "Gemini 3.1 Pro／3.6 Flash、Gemma",
+      "uc": "Gemini 3.1 Pro／3.8 Flash、Gemma",
       "region": "US",
       "arr": 3000,
       "arrg": 350,
@@ -1867,10 +1960,10 @@
       "prov": {
         "tokM": {
           "as_of": "2026-05-22",
-          "source": "Google I/O 2026 Pichai 主题演讲（2026-05-19）；Cryptobriefing 2026-05-22「Google processes over 3.2 quadrillion tokens monthly, a 7x increase」转述同一官方数字；keepingupwith.ai 2026-05 同源",
+          "checked": "2026-09-06",
+          "source": "复核维持全 AI 产品面口径：Google I/O 2026（2026-05-19 Pichai 主题演讲）披露全 AI 产品每月处理 3,200 万亿 token（Cryptobriefing 2026-05-22 转述，同比约 7 倍）。本周补充交叉：Alphabet 2026 Q2 业绩会称 Gemini 模型处理量达 220 亿 token/分钟（约 1,000 万亿/月、半年 +120%），该数为 Gemini 直接 API/应用口径，小于含搜索 AI 概览、YouTube、Workspace 的全产品面口径，二者不冲突，本字段沿用后者（非货币指标）",
           "url": "https://cryptobriefing.com/google-3-2-quadrillion-tokens-monthly/",
-          "conf": "high",
-          "checked": "2026-09-01"
+          "conf": "high"
         },
         "tokG": {
           "as_of": "2026-05-22",
@@ -1880,11 +1973,11 @@
           "checked": "2026-09-01"
         },
         "uc": {
-          "as_of": "2026-08-29",
-          "source": "Google Cloud 官方文档（Gemini Enterprise Agent Platform 模型页「Gemini 3.1 Pro」，抓取于 2026-08-29）；tech-insider 2026-04 报道 Gemini 3.1 Pro 已发布；Codersera 2026-08-23 追踪显示 Gemini 3.5 Pro 截至 8 月底仍未发布。故 Pro 档旗舰应为 3.1 Pro 而非已被取代的 Gemini 3 Pro",
-          "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-1-pro",
-          "conf": "medium",
-          "checked": "2026-09-01"
+          "as_of": "2026-09-02",
+          "checked": "2026-09-06",
+          "source": "Artificial Analysis / The Register / 9to5Google 2026-09-02：Gemini 3.8 Flash 发布（建于 3.7 Flash 之上，Terminal-Bench 2.1 90.8%），为四个月内第四个 Flash 型号，Flash 档旗舰由 3.6 更新为 3.8；Pro 档仍为 Gemini 3.1 Pro（Google Cloud 官方模型页，检索于 2026-09-06，Gemini 3.5/4 Pro 未发布）",
+          "url": "https://artificialanalysis.ai/articles/gemini-3-8-flash",
+          "conf": "medium"
         },
         "region": {
           "as_of": "2026-02-04",
@@ -1894,14 +1987,14 @@
           "checked": "2026-09-01"
         }
       },
-      "checked_at": "2026-09-01",
+      "checked_at": "2026-09-06",
       "listed": "",
       "parent": "Google",
       "valPending": null
     },
     {
       "name": "xAI",
-      "uc": "Grok 4.20、Grok Imagine、Colossus",
+      "uc": "Grok 4.6、Grok Imagine、Colossus",
       "region": "US",
       "arr": 500,
       "arrg": 400,
@@ -1909,23 +2002,16 @@
       "tokG": null,
       "trainPerRun": 15,
       "runsPerYear": 3,
-      "val": 250,
-      "m": 37,
+      "val": null,
+      "m": 53,
       "retired": false,
       "prov": {
-        "val": {
-          "as_of": "2026-02-02",
-          "source": "Bloomberg 2026-02-02/CNBC 2026-02-03（SpaceX 收购 xAI 完成，合并实体 $1.25T，其中 SpaceX $1T、xAI $250B，Reuters 口径见 Sacra 公司档案）；原始为美元，无需汇率换算",
-          "url": "https://www.bloomberg.com/news/articles/2026-02-02/elon-musk-s-spacex-said-to-combine-with-xai-ahead-of-mega-ipo",
-          "conf": "high",
-          "checked": "2026-09-01"
-        },
         "uc": {
-          "as_of": "2026-08-13",
-          "source": "GEO Toolbox 2026-08-13（Grok 5 截至2026年8月仍在训练、未发布）与 NxCode 2026-07-12（2026-03-03 发布 Grok 4.20 Beta 2 为当前公开旗舰模型）；图像/视频产品已由 Aurora 迭代为 Grok Imagine，算力集群为 Colossus/Colossus 2",
-          "url": "https://geotoolbox.ai/blog/grok-5",
-          "conf": "medium",
-          "checked": "2026-09-01"
+          "as_of": "2026-09-05",
+          "checked": "2026-09-06",
+          "source": "库存旗舰记为 Grok 4.20 有误：llm-stats.com《Grok 4.6 Release, Benchmarks And Agent Loops》与 CometAPI/Basenor 一致载 Grok 4.6 于 2026-08-12 发布并取代 4.20 成为当前旗舰（500K 上下文、Opus 级编码/agent 定位）；Releasebot xAI 更新日志（2026-09 版，检索于 2026-09-06）仍以 4.6 为最新公开模型，Grok 4.7 与 Grok 5 尚未发布",
+          "url": "https://llm-stats.com/blog/research/grok-4.6-launch",
+          "conf": "high"
         },
         "arr": {
           "as_of": "2026-05-26",
@@ -1947,11 +2033,18 @@
           "url": "https://en.wikipedia.org/wiki/XAI_(company)",
           "conf": "high",
           "checked": "2026-09-01"
+        },
+        "parent": {
+          "as_of": "2026-02-03",
+          "checked": "2026-09-06",
+          "source": "CNBC 2026-02-03《Musk's xAI, SpaceX combo is the biggest merger of all time, valued at $1.25 trillion》：全股票收购已于 2026 年 2 月初交割，xAI 作价 2,500 亿美元并入 SpaceX，成为全资子公司（1 股 xAI 换 0.1433 股 SpaceX）；Sacra 研究《Why SpaceX acquired xAI》与 The D&O Diary 2026-03 同口径；SpaceX 已于 2026-06 在纳斯达克上市（SPCX），xAI 并入 SpaceXAI 部门。按收购政策（Cursor/SpaceX 先例），内嵌实体不再保留独立估值，val 随本 patch 自动清空",
+          "url": "https://www.cnbc.com/2026/02/03/musk-xai-spacex-biggest-merger-ever.html",
+          "conf": "high"
         }
       },
-      "checked_at": "2026-09-01",
+      "checked_at": "2026-09-06",
       "listed": "",
-      "parent": "",
+      "parent": "SpaceX",
       "valPending": null
     },
     {
@@ -1965,7 +2058,7 @@
       "trainPerRun": 8,
       "runsPerYear": 3,
       "val": 35,
-      "m": 32,
+      "m": 29,
       "retired": false,
       "prov": {
         "val": {
@@ -2034,13 +2127,13 @@
       "trainPerRun": 6,
       "runsPerYear": 2,
       "val": 13.0,
-      "m": 47,
+      "m": 46,
       "retired": false,
       "prov": {
         "arr": {
           "as_of": "2026-08-26",
-          "checked": "2026-09-01",
-          "source": "虎嗅 2026-08-28《MiniMax市值五个月蒸发76%》引述公司2026年中期业绩披露：8月ARR突破8亿美元（公司以美元披露，无需汇率换算）",
+          "checked": "2026-09-06",
+          "source": "复核一致，无更新披露：虎嗅 2026-08-28 引公司 2026 年中期业绩，8 月 ARR 突破 8 亿美元（公司以美元披露，无需汇率换算）；本周（8/31–9/6）搜索未见更新的 ARR 口径",
           "url": "https://www.huxiu.com/article/4886381.html",
           "conf": "high"
         },
@@ -2052,10 +2145,10 @@
           "conf": "high"
         },
         "val": {
-          "as_of": "2026-08-19",
-          "checked": "2026-09-01",
-          "source": "Yahoo Finance 0100.HK 估值页（As of 8/19/2026，市值1,021亿港元）及虎嗅 2026-08-28（市值约1,000亿港元），按1美元=7.79港元换算约合128–131亿美元",
-          "url": "https://finance.yahoo.com/quote/0100.HK/",
+          "as_of": "2026-08-21",
+          "checked": "2026-09-06",
+          "source": "复核维持：stockanalysis / Investing 行情页载 2026-08-21 收报 310.40 港元、市值 973.5 亿港元，按 1 美元 = 7.79 港元汇率换算约 125 亿美元，与在档 130 亿美元（2026-08-19，市值 1,021 亿港元）同一量级；网易/财联社 2026-09-02 报道当日股价涨超 3%、8 月港股通净买入 106 亿元人民币居首。本周未能取得可靠的 9 月实时报价（腾讯财经页面快照 247.20 港元经比对为 8 月初缓存，不予采用），故维持 13.0 待下周刷新",
+          "url": "https://stockanalysis.com/quote/hkg/0100/",
           "conf": "medium"
         },
         "uc": {
@@ -2087,7 +2180,7 @@
           "conf": "high"
         }
       },
-      "checked_at": "2026-09-01",
+      "checked_at": "2026-09-06",
       "listed": "HKEX:0100",
       "parent": "",
       "valPending": null
@@ -2102,16 +2195,16 @@
       "tokG": 250,
       "trainPerRun": 5,
       "runsPerYear": 2,
-      "val": 71.4,
-      "m": 47,
+      "val": 64.2,
+      "m": 52,
       "retired": false,
       "prov": {
         "arr": {
           "as_of": "2026-08-31",
-          "checked": "2026-09-02",
-          "source": "智谱1H26业绩电话会管理层指引（中金公司研报，智通财经/investing.com 2026-09-01转载）：\"公司8月ARR按照月均口径达到16亿美元\"，即2026年8月单月模型API收入年化=US$1.6B=1600百万美元（公司自述ARR口径，无需再折算；原存量269来自H1收入9.54亿元×2的错误年化）",
-          "url": "https://cn.investing.com/news/stock-market-news/article-3545799",
-          "conf": "high"
+          "checked": "2026-09-06",
+          "source": "复核一致：智谱 1H26 业绩电话会管理层指引「8 月 ARR 按月均口径达 16 亿美元」（中金研报，智通财经/investing.com 2026-09-01 转载）；本周复核 2026 年中期业绩公告口径（上半年收入 9.539 亿元人民币、同比约 +400%，按 1 美元 = 7.1 元人民币汇率换算约 1.34 亿美元）与之不矛盾——中期为已实现累计收入、非 ARR。无更新披露",
+          "url": "https://www.investing.com/",
+          "conf": "medium"
         },
         "arrg": {
           "as_of": "2026-08-31",
@@ -2121,10 +2214,10 @@
           "conf": "high"
         },
         "val": {
-          "as_of": "2026-09-01",
-          "checked": "2026-09-02",
-          "source": "上市公司现价市值：02513.HK 2026-09-01 收报约1,195港元（investing.com行情页前收1,195；中金2026-09-01研报称目标价1,572港元较现价有31.5%上行空间，反推现价1,195港元），总股本4.66亿股（富途/老虎行情页），1,195×4.66亿=约5,569亿港元，按1美元=7.8港元≈714亿美元",
-          "url": "https://cn.investing.com/news/stock-market-news/article-3545799",
+          "as_of": "2026-09-04",
+          "checked": "2026-09-06",
+          "source": "上市公司现价市值：02513.HK 最近交易日（2026-09-04）收报 1,075.00 港元（检索于 2026-09-06 的 Yahoo Finance / CNBC / Google Finance 行情页，前一收盘 1,108.00），按在册总股本 4.66 亿股计市值约 5,010 亿港元，按 1 美元 = 7.80 港元汇率换算约合 642 亿美元；交叉验证：英文维基 Z.ai 条目载其 2026-08 市值约 620 亿美元（美元原币），同一量级。股价自 6 月 2,094 港元高点回落，与港股 9 月解禁潮一致",
+          "url": "https://finance.yahoo.com/quote/2513.HK/",
           "conf": "medium"
         },
         "uc": {
@@ -2149,7 +2242,7 @@
           "conf": "high"
         }
       },
-      "checked_at": "2026-09-02",
+      "checked_at": "2026-09-06",
       "listed": "HKEX:2513",
       "parent": "",
       "valPending": null
@@ -2165,7 +2258,7 @@
       "trainPerRun": 5,
       "runsPerYear": 2,
       "val": 13.7,
-      "m": 75,
+      "m": 74,
       "retired": false,
       "prov": {
         "val": {
@@ -2220,7 +2313,7 @@
       "trainPerRun": 3,
       "runsPerYear": 2,
       "val": 7,
-      "m": 30,
+      "m": 25,
       "retired": false,
       "prov": {
         "val": {
@@ -2275,7 +2368,7 @@
       "trainPerRun": 4,
       "runsPerYear": 2,
       "val": 1,
-      "m": 20,
+      "m": 19,
       "retired": false,
       "prov": {
         "arr": {
@@ -2326,7 +2419,7 @@
       "arrg": 900.0,
       "val": 50.0,
       "listed": "",
-      "m": 48,
+      "m": 46,
       "retired": false,
       "checked_at": "2026-09-02",
       "prov": {
@@ -2424,13 +2517,20 @@
       "listed": "",
       "m": 0,
       "retired": false,
-      "checked_at": "2026-09-01",
+      "checked_at": "2026-09-06",
       "prov": {
         "arr": {
           "as_of": "2026-09-01",
-          "checked": "2026-09-01",
+          "checked": "2026-09-06",
           "source": "Alibaba Group June Quarter 2026 results, 2026-08-20 (SEC 6-K exhibit): AI Cloud and Compute Services revenue RMB48,437m stated by Alibaba as US$7,139m (implied 6.785 RMB/USD); AI-related product revenue RMB12.4bn = ~US$1.83bn at that rate. Bloomberg 2026-07-19 for Qwen3.8-Max flagship preview; puter.com/yottalabs (2026-08) for 2026-08-03 GA and API pricing.",
           "url": "https://www.sec.gov/Archives/edgar/data/1577552/000110465926099220/tm2623667d1_ex99-1.htm",
+          "conf": "medium"
+        },
+        "uc": {
+          "as_of": "2026-08-03",
+          "checked": "2026-09-06",
+          "source": "复核一致：阿里云百炼平台 2026-08-03 上线旗舰 Qwen3.8-Max（2.4T 参数、激活 95B，API 定价 12/36 元人民币每百万输入/输出 token，按 1 美元 = 7.1 元人民币汇率约合 1.7/5.1 美元）；2026-09-04 第三方模型时间线仍以 Qwen3.8-Max 为通义旗舰，Qwen App / QwenWork 为在售产品",
+          "url": "https://developer.aliyun.com/article/1747499",
           "conf": "medium"
         }
       },
@@ -2444,20 +2544,27 @@
     },
     {
       "name": "Meta (Llama)",
-      "uc": "Muse Spark、Muse Image、Llama 4、Meta AI",
+      "uc": "Muse Spark 1.3、Muse Glimmer 30B、Meta AI",
       "arr": null,
       "arrg": null,
       "val": null,
       "listed": "",
       "m": 0,
       "retired": false,
-      "checked_at": "2026-09-01",
+      "checked_at": "2026-09-06",
       "prov": {
         "arr": {
-          "as_of": "2026-09-01",
-          "checked": "2026-09-01",
-          "source": "TechCrunch 2026-04-08 (Muse Spark, first Meta Superintelligence Labs model); CNBC 2026-07-07 (Muse Image); llama.developer.meta.com deprecation notice (Llama API Public Preview retired 2026-07-06); Meta AI blog 2025-04-05 (Llama 4 pretrained on >30T tokens -> trainPerRun 30); TNW / Slashdot 2026-05-27 (Meta One Plus $7.99, Meta One Premium $19.99, test markets, no revenue disclosed); TechCrunch 2025-03-21 (Kadrey v. Meta filing: undisclosed Llama host revenue share); Meta Q1 2026 press release 2026-04-29 (parent revenue $56.31B, +33% - parent figure, not used for arr). All figures already USD; no currency conversion required.",
-          "url": "https://techcrunch.com/2026/04/08/meta-debuts-the-muse-spark-model-in-a-ground-up-overhaul-of-its-ai/",
+          "as_of": "2026-09-02",
+          "checked": "2026-09-06",
+          "source": "复核维持空值：Meta 未披露 Muse / Llama 模型线的可拆分收入，模型能力主要服务于自有广告与消费产品；2026-09-02 Muse Spark 1.3 发布通稿亦未给出 API 收入口径。内嵌实体不记母公司收入",
+          "url": "https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs/",
+          "conf": "high"
+        },
+        "uc": {
+          "as_of": "2026-09-02",
+          "checked": "2026-09-06",
+          "source": "Artificial Analysis 模型发布页《Muse Spark 1.3》与 Meta 官方新闻室：Meta Superintelligence Labs 于 2026-09-02 发布 Muse Spark 1.3（闭源、100 万 token 上下文、面向长周期 agent 与编码），2026-09-01 发布首个实时音频感知模型 Muse Voice Transcribe，2026-08-10 开源 Muse Glimmer 30B（Apache 2.0，Llama 4 之后首个可下载前沿模型）；Llama 4 已非当前旗舰，故 uc 由 Llama 线更新为 Muse 线",
+          "url": "https://artificialanalysis.ai/models/releases/muse-spark-1-3",
           "conf": "medium"
         }
       },
@@ -2478,7 +2585,7 @@
       "listed": "",
       "m": 0,
       "retired": false,
-      "checked_at": "2026-09-01",
+      "checked_at": "2026-09-06",
       "prov": {
         "arr": {
           "as_of": "2026-09-01",
@@ -2486,6 +2593,13 @@
           "source": "TechCrunch 2025-12-02 (AWS launches Nova 2 models at re:Invent); AWS News Blog 2025-04-30 (Nova Premier); TechRepublic 2026-07-29 (reports Amazon plans to consolidate Nova AI models). No source provides standalone Nova revenue, token volumes or training-run data; all such fields left empty.",
           "url": "https://techcrunch.com/2025/12/02/aws-launches-new-nova-ai-models-and-a-service-that-gives-customers-more-control/",
           "conf": "medium"
+        },
+        "uc": {
+          "as_of": "2026-09-06",
+          "checked": "2026-09-06",
+          "source": "复核一致：AWS 官方 Nova 模型页与 Bedrock 模型目录（检索于 2026-09-06）仍以 Nova 2 系列（Pro / Lite / Sonic / Omni）为当前一代，2025-12 re:Invent 发布后未有 Nova 3；配套服务 Nova Forge、Nova Act 已上线。下一次代际更新预计在 12 月 re:Invent",
+          "url": "https://aws.amazon.com/nova/models/",
+          "conf": "high"
         }
       },
       "region": "US",
@@ -2505,13 +2619,20 @@
       "listed": "",
       "m": 0,
       "retired": false,
-      "checked_at": "2026-09-01",
+      "checked_at": "2026-09-06",
       "prov": {
         "arr": {
           "as_of": "2026-09-01",
           "checked": "2026-09-01",
           "source": "Baidu Q2 2026 results, Form 6-K exhibit filed with SEC 2026-08-18 (segment RMB figures; RMB converted at the company-implied 6.78 RMB/USD: RMB 31.33B = $4.62B, RMB 12.5B = $1.84B, RMB 7.3B = $1.08B); Reuters 2026-08-18 'Baidu CEO vows to return Ernie to AI frontier as revenue miss sinks shares'; market cap from Investing.com 2026-08-31 (BIDU $97.12 x 339.19M shares = $32.9B), cross-checked with stockanalysis.com HKEX:9888 HK$258.27B on 2026-08-31 (~$33B at 7.8); ERNIE 5.1 launch details QbitAI 2026-05-09; app rename to 文心 Sina Tech 2025-11-01; China nationwide 140T tokens/day cited by National Data Administration 2026-03-23 (not used).",
           "url": "https://www.sec.gov/Archives/edgar/data/0001329099/000119312526355431/d112854dex991.htm",
+          "conf": "medium"
+        },
+        "uc": {
+          "as_of": "2026-05-09",
+          "checked": "2026-09-06",
+          "source": "复核一致：量子位 2026-05《百度发布文心 5.1》——文心大模型 5.1 于 5 月 9 日发布，预训练成本约为同规模模型 6%，LMArena 搜索榜国内第一；截至 2026-09-06 未见 5.2 或新一代基座发布，文心 App 与千帆平台仍为主要承载",
+          "url": "https://www.qbitai.com/2026/05/414496.html",
           "conf": "medium"
         }
       },
@@ -2532,13 +2653,20 @@
       "listed": "",
       "m": 0,
       "retired": false,
-      "checked_at": "2026-09-01",
+      "checked_at": "2026-09-06",
       "prov": {
         "arr": {
           "as_of": "2026-09-01",
           "checked": "2026-09-01",
           "source": "Tencent Cloud product page (Hy4 preview, updated 2026-08-28); Tencent news release 'Hunyuan Hy3 formally launched, daily token consumption up 20x' 2026-07-06; TechNode 2026-07-07 (Hy3 295B/21B MoE); Tencent Q1 2026 earnings call transcript (AlphaSpread, May 2026) — Hunyuan 3 token usage >=10x Hunyuan 2, Business Services +20% YoY; TMTPost 2026-06-05 (TokenHub 5T tokens/day, multi-model); Sohu 2026-07-23 (LLM+multimodal teams merged); stockanalysis.com / Yahoo Finance 2026-09-01 (0700.HK mkt cap HKD 4.083T, converted at 7.79 = ~$524B, parent only)",
           "url": "https://news.qq.com/rain/a/20260706A0709C00",
+          "conf": "medium"
+        },
+        "uc": {
+          "as_of": "2026-08-28",
+          "checked": "2026-09-06",
+          "source": "复核一致：腾讯混元于 2026-08-28 发布并开源新一代大语言模型 Hy4 preview（总参数 770B、激活 49B、上下文突破 100 万 token）；腾讯云开发者社区 2026-08 报道正式版 Hy4 近期推出。Hy3 与腾讯元宝仍在售，uc 维持",
+          "url": "https://www.aitoollab.cn/articles/tencent-hunyuan-hy4-preview-2026/",
           "conf": "medium"
         }
       },
@@ -2848,7 +2976,7 @@
       "ti": "med",
       "biz": "B2B+B2C",
       "val": 11,
-      "m": 67,
+      "m": 68,
       "retired": false,
       "prov": {
         "val": {
@@ -3005,7 +3133,7 @@
       "ti": "ultra",
       "biz": "B2B+B2C",
       "val": 5.3,
-      "m": 26,
+      "m": 27,
       "retired": false,
       "prov": {
         "uc": {
@@ -3087,7 +3215,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 11,
-      "m": 56,
+      "m": 58,
       "retired": false,
       "prov": {
         "arr": {
@@ -3190,7 +3318,7 @@
       "ti": "med",
       "biz": "B2B",
       "val": 7.2,
-      "m": 33,
+      "m": 32,
       "retired": false,
       "prov": {
         "arrg": {
@@ -3279,7 +3407,7 @@
       "ti": "low",
       "biz": "B2C+B2B",
       "val": 2.1,
-      "m": 48,
+      "m": 49,
       "retired": false,
       "prov": {
         "arr": {
@@ -3368,7 +3496,7 @@
       "ti": "ultra",
       "biz": "B2B+B2C",
       "val": 0.5,
-      "m": 56,
+      "m": 58,
       "retired": false,
       "prov": {
         "arr": {
@@ -3457,7 +3585,7 @@
       "ti": "high",
       "biz": "B2C",
       "val": 5.4,
-      "m": 76,
+      "m": 77,
       "retired": false,
       "prov": {
         "arrg": {
@@ -3532,7 +3660,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 1.9,
-      "m": 25,
+      "m": 27,
       "retired": false,
       "prov": {
         "val": {
@@ -3628,7 +3756,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 15.8,
-      "m": 54,
+      "m": 56,
       "retired": false,
       "prov": {
         "val": {
@@ -3872,7 +4000,7 @@
       "ti": "ultra",
       "biz": "B2B+B2C",
       "val": 4,
-      "m": 23,
+      "m": 24,
       "retired": false,
       "prov": {
         "arr": {
@@ -3954,7 +4082,7 @@
       "ti": "med",
       "biz": "B2C+B2B",
       "val": 1.0,
-      "m": 39,
+      "m": 40,
       "retired": false,
       "prov": {
         "arr": {
@@ -4038,7 +4166,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 5.3,
-      "m": 50,
+      "m": 51,
       "retired": false,
       "prov": {
         "arr": {
@@ -4124,7 +4252,7 @@
       "ti": "high",
       "biz": "B2C+B2B",
       "val": 0.5,
-      "m": 39,
+      "m": 40,
       "retired": false,
       "prov": {
         "uc": {
@@ -4290,7 +4418,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 5.6,
-      "m": 47,
+      "m": 45,
       "ownModel": {
         "status": "none",
         "models": [
@@ -4340,7 +4468,7 @@
       "ti": "ultra",
       "biz": "B2B",
       "val": 12.0,
-      "m": 66,
+      "m": 67,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -4353,8 +4481,9 @@
       "prov": {
         "arr": {
           "as_of": "2026-07-31",
-          "source": "Sacra 公司页（2026-01 更新）估算 2026年7月年化收入 3 亿美元（2025年底 1.5 亿美元）；STAT News 2026-01-21 报道 2.5 亿美元 D 轮、投后估值 120 亿美元（已交割）",
-          "url": "https://sacra.com/c/openevidence/",
+          "checked": "2026-09-06",
+          "source": "复核一致：Investing.com 2026-07 引 Bank of America 研究《OpenEvidence reaches $300m revenue run rate》；Sacra 公司页估 2026 年 7 月年化收入 3 亿美元（2025 年底为 1.5 亿）。两条独立来源同口径 run-rate，均为美元原币，无更新披露",
+          "url": "https://www.investing.com/news/stock-market-news/openevidence-reaches-300m-revenue-run-rate-bank-of-america-says-93CH-4801016",
           "conf": "high"
         },
         "ownModel": {
@@ -4365,14 +4494,16 @@
         },
         "val": {
           "as_of": "2026-07-31",
-          "source": "Sacra 公司页（2026-01 更新）估算 2026年7月年化收入 3 亿美元（2025年底 1.5 亿美元）；STAT News 2026-01-21 报道 2.5 亿美元 D 轮、投后估值 120 亿美元（已交割）",
-          "url": "https://sacra.com/c/openevidence/",
+          "checked": "2026-09-06",
+          "source": "最近已交割轮次仍为 2026-01-21 宣布的 2.5 亿美元 D 轮、投后 120 亿美元（TechCrunch / CNBC / Fierce Healthcare 2026-01-21，Cooley 2026-01-22 交易公告，美元原币）。2026-07 有报道称公司曾考虑以 200 亿美元估值募资 2 亿美元，但据 PYMNTS/Dealroom 该轮因摊薄问题「不太可能推进」，未交割亦未确认，故不计入 valPending",
+          "url": "https://techcrunch.com/2026/01/21/openevidence-hits-12b-valuation-with-new-round-led-by-thrive-dst/",
           "conf": "high"
         }
       },
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "checked_at": "2026-09-06"
     },
     {
       "name": "Lovable",
@@ -4436,7 +4567,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 1.6,
-      "m": 33,
+      "m": 32,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -4486,7 +4617,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 5.0,
-      "m": 47,
+      "m": 45,
       "ownModel": {
         "status": "none",
         "models": [
@@ -4593,7 +4724,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 4.0,
-      "m": 47,
+      "m": 45,
       "ownModel": {
         "status": "primary",
         "models": [
@@ -4642,7 +4773,7 @@
       "ti": "ultra",
       "biz": "B2C+B2B",
       "val": null,
-      "m": 75,
+      "m": 76,
       "ownModel": {
         "status": "none",
         "models": [
@@ -4655,7 +4786,8 @@
       "prov": {
         "arr": {
           "as_of": "2026-06-30",
-          "source": "Sacra 公司页（2026-06 更新）估算 2026年6月年化收入 4.5 亿美元；TechNode 2025-08-21 报道联合创始人披露年化收入 9000 万美元",
+          "checked": "2026-09-06",
+          "source": "复核未发现更新披露：Sacra 公司页（2026-06 更新）估 2026 年 6 月年化收入 4.5 亿美元；新浪财经 2026-08-21《蝴蝶再振翅：Manus 恢复独立》与多家中文媒体复述「被 Meta 收购后至 2026 年年中 ARR 已升至 4 亿–5 亿美元」，与在档 4.5 亿美元一致（美元原币）",
           "url": "https://sacra.com/c/manus/",
           "conf": "medium"
         },
@@ -4664,11 +4796,19 @@
           "source": "Sacra 公司页（2026-06 更新）估算 2026年6月年化收入 4.5 亿美元；TechNode 2025-08-21 报道联合创始人披露年化收入 9000 万美元",
           "url": "https://sacra.com/c/manus/",
           "conf": "medium"
+        },
+        "parent": {
+          "as_of": "2026-08-21",
+          "checked": "2026-09-06",
+          "source": "确认仍为独立公司、无母公司：Meta 于 2025-12 宣布收购 Butterfly Effect（Manus），中国监管 2026-04-27 叫停该交易，Meta 自 2026-06 起解绑；Manus 官方《致 Manus 用户的一封信》2026-08-11 宣布恢复以独立公司形式运营，新浪财经 2026-08-21 同口径报道。故 parent 维持空值，估值另待新一轮融资确认",
+          "url": "https://finance.sina.com.cn/stock/aigcy/2026-08-21/doc-inipakut1554824.shtml",
+          "conf": "medium"
         }
       },
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "checked_at": "2026-09-06"
     },
     {
       "name": "Replit",
@@ -4835,7 +4975,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 1.25,
-      "m": 22,
+      "m": 21,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -4885,7 +5025,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 4.5,
-      "m": 33,
+      "m": 32,
       "ownModel": {
         "status": "none",
         "models": [
@@ -4931,7 +5071,7 @@
       "val": 2.0,
       "listed": "",
       "parent": "",
-      "m": 54,
+      "m": 55,
       "retired": false,
       "checked_at": "2026-09-02",
       "prov": {
@@ -4973,118 +5113,200 @@
         "tokenShare": null
       },
       "valPending": null
+    },
+    {
+      "name": "Abnormal AI",
+      "uc": "面向企业邮件与账号的 AI 行为安全检测",
+      "cat": "security",
+      "stage": "scale",
+      "arr": 200.0,
+      "arrg": 100.0,
+      "mau": null,
+      "maug": null,
+      "ti": "med",
+      "biz": "B2B",
+      "val": 5.1,
+      "m": 35,
+      "ownModel": {
+        "status": "hybrid",
+        "models": [
+          "自研行为检测模型"
+        ],
+        "tokenShare": null
+      },
+      "retired": false,
+      "prov": {
+        "arr": {
+          "as_of": "2024-08-06",
+          "source": "官方口径保守值：Abnormal 官网新闻室《$250 Million Series D Financing at a $5.1 Billion Valuation》2024-08-06（SecurityWeek 2024-08-06 同日报道）称 ARR 已突破 2 亿美元、同比 100%+；businesswire 2023-08-15 载其四年破 1 亿美元 ARR。公司自 2024 年后未再官方披露 ARR，第三方内容站（memeburn / dexteragent 2026）称已达 4–5 亿美元但无独立交叉验证，故按铁律取官方可核值 2 亿美元入池，溯源日期照实写 2024-08，等待下一轮轮转复核上修。均为美元原币",
+          "url": "https://abnormal.ai/newsroom/press-releases/series-d-5b-valuation",
+          "conf": "medium"
+        },
+        "ownModel": {
+          "as_of": "2024-08-06",
+          "source": "官方口径保守值：Abnormal 官网新闻室《$250 Million Series D Financing at a $5.1 Billion Valuation》2024-08-06（SecurityWeek 2024-08-06 同日报道）称 ARR 已突破 2 亿美元、同比 100%+；businesswire 2023-08-15 载其四年破 1 亿美元 ARR。公司自 2024 年后未再官方披露 ARR，第三方内容站（memeburn / dexteragent 2026）称已达 4–5 亿美元但无独立交叉验证，故按铁律取官方可核值 2 亿美元入池，溯源日期照实写 2024-08，等待下一轮轮转复核上修。均为美元原币",
+          "url": "https://abnormal.ai/newsroom/press-releases/series-d-5b-valuation",
+          "conf": "medium"
+        },
+        "val": {
+          "as_of": "2024-08-06",
+          "source": "官方口径保守值：Abnormal 官网新闻室《$250 Million Series D Financing at a $5.1 Billion Valuation》2024-08-06（SecurityWeek 2024-08-06 同日报道）称 ARR 已突破 2 亿美元、同比 100%+；businesswire 2023-08-15 载其四年破 1 亿美元 ARR。公司自 2024 年后未再官方披露 ARR，第三方内容站（memeburn / dexteragent 2026）称已达 4–5 亿美元但无独立交叉验证，故按铁律取官方可核值 2 亿美元入池，溯源日期照实写 2024-08，等待下一轮轮转复核上修。均为美元原币",
+          "url": "https://abnormal.ai/newsroom/press-releases/series-d-5b-valuation",
+          "conf": "medium"
+        }
+      }
     }
   ],
   "ai_progress": {
     "enterprise": [
       {
-        "title": "Cisco 给全部 9 万员工每人配一个 agent，靠分级路由压成本",
-        "summary": "Cisco 于 8 月 27 日的官方博客宣布把个人 AI 助理 MyAgent 铺给全球约 9 万名员工，自新财年（7 月底）起分批开通。MyAgent 跑在 Cisco 自建的多模型、可治理平台 Circuit 上，能在 Outlook、Webex、Jira、SharePoint 之间执行受监督的自主工作流——员工给目标，系统自己拆步骤。真正值得看的是成本设计：例行任务走普通自动化脚本，中等复杂度走跑在 Cisco 自有服务器上的开源模型，只有最复杂的推理才送到昂贵的前沿模型。这是'全员 agent'第一次以可复制的单位成本结构公开落地，也印证了模型路由正在从工具变成企业标配。",
-        "example": "Cisco 运营副总裁 Thimaya Subaiya 8 月 27 日撰文披露 MyAgent 面向约 90,000 名员工铺开，按任务复杂度三级路由：脚本 → 自托管开源模型 → 前沿模型。",
-        "company": "Cisco",
-        "source": "Cisco 官方博客 2026-08-27；PYMNTS 报道",
-        "date": "2026-08-27",
-        "url": "https://blogs.cisco.com/news/my-agent-and-the-rise-of-ambient-intelligence-ciscos-next-step-in-enterprise-ai"
+        "title": "OpenAI 广告业务年化破 10 亿美元，收入口径之争摆到台面",
+        "summary": "Axios 于 9 月 3 日拆解了 OpenAI 与 Anthropic 的「收入鸿沟」：OpenAI 全年年化收入正迈向 400 亿美元以上，其中今年才起步的广告业务已达 10 亿美元年化；Anthropic 今年年化收入预计超过 650 亿美元。真正值得企业买方注意的是两家口径不同——Anthropic 把经云厂商（AWS/GCP）销售的 Claude 按全额计入自身收入、再把云厂商的分成记为成本，OpenAI 则不然。这意味着直接比较两家的「年化收入」会系统性高估前者、低估后者，做供应商评估和议价时应回到自己合同上的净支出，而不是媒体口径的总量。同时 OpenAI 收入结构开始从订阅+API 向广告扩张，是消费级流量变现的新变量。",
+        "example": "OpenAI 广告业务年化 10 亿美元、总年化 400 亿美元以上；Anthropic 年化预计超 650 亿美元，但含云伙伴转售的全额口径。",
+        "company": "OpenAI / Anthropic",
+        "source": "Axios 2026-09-03《Anthropic and OpenAI's revenue chasm, explained》",
+        "date": "2026-09-03",
+        "url": "https://www.axios.com/2026/09/03/anthropic-and-openais-revenue-chasm-explained"
       },
       {
-        "title": "McKinsey 新切面：32% 的组织已因能自建而放弃采购软件",
-        "summary": "《State of AI 2026》上周被引用的是'部署在涨、盈利仍平'，本周被拆出的是更锋利的一面：32% 的受访组织表示，因为可以用 agentic 编码工具自己造，已经放弃购买至少一个软件产品或功能；同时'在一个及以上职能规模化部署 agent'的大企业占比从 27% 升至 40%。前者是 SaaS 侧需求端第一次出现可量化的替代证据，后者说明规模化不再是少数先锋的专利。两条合起来解释了为什么'盈利提升'的比例还没动——预算是从采购转移的，不是新增的。",
-        "example": "调查显示 32% 的组织已跳过至少一个软件产品/功能的采购，改为用 agentic 编码工具内部自建；大企业在一个及以上职能规模化 agent 的比例由 27% 升至 40%。",
-        "company": "McKinsey（调查对象为全球跨行业企业）",
-        "source": "AIAgentStore 每周 AI Agent 新闻（Week of September 2, 2026）引 McKinsey State of AI 2026",
-        "date": "2026-09-02",
-        "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+        "title": "Proofpoint 把 SOC 调查做成 agent，底层直接用 OpenAI 企业通道模型",
+        "summary": "Proofpoint 本周发布 SOC Analyst Agent，把自然语言问题转成结构化、可追溯的调查结论，跨自家全部安全数据源检索，目前为私有预览、计划 2026 年三季度末正式可用。底层模型走的是 OpenAI 的 Daybreak 企业测试通道。这条线的意义不在功能本身，而在于传统安全厂商开始把 agent 作为产品默认形态（而不是加一个 Copilot 按钮），并且愿意把核心调查环节托管给外部前沿模型——对应到本周覆盖发现里 AI 安全赛道的资本热度（Torq 12 亿美元估值、Cyera ARR 破 1.5 亿美元），说明安全运营正在被重做一遍。",
+        "example": "SOC Analyst Agent：自然语言提问 → 跨 Proofpoint 数据源的结构化取证结论，可追溯；私有预览中，GA 目标 2026 Q3 末。",
+        "company": "Proofpoint",
+        "source": "AI Agent News 每日汇总 2026-09-03（Proofpoint 官方发布）",
+        "date": "2026-09-03",
+        "url": "https://aiagentstore.ai/ai-agent-news/daily/2026-09-03"
       },
       {
-        "title": "CIO 侧预算确认：60% 计划一年内投 agentic AI",
-        "summary": "Logicalis 的全球 CIO 调研显示，60% 的受访 CIO 计划在未来一年投资 agentic AI，53% 预期生成式与 agentic AI 会在两年内颠覆现有商业模式。这条的价值不在数字本身，而在它与 McKinsey 那条互相咬合：采购意愿从'AI 功能'转向'agent 与其治理运行时'，而同期真正进入生产的比例仍远低于嵌入比例。对卖方而言，未来一年的增量预算是明确的；对买方而言，瓶颈已经从'要不要买'挪到'能不能安全跑起来'。",
-        "example": "Logicalis 调研：60% 全球 CIO 计划未来一年投资 agentic AI，53% 预期两年内颠覆现有商业模式。",
-        "company": "Logicalis（调查对象为全球 CIO）",
-        "source": "AIAgentStore 每周 AI Agent 新闻（Week of September 2, 2026）引 Logicalis CIO 调研",
-        "date": "2026-09-02",
-        "url": "https://aiagentstore.ai/ai-agent-news/this-week"
-      },
-      {
-        "title": "亚太金融业 agent 化：KT 中标重做 Woori Bank 的对话与任务交接",
-        "summary": "韩国 KT 拿下重建 Woori Bank AI 客服与咨询机器人的项目，核心不是换一个更聪明的 bot，而是通过新的 Agent Connect 方案把对话与任务处理正式交接给 AI agent，并与银行的'AI banker'金融咨询服务打通。值得注意的是形态：不是在旧客服系统上加 AI 功能，而是把 agent 作为可被路由和交接的一等参与方重做架构。受监管的金融机构愿意这么改，是 agent 从试点走向核心系统的一个偏硬的信号。",
-        "example": "KT 中标 Woori Bank 项目，用 Agent Connect 让对话与任务处理在人工与 AI agent 之间交接，并接入'AI banker'金融咨询服务。",
-        "company": "KT / Woori Bank",
-        "source": "AIAgentStore 每周 AI Agent 新闻（Week of September 2, 2026）",
-        "date": "2026-09-02",
-        "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+        "title": "Fingerprint 破 5,000 万美元 ARR：AI 之外的「反欺诈基建」同样在被 agent 拉动",
+        "summary": "设备指纹与反欺诈平台 Fingerprint 于 9 月 1 日宣布 ARR 突破 5,000 万美元。它本身不是生成式 AI 公司，但增长来源与 AI 高度相关：agent 与自动化脚本的爆发让「区分真人与机器」的需求上一个台阶，识别层因此成为 AI 应用铺开后的被动受益方。对企业买方而言，这是把 agent 放到生产环境后必须同步补的一块——身份与设备侧的信任基础设施，其预算通常不在 AI 预算里，容易被漏算。",
+        "example": "Fingerprint 2026-09-01 宣布 ARR 突破 5,000 万美元（美元原币），起家于开源浏览器指纹项目。",
+        "company": "Fingerprint",
+        "source": "FinTech Global 2026-09-01",
+        "date": "2026-09-01",
+        "url": "https://fintech.global/2026/09/01/fingerprint-surpasses-50m-arr-milestone/"
       }
     ],
     "models": [
       {
-        "title": "Gemini 3.8 Flash：又一次'不换底座、靠后训练买性能'",
-        "summary": "Google 于 9 月 2 日发布 Gemini 3.8 Flash（并附一个安全强化的姊妹版 3.8 Flash Cyber），是四个月内的第四个 Flash 型号、六周内的第三个。Google 自己的模型卡承认它建在 Gemini 3.7 Flash 之上而非新底座——与上周 Grok 4.6 完全同一套路。收益是实的：Terminal-Bench 2.1 从 3.7 Flash 的 81.6% 提到 90.8%，在 DeepSWE v1.1 的长周期编码上超过多数更大的前沿模型，Artificial Analysis 智能指数 59（+3）。定价 $0.75/$3.75 每百万输入/输出 token，但明确只到 2026-12-31，2027 年元旦双双翻倍至 $1.50/$7.50——限时价被写进发布本身，是新出现的商业化动作。",
-        "example": "Terminal-Bench 2.1 得分 90.8%（3.7 Flash 为 81.6%）；1M token 上下文、64K 输出；限时定价 $0.75/$3.75，2027-01-01 起翻倍。",
-        "company": "Google（Gemini）",
-        "source": "Artificial Analysis / The Register 2026-09-02 / 9to5Google 2026-09-02",
-        "date": "2026-09-02",
-        "url": "https://artificialanalysis.ai/articles/gemini-3-8-flash"
+        "title": "GPT-6 Astra 发布：把「用电脑」当成旗舰卖点，安全护栏写进发布本身",
+        "summary": "OpenAI 于 9 月 3 日发布 GPT-6 Astra，先向受信任机构限量预览，次日起向 ChatGPT Plus/Pro/Business/Enterprise 与 API、AWS 分批放量。旗舰卖点是 computer use——像人一样操作电脑的界面导航能力，另外强调数学、软件工程与防御性网络安全。105 万 token 上下文、12.8 万最大输出、知识截止 2026-04-30；API 定价 10 美元/百万输入、50 美元/百万输出，缓存输入 1 美元、批处理半价。值得注意的是公开版本对网络安全类提示做了限制性拒答，安全护栏第一次成为发布通稿的并列主角而非附录，这也是本轮前沿模型商业化的新常态：能力叙事与滥用防护同步定价。",
+        "example": "105 万 token 上下文；API 10/50 美元每百万输入/输出 token、缓存输入 1 美元；限量预览 9-03、付费用户 9-04 起分批开放。",
+        "kind": "sota",
+        "date": "2026-09-03",
+        "url": "https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html",
+        "source": "Bloomberg / CNBC / Fortune 2026-09-03"
       },
       {
-        "title": "Anthropic Fable 5.1 转 GA：同价升级，缓存读价降到 $0.25",
-        "summary": "Anthropic 的 Fable 5.1 于 9 月 1 日正式可用，定价与 Fable 5 持平，但缓存读取（cache read）单价降至 $0.25/百万 token。方向和 Gemini 3.8 Flash 是同一个：前沿厂商这一轮的竞争面正从'基准分'挪到'把同等能力的单位成本压到多低'，而缓存读价直接决定长上下文 agent 的经济性——agent 循环里绝大部分 token 是重复读的上下文，不是新生成的。这条依赖模型发布追踪站的汇总，缺少厂商原文交叉，置信度按 medium 处理。",
-        "example": "Fable 5.1 于 2026-09-01 GA，价格与 Fable 5 相同，cache read 降至 $0.25/百万 token。",
-        "company": "Anthropic",
-        "source": "LLM Gateway 模型发布时间线 / llm-stats 2026-09（未获厂商原文交叉，conf medium）",
-        "date": "2026-09-01",
-        "url": "https://llmgateway.io/timeline",
-        "conf": "medium"
+        "title": "Meta Muse Spark 1.3 接棒 Llama：闭源、100 万上下文、押长周期 agent",
+        "summary": "Meta Superintelligence Labs 于 9 月 2 日发布 Muse Spark 1.3，闭源权重、100 万 token 上下文，明确面向长周期 agent 与编码任务调优，Artificial Analysis 智能指数 53、输出速度约 190 token/s。配套动作是 9 月 1 日的 Muse Voice Transcribe（首个实时音频感知模型，把流式语音识别、说话人分离与端点检测合到一个模型里），以及 8 月 10 日以 Apache 2.0 开源的 Muse Glimmer 30B——Llama 4 之后 Meta 第一个可下载的前沿实验室模型。三者合起来是一次清晰的路线切换：旗舰闭源化、开源留给小尺寸本地 agent，Llama 品牌事实上退居历史。本周据此修正了本池 Meta 行的旗舰产品字段。",
+        "example": "Muse Spark 1.3：闭源、1M 上下文、AA 智能指数 53、约 190 token/s；Muse Glimmer 30B 以 Apache 2.0 开源。",
+        "kind": "sota",
+        "date": "2026-09-02",
+        "url": "https://artificialanalysis.ai/models/releases/muse-spark-1-3",
+        "source": "Artificial Analysis 模型发布页 / Meta 官方新闻室 2026-09-02"
       },
       {
-        "title": "9 月首周三天三款：8 月的'井喷'没有降速，评测仍然滞后",
-        "summary": "9 月 1–2 日三天内至少三款新模型落地：Anthropic Fable 5.1（9/1）、Google Gemini 3.8 Flash 与 Qwen3.8 27B（均 9/2）。这直接承接了上周记录的'8 月成模型发布井喷月、独立评测明显滞后'——发布节奏进一步压缩到以周为单位，而第三方评测机构的覆盖速度没有同步提高，多数新型号在发布后数日内只有厂商自报基准可查。对使用方的实际含义是：短期内选型只能靠自己的任务集实测，公开榜单的参考价值在这个节奏下持续下降。",
-        "example": "2026-09-01 Fable 5.1 GA；2026-09-02 Gemini 3.8 Flash 与 Qwen3.8 27B 同日发布。",
-        "company": "Anthropic / Google / 阿里 Qwen 生态",
-        "source": "LLM Gateway 模型发布时间线（2026-09）/ llm-stats AI news",
-        "date": "2026-09-02",
-        "url": "https://llmgateway.io/timeline"
+        "title": "Gemini 的两个 token 口径：全产品面 3,200 万亿 vs 模型直调 1,000 万亿",
+        "summary": "本周复核 Google 的推理量口径时出现一个容易记错的分叉：Alphabet 在 2026 年二季度业绩会上称 Gemini 模型处理量达 220 亿 token/分钟、半年 +120%，折合约每月 1,000 万亿 token；而 Pichai 在 2026 年 5 月 I/O 上给出的 3,200 万亿/月，覆盖的是 Gemini、搜索 AI 概览、YouTube、Workspace、Cloud API 在内的全部 AI 产品面。两者相差三倍多但并不矛盾，是范围不同。做横向比较（例如与 OpenAI 的 150 亿 token/分钟 API 口径对齐）时必须先对齐范围，否则会得出量级完全错误的结论——这类口径错配是本项目历史上最常见的数据事故来源之一。",
+        "example": "Gemini 模型直调：220 亿 token/分钟 ≈ 1,000 万亿/月（2026 Q2 业绩会）；全 AI 产品面：3,200 万亿/月（I/O 2026-05-19）。",
+        "kind": "eval",
+        "date": "2026-09-06",
+        "url": "https://cryptobriefing.com/google-3-2-quadrillion-tokens-monthly/",
+        "source": "Alphabet 2026 Q2 业绩会 / Google I/O 2026（Cryptobriefing 2026-05-22 转述）"
       }
     ],
     "infra_invest": [
       {
-        "layer": "Neocloud / GPU 专营云的供给侧（算力租赁与电力接入）",
-        "thesis": "推理占比上升正把 GPU 租赁从'训练峰值生意'改造成'持续负载生意'：ABI 预计到 2030 年推理将占 neocloud 市场约 80%，该品类 2025 年收入已超 $250 亿、被预测在 2031 年逼近 $4,000 亿。投资逻辑的关键位移在于——真正的护城河不是 GPU，而是 GW 级电力与并网时点，谁锁定电力谁定价（这也是 SoftBank 把 SB Neo 的目标直接写成 2030 年 10GW 的原因）。风险有三层：一是超大厂自己下场外售（Meta Compute、SB Neo 均已宣布），把纯租赁商的差价压平；二是纯租赁模型对利率与 GPU 残值假设高度敏感；三是当前 A100 约 $1.09/GPU 小时、H100 约 $3.20/GPU 小时的市场价，本身就说明上一代硬件的定价权衰减得很快。",
+        "layer": "超大规模资本开支与晶圆产能（算力供给的最上游）",
+        "thesis": "2026 年的 AI 基建投资已经从「谁买得起卡」变成「谁承担得起折旧」。J.P. Morgan 估美国五大超大规模厂商今年 capex 达 6,970 亿美元，较年初预期上调 1,730 亿；全球 14 家最大数据中心运营商合计资本开支接近 7,500 亿美元（上年不到 4,500 亿），在建 IT 容量超过 23GW。上游 TSMC 把 2026 年资本预算上调到 600–640 亿美元并称未来三年将「显著高于过去三年」。投资含义有两层：一是这轮支出的边际增量越来越依赖表外融资与第三方资本，纯粹靠经营性现金流的玩家会先掉队；二是产能扩张的兑现窗口在 2027–2028，若届时推理需求增速回落到低于折旧节奏，最先受伤的不是模型公司而是重资产的算力供给方。",
         "players": [
-          "CoreWeave",
-          "Nebius",
-          "Crusoe",
-          "Lambda",
-          "SB Neo（SoftBank，目标 2030 年 10GW）",
-          "Meta Compute",
-          "Thunder Compute"
+          "Microsoft（年化 capex 约 1,450 亿美元）",
+          "Meta（2026 指引 1,150–1,350 亿美元）",
+          "Alphabet",
+          "Amazon",
+          "TSMC（2026 资本预算 600–640 亿美元）"
         ],
-        "summary": "neocloud 品类 2025 年收入超 $250 亿、被预测 2031 年接近 $4,000 亿，推理到 2030 年将占约 80%；市场价 A100 约 $1.09/GPU·小时、H100 约 $3.20/GPU·小时，较 AWS 便宜约 60–85%。供给侧同时出现两个方向相反的力量：专营商继续扩张，而 Meta 与 SoftBank 这类超大玩家开始把自有算力对外销售，SB Neo 计划自 FY2027 起向包括超大厂在内的美国企业供给。",
-        "source": "ABI Research neocloud 市场趋势 / Computer Weekly / Thunder Compute（2026-09）/ SoftBank 集团官方公告 2026-07-02",
-        "url": "https://www.abiresearch.com/blog/neocloud-market-trends"
+        "summary": "J.P. Morgan 估 2026 年美国五大超大规模厂商 capex 6,970 亿美元（年初以来上调 1,730 亿）；14 家最大数据中心运营商合计接近 7,500 亿美元，在建 IT 容量超 23GW；TSMC 上调 2026 资本预算至 600–640 亿美元，亚利桑那累计投资达 2,650 亿美元。第三方预测 AI 基建支出 2030 年将达 1.4 万亿美元。",
+        "source": "J.P. Morgan《Financing AI infrastructure and U.S. data centers》/ 24-7 Wall St. 2026-09-02",
+        "url": "https://247wallst.com/investing/2026/09/02/ai-infrastructure-spending-is-set-to-hit-1-4-trillion-by-2030-these-are-the-3-chip-stocks-positioned-to-capture-it/"
       },
       {
-        "layer": "AI 算力的表外融资层（第三方资本与债务结构）",
-        "thesis": "2026 年 Big-5 超大厂的 AI 基建资本开支约 $7,750–8,000 亿，全球前 14 大数据中心运营商合计接近 $7,500 亿（上年不到 $4,500 亿）——这个规模已超出经营性现金流可自持的边界，融资结构因此系统性外移到资管机构与私募信贷。标志动作是 NVIDIA 与 Apollo、BlackRock、Blackstone、Brookfield、Goldman Sachs、KKR 共建独立算力融资平台，目标撬动逾 $5,000 亿第三方资本；俄亥俄州的 OpenAI 数据中心由 NVIDIA 背书约 $1,050 亿融资。投资逻辑：稀缺资源正从'芯片供给'转向'能以合理成本承担 GW 级折旧的资产负债表'，融资平台、数据中心资产与私募信贷是新的收租位置。风险集中在三点——芯片残值假设、供应商融资的循环性（NVIDIA 既是卖方又是出资方），以及整条结构对利率的敏感度。",
+        "layer": "中国大模型资产：一级市场与二级市场的背离",
+        "thesis": "本周中国 AI 资产出现罕见的正反面同框：一级市场仍在加价——彭博 9 月 4 日报道月之暗面考虑最快 2026 年赴港 IPO、募资 30–50 亿美元，DeepSeek 第二轮融资投前估值约 5,000 亿元人民币（按 1 美元 = 6.76 元汇率约合 740 亿美元）交割在即并已启动科创板筹备；二级市场却在解禁潮下折价——智谱股价自 6 月 2,094 港元高点回落至 1,075 港元（按 1 美元 = 7.8 港元汇率，市值约 642 亿美元），MiniMax 自 3 月 4,100 亿港元市值高点腰斩再腰斩，而 9 月单月港股解禁规模高达 5,300 亿港元、占全年三分之一。可交易的稀缺性溢价正在瓦解，而不可交易的一级估值仍靠 FOMO 支撑，两者迟早要收敛——收敛的方向大概率由 ARR 兑现速度决定，而不是由发布会决定。",
         "players": [
-          "NVIDIA",
-          "Apollo",
-          "BlackRock",
-          "Blackstone",
-          "Brookfield",
-          "Goldman Sachs",
-          "KKR",
-          "SB Energy"
+          "智谱（HKEX:2513）",
+          "MiniMax（HKEX:0100）",
+          "月之暗面 Moonshot",
+          "DeepSeek"
         ],
-        "summary": "NVIDIA 联合六家大型资管设立独立算力融资平台，目标动员逾 $5,000 亿第三方资本；NVIDIA 为 OpenAI 俄亥俄数据中心背书约 $1,050 亿融资，初期支持 4.25GW、可追加 3.75GW，SB Energy 与 SoftBank 配套建设支撑 10GW 的电源并向区域电网投入至少 $42 亿。在建数据中心 IT 容量已超 23GW。",
-        "source": "NVIDIA Newsroom / CNBC 2026-08-17 / Futurum AI Capex 2026 / BloombergNEF",
-        "url": "https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital"
+        "summary": "月之暗面考虑 2026 年赴港 IPO 募资 30–50 亿美元（彭博 2026-09-04）；DeepSeek 第二轮投前估值约 740 亿美元、交割在即并筹备科创板。二级端：智谱最近收盘 1,075 港元（市值约 642 亿美元，自 6 月高点回落约 49%）；MiniMax 市值自 3 月 4,100 亿港元高点腰斩再腰斩；港股 9 月解禁规模 5,300 亿港元占全年三分之一。",
+        "source": "Bloomberg 2026-09-04 / 新浪财经 2026-09 / 虎嗅 2026-08-28 / 行情页检索于 2026-09-06",
+        "url": "https://finance.sina.cn/tech/2026-09-04/detail-inihifyc5130609.d.html"
+      },
+      {
+        "layer": "推理中间层（模型托管与 token 批发）",
+        "thesis": "本轮最贵的非模型资产正在推理中间层形成：Fireworks AI 于 2026-07-16 完成 15.05 亿美元 D 轮、估值 175 亿美元，同期年化收入已破 10 亿美元（约 17.5 倍 PS），平台日 token 量从 15 万亿升至 40 万亿以上；Together AI 于 2026-07 完成 8 亿美元 C 轮、估值 83 亿美元，年化收入约 10 亿美元，其中 API 业务占三到四成、其余为 GPU 租赁。这一层的投资逻辑是「开源模型越强、中间层越值钱」：企业要的是便宜且可控的推理，而不是特定实验室的品牌。风险同样清楚——它夹在自建推理的超大厂与自营 API 的模型实验室之间，毛利受两头挤压，且收入结构里 GPU 租赁部分与 neocloud 同质、不享受软件估值。注：按本池 CRITERIA（AI-native 应用 + 基础模型），这两家属基建层，不纳入主表，仅在投资视角记录。",
+        "players": [
+          "Fireworks AI（估值 175 亿美元、年化收入超 10 亿美元）",
+          "Together AI（估值 83 亿美元、年化收入约 10 亿美元）",
+          "Baseten",
+          "Modal"
+        ],
+        "summary": "Fireworks AI 2026-07-16 完成 15.05 亿美元 D 轮、投后 175 亿美元，年化收入破 10 亿美元、日 token 量 40 万亿以上（较上轮增长 5 倍）；Together AI 2026-07 完成 8 亿美元 C 轮、估值 83 亿美元（较 17 个月前 33 亿美元 2.5 倍），年化收入约 10 亿美元、二季度年度订单超 11.5 亿美元，API 占收入三到四成。均为美元原币。",
+        "source": "CNBC 2026-07-16 / Sacra 公司页 / Crunchbase News 2026-07",
+        "url": "https://www.cnbc.com/2026/07/16/fireworks-nvidia-cloud-ai-startup-value.html"
       }
     ],
-    "takeaway": "本周三条线指向同一件事：成本结构正在取代能力叙事，成为决定谁能规模化的变量。企业端 Cisco 给 9 万人全员配 agent，公开的重点不是能力而是三级路由的单位成本；McKinsey 拆出 32% 的组织已因能自建而放弃采购软件，说明 AI 预算是从 SaaS 采购转移来的、不是新增的，这也解释了为何盈利提升的比例迟迟不动。模型侧 Gemini 3.8 Flash 与 Fable 5.1 是同一动作的两个版本——不换底座、靠后训练与缓存定价压单位成本，而 Google 把限时价与 2027 年翻倍条款写进发布本身，是这一轮商业化的新东西；发布节奏压到以周计，独立评测继续滞后，选型只能靠自有任务集实测。基建侧的稀缺资源已从芯片挪到电力与资产负债表：NVIDIA 联合六家资管撬动逾 $5,000 亿第三方资本，把 GW 级折旧移出超大厂表内，同时 Meta 与 SoftBank 开始外售自有算力，压缩纯租赁商的差价。以上为研究观察，非投资建议。",
-    "week_of": "2026-09-03",
-    "generated_at": "2026-09-03 09:55 UTC",
+    "takeaway": "本周最该记住的是三处口径分叉，而不是三条新闻：其一，OpenAI 与 Anthropic 的「年化收入」不可直接比较——后者把云伙伴转售按全额计入自身收入，做供应商评估要回到自己合同上的净支出；其二，Gemini 的推理量有 3,200 万亿/月（全 AI 产品面）和 1,000 万亿/月（模型直调）两个并存口径，横向比较前必须对齐范围；其三，中国大模型资产的一级与二级已明显背离，月之暗面筹备赴港 IPO、DeepSeek 以约 740 亿美元估值加价交割的同时，智谱自 6 月高点回落约一半、9 月 5,300 亿港元解禁压顶。产品侧本周则是两次旗舰换代：OpenAI GPT-6 Astra 把「用电脑」和安全护栏并列为发布主角，Meta 以 Muse Spark 1.3 完成从 Llama 品牌的事实切换。以上为研究观察，非投资建议。",
+    "week_of": "2026-09-06",
+    "generated_at": "2026-09-06 13:21 UTC",
     "model": "subscription-routine"
   },
-  "candidates": [],
+  "candidates": [
+    {
+      "name": "Cyera",
+      "cat": "security",
+      "uc": "AI 驱动的企业数据安全与治理平台",
+      "why": "ARR 已过 1.5 亿美元、已交割估值 90 亿美元，规模远超硬门槛；但其核心价值主要来自数据发现/分类引擎而非大模型本身，AI-native 判定不确定，按 CRITERIA 灰区规则入候选队列而非直接入池",
+      "arr": 150.0,
+      "val": 9.0,
+      "source": "TechCrunch 2026-06-02《Cyera eyes $12B valuation at 80x ARR multiple despite operating losses》：ARR 已超 1.5 亿美元；最近已交割轮次为 2026-01-08 公告的 4 亿美元 F 轮、投后 90 亿美元（Cyera 官方新闻稿 / businesswire 2026-01-08）。传闻中的 120 亿美元新一轮公司称报道「严重失实」，未采信。均为美元原币",
+      "url": "https://techcrunch.com/2026/06/02/cyera-eyes-12b-valuation-at-80x-arr-multiple-despite-operating-losses/",
+      "as_of": "2026-06-02",
+      "found_at": "2026-09-06",
+      "reason": "not clearly AI-native",
+      "verdict": "pending"
+    },
+    {
+      "name": "Torq",
+      "cat": "security",
+      "uc": "Agentic AI SOC 自动化平台",
+      "why": "AI SOC 赛道最接近头部的独立公司，产品形态是真正的 LLM agent；估值 12 亿美元落在灰区（0.5–2B），ARR 未公开披露，按规则进候选队列观察",
+      "arr": null,
+      "val": 1.2,
+      "source": "Torq 官方新闻《Torq Secures $140M Series D at $1.2B Valuation to Lead the AI SOC and Agentic AI Era》2026-01；FinTech Global 2026-01-12 与 Yahoo Finance 同口径报道，累计融资 3.32 亿美元（美元原币）。ARR 未披露",
+      "url": "https://torq.io/news/torq-seriesd/",
+      "as_of": "2026-01-12",
+      "found_at": "2026-09-06",
+      "reason": "grey zone",
+      "verdict": "pending"
+    },
+    {
+      "name": "Arena (LMArena)",
+      "cat": "other",
+      "uc": "众包对战式大模型评测与基准平台",
+      "why": "商业化 8–9 个月即达 1 亿美元年化收入，是 eval 这一新兴层的头部；但收入为消耗型而非经常性、且核心价值来自评测社区而非自有大模型，AI-native 判定不确定，按灰区规则入候选队列",
+      "arr": 100.0,
+      "val": null,
+      "source": "TechCrunch 2026-06-29《Arena, the AI leaderboard everyone uses, is now a $100M business》与 Dealroom 2026-06 同口径：2025-09 上线付费产品 AI Evaluations，四个月破 3,000 万美元年化，八个月达 1 亿美元年化 run-rate（美元原币）。TechCrunch 同时指出该收入按消耗计费、并非严格经常性收入，口径需注意",
+      "url": "https://techcrunch.com/2026/06/29/arena-the-ai-leaderboard-everyone-uses-is-now-a-100m-business/",
+      "as_of": "2026-06-29",
+      "found_at": "2026-09-06",
+      "reason": "not clearly AI-native",
+      "verdict": "pending"
+    }
+  ],
   "series": {
     "qtr": [
       "Q1'23",
@@ -5189,6 +5411,15 @@
       "tok": 9273.8,
       "nM": 17,
       "nA": 33,
+      "nMrev": 12
+    },
+    {
+      "date": "2026-09-06",
+      "mARR": 114.53,
+      "aARR": 11.92,
+      "tok": 9273.8,
+      "nM": 17,
+      "nA": 34,
       "nMrev": 12
     }
   ],
