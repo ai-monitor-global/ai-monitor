@@ -4,7 +4,7 @@
     "next_update": "2026-09-06",
     "update_notes": "2026-09-06: 7 项已核实更新 — MODEL Zhipu AI.val: 71.4 -> 64.2; MODEL xAI.parent:  -> SpaceX; MODEL xAI.uc: Grok 4.20、Grok Imagine、Colossus -> Grok 4.6、Grok Imagine、Colossus; MODEL OpenAI.uc: GPT-5.6 Sol、ChatGPT、Codex、Sora -> GPT-6 Astra、ChatGPT、Codex、Sora; MODEL Google Gemini.uc: Gemini 3.1 Pro／3.6 Flash、Gemma -> Gemini 3.1 Pro／3.8 Flash、Gemma; MODEL Meta",
     "schema": 2,
-    "last_run": "2026-09-06",
+    "last_run": "2026-09-07",
     "stale_days": 120,
     "categories": {
       "coding": {
@@ -1781,11 +1781,11 @@
         "error": null
       },
       "openrouter": {
-        "at": "2026-09-06",
+        "at": "2026-09-07",
         "ok": true,
         "error": null,
-        "weeks": 51,
-        "wow_pct": 21.0
+        "weeks": 52,
+        "wow_pct": 2.2
       },
       "routine-weekly": {
         "at": "2026-09-03",
@@ -5426,12 +5426,21 @@
       "nM": 17,
       "nA": 34,
       "nMrev": 12
+    },
+    {
+      "date": "2026-09-07",
+      "mARR": 114.53,
+      "aARR": 11.92,
+      "tok": 9273.8,
+      "nM": 17,
+      "nA": 34,
+      "nMrev": 12
     }
   ],
   "openrouter": {
-    "as_of": "2026-09-05",
-    "fetched": "2026-09-06",
-    "wow_pct": 21.0,
+    "as_of": "2026-09-06",
+    "fetched": "2026-09-07",
+    "wow_pct": 2.2,
     "weekly": [
       {
         "week": "2025-09-08",
@@ -5636,6 +5645,10 @@
       {
         "week": "2026-08-24",
         "tok": 113.0
+      },
+      {
+        "week": "2026-08-31",
+        "tok": 115.46
       }
     ],
     "source": "OpenRouter datasets API（rankings 同源，top50+other 全平台口径）",
