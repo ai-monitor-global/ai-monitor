@@ -1875,7 +1875,7 @@
         "error": null
       },
       "openrouter": {
-        "at": "2026-09-07",
+        "at": "2026-09-13",
         "ok": true,
         "error": null,
         "weeks": 52,
@@ -5245,7 +5245,8 @@
           "as_of": "2024-08-06",
           "source": "官方口径保守值：Abnormal 官网新闻室《$250 Million Series D Financing at a $5.1 Billion Valuation》2024-08-06（SecurityWeek 2024-08-06 同日报道）称 ARR 已突破 2 亿美元、同比 100%+；businesswire 2023-08-15 载其四年破 1 亿美元 ARR。公司自 2024 年后未再官方披露 ARR，第三方内容站（memeburn / dexteragent 2026）称已达 4–5 亿美元但无独立交叉验证，故按铁律取官方可核值 2 亿美元入池，溯源日期照实写 2024-08，等待下一轮轮转复核上修。均为美元原币",
           "url": "https://abnormal.ai/newsroom/press-releases/series-d-5b-valuation",
-          "conf": "medium"
+          "conf": "medium",
+          "checked": "2026-09-13"
         },
         "val": {
           "as_of": "2024-08-06",
@@ -5546,8 +5547,8 @@
     }
   ],
   "openrouter": {
-    "as_of": "2026-09-06",
-    "fetched": "2026-09-07",
+    "as_of": "2026-09-12",
+    "fetched": "2026-09-13",
     "wow_pct": 2.2,
     "weekly": [
       {
