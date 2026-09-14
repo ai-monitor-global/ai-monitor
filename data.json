@@ -4,7 +4,7 @@
     "next_update": "2026-09-06",
     "update_notes": "2026-09-13: 8 项已核实更新 — MODEL Zhipu AI.val: 64.2 -> 47.3; MODEL MiniMax.val: 13.0 -> 12.1; APP Harvey.val: 11 -> 15.6; APP Harvey.arr: 350 -> 400; APP Harvey.ownModel: {'status': 'none', 'tokenShare': None, 'models': []} -> {'status': 'hybrid', 'tokenShare': None, 'models': ['Harvey Tenet']}; MODEL DeepSeek.uc: DeepSeek-V4-Pro、V4-Flash（含视觉） -> DeepSeek-V4.1-Flash（MoE开源权重）、API平台",
     "schema": 2,
-    "last_run": "2026-09-13",
+    "last_run": "2026-09-14",
     "stale_days": 120,
     "categories": {
       "coding": {
@@ -1875,11 +1875,11 @@
         "error": null
       },
       "openrouter": {
-        "at": "2026-09-13",
+        "at": "2026-09-14",
         "ok": true,
         "error": null,
-        "weeks": 52,
-        "wow_pct": 2.2
+        "weeks": 53,
+        "wow_pct": 9.8
       },
       "routine-weekly": {
         "at": "2026-09-13",
@@ -5544,12 +5544,21 @@
       "nM": 17,
       "nA": 34,
       "nMrev": 12
+    },
+    {
+      "date": "2026-09-14",
+      "mARR": 114.53,
+      "aARR": 11.97,
+      "tok": 9273.8,
+      "nM": 17,
+      "nA": 34,
+      "nMrev": 12
     }
   ],
   "openrouter": {
-    "as_of": "2026-09-12",
-    "fetched": "2026-09-13",
-    "wow_pct": 2.2,
+    "as_of": "2026-09-13",
+    "fetched": "2026-09-14",
+    "wow_pct": 9.8,
     "weekly": [
       {
         "week": "2025-09-08",
@@ -5758,6 +5767,10 @@
       {
         "week": "2026-08-31",
         "tok": 115.46
+      },
+      {
+        "week": "2026-09-07",
+        "tok": 126.76
       }
     ],
     "source": "OpenRouter datasets API（rankings 同源，top50+other 全平台口径）",
