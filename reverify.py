@@ -119,13 +119,28 @@ APP_EXTRA = """5. Own-model status -> one entry in `own_model_patches`: `status`
    "majority of requests", "most of our inference") - that share is the single
    most useful number here, so look for it before settling for an empty
    token_share. Use "primary" when the company says its own models serve most
-   inference, not merely that they exist.
+   inference, not merely that they exist. Use "unknown" only when the company
+   has never said which model powers the product and no credible reporting
+   establishes it - that is a fact worth storing, distinct from "none".
 6. Monthly active users -> `mau` (millions), and `maug` (%)
 7. `cat` (one of: {cats}), `stage` (pmf|growth|scale), `biz`
    (B2B|B2C|B2B+B2C|B2C+B2B), `ti` token intensity (low|med|high|ultra)
+8. If `cat` is "assistant" (a consumer personal-assistant agent), ACTIVE USERS
+   are the primary metric, not ARR - most of this category has never published
+   a price, so an empty `arr` is correct there; never write 0 or an estimate.
+   Search specifically for a disclosed MAU / DAU / WAU, registered-user or
+   waitlist figure and, if found, patch `mau` (millions) / `maug` with the
+   date it refers to and its source. Never estimate or interpolate a user
+   number. A product with no app-store presence (Instinct runs over
+   iMessage/WhatsApp/phone; OpenClaw is self-hosted) cannot be seen by
+   Sensor Tower / Appfigures / data.ai, so for those only a company disclosure
+   counts. Also patch `access` (invite | waitlist | ga | oss) when the supply
+   state changes, and `uc` when the first price is published - those two
+   events and a base-model disclosure (`ownModel`) are what matter most here.
 
 Patchable fields here are only: arr, arrg, mau, maug, val, uc, cat, stage,
-biz, ti, ownModel, listed, valPending. `tokM`/`tokG` do not exist on an app.
+biz, ti, ownModel, listed, valPending, access. `tokM`/`tokG` do not exist on
+an app.
 """
 MODEL_EXTRA = """5. Monthly inference token volume -> `tokM` (trillions/month), `tokG` (%)
 6. `region` (US|CN|EU)
@@ -170,7 +185,7 @@ SCHEMA = {
 }
 
 SHOWN_FIELDS = ("uc", "arr", "arrg", "val", "valPending", "listed", "parent", "mau", "maug", "tokM", "tokG",
-                "cat", "stage", "biz", "ti", "region", "ownModel")
+                "cat", "stage", "biz", "ti", "region", "ownModel", "access")
 
 
 def _snapshot(entity: dict) -> str:

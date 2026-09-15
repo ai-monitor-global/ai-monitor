@@ -53,6 +53,7 @@ a.pdot:hover{color:#2563eb}
 .om-primary{color:#16a34a;font-weight:600}
 .om-hybrid{color:#ca8a04;font-weight:600}
 .om-none{color:#888}
+.om-unknown{color:#aaa}
 .mbar{height:4px;border-radius:2px;background:#e5e7eb;overflow:hidden;margin-top:4px;width:60px}
 .mfill{height:100%;border-radius:2px;background:#2563eb}
 .grid2eq{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
@@ -120,6 +121,7 @@ a.pdot:hover{color:#2563eb}
 <script>
 let DATA=null,cRI=null,cTI=null;
 let layer="models",appCat="all",appSort="arr",modelRegion="all",modelSort="arr";
+let sortBeforeAssistant=null; /* the sort the user had before the assistant chip auto-switched it */
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
 function meta(){return DATA&&DATA.meta||{}}
 function cats(){return meta().categories||{}}
@@ -275,7 +277,14 @@ function wireChips(){
   document.querySelectorAll("#app-filters .fb").forEach(b=>b.addEventListener("click",()=>{
     appCat=b.dataset.cat;
     document.querySelectorAll("#app-filters .fb").forEach(x=>x.classList.remove("on"));
-    b.classList.add("on");renderAppTable(appCat,appSort);}));
+    b.classList.add("on");
+    /* the assistant category is pre-revenue, so ranking it by ARR says nothing:
+       users are its primary metric. Switch the sort in on the way in, and back
+       out on the way out unless the user picked something else meanwhile. */
+    const sel=document.getElementById("app-sort");
+    if(appCat==="assistant"&&appSort!=="mau"){sortBeforeAssistant=appSort;appSort="mau";sel.value="mau";}
+    else if(appCat!=="assistant"&&sortBeforeAssistant!=null&&appSort==="mau"){appSort=sortBeforeAssistant;sel.value=appSort;sortBeforeAssistant=null;}
+    renderAppTable(appCat,appSort);}));
   document.querySelectorAll("#model-filters .fb").forEach(b=>b.addEventListener("click",()=>{
     modelRegion=b.dataset.region;
     document.querySelectorAll("#model-filters .fb").forEach(x=>x.classList.remove("on"));
@@ -311,6 +320,20 @@ function valCell(a,cls){
   if(a.valPending!=null) h+="<div style=\"font-size:10px;color:#c2410c;white-space:nowrap\" title=\"已报道但尚未交割的轮次，不计入估值\">洽谈中 $"+a.valPending+"B</div>";
   return "<td style=\"text-align:right\" class=\"num"+cls+"\">"+h+"</td>";
 }
+/* Supply state. Only the pre-revenue assistant category tracks it: for an
+   invite-only agent the move to GA is the first moment real demand becomes
+   visible, so it is shown next to the name where the listed/parent tags live.
+   Rows that do not track it (access null) show nothing. */
+const ACCESS={
+  invite:  ["邀请制","#fef3c7","#b45309","邀请制 / 私测：用户数受供给约束，不反映真实需求"],
+  waitlist:["Waitlist","#fef3c7","#b45309","排队等待：用户数受供给约束，不反映真实需求"],
+  ga:      ["已公开","#dcfce7","#15803d","公开可用"],
+  oss:     ["开源自托管","#ede9fe","#6d28d9","开源、自托管：装机量只能以 GitHub star / 下载量做代理，不等于活跃用户"]};
+function accessTag(a){
+  const d=ACCESS[a.access];
+  if(!d) return "";
+  return "<span class=\"bdg\" style=\"background:"+d[1]+";color:"+d[2]+";margin-left:5px\" title=\""+esc(d[3])+"\">"+esc(d[0])+"</span>";
+}
 function listedTag(a){
   const t=(a.listed||"").trim(), p=(a.parent||"").trim();
   let h="";
@@ -334,9 +357,12 @@ function renderMtx(){
   /* several providers are divisions whose parent never breaks out model
      revenue, so the total covers fewer rows than the table shows */
   const mRev=M.filter(a=>a.arr!=null).length;
+  /* the assistant category is pre-revenue as a class, so the app total also
+     covers fewer rows than the table shows */
+  const aRev=A.filter(a=>a.arr!=null).length;
   document.getElementById("mtx").innerHTML=
     "<div class=\"mc\"><div class=\"mc-l\">模型收入 Est. Revenue</div><div class=\"mc-v neu\">$"+(mTot/1000).toFixed(1)+"B</div><div class=\"mc-s\">"+M.length+"家供应商"+(mRev<M.length?"（其中 "+mRev+" 家有收入数据）":"")+"</div></div>"+
-    "<div class=\"mc\"><div class=\"mc-l\">App收入 Est. ARR</div><div class=\"mc-v\" style=\"color:#6d28d9\">$"+(aTot/1000).toFixed(1)+"B</div><div class=\"mc-s\">"+A.length+"个AI native apps</div></div>"+
+    "<div class=\"mc\"><div class=\"mc-l\">App收入 Est. ARR</div><div class=\"mc-v\" style=\"color:#6d28d9\">$"+(aTot/1000).toFixed(1)+"B</div><div class=\"mc-s\">"+A.length+"个AI native apps"+(aRev<A.length?"（其中 "+aRev+" 家有收入数据）":"")+"</div></div>"+
     "<div class=\"mc\"><div class=\"mc-l\">模型总 Token量</div><div class=\"mc-v\">~"+Math.round(tokTot)+"T</div><div class=\"mc-s\">万亿tokens/月（估算）</div></div>"+
     "<div class=\"mc\"><div class=\"mc-l\">模型收入增长率</div><div class=\"mc-v up\">"+fna(mAvgG,"%")+"</div><div class=\"mc-s\">API Revenue YoY</div></div>"+
     "<div class=\"mc\"><div class=\"mc-l\">App收入增长率</div><div class=\"mc-v up\">"+fna(aAvgG,"%")+"</div><div class=\"mc-s\">ARR YoY</div></div>";
@@ -450,7 +476,7 @@ function renderAppTable(cat,sk){
   d=[...d].sort((a,b)=>{const av=sortVal(a,sk)??-Infinity,bv=sortVal(b,sk)??-Infinity;return bv-av;});
   const TL={ultra:"&#9888;&#65039; Ultra",high:"&#9888; High",med:"&#9728; Medium",low:"&#128712; Low"};
   document.getElementById("tbody").innerHTML=d.map(a=>
-    "<tr><td><div class=\"an\">"+esc(a.name)+listedTag(a)+"</div><div class=\"uc2\">"+esc(a.uc)+"</div></td>"+
+    "<tr><td><div class=\"an\">"+esc(a.name)+listedTag(a)+accessTag(a)+"</div><div class=\"uc2\">"+esc(a.uc)+"</div></td>"+
     "<td>"+tagged(cats(),a.cat,a.cat)+"</td>"+
     "<td style=\"text-align:right\" class=\"num"+provCls(a,"arr")+"\">"+fmoney(a.arr,"")+provMark(a,"arr")+"</td>"+
     "<td style=\"text-align:right\" class=\"num up\">"+fna(a.arrg,"%")+"</td>"+
@@ -460,13 +486,21 @@ function renderAppTable(cat,sk){
     "<td class=\""+("om-"+((a.ownModel||{}).status||"none"))+provCls(a,"ownModel")+"\" style=\"font-size:11px\">"+ownModelCell(a)+provMark(a,"ownModel")+"</td>"+
     valCell(a,provCls(a,"val"))+
     "<td style=\"text-align:right\" class=\"num\">"+fmult(a.val,a.arr)+"</td>"+
-    "<td class=\"num\">"+a.m+"<div class=\"mbar\"><div class=\"mfill\" style=\"width:"+a.m+"%\"></div></div></td></tr>"
+    momentumCell(a)+"</tr>"
   ).join("");}
+/* Momentum is derived from arr / arrg / val. A pre-revenue assistant row has
+   none of them, so its stored 0 means "not computable", not "worst" - say so. */
+function momentumCell(a){
+  if(a.arr==null&&a.arrg==null) return "<td class=\"num\" style=\"color:#aaa\" title=\"无 ARR / 增速数据，momentum 不可计算\">—</td>";
+  return "<td class=\"num\">"+a.m+"<div class=\"mbar\"><div class=\"mfill\" style=\"width:"+a.m+"%\"></div></div></td>";
+}
 /* The old boolean could not express "has its own model AND most tokens run on
    it", which is the whole point for something like Cursor. */
 function ownModelCell(a){
   const om=a.ownModel||{status:"none"},names=(om.models||[]).join(", ");
   const tip=names?" title=\""+esc(names)+"\"":"";
+  /* "unknown" is a stored fact - the company has never said - not a default */
+  if(om.status==="unknown") return "<span title=\"公司未披露基座模型，公开信源不足以判断自研或第三方\">未披露</span>";
   if(om.status==="none") return "<span"+tip+">API依赖</span>";
   const label=om.status==="primary"?"&#10003; 自有":"&#9702; 混合";
   const share=om.tokenShare!=null?" · "+om.tokenShare+"% token":"";
@@ -509,7 +543,7 @@ function switchLayer(l){
   else renderCandidateTable();
 }
 document.querySelectorAll(".ltab").forEach(t=>t.addEventListener("click",()=>switchLayer(t.dataset.layer)));
-document.getElementById("app-sort").addEventListener("change",e=>{appSort=e.target.value;renderAppTable(appCat,appSort);});
+document.getElementById("app-sort").addEventListener("change",e=>{appSort=e.target.value;sortBeforeAssistant=null;renderAppTable(appCat,appSort);});
 document.getElementById("model-sort").addEventListener("change",e=>{modelSort=e.target.value;renderModelTable(modelRegion,modelSort);});
 loadData().catch(err=>{document.getElementById("mtx").innerHTML="<div style=\"color:#dc2626;padding:16px\">加载失败: "+esc(err.message)+"</div>";});
 </script></body></html>

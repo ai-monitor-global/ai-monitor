@@ -46,6 +46,12 @@ Rules:
 - {units}
 - `arr` is mandatory - a company whose revenue you cannot source at all is not
   yet evidence of anything. Leave it out entirely rather than guessing.
+  The one exception is `cat` = "assistant" (consumer personal-assistant
+  agents such as Instinct), which is pre-revenue as a class: there `arr` is 0
+  when no price has been published, and the company qualifies on a closed
+  round at or above ${hard_val}B alone. Never put ChatGPT / Gemini / Claude's
+  assistant modes in that category - their compute is already counted on the
+  model layer.
 - Do not pad. Returning three well-sourced companies is better than twelve
   half-sourced ones. An empty list is a valid answer.
 - Do not propose anything already in the tracked universe below."""
@@ -62,7 +68,8 @@ or not at all: {focus}.
 For each company return: exact `name`; `uc` = a short Chinese description of
 what it does (under ~30 chars); `cat` from {cats}; `stage` (pmf|growth|scale);
 `biz` (B2B|B2C|B2B+B2C|B2C+B2B); `ti` token intensity (low|med|high|ultra);
-`arr` ($M, a real number, mandatory); `val` ($B); `arrg` (%); `mau`
+`arr` ($M, a real number, mandatory; 0 only for a pre-revenue
+assistant-category agent); `val` ($B); `arrg` (%); `mau`
 (millions); `maug` (%) - these four are text: give the number as text, or an
 EMPTY STRING when you could not source it. Never write "null" or a guess.
 `ownModel` = {{"status": "none"|"hybrid"|"primary", "token_share": "<0-100 as
@@ -187,8 +194,11 @@ def gate(data: dict, cand: dict):
     grey = (_num(arr) and arr >= GREY_ARR) or (_num(val) and val >= GREY_VAL)
     if not hard:
         return ("queue", "grey zone") if grey else ("skip", "below the grey zone")
-    if not (_num(arr) and arr > 0):
-        # val cleared the bar but the frontend sums arr, so it cannot be null.
+    if (not (_num(arr) and arr > 0)
+            and cand.get("cat") not in common.ARR_OPTIONAL_CATS):
+        # val cleared the bar but the frontend sums arr, so it cannot be null -
+        # except in the categories that are pre-revenue by nature (a consumer
+        # agent at a $2B+ round with no published price: null arr is correct)
         return "queue", "clears the valuation bar but ARR is unsourced"
     if cand.get("cat") not in common.CATEGORIES:
         return "queue", "unknown category {!r}".format(cand.get("cat"))
@@ -203,12 +213,16 @@ def to_entity(cand: dict) -> dict:
             "source": str(cand["source"]).strip(),
             "url": str(cand.get("url") or "").strip() or None,
             "conf": str(cand["conf"]).lower()}
+    # a 0 from a pre-revenue assistant-category candidate is "no revenue
+    # exists", which the dataset spells null, never 0
+    arr = cand.get("arr")
+    arr = arr if (_num(arr) and arr > 0) else None
     entity = {
         "name": cand["name"].strip(),
         "uc": cand["uc"].strip(),
         "cat": cand["cat"],
         "stage": cand["stage"],
-        "arr": cand["arr"],
+        "arr": arr,
         "arrg": cand.get("arrg"),
         "mau": cand.get("mau"),
         "maug": cand.get("maug"),
@@ -218,10 +232,16 @@ def to_entity(cand: dict) -> dict:
         "m": 0,  # recompute_momentum fills this in
         "ownModel": cand["ownModel"],
         "retired": False,
-        "prov": {"arr": dict(prov), "ownModel": dict(prov)},
+        "prov": {"ownModel": dict(prov)},
     }
+    if arr is not None:
+        entity["prov"]["arr"] = dict(prov)
     if _num(cand.get("val")):
         entity["prov"]["val"] = dict(prov)
+    # supply state, if the routine supplied one (invite | waitlist | ga | oss)
+    if cand.get("access") in common.ENUMS["access"]:
+        entity["access"] = cand["access"]
+        entity["prov"]["access"] = dict(prov)
     return entity
 
 

@@ -71,7 +71,8 @@ python validate.py                   # 提交前必过
 meta      schema / last_updated / last_run / stale_days / categories / regions
           runs（每个 pass 的成败与错误）/ changelog / review_queue
 models[]  name uc region arr arrg tokM tokG trainPerRun runsPerYear val m prov retired
-apps[]    name uc cat stage arr arrg mau maug ti biz val m ownModel prov retired
+apps[]    name uc cat stage arr arrg mau maug ti biz val m ownModel access prov retired
+          （`assistant` 类别的 arr 可为 null，见 CRITERIA.md §1 例外；access 只在该类别维护）
 candidates[]  发现但未自动入池的灰区标的
 series    趋势图的季度序列（以前写死在 index.html 里，脚本改不动）
 ai_progress   AI 进展周报

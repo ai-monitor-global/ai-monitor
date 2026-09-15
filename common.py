@@ -52,8 +52,18 @@ CATEGORIES = {
     "support":    {"label": "Support",       "fg": "#4338ca", "bg": "#e0e7ff"},
     "hr":         {"label": "HR/招聘", "fg": "#7e22ce", "bg": "#f3e8ff"},
     "security":   {"label": "Security",      "fg": "#b91c1c", "bg": "#ffe4e6"},
+    # Consumer personal-assistant agents (Instinct, Meta Muse, OpenClaw, Manus).
+    # Pre-revenue as a class: `arr` may be null here (see ARR_OPTIONAL_CATS),
+    # and the metric that matters is users + `access` (invite -> ga).
+    "assistant":  {"label": "个人助理",       "fg": "#3f6212", "bg": "#ecfccb"},
     "other":      {"label": "Other",         "fg": "#374151", "bg": "#f3f4f6"},
 }
+
+# Categories whose members may legitimately have no ARR at all. The frontend
+# sums `arr`, so it is otherwise required on an app - but a consumer agent
+# that has never published a price has no revenue to source, and writing 0
+# would poison the total and the average growth. Null is the honest value.
+ARR_OPTIONAL_CATS = {"assistant"}
 
 REGIONS = {
     "US": {"label": "\U0001F1FA\U0001F1F8 美国", "fg": "#1d4ed8", "bg": "#dbeafe"},
@@ -72,7 +82,8 @@ NUMERIC_FIELDS = {
 }
 QUALITATIVE_FIELDS = {
     "models": {"uc", "region", "listed", "parent"},
-    "apps":   {"uc", "cat", "stage", "biz", "ti", "ownModel", "listed", "parent"},
+    "apps":   {"uc", "cat", "stage", "biz", "ti", "ownModel", "listed", "parent",
+               "access"},
 }
 
 # "EXCHANGE:TICKER" for a public company, "" for private. For a listed company
@@ -121,8 +132,16 @@ ENUMS = {
     "biz":    {"B2B", "B2C", "B2B+B2C", "B2C+B2B"},
     "region": set(REGIONS),
     "cat":    set(CATEGORIES),
+    # Supply state of a consumer product: invite-only / waitlist / generally
+    # available / open-source self-hosted. For a pre-revenue agent the move
+    # invite -> ga is the first moment real demand becomes observable, which
+    # is why it is a tracked field and not a note.
+    "access": {"invite", "waitlist", "ga", "oss"},
 }
-OWN_MODEL_STATUS = {"none", "hybrid", "primary"}
+# `unknown` exists so that "the company has not said which model powers this"
+# can be stored as exactly that, instead of being silently coerced into `none`
+# (an inference written into the data as if it were a fact).
+OWN_MODEL_STATUS = {"none", "hybrid", "primary", "unknown"}
 
 # `parent` names the company a lab sits inside ("Meta", "Baidu"), else "".
 # An embedded lab has no valuation of its own. This is enforced in code
@@ -269,6 +288,9 @@ def migrate(data: dict) -> dict:
         entity.setdefault("parent", "")
         entity.setdefault("valPending", None)
         entity.setdefault("prov", {})
+        if section == "apps":
+            # supply state; only the assistant category maintains it
+            entity.setdefault("access", None)
         # prov.checked (when we last verified) is distinct from prov.as_of
         # (when the source reported it). Seed it from the entity's checked_at
         # for provenance written before that distinction existed.
@@ -352,8 +374,8 @@ def _check_own_model(value):
         if isinstance(share, bool) or not isinstance(share, (int, float)) \
                 or not 0 <= share <= 100:
             return "ownModel.tokenShare must be null or 0-100"
-        if status == "none" and share > 0:
-            return "ownModel.status=none contradicts tokenShare>0"
+        if status in ("none", "unknown") and share > 0:
+            return "ownModel.status={} contradicts tokenShare>0".format(status)
     names = value.get("models", [])
     if not isinstance(names, list) or any(not isinstance(n, str) for n in names):
         return "ownModel.models must be a list of strings"

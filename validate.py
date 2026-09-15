@@ -81,11 +81,18 @@ def check(data: dict):
             if not _is_num(m) or not 0 <= m <= 100:
                 errors.append("{}.m must be 0-100, got {!r}".format(tag, m))
 
-            for field in REQUIRED_NUMERIC[section]:
+            required = REQUIRED_NUMERIC[section]
+            if section == "apps" and entity.get("cat") in common.ARR_OPTIONAL_CATS:
+                # a pre-revenue consumer agent has no ARR to source; null is
+                # the honest value there, and the frontend already skips it
+                required = ()
+            optional = OPTIONAL_NUMERIC[section] + tuple(
+                f for f in REQUIRED_NUMERIC[section] if f not in required)
+            for field in required:
                 if not _is_num(entity.get(field)):
                     errors.append("{}.{} is required and must be a number "
                                   "(got {!r})".format(tag, field, entity.get(field)))
-            for field in OPTIONAL_NUMERIC[section]:
+            for field in optional:
                 v = entity.get(field)
                 if v is not None and not _is_num(v):
                     errors.append("{}.{} must be a number or null, got {!r}".format(
@@ -109,6 +116,9 @@ def check(data: dict):
                 bad = common._check_own_model(entity.get("ownModel"))
                 if bad:
                     errors.append("{}: {}".format(tag, bad))
+                acc = entity.get("access")
+                if acc is not None and acc not in common.ENUMS["access"]:
+                    errors.append("{}.access={!r} is not a valid value".format(tag, acc))
             else:
                 if entity.get("region") not in regions:
                     errors.append("{}.region={!r} is not in meta.regions".format(
@@ -248,6 +258,19 @@ CASES = [
     ("growth rate may swing more than 5x",
      _patch(field="arrg", new_value=200), True),
     ("plain metric update applies", _patch(), True),
+    # the assistant category's supply-state field and the "undisclosed"
+    # own-model status
+    ("access rejects a state outside the enum",
+     _patch(field="access", new_value="beta"), False),
+    ("access patch applies",
+     _patch(field="access", new_value="ga", source="Cursor blog 2026-08-20"), True),
+    ("ownModel unknown contradicts a token share",
+     _patch(field="ownModel",
+            new_value={"status": "unknown", "tokenShare": 30, "models": []}), False),
+    ("ownModel unknown (never disclosed) applies",
+     _patch(field="ownModel",
+            new_value={"status": "unknown", "tokenShare": None, "models": []},
+            source="no disclosure found 2026-08-20"), True),
 ]
 
 
@@ -371,6 +394,23 @@ def selftest() -> int:
          and data["meta"]["review_queue"][0]["entity"] == "New"),
         ("expiry leaves a changelog trace",
          any(c.get("pass") == "queue-expiry" for c in data["meta"]["changelog"])),
+    ]
+    # arr is required on an app - except in the categories that are
+    # pre-revenue by nature, where null is the correct value
+    data = common.migrate(_fixture())
+    base_errors = len(check(data)[0])
+    data["apps"][0]["arr"] = None
+    with_null = len(check(data)[0])
+    data["apps"][0]["cat"] = "assistant"
+    as_assistant = len(check(data)[0])
+    data["apps"][0]["access"] = "beta"
+    bad_access = len(check(data)[0])
+    checks2 += [
+        ("null arr is an error on an ordinary app", with_null == base_errors + 1),
+        ("null arr is allowed on an assistant-category app",
+         as_assistant == base_errors),
+        ("check() rejects an access value outside the enum",
+         bad_access == base_errors + 1),
     ]
     for label, ok_flag in checks2:
         print("{} {}".format("PASS" if ok_flag else "FAIL", label))

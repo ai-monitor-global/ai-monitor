@@ -37,11 +37,18 @@ Tracked universe (patch only these; do not invent new companies here):
 
 Patchable fields
   models: arr, arrg, tokM, tokG, trainPerRun, runsPerYear, val
-  apps:   arr, arrg, mau, maug, val, uc, cat, stage, biz, ti, ownModel
+  apps:   arr, arrg, mau, maug, val, uc, cat, stage, biz, ti, ownModel, access
 
 Look for: closed funding rounds, ARR/revenue milestones, valuation marks,
 token-volume disclosures, and a launch that means an app now serves a
 meaningful share of its traffic from its own model (patch `ownModel`).
+
+For an app in the "assistant" category (consumer personal-assistant agents),
+ARR is usually unavailable and an empty `arr` is correct. Look instead for:
+exit from invite-only / waitlist into general availability (patch `access`:
+invite | waitlist | ga | oss), a first published price (patch `uc`), a
+disclosed user count (patch `mau` in millions - never an estimate), and a
+disclosure of which foundation model powers it (patch `ownModel`).
 
 Put numeric changes in `metric_patches`, text/enum changes in `text_patches`,
 and own-model changes in `own_model_patches`. Leave an array empty if it has

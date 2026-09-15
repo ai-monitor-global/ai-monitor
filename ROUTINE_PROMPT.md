@@ -106,12 +106,16 @@
 2. **拿本周轮转名单**：`python reverify.py --list -k 10` → JSON：本周要全量复核的 ~10 家
    （溯源最旧优先；上市公司每周必在；每家附当前值和已有溯源）。
 3. **逐家全量复核**（联网搜索，按「研究规则」）：对名单里每家核
-   `arr / val / valPending / arrg`，apps 加 `mau/maug/ownModel/cat/stage/biz/ti`，
+   `arr / val / valPending / arrg`，apps 加 `mau/maug/ownModel/cat/stage/biz/ti`
+   （`assistant` 类别再加 `access`，且 `arr` 查不到是常态，见研究规则 6），
    models 加 `tokM/tokG/region`，所有实体核 `uc/listed/parent`。
    - 值变了 → 写进 `patches`；核过没变 → **必须**写进 `confirmations`（否则页面
      会把正确的值标成"待复核"，轮转也不前进）；查不到 → 两边都不写，摘要里说明。
 4. **周增量扫描**：搜过去 7 天全池相关新闻（名单 = data.json 里全部未 retired 实体），
    已交割融资/官宣 ARR 里程碑/自有模型进展 → 追加进 `patches`。
+   `assistant` 类别（个人助理）另盯三个转折点：邀请制→公开（patch `access`）、
+   首次公布定价（patch `uc` 带上定价，并重估 `stage`）、基座模型披露（patch `ownModel`）。
+   这三件事即使没有任何数字变化也要落成 patch 并在摘要点名——它们比这类的 ARR 重要。
 5. **每月第一个周日加跑覆盖发现**：按 `CRITERIA.md` 门槛找不在池内的达标公司
    （重点：validate 警告里占比过低的垂直），写进 `candidates`。
    **收购/停运政策（全自动，无需人批）**：
@@ -119,6 +123,9 @@
      已交割），系统会自动清掉 val/valPending/listed —— Cursor/SpaceX 先例即此政策。
    - 池内公司**停运或不再独立经营** → `retire` 条目加 `"confirmed": true`，
      `source` 里列 ≥2 个独立来源，直接生效；证据不足就不加 confirmed，进队列下轮再核。
+   - **`assistant` 类别入池口径不同**（CRITERIA.md §1 例外）：已交割估值 ≥ $2B 即达标，
+     候选的 `arr` 可填 0（系统落库为 null）；$0.5–2B 进 `candidates`；可以顺带给 `access`。
+     ChatGPT / Gemini / Claude 的助理形态**不单列**——算力已计入模型层，会双重计算。
 6. **进展周报**：过去 7 天三主题（企业端应用 enterprise / 模型与训练范式 models /
    AI Infra 投资视角 infra_invest，各 3-5 条，投资视角 2-4 条），全中文、每条带
    来源+日期+URL、宁缺毋滥，写进 `ai_progress`（结构见 apply.py 文件头注释）。
@@ -132,7 +139,8 @@
    https://ai-monitor-global.github.io/ai-monitor/data.json 确认 `meta.last_run`
    已是今天（数据层）；有条件的话再看页面无红色横幅（渲染层）。
 10. **摘要**：中文输出——核了哪几家、应用/拒绝/确认各几条、重点数字变化
-    （±30% 以上的点名）、仲裁了什么及依据、新入池/候选/下架、进展周报 takeaway。
+    （±30% 以上的点名）、仲裁了什么及依据、新入池/候选/下架、`assistant` 类别三个
+    转折点有无触发（转公开 / 首次定价 / 基座模型披露；没有就一句"无"）、进展周报 takeaway。
     摘要是运行日志，不是请示：**不要写"待你确认/等你裁决"** —— 没有人在等着批。
     真正的异常出口只有两个：run 失败（Actions 看门狗会变红发邮件）和页面横幅。
 
@@ -153,6 +161,25 @@
 5. **来源纪律**：每个数字带 来源名+报道日期+URL+conf(high/medium)；`arr`/`val`
    至少两个独立近期来源交叉；中国公司必搜中文媒体（36氪/晚点/虎嗅/科创板日报/财新）；
    非美元一律换算并在 source 里写明汇率；查不到就空着，**绝不编数**。
+6. **`assistant`（个人助理）类别口径**：C 端个人 agent（Instinct / Meta Muse / OpenClaw / Manus）
+   整体 pre-revenue，**活跃用户是主指标，ARR 不是**。对这一类：
+   - **用户数**：专门搜披露的 MAU / DAU / WAU / 注册数 / waitlist 规模。找到 → patch `mau`
+     （百万）和 `maug`（对上一次披露值的增幅），`as_of` 写数字所指的日期而非报道日期，
+     `source` 写清口径（MAU 还是注册数）。公司披露/财报 = high；三方数据商
+     （Sensor Tower / Appfigures / data.ai）= medium。媒体转述、创始人推文里的定性说法
+     （"早期用户在规划公路旅行"）**不构成数字**，不提交，摘要里写"仍未披露"。
+   - **绝不估算、绝不插值**用户数。查不到就让 `mau` 留 null——null 是正确答案，猜测不是。
+   - **结构性失明**：Instinct 跑在 iMessage/WhatsApp/电话上、OpenClaw 自托管，都没有应用商店
+     入口，Sensor Tower 一类下载数据看不见它们，**不要拿应用商店数据顶替一个没有 App 的产品**；
+     只认公司披露。Meta Muse 藏在 Meta 整体口径里，除非财报单列否则也没有数字。
+     OpenClaw 的 GitHub star / 下载量是装机代理，不是活跃用户，不写进 `mau`。
+   - **`arr` 留空**：没公布过价格就没有收入可查，`null` 正确，**禁止填 0**。Meta Muse 已有
+     $20/$100 订阅档但 Meta 不会单独披露收入，同样留空。这一类的 `arr` 只有公司自述时才填。
+   - **三个转折点比数字重要**：邀请制→公开（`access`: invite/waitlist → ga）、首次定价
+     （`uc` 带上价格并重估 `stage`）、基座模型披露（`ownModel`: unknown → none/hybrid/primary）。
+     `ownModel.status = unknown` 表示"公司没说、信源不足以判断"，是事实不是缺省——
+     没有可信信源前**不要**把它改成 none 或 primary。
+   - `access` 只在这一类维护，其他类别保持 null，不要去补。
 
 ## 注意事项
 
@@ -167,6 +194,10 @@
   Actions cron（周日 UTC 14:30）用仓库 secret 自己拉，routine 不要碰 `fetch_openrouter.py`。
 - 一次运行的研究预算把轮转 10 家做扎实优先，增量扫描其次；宁可少核两家，
   不要浅核十家。
+- **`assistant` 类别的空列是预期状态，不是抓取失败**：四家里目前没有一家有可用的活跃
+  用户数（原因见研究规则 6），这几列会先空一段时间。它们的价值在**从空变成有数字的那一刻**
+  ——那意味着公司自己觉得用户量到了值得说的量级。对 Instinct 而言"转公开"和"首次披露用户数"
+  大概率是同一事件。不要为了填满列而放松来源标准。
 - `python` 环境：apply/validate/reverify --list 都不需要 anthropic 包，裸 python3 即可。
 - 后备通道：routine 挂了可在 Actions 手动跑 `weekly`（API 版全流程，花 API 额度），
   见 README「一次性回填」一节的模式说明。

@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_updated": "2026-09-13",
+    "last_updated": "2026-09-15",
     "next_update": "2026-09-06",
-    "update_notes": "2026-09-13: 8 项已核实更新 — MODEL Zhipu AI.val: 64.2 -> 47.3; MODEL MiniMax.val: 13.0 -> 12.1; APP Harvey.val: 11 -> 15.6; APP Harvey.arr: 350 -> 400; APP Harvey.ownModel: {'status': 'none', 'tokenShare': None, 'models': []} -> {'status': 'hybrid', 'tokenShare': None, 'models': ['Harvey Tenet']}; MODEL DeepSeek.uc: DeepSeek-V4-Pro、V4-Flash（含视觉） -> DeepSeek-V4.1-Flash（MoE开源权重）、API平台",
+    "update_notes": "2026-09-15: 5 项已核实更新 — APP Manus.cat: consumer -> assistant; APP Manus.access: None -> ga; APP Instinct added to assistant; APP Meta Muse added to assistant; APP OpenClaw added to assistant",
     "schema": 2,
-    "last_run": "2026-09-14",
+    "last_run": "2026-09-15",
     "stale_days": 120,
     "categories": {
       "coding": {
@@ -71,6 +71,11 @@
         "label": "Security",
         "fg": "#b91c1c",
         "bg": "#ffe4e6"
+      },
+      "assistant": {
+        "label": "个人助理",
+        "fg": "#3f6212",
+        "bg": "#ecfccb"
       },
       "other": {
         "label": "Other",
@@ -1844,6 +1849,63 @@
         "source": "Midjourney 官方文档 Version 页：当前默认版本为 V8.2（2026-07-24 上线，主打美学、画质与 Personalization），V8.1（2026-04-14 发布）自 2026-06-10 至 2026-07-23 为默认版本后退居其次；视频侧为图生视频（单图生成 5 秒、可延长至 21 秒）。库存 uc 写作「V8/V1视频」已落后一个小版本，按当前默认版本校正",
         "conf": "high",
         "forced": null
+      },
+      {
+        "date": "2026-09-15",
+        "pass": "manual-seed",
+        "section": "apps",
+        "entity": "Manus",
+        "field": "cat",
+        "old": "consumer",
+        "new": "assistant",
+        "source": "操作侧分类调整 2026-09-15：Manus 为通用任务 agent（替用户执行任务），归入新设 assistant（个人助理）类别，见 CRITERIA.md §2",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-09-15",
+        "pass": "manual-seed",
+        "section": "apps",
+        "entity": "Manus",
+        "field": "access",
+        "old": null,
+        "new": "ga",
+        "source": "manus.im 公开注册可用，无邀请制/排队（2026-09-15 查阅）",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-09-15",
+        "pass": "manual-seed",
+        "section": "apps",
+        "entity": "Instinct",
+        "field": "added",
+        "old": null,
+        "new": "assistant",
+        "source": "操作侧 2026-09-15 新设 assistant（个人助理）类别，按 CRITERIA.md §1 例外口径入池。WSJ 2026-08-26（Yahoo Finance 转载）：Instinct（运营主体 Spear Street Technology，创始人 Noah Shinn）B 轮 $250M，投后估值 $2.5B，Index Ventures 与 Benchmark 联合领投，累计融资 $350M；产品仍为邀请制私测，无定价、无收入披露。TechFundingNews / MLQ 同日口径一致",
+        "conf": "high"
+      },
+      {
+        "date": "2026-09-15",
+        "pass": "manual-seed",
+        "section": "apps",
+        "entity": "Meta Muse",
+        "field": "added",
+        "old": null,
+        "new": "assistant",
+        "source": "操作侧 2026-09-15 新设 assistant（个人助理）类别，按 CRITERIA.md §1 例外口径入池。Bloomberg 2026-09-08《Meta Debuts Muse AI Assistant for Personal Tasks and Organization》+ CNBC 2026-09-08：Meta 推出个人 AI agent App Muse，美国区 iOS/Android/Web/WhatsApp 公开可用，免费档 + $20/$100 月订阅，基于自研 Muse Spark 模型（Meta Superintelligence Labs）；Meta 内部产品，无独立估值，收入不单独披露",
+        "conf": "high"
+      },
+      {
+        "date": "2026-09-15",
+        "pass": "manual-seed",
+        "section": "apps",
+        "entity": "OpenClaw",
+        "field": "added",
+        "old": null,
+        "new": "assistant",
+        "source": "操作侧 2026-09-15 新设 assistant（个人助理）类别，按 CRITERIA.md §1 例外口径入池。Wikipedia《OpenClaw》+ DigitalOcean《What is OpenClaw?》（2026-09-15 查阅）：2025-11 由 Peter Steinberger 以 Clawdbot 之名发布，2026-01 更名 OpenClaw；开源自托管的个人 agent 运行时，接 WhatsApp/Telegram/Discord/iMessage 等 23+ 渠道，模型由用户自选（无自有模型）；GitHub star 约 60 天破 25 万；稳定版 v2026.7.1（2026-07-13）。非公司、无估值、无收入",
+        "conf": "medium"
       }
     ],
     "review_queue": [],
@@ -1910,6 +1972,13 @@
         "confirmed": 14,
         "promoted": 1,
         "queued": 3
+      },
+      "manual-seed": {
+        "at": "2026-09-15",
+        "ok": true,
+        "error": null,
+        "applied": 5,
+        "rejected": 0
       }
     }
   },
@@ -2860,7 +2929,8 @@
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "SpaceX",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Perplexity",
@@ -2953,7 +3023,8 @@
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Character.ai",
@@ -3056,7 +3127,8 @@
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "ElevenLabs",
@@ -3138,7 +3210,8 @@
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Midjourney",
@@ -3213,7 +3286,8 @@
       "checked_at": "2026-09-13",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Runway",
@@ -3295,7 +3369,8 @@
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Harvey",
@@ -3400,7 +3475,8 @@
       "checked_at": "2026-09-13",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Glean",
@@ -3489,7 +3565,8 @@
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Gamma",
@@ -3578,7 +3655,8 @@
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "HeyGen",
@@ -3667,7 +3745,8 @@
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Suno",
@@ -3742,7 +3821,8 @@
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Writer",
@@ -3838,7 +3918,8 @@
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Sierra",
@@ -3906,7 +3987,8 @@
       "listed": "",
       "parent": "",
       "valPending": null,
-      "checked_at": "2026-09-03"
+      "checked_at": "2026-09-03",
+      "access": null
     },
     {
       "name": "Granola",
@@ -3981,7 +4063,8 @@
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Cognition",
@@ -4082,7 +4165,8 @@
       "checked_at": "2026-09-03",
       "listed": "",
       "parent": "",
-      "valPending": 47
+      "valPending": 47,
+      "access": null
     },
     {
       "name": "Luma AI",
@@ -4164,7 +4248,8 @@
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Speak",
@@ -4248,7 +4333,8 @@
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Abridge",
@@ -4334,7 +4420,8 @@
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Ideogram",
@@ -4409,7 +4496,8 @@
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Descript",
@@ -4500,7 +4588,8 @@
       "checked_at": "2026-09-01",
       "listed": "",
       "parent": "",
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Legora",
@@ -4550,7 +4639,8 @@
       "listed": "",
       "parent": "",
       "valPending": null,
-      "checked_at": "2026-09-03"
+      "checked_at": "2026-09-03",
+      "access": null
     },
     {
       "name": "OpenEvidence",
@@ -4600,7 +4690,8 @@
       "listed": "",
       "parent": "",
       "valPending": null,
-      "checked_at": "2026-09-06"
+      "checked_at": "2026-09-06",
+      "access": null
     },
     {
       "name": "Lovable",
@@ -4650,7 +4741,8 @@
       "listed": "",
       "parent": "",
       "valPending": null,
-      "checked_at": "2026-09-03"
+      "checked_at": "2026-09-03",
+      "access": null
     },
     {
       "name": "Cresta",
@@ -4700,7 +4792,8 @@
       "listed": "",
       "parent": "",
       "valPending": null,
-      "checked_at": "2026-09-03"
+      "checked_at": "2026-09-03",
+      "access": null
     },
     {
       "name": "Clay",
@@ -4750,7 +4843,8 @@
       "listed": "",
       "parent": "",
       "valPending": null,
-      "checked_at": "2026-09-03"
+      "checked_at": "2026-09-03",
+      "access": null
     },
     {
       "name": "AlphaSense",
@@ -4807,7 +4901,8 @@
       "listed": "",
       "parent": "",
       "valPending": null,
-      "checked_at": "2026-09-03"
+      "checked_at": "2026-09-03",
+      "access": null
     },
     {
       "name": "Synthesia",
@@ -4856,12 +4951,13 @@
       "listed": "",
       "parent": "",
       "valPending": null,
-      "checked_at": "2026-09-03"
+      "checked_at": "2026-09-03",
+      "access": null
     },
     {
       "name": "Manus",
       "uc": "通用自主AI智能体",
-      "cat": "consumer",
+      "cat": "assistant",
       "stage": "scale",
       "arr": 450.0,
       "arrg": null,
@@ -4901,12 +4997,27 @@
           "source": "确认仍为独立公司、无母公司：Meta 于 2025-12 宣布收购 Butterfly Effect（Manus），中国监管 2026-04-27 叫停该交易，Meta 自 2026-06 起解绑；Manus 官方《致 Manus 用户的一封信》2026-08-11 宣布恢复以独立公司形式运营，新浪财经 2026-08-21 同口径报道。故 parent 维持空值，估值另待新一轮融资确认",
           "url": "https://finance.sina.com.cn/stock/aigcy/2026-08-21/doc-inipakut1554824.shtml",
           "conf": "medium"
+        },
+        "cat": {
+          "as_of": "2026-09-15",
+          "checked": "2026-09-15",
+          "source": "操作侧分类调整 2026-09-15：Manus 为通用任务 agent（替用户执行任务），归入新设 assistant（个人助理）类别，见 CRITERIA.md §2",
+          "url": "https://manus.im/",
+          "conf": "high"
+        },
+        "access": {
+          "as_of": "2026-09-15",
+          "checked": "2026-09-15",
+          "source": "manus.im 公开注册可用，无邀请制/排队（2026-09-15 查阅）",
+          "url": "https://manus.im/",
+          "conf": "high"
         }
       },
       "listed": "",
       "parent": "",
       "valPending": null,
-      "checked_at": "2026-09-06"
+      "checked_at": "2026-09-06",
+      "access": "ga"
     },
     {
       "name": "Replit",
@@ -4963,7 +5074,8 @@
       "listed": "",
       "parent": "",
       "valPending": null,
-      "checked_at": "2026-09-03"
+      "checked_at": "2026-09-03",
+      "access": null
     },
     {
       "name": "Mercor",
@@ -5059,7 +5171,8 @@
       "listed": "",
       "parent": "",
       "valPending": 20.0,
-      "checked_at": "2026-09-02"
+      "checked_at": "2026-09-02",
+      "access": null
     },
     {
       "name": "Ambience Healthcare",
@@ -5109,7 +5222,8 @@
       "listed": "",
       "parent": "",
       "valPending": null,
-      "checked_at": "2026-09-03"
+      "checked_at": "2026-09-03",
+      "access": null
     },
     {
       "name": "Decagon",
@@ -5159,7 +5273,8 @@
       "listed": "",
       "parent": "",
       "valPending": null,
-      "checked_at": "2026-09-03"
+      "checked_at": "2026-09-03",
+      "access": null
     },
     {
       "name": "Rogo",
@@ -5210,7 +5325,8 @@
         ],
         "tokenShare": null
       },
-      "valPending": null
+      "valPending": null,
+      "access": null
     },
     {
       "name": "Abnormal AI",
@@ -5259,7 +5375,203 @@
       "listed": "",
       "parent": "",
       "valPending": null,
-      "checked_at": "2026-09-13"
+      "checked_at": "2026-09-13",
+      "access": null
+    },
+    {
+      "name": "Instinct",
+      "uc": "C端个人agent，短信/电话调用，邀请制",
+      "cat": "assistant",
+      "stage": "pmf",
+      "arr": null,
+      "arrg": null,
+      "mau": null,
+      "maug": null,
+      "ti": "ultra",
+      "biz": "B2C",
+      "val": 2.5,
+      "valPending": null,
+      "m": 0,
+      "retired": false,
+      "listed": "",
+      "parent": "",
+      "access": "invite",
+      "ownModel": {
+        "status": "unknown",
+        "tokenShare": null,
+        "models": []
+      },
+      "checked_at": "2026-09-15",
+      "prov": {
+        "val": {
+          "as_of": "2026-08-26",
+          "checked": "2026-09-15",
+          "source": "WSJ 2026-08-26（Yahoo Finance 转载）：Instinct（运营主体 Spear Street Technology，创始人 Noah Shinn）B 轮 $250M，投后估值 $2.5B，Index Ventures 与 Benchmark 联合领投，累计融资 $350M；产品仍为邀请制私测，无定价、无收入披露。TechFundingNews / MLQ 同日口径一致",
+          "url": "https://finance.yahoo.com/technology/ai/articles/instinct-ai-assistant-raises-250-173454497.html",
+          "conf": "high"
+        },
+        "uc": {
+          "as_of": "2026-08-26",
+          "checked": "2026-09-15",
+          "source": "WSJ 2026-08-26（Yahoo Finance 转载）：Instinct（运营主体 Spear Street Technology，创始人 Noah Shinn）B 轮 $250M，投后估值 $2.5B，Index Ventures 与 Benchmark 联合领投，累计融资 $350M；产品仍为邀请制私测，无定价、无收入披露。TechFundingNews / MLQ 同日口径一致",
+          "url": "https://finance.yahoo.com/technology/ai/articles/instinct-ai-assistant-raises-250-173454497.html",
+          "conf": "high"
+        },
+        "cat": {
+          "as_of": "2026-08-26",
+          "checked": "2026-09-15",
+          "source": "WSJ 2026-08-26（Yahoo Finance 转载）：Instinct（运营主体 Spear Street Technology，创始人 Noah Shinn）B 轮 $250M，投后估值 $2.5B，Index Ventures 与 Benchmark 联合领投，累计融资 $350M；产品仍为邀请制私测，无定价、无收入披露。TechFundingNews / MLQ 同日口径一致",
+          "url": "https://finance.yahoo.com/technology/ai/articles/instinct-ai-assistant-raises-250-173454497.html",
+          "conf": "high"
+        },
+        "biz": {
+          "as_of": "2026-08-26",
+          "checked": "2026-09-15",
+          "source": "WSJ 2026-08-26（Yahoo Finance 转载）：Instinct（运营主体 Spear Street Technology，创始人 Noah Shinn）B 轮 $250M，投后估值 $2.5B，Index Ventures 与 Benchmark 联合领投，累计融资 $350M；产品仍为邀请制私测，无定价、无收入披露。TechFundingNews / MLQ 同日口径一致",
+          "url": "https://finance.yahoo.com/technology/ai/articles/instinct-ai-assistant-raises-250-173454497.html",
+          "conf": "high"
+        },
+        "access": {
+          "as_of": "2026-08-26",
+          "checked": "2026-09-15",
+          "source": "WSJ / MLQ 2026-08-26：产品处于 private beta，邀请制，官方说法是在扩 compute",
+          "url": "https://finance.yahoo.com/technology/ai/articles/instinct-ai-assistant-raises-250-173454497.html",
+          "conf": "high"
+        },
+        "ownModel": {
+          "as_of": "2026-08-26",
+          "checked": "2026-09-15",
+          "source": "官网仅称模型「经过训练会使用手机和电脑」，公开信源不足以判断基座是自研还是第三方；记为 unknown 而非推断",
+          "url": "https://finance.yahoo.com/technology/ai/articles/instinct-ai-assistant-raises-250-173454497.html",
+          "conf": "medium"
+        }
+      }
+    },
+    {
+      "name": "Meta Muse",
+      "uc": "Meta个人agent App，免费+$20/$100订阅",
+      "cat": "assistant",
+      "stage": "pmf",
+      "arr": null,
+      "arrg": null,
+      "mau": null,
+      "maug": null,
+      "ti": "high",
+      "biz": "B2C",
+      "val": null,
+      "valPending": null,
+      "m": 0,
+      "retired": false,
+      "listed": "",
+      "parent": "Meta",
+      "access": "ga",
+      "ownModel": {
+        "status": "primary",
+        "tokenShare": null,
+        "models": [
+          "Muse Spark"
+        ]
+      },
+      "checked_at": "2026-09-15",
+      "prov": {
+        "uc": {
+          "as_of": "2026-09-08",
+          "checked": "2026-09-15",
+          "source": "Bloomberg 2026-09-08《Meta Debuts Muse AI Assistant for Personal Tasks and Organization》+ CNBC 2026-09-08：Meta 推出个人 AI agent App Muse，美国区 iOS/Android/Web/WhatsApp 公开可用，免费档 + $20/$100 月订阅，基于自研 Muse Spark 模型（Meta Superintelligence Labs）；Meta 内部产品，无独立估值，收入不单独披露",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-08/meta-announces-muse-ai-agent-for-personal-tasks-and-organization",
+          "conf": "high"
+        },
+        "cat": {
+          "as_of": "2026-09-08",
+          "checked": "2026-09-15",
+          "source": "Bloomberg 2026-09-08《Meta Debuts Muse AI Assistant for Personal Tasks and Organization》+ CNBC 2026-09-08：Meta 推出个人 AI agent App Muse，美国区 iOS/Android/Web/WhatsApp 公开可用，免费档 + $20/$100 月订阅，基于自研 Muse Spark 模型（Meta Superintelligence Labs）；Meta 内部产品，无独立估值，收入不单独披露",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-08/meta-announces-muse-ai-agent-for-personal-tasks-and-organization",
+          "conf": "high"
+        },
+        "biz": {
+          "as_of": "2026-09-08",
+          "checked": "2026-09-15",
+          "source": "Bloomberg 2026-09-08《Meta Debuts Muse AI Assistant for Personal Tasks and Organization》+ CNBC 2026-09-08：Meta 推出个人 AI agent App Muse，美国区 iOS/Android/Web/WhatsApp 公开可用，免费档 + $20/$100 月订阅，基于自研 Muse Spark 模型（Meta Superintelligence Labs）；Meta 内部产品，无独立估值，收入不单独披露",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-08/meta-announces-muse-ai-agent-for-personal-tasks-and-organization",
+          "conf": "high"
+        },
+        "access": {
+          "as_of": "2026-09-08",
+          "checked": "2026-09-15",
+          "source": "Bloomberg 2026-09-08《Meta Debuts Muse AI Assistant for Personal Tasks and Organization》+ CNBC 2026-09-08：Meta 推出个人 AI agent App Muse，美国区 iOS/Android/Web/WhatsApp 公开可用，免费档 + $20/$100 月订阅，基于自研 Muse Spark 模型（Meta Superintelligence Labs）；Meta 内部产品，无独立估值，收入不单独披露",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-08/meta-announces-muse-ai-agent-for-personal-tasks-and-organization",
+          "conf": "high"
+        },
+        "ownModel": {
+          "as_of": "2026-09-08",
+          "checked": "2026-09-15",
+          "source": "Bloomberg 2026-09-08《Meta Debuts Muse AI Assistant for Personal Tasks and Organization》+ CNBC 2026-09-08：Meta 推出个人 AI agent App Muse，美国区 iOS/Android/Web/WhatsApp 公开可用，免费档 + $20/$100 月订阅，基于自研 Muse Spark 模型（Meta Superintelligence Labs）；Meta 内部产品，无独立估值，收入不单独披露",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-08/meta-announces-muse-ai-agent-for-personal-tasks-and-organization",
+          "conf": "high"
+        }
+      }
+    },
+    {
+      "name": "OpenClaw",
+      "uc": "开源自托管个人agent，多模型可选",
+      "cat": "assistant",
+      "stage": "pmf",
+      "arr": null,
+      "arrg": null,
+      "mau": null,
+      "maug": null,
+      "ti": "high",
+      "biz": "B2C",
+      "val": null,
+      "valPending": null,
+      "m": 0,
+      "retired": false,
+      "listed": "",
+      "parent": "",
+      "access": "oss",
+      "ownModel": {
+        "status": "none",
+        "tokenShare": null,
+        "models": []
+      },
+      "checked_at": "2026-09-15",
+      "prov": {
+        "uc": {
+          "as_of": "2026-09-15",
+          "checked": "2026-09-15",
+          "source": "Wikipedia《OpenClaw》+ DigitalOcean《What is OpenClaw?》（2026-09-15 查阅）：2025-11 由 Peter Steinberger 以 Clawdbot 之名发布，2026-01 更名 OpenClaw；开源自托管的个人 agent 运行时，接 WhatsApp/Telegram/Discord/iMessage 等 23+ 渠道，模型由用户自选（无自有模型）；GitHub star 约 60 天破 25 万；稳定版 v2026.7.1（2026-07-13）。非公司、无估值、无收入",
+          "url": "https://en.wikipedia.org/wiki/OpenClaw",
+          "conf": "medium"
+        },
+        "cat": {
+          "as_of": "2026-09-15",
+          "checked": "2026-09-15",
+          "source": "Wikipedia《OpenClaw》+ DigitalOcean《What is OpenClaw?》（2026-09-15 查阅）：2025-11 由 Peter Steinberger 以 Clawdbot 之名发布，2026-01 更名 OpenClaw；开源自托管的个人 agent 运行时，接 WhatsApp/Telegram/Discord/iMessage 等 23+ 渠道，模型由用户自选（无自有模型）；GitHub star 约 60 天破 25 万；稳定版 v2026.7.1（2026-07-13）。非公司、无估值、无收入",
+          "url": "https://en.wikipedia.org/wiki/OpenClaw",
+          "conf": "medium"
+        },
+        "biz": {
+          "as_of": "2026-09-15",
+          "checked": "2026-09-15",
+          "source": "Wikipedia《OpenClaw》+ DigitalOcean《What is OpenClaw?》（2026-09-15 查阅）：2025-11 由 Peter Steinberger 以 Clawdbot 之名发布，2026-01 更名 OpenClaw；开源自托管的个人 agent 运行时，接 WhatsApp/Telegram/Discord/iMessage 等 23+ 渠道，模型由用户自选（无自有模型）；GitHub star 约 60 天破 25 万；稳定版 v2026.7.1（2026-07-13）。非公司、无估值、无收入",
+          "url": "https://en.wikipedia.org/wiki/OpenClaw",
+          "conf": "medium"
+        },
+        "access": {
+          "as_of": "2026-09-15",
+          "checked": "2026-09-15",
+          "source": "Wikipedia《OpenClaw》+ DigitalOcean《What is OpenClaw?》（2026-09-15 查阅）：2025-11 由 Peter Steinberger 以 Clawdbot 之名发布，2026-01 更名 OpenClaw；开源自托管的个人 agent 运行时，接 WhatsApp/Telegram/Discord/iMessage 等 23+ 渠道，模型由用户自选（无自有模型）；GitHub star 约 60 天破 25 万；稳定版 v2026.7.1（2026-07-13）。非公司、无估值、无收入",
+          "url": "https://en.wikipedia.org/wiki/OpenClaw",
+          "conf": "medium"
+        },
+        "ownModel": {
+          "as_of": "2026-09-15",
+          "checked": "2026-09-15",
+          "source": "Wikipedia《OpenClaw》+ DigitalOcean《What is OpenClaw?》（2026-09-15 查阅）：2025-11 由 Peter Steinberger 以 Clawdbot 之名发布，2026-01 更名 OpenClaw；开源自托管的个人 agent 运行时，接 WhatsApp/Telegram/Discord/iMessage 等 23+ 渠道，模型由用户自选（无自有模型）；GitHub star 约 60 天破 25 万；稳定版 v2026.7.1（2026-07-13）。非公司、无估值、无收入",
+          "url": "https://en.wikipedia.org/wiki/OpenClaw",
+          "conf": "medium"
+        }
+      }
     }
   ],
   "ai_progress": {
@@ -5552,6 +5864,15 @@
       "tok": 9273.8,
       "nM": 17,
       "nA": 34,
+      "nMrev": 12
+    },
+    {
+      "date": "2026-09-15",
+      "mARR": 114.53,
+      "aARR": 11.97,
+      "tok": 9273.8,
+      "nM": 17,
+      "nA": 37,
       "nMrev": 12
     }
   ],
