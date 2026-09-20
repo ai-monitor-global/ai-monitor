@@ -2056,7 +2056,7 @@
         "error": null
       },
       "openrouter": {
-        "at": "2026-09-14",
+        "at": "2026-09-20",
         "ok": true,
         "error": null,
         "weeks": 53,
@@ -6119,8 +6119,8 @@
     }
   ],
   "openrouter": {
-    "as_of": "2026-09-13",
-    "fetched": "2026-09-14",
+    "as_of": "2026-09-19",
+    "fetched": "2026-09-20",
     "wow_pct": 9.8,
     "weekly": [
       {
