@@ -4,7 +4,7 @@
     "next_update": "2026-09-06",
     "update_notes": "2026-09-20: 10 项已核实更新 — MODEL MiniMax.val: 12.1 -> 13.6; MODEL Zhipu AI.val: 47.3 -> 46.6; MODEL Zhipu AI.arr: 1600 -> 1800; APP Suno.uc: AI音乐生成（v5.5、Suno Studio） -> AI音乐生成（v6授权训练、Suno Studio）; APP Meta Muse.uc: Meta个人agent App，免费+$20/$100订阅 -> Meta个人agent App（含Mac端），免费+$20/$100订阅; APP Instinct.valPending: None -> 10",
     "schema": 2,
-    "last_run": "2026-09-20",
+    "last_run": "2026-09-21",
     "stale_days": 120,
     "categories": {
       "coding": {
@@ -2056,11 +2056,11 @@
         "error": null
       },
       "openrouter": {
-        "at": "2026-09-20",
+        "at": "2026-09-21",
         "ok": true,
         "error": null,
-        "weeks": 53,
-        "wow_pct": 9.8
+        "weeks": 54,
+        "wow_pct": 1.7
       },
       "routine-weekly": {
         "at": "2026-09-20",
@@ -6116,12 +6116,21 @@
       "nM": 17,
       "nA": 37,
       "nMrev": 12
+    },
+    {
+      "date": "2026-09-21",
+      "mARR": 114.73,
+      "aARR": 12.37,
+      "tok": 9273.8,
+      "nM": 17,
+      "nA": 37,
+      "nMrev": 12
     }
   ],
   "openrouter": {
-    "as_of": "2026-09-19",
-    "fetched": "2026-09-20",
-    "wow_pct": 9.8,
+    "as_of": "2026-09-20",
+    "fetched": "2026-09-21",
+    "wow_pct": 1.7,
     "weekly": [
       {
         "week": "2025-09-08",
@@ -6334,6 +6343,10 @@
       {
         "week": "2026-09-07",
         "tok": 126.76
+      },
+      {
+        "week": "2026-09-14",
+        "tok": 128.9
       }
     ],
     "source": "OpenRouter datasets API（rankings 同源，top50+other 全平台口径）",
