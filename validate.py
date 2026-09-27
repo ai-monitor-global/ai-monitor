@@ -198,7 +198,8 @@ def _fixture():
                                      "url": None, "conf": "high"}}}],
         "apps": [{"name": "Cursor", "uc": "IDE", "cat": "coding", "stage": "scale",
                   "arr": 4000, "arrg": 1100, "mau": 3, "maug": 200, "ti": "high",
-                  "biz": "B2B+B2C", "val": 60, "m": 97, "retired": False,
+                  "biz": "B2B+B2C", "val": 60, "valPending": 45, "m": 97,
+                  "retired": False,
                   "ownModel": {"status": "none", "tokenShare": None, "models": []},
                   "prov": {}}],
     }
@@ -271,6 +272,12 @@ CASES = [
      _patch(field="ownModel",
             new_value={"status": "unknown", "tokenShare": None, "models": []},
             source="no disclosure found 2026-08-20"), True),
+    ("valPending clears to null once the round closes",
+     _patch(field="valPending", new_value=None,
+            source="round closed, val already updated - clearing the stale "
+                   "pending figure"), True),
+    ("arr may not be cleared to null on an ordinary app",
+     _patch(field="arr", new_value=None), False),
 ]
 
 

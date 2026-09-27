@@ -117,6 +117,14 @@ C 端个人助理形态的 agent（Instinct、Meta Muse、OpenClaw、Manus）在
 | `retired` | 已出池 | bool | 否 |
 | `prov` | 逐字段溯源，见下 | — | 否 |
 
+`valPending` 的清空：轮次交割后 `val` 会更新为交割值，但 `valPending` 不会自动
+跟着清空——它是一个独立字段，只有 patch 明确把它写成 `null` 才会消失，否则页面会在
+已交割的 `val` 旁继续挂一行陈旧的「洽谈中 $XB」。`apply.py` 的 patch 闸门允许对
+`valPending`（以及其他可空数值字段，`arr` 在非 `assistant` 类别除外）提交
+`new_value: null` 来做这个清空，需要照常带 `source`/`as_of`/`conf` 说明清空依据
+（例如指向交割公告），不受 >5x 量级闸门约束——从「有一个待定数字」变成「没有待定
+数字」不是一次数值修正，不需要仲裁协议。
+
 ### `ownModel`（取代旧的布尔 `selfModel`）
 ```json
 { "status": "none | hybrid | primary | unknown",

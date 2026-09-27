@@ -416,6 +416,18 @@ def _failures(section: str, entity: dict, field: str, new, patch: dict):
                 as_of, prior), "backdate")
 
     if field in NUMERIC_FIELDS[section]:
+        if new is None:
+            # An explicit clear: legitimate when a tracked-but-optional number
+            # stops applying (a pending round closes and valPending should no
+            # longer shadow val, a company stops disclosing a metric it once
+            # gave). `arr` on an app is the one numeric field the frontend
+            # always sums, so - short of the pre-revenue assistant exception -
+            # it may never regress to null through this path.
+            if section == "apps" and field == "arr" \
+                    and entity.get("cat") not in ARR_OPTIONAL_CATS:
+                bad("arr may not be cleared to null on {} - the frontend "
+                    "total requires a number".format(entity.get("name")))
+            return out
         if isinstance(new, bool) or not isinstance(new, (int, float)):
             bad("{} must be a number, got {!r}".format(field, new))
             return out
