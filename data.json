@@ -4,7 +4,7 @@
     "next_update": "2026-09-06",
     "update_notes": "2026-09-27: 15 项已核实更新 — MODEL OpenAI.valPending: None -> 1500; MODEL Anthropic.arr: 65000 -> 100000; MODEL Anthropic.valPending: None -> 2000; MODEL Anthropic.uc: Claude Opus 5、Claude Code -> Claude Opus 5.5、Claude Code; MODEL Mistral AI.val: 13.7 -> 24; MODEL Cohere.valPending: None -> 20",
     "schema": 2,
-    "last_run": "2026-10-04",
+    "last_run": "2026-10-05",
     "stale_days": 120,
     "categories": {
       "coding": {
@@ -2224,11 +2224,11 @@
         "error": null
       },
       "openrouter": {
-        "at": "2026-10-04",
+        "at": "2026-10-05",
         "ok": true,
         "error": null,
-        "weeks": 55,
-        "wow_pct": 13.1
+        "weeks": 56,
+        "wow_pct": 13.7
       },
       "routine-weekly": {
         "at": "2026-09-27",
@@ -6354,12 +6354,21 @@
       "nM": 17,
       "nA": 37,
       "nMrev": 12
+    },
+    {
+      "date": "2026-10-05",
+      "mARR": 150.43,
+      "aARR": 12.53,
+      "tok": 9273.8,
+      "nM": 17,
+      "nA": 37,
+      "nMrev": 12
     }
   ],
   "openrouter": {
-    "as_of": "2026-10-03",
-    "fetched": "2026-10-04",
-    "wow_pct": 13.1,
+    "as_of": "2026-10-04",
+    "fetched": "2026-10-05",
+    "wow_pct": 13.7,
     "weekly": [
       {
         "week": "2025-09-08",
@@ -6580,6 +6589,10 @@
       {
         "week": "2026-09-21",
         "tok": 145.85
+      },
+      {
+        "week": "2026-09-28",
+        "tok": 165.86
       }
     ],
     "source": "OpenRouter datasets API（rankings 同源，top50+other 全平台口径）",
