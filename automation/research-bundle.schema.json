@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Monitor portable research bundle v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "window_start", "window_end", "changes", "coverage", "evidence", "limitations"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_id": {"type": "string", "format": "date", "description": "UTC Sunday from request; the weekly idempotency key."},
+    "window_start": {"type": "string", "format": "date"},
+    "window_end": {"type": "string", "format": "date"},
+    "changes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pass", "ai_progress"],
+      "description": "Exact existing apply.py payload. Use its file header and business gates as the field contract.",
+      "properties": {
+        "pass": {"const": "routine-weekly"}, "force": {"const": false},
+        "patches": {"type": "array", "items": {"type": "object"}},
+        "confirmations": {"type": "array", "items": {"type": "object"}},
+        "candidates": {"type": "array", "items": {"type": "object"}},
+        "retire": {"type": "array", "items": {"type": "object"}},
+        "ai_progress": {
+          "type": "object", "required": ["enterprise", "models", "infra_invest", "takeaway"],
+          "properties": {
+            "enterprise": {"type": "array", "maxItems": 5, "items": {"type": "object"}},
+            "models": {"type": "array", "maxItems": 5, "items": {"type": "object"}},
+            "infra_invest": {"type": "array", "maxItems": 4, "items": {"type": "object"}},
+            "takeaway": {"type": "string"}
+          }
+        }
+      }
+    },
+    "coverage": {
+      "type": "object", "required": ["rotation", "queue", "incremental", "discovery", "progress"],
+      "properties": {
+        "rotation": {"type": "array", "items": {
+          "type": "object", "required": ["section", "name", "checked_fields", "unverified_fields", "note"],
+          "properties": {
+            "section": {"enum": ["models", "apps"]}, "name": {"type": "string"},
+            "checked_fields": {"type": "array", "items": {"type": "string"}},
+            "unverified_fields": {"type": "array", "items": {"type": "string"}},
+            "note": {"type": "string", "minLength": 1}
+          }
+        }},
+        "queue": {"$ref": "#/$defs/stage"}, "incremental": {"$ref": "#/$defs/stage"},
+        "discovery": {"$ref": "#/$defs/stage"}, "progress": {"$ref": "#/$defs/stage"}
+      }
+    },
+    "evidence": {"type": "array", "minItems": 1, "items": {
+      "type": "object", "required": ["url", "read_at", "note"],
+      "properties": {
+        "url": {"type": "string", "pattern": "^https://", "format": "uri"},
+        "read_at": {"type": "string", "format": "date-time"},
+        "note": {"type": "string", "minLength": 1, "description": "What was actually opened and verified; blocked sources go in limitations."}
+      }
+    }},
+    "limitations": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {"stage": {
+    "type": "object", "required": ["status", "note"],
+    "properties": {"status": {"enum": ["completed", "limited", "not_due"]}, "note": {"type": "string", "minLength": 1}},
+    "description": "not_due is only valid for discovery outside the first Sunday of the month. Never label blocked coverage completed."
+  }}
+}

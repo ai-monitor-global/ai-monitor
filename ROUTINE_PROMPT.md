@@ -1,44 +1,12 @@
-# Routine Prompt — AI Monitor 周更 routine 的真理副本
+# AI Monitor Weekly — 跨模型研究契约
 
-> ⚠️ 本文件是**线上 routine 的版本化副本 + 运维说明**。routine 每次运行实时读它，
-> 所以改研究行为 = 改这个文件，push 即生效，**不需要动线上 routine**。
-> 线上那段 prompt 是极简 bootstrap（见下方），基本永远不用改。
+本文件保存研究步骤、研究规则和仲裁协议；`CRITERIA.md` 保存纳入标准与字段口径，代码闸门保持原实现。
+当前由 Work 云端直接研究、运行脚本并授权提交，日程为周日 13:00 UTC（北京时间 21:00）。
+具体执行、去重、并发保护和发布核验见 `RUNBOOK.md`；定时任务正文为 `automation/WORK_PROMPT.md`。
 
----
+研究过程不绑定模型、API key、特定云环境 ID 或固定目录。更换模型只调整运行平台；更换调度器复用同一份研究契约、结构化输出和仓库状态。修改研究规则时只改本文件及关联标准，任务每次从最新 main 读取。
 
-## 当前 routine 身份
-
-| 项 | 值 |
-|---|---|
-| 名称 | AI Monitor Weekly |
-| Cron | `0 13 * * 0`（周日 UTC 13:00 = 北京周日 21:00） |
-| Model | Opus（研究质量优先） |
-| 仓库 | `ai-monitor-global/ai-monitor`（沙箱自动 clone，git 直推无需 token） |
-| 管理页 | https://claude.ai/code/routines |
-
-## 工作机制
-
-```
-   周日 UTC 13:00                        周日 UTC 14:30
-        │                                     │
-        ▼                                     ▼
-  云端 routine（订阅额度）            GitHub Actions cron
-  联网研究：轮转复核 + 周增量          只跑 fetch_openrouter.py
-  + (每月第一周)覆盖发现 + 进展周报    （纯 HTTP，零 Claude 成本）
-        │                                     │
-        ▼                                     │
-  写 changes.json                             │
-        │                                     │
-        ▼                                     │
-  python apply.py changes.json  ←—— 一切改动必须过这里的校验闸门
-  （量级/币种/父子/日期/枚举…拒绝项进 review_queue，绝不静默丢）
-        │                                     │
-        ▼                                     ▼
-  python validate.py 全绿 → git push origin HEAD:main
-        │
-        ▼
-  GitHub Pages 重建 → https://ai-monitor-global.github.io/ai-monitor/
-```
+OpenRouter 继续由现有 GitHub Actions 更新，API 版研究脚本保留为手动后备。Work 不调用这些模型 API，不负责 OpenRouter 拉取，也不更改其日程。研究结果经统一入口调用原有 apply.py/validate.py，提交 main 后由 Pages 发布。
 
 **本任务是完全自动的：没有任何环节等待人类。** 被闸门拦下的条目由你按下方
 「仲裁协议」当场或下周处理；28 天未决的自动过期（进 changelog 留痕）。
@@ -61,49 +29,13 @@
 通过 → 该条加 `"force": true` 单独重新提交（可以在同一次运行里）。
 不通过 → 留在 review_queue，**下周运行的步骤 2.5 自动重试**；28 天后自动过期。
 
-## 一次性设置（创建 routine 时必须做对）
-
-1. **把 `ai-monitor-global/ai-monitor` 加进 routine 的 sources（授权仓库列表）**。
-   沙箱的 git 代理只允许推送授权列表内的仓库 —— 首跑（2026-09-02）就是因为漏了
-   这一步，研究全部完成、commit 停在临时沙箱里推不出去。
-2. Cron `0 13 * * 0`，Model 选 Opus，prompt 用下方 bootstrap。
-
-## 改 routine 怎么办
-
-- **改研究口径/规则/节奏内容** → 只改本文件（及 `CRITERIA.md`），push 即生效。
-- **改数据闸门/字段口径** → 改 `common.py`（闸门）+ `CRITERIA.md`（文档）。
-- **改调度时间/模型** → https://claude.ai/code/routines 编辑，或 Claude Code 里 `/schedule`。
-- API 版脚本（`reverify.py` 等）保留作 workflow_dispatch 后备，研究规则若有大改，
-  记得同步它们的 prompt 常量（低优先级，后备通道而已）。
-
-## 线上 prompt（bootstrap · 与线上一致）
-
-```
-调度：每周日 UTC 13:00（北京时间周日 21:00）运行。
-
-你是 AI Monitor 周更 routine。仓库 ai-monitor-global/ai-monitor 已在沙箱中
-（若无：git clone https://github.com/ai-monitor-global/ai-monitor && cd ai-monitor）。
-
-执行：
-1. git pull 确保最新；
-2. 打开 ROUTINE_PROMPT.md，从「## 步骤」一节开始严格执行到底；
-   研究口径以其「## 研究规则」和 CRITERIA.md 为准。
-
-铁律：绝不直接编辑 data.json —— 一切改动写成 changes.json 用
-`python apply.py changes.json` 提交；apply 或 validate 报错就修复输入重试，
-不许绕过闸门。完成后 git 直推 main，并输出一段中文运行摘要
-（本周核了谁、改了什么、拒了什么、新入池谁）。
-```
-
----
-
 ## 步骤
 
-1. **准备**：`git pull`；`python validate.py --selftest` 必须全绿（闸门自检坏了就停下报告，别继续）。
+1. **准备**：按 RUNBOOK 获取干净最新 main，运行 `python3 work_pipeline.py prepare --out .run/request.json`；内部原有自检必须全绿。已完成的周次只核验发布。
 2.5 **仲裁存量队列**：读 `data.json` 的 `meta.review_queue`，对每条跑一遍上方
    仲裁协议（通过→单条 force 落地；证据仍不足→原样留下等过期）。队列通常 0-2 条，
    几分钟的事，别跳过。
-2. **拿本周轮转名单**：`python reverify.py --list -k 10` → JSON：本周要全量复核的 ~10 家
+2. **拿本周轮转名单**：使用 prepare 请求中的 rotation（来自 `python3 reverify.py --list -k 10`）：本周要全量复核的 ~10 家
    （溯源最旧优先；上市公司每周必在；每家附当前值和已有溯源）。
 3. **逐家全量复核**（联网搜索，按「研究规则」）：对名单里每家核
    `arr / val / valPending / arrg`，apps 加 `mau/maug/ownModel/cat/stage/biz/ti`
@@ -129,20 +61,14 @@
 6. **进展周报**：过去 7 天三主题（企业端应用 enterprise / 模型与训练范式 models /
    AI Infra 投资视角 infra_invest，各 3-5 条，投资视角 2-4 条），全中文、每条带
    来源+日期+URL、宁缺毋滥，写进 `ai_progress`（结构见 apply.py 文件头注释）。
-7. **提交**：把以上全部写成一个 `changes.json`（结构见 `apply.py` 文件头），
-   `python apply.py changes.json`。看输出：`-` 开头是被拒的，检查是不是自己
-   口径/来源写错，能修则修了重跑；确属闸门该拦的（如 >5x 需人工）就留在
-   review_queue。**退出码非 0 = 数据没过校验，必须处理，禁止 commit。**
-8. **推送**：`git add data.json && git commit -m "chore(routine): weekly update $(date -u +%F)" && git push origin HEAD:main`
-   （push 被拒就 `git pull --rebase --autostash` 后重推）。
-9. **两层验证**：等 1-2 分钟后抓
-   https://ai-monitor-global.github.io/ai-monitor/data.json 确认 `meta.last_run`
-   已是今天（数据层）；有条件的话再看页面无红色横幅（渲染层）。
+7. **校验候选**：把以上内容写为 `automation/research-bundle.schema.json` 规定的 `.run/research.json`，changes 子对象保持 apply.py 文件头格式，并附实际来源和覆盖缺口。执行 `python3 work_pipeline.py apply --request .run/request.json --bundle .run/research.json`，内部仍经原有 apply.py 数据闸门。被拒条目按仲裁协议处理，不改校验器强行通过，不启用文件级 force。退出码非零禁止提交；修正输入后的重试按 RUNBOOK 处理本轮未提交候选。
+8. **提交与推送**：按 RUNBOOK 再查远端基准，只提交 data.json 与本轮 runs/ 记录，使用包含 UTC 日期的提交信息。并发变化时重新准备、复核并应用输入，不对 data.json 盲目 rebase/autostash 合并，绝不强推。
+9. **发布验证**：分别核对远端 SHA、对应 Pages 工作流和 `python3 work_pipeline.py check-site` 的线上数据哈希。页面渲染检查有条件才执行；数据验证与视觉验证分开报告。
 10. **摘要**：中文输出——核了哪几家、应用/拒绝/确认各几条、重点数字变化
     （±30% 以上的点名）、仲裁了什么及依据、新入池/候选/下架、`assistant` 类别三个
     转折点有无触发（转公开 / 首次定价 / 基座模型披露；没有就一句"无"）、进展周报 takeaway。
     摘要是运行日志，不是请示：**不要写"待你确认/等你裁决"** —— 没有人在等着批。
-    真正的异常出口只有两个：run 失败（Actions 看门狗会变红发邮件）和页面横幅。
+    异常必须在当前 Work 任务回执中说明；现有 Actions 看门狗另按 GitHub 的通知设置告警，不能仅凭检查失败声称邮件已发送。
 
 ## 研究规则（与 `common.py` 闸门同源，闸门为准）
 
@@ -183,22 +109,16 @@
 
 ## 注意事项
 
-- **沙箱的 WebFetch 被网络策略全量拦截**（sacra.com、CNBC、公司官网、curl 一律
-  403），研究只能靠 WebSearch 的结果摘要（首跑实测）。因此：同一个数字换 2-3 个
-  不同关键词搜索来交叉，摘要间冲突时在 source 里写明取舍；仅有单一摘要支撑的
-  数字 conf 一律 medium。这不改变"绝不编数"铁律。
-- **push 被拒时的正确行为**（首跑已按此执行，保持）：不绕过、不找替代凭据；把
-  changes.json 和 commit patch 作为文件发到会话里留底，然后报告"需要把仓库加进
-  routine sources"。研究成果可在有权限的环境用 apply.py 重放，不必重跑。
-- 沙箱 egress 代理会拦部分外网（如飞书 403）。**OpenRouter 数据不归 routine 管**——
-  Actions cron（周日 UTC 14:30）用仓库 secret 自己拉，routine 不要碰 `fetch_openrouter.py`。
+- 以当前 Work 的实际联网能力为准，不沿用旧平台“WebFetch 全部 403”的假设。必须真正打开来源；搜索摘要用于发现。来源打不开就尝试其他公开独立来源，仍不能核实时保留原值、记录缺口；整体检索不可用不得刷新成功日期。
+- GitHub 写入遇权限或安全审核拒绝时停止受阻步骤，不换工具或凭据绕过；保留合法研究 bundle 并报告具体错误，不推测是旧平台 routine sources 配置造成的。
+- OpenRouter 数据继续由现有 GitHub Actions 负责，Work 不运行 fetch_openrouter.py。
 - 一次运行的研究预算把轮转 10 家做扎实优先，增量扫描其次；宁可少核两家，
   不要浅核十家。
 - **`assistant` 类别的空列是预期状态，不是抓取失败**：四家里目前没有一家有可用的活跃
   用户数（原因见研究规则 6），这几列会先空一段时间。它们的价值在**从空变成有数字的那一刻**
   ——那意味着公司自己觉得用户量到了值得说的量级。对 Instinct 而言"转公开"和"首次披露用户数"
   大概率是同一事件。不要为了填满列而放松来源标准。
-- `python` 环境：apply/validate/reverify --list 都不需要 anthropic 包，裸 python3 即可。
+- Python 环境：Work 入口及 apply/validate/reverify --list 只用标准库，不需要 anthropic 包。
 - 后备通道：routine 挂了可在 Actions 手动跑 `weekly`（API 版全流程，花 API 额度），
   见 README「一次性回填」一节的模式说明。
 

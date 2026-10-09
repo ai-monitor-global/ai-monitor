@@ -1,7 +1,9 @@
 # AI Native App Monitor
 
 全球 AI Native App + Foundation Model 监控 Dashboard。追踪 ARR、估值、Token 消耗、自有模型进度。
-每周日 UTC 13:00（北京时间 21:00）自动更新，页面下方另有「AI 进展周报」。
+每周日 UTC 13:00（北京时间 21:00）由 Work 云端直接研究并更新，页面下方另有「AI 进展周报」。
+
+当前运行与迁移手册见 `RUNBOOK.md`，研究契约见 `ROUTINE_PROMPT.md`，统一入口为 `work_pipeline.py`。无需本地电脑或常驻服务器。
 
 **站点**：GitHub Pages（Settings → Pages → main / root）
 
@@ -9,7 +11,7 @@
 
 ## 数据怎么保持新鲜
 
-三个 pass 各管一件事。关键在于**第二个** —— 没有它，任何落在 7 天窗口外的过期数字都永远修不回来。
+以下是各 pass 的职责。Work 按同一规范联网研究，经原有 apply.py 落库；四个 API 研究脚本仅为手动后备。关键在于**轮转复核** —— 没有它，任何落在 7 天窗口外的过期数字都永远修不回来。
 
 | 脚本 | 频率 | 干什么 |
 |---|---|---|
@@ -64,7 +66,9 @@ python validate.py                   # 提交前必过
 | `common.py` | 共享数据层与校验闸门 |
 | `update_data.py` / `reverify.py` / `discover.py` / `update_progress.py` | 四个 pass |
 | `validate.py` | 离线校验 + 校验层自检 |
-| `.github/workflows/weekly-update.yml` | 定时任务与手动入口 |
+| `work_pipeline.py` / `automation/` | 跨模型运行入口、配置与研究输出接口 |
+| `runs/` | 每周研究输入、覆盖与校验记录，提交/上线状态另行验证 |
+| `.github/workflows/weekly-update.yml` | OpenRouter 定时更新、研究看门狗和 API 手动后备 |
 
 ### `data.json` 结构
 ```
@@ -85,10 +89,14 @@ ai_progress   AI 进展周报
 
 ## 配置
 
-- Secret `ANTHROPIC_API_KEY`（必需）
+Work 研究路径无需模型 API key。日程和模型在 Work 任务设置，其他规则每次从 GitHub main 读取。更换平台或模型时复用统一 request/bundle 接口和仓库状态，详见 RUNBOOK。
+
+以下配置仅用于 API 手动后备：
+
+- Secret `ANTHROPIC_API_KEY`（API 后备必需）
 - Variable `CLAUDE_MODEL`（可选，默认 `claude-opus-5`）
 
-改更新频率：改 workflow 里的 cron（当前 `0 13 * * 0`）。
+研究频率在 Work 调度器设置。GitHub cron 只负责 OpenRouter 和看门狗，其时间维持不变。研究看门狗检查成功研究 pass，不把 OpenRouter 更新时间当作研究成功；现有 GitHub 通知设置沿用。
 改复核节奏：改 `reverify.py` 的 `DEFAULT_K`（每周核几家）。
 改入池门槛：改 `discover.py` 顶部常量，并同步 `CRITERIA.md`。
 

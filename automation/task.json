@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "name": "AI Monitor Weekly",
+  "repository": "ai-monitor-global/ai-monitor",
+  "branch": "main",
+  "timezone": "UTC",
+  "rotation_size": 10,
+  "lookback_days": 7,
+  "pass_name": "routine-weekly",
+  "site_url": "https://ai-monitor-global.github.io/ai-monitor/"
+}

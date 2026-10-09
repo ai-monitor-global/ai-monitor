@@ -3,11 +3,11 @@ name: Weekly Data Update
 on:
   schedule:
     # 周日 14:30 UTC —— 只拉 OpenRouter 序列（零 Claude 成本）。
-    # 研究部分 2026-09-02 起移交订阅 routine（周日 13:00 UTC，见 ROUTINE_PROMPT.md），
+    # 研究由 Work 云端直接执行（周日 13:00 UTC，见 RUNBOOK.md），
     # API 版全流程保留为下方 workflow_dispatch 的手动后备。
     - cron: '30 14 * * 0'
-    # 周一 02:00 UTC —— 看门狗：routine 若停摆（数据 >2 天没动）本 run 变红，
-    # GitHub 自动发失败邮件；正常时顺手把 OpenRouter 再合并一次（幂等）。
+    # 周一 02:00 UTC —— 看门狗：研究 >2 天未成功则本 run 变红，
+    # 告警沿用 GitHub 通知设置；正常时顺手把 OpenRouter 再合并一次（幂等）。
     - cron: '0 2 * * 1'
   workflow_dispatch:
     inputs:
@@ -67,6 +67,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
+        if: github.event_name == 'workflow_dispatch' && inputs.mode != 'openrouter-only' && inputs.mode != 'validate-only'
         run: pip install --upgrade anthropic
 
       # Cheap, no API key: if the validation gate itself is broken, find out
@@ -78,6 +79,7 @@ jobs:
       # inference runs, so this is ~free and it is a hard gate: a bad schema
       # otherwise only surfaces 30 wasted search calls into a backfill.
       - name: Preflight response schemas
+        if: github.event_name == 'workflow_dispatch' && inputs.mode != 'openrouter-only' && inputs.mode != 'validate-only'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}
@@ -117,7 +119,7 @@ jobs:
             cron|openrouter-only)
               python fetch_openrouter.py || FAILED="$FAILED openrouter"
               if [ "$(date -u +%u)" = "1" ]; then
-                python validate.py --freshness 2 || FAILED="$FAILED routine-watchdog"
+                python work_pipeline.py freshness --max-days 2 || FAILED="$FAILED routine-watchdog"
               fi
               ;;
             reverify-some)
