@@ -4,7 +4,7 @@
     "next_update": "2026-09-06",
     "update_notes": "2026-10-08: 14 项已核实更新 — APP ElevenLabs.val: 11 -> 22; APP ElevenLabs.uc: ElevenAgents语音智能体与v3语音合成 -> ElevenAgents语音智能体与v4语音合成; APP ElevenLabs.ownModel: {'status': 'primary', 'tokenShare': None, 'models': []} -> {'status': 'primary', 'tokenShare': None, 'models': ['Eleven v4', 'Eleven v4 Turbo']}; APP Lovable.arr: 500.0 -> 600; APP Perplexity.valPending: None -> 30; APP Instinct.val: 2.5 -> 10",
     "schema": 2,
-    "last_run": "2026-10-08",
+    "last_run": "2026-10-11",
     "stale_days": 120,
     "categories": {
       "coding": {
@@ -2401,7 +2401,7 @@
         "error": null
       },
       "openrouter": {
-        "at": "2026-10-05",
+        "at": "2026-10-11",
         "ok": true,
         "error": null,
         "weeks": 56,
@@ -6650,11 +6650,20 @@
       "nM": 17,
       "nA": 37,
       "nMrev": 12
+    },
+    {
+      "date": "2026-10-11",
+      "mARR": 150.43,
+      "aARR": 12.63,
+      "tok": 9273.8,
+      "nM": 17,
+      "nA": 37,
+      "nMrev": 12
     }
   ],
   "openrouter": {
-    "as_of": "2026-10-04",
-    "fetched": "2026-10-05",
+    "as_of": "2026-10-10",
+    "fetched": "2026-10-11",
     "wow_pct": 13.7,
     "weekly": [
       {
