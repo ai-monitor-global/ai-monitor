@@ -1,7 +1,7 @@
 # Work 周更与迁移手册
 
 研究契约：`ROUTINE_PROMPT.md` 和 `CRITERIA.md`。目标仅为 `ai-monitor-global/ai-monitor` 的 `main`。
-日程保持周日 13:00 UTC（北京时间 21:00）；研究日期和文件名使用 UTC。
+日程为周六 07:00 UTC（北京时间周六 15:00）；研究日期和文件名使用 UTC。
 网页：https://ai-monitor-global.github.io/ai-monitor/
 
 ## 执行入口
@@ -14,7 +14,7 @@
    ```
 
    prepare 自动跑原有自检/数据校验，生成轮转名单、全池名单、存量队列、七天新闻窗口及月度发现标志。全量轮转复核不受七天窗口限制。正常运行不能用 `--as-of`；该选项仅供离线测试。
-3. `needs_research=false` 说明本周已有成功研究，不重复执行，检查已有提交和网页。每周以 UTC 周日起算；依 `meta.runs` 的研究记录去重，不根据可被 OpenRouter 更新的 `meta.last_run` 判断。迁移前的 `routine-weekly` 记录同样有效。API 后备只有增量、复核、周报三个 pass 均成功，才算完成研究。
+3. `needs_research=false` 说明本周已有成功研究，不重复执行，检查已有提交和网页。每周以 UTC 周六起算，至下周五结束；周中补跑只覆盖所在周期，不阻止下一个周六的研究。每月首个周六周期执行覆盖发现，以 prepare 的 `monthly_discovery_due` 为准。依 `meta.runs` 的研究记录去重，不根据可被 OpenRouter 更新的 `meta.last_run` 判断。迁移前的 `routine-weekly` 成功日期同样有效；历史 ledger 保留原文件名和内容，不重新编号或回写。API 后备只有增量、复核、周报三个 pass 均成功，才算完成研究。
 4. 到期则按仓库完整规则真实联网研究，写 `.run/research.json`，接口见 `automation/research-bundle.schema.json`。`changes` 保留原有 patches / confirmations / candidates / retire / ai_progress 格式；附覆盖情况和本轮已打开的来源。查不到与未变化分开处理；不以搜索摘要、标题或“没有找到”冒充已核实的数字。未完成的公司/字段必须列为 unverified，不能用批量 confirmation 掩盖。
 5. 所有输入生成后执行：
 
@@ -25,7 +25,7 @@
 
    wrapper 不调用模型，内部仍用原有 apply.py 和数据闸门；它拒绝过时基准、跨日请求、重复周次和文件级 force，并在脚本失败时恢复原 data.json。已知实际模型名可用 `--model-label` 记录；无法读取则用 `unreported`。不要把后备通道的 `CLAUDE_MODEL` 当作 Work 实际模型。
 6. 查看 apply 报告和 diff。被拒条目依原仲裁协议处理，合法待核项保留 review_queue。若需要修正输入后重新 apply：先将候选 bundle 和报告留在 .run/，确认未提交的改动只有本轮 data.json 与本轮 ledger，恢复这两项到 prepare 的干净基准，再重跑；不要清理任何他人改动，不对已发布周次执行这种恢复。
-7. 仅提交 `data.json` 和本轮 `runs/<UTC周日起日>.json`，提交信息 `chore(routine): weekly update <UTC日期>`。提交前重新读取远端 main：若不等于 request.base_commit，保留候选输入，获取干净新基准并重新 prepare、复核轮转名单和字段，再重新 apply。即使只是 OpenRouter 更新，也不能盲合并或把旧数据整份覆盖上去。
+7. 仅提交 `data.json` 和本轮 `runs/<UTC周六起日>.json`，提交信息 `chore(routine): weekly update <UTC日期>`。提交前重新读取远端 main：若不等于 request.base_commit，保留候选输入，获取干净新基准并重新 prepare、复核轮转名单和字段，再重新 apply。即使只是 OpenRouter 更新，也不能盲合并或把旧数据整份覆盖上去。
 8. 使用普通 Git 的 fast-forward 推送，或已授权 GitHub 工具原子写入：基于准确 base tree 创建两项变更，一次 commit，以 `expected_sha=base_commit`、`force=false` 更新 main。禁止强推。遇权限/安全审核拒绝即报告受阻步骤，不切换工具或凭据绕过。
 9. 回读远端 SHA 和提交内容，核对该 SHA 对应的 Pages 工作流。随后从与最新远端对齐的副本执行：
 
@@ -45,7 +45,7 @@
 
 写入前失败：远端不前进，下次从最新仓库重做未完成工作。写入后失败：先核验部署，本周已有研究则跳过重复研究。窗口仍是过去七天；若漏跑超过一周，明确报告缺失期，不能声称已覆盖。
 
-现有 GitHub 工作流继续负责 OpenRouter 和周一看门狗，日程不变。看门狗改用 `work_pipeline.py freshness --max-days 2`，只认成功研究，OpenRouter 无法掩盖研究停跑。通知沿用 GitHub 现有设置；检查失败不等于已发送邮件。cron / openrouter-only / validate-only 不再安装或调用 Anthropic，API 后备仍保留为手动入口。
+现有 GitHub 工作流继续负责 OpenRouter 和周一看门狗，日程不变。看门狗使用 `work_pipeline.py freshness --max-days 2`，按 UTC 日期差允许最多 2 天：周六成功研究到周一检查为 2 天，可以通过，无需放宽阈值。只认成功研究，OpenRouter 无法掩盖研究停跑。通知沿用 GitHub 现有设置；检查失败不等于已发送邮件。cron / openrouter-only / validate-only 不再安装或调用 Anthropic，API 后备仍保留为手动入口。
 
 ## 换模型或迁往 GitHub Actions
 

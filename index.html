@@ -211,7 +211,7 @@ function renderBadge(){
   const failed=Object.keys(runs).filter(k=>runs[k]&&runs[k].ok===false);
   const mark=failed.length?"&#9888;":"&#128197;";
   document.getElementById("badge").innerHTML=mark+" 数据截至 "+esc(m.last_updated||"?")+
-    (m.last_run&&m.last_run!==m.last_updated?"（最后运行 "+esc(m.last_run)+"）":"")+" · 每周日更新";
+    (m.last_run&&m.last_run!==m.last_updated?"（最后运行 "+esc(m.last_run)+"）":"")+" · 每周六更新";
 }
 /* The old badge printed today's date even when the update had crashed. Now a
    failed pass is stated on the page instead of being hidden. */

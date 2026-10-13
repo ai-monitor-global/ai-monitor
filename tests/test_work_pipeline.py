@@ -6,7 +6,7 @@ import shutil
 import subprocess
 import tempfile
 import unittest
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import patch
 
@@ -164,12 +164,72 @@ class WorkPipelineTests(unittest.TestCase):
                 pipeline.apply(*self.stage(request, bundle))
         self.assertEqual(self.git("status", "--porcelain"), "")
 
-    def test_monthly_discovery_uses_sunday_cycle(self):
-        with patch.object(pipeline, "today", return_value=self.day):
+    def test_midweek_success_does_not_skip_next_saturday_or_rewrite_history(self):
+        self.base["meta"]["runs"]["routine-weekly"]["at"] = "2026-10-06"
+        pipeline.write(self.root / "data.json", self.base)
+        legacy_ledger = self.root / "runs/2026-10-04.json"
+        pipeline.write(legacy_ledger, {"run_id": "2026-10-04", "status": "legacy fixture"})
+        self.commit("midweek success in legacy Sunday cycle")
+        before_data = (self.root / "data.json").read_bytes()
+        before_ledger = legacy_ledger.read_bytes()
+        with patch.object(pipeline, "today", return_value=date(2026, 10, 10)):
             request = pipeline.prepare()
-        sunday = self.day - timedelta(days=(self.day.weekday() + 1) % 7)
-        self.assertEqual(request["run_id"], str(sunday))
-        self.assertEqual(request["monthly_discovery_due"], sunday.day <= 7)
+        self.assertEqual(request["run_id"], "2026-10-10")
+        self.assertTrue(request["needs_research"])
+        self.assertEqual((self.root / "data.json").read_bytes(), before_data)
+        self.assertEqual(legacy_ledger.read_bytes(), before_ledger)
+        self.assertEqual(self.git("status", "--porcelain"), "")
+
+    def test_sunday_reuses_successful_saturday_cycle(self):
+        self.base["meta"]["runs"]["routine-weekly"]["at"] = "2026-10-10"
+        pipeline.write(self.root / "data.json", self.base)
+        self.commit("successful Saturday research")
+        with patch.object(pipeline, "today", return_value=date(2026, 10, 11)):
+            request = pipeline.prepare()
+        self.assertEqual(request["run_id"], "2026-10-10")
+        self.assertFalse(request["needs_research"])
+        self.assertEqual(self.git("status", "--porcelain"), "")
+
+    def test_monthly_discovery_uses_first_saturday_cycle(self):
+        self.base["meta"]["runs"]["routine-weekly"]["at"] = "2026-09-01"
+        pipeline.write(self.root / "data.json", self.base)
+        self.commit("older successful research")
+        cases = [
+            (date(2026, 10, 3), "2026-10-03", True),
+            (date(2026, 10, 10), "2026-10-10", False),
+            (date(2026, 11, 1), "2026-10-31", False),
+            (date(2026, 11, 7), "2026-11-07", True),
+        ]
+        for day, run_id, due in cases:
+            with self.subTest(day=day), patch.object(pipeline, "today", return_value=day):
+                request = pipeline.prepare()
+            self.assertEqual(request["run_id"], run_id)
+            self.assertEqual(request["monthly_discovery_due"], due)
+
+    def test_sunday_anchored_request_is_rejected_before_mutation(self):
+        self.base["meta"]["runs"]["routine-weekly"]["at"] = "2026-09-20"
+        pipeline.write(self.root / "data.json", self.base)
+        self.commit("older successful research")
+        with patch.object(pipeline, "today", return_value=date(2026, 10, 6)):
+            request = pipeline.prepare()
+            request["run_id"] = "2026-10-04"
+            with self.assertRaisesRegex(ValueError, "Stale weekly run ID"):
+                pipeline.apply(*self.stage(request, self.bundle(request)))
+        self.assertEqual(pipeline.read(self.root / "data.json"), self.base)
+        self.assertEqual(self.git("status", "--porcelain"), "")
+
+    def test_monday_watchdog_accepts_saturday_but_rejects_thursday(self):
+        for last, age in (("2026-10-10", 2), ("2026-10-08", 4)):
+            self.base["meta"]["runs"]["routine-weekly"]["at"] = last
+            pipeline.write(self.root / "data.json", self.base)
+            with self.subTest(last=last), patch.object(pipeline, "today", return_value=date(2026, 10, 12)):
+                if age == 2:
+                    result = pipeline.freshness(2)
+                    self.assertEqual(result["status"], "research_fresh")
+                    self.assertEqual(result["age_days"], 2)
+                else:
+                    with self.assertRaisesRegex(ValueError, "age=4, maximum=2 days"):
+                        pipeline.freshness(2)
 
 
 if __name__ == "__main__":

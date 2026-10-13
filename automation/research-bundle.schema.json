@@ -6,7 +6,7 @@
   "required": ["schema_version", "run_id", "window_start", "window_end", "changes", "coverage", "evidence", "limitations"],
   "properties": {
     "schema_version": {"const": 1},
-    "run_id": {"type": "string", "format": "date", "description": "UTC Sunday from request; the weekly idempotency key."},
+    "run_id": {"type": "string", "format": "date", "description": "UTC Saturday from request; the weekly idempotency key."},
     "window_start": {"type": "string", "format": "date"},
     "window_end": {"type": "string", "format": "date"},
     "changes": {
@@ -59,6 +59,6 @@
   "$defs": {"stage": {
     "type": "object", "required": ["status", "note"],
     "properties": {"status": {"enum": ["completed", "limited", "not_due"]}, "note": {"type": "string", "minLength": 1}},
-    "description": "not_due is only valid for discovery outside the first Sunday of the month. Never label blocked coverage completed."
+    "description": "not_due is only valid for discovery outside the cycle starting on the first Saturday of the month, as indicated by request.monthly_discovery_due. Never label blocked coverage completed."
   }}
 }

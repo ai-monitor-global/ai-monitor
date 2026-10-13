@@ -39,6 +39,11 @@ def today():
     return datetime.now(timezone.utc).date()
 
 
+def week_start(day):
+    """UTC Saturday starts each research cycle; match the Work schedule."""
+    return day - timedelta(days=(day.weekday() - 5) % 7)
+
+
 def git(*args):
     return subprocess.check_output(["git", *args], cwd=ROOT, text=True).strip()
 
@@ -77,7 +82,7 @@ def prepare(as_of=None):
     require(cfg["timezone"] == "UTC" and cfg["pass_name"] == PASS, "Unsupported business date/pass configuration.")
     day = date.fromisoformat(as_of) if as_of else today()
     require(day <= today(), "Cannot prepare a future research run.")
-    week = day - timedelta(days=(day.weekday() + 1) % 7)
+    week = week_start(day)
     last = last_research(data)
     require(last is None or last <= day, "Stored research date is in the future; investigate.")
     script("validate.py", "--selftest")
@@ -189,7 +194,7 @@ def apply(request_path, bundle_path, model_label="unreported"):
     require(request["base_commit"] == git("rev-parse", "HEAD") and request["base_data_sha256"] == digest(base),
             "Base changed: sync, prepare and review inputs again; never merge data.json blindly.")
     require(request["as_of"] == str(today()) and request["timezone"] == "UTC", "Re-prepare after the UTC business date changes.")
-    require(request["run_id"] == str(today() - timedelta(days=(today().weekday() + 1) % 7)), "Stale weekly run ID.")
+    require(request["run_id"] == str(week_start(today())), "Stale weekly run ID.")
     last = last_research(base)
     require(last is None or str(last) < request["run_id"], "This week's research is already committed.")
     check_bundle(request, bundle)

@@ -1,7 +1,7 @@
 # AI Native App Monitor
 
 全球 AI Native App + Foundation Model 监控 Dashboard。追踪 ARR、估值、Token 消耗、自有模型进度。
-每周日 UTC 13:00（北京时间 21:00）由 Work 云端直接研究并更新，页面下方另有「AI 进展周报」。
+每周六 UTC 07:00（北京时间周六 15:00）由 Work 云端直接研究并更新，页面下方另有「AI 进展周报」。
 
 当前运行与迁移手册见 `RUNBOOK.md`，研究契约见 `ROUTINE_PROMPT.md`，统一入口为 `work_pipeline.py`。无需本地电脑或常驻服务器。
 
