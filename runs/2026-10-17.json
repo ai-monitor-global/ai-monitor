@@ -1,0 +1,1087 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-10-17",
+  "window_start": "2026-10-11",
+  "window_end": "2026-10-17",
+  "base_commit": "a3870616e5dafd396dc89e2b20ddbf711c037539",
+  "data_sha256": "198fe5ba7408ec02f0980ef3584ee481cd5d24d7bd91ce5cf3219ca85a5409e5",
+  "model_label": "unreported",
+  "validated_at": "2026-10-17T07:24:50.441797+00:00",
+  "status": "validated_for_publication",
+  "publication_note": "This record proves validation only. Verify the remote commit and live Pages data separately.",
+  "result": {
+    "at": "2026-10-17",
+    "ok": true,
+    "error": null,
+    "applied": 9,
+    "rejected": 0,
+    "confirmed": 51,
+    "promoted": 0,
+    "queued": 0
+  },
+  "bundle": {
+    "schema_version": 1,
+    "run_id": "2026-10-17",
+    "window_start": "2026-10-11",
+    "window_end": "2026-10-17",
+    "changes": {
+      "pass": "routine-weekly",
+      "force": false,
+      "patches": [
+        {
+          "section": "models",
+          "name": "Google Gemini",
+          "field": "uc",
+          "new_value": "Gemini 4 Argon、3.8、Gemma",
+          "as_of": "2026-10-13",
+          "source": "Google 官方 2026-10-13：Gemini 4 Argon 已上线，补充新旗舰；现有 3.8/Gemma 家族保留。",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Meta (Llama)",
+          "field": "uc",
+          "new_value": "Muse Wonder、Spark、Glimmer、Meta AI",
+          "as_of": "2026-10-12",
+          "source": "Meta 官方 2026-10-12：Muse Wonder 系列 API/Muse Code 已开放；补充新系列，不将 Muse 助理计划接入当成已部署。",
+          "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Amazon Nova",
+          "field": "uc",
+          "new_value": "Nova 2系列、Nova 2.5 Sonic",
+          "as_of": "2026-10-05",
+          "source": "AWS 官方 2026-10-05：Nova 2.5 Sonic 已上线，更新语音型号并保留其余 Nova 2 产品；属于轮转补核，不计为本周发布。",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-nova-2.5-Sonic/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "xAI",
+          "field": "uc",
+          "new_value": "Grok 4.7、Voice 3.0、Imagine",
+          "as_of": "2026-10-14",
+          "source": "xAI 官方 2026-10-14 发布 Grok Voice 3.0；官方新闻列表亦确认 9 月 21 日 Grok 4.7，补充当前产品线。",
+          "url": "https://x.ai/news/grok-voice-3",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Character.ai",
+          "field": "uc",
+          "new_value": "AI角色娱乐（Chapter 11重组中）",
+          "as_of": "2026-10-12",
+          "source": "Character.ai 官方 2026-10-12：已申请 Chapter 11，但服务和订阅继续；仅增加重组状态，不认定停运或收购交割。",
+          "url": "https://blog.character.ai/an-update-on-character-ai/",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Gamma",
+          "field": "arrg",
+          "new_value": null,
+          "as_of": "2026-10-17",
+          "source": "2026-10-17 口径审计：Sacra 所列 2025-10 ARR 102M 对比 2024 年末 30.5M 是约十个月增长；库存 234% 将此误标为同比，故清空 arrg，保留 ARR。页面未给该对比发布日期；本日期为纠错核验日。",
+          "url": "https://sacra.com/c/gamma/",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "HeyGen",
+          "field": "arrg",
+          "new_value": null,
+          "as_of": "2026-06-25",
+          "source": "HeyGen 官方与 Upstarts 2026-06-25 采访均明确八个月 ARR 翻倍；库存 185% 为年化推算，不是实际收入同比，故清空 arrg，保留 ARR。交叉：https://www.upstartsmedia.com/p/exclusive-heygen-200m-arr-without-burn",
+          "url": "https://www.heygen.com/blog/heygen-surpasses-200m-arr",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "field": "tokG",
+          "new_value": 1900,
+          "as_of": "2026-08-26",
+          "source": "MiniMax 官方 2026-08-26：2026-07 token 消耗为 2026-01 的 20 倍；比例增幅=(20-1)*100=1900%，库存 2000% 混淆倍数与增幅；并非同比，不涉及汇率。",
+          "url": "https://www.minimax.io/news/minimax-announces-first-half-2026-financial-results-1787744160",
+          "conf": "high"
+        }
+      ],
+      "confirmations": [
+        {
+          "section": "models",
+          "name": "Google Gemini",
+          "field": "parent",
+          "as_of": "2026-10-13",
+          "source": "本轮打开官方产品发布确认属于 Google 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Google Gemini",
+          "field": "val",
+          "as_of": "2026-10-13",
+          "source": "本轮打开官方产品发布确认属于 Google 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Google Gemini",
+          "field": "valPending",
+          "as_of": "2026-10-13",
+          "source": "本轮打开官方产品发布确认属于 Google 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Google Gemini",
+          "field": "listed",
+          "as_of": "2026-10-13",
+          "source": "本轮打开官方产品发布确认属于 Google 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Alibaba Qwen (通义千问)",
+          "field": "parent",
+          "as_of": "2026-08-03",
+          "source": "本轮打开官方产品发布确认属于 Alibaba 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://www.alibabacloud.com/zh/press-room/alibaba-unveils-qwen3-8-max?_p_lc=1",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Alibaba Qwen (通义千问)",
+          "field": "val",
+          "as_of": "2026-08-03",
+          "source": "本轮打开官方产品发布确认属于 Alibaba 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://www.alibabacloud.com/zh/press-room/alibaba-unveils-qwen3-8-max?_p_lc=1",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Alibaba Qwen (通义千问)",
+          "field": "valPending",
+          "as_of": "2026-08-03",
+          "source": "本轮打开官方产品发布确认属于 Alibaba 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://www.alibabacloud.com/zh/press-room/alibaba-unveils-qwen3-8-max?_p_lc=1",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Alibaba Qwen (通义千问)",
+          "field": "listed",
+          "as_of": "2026-08-03",
+          "source": "本轮打开官方产品发布确认属于 Alibaba 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://www.alibabacloud.com/zh/press-room/alibaba-unveils-qwen3-8-max?_p_lc=1",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Meta (Llama)",
+          "field": "parent",
+          "as_of": "2026-10-12",
+          "source": "本轮打开官方产品发布确认属于 Meta 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Meta (Llama)",
+          "field": "val",
+          "as_of": "2026-10-12",
+          "source": "本轮打开官方产品发布确认属于 Meta 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Meta (Llama)",
+          "field": "valPending",
+          "as_of": "2026-10-12",
+          "source": "本轮打开官方产品发布确认属于 Meta 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Meta (Llama)",
+          "field": "listed",
+          "as_of": "2026-10-12",
+          "source": "本轮打开官方产品发布确认属于 Meta 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Amazon Nova",
+          "field": "parent",
+          "as_of": "2026-10-05",
+          "source": "本轮打开官方产品发布确认属于 Amazon 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-nova-2.5-Sonic/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Amazon Nova",
+          "field": "val",
+          "as_of": "2026-10-05",
+          "source": "本轮打开官方产品发布确认属于 Amazon 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-nova-2.5-Sonic/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Amazon Nova",
+          "field": "valPending",
+          "as_of": "2026-10-05",
+          "source": "本轮打开官方产品发布确认属于 Amazon 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-nova-2.5-Sonic/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Amazon Nova",
+          "field": "listed",
+          "as_of": "2026-10-05",
+          "source": "本轮打开官方产品发布确认属于 Amazon 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-nova-2.5-Sonic/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Baidu (ERNIE)",
+          "field": "parent",
+          "as_of": "2026-05-09",
+          "source": "本轮打开官方产品发布确认属于 Baidu 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://ernie.baidu.com/blog/zh/posts/ernie-5.1-0508-release/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Baidu (ERNIE)",
+          "field": "val",
+          "as_of": "2026-05-09",
+          "source": "本轮打开官方产品发布确认属于 Baidu 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://ernie.baidu.com/blog/zh/posts/ernie-5.1-0508-release/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Baidu (ERNIE)",
+          "field": "valPending",
+          "as_of": "2026-05-09",
+          "source": "本轮打开官方产品发布确认属于 Baidu 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://ernie.baidu.com/blog/zh/posts/ernie-5.1-0508-release/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Baidu (ERNIE)",
+          "field": "listed",
+          "as_of": "2026-05-09",
+          "source": "本轮打开官方产品发布确认属于 Baidu 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://ernie.baidu.com/blog/zh/posts/ernie-5.1-0508-release/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Tencent Hunyuan (腾讯混元)",
+          "field": "parent",
+          "as_of": "2026-08-28",
+          "source": "本轮打开官方产品发布确认属于 Tencent 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://www.tencent.com/zh-cn/tencent-releases-and-open-sources-tencent-hy4-preview/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Tencent Hunyuan (腾讯混元)",
+          "field": "val",
+          "as_of": "2026-08-28",
+          "source": "本轮打开官方产品发布确认属于 Tencent 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://www.tencent.com/zh-cn/tencent-releases-and-open-sources-tencent-hy4-preview/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Tencent Hunyuan (腾讯混元)",
+          "field": "valPending",
+          "as_of": "2026-08-28",
+          "source": "本轮打开官方产品发布确认属于 Tencent 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://www.tencent.com/zh-cn/tencent-releases-and-open-sources-tencent-hy4-preview/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Tencent Hunyuan (腾讯混元)",
+          "field": "listed",
+          "as_of": "2026-08-28",
+          "source": "本轮打开官方产品发布确认属于 Tencent 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。",
+          "url": "https://www.tencent.com/zh-cn/tencent-releases-and-open-sources-tencent-hy4-preview/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Alibaba Qwen (通义千问)",
+          "field": "uc",
+          "as_of": "2026-08-03",
+          "source": "阿里云 2026-08-03 中文发布核实 Qwen3.8-Max/Qwen 产品线，杭州的中国模型业务归属 CN；不声称财务或使用量已核实。",
+          "url": "https://www.alibabacloud.com/zh/press-room/alibaba-unveils-qwen3-8-max?_p_lc=1",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Alibaba Qwen (通义千问)",
+          "field": "region",
+          "as_of": "2026-08-03",
+          "source": "阿里云 2026-08-03 中文发布核实 Qwen3.8-Max/Qwen 产品线，杭州的中国模型业务归属 CN；不声称财务或使用量已核实。",
+          "url": "https://www.alibabacloud.com/zh/press-room/alibaba-unveils-qwen3-8-max?_p_lc=1",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Baidu (ERNIE)",
+          "field": "uc",
+          "as_of": "2026-05-09",
+          "source": "百度官方文心 5.1 发布核实模型名称；现有文心与千帆产品线描述可保留，不刷新未获证实的数字。",
+          "url": "https://ernie.baidu.com/blog/zh/posts/ernie-5.1-0508-release/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Tencent Hunyuan (腾讯混元)",
+          "field": "uc",
+          "as_of": "2026-08-28",
+          "source": "腾讯 2026-08-28 中文公告核实 Hy4 preview、Hy3、腾讯元宝产品线；本轮未取得可替代的更新旗舰披露。",
+          "url": "https://www.tencent.com/zh-cn/tencent-releases-and-open-sources-tencent-hy4-preview/",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Midjourney",
+          "field": "uc",
+          "as_of": "2026-10-17",
+          "source": "2026-10-17 读取官方现行版本文档：V8.2 和视频生成仍属主要能力，创意生成分类适用；这是产品核验日，不是版本发布日期。",
+          "url": "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Midjourney",
+          "field": "cat",
+          "as_of": "2026-10-17",
+          "source": "2026-10-17 读取官方现行版本文档：V8.2 和视频生成仍属主要能力，创意生成分类适用；这是产品核验日，不是版本发布日期。",
+          "url": "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Midjourney",
+          "field": "ownModel",
+          "as_of": "2026-10-17",
+          "source": "官方现行文档提供自研 Midjourney 图像与视频模型版本；据核心生成产品判断 primary，未披露 tokenShare，继续为空。",
+          "url": "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version",
+          "conf": "medium"
+        },
+        {
+          "section": "apps",
+          "name": "Gamma",
+          "field": "uc",
+          "as_of": "2025-11-10",
+          "source": "Gamma 官方产品说明及 Teams/Ultra 公告支持演示/网站/内容生成、creative 和个人加团队业务；仅复核产品分类，不把旧财务公告当作近期数字。",
+          "url": "https://gamma.app/insights/how-we-built-a-usd100m-business-differently",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Gamma",
+          "field": "cat",
+          "as_of": "2025-11-10",
+          "source": "Gamma 官方产品说明及 Teams/Ultra 公告支持演示/网站/内容生成、creative 和个人加团队业务；仅复核产品分类，不把旧财务公告当作近期数字。",
+          "url": "https://gamma.app/insights/how-we-built-a-usd100m-business-differently",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Gamma",
+          "field": "biz",
+          "as_of": "2025-11-10",
+          "source": "Gamma 官方产品说明及 Teams/Ultra 公告支持演示/网站/内容生成、creative 和个人加团队业务；仅复核产品分类，不把旧财务公告当作近期数字。",
+          "url": "https://gamma.app/insights/how-we-built-a-usd100m-business-differently",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "HeyGen",
+          "field": "arr",
+          "as_of": "2026-06-25",
+          "source": "HeyGen 官方与 Upstarts 2026-06-25 独立采访均披露超过 USD200M ARR；保留最近可验证披露值 200，非新增本周收入。交叉：https://www.upstartsmedia.com/p/exclusive-heygen-200m-arr-without-burn",
+          "url": "https://www.heygen.com/blog/heygen-surpasses-200m-arr",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "HeyGen",
+          "field": "uc",
+          "as_of": "2026-06-25",
+          "source": "HeyGen 官方 2026-06-25：数字人视频、个人创作者及企业采用；结合已交叉核实的 USD200M ARR，creative、scale、B2B+B2C 仍适用。",
+          "url": "https://www.heygen.com/blog/heygen-surpasses-200m-arr",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "HeyGen",
+          "field": "cat",
+          "as_of": "2026-06-25",
+          "source": "HeyGen 官方 2026-06-25：数字人视频、个人创作者及企业采用；结合已交叉核实的 USD200M ARR，creative、scale、B2B+B2C 仍适用。",
+          "url": "https://www.heygen.com/blog/heygen-surpasses-200m-arr",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "HeyGen",
+          "field": "stage",
+          "as_of": "2026-06-25",
+          "source": "HeyGen 官方 2026-06-25：数字人视频、个人创作者及企业采用；结合已交叉核实的 USD200M ARR，creative、scale、B2B+B2C 仍适用。",
+          "url": "https://www.heygen.com/blog/heygen-surpasses-200m-arr",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "HeyGen",
+          "field": "biz",
+          "as_of": "2026-06-25",
+          "source": "HeyGen 官方 2026-06-25：数字人视频、个人创作者及企业采用；结合已交叉核实的 USD200M ARR，creative、scale、B2B+B2C 仍适用。",
+          "url": "https://www.heygen.com/blog/heygen-surpasses-200m-arr",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "HeyGen",
+          "field": "ownModel",
+          "as_of": "2026-06-25",
+          "source": "官方披露核心 Avatar V、语音、生产推理自研一体化；据主要视频生成负载判断 primary/ultra，未披露具体 tokenShare，保留空值。",
+          "url": "https://www.heygen.com/blog/heygen-surpasses-200m-arr",
+          "conf": "medium"
+        },
+        {
+          "section": "apps",
+          "name": "HeyGen",
+          "field": "ti",
+          "as_of": "2026-06-25",
+          "source": "官方披露核心 Avatar V、语音、生产推理自研一体化；据主要视频生成负载判断 primary/ultra，未披露具体 tokenShare，保留空值。",
+          "url": "https://www.heygen.com/blog/heygen-surpasses-200m-arr",
+          "conf": "medium"
+        },
+        {
+          "section": "apps",
+          "name": "Writer",
+          "field": "uc",
+          "as_of": "2026-08-13",
+          "source": "WRITER 官方 2026-08-13 发布及现行模型管理文档：Palmyra X6/Agent 面向企业工作流，uc、enterprise、B2B 可确认；不据此确认财务或流量占比。",
+          "url": "https://writer.com/blog/palmyra-x6-major-harness-release/",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Writer",
+          "field": "cat",
+          "as_of": "2026-08-13",
+          "source": "WRITER 官方 2026-08-13 发布及现行模型管理文档：Palmyra X6/Agent 面向企业工作流，uc、enterprise、B2B 可确认；不据此确认财务或流量占比。",
+          "url": "https://writer.com/blog/palmyra-x6-major-harness-release/",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Writer",
+          "field": "biz",
+          "as_of": "2026-08-13",
+          "source": "WRITER 官方 2026-08-13 发布及现行模型管理文档：Palmyra X6/Agent 面向企业工作流，uc、enterprise、B2B 可确认；不据此确认财务或流量占比。",
+          "url": "https://writer.com/blog/palmyra-x6-major-harness-release/",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Writer",
+          "field": "ti",
+          "as_of": "2026-08-13",
+          "source": "WRITER 官方对多步智能体、上下文及任务成本的说明，支持 high 推理密度的定性研究判断；没有可量化 token 份额。",
+          "url": "https://writer.com/blog/palmyra-x6-major-harness-release/",
+          "conf": "medium"
+        },
+        {
+          "section": "apps",
+          "name": "Cognition",
+          "field": "valPending",
+          "as_of": "2026-09-08",
+          "source": "Cognition 官方与 SiliconANGLE 2026-09-08 交叉核实 Series E 已交割；库存 valPending 已为 null。历史队列拒绝来自旧版 null 闸门，不需要重写或 force。交叉：https://siliconangle.com/2026/09/08/ai-coding-startup-cognition-raises-2b-at-48b-valuation-as-revenue-nears-900m/",
+          "url": "https://cognition.com/blog/series-e",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "field": "listed",
+          "as_of": "2026-10-16",
+          "source": "10 月 16 日行情与公司资料核实 HKEX:0100 及中国公司归属；仅确认代码和地区，市值分母冲突未解决。",
+          "url": "https://stockanalysis.com/quote/hkg/0100/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "field": "region",
+          "as_of": "2026-10-16",
+          "source": "10 月 16 日行情与公司资料核实 HKEX:0100 及中国公司归属；仅确认代码和地区，市值分母冲突未解决。",
+          "url": "https://stockanalysis.com/quote/hkg/0100/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Zhipu AI",
+          "field": "listed",
+          "as_of": "2026-10-16",
+          "source": "10 月 16 日行情与公司资料核实 HKEX:2513 及中国公司归属；仅确认代码和地区，市值分母冲突未解决。",
+          "url": "https://stockanalysis.com/quote/hkg/2513/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Zhipu AI",
+          "field": "region",
+          "as_of": "2026-10-16",
+          "source": "10 月 16 日行情与公司资料核实 HKEX:2513 及中国公司归属；仅确认代码和地区，市值分母冲突未解决。",
+          "url": "https://stockanalysis.com/quote/hkg/2513/",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "OpenClaw",
+          "field": "access",
+          "as_of": "2026-10-16",
+          "source": "OpenClaw 官方 10 月 16 日稳定版 release 提供源码与安装包，确认 oss；下载量、GitHub star 不替代活跃用户。",
+          "url": "https://github.com/openclaw/openclaw/releases",
+          "conf": "high"
+        }
+      ],
+      "candidates": [],
+      "retire": [],
+      "ai_progress": {
+        "enterprise": [
+          {
+            "title": "Glean 让技能从使用反馈中改进，并保留明确审批",
+            "summary": "Skill reflection 汇集对技能的纠正和重复需求，形成可预览的更新建议，得到用户明确确认后才改变技能。",
+            "example": "产品决策文档模板可随团队惯例调整；一次性格式偏好不会自动成为永久指令。",
+            "company": "Glean",
+            "date": "2026-10-15",
+            "source": "Glean 官方产品说明，2026-10-15",
+            "url": "https://www.glean.com/blog/skill-reflection-2026"
+          },
+          {
+            "title": "Google 用智能体处理真实工程性能优化",
+            "summary": "Google 披露 Argon 对 ADK 的长会话准备和冷启动导入提出优化，相关改动已进入代码库。",
+            "example": "官方报告会话准备耗时下降 40%、冷导入快 21%；这是特定工程案例，不代表所有团队的普遍收益。",
+            "company": "Google",
+            "date": "2026-10-13",
+            "source": "Google 官方工程案例，2026-10-13",
+            "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+          },
+          {
+            "title": "Starlink 电话智能体扩展到客服与销售",
+            "summary": "xAI 披露 Grok Voice 在 Starlink 每天处理约两万通电话，约七成通话无需人工介入。",
+            "example": "覆盖客户支持及销售，体现语音工具调用进入业务流程；自动解决率来自厂商披露，仍需独立验证。",
+            "company": "Starlink / xAI",
+            "date": "2026-10-14",
+            "source": "xAI 官方客户案例，2026-10-14",
+            "url": "https://x.ai/news/grok-voice-3"
+          }
+        ],
+        "models": [
+          {
+            "title": "Gemini 4 Argon 上线，聚焦长流程和专业任务",
+            "summary": "Google 开放 Argon API 及付费应用入口，重点面向代码、金融、法律与科学工作。发布材料将专业任务与实际工程执行结合，能力结论仍以厂商披露为主。",
+            "kind": "sota",
+            "date": "2026-10-13",
+            "source": "Google 官方发布，2026-10-13",
+            "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+          },
+          {
+            "title": "Meta 发布 Muse Wonder，增加长任务中的记忆与注意力机制",
+            "summary": "Wonder 系列已进入 API/Muse Code，官方介绍 Active Memory 和 Active Focus。Muse 助理的接入仍是即将推出，不当作已经完成的产品迁移。",
+            "kind": "sota",
+            "date": "2026-10-12",
+            "source": "Meta 官方发布，2026-10-12，10-13 更新",
+            "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/"
+          },
+          {
+            "title": "Grok Voice 3.0 加强低延迟语音与工具调用",
+            "summary": "xAI 更新 Voice Agent API，保持每分钟 0.08 美元的披露价格，强调真实通话中的低延迟和多步工具使用；性能数字为厂商口径。",
+            "kind": "sota",
+            "date": "2026-10-14",
+            "source": "xAI 官方发布，2026-10-14",
+            "url": "https://x.ai/news/grok-voice-3"
+          }
+        ],
+        "infra_invest": [
+          {
+            "title": "微软将 Maia 推进至多 GW 推理部署计划",
+            "layer": "自研推理芯片与云基础设施",
+            "thesis": "研究判断：更应跟踪已上线负载、单位能耗成本和交付节奏；多年部署计划不能当作当期产能。",
+            "players": [
+              "Microsoft",
+              "TSMC"
+            ],
+            "summary": "Maia 200 已用于部分微软服务；Maia 300 的量产及多 GW 扩展指向 2027 年，性能改善属于微软预期。",
+            "date": "2026-10-12",
+            "source": "微软官方公告，2026-10-12",
+            "url": "https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments/"
+          },
+          {
+            "title": "台积电先进制程占比提升，为算力供给提供观察点",
+            "layer": "晶圆制造与先进制程",
+            "thesis": "研究判断：先进制程收入结构比单个模型发布更能观察供应链需求，但总营收不能等同于纯 AI 收入。",
+            "players": [
+              "TSMC"
+            ],
+            "summary": "台积电第三季美元营收 467.2 亿，同比增长 41.2%；先进制程占晶圆收入 79%，其中 2nm 占 8%。",
+            "date": "2026-10-15",
+            "source": "台积电官方季度结果，2026-10-15",
+            "url": "https://pr.tsmc.com/english/news/3346"
+          },
+          {
+            "title": "DeepSeek 新轮融资仍在推进，交割与估值口径待落定",
+            "layer": "模型训练与推理资本投入",
+            "thesis": "研究判断：融资规模反映资本需求，投资判断仍应以实际交割、投后口径和可交付算力为准。",
+            "players": [
+              "DeepSeek"
+            ],
+            "summary": "财经与科创板日报独立采访均指向新一轮融资尚在推进；本周报道的投前口径及动态筹资额，不用于覆盖库存已交割估值。",
+            "date": "2026-10-13",
+            "source": "财经与科创板日报，2026-10-13；双源均已打开",
+            "url": "https://www.mycaijing.com/article/detail/584924?source_id=40"
+          }
+        ],
+        "takeaway": "本周更值得跟踪的是智能体能否稳定完成长流程，以及每项任务的真实成本。模型更新开始与工程优化、电话业务和可审批的技能改进结合；基础设施侧关注自研推理芯片和先进制程的实际交付。融资计划、未来产能与已实现收入应分别核对。"
+      }
+    },
+    "coverage": {
+      "rotation": [
+        {
+          "section": "models",
+          "name": "Google Gemini",
+          "checked_fields": [
+            "val",
+            "valPending",
+            "uc",
+            "listed",
+            "parent"
+          ],
+          "unverified_fields": [
+            "arr",
+            "arrg",
+            "tokM",
+            "tokG",
+            "region"
+          ],
+          "note": "已更新旗舰并核实母公司及结构性空值。API token 与全产品面月 token 不能混算；独立 API ARR、同比和同口径最新 token 无足够证据。地域未另用公司档案复核。"
+        },
+        {
+          "section": "models",
+          "name": "Alibaba Qwen (通义千问)",
+          "checked_fields": [
+            "val",
+            "valPending",
+            "uc",
+            "listed",
+            "parent",
+            "region"
+          ],
+          "unverified_fields": [
+            "arr",
+            "arrg",
+            "tokM",
+            "tokG"
+          ],
+          "note": "中文官方发布核实产品和母公司归属。独立 API 收入/同比/token 未获可用披露；模型更新页读取失败，不能以搜索摘要认定全部版本均已覆盖。"
+        },
+        {
+          "section": "models",
+          "name": "Meta (Llama)",
+          "checked_fields": [
+            "val",
+            "valPending",
+            "uc",
+            "listed",
+            "parent"
+          ],
+          "unverified_fields": [
+            "arr",
+            "arrg",
+            "tokM",
+            "tokG",
+            "region"
+          ],
+          "note": "新增 Wonder 系列并确认归属。API 已可用不等于已经披露收入或 token；Muse 助理接入仍为将来计划。地域未另取当前公司档案。"
+        },
+        {
+          "section": "models",
+          "name": "Amazon Nova",
+          "checked_fields": [
+            "val",
+            "valPending",
+            "uc",
+            "listed",
+            "parent"
+          ],
+          "unverified_fields": [
+            "arr",
+            "arrg",
+            "tokM",
+            "tokG",
+            "region"
+          ],
+          "note": "轮转补核 10 月 5 日 Sonic 更新；时间早于本周窗口。独立财务、token 和地域公司档案未完成证实，保留原值。"
+        },
+        {
+          "section": "models",
+          "name": "Baidu (ERNIE)",
+          "checked_fields": [
+            "val",
+            "valPending",
+            "uc",
+            "listed",
+            "parent"
+          ],
+          "unverified_fields": [
+            "arr",
+            "arrg",
+            "tokM",
+            "tokG",
+            "region"
+          ],
+          "note": "核实官方文心产品及父子关系；没有用集团 AI Cloud 收入替代模型 API ARR。token、增长和地域未完成当前证据复核。"
+        },
+        {
+          "section": "models",
+          "name": "Tencent Hunyuan (腾讯混元)",
+          "checked_fields": [
+            "val",
+            "valPending",
+            "uc",
+            "listed",
+            "parent"
+          ],
+          "unverified_fields": [
+            "arr",
+            "arrg",
+            "tokM",
+            "tokG",
+            "region"
+          ],
+          "note": "中文公告核实产品与母公司。模型站部分动态页无可读正文，财务、使用量及地域未取得本轮完整证据。"
+        },
+        {
+          "section": "apps",
+          "name": "Midjourney",
+          "checked_fields": [
+            "uc",
+            "ownModel",
+            "cat"
+          ],
+          "unverified_fields": [
+            "arr",
+            "val",
+            "valPending",
+            "arrg",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "stage",
+            "biz",
+            "ti"
+          ],
+          "note": "版本及订阅文档支持产品、自研核心和类别；历史全年收入不是当前 ARR，未获近期双源财务、估值、MAU/同比。客户结构、规模分期和 token 密度未充分量化，未刷新。"
+        },
+        {
+          "section": "apps",
+          "name": "Gamma",
+          "checked_fields": [
+            "arrg",
+            "uc",
+            "cat",
+            "biz"
+          ],
+          "unverified_fields": [
+            "arr",
+            "val",
+            "valPending",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "ownModel",
+            "stage",
+            "ti"
+          ],
+          "note": "修正十个月增长被误当同比。官方 ARR/估值公告是 2025-11-10，缺近期双源；累计注册不是 MAU。当前模型路由、自研占比、融资/上市归属和分期等未获充分证据，保留原值。"
+        },
+        {
+          "section": "apps",
+          "name": "HeyGen",
+          "checked_fields": [
+            "arr",
+            "arrg",
+            "uc",
+            "ownModel",
+            "cat",
+            "stage",
+            "biz",
+            "ti"
+          ],
+          "unverified_fields": [
+            "val",
+            "valPending",
+            "listed",
+            "parent",
+            "mau",
+            "maug"
+          ],
+          "note": "官方与独立采访交叉核实 6 月 25 日 ARR；八个月增长不是同比，清空 arrg。注册数不能核验 MAU/增长；估值仅见 2024 年融资，近期融资、上市/母公司未充分证实。ownModel/ti 为注明依据的定性判断，无比例数字。"
+        },
+        {
+          "section": "apps",
+          "name": "Writer",
+          "checked_fields": [
+            "uc",
+            "cat",
+            "biz",
+            "ti"
+          ],
+          "unverified_fields": [
+            "arr",
+            "val",
+            "valPending",
+            "arrg",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "ownModel",
+            "stage"
+          ],
+          "note": "核实 Palmyra X6 企业智能体与分类。其基于 GLM-5.2 后训练且支持第三方模型，未披露多数流量去向，故不确认库存 ownModel.primary；旧 ARR/估值不足以通过近期双源，MAU/增速及融资/归属/分期也未验证。"
+        }
+      ],
+      "queue": {
+        "status": "completed",
+        "note": "唯一存量条目 Cognition.valPending 已为 null，官方与独立媒体证实原轮融资已交割；无须重复 patch。历史队列保持原样，等待既有 28 天到期机制，不手动删除。"
+      },
+      "incremental": {
+        "status": "limited",
+        "note": "54 个活跃实体均进入过去七天分组搜索；实际打开并核实主要变化来源，补核两家港股上市模型。未得到证据的实体不声明无变化。个人助理三项转折点均未证实触发，来源障碍详见 limitations。"
+      },
+      "discovery": {
+        "status": "not_due",
+        "note": "request.monthly_discovery_due=false；本周不运行月初覆盖发现，无新增候选或下架。"
+      },
+      "progress": {
+        "status": "completed",
+        "note": "三条企业应用、三条模型、三条基础设施/融资观察，均有实际打开的来源且发布日期位于本轮七天窗口；厂商实绩和计划已区分。"
+      }
+    },
+    "evidence": [
+      {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 Google 10 月 13 日发布：Argon 已提供 API 和订阅用户入口；ADK 的性能改进为厂商披露的工程案例，不是独立基准。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q2-2026/",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "读到模型 API 每分钟 token 与全部 AI 产品面每月 token 的不同口径，未获得可拆分的 Gemini 年化 API 收入；不以集团收入或 API 分钟量替换库存月量。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://www.alibabacloud.com/zh/press-room/alibaba-unveils-qwen3-8-max?_p_lc=1",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开阿里云 8 月 3 日中文发布，核实 Qwen3.8-Max、阿里自研产品归属及杭州发布地点；未提供本轮可用的独立 API ARR 和月 token。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 Meta 10 月 12 日发布及 13 日更新：Muse Wonder 系列进入 API/Muse Code；Muse 助理接入仍表述为即将推出，不能据此确认已部署。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-nova-2.5-Sonic/",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 AWS 原始公告，发布日期为 10 月 5 日；Nova 2.5 Sonic 已发布。10 月 13 日周报是回顾，不将其算成本周首发。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://ernie.baidu.com/blog/zh/posts/ernie-5.1-0508-release/",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开百度 5 月 9 日文心 5.1 官方发布，核实模型名称及百度产品归属；没有独立 ARR 或当前 token 量披露。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://www.tencent.com/zh-cn/tencent-releases-and-open-sources-tencent-hy4-preview/",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开腾讯 8 月 28 日中文公告，核实 Hy4 preview、Hy3 和元宝所在产品线；未给独立模型业务财务数字。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开官方版本文档，当前默认图像模型 V8.2；页面说明自家模型版本和视频功能。不提供 ARR、MAU 或估值。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开四档订阅和 GPU 时间文档；有商业使用规则，但不足以量化客户结构、用户数或推理 token 密度。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://gamma.app/insights/how-we-built-a-usd100m-business-differently",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 Gamma 2025 年 11 月 10 日披露：ARR 1 亿美元、融资估值 21 亿美元，用户口径为累计注册；披露已较陈旧，未当作本周新增财务或 MAU。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://sacra.com/c/gamma/",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 Sacra：2025 年 10 月约 1.02 亿美元 ARR 对比 2024 年末 3,050 万美元，是约十个月变化，不能填收入同比增速。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://www.heygen.com/blog/heygen-surpasses-200m-arr",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 HeyGen 公告，正文数字日期为 2026 年 6 月 25 日；2 亿美元 ARR、八个月翻倍和自研视频/语音栈。页头更新日期不改变收入披露日期；3,000 万累计用户不等于 MAU。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://www.upstartsmedia.com/p/exclusive-heygen-200m-arr-without-burn",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 Upstarts 6 月 25 日创始人采访，独立采访确认 ARR 超 2 亿美元、八个月前约 1 亿；不是十二个月同比。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://writer.com/blog/palmyra-x6-major-harness-release/",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 WRITER 8 月发布：企业智能体及 Palmyra X6，基于 GLM-5.2 后训练；多步工作流及成本控制有明确产品说明，未披露自有模型流量占比。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://support.writer.com/articles/6412248971-model-selection-and-management",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开当前模型管理文档：Palmyra X6 默认、第三方模型可由管理员开启；默认模型不能等同于已证实多数生产推理流量。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://writer.com/blog/series-c-funding-writer-press-release/",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 2024 年 11 月 12 日 C 轮公告，19 亿美元为历史已完成估值；不将这份旧公告视为当前收入或新增融资证据。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://cognition.com/blog/series-e",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 9 月 8 日 Series E 交割公告：480 亿美元估值；核对库存 val=48、valPending=null 已正确，本轮无需再清空。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://siliconangle.com/2026/09/08/ai-coding-startup-cognition-raises-2b-at-48b-valuation-as-revenue-nears-900m/",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 SiliconANGLE 9 月 8 日报道，交叉核实融资已完成及 480 亿美元估值；未声称本轮已核实三个独立来源。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://www.minimax.io/news/minimax-announces-first-half-2026-financial-results-1787744160",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 MiniMax 8 月 26 日中期结果：7 月 token 消耗为 1 月 20 倍，增幅应为 (20-1)*100=1900%；半年收入不年化为 ARR。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://stockanalysis.com/quote/hkg/0100/",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 10 月 16 日行情：收盘 HKD182.10、市值 HKD63.60B、股数约 349.24M；与另一数据商股本口径不一致，未更新美元估值。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://content.etnet.com.hk/content/cpyrevamp/eng/stock_quote.php?code=00100",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开经济通同日行情：收盘 HKD182.10 一致，但总市值 HKD64.187B，与 StockAnalysis 不同；没有强行选取股数。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://stockanalysis.com/quote/hkg/2513/",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 10 月 16 日行情：收盘 HKD518、市值 HKD241.19B、股数约 465.62M。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://www.lixinger.com/equity/company/detail/hk/02513/2513/fundamental/valuation/pe-ttm",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开理杏仁同日行情：收盘 HKD518 一致，总市值约 HKD252.571B、总股本约 488M，并另列 H 股市值；尚未用发行人最新股本公告调和分母。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://x.ai/news/grok-voice-3",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 xAI 10 月 14 日发布：Grok Voice 3.0 和 Starlink 电话工作流案例；延迟、自动解决率等为厂商披露，未作独立验证。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://x.ai/news",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开官方新闻列表：Grok 4.7 发布于 9 月 21 日、Voice 3.0 发布于 10 月 14 日，保留仍适用的现有产品描述。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://blog.character.ai/an-update-on-character-ai/",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 10 月 12 日公司公告：进入 Chapter 11 重组和出售流程，但服务继续、订阅有效；未来可能停运不是当前已停运，不下架也不认定收购已交割。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://instinct.com/",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开官网（由 instinct.co 跳转）：能看到短信/电话助理入口，未看到足以证明公开上线、首次定价、基座模型或用户规模的披露。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://manus.im/blog/manus-partners-oppo",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 10 月 13 日 OPPO 合作公告，接入 Find X10/ColorOS17 属后续产品计划；没有足以变更三项个人助理转折点的证据。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://github.com/openclaw/openclaw/releases",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开官方 release 列表及 10 月 16 日稳定版 2026.10.4：开源分发继续，更新主要涉及稳定性；版本号中的日期不当作发布日期，安装量和 star 不当作活跃用户。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://www.glean.com/blog/skill-reflection-2026",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 10 月 15 日 Skill reflection：从技能使用积累改进建议，预览后经用户明确确认才修改技能。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments/",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开 10 月 12 日微软公告：Maia 200 已在部分服务使用，Maia 300 量产及多 GW 部署属于 2027 年计划；性能是厂商预期。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://pr.tsmc.com/english/news/3346",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开台积电 10 月 15 日 Q3 结果：美元营收 467.2 亿、先进制程占晶圆收入 79%；未把公司总收入当作纯 AI 收入。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://www.mycaijing.com/article/detail/584924?source_id=40",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开财经 10 月 13 日独立报道：新轮融资接近完成、投前估值口径及筹资额仍在商谈；没有交割确认。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      },
+      {
+        "url": "https://api3.cls.cn/share/article/2503600?app=stib&os=android&sv=229",
+        "read_at": "2026-10-17T07:24:36.212765+00:00",
+        "note": "实际打开科创板日报 10 月 13 日采访 LP 的报道：独立报道同轮融资仍动态推进；未据传闻更新已交割估值或把投前数字当投后。 核验记录于本时间整理；原网页已在本轮会话实际打开。"
+      }
+    ],
+    "limitations": [
+      "本轮窗口严格为 2026-10-11 至 2026-10-17；上轮成功为 2026-10-08，10 月 9–10 日不在本轮七天扫描内，不能声称已补齐这两天。Nova 10 月 5 日更新仅作轮转补核。",
+      "全池 54 个活跃实体（17 模型、37 应用）均纳入分组增量检索，但部分名字未返回足够可读证据；这不是对所有字段或“没有变化”的逐项确认。未核实数字保留，不以零或旧值确认替代。",
+      "轮转名单的 ARR/估值/MAU 普遍缺近期且同口径的独立证据。Gamma 的 70M、HeyGen 的 30M 为累计用户，不可回填 MAU。HeyGen 200M ARR 仅复核 6 月 25 日披露，不能称为本周新里程碑。",
+      "Google 全部 AI 产品月 token 与模型 API 每分钟 token 口径不同；独立 API 收入缺口未解决。其余大厂内嵌模型也未用母公司收入或市值补列。OpenAI/Anthropic 的公司总收入和预测不直接作为 API 年化收入更新。",
+      "MiniMax 与智谱已补充每周上市复核；同日股价一致而数据商股本/总市值不同，且缺最新发行人股本口径交叉，故保留旧美元估值并明确未确认当前市值。半年营收不能直接年化成 ARR。",
+      "Writer 默认 Palmyra X6 与第三方模型可选不能证明多数生产推理流量；不把库存 primary 重新确认。HeyGen/Midjourney 自有模型分类依据核心产品推断并注明 medium，未编造占比。",
+      "个人助理的转公开、首次定价、首次基座模型披露三个转折点，本轮均未获得足以确认触发的证据。Instinct 官网信息有限；Meta Muse 登录入口读取失败；Wonder 接入 Muse 和 Manus 接入 OPPO 为计划。OpenClaw 的 release/下载量不是活跃用户。",
+      "阿里模型更新页、腾讯动态模型页、部分 Yahoo 行情页及一条 36氪动态页未得到可读完整正文；已使用可读官方和中文财经替代来源，未把搜索摘要冒充完整打开。",
+      "月初覆盖发现本周不应执行，未为了凑数新增候选。Character.ai 重组仍营业，不下架；DeepSeek 本周融资缺交割及明确投后美元口径，不更新已交割或待定数值。",
+      "Cognition 历史队列仍由原有脚本按 28 天规则处理；库存已在前轮清除待定估值，本轮没有再提交相同 patch，也没有使用任何 force。",
+      "周报中的模型性能、客户效率和未来芯片能力以厂商披露为主，未做独立性能测试。本轮运行模型的真实标识未由运行接口暴露，记录 unreported，不猜测模型或 reasoning effort。"
+    ]
+  },
+  "apply_report": "  + MODEL Google Gemini.uc: Gemini 3.1 Pro／3.8 Flash、Gemma -> Gemini 4 Argon、3.8、Gemma (Google 官方 2026-10-13：Gemini 4 Argon 已上线，补充新旗舰；现有 3.8/Gemma 家族保留。)\n  + MODEL Meta (Llama).uc: Muse Spark 1.3、Muse Glimmer 30B、Meta AI -> Muse Wonder、Spark、Glimmer、Meta AI (Meta 官方 2026-10-12：Muse Wonder 系列 API/Muse Code 已开放；补充新系列，不将 Muse 助理计划接入当成已部署。)\n  + MODEL Amazon Nova.uc: Nova 2 Pro / Lite / Sonic / Omni -> Nova 2系列、Nova 2.5 Sonic (AWS 官方 2026-10-05：Nova 2.5 Sonic 已上线，更新语音型号并保留其余 Nova 2 产品；属于轮转补核，不计为本周发布。)\n  + MODEL xAI.uc: Grok 4.7、Grok Imagine、Colossus -> Grok 4.7、Voice 3.0、Imagine (xAI 官方 2026-10-14 发布 Grok Voice 3.0；官方新闻列表亦确认 9 月 21 日 Grok 4.7，补充当前产品线。)\n  + APP Character.ai.uc: AI角色娱乐（PipSqueak 3、CAI-Image） -> AI角色娱乐（Chapter 11重组中） (Character.ai 官方 2026-10-12：已申请 Chapter 11，但服务和订阅继续；仅增加重组状态，不认定停运或收购交割。)\n  + APP Gamma.arrg: 234 -> None (2026-10-17 口径审计：Sacra 所列 2025-10 ARR 102M 对比 2024 年末 30.5M 是约十个月增长；库存 234% 将此误标为同比，故清空 arrg，保留 ARR。页面未给该对比发布日期；本日期为纠错核验日。)\n  + APP HeyGen.arrg: 185 -> None (HeyGen 官方与 Upstarts 2026-06-25 采访均明确八个月 ARR 翻倍；库存 185% 为年化推算，不是实际收入同比，故清空 arrg，保留 ARR。交叉：https://www.upstartsmedia.com/p/exclusive-heygen-200m-arr-without-burn)\n  + MODEL MiniMax.tokG: 2000 -> 1900 (MiniMax 官方 2026-08-26：2026-07 token 消耗为 2026-01 的 20 倍；比例增幅=(20-1)*100=1900%，库存 2000% 混淆倍数与增幅；并非同比，不涉及汇率。)\n  + ai_progress: 9 条\n  = Google Gemini.parent confirmed unchanged (本轮打开官方产品发布确认属于 Google 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Google Gemini.val confirmed unchanged (本轮打开官方产品发布确认属于 Google 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Google Gemini.valPending confirmed unchanged (本轮打开官方产品发布确认属于 Google 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Google Gemini.listed confirmed unchanged (本轮打开官方产品发布确认属于 Google 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Alibaba Qwen (通义千问).parent re-checked (本轮打开官方产品发布确认属于 Alibaba 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Alibaba Qwen (通义千问).val confirmed unchanged (本轮打开官方产品发布确认属于 Alibaba 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Alibaba Qwen (通义千问).valPending confirmed unchanged (本轮打开官方产品发布确认属于 Alibaba 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Alibaba Qwen (通义千问).listed confirmed unchanged (本轮打开官方产品发布确认属于 Alibaba 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Alibaba Qwen (通义千问).uc re-checked (阿里云 2026-08-03 中文发布核实 Qwen3.8-Max/Qwen 产品线，杭州的中国模型业务归属 CN；不声称财务或使用量已核实。)\n  = Alibaba Qwen (通义千问).region re-checked (阿里云 2026-08-03 中文发布核实 Qwen3.8-Max/Qwen 产品线，杭州的中国模型业务归属 CN；不声称财务或使用量已核实。)\n  = Meta (Llama).parent confirmed unchanged (本轮打开官方产品发布确认属于 Meta 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Meta (Llama).val confirmed unchanged (本轮打开官方产品发布确认属于 Meta 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Meta (Llama).valPending confirmed unchanged (本轮打开官方产品发布确认属于 Meta 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Meta (Llama).listed confirmed unchanged (本轮打开官方产品发布确认属于 Meta 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Amazon Nova.parent confirmed unchanged (本轮打开官方产品发布确认属于 Amazon 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Amazon Nova.val confirmed unchanged (本轮打开官方产品发布确认属于 Amazon 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Amazon Nova.valPending confirmed unchanged (本轮打开官方产品发布确认属于 Amazon 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Amazon Nova.listed confirmed unchanged (本轮打开官方产品发布确认属于 Amazon 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Baidu (ERNIE).parent re-checked (本轮打开官方产品发布确认属于 Baidu 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Baidu (ERNIE).val confirmed unchanged (本轮打开官方产品发布确认属于 Baidu 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Baidu (ERNIE).valPending confirmed unchanged (本轮打开官方产品发布确认属于 Baidu 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Baidu (ERNIE).listed confirmed unchanged (本轮打开官方产品发布确认属于 Baidu 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Baidu (ERNIE).uc confirmed unchanged (百度官方文心 5.1 发布核实模型名称；现有文心与千帆产品线描述可保留，不刷新未获证实的数字。)\n  = Tencent Hunyuan (腾讯混元).parent re-checked (本轮打开官方产品发布确认属于 Tencent 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Tencent Hunyuan (腾讯混元).val confirmed unchanged (本轮打开官方产品发布确认属于 Tencent 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Tencent Hunyuan (腾讯混元).valPending confirmed unchanged (本轮打开官方产品发布确认属于 Tencent 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Tencent Hunyuan (腾讯混元).listed confirmed unchanged (本轮打开官方产品发布确认属于 Tencent 自研内嵌模型线；按仓库父子口径保留 parent，独立 val/valPending/listed 为空，不使用母公司市值。)\n  = Tencent Hunyuan (腾讯混元).uc confirmed unchanged (腾讯 2026-08-28 中文公告核实 Hy4 preview、Hy3、腾讯元宝产品线；本轮未取得可替代的更新旗舰披露。)\n  = Midjourney.uc confirmed unchanged (2026-10-17 读取官方现行版本文档：V8.2 和视频生成仍属主要能力，创意生成分类适用；这是产品核验日，不是版本发布日期。)\n  = Midjourney.cat confirmed unchanged (2026-10-17 读取官方现行版本文档：V8.2 和视频生成仍属主要能力，创意生成分类适用；这是产品核验日，不是版本发布日期。)\n  = Midjourney.ownModel confirmed unchanged (官方现行文档提供自研 Midjourney 图像与视频模型版本；据核心生成产品判断 primary，未披露 tokenShare，继续为空。)\n  = Gamma.uc re-checked (Gamma 官方产品说明及 Teams/Ultra 公告支持演示/网站/内容生成、creative 和个人加团队业务；仅复核产品分类，不把旧财务公告当作近期数字。)\n  = Gamma.cat re-checked (Gamma 官方产品说明及 Teams/Ultra 公告支持演示/网站/内容生成、creative 和个人加团队业务；仅复核产品分类，不把旧财务公告当作近期数字。)\n  = Gamma.biz re-checked (Gamma 官方产品说明及 Teams/Ultra 公告支持演示/网站/内容生成、creative 和个人加团队业务；仅复核产品分类，不把旧财务公告当作近期数字。)\n  = HeyGen.arr confirmed unchanged (HeyGen 官方与 Upstarts 2026-06-25 独立采访均披露超过 USD200M ARR；保留最近可验证披露值 200，非新增本周收入。交叉：https://www.upstartsmedia.com/p/exclusive-heygen-200m-arr-without-burn)\n  = HeyGen.uc confirmed unchanged (HeyGen 官方 2026-06-25：数字人视频、个人创作者及企业采用；结合已交叉核实的 USD200M ARR，creative、scale、B2B+B2C 仍适用。)\n  = HeyGen.cat confirmed unchanged (HeyGen 官方 2026-06-25：数字人视频、个人创作者及企业采用；结合已交叉核实的 USD200M ARR，creative、scale、B2B+B2C 仍适用。)\n  = HeyGen.stage confirmed unchanged (HeyGen 官方 2026-06-25：数字人视频、个人创作者及企业采用；结合已交叉核实的 USD200M ARR，creative、scale、B2B+B2C 仍适用。)\n  = HeyGen.biz confirmed unchanged (HeyGen 官方 2026-06-25：数字人视频、个人创作者及企业采用；结合已交叉核实的 USD200M ARR，creative、scale、B2B+B2C 仍适用。)\n  = HeyGen.ownModel re-checked (官方披露核心 Avatar V、语音、生产推理自研一体化；据主要视频生成负载判断 primary/ultra，未披露具体 tokenShare，保留空值。)\n  = HeyGen.ti confirmed unchanged (官方披露核心 Avatar V、语音、生产推理自研一体化；据主要视频生成负载判断 primary/ultra，未披露具体 tokenShare，保留空值。)\n  = Writer.uc confirmed unchanged (WRITER 官方 2026-08-13 发布及现行模型管理文档：Palmyra X6/Agent 面向企业工作流，uc、enterprise、B2B 可确认；不据此确认财务或流量占比。)\n  = Writer.cat confirmed unchanged (WRITER 官方 2026-08-13 发布及现行模型管理文档：Palmyra X6/Agent 面向企业工作流，uc、enterprise、B2B 可确认；不据此确认财务或流量占比。)\n  = Writer.biz confirmed unchanged (WRITER 官方 2026-08-13 发布及现行模型管理文档：Palmyra X6/Agent 面向企业工作流，uc、enterprise、B2B 可确认；不据此确认财务或流量占比。)\n  = Writer.ti confirmed unchanged (WRITER 官方对多步智能体、上下文及任务成本的说明，支持 high 推理密度的定性研究判断；没有可量化 token 份额。)\n  = Cognition.valPending confirmed unchanged (Cognition 官方与 SiliconANGLE 2026-09-08 交叉核实 Series E 已交割；库存 valPending 已为 null。历史队列拒绝来自旧版 null 闸门，不需要重写或 force。交叉：https://siliconangle.com/2026/09/08/ai-coding-startup-cognition-raises-2b-at-48b-valuation-as-revenue-nears-900m/)\n  = MiniMax.listed confirmed unchanged (10 月 16 日行情与公司资料核实 HKEX:0100 及中国公司归属；仅确认代码和地区，市值分母冲突未解决。)\n  = MiniMax.region confirmed unchanged (10 月 16 日行情与公司资料核实 HKEX:0100 及中国公司归属；仅确认代码和地区，市值分母冲突未解决。)\n  = Zhipu AI.listed confirmed unchanged (10 月 16 日行情与公司资料核实 HKEX:2513 及中国公司归属；仅确认代码和地区，市值分母冲突未解决。)\n  = Zhipu AI.region confirmed unchanged (10 月 16 日行情与公司资料核实 HKEX:2513 及中国公司归属；仅确认代码和地区，市值分母冲突未解决。)\n  = OpenClaw.access confirmed unchanged (OpenClaw 官方 10 月 16 日稳定版 release 提供源码与安装包，确认 oss；下载量、GitHub star 不替代活跃用户。)\n\napplied 9 / confirmed 51 / promoted 0 / queued 0 / skipped 0 / rejected 0\nWARN  models[Google Gemini]: no provenance yet for arr\nWARN  apps[Midjourney]: no provenance yet for val\nWARN  apps[Granola]: no provenance yet for arr\nWARN  apps[Ideogram]: no provenance yet for val\nWARN  1 patch(es) parked in meta.review_queue\n",
+  "validation": "WARN  models[Google Gemini]: no provenance yet for arr\nWARN  apps[Midjourney]: no provenance yet for val\nWARN  apps[Granola]: no provenance yet for arr\nWARN  apps[Ideogram]: no provenance yet for val\nWARN  1 patch(es) parked in meta.review_queue\n\n0 error(s), 5 warning(s)"
+}
