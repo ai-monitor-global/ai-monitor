@@ -2,7 +2,7 @@
   "meta": {
     "last_updated": "2026-10-17",
     "next_update": "2026-09-06",
-    "update_notes": "2026-10-17: 9 项已核实更新 — MODEL Google Gemini.uc: Gemini 3.1 Pro／3.8 Flash、Gemma -> Gemini 4 Argon、3.8、Gemma; MODEL Meta; MODEL Amazon Nova.uc: Nova 2 Pro / Lite / Sonic / Omni -> Nova 2系列、Nova 2.5 Sonic; MODEL xAI.uc: Grok 4.7、Grok Imagine、Colossus -> Grok 4.7、Voice 3.0、Imagine; APP Character.ai.uc: AI角色娱乐（PipSqueak 3、CAI-Image） -> AI角色娱乐（Chapter 11重组中）; APP Gamma.arrg: 234 -> None",
+    "update_notes": "2026-10-17: 1 项已核实更新 — APP Higgsfield.val: None -> 5.4",
     "schema": 2,
     "last_run": "2026-10-17",
     "stale_days": 120,
@@ -2455,6 +2455,18 @@
         "source": "MiniMax 官方 2026-08-26：2026-07 token 消耗为 2026-01 的 20 倍；比例增幅=(20-1)*100=1900%，库存 2000% 混淆倍数与增幅；并非同比，不涉及汇率。",
         "conf": "high",
         "forced": null
+      },
+      {
+        "date": "2026-10-17",
+        "pass": "coverage-provenance-higgsfield",
+        "section": "apps",
+        "entity": "Higgsfield",
+        "field": "val",
+        "old": null,
+        "new": 5.4,
+        "source": "Higgsfield 2026-08-17 官方融资稿与 Reuters 同日独立报道（CNA授权转载）交叉确认已完成 USD400M Series B、估值USD5.4B。原币美元；不把9月节目简介提及的80亿美元传闻当作已交割值。交叉：https://www.channelnewsasia.com/business/higgsfields-valuation-soars-fourfold-54-billion-in-six-months-ai-content-demand-6323856",
+        "conf": "high",
+        "forced": null
       }
     ],
     "review_queue": [
@@ -2539,6 +2551,26 @@
         "error": null,
         "applied": 5,
         "rejected": 0
+      },
+      "coverage-correction-higgsfield": {
+        "at": "2026-10-17",
+        "ok": true,
+        "error": null,
+        "applied": 0,
+        "rejected": 0,
+        "confirmed": 0,
+        "promoted": 1,
+        "queued": 0
+      },
+      "coverage-provenance-higgsfield": {
+        "at": "2026-10-17",
+        "ok": true,
+        "error": null,
+        "applied": 1,
+        "rejected": 0,
+        "confirmed": 6,
+        "promoted": 0,
+        "queued": 0
       }
     }
   },
@@ -4222,7 +4254,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 15.6,
-      "m": 55,
+      "m": 54,
       "retired": false,
       "prov": {
         "arr": {
@@ -4418,7 +4450,7 @@
       "ti": "low",
       "biz": "B2C+B2B",
       "val": 2.1,
-      "m": 29,
+      "m": 28,
       "retired": false,
       "prov": {
         "arr": {
@@ -4508,7 +4540,7 @@
       "ti": "ultra",
       "biz": "B2B+B2C",
       "val": 0.5,
-      "m": 53,
+      "m": 51,
       "retired": false,
       "prov": {
         "arr": {
@@ -4923,7 +4955,7 @@
       "ti": "ultra",
       "biz": "B2B",
       "val": 48,
-      "m": 96,
+      "m": 95,
       "retired": false,
       "prov": {
         "arr": {
@@ -5448,7 +5480,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 5.6,
-      "m": 53,
+      "m": 51,
       "ownModel": {
         "status": "none",
         "models": [
@@ -5506,7 +5538,7 @@
       "ti": "ultra",
       "biz": "B2B",
       "val": 15,
-      "m": 67,
+      "m": 65,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -5557,7 +5589,7 @@
       "ti": "ultra",
       "biz": "B2C+B2B",
       "val": 13.3,
-      "m": 86,
+      "m": 84,
       "ownModel": {
         "status": "none",
         "models": [
@@ -5629,7 +5661,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 1.6,
-      "m": 29,
+      "m": 28,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -5680,7 +5712,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 7.1,
-      "m": 41,
+      "m": 40,
       "ownModel": {
         "status": "none",
         "models": [
@@ -5731,7 +5763,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 7.5,
-      "m": 34,
+      "m": 33,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -5810,7 +5842,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 4.0,
-      "m": 41,
+      "m": 40,
       "ownModel": {
         "status": "primary",
         "models": [
@@ -5860,7 +5892,7 @@
       "ti": "ultra",
       "biz": "B2C+B2B",
       "val": null,
-      "m": 76,
+      "m": 74,
       "ownModel": {
         "status": "none",
         "models": [
@@ -5932,7 +5964,7 @@
       "ti": "ultra",
       "biz": "B2C+B2B",
       "val": 9.0,
-      "m": 95,
+      "m": 94,
       "ownModel": {
         "status": "none",
         "models": [
@@ -6011,7 +6043,7 @@
       "ti": "low",
       "biz": "B2B",
       "val": 10.0,
-      "m": 86,
+      "m": 84,
       "ownModel": {
         "status": "none",
         "models": [],
@@ -6159,7 +6191,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 4.5,
-      "m": 29,
+      "m": 28,
       "ownModel": {
         "status": "none",
         "models": [
@@ -6262,7 +6294,7 @@
       "ti": "med",
       "biz": "B2B",
       "val": 5.1,
-      "m": 34,
+      "m": 33,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -6515,6 +6547,93 @@
           "conf": "high"
         }
       }
+    },
+    {
+      "name": "Higgsfield",
+      "uc": "AI视频与广告创作工作流",
+      "cat": "creative",
+      "stage": "scale",
+      "arr": 1000.0,
+      "arrg": null,
+      "mau": null,
+      "maug": null,
+      "ti": "ultra",
+      "biz": "B2B+B2C",
+      "val": 5.4,
+      "m": 97,
+      "ownModel": {
+        "status": "unknown",
+        "models": [
+          "Soul 2",
+          "Soul Cinema",
+          "DoP",
+          "Genjutsu"
+        ],
+        "tokenShare": null
+      },
+      "retired": false,
+      "prov": {
+        "ownModel": {
+          "as_of": "2026-10-01",
+          "checked": "2026-10-17",
+          "source": "Higgsfield 官方 2026-10-01 API 产品说明明确并用自有 Soul 2/Soul Cinema/DoP/Genjutsu 与第三方模型。未披露自研模型的主要流量或token占比，无法依本库流量标准判断hybrid或primary，保守记unknown、tokenShare=null；unknown在此指流量归类待核，不表示没有自有模型。",
+          "url": "https://higgsfield.ai/blog/best-ai-video-generation-apis",
+          "conf": "medium"
+        },
+        "arr": {
+          "as_of": "2026-09-29",
+          "source": "Higgsfield 官方 2026-09-29 披露超过 USD1B 年化收入运行率（近四周已实现收入乘以13，非过去12个月收入，含订阅与按量收入），按下限记1000百万美元；20VC 2026-09-28 独立主持的 CEO 访谈页面交叉确认10亿美元里程碑：https://www.thetwentyminutevc.com/alex-mashrabov；AdExchanger 2026-09-25 对 Bloomberg 采访的转述再次核对口径：https://www.adexchanger.com/daily-news-roundup/friday-25092026/。均为公司披露，非审计收入。",
+          "url": "https://higgsfield.ai/blog/higgsfield-1b-annualized-revenue-run-rate",
+          "conf": "high"
+        },
+        "val": {
+          "as_of": "2026-08-17",
+          "checked": "2026-10-17",
+          "source": "Higgsfield 2026-08-17 官方融资稿与 Reuters 同日独立报道（CNA授权转载）交叉确认已完成 USD400M Series B、估值USD5.4B。原币美元；不把9月节目简介提及的80亿美元传闻当作已交割值。交叉：https://www.channelnewsasia.com/business/higgsfields-valuation-soars-fourfold-54-billion-in-six-months-ai-content-demand-6323856",
+          "url": "https://www.prnewswire.com/news-releases/higgsfield-raises-400-million-series-b-financing-at-5-4-billion-valuation-with-annualized-revenue-reaching-700-million-302852430.html",
+          "conf": "high"
+        },
+        "uc": {
+          "as_of": "2026-10-01",
+          "checked": "2026-10-17",
+          "source": "Higgsfield 2026-10-01 产品说明：图像、视频、多模型与商业工作流，适用视频与广告创作描述。",
+          "url": "https://higgsfield.ai/blog/best-ai-video-generation-apis",
+          "conf": "high"
+        },
+        "cat": {
+          "as_of": "2026-10-01",
+          "checked": "2026-10-17",
+          "source": "官方产品与用途支持 creative 类别；这是业务分类，不是排除其他赛道公司的配额。",
+          "url": "https://higgsfield.ai/blog/best-ai-video-generation-apis",
+          "conf": "high"
+        },
+        "stage": {
+          "as_of": "2026-09-29",
+          "checked": "2026-10-17",
+          "source": "2026-09-29 官方已披露10亿美元年化收入运行率，按已有分期标准为scale。",
+          "url": "https://higgsfield.ai/blog/higgsfield-1b-annualized-revenue-run-rate",
+          "conf": "high"
+        },
+        "biz": {
+          "as_of": "2026-09-29",
+          "checked": "2026-10-17",
+          "source": "官方同时服务品牌、代理商、工作室及个人创作者，业务分类B2B+B2C；不据注册用户推算付费结构。",
+          "url": "https://higgsfield.ai/blog/higgsfield-1b-annualized-revenue-run-rate",
+          "conf": "high"
+        },
+        "ti": {
+          "as_of": "2026-10-01",
+          "checked": "2026-10-17",
+          "source": "根据核心视频/图像生成、多镜头商业制作负载，研究性判断推理密度为ultra；未量化token消耗。",
+          "url": "https://higgsfield.ai/blog/best-ai-video-generation-apis",
+          "conf": "medium"
+        }
+      },
+      "listed": "",
+      "parent": "",
+      "valPending": null,
+      "access": null,
+      "checked_at": "2026-10-17"
     }
   ],
   "ai_progress": {
@@ -6896,10 +7015,10 @@
     {
       "date": "2026-10-17",
       "mARR": 150.43,
-      "aARR": 12.63,
+      "aARR": 13.63,
       "tok": 9273.8,
       "nM": 17,
-      "nA": 37,
+      "nA": 38,
       "nMrev": 12
     }
   ],

@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "kind": "targeted_coverage_correction",
+  "entity": "Higgsfield",
+  "as_of": "2026-10-17",
+  "base_commit": "594df6ab328a9ac1a2a7bfce166e27fc631bab93",
+  "weekly_run_id_preserved": "2026-10-17",
+  "status": "validated_for_publication",
+  "scope": "用户指出视频应用名单遗漏后，单家公司补录；未重跑本周全池研究、周报或月度发现，未修改研究规则或调度。",
+  "admission": {
+    "verdict": "promote",
+    "reason": "ARR $1000.0M / val $NoneB clears the hard bar"
+  },
+  "payloads": [
+    {
+      "pass": "coverage-correction-higgsfield",
+      "force": false,
+      "candidates": [
+        {
+          "name": "Higgsfield",
+          "uc": "AI视频与广告创作工作流",
+          "cat": "creative",
+          "stage": "scale",
+          "biz": "B2B+B2C",
+          "ti": "ultra",
+          "arr": 1000,
+          "val": "",
+          "arrg": "",
+          "mau": "",
+          "maug": "",
+          "ownModel": {
+            "status": "unknown",
+            "token_share": "",
+            "models": [
+              "Soul 2",
+              "Soul Cinema",
+              "DoP",
+              "Genjutsu"
+            ]
+          },
+          "aiNative": true,
+          "independent": true,
+          "why": "独立 AI 原生视频与广告创作平台，已披露10亿美元年化运行率，明显超过3000万美元入池门槛。",
+          "source": "Higgsfield 官方 2026-09-29 披露超过 USD1B 年化收入运行率（近四周已实现收入乘以13，非过去12个月收入，含订阅与按量收入），按下限记1000百万美元；20VC 2026-09-28 独立主持的 CEO 访谈页面交叉确认10亿美元里程碑：https://www.thetwentyminutevc.com/alex-mashrabov；AdExchanger 2026-09-25 对 Bloomberg 采访的转述再次核对口径：https://www.adexchanger.com/daily-news-roundup/friday-25092026/。均为公司披露，非审计收入。",
+          "url": "https://higgsfield.ai/blog/higgsfield-1b-annualized-revenue-run-rate",
+          "as_of": "2026-09-29",
+          "conf": "high"
+        }
+      ]
+    },
+    {
+      "pass": "coverage-provenance-higgsfield",
+      "force": false,
+      "patches": [
+        {
+          "section": "apps",
+          "name": "Higgsfield",
+          "field": "val",
+          "new_value": 5.4,
+          "as_of": "2026-08-17",
+          "source": "Higgsfield 2026-08-17 官方融资稿与 Reuters 同日独立报道（CNA授权转载）交叉确认已完成 USD400M Series B、估值USD5.4B。原币美元；不把9月节目简介提及的80亿美元传闻当作已交割值。交叉：https://www.channelnewsasia.com/business/higgsfields-valuation-soars-fourfold-54-billion-in-six-months-ai-content-demand-6323856",
+          "url": "https://www.prnewswire.com/news-releases/higgsfield-raises-400-million-series-b-financing-at-5-4-billion-valuation-with-annualized-revenue-reaching-700-million-302852430.html",
+          "conf": "high"
+        }
+      ],
+      "confirmations": [
+        {
+          "section": "apps",
+          "name": "Higgsfield",
+          "field": "ownModel",
+          "as_of": "2026-10-01",
+          "source": "Higgsfield 官方 2026-10-01 API 产品说明明确并用自有 Soul 2/Soul Cinema/DoP/Genjutsu 与第三方模型。未披露自研模型的主要流量或token占比，无法依本库流量标准判断hybrid或primary，保守记unknown、tokenShare=null；unknown在此指流量归类待核，不表示没有自有模型。",
+          "url": "https://higgsfield.ai/blog/best-ai-video-generation-apis",
+          "conf": "medium"
+        },
+        {
+          "section": "apps",
+          "name": "Higgsfield",
+          "field": "uc",
+          "as_of": "2026-10-01",
+          "source": "Higgsfield 2026-10-01 产品说明：图像、视频、多模型与商业工作流，适用视频与广告创作描述。",
+          "url": "https://higgsfield.ai/blog/best-ai-video-generation-apis",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Higgsfield",
+          "field": "cat",
+          "as_of": "2026-10-01",
+          "source": "官方产品与用途支持 creative 类别；这是业务分类，不是排除其他赛道公司的配额。",
+          "url": "https://higgsfield.ai/blog/best-ai-video-generation-apis",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Higgsfield",
+          "field": "stage",
+          "as_of": "2026-09-29",
+          "source": "2026-09-29 官方已披露10亿美元年化收入运行率，按已有分期标准为scale。",
+          "url": "https://higgsfield.ai/blog/higgsfield-1b-annualized-revenue-run-rate",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Higgsfield",
+          "field": "biz",
+          "as_of": "2026-09-29",
+          "source": "官方同时服务品牌、代理商、工作室及个人创作者，业务分类B2B+B2C；不据注册用户推算付费结构。",
+          "url": "https://higgsfield.ai/blog/higgsfield-1b-annualized-revenue-run-rate",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Higgsfield",
+          "field": "ti",
+          "as_of": "2026-10-01",
+          "source": "根据核心视频/图像生成、多镜头商业制作负载，研究性判断推理密度为ultra；未量化token消耗。",
+          "url": "https://higgsfield.ai/blog/best-ai-video-generation-apis",
+          "conf": "medium"
+        }
+      ]
+    }
+  ],
+  "apply_reports": [
+    "  ++ Higgsfield (ARR $1000.0M / val $NoneB clears the hard bar)\n\napplied 0 / confirmed 0 / promoted 1 / queued 0 / skipped 0 / rejected 0\nWARN  models[Google Gemini]: no provenance yet for arr\nWARN  apps[Midjourney]: no provenance yet for val\nWARN  apps[Granola]: no provenance yet for arr\nWARN  apps[Ideogram]: no provenance yet for val\nWARN  category concentration: creative is 10/38 = 26% (limit 25%)\nWARN  1 patch(es) parked in meta.review_queue\n",
+    "  + APP Higgsfield.val: None -> 5.4 (Higgsfield 2026-08-17 官方融资稿与 Reuters 同日独立报道（CNA授权转载）交叉确认已完成 USD400M Series B、估值USD5.4B。原币美元；不把9月节目简介提及的80亿美元传闻当作已交割值。交叉：https://www.channelnewsasia.com/business/higgsfields-valuation-soars-fourfold-54-billion-in-six-months-ai-content-demand-6323856)\n  = Higgsfield.ownModel confirmed unchanged (Higgsfield 官方 2026-10-01 API 产品说明明确并用自有 Soul 2/Soul Cinema/DoP/Genjutsu 与第三方模型。未披露自研模型的主要流量或token占比，无法依本库流量标准判断hybrid或primary，保守记unknown、tokenShare=null；unknown在此指流量归类待核，不表示没有自有模型。)\n  = Higgsfield.uc confirmed unchanged (Higgsfield 2026-10-01 产品说明：图像、视频、多模型与商业工作流，适用视频与广告创作描述。)\n  = Higgsfield.cat confirmed unchanged (官方产品与用途支持 creative 类别；这是业务分类，不是排除其他赛道公司的配额。)\n  = Higgsfield.stage confirmed unchanged (2026-09-29 官方已披露10亿美元年化收入运行率，按已有分期标准为scale。)\n  = Higgsfield.biz confirmed unchanged (官方同时服务品牌、代理商、工作室及个人创作者，业务分类B2B+B2C；不据注册用户推算付费结构。)\n  = Higgsfield.ti confirmed unchanged (根据核心视频/图像生成、多镜头商业制作负载，研究性判断推理密度为ultra；未量化token消耗。)\n\napplied 1 / confirmed 6 / promoted 0 / queued 0 / skipped 0 / rejected 0\nWARN  models[Google Gemini]: no provenance yet for arr\nWARN  apps[Midjourney]: no provenance yet for val\nWARN  apps[Granola]: no provenance yet for arr\nWARN  apps[Ideogram]: no provenance yet for val\nWARN  category concentration: creative is 10/38 = 26% (limit 25%)\nWARN  1 patch(es) parked in meta.review_queue\n"
+  ],
+  "validation": "WARN  models[Google Gemini]: no provenance yet for arr\nWARN  apps[Midjourney]: no provenance yet for val\nWARN  apps[Granola]: no provenance yet for arr\nWARN  apps[Ideogram]: no provenance yet for val\nWARN  category concentration: creative is 10/38 = 26% (limit 25%)\nWARN  1 patch(es) parked in meta.review_queue\n\n0 error(s), 6 warning(s)",
+  "data_sha256": "11a76c462ecf60189b3a52ead35c689b86bee11a1370eb0d6c9f01d06d82d047",
+  "validated_at": "2026-10-17T16:42:05.965853+00:00",
+  "evidence": [
+    {
+      "url": "https://higgsfield.ai/blog/higgsfield-1b-annualized-revenue-run-rate",
+      "read_at": "2026-10-17T16:42:05.965867+00:00",
+      "note": "已打开9月29日公司原文；核对当前运行率算法及混合收入构成。"
+    },
+    {
+      "url": "https://www.thetwentyminutevc.com/alex-mashrabov",
+      "read_at": "2026-10-17T16:42:05.965870+00:00",
+      "note": "已打开9月28日20VC官方节目说明，交叉确认10亿美元运行率；未声称听完整期。"
+    },
+    {
+      "url": "https://www.adexchanger.com/daily-news-roundup/friday-25092026/",
+      "read_at": "2026-10-17T16:42:05.965872+00:00",
+      "note": "已打开9月25日AdExchanger，对Bloomberg采访的转述明确四周乘13；不将它与Bloomberg计成两个独立来源。"
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/higgsfield-raises-400-million-series-b-financing-at-5-4-billion-valuation-with-annualized-revenue-reaching-700-million-302852430.html",
+      "read_at": "2026-10-17T16:42:05.965873+00:00",
+      "note": "已打开8月17日发行人新闻稿，确认B轮和估值。"
+    },
+    {
+      "url": "https://www.channelnewsasia.com/business/higgsfields-valuation-soars-fourfold-54-billion-in-six-months-ai-content-demand-6323856",
+      "read_at": "2026-10-17T16:42:05.965874+00:00",
+      "note": "已打开CNA全文，明确标注Reuters来源，交叉验证融资完成和54亿美元估值。"
+    },
+    {
+      "url": "https://higgsfield.ai/blog/best-ai-video-generation-apis",
+      "read_at": "2026-10-17T16:42:05.965875+00:00",
+      "note": "已打开10月1日官方API说明，自有与第三方模型共存，流量份额未披露。"
+    }
+  ],
+  "limitations": [
+    "10亿美元是公司披露的当前年化收入运行率，不是审计全年收入，也不是纯订阅ARR。未使用私人会议或专家纪要。",
+    "Bloomberg和Reuters原域正文不可直接读取；分别用20VC独立节目、AdExchanger归因转述和CNA授权Reuters全文交叉，不声称已读不可达原文。",
+    "3200万为累计用户、近100万为付费订阅人数，不是MAU；mau/maug保持null。",
+    "收入约20倍同比为粗略公司表述，未取得精确同口径对比值；arrg保留null。",
+    "官方已公开多种自有模型，但多数生产推理流量的归属未知；ownModel.status暂为unknown并列出已知自有模型，tokenShare=null。",
+    "20VC节目简介有80亿美元融资传闻，但缺明确条款、交易日期和交割证据，本次不录入该数值。",
+    "creative新增后10/38=26.3%，触发已有25%集中度提示；这是警告而非入池硬闸门，保留提示，不改阈值或为配额新增公司。"
+  ],
+  "root_cause": "仓库主表、候选池及可见Git数据历史均未检出Higgsfield；周更增量只查已有池、月初才做广泛发现，未及时修复此前覆盖遗漏。",
+  "publication_note": "本记录仅证明校验完成；远端SHA、Pages与线上完整数据另行核验。"
+}
