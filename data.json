@@ -4,7 +4,7 @@
     "next_update": "2026-09-06",
     "update_notes": "2026-10-17: 1 项已核实更新 — APP Higgsfield.val: None -> 5.4",
     "schema": 2,
-    "last_run": "2026-10-17",
+    "last_run": "2026-10-18",
     "stale_days": 120,
     "categories": {
       "coding": {
@@ -2509,7 +2509,7 @@
         "error": null
       },
       "openrouter": {
-        "at": "2026-10-12",
+        "at": "2026-10-18",
         "ok": true,
         "error": null,
         "weeks": 57,
@@ -6584,7 +6584,8 @@
           "as_of": "2026-09-29",
           "source": "Higgsfield 官方 2026-09-29 披露超过 USD1B 年化收入运行率（近四周已实现收入乘以13，非过去12个月收入，含订阅与按量收入），按下限记1000百万美元；20VC 2026-09-28 独立主持的 CEO 访谈页面交叉确认10亿美元里程碑：https://www.thetwentyminutevc.com/alex-mashrabov；AdExchanger 2026-09-25 对 Bloomberg 采访的转述再次核对口径：https://www.adexchanger.com/daily-news-roundup/friday-25092026/。均为公司披露，非审计收入。",
           "url": "https://higgsfield.ai/blog/higgsfield-1b-annualized-revenue-run-rate",
-          "conf": "high"
+          "conf": "high",
+          "checked": "2026-10-17"
         },
         "val": {
           "as_of": "2026-08-17",
@@ -7020,11 +7021,20 @@
       "nM": 17,
       "nA": 38,
       "nMrev": 12
+    },
+    {
+      "date": "2026-10-18",
+      "mARR": 150.43,
+      "aARR": 13.63,
+      "tok": 9273.8,
+      "nM": 17,
+      "nA": 38,
+      "nMrev": 12
     }
   ],
   "openrouter": {
-    "as_of": "2026-10-11",
-    "fetched": "2026-10-12",
+    "as_of": "2026-10-17",
+    "fetched": "2026-10-18",
     "wow_pct": 3.6,
     "weekly": [
       {
