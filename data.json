@@ -4,7 +4,7 @@
     "next_update": "2026-09-06",
     "update_notes": "2026-10-17: 1 项已核实更新 — APP Higgsfield.val: None -> 5.4",
     "schema": 2,
-    "last_run": "2026-10-18",
+    "last_run": "2026-10-19",
     "stale_days": 120,
     "categories": {
       "coding": {
@@ -2467,20 +2467,20 @@
         "source": "Higgsfield 2026-08-17 官方融资稿与 Reuters 同日独立报道（CNA授权转载）交叉确认已完成 USD400M Series B、估值USD5.4B。原币美元；不把9月节目简介提及的80亿美元传闻当作已交割值。交叉：https://www.channelnewsasia.com/business/higgsfields-valuation-soars-fourfold-54-billion-in-six-months-ai-content-demand-6323856",
         "conf": "high",
         "forced": null
-      }
-    ],
-    "review_queue": [
+      },
       {
-        "date": "2026-09-20",
-        "pass": "routine-weekly",
+        "date": "2026-10-19",
+        "pass": "queue-expiry",
+        "section": "meta",
         "entity": "Cognition",
         "field": "valPending",
-        "proposed": null,
-        "reason": "valPending must be a number, got None",
-        "source": "清空洽谈中估值：库存 valPending=47 记录的是 Bloomberg 2026-09-02《Cognition Set to Raise Around $1 Billion at a $47 Billion Value》的未交割轮次，该轮已于 2026-09-08 以 480 亿美元投后估值交割（Bloomberg / TechCrunch / SiliconANGLE 2026-09-08），最终值已写入 val。留着 valPending 会让页面在已交割的 48 亿美元旁并列显示「洽谈中 $47B」，是自相矛盾的陈数据",
-        "url": "https://www.bloomberg.com/news/articles/2026-09-08/ai-startup-cognition-raises-2-billion-at-a-48-billion-value"
+        "old": null,
+        "new": null,
+        "source": "review_queue 条目 28 天未决，自动过期（原因：valPending must be a number, got None）",
+        "conf": "medium"
       }
     ],
+    "review_queue": [],
     "runs": {
       "incremental": {
         "at": null,
@@ -2509,11 +2509,11 @@
         "error": null
       },
       "openrouter": {
-        "at": "2026-10-18",
+        "at": "2026-10-19",
         "ok": true,
         "error": null,
-        "weeks": 57,
-        "wow_pct": 3.6
+        "weeks": 58,
+        "wow_pct": -4.5
       },
       "routine-weekly": {
         "at": "2026-10-17",
@@ -7030,12 +7030,21 @@
       "nM": 17,
       "nA": 38,
       "nMrev": 12
+    },
+    {
+      "date": "2026-10-19",
+      "mARR": 150.43,
+      "aARR": 13.63,
+      "tok": 9273.8,
+      "nM": 17,
+      "nA": 38,
+      "nMrev": 12
     }
   ],
   "openrouter": {
-    "as_of": "2026-10-17",
-    "fetched": "2026-10-18",
-    "wow_pct": 3.6,
+    "as_of": "2026-10-18",
+    "fetched": "2026-10-19",
+    "wow_pct": -4.5,
     "weekly": [
       {
         "week": "2025-09-08",
@@ -7264,6 +7273,10 @@
       {
         "week": "2026-10-05",
         "tok": 171.84
+      },
+      {
+        "week": "2026-10-12",
+        "tok": 164.04
       }
     ],
     "source": "OpenRouter datasets API（rankings 同源，top50+other 全平台口径）",
