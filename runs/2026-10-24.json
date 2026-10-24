@@ -1,0 +1,910 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-10-24",
+  "window_start": "2026-10-18",
+  "window_end": "2026-10-24",
+  "base_commit": "d2044d57d644abb8183e6efd1c57f3624ccd8a70",
+  "data_sha256": "9b08523f4a18ebdbdb434d8371970d98133e7ca3c1aabf7834e226cb7920f5b3",
+  "model_label": "unreported",
+  "validated_at": "2026-10-24T07:10:58.511448+00:00",
+  "status": "validated_for_publication",
+  "publication_note": "This record proves validation only. Verify the remote commit and live Pages data separately.",
+  "result": {
+    "at": "2026-10-24",
+    "ok": true,
+    "error": null,
+    "applied": 11,
+    "rejected": 0,
+    "confirmed": 24,
+    "promoted": 0,
+    "queued": 0
+  },
+  "bundle": {
+    "schema_version": 1,
+    "run_id": "2026-10-24",
+    "window_start": "2026-10-18",
+    "window_end": "2026-10-24",
+    "changes": {
+      "pass": "routine-weekly",
+      "force": false,
+      "patches": [
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "field": "uc",
+          "as_of": "2026-10-19",
+          "source": "MiniMax 官方 2026-10-19 发布 M3.1 Flash；保留既有 M3、海螺产品线。",
+          "url": "https://www.minimax.io/blog/minimax-m31f",
+          "conf": "high",
+          "new_value": "MiniMax M3.1 Flash、M3、海螺AI"
+        },
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "field": "val",
+          "as_of": "2026-10-23",
+          "source": "StockAnalysis 与 Investing.com 2026-10-23 收盘行情交叉：市值 65.52B HKD，沿用库存历史 349.24M 股口径；第二来源 https://cn.investing.com/equities/minimax-group-inc。按同日 USD/HKD=7.8424（https://hk.investing.com/currencies/usd-hkd-historical-data）换算为 8.35B USD。不同供应商可能计入其他股份类别，本次未改用全部股份类别口径。较库存 9 月 18 日旧值变化，不是单周回报。",
+          "url": "https://stockanalysis.com/quote/hkg/0100/",
+          "conf": "medium",
+          "new_value": 8.35
+        },
+        {
+          "section": "models",
+          "name": "Zhipu AI",
+          "field": "val",
+          "as_of": "2026-10-23",
+          "source": "StockAnalysis 与 Investing.com 2026-10-23 收盘行情交叉：市值 232.35B HKD，沿用库存历史 465.62M 股口径；第二来源 https://cn.investing.com/equities/knowledge-atlas-tech-joint-stock。按同日 USD/HKD=7.8424（https://hk.investing.com/currencies/usd-hkd-historical-data）换算为 29.63B USD。不同供应商可能计入其他股份类别，本次未改用全部股份类别口径。较库存 9 月 18 日旧值变化，不是单周回报。",
+          "url": "https://stockanalysis.com/quote/hkg/2513/",
+          "conf": "medium",
+          "new_value": 29.63
+        },
+        {
+          "section": "apps",
+          "name": "Ideogram",
+          "field": "uc",
+          "as_of": "2026-10-24",
+          "source": "Ideogram 官方 4.5 当前产品页，2026-10-24 实际观察；10 月 14 日官方指南已存在，非本周首次发布。",
+          "url": "https://ideogram.ai/models/4.5/",
+          "conf": "high",
+          "new_value": "Ideogram 4.5图像生成与精确编辑"
+        },
+        {
+          "section": "apps",
+          "name": "Luma AI",
+          "field": "uc",
+          "as_of": "2026-10-24",
+          "source": "Luma 官方当前产品事实页 2026-10-24 观察，及 10 月 23 日 Ray 训练披露交叉，更新旧 Dream Machine 用途描述。",
+          "url": "https://lumalabs.ai/llm-info",
+          "conf": "high",
+          "new_value": "Ray3.2、UNI-1.1与创意Agents"
+        },
+        {
+          "section": "apps",
+          "name": "Speak",
+          "field": "uc",
+          "as_of": "2026-10-20",
+          "source": "Speak 官方 2026-10-20 上线 AI Tutor Call；当前企业页同时确认企业版仍提供服务。",
+          "url": "https://www.speak.com/blog/your-tutor-is-one-call-away-introducing-ai-tutor-call",
+          "conf": "high",
+          "new_value": "AI口语导师、Tutor Call与企业版"
+        },
+        {
+          "section": "apps",
+          "name": "Abridge",
+          "field": "uc",
+          "as_of": "2026-10-13",
+          "source": "Abridge 官方 2026-10-13 公告将 Assistant 延伸至临床上下文与知识检索；本次轮转补核，非本周新闻。",
+          "url": "https://www.abridge.com/blog/abridge-assistant-is-the-ai-assistant-for-healthcare",
+          "conf": "high",
+          "new_value": "临床记录、编码与Abridge Assistant"
+        },
+        {
+          "section": "apps",
+          "name": "Legora",
+          "field": "val",
+          "as_of": "2026-10-21",
+          "source": "2026-10-21 Artificial Lawyer CEO 直接采访与 Reuters 独立报道 https://www.reuters.com/legal/transactional/legal-ai-startup-legora-valued-88-billion-new-550-million-funding-round-2026-10-21/ 一致确认已完成 550M 融资、投后估值 8.8B USD；较库存 5.6B +57.1%。",
+          "url": "https://www.artificiallawyer.com/2026/10/21/its-a-big-moment-max-on-legoras-raise/",
+          "conf": "high",
+          "new_value": 8.8
+        },
+        {
+          "section": "apps",
+          "name": "Legora",
+          "field": "valPending",
+          "as_of": "2026-10-21",
+          "source": "2026-10-21 CEO 采访与 Reuters 确认 8.8B 轮次已完成，移入 val 后清除同轮待交割估值。",
+          "url": "https://www.artificiallawyer.com/2026/10/21/its-a-big-moment-max-on-legoras-raise/",
+          "conf": "high",
+          "new_value": null
+        },
+        {
+          "section": "models",
+          "name": "Kimi (Moonshot)",
+          "field": "uc",
+          "as_of": "2026-10-23",
+          "source": "Kimi 官方 K3.1 Pro 发布及 Artificial Analysis 2026-10-23 原始评测：应用/API 已上线，权重计划 11 月 4 日发布。",
+          "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+          "conf": "high",
+          "new_value": "Kimi K3.1 Pro、Kimi Work智能体、API服务"
+        }
+      ],
+      "confirmations": [
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "field": "listed",
+          "as_of": "2026-10-23",
+          "source": "StockAnalysis 2026-10-23 行情和公司资料核实香港上市代码与中国公司归属。",
+          "url": "https://stockanalysis.com/quote/hkg/0100/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "field": "region",
+          "as_of": "2026-10-23",
+          "source": "StockAnalysis 2026-10-23 行情和公司资料核实香港上市代码与中国公司归属。",
+          "url": "https://stockanalysis.com/quote/hkg/0100/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Zhipu AI",
+          "field": "listed",
+          "as_of": "2026-10-23",
+          "source": "StockAnalysis 2026-10-23 行情和公司资料核实香港上市代码与中国公司归属。",
+          "url": "https://stockanalysis.com/quote/hkg/2513/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Zhipu AI",
+          "field": "region",
+          "as_of": "2026-10-23",
+          "source": "StockAnalysis 2026-10-23 行情和公司资料核实香港上市代码与中国公司归属。",
+          "url": "https://stockanalysis.com/quote/hkg/2513/",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "field": "tokG",
+          "as_of": "2026-08-26",
+          "source": "MiniMax 官方 2026-08-26：7 月 token 消耗为 1 月 20 倍，增幅为 1900%；此为该区间增幅，不冒称同比。",
+          "url": "https://www.minimax.io/news/minimax-announces-first-half-2026-financial-results-1787744160",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Ideogram",
+          "field": "cat",
+          "as_of": "2026-10-24",
+          "source": "Ideogram 当前官方产品页支持图像创意分类；App、API 与企业服务支持 B2C+B2B。",
+          "url": "https://ideogram.ai/models/4.5/",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Ideogram",
+          "field": "biz",
+          "as_of": "2026-10-24",
+          "source": "Ideogram 当前官方产品页支持图像创意分类；App、API 与企业服务支持 B2C+B2B。",
+          "url": "https://ideogram.ai/models/4.5/",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Luma AI",
+          "field": "cat",
+          "as_of": "2026-10-24",
+          "source": "Luma 当前产品页：图像/视频创作、个人付费计划和企业方案，支持 creative 与 B2B+B2C。",
+          "url": "https://lumalabs.ai/llm-info",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Luma AI",
+          "field": "biz",
+          "as_of": "2026-10-24",
+          "source": "Luma 当前产品页：图像/视频创作、个人付费计划和企业方案，支持 creative 与 B2B+B2C。",
+          "url": "https://lumalabs.ai/llm-info",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Speak",
+          "field": "cat",
+          "as_of": "2026-10-20",
+          "source": "Speak 2026-10-20 公告：面向消费者语言学习的 Tutor Call。",
+          "url": "https://www.speak.com/blog/your-tutor-is-one-call-away-introducing-ai-tutor-call",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Speak",
+          "field": "biz",
+          "as_of": "2026-10-24",
+          "source": "Speak 官方企业页及 10 月 20 日个人订阅公告共同支持 B2C+B2B。",
+          "url": "https://www.speak.com/fr/business",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Abridge",
+          "field": "cat",
+          "as_of": "2026-10-13",
+          "source": "Abridge 官方 2026-10-13：面向企业医疗系统及临床工作流程，支持 health/B2B。",
+          "url": "https://www.abridge.com/blog/abridge-assistant-is-the-ai-assistant-for-healthcare",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Abridge",
+          "field": "biz",
+          "as_of": "2026-10-13",
+          "source": "Abridge 官方 2026-10-13：面向企业医疗系统及临床工作流程，支持 health/B2B。",
+          "url": "https://www.abridge.com/blog/abridge-assistant-is-the-ai-assistant-for-healthcare",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Abridge",
+          "field": "stage",
+          "as_of": "2026-10-13",
+          "source": "研究判断：官方 2026-10-13 披露 300 家企业医疗系统，支持维持 scale；并非财务盈利结论。",
+          "url": "https://www.abridge.com/blog/abridge-assistant-is-the-ai-assistant-for-healthcare",
+          "conf": "medium"
+        },
+        {
+          "section": "apps",
+          "name": "Granola",
+          "field": "uc",
+          "as_of": "2026-10-24",
+          "source": "Granola 当前官方定价与产品页：会议笔记/企业上下文，个人、团队与企业计划，支持现有用途和分类。",
+          "url": "https://www.granola.ai/pricing",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Granola",
+          "field": "cat",
+          "as_of": "2026-10-24",
+          "source": "Granola 当前官方定价与产品页：会议笔记/企业上下文，个人、团队与企业计划，支持现有用途和分类。",
+          "url": "https://www.granola.ai/pricing",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Granola",
+          "field": "biz",
+          "as_of": "2026-10-24",
+          "source": "Granola 当前官方定价与产品页：会议笔记/企业上下文，个人、团队与企业计划，支持现有用途和分类。",
+          "url": "https://www.granola.ai/pricing",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Granola",
+          "field": "val",
+          "as_of": "2026-03-25",
+          "source": "Granola 2026-03-25 官方已完成融资 125M，估值 1.5B；TechCrunch 独立报道 https://techcrunch.com/2026/03/25/granola-raises-125m-hits-1-5b-valuation-as-it-expands-from-meeting-notetaker-to-enterprise-ai-app/ 交叉。仅确认这一历史已交割点，日期维持 3 月 25 日，不视为本周融资。",
+          "url": "https://www.granola.ai/blog/series-c",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Doubao (ByteDance)",
+          "field": "tokM",
+          "as_of": "2026-06-23",
+          "source": "上海证券报/中国证券网 2026-06-23 FORCE 大会：180 万亿 token/天；按 30 天折算 5400 万亿/月（T/月），不是新披露月度实测量。",
+          "url": "https://www.cnstock.com/commonDetail/732816",
+          "conf": "medium"
+        },
+        {
+          "section": "models",
+          "name": "01.AI",
+          "field": "uc",
+          "as_of": "2026-07-08",
+          "source": "每日经济新闻 2026-07-08 原创采访核实北京公司及老板AI/销冠AI/投资官AI产品；不拿订单作 API ARR。",
+          "url": "https://m.nbd.com.cn/articles/2026-07-08/4461780.html",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "01.AI",
+          "field": "region",
+          "as_of": "2026-07-08",
+          "source": "每日经济新闻 2026-07-08 原创采访核实北京公司及老板AI/销冠AI/投资官AI产品；不拿订单作 API ARR。",
+          "url": "https://m.nbd.com.cn/articles/2026-07-08/4461780.html",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Runway",
+          "field": "arr",
+          "as_of": "2026-09-08",
+          "source": "Runway 联合 CEO 原帖：超过 200M ARR；2026-09-08 PYMNTS 报道定位日期，Sacra 独立估计 https://sacra.com/c/runway/ 也给 200M 量级但时间标为 8 月。保留公司 9 月披露日期；不是新的 10 月 ARR。",
+          "url": "https://www.linkedin.com/posts/agermanidis_we-crossed-200m-arr-last-week-doubling-activity-7503097520596701184-sX6L",
+          "conf": "medium"
+        },
+        {
+          "section": "apps",
+          "name": "Runway",
+          "field": "cat",
+          "as_of": "2026-08-20",
+          "source": "Runway 官方 2026-08-20 企业视频业务说明：创意视频、企业和消费者两类客户。",
+          "url": "https://runway.com/news/company-news/the-next-phase-of-enterprise-video-generation",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Runway",
+          "field": "biz",
+          "as_of": "2026-08-20",
+          "source": "Runway 官方 2026-08-20 企业视频业务说明：创意视频、企业和消费者两类客户。",
+          "url": "https://runway.com/news/company-news/the-next-phase-of-enterprise-video-generation",
+          "conf": "high"
+        }
+      ],
+      "candidates": [],
+      "retire": [],
+      "ai_progress": {
+        "enterprise": [
+          {
+            "title": "Glean 将企业智能体纳入代码开发和治理流程",
+            "summary": "开发者可用代码定义智能体，再交由 Glean 管理运行、权限和企业连接；版本管理与审查进入交付流程。",
+            "date": "2026-10-21",
+            "source": "Glean 官方产品说明，2026-10-21",
+            "url": "https://www.glean.com/blog/glean-headless-agent-builder",
+            "company": "Glean",
+            "example": "在现有开发工具里维护 agent 规格，企业治理随运行保留，而非只发布一个聊天入口。"
+          },
+          {
+            "title": "Glean 将业务语义与企业上下文结合用于数据分析",
+            "summary": "产品结合业务系统、仓库和语义模型，并用非结构化企业上下文解释指标；自然语言分析可形成交互式成果。",
+            "date": "2026-10-20",
+            "source": "Glean 官方产品说明，2026-10-20",
+            "url": "https://www.glean.com/blog/glean-for-data-analysis",
+            "company": "Glean",
+            "example": "把销售数据和会议中的业务背景放到同一分析流程；效果仍需按企业数据权限与质量验证。"
+          },
+          {
+            "title": "Legora 完成新融资，法律智能体扩展至企业法务",
+            "summary": "CEO 采访披露新客户中企业法务团队占比上升，产品愿景从单份合同延伸到整项交易工作流；融资已完成。",
+            "date": "2026-10-21",
+            "source": "Artificial Lawyer CEO 直接采访；Reuters 交叉确认融资，2026-10-21",
+            "url": "https://www.artificiallawyer.com/2026/10/21/its-a-big-moment-max-on-legoras-raise/",
+            "company": "Legora",
+            "example": "律师审核并对结果负责，智能体处理合同批量审阅及更长法律工作链；组织数量不当作月活。"
+          }
+        ],
+        "models": [
+          {
+            "title": "MiniMax M3.1 Flash 开放服务，主打速度和成本",
+            "summary": "API、M Plan 与 MiniMax Code 已提供该模型；厂商报告更高吞吐与更低成本，完整权重仍是后续安排。",
+            "date": "2026-10-19",
+            "source": "MiniMax 官方发布，2026-10-19",
+            "url": "https://www.minimax.io/blog/minimax-m31f",
+            "kind": "sota"
+          },
+          {
+            "title": "Kimi K3.1 Pro 上线，强化长流程工作",
+            "summary": "官方开放应用及 API，提供百万 token 上下文，重点面向代码、3D 与金融工作；独立评测已发布，完整权重计划 11 月 4 日开放。",
+            "date": "2026-10-23",
+            "source": "Kimi 官方发布；Artificial Analysis 原始评测，2026-10-23",
+            "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+            "kind": "sota"
+          },
+          {
+            "title": "Halcyon 检验图像生成是否需要语言预训练",
+            "summary": "论文从零训练早期融合图文模型，在所设对照中，文本单模态预训练未改善图像生成；该结论限于实验规模与任务。",
+            "date": "2026-10-19",
+            "source": "Halcyon 原论文 arXiv:2610.26863，2026-10-19（10-20 修订）",
+            "url": "https://arxiv.org/abs/2610.26863",
+            "kind": "paradigm"
+          }
+        ],
+        "infra_invest": [
+          {
+            "title": "NVIDIA DSX Pod 强调工厂预集成与现场交付",
+            "summary": "把计算、供电和冷却集成为可预检模块，目标是缩短从硬件到生产负载的交付过程；现场电力条件仍是前提。",
+            "date": "2026-10-21",
+            "source": "NVIDIA 官方技术说明，2026-10-21",
+            "url": "https://developer.nvidia.com/blog/achieve-productive-ai-capacity-faster-and-more-predictably-with-nvidia-dsx-pod/",
+            "layer": "数据中心集成、供电与冷却",
+            "players": [
+              "NVIDIA"
+            ],
+            "thesis": "研究判断：跟踪验收、接电和实际负载利用率，不能用模块设计能力代替已投运算力。"
+          },
+          {
+            "title": "Nebius 获 35 亿美元融资额度支持算力建设",
+            "summary": "公司披露 Citi 牵头的有担保融资，初始期限 364 天，用于 GPU 与数据中心扩张；融资额度不等于当期已花费金额。",
+            "date": "2026-10-22",
+            "source": "Nebius 官方融资公告，2026-10-22",
+            "url": "https://nebius.com/newsroom/nebius-secures-3-5-billion-financing-facility-with-citi",
+            "layer": "GPU 云融资与数据中心扩张",
+            "players": [
+              "Nebius",
+              "Citi"
+            ],
+            "thesis": "研究判断：短期融资支持长周期设施，需要跟踪提款、续借成本与已签客户负载的匹配。"
+          }
+        ],
+        "takeaway": "本周企业应用更重视长流程、业务上下文和可治理交付；模型服务升级快于权重开放；Infra 应区分融资、建设与实际投运。财务监控继续排除年度目标、订单和不完整期间收入，证据不足的旧值不刷新为已确认。"
+      }
+    },
+    "coverage": {
+      "rotation": [
+        {
+          "section": "apps",
+          "name": "Granola",
+          "checked_fields": [
+            "val",
+            "uc",
+            "cat",
+            "biz"
+          ],
+          "unverified_fields": [
+            "arr",
+            "valPending",
+            "arrg",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "ownModel",
+            "stage",
+            "ti"
+          ],
+          "note": "产品/商业模式与历史融资点获确认；ARR 无可复核原始披露，增长、MAU、训练归属与流量占比均缺新证据。"
+        },
+        {
+          "section": "apps",
+          "name": "Ideogram",
+          "checked_fields": [
+            "uc",
+            "cat",
+            "biz"
+          ],
+          "unverified_fields": [
+            "arr",
+            "val",
+            "valPending",
+            "arrg",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "ownModel",
+            "stage",
+            "ti"
+          ],
+          "note": "产品补核到 4.5；7M 来源实际为第三方年度收入估计，不能重新确认 ARR；MAU/增长/估值及模型流量缺证。"
+        },
+        {
+          "section": "models",
+          "name": "Doubao (ByteDance)",
+          "checked_fields": [
+            "tokM"
+          ],
+          "unverified_fields": [
+            "arr",
+            "val",
+            "valPending",
+            "arrg",
+            "uc",
+            "listed",
+            "parent",
+            "tokG",
+            "region"
+          ],
+          "note": "token 量仅确认 6 月历史日量折月口径；2110M 库存来源为 2026 年 MaaS 收入目标，不是实际 run-rate；不据此确认 ARR/增长。"
+        },
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "checked_fields": [
+            "val",
+            "uc",
+            "listed",
+            "tokG",
+            "region"
+          ],
+          "unverified_fields": [
+            "arr",
+            "valPending",
+            "arrg",
+            "parent",
+            "tokM"
+          ],
+          "note": "产品与上市行情更新；沿用历史股数口径，市值含不同股份类别的供应商差异仍注明。H1 公司收入及 800M 公司 ARR 不等于 API ARR；tokM 缺可比月量。"
+        },
+        {
+          "section": "models",
+          "name": "Zhipu AI",
+          "checked_fields": [
+            "val",
+            "listed",
+            "region"
+          ],
+          "unverified_fields": [
+            "arr",
+            "valPending",
+            "arrg",
+            "uc",
+            "parent",
+            "tokM",
+            "tokG"
+          ],
+          "note": "上市行情更新并确认代码/地区；市值沿用 465.62M 股历史序列，未将它冒称全部股份类别口径。全业务 ARR 与 API ARR 不同，其余收入/产品/token 缺充分核验。"
+        },
+        {
+          "section": "models",
+          "name": "01.AI",
+          "checked_fields": [
+            "uc",
+            "region"
+          ],
+          "unverified_fields": [
+            "arr",
+            "val",
+            "valPending",
+            "arrg",
+            "listed",
+            "parent",
+            "tokM",
+            "tokG"
+          ],
+          "note": "核实用途及地区；中文采访谈订单和全年收入，不能支持现有 API ARR 及增长；旧估值、上市状态和 token 数均未获近期充分确认。"
+        },
+        {
+          "section": "apps",
+          "name": "Runway",
+          "checked_fields": [
+            "arr",
+            "cat",
+            "biz"
+          ],
+          "unverified_fields": [
+            "val",
+            "valPending",
+            "arrg",
+            "uc",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "ownModel",
+            "stage",
+            "ti"
+          ],
+          "note": "200M ARR 获 CEO 原帖和独立估计同量级支持；月份不同已注明。相对 4 月翻倍不是同比，不确认 arrg。第三方模型目录不能证明自训流量占多数；MAU 和最新融资未充分交叉。"
+        },
+        {
+          "section": "apps",
+          "name": "Luma AI",
+          "checked_fields": [
+            "uc",
+            "cat",
+            "biz"
+          ],
+          "unverified_fields": [
+            "arr",
+            "val",
+            "valPending",
+            "arrg",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "ownModel",
+            "stage",
+            "ti"
+          ],
+          "note": "核实当前产品及个人/企业模式；旧 8M ARR 是 2024 年估计。Ray 继续训练有官方证据，但自有与第三方模型流量分母缺失，ownModel 状态暂不重确认为 primary。"
+        },
+        {
+          "section": "apps",
+          "name": "Speak",
+          "checked_fields": [
+            "uc",
+            "cat",
+            "biz"
+          ],
+          "unverified_fields": [
+            "arr",
+            "val",
+            "valPending",
+            "arrg",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "ownModel",
+            "stage",
+            "ti"
+          ],
+          "note": "Tutor Call 产品更新；官方新披露自训 8M 参数轮次检测器，但无法验证整体模型流量归属，不修改 ownModel 分类。Forbes 收入正文访问受限；训练样本用户/下载不当 MAU。"
+        },
+        {
+          "section": "apps",
+          "name": "Abridge",
+          "checked_fields": [
+            "uc",
+            "cat",
+            "stage",
+            "biz"
+          ],
+          "unverified_fields": [
+            "arr",
+            "val",
+            "valPending",
+            "arrg",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "ownModel",
+            "ti"
+          ],
+          "note": "Assistant 10 月 13 日公告作轮转补核；临床企业定位及规模获支持。117M 是签约 ARR，未证明当前已上线 ARR；未查到可用月活及流量占比。"
+        }
+      ],
+      "queue": {
+        "status": "completed",
+        "note": "准备时存量 review_queue 为空；无存量条目需仲裁。"
+      },
+      "incremental": {
+        "status": "limited",
+        "note": "已对准备清单全部 55 家发起分组七天检索，并对命中及 assistant 官网页面打开核实；召回与正文可访问性不齐，未声称逐家全部新闻已穷尽。范围：OpenAI, Anthropic, Google Gemini, xAI, Kimi (Moonshot), MiniMax, Zhipu AI, Mistral AI, Cohere, 01.AI, DeepSeek, Doubao (ByteDance), Alibaba Qwen (通义千问), Meta (Llama), Amazon Nova, Baidu (ERNIE), Tencent Hunyuan (腾讯混元), Cursor, Perplexity, Character.ai, ElevenLabs, Midjourney, Runway, Harvey, Glean, Gamma, HeyGen, Suno, Writer, Sierra, Granola, Cognition, Luma AI, Speak, Abridge, Ideogram, Descript, Legora, OpenEvidence, Lovable, Cresta, Clay, AlphaSense, Synthesia, Manus, Replit, Mercor, Ambience Healthcare, Decagon, Rogo, Abnormal AI, Instinct, Meta Muse, OpenClaw, Higgsfield"
+      },
+      "discovery": {
+        "status": "not_due",
+        "note": "prepare.monthly_discovery_due=false；本周不执行月初覆盖发现。"
+      },
+      "progress": {
+        "status": "completed",
+        "note": "窗口内 3 条企业、3 条模型与训练、2 条 Infra；均有实际打开的正文和日期，区分厂商声明与研究判断。"
+      }
+    },
+    "evidence": [
+      {
+        "url": "https://www.minimax.io/blog/minimax-m31f",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开官方 10 月 19 日 M3.1 Flash 发布正文；API/M Plan/Code 已开放，权重是后续计划。"
+      },
+      {
+        "url": "https://www.minimax.io/news/minimax-announces-first-half-2026-financial-results-1787744160",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 8 月 26 日中期公告：总收入与开放平台收入分列；7 月 token 为 1 月 20 倍，不能把累计 token 当月度调用量。"
+      },
+      {
+        "url": "https://stockanalysis.com/quote/hkg/0100/",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 10 月 23 日收盘行情：187.60 HKD；65.52B HKD 市值，349.24M 股，与库存历史分母一致。"
+      },
+      {
+        "url": "https://cn.investing.com/equities/minimax-group-inc",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开中文行情：10 月 23 日收盘 187.60 HKD，市值 65.52B HKD；交叉核对 StockAnalysis。"
+      },
+      {
+        "url": "https://stockanalysis.com/quote/hkg/2513/",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 10 月 23 日收盘行情：499.00 HKD；232.35B HKD 市值，465.62M 股；沿用库存已有分母。"
+      },
+      {
+        "url": "https://cn.investing.com/equities/knowledge-atlas-tech-joint-stock",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开中文行情：10 月 23 日收盘 499.00 HKD，市值 2323.50 亿港元，与 StockAnalysis 同口径相符。"
+      },
+      {
+        "url": "https://hk.investing.com/currencies/usd-hkd-historical-data",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开汇率历史表：2026-10-23 USD/HKD 收盘 7.8424，用于港元市值换算美元。"
+      },
+      {
+        "url": "https://ideogram.ai/models/4.5/",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开当前官方产品页：4.5 图像生成与精确编辑，经 App、MCP、API 提供。页面未明确发布日期，仅作当前产品观察。"
+      },
+      {
+        "url": "https://ideogram.ai/blog/",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开官方博客，10 月 14 日已有 4.5 使用指南；因此轮转产品补核不冒称本周首次发布。"
+      },
+      {
+        "url": "https://getlatka.com/companies/ideogram.ai",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开收入说明：公司未公开收入，7M 来自 Growjo 的年度收入估计，不足以确认为 ARR。"
+      },
+      {
+        "url": "https://lumalabs.ai/llm-info",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开官方公司及产品事实页：当前 Ray3.2、UNI-1.1、Agents，个人与企业计划，亦提供第三方模型；未给模型流量比例。"
+      },
+      {
+        "url": "https://lumalabs.ai/legal/training-content-summary-ray",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 10 月 23 日训练内容披露：Ray3 在第三方开放权重基础上继续训练，Ray3.14/3.2 是后续衍生；不证明自训模型推理流量占比。"
+      },
+      {
+        "url": "https://sacra.com/c/luma-ai/",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开档案：8M 年化收入属于 2024 年 12 月旧估计，不能当作新披露。"
+      },
+      {
+        "url": "https://www.speak.com/blog/your-tutor-is-one-call-away-introducing-ai-tutor-call",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 10 月 20 日官方 Tutor Call 公告，覆盖英语/西语，面向 Premium Plus，Premium 可试用；核实产品用途。"
+      },
+      {
+        "url": "https://www.speak.com/blog/the-architecture-behind-ai-tutor-call",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 10 月 20 日工程正文：自训 8M 参数轮次检测器，训练样本及用户数只描述数据集，不是 MAU；模型推理流量分母未披露。"
+      },
+      {
+        "url": "https://www.speak.com/fr/business",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开由 /business 跳转的官方企业页：企业语言学习产品，与消费者订阅共同支持 B2C+B2B。下载量不是 MAU。"
+      },
+      {
+        "url": "https://www.speak.com/blog/series-c",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 2024-12-10 历史融资公告；不足以作为两家独立近期来源刷新估值确认。"
+      },
+      {
+        "url": "https://www.abridge.com/blog/abridge-assistant-is-the-ai-assistant-for-healthcare",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 10 月 13 日官方 Assistant 公告：临床记录延伸到图表/医疗知识查询，300 家企业医疗系统；作为轮转补核，不纳入本周新闻。"
+      },
+      {
+        "url": "https://sacra.com/c/abridge/",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开档案：117M 为 2025Q1 签约 ARR；与当期已上线收入不是同一口径，保留旧值并列缺口。"
+      },
+      {
+        "url": "https://www.granola.ai/pricing",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开当前定价：个人/团队/企业计划及会议上下文用途；未披露可用 ARR 或 MAU。"
+      },
+      {
+        "url": "https://www.granola.ai/blog/series-c",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 3 月 25 日官方 Series C：125M 融资、1.5B 估值；支持历史已交割点，不将其日期刷新为 10 月。"
+      },
+      {
+        "url": "https://techcrunch.com/2026/03/25/granola-raises-125m-hits-1-5b-valuation-as-it-expands-from-meeting-notetaker-to-enterprise-ai-app/",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开独立报道，交叉确认 Granola 历史融资估值 1.5B。"
+      },
+      {
+        "url": "https://www.cnstock.com/commonDetail/732816",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 6 月 23 日 FORCE 大会报道：日调用量 180 万亿 token；按 30 天折算为每月 5400 万亿，不是直接披露月度实测量。"
+      },
+      {
+        "url": "https://m.nbd.com.cn/articles/2026-07-08/4461780.html",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开中文采访：老板/销冠/投资官 AI 产品与北京公司；年度收入和订单均不能替代 API run-rate。"
+      },
+      {
+        "url": "https://www.huxiu.com/article/4869686.html",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开中文采访：2025/2026 订单金额，未给当前可比 API ARR。"
+      },
+      {
+        "url": "https://runway.com/news/company-news/the-next-phase-of-enterprise-video-generation",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 8 月 20 日官方企业业务说明：视频生成、企业及消费者业务；年初至今翻倍不等于同比增速。"
+      },
+      {
+        "url": "https://docs.dev.runwayml.com/guides/models/",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开当前官方模型目录：Gen-4.5 等自有模型与第三方模型均可调用；没有流量占比披露。"
+      },
+      {
+        "url": "https://www.linkedin.com/posts/agermanidis_we-crossed-200m-arr-last-week-doubling-activity-7503097520596701184-sX6L",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开联合 CEO 原帖：ARR 跨过 200M，较 4 月 100M 翻倍；创作者数量不能当 MAU。"
+      },
+      {
+        "url": "https://sacra.com/c/runway/",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开独立估计：200M ARR 量级与 CEO 披露相符，但所标月份为 8 月；不用该月份覆盖 CEO 9 月披露日期。"
+      },
+      {
+        "url": "https://www.pymnts.com/news/artificial-intelligence/2026/runway-ai-hits-200-million-revenue-and-expands-robotics-capabilities/",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 9 月 8 日报道，定位 CEO 200M ARR 原帖的报道时间；与原帖属同一消息，不当额外独立估计。"
+      },
+      {
+        "url": "https://www.artificiallawyer.com/2026/10/21/its-a-big-moment-max-on-legoras-raise/",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 10 月 21 日 CEO 直接采访：550M 已融资、8.8B 投后估值，ARR 超过 200M，2400 家客户组织；不把客户人数当 MAU。"
+      },
+      {
+        "url": "https://www.reuters.com/legal/transactional/legal-ai-startup-legora-valued-88-billion-new-550-million-funding-round-2026-10-21/",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "本轮成功打开 10 月 21 日 Reuters 正文并通过缓存引用回读：550M 融资、8.8B 估值，交叉确认轮次已完成。一次直接 URL 重读失败，不影响先前已读正文。"
+      },
+      {
+        "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 K3.1 Pro 官方发布：1M 上下文，产品/API 已上线，完整权重预计 11 月 4 日；不写成权重已经公开。"
+      },
+      {
+        "url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 10 月 23 日独立原始评测，确认发布日期及测试表现；不复述厂商 SOTA 断言为已独立验证事实。"
+      },
+      {
+        "url": "https://arxiv.org/abs/2610.26863",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 10 月 19 日提交、20 日修订的原论文摘要：从零联合图文预训练对照实验；结论限定于论文实验。"
+      },
+      {
+        "url": "https://www.glean.com/blog/glean-headless-agent-builder",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 10 月 21 日官方说明：代码定义与版本管理 agent，由 Glean 运行并保留企业权限治理。"
+      },
+      {
+        "url": "https://www.glean.com/blog/glean-for-data-analysis",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 10 月 20 日官方说明：语义模型、结构化业务数据及非结构化上下文共同支持分析。"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/achieve-productive-ai-capacity-faster-and-more-predictably-with-nvidia-dsx-pod/",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 10 月 21 日官方正文：模块预集成电力、冷却与计算，现场仍需电源等条件；未把设计能力当已建容量。"
+      },
+      {
+        "url": "https://nebius.com/newsroom/nebius-secures-3-5-billion-financing-facility-with-citi",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 10 月 22 日公告：3.5B senior secured facility、364 天期限，支持 GPU/数据中心建设；授信不是已支出资本。"
+      },
+      {
+        "url": "https://instinct.com/",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开官网，描述短信/电话个人助手；未核实本周公开准入、首次价格或基座模型变更。"
+      },
+      {
+        "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 10 月 12 日官方公告：Wonder 将用于 Muse，API/Code 可用不能替代个人助理已切换模型的证据。"
+      },
+      {
+        "url": "https://manus.im/blog",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开官方博客，所见最新条目在窗口前；不能据此断言所有本周变化不存在。"
+      },
+      {
+        "url": "https://docs.openclaw.ai/releases",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开官方发布记录；安全更新与兼容提供商不等同自有基座模型披露。"
+      },
+      {
+        "url": "https://www.marketwatch.com/livecoverage/spacex-earnings-stock-results-musk-spcx/card/here-s-how-much-cursor-contributed-to-spacex-s-business-in-the-first-few-weeks-XfeFtIp8RIVLvMa5afym",
+        "read_at": "2026-10-24T07:10:38.664312+00:00",
+        "note": "实际打开 10 月 20 日报道：608M 属 8 月 14 日至 9 月 30 日确认收入，不是完整月/季度或公司 ARR，不作机械年化。"
+      }
+    ],
+    "limitations": [
+      "全池 55 家（17 models、38 apps）的七天检索为有限覆盖；组合检索的召回不均，不能把无结果解读为无变化，只有实际打开来源支持的字段才更新。",
+      "10 家轮转逐字段标注了未核实项；多数 MAU、用户增长、收入同比和 ownModel 流量比例未有可用新披露，均保留原值且不刷新确认日期。",
+      "库存财务口径风险：Doubao ARR 源自年度目标；Ideogram 7M 是年度收入估计；Abridge 117M 是签约 ARR；01.AI 的订单与全年收入不能代替 API run-rate。缺乏合规替代值，本轮未改零或绕过非 assistant ARR 不可空的闸门。",
+      "MiniMax/Zhipu 当前 ARR 与增长的历史出处包含公司总业务口径，未获得同期间 API 独立收入分拆，未予重新确认。",
+      "两家港股市值按两个行情源一致的既有历史股数序列更新；其他供应商对股份类别的口径差异未获官方总股本文件完全调和，置信度为 medium；相对 9 月 18 日的下降不代表本周跌幅。",
+      "Speak Forbes 收入正文遇访问限制；OpenAI 最新融资磋商报道部分付费墙，未凑足可读独立来源更改待交割估值；财务传闻未移入已交割估值。",
+      "Runway CEO ARR 披露在 9 月，独立估计页面标为 8 月，只确认 200M 量级，不虚构新的 10 月数值。Granola 的已完成融资点仍为 3 月 25 日。",
+      "assistant 三个转折点：本窗口未核实新的转公开、首次定价或个人助理基座模型披露。Instinct/Manus/Meta Muse/OpenClaw 的活跃人数仍缺单列披露；Meta Wonder API 可用不等于 Muse 个人助理已切换。",
+      "Cursor 的 48 天确认收入未年化；Higgsfield 已在现有池内，保留此前入池与周次成功记录，不重复入池或补跑上周。",
+      "本轮不执行月初发现（prepare 判定 not_due），创意类集中度告警仍保留；未找到可靠新入池、收购完成或停运事件，不新增候选/下架。",
+      "当前运行环境未提供可核实的实际模型标识，ledger 使用工具默认 unreported，不猜测模型名称。"
+    ]
+  },
+  "apply_report": "  + MODEL MiniMax.uc: MiniMax M3、海螺AI -> MiniMax M3.1 Flash、M3、海螺AI (MiniMax 官方 2026-10-19 发布 M3.1 Flash；保留既有 M3、海螺产品线。)\n  + MODEL MiniMax.val: 13.6 -> 8.35 (StockAnalysis 与 Investing.com 2026-10-23 收盘行情交叉：市值 65.52B HKD，沿用库存历史 349.24M 股口径；第二来源 https://cn.investing.com/equities/minimax-group-inc。按同日 USD/HKD=7.8424（https://hk.investing.com/currencies/usd-hkd-historical-data）换算为 8.35B USD。不同供应商可能计入其他股份类别，本次未改用全部股份类别口径。较库存 9 月 18 日旧值变化，不是单周回报。)\n  + MODEL Zhipu AI.val: 46.6 -> 29.63 (StockAnalysis 与 Investing.com 2026-10-23 收盘行情交叉：市值 232.35B HKD，沿用库存历史 465.62M 股口径；第二来源 https://cn.investing.com/equities/knowledge-atlas-tech-joint-stock。按同日 USD/HKD=7.8424（https://hk.investing.com/currencies/usd-hkd-historical-data）换算为 29.63B USD。不同供应商可能计入其他股份类别，本次未改用全部股份类别口径。较库存 9 月 18 日旧值变化，不是单周回报。)\n  + APP Ideogram.uc: Ideogram 4.0图像生成与文字排版 -> Ideogram 4.5图像生成与精确编辑 (Ideogram 官方 4.5 当前产品页，2026-10-24 实际观察；10 月 14 日官方指南已存在，非本周首次发布。)\n  + APP Luma AI.uc: Dream Machine视频生成/创意Agents -> Ray3.2、UNI-1.1与创意Agents (Luma 官方当前产品事实页 2026-10-24 观察，及 10 月 23 日 Ray 训练披露交叉，更新旧 Dream Machine 用途描述。)\n  + APP Speak.uc: AI口语导师Speak Tutor+企业版 -> AI口语导师、Tutor Call与企业版 (Speak 官方 2026-10-20 上线 AI Tutor Call；当前企业页同时确认企业版仍提供服务。)\n  + APP Abridge.uc: 环境临床记录+医疗编码AI -> 临床记录、编码与Abridge Assistant (Abridge 官方 2026-10-13 公告将 Assistant 延伸至临床上下文与知识检索；本次轮转补核，非本周新闻。)\n  + APP Legora.val: 5.6 -> 8.8 (2026-10-21 Artificial Lawyer CEO 直接采访与 Reuters 独立报道 https://www.reuters.com/legal/transactional/legal-ai-startup-legora-valued-88-billion-new-550-million-funding-round-2026-10-21/ 一致确认已完成 550M 融资、投后估值 8.8B USD；较库存 5.6B +57.1%。)\n  + APP Legora.valPending: 8.8 -> None (2026-10-21 CEO 采访与 Reuters 确认 8.8B 轮次已完成，移入 val 后清除同轮待交割估值。)\n  + MODEL Kimi (Moonshot).uc: Kimi K3、Kimi Work 智能体、API 服务 -> Kimi K3.1 Pro、Kimi Work智能体、API服务 (Kimi 官方 K3.1 Pro 发布及 Artificial Analysis 2026-10-23 原始评测：应用/API 已上线，权重计划 11 月 4 日发布。)\n  + ai_progress: 8 条\n  = MiniMax.listed confirmed unchanged (StockAnalysis 2026-10-23 行情和公司资料核实香港上市代码与中国公司归属。)\n  = MiniMax.region confirmed unchanged (StockAnalysis 2026-10-23 行情和公司资料核实香港上市代码与中国公司归属。)\n  = MiniMax.tokG confirmed unchanged (MiniMax 官方 2026-08-26：7 月 token 消耗为 1 月 20 倍，增幅为 1900%；此为该区间增幅，不冒称同比。)\n  = Zhipu AI.listed confirmed unchanged (StockAnalysis 2026-10-23 行情和公司资料核实香港上市代码与中国公司归属。)\n  = Zhipu AI.region confirmed unchanged (StockAnalysis 2026-10-23 行情和公司资料核实香港上市代码与中国公司归属。)\n  = Ideogram.cat confirmed unchanged (Ideogram 当前官方产品页支持图像创意分类；App、API 与企业服务支持 B2C+B2B。)\n  = Ideogram.biz confirmed unchanged (Ideogram 当前官方产品页支持图像创意分类；App、API 与企业服务支持 B2C+B2B。)\n  = Luma AI.cat confirmed unchanged (Luma 当前产品页：图像/视频创作、个人付费计划和企业方案，支持 creative 与 B2B+B2C。)\n  = Luma AI.biz confirmed unchanged (Luma 当前产品页：图像/视频创作、个人付费计划和企业方案，支持 creative 与 B2B+B2C。)\n  = Speak.cat confirmed unchanged (Speak 2026-10-20 公告：面向消费者语言学习的 Tutor Call。)\n  = Speak.biz confirmed unchanged (Speak 官方企业页及 10 月 20 日个人订阅公告共同支持 B2C+B2B。)\n  = Abridge.cat confirmed unchanged (Abridge 官方 2026-10-13：面向企业医疗系统及临床工作流程，支持 health/B2B。)\n  = Abridge.biz confirmed unchanged (Abridge 官方 2026-10-13：面向企业医疗系统及临床工作流程，支持 health/B2B。)\n  = Abridge.stage confirmed unchanged (研究判断：官方 2026-10-13 披露 300 家企业医疗系统，支持维持 scale；并非财务盈利结论。)\n  = Granola.uc confirmed unchanged (Granola 当前官方定价与产品页：会议笔记/企业上下文，个人、团队与企业计划，支持现有用途和分类。)\n  = Granola.cat confirmed unchanged (Granola 当前官方定价与产品页：会议笔记/企业上下文，个人、团队与企业计划，支持现有用途和分类。)\n  = Granola.biz confirmed unchanged (Granola 当前官方定价与产品页：会议笔记/企业上下文，个人、团队与企业计划，支持现有用途和分类。)\n  = Granola.val confirmed unchanged (Granola 2026-03-25 官方已完成融资 125M，估值 1.5B；TechCrunch 独立报道 https://techcrunch.com/2026/03/25/granola-raises-125m-hits-1-5b-valuation-as-it-expands-from-meeting-notetaker-to-enterprise-ai-app/ 交叉。仅确认这一历史已交割点，日期维持 3 月 25 日，不视为本周融资。)\n  = Doubao (ByteDance).tokM confirmed unchanged (上海证券报/中国证券网 2026-06-23 FORCE 大会：180 万亿 token/天；按 30 天折算 5400 万亿/月（T/月），不是新披露月度实测量。)\n  = 01.AI.uc confirmed unchanged (每日经济新闻 2026-07-08 原创采访核实北京公司及老板AI/销冠AI/投资官AI产品；不拿订单作 API ARR。)\n  = 01.AI.region re-checked (每日经济新闻 2026-07-08 原创采访核实北京公司及老板AI/销冠AI/投资官AI产品；不拿订单作 API ARR。)\n  = Runway.arr confirmed unchanged (Runway 联合 CEO 原帖：超过 200M ARR；2026-09-08 PYMNTS 报道定位日期，Sacra 独立估计 https://sacra.com/c/runway/ 也给 200M 量级但时间标为 8 月。保留公司 9 月披露日期；不是新的 10 月 ARR。)\n  = Runway.cat confirmed unchanged (Runway 官方 2026-08-20 企业视频业务说明：创意视频、企业和消费者两类客户。)\n  = Runway.biz confirmed unchanged (Runway 官方 2026-08-20 企业视频业务说明：创意视频、企业和消费者两类客户。)\n\napplied 11 / confirmed 24 / promoted 0 / queued 0 / skipped 0 / rejected 0\nWARN  models[Google Gemini]: no provenance yet for arr\nWARN  apps[Midjourney]: no provenance yet for val\nWARN  apps[Granola]: no provenance yet for arr\nWARN  apps[Ideogram]: no provenance yet for val\nWARN  category concentration: creative is 10/38 = 26% (limit 25%)\n",
+  "validation": "WARN  models[Google Gemini]: no provenance yet for arr\nWARN  apps[Midjourney]: no provenance yet for val\nWARN  apps[Granola]: no provenance yet for arr\nWARN  apps[Ideogram]: no provenance yet for val\nWARN  category concentration: creative is 10/38 = 26% (limit 25%)\n\n0 error(s), 5 warning(s)"
+}
