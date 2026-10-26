@@ -4,7 +4,7 @@
     "next_update": "2026-09-06",
     "update_notes": "2026-10-24: 11 项已核实更新 — MODEL MiniMax.uc: MiniMax M3、海螺AI -> MiniMax M3.1 Flash、M3、海螺AI; MODEL MiniMax.val: 13.6 -> 8.35; MODEL Zhipu AI.val: 46.6 -> 29.63; APP Ideogram.uc: Ideogram 4.0图像生成与文字排版 -> Ideogram 4.5图像生成与精确编辑; APP Luma AI.uc: Dream Machine视频生成/创意Agents -> Ray3.2、UNI-1.1与创意Agents; APP Speak.uc: AI口语导师Speak Tutor+企业版 -> AI口语导师、Tutor Call与企业版",
     "schema": 2,
-    "last_run": "2026-10-25",
+    "last_run": "2026-10-26",
     "stale_days": 120,
     "categories": {
       "coding": {
@@ -2629,11 +2629,11 @@
         "error": null
       },
       "openrouter": {
-        "at": "2026-10-25",
+        "at": "2026-10-26",
         "ok": true,
         "error": null,
-        "weeks": 58,
-        "wow_pct": -4.5
+        "weeks": 59,
+        "wow_pct": 14.6
       },
       "routine-weekly": {
         "at": "2026-10-24",
@@ -7165,12 +7165,21 @@
       "nM": 17,
       "nA": 38,
       "nMrev": 12
+    },
+    {
+      "date": "2026-10-26",
+      "mARR": 150.43,
+      "aARR": 13.63,
+      "tok": 9273.8,
+      "nM": 17,
+      "nA": 38,
+      "nMrev": 12
     }
   ],
   "openrouter": {
-    "as_of": "2026-10-24",
-    "fetched": "2026-10-25",
-    "wow_pct": -4.5,
+    "as_of": "2026-10-25",
+    "fetched": "2026-10-26",
+    "wow_pct": 14.6,
     "weekly": [
       {
         "week": "2025-09-08",
@@ -7403,6 +7412,10 @@
       {
         "week": "2026-10-12",
         "tok": 164.04
+      },
+      {
+        "week": "2026-10-19",
+        "tok": 188.04
       }
     ],
     "source": "OpenRouter datasets API（rankings 同源，top50+other 全平台口径）",
