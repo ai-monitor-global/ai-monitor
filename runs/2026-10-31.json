@@ -1,0 +1,945 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-10-31",
+  "window_start": "2026-10-25",
+  "window_end": "2026-10-31",
+  "base_commit": "d84106fbcb26e1d01d3357c086728702dcbee51c",
+  "data_sha256": "58282ecb53139bdf9bcc62c3f1fb2dcd91099987f3dd7bce567524ebc02e242d",
+  "model_label": "unreported",
+  "validated_at": "2026-10-31T07:07:38.934524+00:00",
+  "status": "validated_for_publication",
+  "publication_note": "This record proves validation only. Verify the remote commit and live Pages data separately.",
+  "result": {
+    "at": "2026-10-31",
+    "ok": true,
+    "error": null,
+    "applied": 8,
+    "rejected": 0,
+    "confirmed": 35,
+    "promoted": 0,
+    "queued": 0
+  },
+  "bundle": {
+    "schema_version": 1,
+    "run_id": "2026-10-31",
+    "window_start": "2026-10-25",
+    "window_end": "2026-10-31",
+    "changes": {
+      "pass": "routine-weekly",
+      "force": false,
+      "patches": [
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "field": "val",
+          "as_of": "2026-10-30",
+          "url": "https://stockanalysis.com/quote/hkg/0100/",
+          "source": "StockAnalysis 与 Investing.com 10月30日收盘市值交叉：56.33B HKD，第二来源 https://cn.investing.com/equities/minimax-group-inc；USD/HKD=7.8447（https://hk.investing.com/currencies/usd-hkd-historical-data），换算美元。沿用历史349.24M股对应headline口径，供应商股份类别差异未解决，未改为全类别市值。",
+          "conf": "medium",
+          "new_value": 7.18
+        },
+        {
+          "section": "models",
+          "name": "Zhipu AI",
+          "field": "val",
+          "as_of": "2026-10-30",
+          "url": "https://stockanalysis.com/quote/hkg/2513/",
+          "source": "StockAnalysis 与 Investing.com 10月30日收盘市值交叉：225.18B HKD，第二来源 https://cn.investing.com/equities/knowledge-atlas-tech-joint-stock；USD/HKD=7.8447（https://hk.investing.com/currencies/usd-hkd-historical-data），换算美元。沿用历史465.62M股对应headline口径，供应商股份类别差异未解决，未改为全类别市值。",
+          "conf": "medium",
+          "new_value": 28.7
+        },
+        {
+          "section": "apps",
+          "name": "ElevenLabs",
+          "field": "arr",
+          "as_of": "2026-09-24",
+          "url": "https://techcrunch.com/2026/09/24/twenty-minutes-with-the-ceo-of-elevenlabs-now-reportedly-valued-at-22-billion/",
+          "source": "9月24日采访值；Sacra独立估算交叉 https://sacra.com/c/elevenlabs/：600M年化收入。美元原币；非本周首次披露。",
+          "conf": "medium",
+          "new_value": 600
+        },
+        {
+          "section": "models",
+          "name": "OpenAI",
+          "field": "valPending",
+          "as_of": "2026-10-23",
+          "url": "https://www.businesstimes.com.sg/companies-markets/openai-shifts-value-us1-25-trillion-funding-talks-finalise",
+          "source": "Bloomberg 10月23日原稿（Business Times转载）与 CNBC 10月22日独立报道（The Paypers 10月26日转述 https://thepaypers.com/fintech/news/openai-reportedly-seeks-usd-30-billion-at-usd-125-trillion-valuation）交叉：洽谈目标1.25T USD；CNBC明确为投前，不当作投后或已完成估值。实际val仍852B。10月31日FT/Reuters融资规模新报道正文未读到，不采用其募资额。",
+          "conf": "medium",
+          "new_value": 1250
+        },
+        {
+          "section": "models",
+          "name": "OpenAI",
+          "field": "uc",
+          "as_of": "2026-10-26",
+          "url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+          "source": "OpenAI官方Terra产品页与GitHub 10月26日GA公告 https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot/；加入低成本型号，保留既有产品线。",
+          "conf": "high",
+          "new_value": "GPT-6 Astra/Terra、ChatGPT/Codex/Sora"
+        },
+        {
+          "section": "models",
+          "name": "Google Gemini",
+          "field": "uc",
+          "as_of": "2026-10-28",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+          "source": "Google 10月28日发布Carbon，先向受信任网络防御者限量提供；保留Argon及既有产品线。",
+          "conf": "high",
+          "new_value": "Gemini 4 Argon/Carbon限测、3.8/Gemma"
+        },
+        {
+          "section": "apps",
+          "name": "Runway",
+          "field": "uc",
+          "as_of": "2026-10-26",
+          "url": "https://runway.com/news/company-news/introducing-runway-app-studio",
+          "source": "Runway 10月26日新增App Studio，将创意工作流变为可共享应用；保留视频与世界模型业务。",
+          "conf": "high",
+          "new_value": "视频/世界模型与App Studio创意应用"
+        }
+      ],
+      "confirmations": [
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "field": "listed",
+          "as_of": "2026-10-30",
+          "url": "https://stockanalysis.com/quote/hkg/0100/",
+          "source": "10月30日上市行情和公司资料核实香港上市代码与中国归属。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "field": "region",
+          "as_of": "2026-10-30",
+          "url": "https://stockanalysis.com/quote/hkg/0100/",
+          "source": "10月30日上市行情和公司资料核实香港上市代码与中国归属。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Zhipu AI",
+          "field": "listed",
+          "as_of": "2026-10-30",
+          "url": "https://stockanalysis.com/quote/hkg/2513/",
+          "source": "10月30日上市行情和公司资料核实香港上市代码与中国归属。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Zhipu AI",
+          "field": "region",
+          "as_of": "2026-10-30",
+          "url": "https://stockanalysis.com/quote/hkg/2513/",
+          "source": "10月30日上市行情和公司资料核实香港上市代码与中国归属。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "field": "tokG",
+          "as_of": "2026-08-26",
+          "url": "https://www.minimax.cn/news/minimax-%E5%8F%91%E5%B8%83-2026-%E5%B9%B4%E4%B8%AD%E6%9C%9F%E4%B8%9A%E7%BB%A9-1787744159",
+          "source": "MiniMax 8月26日官方：7月token为1月20倍，增幅1900%；是区间增长，非同比。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Cursor",
+          "field": "cat",
+          "as_of": "2026-10-31",
+          "url": "https://cursor.com/pricing",
+          "source": "本轮当前定价页核实代码开发产品、个人和团队/企业方案；不以该页确认Composer版本或财务数字。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Cursor",
+          "field": "biz",
+          "as_of": "2026-10-31",
+          "url": "https://cursor.com/pricing",
+          "source": "本轮当前定价页核实代码开发产品、个人和团队/企业方案；不以该页确认Composer版本或财务数字。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Perplexity",
+          "field": "uc",
+          "as_of": "2026-10-31",
+          "url": "https://www.perplexity.ai/enterprise",
+          "source": "当前官方企业页核实搜索、Comet、Computer；个人与企业使用由当前Sacra产品描述交叉 https://sacra.com/c/perplexity/。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Perplexity",
+          "field": "cat",
+          "as_of": "2026-10-31",
+          "url": "https://www.perplexity.ai/enterprise",
+          "source": "当前官方企业页核实搜索、Comet、Computer；个人与企业使用由当前Sacra产品描述交叉 https://sacra.com/c/perplexity/。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Perplexity",
+          "field": "biz",
+          "as_of": "2026-10-31",
+          "url": "https://www.perplexity.ai/enterprise",
+          "source": "当前官方企业页核实搜索、Comet、Computer；个人与企业使用由当前Sacra产品描述交叉 https://sacra.com/c/perplexity/。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "ElevenLabs",
+          "field": "uc",
+          "as_of": "2026-09-30",
+          "url": "https://elevenlabs.io/blog/tender-22bn",
+          "source": "官方二级交易公告产品部分确认v4/v4 Turbo与语音智能体、企业及创作者业务。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "ElevenLabs",
+          "field": "cat",
+          "as_of": "2026-09-30",
+          "url": "https://elevenlabs.io/blog/tender-22bn",
+          "source": "官方二级交易公告产品部分确认v4/v4 Turbo与语音智能体、企业及创作者业务。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "ElevenLabs",
+          "field": "biz",
+          "as_of": "2026-09-30",
+          "url": "https://elevenlabs.io/blog/tender-22bn",
+          "source": "官方二级交易公告产品部分确认v4/v4 Turbo与语音智能体、企业及创作者业务。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "ElevenLabs",
+          "field": "val",
+          "as_of": "2026-09-30",
+          "url": "https://elevenlabs.io/blog/tender-22bn",
+          "source": "官方9月30日（10月5日更新）完成二级交易估值22B USD，与Sacra当前22B估值栏 https://sacra.com/c/elevenlabs/ 交叉。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Mercor",
+          "field": "uc",
+          "as_of": "2026-10-31",
+          "url": "https://www.mercor.com/",
+          "source": "官方当前业务为专家匹配与AI训练服务，支持人才市场与B2B分类；不把专家支付当净收入。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Mercor",
+          "field": "cat",
+          "as_of": "2026-10-31",
+          "url": "https://www.mercor.com/",
+          "source": "官方当前业务为专家匹配与AI训练服务，支持人才市场与B2B分类；不把专家支付当净收入。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Mercor",
+          "field": "biz",
+          "as_of": "2026-10-31",
+          "url": "https://www.mercor.com/",
+          "source": "官方当前业务为专家匹配与AI训练服务，支持人才市场与B2B分类；不把专家支付当净收入。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Lovable",
+          "field": "uc",
+          "as_of": "2026-10-31",
+          "url": "https://lovable.dev/pricing",
+          "source": "当前官网说明自然语言创建应用与个人/Business方案，支持用途、coding和B2C+B2B。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Lovable",
+          "field": "cat",
+          "as_of": "2026-10-31",
+          "url": "https://lovable.dev/pricing",
+          "source": "当前官网说明自然语言创建应用与个人/Business方案，支持用途、coding和B2C+B2B。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Lovable",
+          "field": "biz",
+          "as_of": "2026-10-31",
+          "url": "https://lovable.dev/pricing",
+          "source": "当前官网说明自然语言创建应用与个人/Business方案，支持用途、coding和B2C+B2B。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "AlphaSense",
+          "field": "uc",
+          "as_of": "2026-10-31",
+          "url": "https://sacra.com/c/alphasense/",
+          "source": "当前公司研究页核实企业金融研究搜索、摘要及智能体；支持库存基础用途、finance与B2B。",
+          "conf": "medium"
+        },
+        {
+          "section": "apps",
+          "name": "AlphaSense",
+          "field": "cat",
+          "as_of": "2026-10-31",
+          "url": "https://sacra.com/c/alphasense/",
+          "source": "当前公司研究页核实企业金融研究搜索、摘要及智能体；支持库存基础用途、finance与B2B。",
+          "conf": "medium"
+        },
+        {
+          "section": "apps",
+          "name": "AlphaSense",
+          "field": "biz",
+          "as_of": "2026-10-31",
+          "url": "https://sacra.com/c/alphasense/",
+          "source": "当前公司研究页核实企业金融研究搜索、摘要及智能体；支持库存基础用途、finance与B2B。",
+          "conf": "medium"
+        },
+        {
+          "section": "apps",
+          "name": "AlphaSense",
+          "field": "val",
+          "as_of": "2026-06-03",
+          "url": "https://www.alpha-sense.com/press/alphasense-raises-350m-at-7-5b-valuation-and-surpasses-600m-in-annual-recurring-revenue/",
+          "source": "6月3日官方已完成350M轮次、7.5B USD估值，与Sacra https://sacra.com/c/alphasense/ 交叉；仅确认历史点，不声称本周新融资。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Replit",
+          "field": "uc",
+          "as_of": "2026-10-31",
+          "url": "https://replit.com/pricing",
+          "source": "当前定价及产品FAQ核实云端AI Agent应用开发、部署，个人及企业服务；Sacra产品说明交叉 https://sacra.com/c/replit/。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Replit",
+          "field": "cat",
+          "as_of": "2026-10-31",
+          "url": "https://replit.com/pricing",
+          "source": "当前定价及产品FAQ核实云端AI Agent应用开发、部署，个人及企业服务；Sacra产品说明交叉 https://sacra.com/c/replit/。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Replit",
+          "field": "biz",
+          "as_of": "2026-10-31",
+          "url": "https://replit.com/pricing",
+          "source": "当前定价及产品FAQ核实云端AI Agent应用开发、部署，个人及企业服务；Sacra产品说明交叉 https://sacra.com/c/replit/。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "OpenAI",
+          "field": "val",
+          "as_of": "2026-03-31",
+          "url": "https://www.businesstimes.com.sg/companies-markets/openai-shifts-value-us1-25-trillion-funding-talks-finalise",
+          "source": "Bloomberg 10月23日及CNBC经The Paypers https://thepaypers.com/fintech/news/openai-reportedly-seeks-usd-30-billion-at-usd-125-trillion-valuation 均记载3月已完成852B USD；只确认历史已完成点，未将新轮洽谈写入val。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Meta Muse",
+          "field": "cat",
+          "as_of": "2026-09-08",
+          "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+          "source": "官方9月8日/30日：Meta个人agent，美国公开供给；确认既有assistant/B2C/Meta/ga，不当作本周转公开。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Meta Muse",
+          "field": "biz",
+          "as_of": "2026-09-08",
+          "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+          "source": "官方9月8日/30日：Meta个人agent，美国公开供给；确认既有assistant/B2C/Meta/ga，不当作本周转公开。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Meta Muse",
+          "field": "parent",
+          "as_of": "2026-09-08",
+          "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+          "source": "官方9月8日/30日：Meta个人agent，美国公开供给；确认既有assistant/B2C/Meta/ga，不当作本周转公开。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Meta Muse",
+          "field": "access",
+          "as_of": "2026-09-08",
+          "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+          "source": "官方9月8日/30日：Meta个人agent，美国公开供给；确认既有assistant/B2C/Meta/ga，不当作本周转公开。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "OpenClaw",
+          "field": "access",
+          "as_of": "2026-10-31",
+          "url": "https://openclaw.ai/",
+          "source": "当前官方开源自托管与源码/安装入口确认oss；不将GitHub star或下载量计作MAU。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Instinct",
+          "field": "cat",
+          "as_of": "2026-10-31",
+          "url": "https://instinct.com/",
+          "source": "当前官方确认短信/电话个人助理与代办用途；uc中的既有邀请制未获本周新证据，因此这里只确认分类和消费者业务。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Instinct",
+          "field": "biz",
+          "as_of": "2026-10-31",
+          "url": "https://instinct.com/",
+          "source": "当前官方确认短信/电话个人助理与代办用途；uc中的既有邀请制未获本周新证据，因此这里只确认分类和消费者业务。",
+          "conf": "high"
+        }
+      ],
+      "candidates": [],
+      "retire": [],
+      "ai_progress": {
+        "enterprise": [
+          {
+            "title": "Runway将创意工作流变成团队应用",
+            "summary": "App Studio把品牌资产、模型和制作步骤封装成可共享工具，已向付费计划开放。",
+            "date": "2026-10-26",
+            "source": "Runway官方，2026-10-26",
+            "url": "https://runway.com/news/company-news/introducing-runway-app-studio",
+            "company": "Runway",
+            "example": "KPF用标注运动和相机路径的应用把建筑效果图变为视频；案例不等于全行业ROI。"
+          },
+          {
+            "title": "Claude深入药物开发流程",
+            "summary": "Anthropic披露六家研究合作，覆盖分子设计及研发流程；目前为早期研究成果。",
+            "date": "2026-10-27",
+            "source": "Anthropic研究案例，2026-10-27",
+            "url": "https://www.anthropic.com/research/early-progress-drug-development",
+            "company": "Anthropic",
+            "example": "Generate团队用Claude Code协助候选设计并做实验验证；不把实验室结果写成临床疗效。"
+          },
+          {
+            "title": "Claude扩大美国政府采购覆盖",
+            "summary": "GSA协议将40%折扣扩及更多政府层级与产品；直购现在可用，云渠道将在后续月份扩展。",
+            "date": "2026-10-27",
+            "source": "Anthropic官方，2026-10-27",
+            "url": "https://www.anthropic.com/news/expanding-partnership-gsa",
+            "company": "Anthropic / GSA",
+            "example": "采购条款与落地支持降低接入门槛；折扣覆盖不等于机构已完成部署。"
+          }
+        ],
+        "models": [
+          {
+            "title": "GPT-6.1 Terra进入Copilot正式服务",
+            "summary": "低成本型号面向日常智能体编码和终端任务；官方效果描述仍需具体工作流验证。",
+            "date": "2026-10-26",
+            "source": "GitHub官方GA公告；OpenAI产品说明，2026-10-26",
+            "url": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot/",
+            "kind": "sota"
+          },
+          {
+            "title": "Gemini 4 Carbon先向受信任防御者开放",
+            "summary": "Google强调网络安全与长流程能力，当前限量测试，不能把未来开放计划记为全面可用。",
+            "date": "2026-10-28",
+            "source": "Google官方，2026-10-28",
+            "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+            "kind": "sota"
+          },
+          {
+            "title": "Genie 4将原生音频引入交互世界",
+            "summary": "实时世界模型扩展交互仿真能力；先供受信任测试者，面向更广泛用户的服务仍属后续安排。",
+            "date": "2026-10-27",
+            "source": "Google DeepMind官方，2026-10-27",
+            "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/",
+            "kind": "paradigm"
+          }
+        ],
+        "infra_invest": [
+          {
+            "title": "微软算力交付延后影响当季资本开支",
+            "summary": "FY27 Q1资本开支452亿美元，部分第三方容量延期；自由现金流186亿美元。",
+            "date": "2026-10-28",
+            "source": "微软官方业绩会，2026-10-28",
+            "url": "https://www.microsoft.com/en-us/Investor/events/fy-2027/earnings-fy-2027-q1",
+            "layer": "算力交付与资本支出",
+            "players": [
+              "Microsoft"
+            ],
+            "thesis": "研究判断：需跟踪容量投运和租赁确认时点，不能把交付延期直接解释为需求减弱。"
+          },
+          {
+            "title": "Alphabet云增长与资金消耗同时加快",
+            "summary": "季度自由现金流为负90.7亿美元，Google Cloud收入翻倍；用量增长并不自动等于现金回报。",
+            "date": "2026-10-28",
+            "source": "Reuters财报报道，2026-10-28（29日更新）",
+            "url": "https://www.reuters.com/business/alphabets-google-cloud-unit-beats-quarterly-revenue-estimates-steady-ai-demand-2026-10-28/",
+            "layer": "AI基础设施现金回报",
+            "players": [
+              "Alphabet",
+              "Google Cloud"
+            ],
+            "thesis": "研究判断：对比云收入、容量交付与现金支出，避免只用token增长外推投资收益。"
+          }
+        ],
+        "takeaway": "企业AI从单次生成延伸到可共享工作流和研发流程；模型能力、成本与开放范围应分别跟踪；算力需求强劲仍需兑现为交付和现金回报。来源不足的ARR、MAU及模型份额保留旧值，不视为已确认未变。"
+      }
+    },
+    "coverage": {
+      "rotation": [
+        {
+          "section": "apps",
+          "name": "Cursor",
+          "checked_fields": [
+            "cat",
+            "biz"
+          ],
+          "unverified_fields": [
+            "arr",
+            "val",
+            "valPending",
+            "arrg",
+            "uc",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "ownModel",
+            "stage",
+            "ti"
+          ],
+          "note": "核实coding和个人/企业业务。4B收入仅本轮单一独立估算；MAU、同比、模型流量份额及收购交割链未重读，不刷新。"
+        },
+        {
+          "section": "apps",
+          "name": "Perplexity",
+          "checked_fields": [
+            "uc",
+            "cat",
+            "biz"
+          ],
+          "unverified_fields": [
+            "arr",
+            "val",
+            "valPending",
+            "arrg",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "ownModel",
+            "stage",
+            "ti"
+          ],
+          "note": "核实搜索/Comet/Computer及业务分类。750M/20B仅本轮单一估算；30B新轮交割、官方MAU和增长未验证。"
+        },
+        {
+          "section": "apps",
+          "name": "ElevenLabs",
+          "checked_fields": [
+            "arr",
+            "val",
+            "uc",
+            "cat",
+            "biz"
+          ],
+          "unverified_fields": [
+            "valPending",
+            "arrg",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "ownModel",
+            "stage",
+            "ti"
+          ],
+          "note": "收入用9月采访与Sacra估算交叉，已完成二级估值用官方与Sacra交叉。未推算同比或MAU，自研模型份额未披露，不重新确认primary。"
+        },
+        {
+          "section": "apps",
+          "name": "Mercor",
+          "checked_fields": [
+            "uc",
+            "cat",
+            "biz"
+          ],
+          "unverified_fields": [
+            "arr",
+            "val",
+            "valPending",
+            "arrg",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "ownModel",
+            "stage",
+            "ti"
+          ],
+          "note": "官网核实专家市场；2B为gross，不替代600M净ARR。H1净额范围不作H1×2年化。融资20B目标交割、MAU/模型份额仍缺。"
+        },
+        {
+          "section": "apps",
+          "name": "Lovable",
+          "checked_fields": [
+            "uc",
+            "cat",
+            "biz"
+          ],
+          "unverified_fields": [
+            "arr",
+            "val",
+            "valPending",
+            "arrg",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "ownModel",
+            "stage",
+            "ti"
+          ],
+          "note": "官网核实产品与分类；600M、13.3B本轮未补齐第二独立近期数字来源，不作财务confirmation。"
+        },
+        {
+          "section": "apps",
+          "name": "AlphaSense",
+          "checked_fields": [
+            "val",
+            "uc",
+            "cat",
+            "biz"
+          ],
+          "unverified_fields": [
+            "arr",
+            "valPending",
+            "arrg",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "ownModel",
+            "stage",
+            "ti"
+          ],
+          "note": "确认金融投研产品及历史已完成估值。官方600M是Q1下界；700M仅单一当前估算，不能回退旧收入，也不能把2025增长率当本年。"
+        },
+        {
+          "section": "apps",
+          "name": "Replit",
+          "checked_fields": [
+            "uc",
+            "cat",
+            "biz"
+          ],
+          "unverified_fields": [
+            "arr",
+            "val",
+            "valPending",
+            "arrg",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "ownModel",
+            "stage",
+            "ti"
+          ],
+          "note": "确认云端Agent开发与业务分类。525M及9B仍缺本轮第二独立近期数字来源；1775%为2025增长，不重写同比。"
+        },
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "checked_fields": [
+            "val",
+            "listed",
+            "tokG",
+            "region"
+          ],
+          "unverified_fields": [
+            "arr",
+            "valPending",
+            "arrg",
+            "uc",
+            "parent",
+            "tokM"
+          ],
+          "note": "两行情源交叉上市市值并同日汇率换算；核实上市/地域及历史token区间增长。中文H1结果是半年收入，不能确认800M API ARR或283% API同比。"
+        },
+        {
+          "section": "models",
+          "name": "Zhipu AI",
+          "checked_fields": [
+            "val",
+            "listed",
+            "region"
+          ],
+          "unverified_fields": [
+            "arr",
+            "valPending",
+            "arrg",
+            "uc",
+            "parent",
+            "tokM",
+            "tokG"
+          ],
+          "note": "两行情源交叉市值和上市归属。半年/公司整体收入与API ARR不同；未获得可用新API年化和token数据，产品版本未独立复核。"
+        },
+        {
+          "section": "models",
+          "name": "OpenAI",
+          "checked_fields": [
+            "val",
+            "valPending",
+            "uc"
+          ],
+          "unverified_fields": [
+            "arr",
+            "arrg",
+            "listed",
+            "parent",
+            "tokM",
+            "tokG",
+            "region"
+          ],
+          "note": "核实Terra产品与待定融资目标，852B仅历史交割点确认。新目标明确投前且仍谈判，不推算已交割投后值；公司整体收入不能确认40B API ARR。"
+        }
+      ],
+      "queue": {
+        "status": "completed",
+        "note": "prepare存量review_queue为空，无强制仲裁或force。"
+      },
+      "incremental": {
+        "status": "limited",
+        "note": "按prepare的17模型+38应用全池名字分组检索七天窗口，并对命中产品、融资及assistant来源打开核查。搜索召回和付费墙导致未逐家获得完整新披露，不能把55家都称为逐字段已核实。assistant三个转折点（转公开、首次定价、基座披露）本轮均未获得可落patch的新证据；Instinct供给/基座仍不确定，四家MAU无合格更新。"
+      },
+      "discovery": {
+        "status": "not_due",
+        "note": "prepare monthly_discovery_due=false，本轮非月初覆盖发现周期；无新增/候选/下架。"
+      },
+      "progress": {
+        "status": "completed",
+        "note": "七天窗口内企业3条、模型3条、Infra2条；逐条打开原始材料，模型性能标为厂商描述，研究与临床、开放计划与当前供给区分。"
+      }
+    },
+    "evidence": [
+      {
+        "url": "https://cursor.com/pricing",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "本轮打开当前定价页：个人与团队/企业代码产品；模型调用另外计费。不据此重核旧 ARR 或模型份额。"
+      },
+      {
+        "url": "https://www.perplexity.ai/enterprise",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "当前企业页展示搜索、Comet、Computer；组织数不是 MAU。"
+      },
+      {
+        "url": "https://lovable.dev/pricing",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "当前网页应用开发、个人及 Business 计划；云资源按量。"
+      },
+      {
+        "url": "https://replit.com/pricing",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "当前云端应用/网站开发、Agent 与个人/企业方案。"
+      },
+      {
+        "url": "https://www.mercor.com/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "当前专家匹配、训练与评估服务；付款规模和人才数量不能作为净 ARR/MAU。"
+      },
+      {
+        "url": "https://www.alpha-sense.com/press/alphasense-raises-350m-at-7-5b-valuation-and-surpasses-600m-in-annual-recurring-revenue/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "6月3日已完成融资估值7.5B；收入为Q1超过600M，不能替代库存更新的700M。金融投研和SuperAnalyst产品。"
+      },
+      {
+        "url": "https://sacra.com/c/alphasense/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "独立估算700M年化收入，7.5B融资估值；企业金融研究产品。仅单方估算不刷新收入确认。"
+      },
+      {
+        "url": "https://elevenlabs.io/blog/tender-22bn",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "9月30日、10月5日更新：完成300M员工二级交易，22B估值；v4/v4 Turbo与语音智能体，企业及创作者业务。"
+      },
+      {
+        "url": "https://sacra.com/c/elevenlabs/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "独立估算6月年化收入600M；当前估值栏22B。产品正文部分仍为v3，产品版本以官方为准。"
+      },
+      {
+        "url": "https://techcrunch.com/2026/09/24/twenty-minutes-with-the-ceo-of-elevenlabs-now-reportedly-valued-at-22-billion/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "9月24日采访：年化收入6亿美元。"
+      },
+      {
+        "url": "https://sacra.com/c/cursor/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "4B年化收入估计，企业与个人产品；缺少本轮可读取的第二独立收入来源。"
+      },
+      {
+        "url": "https://sacra.com/c/perplexity/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "750M年化收入与历史20B估值；MAU为二手材料，未当作公司披露。"
+      },
+      {
+        "url": "https://sacra.com/c/mercor/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "2B为总收入年化、含专家付款；H1净收入范围不是当前ARR，不替代净收入库存。"
+      },
+      {
+        "url": "https://sacra.com/c/lovable/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "600M年化收入和13.3B融资；收入仅单一当前估算，未刷新数字为已确认。"
+      },
+      {
+        "url": "https://sacra.com/c/replit/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "525M年化收入、9B历史融资；1775%增长属于2025年，不能更新为本年同比。"
+      },
+      {
+        "url": "https://stockanalysis.com/quote/hkg/0100/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "10月30日收盘161.30 HKD，市值56.33B HKD；中国公司与HKEX:0100。"
+      },
+      {
+        "url": "https://stockanalysis.com/quote/hkg/2513/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "10月30日收盘483.60 HKD，市值225.18B HKD；中国公司与HKEX:2513。"
+      },
+      {
+        "url": "https://cn.investing.com/equities/minimax-group-inc",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "交叉同日收盘161.30和市值56.33B HKD；股份面板口径有差异，未改用其他股份类别。"
+      },
+      {
+        "url": "https://cn.investing.com/equities/knowledge-atlas-tech-joint-stock",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "交叉同日收盘483.60和市值225.18B HKD；股份面板与headline差异未消除。"
+      },
+      {
+        "url": "https://hk.investing.com/currencies/usd-hkd-historical-data",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "10月30日 USD/HKD=7.8447，用于同日市值换算。"
+      },
+      {
+        "url": "https://www.minimax.cn/news/minimax-%E5%8F%91%E5%B8%83-2026-%E5%B9%B4%E4%B8%AD%E6%9C%9F%E4%B8%9A%E7%BB%A9-1787744159",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "中文官方8月26日半年业绩：API及其他企业服务半年73.9M，不直接年化；7月token为1月20倍。"
+      },
+      {
+        "url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "官方Terra产品说明：面向成本敏感的编码和计算机操作；厂商评测与真实部署收益分开。"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "10月26日Terra在GitHub Copilot正式可用，核实发布日期与供给状态。"
+      },
+      {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "10月28日发布，先面向受信任网络防御者限量开放，不能记为全面GA。"
+      },
+      {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "10月27日实时交互世界模型，原生音频；当前受信任测试，后续开放不是现状。"
+      },
+      {
+        "url": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q3-2026/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "10月28日一方模型API近32B tokens/min、环比40%；与库存全AI产品月量不同，不替换tokM/tokG。"
+      },
+      {
+        "url": "https://runway.com/news/company-news/introducing-runway-app-studio",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "10月26日App Studio：用品牌资产和工作流生成、托管创意应用；KPF案例，所有付费计划可用。"
+      },
+      {
+        "url": "https://www.anthropic.com/research/early-progress-drug-development",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "10月27日六家药物研究合作案例；早期实验成果不能等同临床疗效。"
+      },
+      {
+        "url": "https://www.anthropic.com/news/expanding-partnership-gsa",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "10月27日政府采购协议：40%折扣扩及各层级政府及产品，直购先行、云渠道稍后。"
+      },
+      {
+        "url": "https://www.microsoft.com/en-us/Investor/events/fy-2027/earnings-fy-2027-q1",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "10月28日业绩会：capex45.2B、部分第三方交付延后；FCF18.6B，现金PPE39.4B与含租赁capex口径区分。"
+      },
+      {
+        "url": "https://www.reuters.com/business/alphabets-google-cloud-unit-beats-quarterly-revenue-estimates-steady-ai-demand-2026-10-28/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "正文经已返回引用读取：10月28日Alphabet负自由现金流9.07B，云收入翻倍；直接URL后续读取失败。"
+      },
+      {
+        "url": "https://www.businesstimes.com.sg/companies-markets/openai-shifts-value-us1-25-trillion-funding-talks-finalise",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "10月23日Bloomberg原稿转载：1.25T融资洽谈目标，仍可变；已完成3月融资852B。"
+      },
+      {
+        "url": "https://thepaypers.com/fintech/news/openai-reportedly-seeks-usd-30-billion-at-usd-125-trillion-valuation",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "10月26日转述CNBC独立报道：1.25T明确为pre-money，尚未交割。与Bloomberg分开计源，不把转载当第三源。"
+      },
+      {
+        "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "9月8日/30日官方：美国公开提供，有订阅，基座Muse Spark；不是本周新转折。"
+      },
+      {
+        "url": "https://openclaw.ai/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "当前官方开源自托管项目及源码/安装入口；star与下载量不等于活跃用户。"
+      },
+      {
+        "url": "https://instinct.com/",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "当前官网个人助理、短信/电话操作；页面没有提供足以核实公开注册、首次价格或基座的新披露。"
+      },
+      {
+        "url": "https://manus.im/blog",
+        "read_at": "2026-10-31T07:07:38.726478+00:00",
+        "note": "本轮打开官方博客索引；未获得本周转公开、首次价格或基座披露的新证据，不确认不存在变化。"
+      }
+    ],
+    "limitations": [
+      "十家轮转逐字段区分checked与unverified；财务、MAU、token和模型份额并非全部核实。单一当前估算不足以满足ARR/val双源纪律，保留旧值且不刷新确认。",
+      "OpenAI/MiniMax/智谱公司整体或半年收入不等于当前API年化收入；Mercor gross不等于净收入。没有据此猜测替代数字。",
+      "MiniMax/智谱市值沿用库存股份类别对应的行情headline口径，股份总数面板差异仍未解决；conf=medium。",
+      "OpenAI 1.25T待定目标的CNBC原站与10月31日FT/Reuters正文访问失败；采用已打开的Bloomberg原稿转载及CNBC转述，明确投前、洽谈中，未确认交割或最新募资规模。",
+      "DeepSeek本周融资命中付费新闻，未得到可读取且两独立来源一致的交割/币种口径，不更新估值。",
+      "Google新披露32B tokens/min为一方模型API，与库存全AI产品3200T/月不同，不替换或合计。",
+      "assistant三个转折点未获可验证的新触发；无合格新MAU披露，不能用安装量、star、组织数或定性评价补值。",
+      "Reuters Alphabet已通过返回引用读正文，直接URL复读曾失败；不把失败复读当作新的证据。网页视觉渲染尚未验收，后续单独核对Pages与线上数据。"
+    ]
+  },
+  "apply_report": "  + MODEL MiniMax.val: 8.35 -> 7.18 (StockAnalysis 与 Investing.com 10月30日收盘市值交叉：56.33B HKD，第二来源 https://cn.investing.com/equities/minimax-group-inc；USD/HKD=7.8447（https://hk.investing.com/currencies/usd-hkd-historical-data），换算美元。沿用历史349.24M股对应headline口径，供应商股份类别差异未解决，未改为全类别市值。)\n  + MODEL Zhipu AI.val: 29.63 -> 28.7 (StockAnalysis 与 Investing.com 10月30日收盘市值交叉：225.18B HKD，第二来源 https://cn.investing.com/equities/knowledge-atlas-tech-joint-stock；USD/HKD=7.8447（https://hk.investing.com/currencies/usd-hkd-historical-data），换算美元。沿用历史465.62M股对应headline口径，供应商股份类别差异未解决，未改为全类别市值。)\n  + APP ElevenLabs.arr: 500 -> 600 (9月24日采访值；Sacra独立估算交叉 https://sacra.com/c/elevenlabs/：600M年化收入。美元原币；非本周首次披露。)\n  + MODEL OpenAI.valPending: 1500 -> 1250 (Bloomberg 10月23日原稿（Business Times转载）与 CNBC 10月22日独立报道（The Paypers 10月26日转述 https://thepaypers.com/fintech/news/openai-reportedly-seeks-usd-30-billion-at-usd-125-trillion-valuation）交叉：洽谈目标1.25T USD；CNBC明确为投前，不当作投后或已完成估值。实际val仍852B。10月31日FT/Reuters融资规模新报道正文未读到，不采用其募资额。)\n  + MODEL OpenAI.uc: GPT-6 Astra、ChatGPT、Codex、Sora -> GPT-6 Astra/Terra、ChatGPT/Codex/Sora (OpenAI官方Terra产品页与GitHub 10月26日GA公告 https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot/；加入低成本型号，保留既有产品线。)\n  + MODEL Google Gemini.uc: Gemini 4 Argon、3.8、Gemma -> Gemini 4 Argon/Carbon限测、3.8/Gemma (Google 10月28日发布Carbon，先向受信任网络防御者限量提供；保留Argon及既有产品线。)\n  + APP Runway.uc: Gen-4.5视频生成/GWM-1世界模型 -> 视频/世界模型与App Studio创意应用 (Runway 10月26日新增App Studio，将创意工作流变为可共享应用；保留视频与世界模型业务。)\n  + ai_progress: 8 条\n  = MiniMax.listed confirmed unchanged (10月30日上市行情和公司资料核实香港上市代码与中国归属。)\n  = MiniMax.region confirmed unchanged (10月30日上市行情和公司资料核实香港上市代码与中国归属。)\n  = MiniMax.tokG confirmed unchanged (MiniMax 8月26日官方：7月token为1月20倍，增幅1900%；是区间增长，非同比。)\n  = Zhipu AI.listed confirmed unchanged (10月30日上市行情和公司资料核实香港上市代码与中国归属。)\n  = Zhipu AI.region confirmed unchanged (10月30日上市行情和公司资料核实香港上市代码与中国归属。)\n  = Cursor.cat confirmed unchanged (本轮当前定价页核实代码开发产品、个人和团队/企业方案；不以该页确认Composer版本或财务数字。)\n  = Cursor.biz confirmed unchanged (本轮当前定价页核实代码开发产品、个人和团队/企业方案；不以该页确认Composer版本或财务数字。)\n  = Perplexity.uc confirmed unchanged (当前官方企业页核实搜索、Comet、Computer；个人与企业使用由当前Sacra产品描述交叉 https://sacra.com/c/perplexity/。)\n  = Perplexity.cat confirmed unchanged (当前官方企业页核实搜索、Comet、Computer；个人与企业使用由当前Sacra产品描述交叉 https://sacra.com/c/perplexity/。)\n  = Perplexity.biz confirmed unchanged (当前官方企业页核实搜索、Comet、Computer；个人与企业使用由当前Sacra产品描述交叉 https://sacra.com/c/perplexity/。)\n  = ElevenLabs.uc confirmed unchanged (官方二级交易公告产品部分确认v4/v4 Turbo与语音智能体、企业及创作者业务。)\n  = ElevenLabs.cat confirmed unchanged (官方二级交易公告产品部分确认v4/v4 Turbo与语音智能体、企业及创作者业务。)\n  = ElevenLabs.biz confirmed unchanged (官方二级交易公告产品部分确认v4/v4 Turbo与语音智能体、企业及创作者业务。)\n  = ElevenLabs.val confirmed unchanged (官方9月30日（10月5日更新）完成二级交易估值22B USD，与Sacra当前22B估值栏 https://sacra.com/c/elevenlabs/ 交叉。)\n  = Mercor.uc confirmed unchanged (官方当前业务为专家匹配与AI训练服务，支持人才市场与B2B分类；不把专家支付当净收入。)\n  = Mercor.cat confirmed unchanged (官方当前业务为专家匹配与AI训练服务，支持人才市场与B2B分类；不把专家支付当净收入。)\n  = Mercor.biz confirmed unchanged (官方当前业务为专家匹配与AI训练服务，支持人才市场与B2B分类；不把专家支付当净收入。)\n  = Lovable.uc confirmed unchanged (当前官网说明自然语言创建应用与个人/Business方案，支持用途、coding和B2C+B2B。)\n  = Lovable.cat confirmed unchanged (当前官网说明自然语言创建应用与个人/Business方案，支持用途、coding和B2C+B2B。)\n  = Lovable.biz confirmed unchanged (当前官网说明自然语言创建应用与个人/Business方案，支持用途、coding和B2C+B2B。)\n  = AlphaSense.uc confirmed unchanged (当前公司研究页核实企业金融研究搜索、摘要及智能体；支持库存基础用途、finance与B2B。)\n  = AlphaSense.cat confirmed unchanged (当前公司研究页核实企业金融研究搜索、摘要及智能体；支持库存基础用途、finance与B2B。)\n  = AlphaSense.biz confirmed unchanged (当前公司研究页核实企业金融研究搜索、摘要及智能体；支持库存基础用途、finance与B2B。)\n  = AlphaSense.val re-checked (6月3日官方已完成350M轮次、7.5B USD估值，与Sacra https://sacra.com/c/alphasense/ 交叉；仅确认历史点，不声称本周新融资。)\n  = Replit.uc confirmed unchanged (当前定价及产品FAQ核实云端AI Agent应用开发、部署，个人及企业服务；Sacra产品说明交叉 https://sacra.com/c/replit/。)\n  = Replit.cat confirmed unchanged (当前定价及产品FAQ核实云端AI Agent应用开发、部署，个人及企业服务；Sacra产品说明交叉 https://sacra.com/c/replit/。)\n  = Replit.biz confirmed unchanged (当前定价及产品FAQ核实云端AI Agent应用开发、部署，个人及企业服务；Sacra产品说明交叉 https://sacra.com/c/replit/。)\n  = OpenAI.val re-checked (Bloomberg 10月23日及CNBC经The Paypers https://thepaypers.com/fintech/news/openai-reportedly-seeks-usd-30-billion-at-usd-125-trillion-valuation 均记载3月已完成852B USD；只确认历史已完成点，未将新轮洽谈写入val。)\n  = Meta Muse.cat confirmed unchanged (官方9月8日/30日：Meta个人agent，美国公开供给；确认既有assistant/B2C/Meta/ga，不当作本周转公开。)\n  = Meta Muse.biz confirmed unchanged (官方9月8日/30日：Meta个人agent，美国公开供给；确认既有assistant/B2C/Meta/ga，不当作本周转公开。)\n  = Meta Muse.parent confirmed unchanged (官方9月8日/30日：Meta个人agent，美国公开供给；确认既有assistant/B2C/Meta/ga，不当作本周转公开。)\n  = Meta Muse.access re-checked (官方9月8日/30日：Meta个人agent，美国公开供给；确认既有assistant/B2C/Meta/ga，不当作本周转公开。)\n  = OpenClaw.access confirmed unchanged (当前官方开源自托管与源码/安装入口确认oss；不将GitHub star或下载量计作MAU。)\n  = Instinct.cat confirmed unchanged (当前官方确认短信/电话个人助理与代办用途；uc中的既有邀请制未获本周新证据，因此这里只确认分类和消费者业务。)\n  = Instinct.biz confirmed unchanged (当前官方确认短信/电话个人助理与代办用途；uc中的既有邀请制未获本周新证据，因此这里只确认分类和消费者业务。)\n\napplied 8 / confirmed 35 / promoted 0 / queued 0 / skipped 0 / rejected 0\nWARN  models[Google Gemini]: no provenance yet for arr\nWARN  apps[Midjourney]: no provenance yet for val\nWARN  apps[Granola]: no provenance yet for arr\nWARN  apps[Ideogram]: no provenance yet for val\nWARN  category concentration: creative is 10/38 = 26% (limit 25%)\n",
+  "validation": "WARN  models[Google Gemini]: no provenance yet for arr\nWARN  apps[Midjourney]: no provenance yet for val\nWARN  apps[Granola]: no provenance yet for arr\nWARN  apps[Ideogram]: no provenance yet for val\nWARN  category concentration: creative is 10/38 = 26% (limit 25%)\n\n0 error(s), 5 warning(s)"
+}
