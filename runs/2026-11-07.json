@@ -1,0 +1,1022 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-11-07",
+  "window_start": "2026-11-01",
+  "window_end": "2026-11-07",
+  "base_commit": "7f8c4ae17d445863c7f40c0cc22d6a7a9486a110",
+  "data_sha256": "c90911c2418cc0798c605806584b488bd514a01e7fdbdbe45c7963c4574a6157",
+  "model_label": "unreported",
+  "validated_at": "2026-11-07T07:05:22.806247+00:00",
+  "status": "validated_for_publication",
+  "publication_note": "This record proves validation only. Verify the remote commit and live Pages data separately.",
+  "result": {
+    "at": "2026-11-07",
+    "ok": true,
+    "error": null,
+    "applied": 7,
+    "rejected": 0,
+    "confirmed": 39,
+    "promoted": 0,
+    "queued": 1
+  },
+  "bundle": {
+    "schema_version": 1,
+    "run_id": "2026-11-07",
+    "window_start": "2026-11-01",
+    "window_end": "2026-11-07",
+    "changes": {
+      "pass": "routine-weekly",
+      "force": false,
+      "patches": [
+        {
+          "section": "models",
+          "name": "Baidu (ERNIE)",
+          "field": "uc",
+          "as_of": "2026-11-05",
+          "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+          "source": "百度11月5日开放ERNIE5.5 Flash Base预训练权重；是供后续训练的基座，非已后训练的聊天产品。保留5.1与千帆线。",
+          "conf": "high",
+          "new_value": "文心5.5 Flash Base、5.1与千帆"
+        },
+        {
+          "section": "models",
+          "name": "Tencent Hunyuan (腾讯混元)",
+          "field": "uc",
+          "as_of": "2026-11-04",
+          "url": "https://www.tencent.com/zh-cn/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+          "source": "腾讯11月4日正式发布Hy4，增加视觉理解与Computer Use；权重近期开源，不写成已经开源。",
+          "conf": "high",
+          "new_value": "混元Hy4正式版、Hy3与腾讯元宝"
+        },
+        {
+          "section": "apps",
+          "name": "Cognition",
+          "field": "uc",
+          "as_of": "2026-11-04",
+          "url": "https://cognition.com/blog/swe-2-flash",
+          "source": "11月4日官方：SWE-2 Flash在Devin Desktop和CLI可用。",
+          "conf": "high",
+          "new_value": "Devin编码Agent、Desktop与SWE-2 Flash"
+        },
+        {
+          "section": "apps",
+          "name": "Cognition",
+          "field": "ownModel",
+          "as_of": "2026-11-04",
+          "url": "https://cognition.com/blog/swe-2-flash",
+          "source": "官方披露SWE-2 Flash基于Thinking Machines Inkling-Small进行中训练与RL，补充SWE-2系列；保留hybrid，不推断自研token已过半，tokenShare仍未知。",
+          "conf": "high",
+          "new_value": {
+            "status": "hybrid",
+            "tokenShare": null,
+            "models": [
+              "SWE-1.5",
+              "SWE-1.5-mini",
+              "SWE-grep",
+              "SWE-1",
+              "SWE-2",
+              "SWE-2 Flash"
+            ]
+          }
+        },
+        {
+          "section": "models",
+          "name": "Zhipu AI",
+          "field": "val",
+          "as_of": "2026-11-06",
+          "url": "https://stockanalysis.com/quote/hkg/2513/",
+          "source": "StockAnalysis和Investing.com（https://cn.investing.com/equities/knowledge-atlas-tech-joint-stock）交叉11月6日收盘市值198.45B HKD；USD/HKD=7.8397（https://hk.investing.com/currencies/usd-hkd-historical-data），换算25.31B美元。沿用465.62M股headline口径；股份类别差异仍是限制，未自行扩大为全类别市值。",
+          "conf": "medium",
+          "new_value": 25.31
+        },
+        {
+          "section": "models",
+          "name": "OpenAI",
+          "field": "val",
+          "as_of": "2026-11-06",
+          "url": "https://www.reuters.com/business/openai-secures-11-billion-funding-125-trillion-valuation-bloomberg-news-reports-2026-11-06/",
+          "source": "Reuters11月6日21:12更新版独立知情人士与Bloomberg原稿（https://www.moneycontrol.com/artificial-intelligence/openai-completes-11-billion-portion-of-funding-at-1-25-trillion-value-article-14074006.html）交叉：11B美元首批资金已交割/汇入，交易报道估值1.25T美元，故更新为1250B。仅首批完成，保留待募部分；未明确投前投后，不自行加融资额推算投后值。",
+          "conf": "medium",
+          "new_value": 1250
+        }
+      ],
+      "confirmations": [
+        {
+          "section": "models",
+          "name": "Alibaba Qwen (通义千问)",
+          "field": "parent",
+          "as_of": "2026-11-05",
+          "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Alibaba Qwen (通义千问)",
+          "field": "val",
+          "as_of": "2026-11-05",
+          "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Alibaba Qwen (通义千问)",
+          "field": "valPending",
+          "as_of": "2026-11-05",
+          "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Alibaba Qwen (通义千问)",
+          "field": "listed",
+          "as_of": "2026-11-05",
+          "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Meta (Llama)",
+          "field": "parent",
+          "as_of": "2026-10-12",
+          "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Meta (Llama)",
+          "field": "val",
+          "as_of": "2026-10-12",
+          "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Meta (Llama)",
+          "field": "valPending",
+          "as_of": "2026-10-12",
+          "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Meta (Llama)",
+          "field": "listed",
+          "as_of": "2026-10-12",
+          "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Amazon Nova",
+          "field": "parent",
+          "as_of": "2026-11-07",
+          "url": "https://aws.amazon.com/nova/",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Amazon Nova",
+          "field": "val",
+          "as_of": "2026-11-07",
+          "url": "https://aws.amazon.com/nova/",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Amazon Nova",
+          "field": "valPending",
+          "as_of": "2026-11-07",
+          "url": "https://aws.amazon.com/nova/",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Amazon Nova",
+          "field": "listed",
+          "as_of": "2026-11-07",
+          "url": "https://aws.amazon.com/nova/",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Baidu (ERNIE)",
+          "field": "parent",
+          "as_of": "2026-11-05",
+          "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Baidu (ERNIE)",
+          "field": "val",
+          "as_of": "2026-11-05",
+          "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Baidu (ERNIE)",
+          "field": "valPending",
+          "as_of": "2026-11-05",
+          "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Baidu (ERNIE)",
+          "field": "listed",
+          "as_of": "2026-11-05",
+          "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Tencent Hunyuan (腾讯混元)",
+          "field": "parent",
+          "as_of": "2026-11-04",
+          "url": "https://www.tencent.com/zh-cn/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Tencent Hunyuan (腾讯混元)",
+          "field": "val",
+          "as_of": "2026-11-04",
+          "url": "https://www.tencent.com/zh-cn/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Tencent Hunyuan (腾讯混元)",
+          "field": "valPending",
+          "as_of": "2026-11-04",
+          "url": "https://www.tencent.com/zh-cn/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Tencent Hunyuan (腾讯混元)",
+          "field": "listed",
+          "as_of": "2026-11-04",
+          "url": "https://www.tencent.com/zh-cn/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+          "source": "本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Midjourney",
+          "field": "uc",
+          "as_of": "2026-11-07",
+          "url": "https://docs.midjourney.com/hc/en-us/articles/37460773864589-Video",
+          "source": "现行官方版本文档（https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version）与视频文档交叉：V8.2、图生视频、面向创作者的订阅及GPU时间消耗，支持现有creative/B2C/high分类；核验日非发布日期。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Midjourney",
+          "field": "cat",
+          "as_of": "2026-11-07",
+          "url": "https://docs.midjourney.com/hc/en-us/articles/37460773864589-Video",
+          "source": "现行官方版本文档（https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version）与视频文档交叉：V8.2、图生视频、面向创作者的订阅及GPU时间消耗，支持现有creative/B2C/high分类；核验日非发布日期。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Midjourney",
+          "field": "biz",
+          "as_of": "2026-11-07",
+          "url": "https://docs.midjourney.com/hc/en-us/articles/37460773864589-Video",
+          "source": "现行官方版本文档（https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version）与视频文档交叉：V8.2、图生视频、面向创作者的订阅及GPU时间消耗，支持现有creative/B2C/high分类；核验日非发布日期。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Midjourney",
+          "field": "ti",
+          "as_of": "2026-11-07",
+          "url": "https://docs.midjourney.com/hc/en-us/articles/37460773864589-Video",
+          "source": "现行官方版本文档（https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version）与视频文档交叉：V8.2、图生视频、面向创作者的订阅及GPU时间消耗，支持现有creative/B2C/high分类；核验日非发布日期。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Cognition",
+          "field": "val",
+          "as_of": "2026-09-08",
+          "url": "https://www.channelnewsasia.com/business/cognition-ai-raises-2-billion-48-billion-valuation-6371096",
+          "source": "Reuters9月8日融资报道（CNA刊载）与本轮读取Sacra独立公司档案 https://sacra.com/c/cognition/ 交叉：最近已完成估值48B美元；未将后续融资洽谈记成完成。",
+          "conf": "medium"
+        },
+        {
+          "section": "apps",
+          "name": "Cognition",
+          "field": "cat",
+          "as_of": "2026-11-04",
+          "url": "https://cognition.com/blog/swe-2-flash",
+          "source": "官方Devin产品及SWE-2 Flash面向软件工程、企业部署与长程编码任务，支持coding/B2B/ultra分类；不据此推算收入或用户数。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Cognition",
+          "field": "biz",
+          "as_of": "2026-11-04",
+          "url": "https://cognition.com/blog/swe-2-flash",
+          "source": "官方Devin产品及SWE-2 Flash面向软件工程、企业部署与长程编码任务，支持coding/B2B/ultra分类；不据此推算收入或用户数。",
+          "conf": "high"
+        },
+        {
+          "section": "apps",
+          "name": "Cognition",
+          "field": "ti",
+          "as_of": "2026-11-04",
+          "url": "https://cognition.com/blog/swe-2-flash",
+          "source": "官方Devin产品及SWE-2 Flash面向软件工程、企业部署与长程编码任务，支持coding/B2B/ultra分类；不据此推算收入或用户数。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "field": "uc",
+          "as_of": "2026-11-07",
+          "url": "https://www.minimax.cn/news/minimax-%E5%8F%91%E5%B8%83-2026-%E5%B9%B4%E4%B8%AD%E6%9C%9F%E4%B8%9A%E7%BB%A9-1787744159",
+          "source": "官方中期业绩与现行产品导航核实M3.1 Flash/M3/海螺、HKEX:0100；7月token为1月20倍即增长1900%，是区间增长而非同比。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "field": "listed",
+          "as_of": "2026-08-26",
+          "url": "https://www.minimax.cn/news/minimax-%E5%8F%91%E5%B8%83-2026-%E5%B9%B4%E4%B8%AD%E6%9C%9F%E4%B8%9A%E7%BB%A9-1787744159",
+          "source": "官方中期业绩与现行产品导航核实M3.1 Flash/M3/海螺、HKEX:0100；7月token为1月20倍即增长1900%，是区间增长而非同比。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "field": "tokG",
+          "as_of": "2026-08-26",
+          "url": "https://www.minimax.cn/news/minimax-%E5%8F%91%E5%B8%83-2026-%E5%B9%B4%E4%B8%AD%E6%9C%9F%E4%B8%9A%E7%BB%A9-1787744159",
+          "source": "官方中期业绩与现行产品导航核实M3.1 Flash/M3/海螺、HKEX:0100；7月token为1月20倍即增长1900%，是区间增长而非同比。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "field": "region",
+          "as_of": "2026-11-07",
+          "url": "https://stockanalysis.com/quote/hkg/0100/",
+          "source": "行情公司资料核实中国总部，保留CN。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Zhipu AI",
+          "field": "listed",
+          "as_of": "2026-11-06",
+          "url": "https://stockanalysis.com/quote/hkg/2513/",
+          "source": "现行行情公司资料核实HKEX:2513、中国总部，保留代码与CN。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Zhipu AI",
+          "field": "region",
+          "as_of": "2026-11-06",
+          "url": "https://stockanalysis.com/quote/hkg/2513/",
+          "source": "现行行情公司资料核实HKEX:2513、中国总部，保留代码与CN。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Anthropic",
+          "field": "val",
+          "as_of": "2026-05-28",
+          "url": "https://www.anthropic.com/news/series-h",
+          "source": "官方Series H已完成965B美元投后估值，AP10月26日独立报道仍列该私募估值：https://apnews.com/article/anthropic-ipo-shares-public-ca2f4c282bef3201a392e59e3df2300c；IPO讨论非完成交易。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Anthropic",
+          "field": "uc",
+          "as_of": "2026-11-07",
+          "url": "https://www.anthropic.com/news",
+          "source": "官方现行新闻和产品目录核实Claude5.5系列与Claude Code；核验日非发布日期。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "Anthropic",
+          "field": "listed",
+          "as_of": "2026-11-02",
+          "url": "https://www.investing.com/news/stock-market-news/anthropics-quarterly-loss-shrinks-revenue-jumps-ahead-of-blockbuster-ipo-4992139",
+          "source": "Reuters11月2日确认仍处IPO准备阶段，未上市，不将意向代码当交易所已上市代码。",
+          "conf": "high"
+        },
+        {
+          "section": "models",
+          "name": "OpenAI",
+          "field": "valPending",
+          "as_of": "2026-11-06",
+          "url": "https://www.moneycontrol.com/artificial-intelligence/openai-completes-11-billion-portion-of-funding-at-1-25-trillion-value-article-14074006.html",
+          "source": "Bloomberg原稿与Reuters独立报道确认本轮只完成首批11B美元、后续仍在募资；保留1250B美元报道轮次估值供后续跟踪，不把首批交割当整轮完成。",
+          "conf": "medium"
+        },
+        {
+          "section": "apps",
+          "name": "OpenClaw",
+          "field": "access",
+          "as_of": "2026-11-07",
+          "url": "https://openclaw.ai/",
+          "source": "本轮官方首页核实仍为MIT开源自托管，access=oss；本周团队协作及模型目录更新不代表首次公开。",
+          "conf": "high"
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Armadin",
+          "uc": "自主安全Agent与持续攻防验证",
+          "cat": "security",
+          "stage": "growth",
+          "biz": "B2B",
+          "ti": "ultra",
+          "arr": null,
+          "val": 2.5,
+          "arrg": null,
+          "mau": null,
+          "maug": null,
+          "ownModel": {
+            "status": "unknown",
+            "token_share": "",
+            "models": []
+          },
+          "aiNative": true,
+          "independent": true,
+          "why": "安全Agent方向补充：已完成估值超过25亿美元，但可信ARR尚未披露，按门槛进入候选池，不能以融资额代替收入。",
+          "source": "交易顾问Cooley10月1日亲历公告及SecurityWeek10月1日独立报道 https://www.securityweek.com/kevin-mandias-armadin-raises-255-million-at-2-5-billion-valuation/：Series B完成、估值超过2.5B美元，数值记录披露下限2.5；公司公告亦核实完成。ARR未知，不填0。",
+          "url": "https://www.cooley.com/news/coverage/2026/2026-10-01-armadin-raises-$255-5-million-series-b",
+          "as_of": "2026-10-01",
+          "conf": "medium"
+        }
+      ],
+      "retire": [],
+      "ai_progress": {
+        "enterprise": [
+          {
+            "title": "Sierra将Agent改进集中到同一会话",
+            "summary": "Ghostwriter贯穿诊断、流程修改与模拟测试，上线前仍需团队审阅合并。",
+            "date": "2026-11-02",
+            "source": "Sierra官方，2026-11-02",
+            "url": "https://sierra.ai/blog/redesigning-agent-studio-around-ghostwriter",
+            "company": "Sierra",
+            "example": "客服解决率下降时，可在同一会话追溯原因、修改journey并测试，证据和变更一起审阅。"
+          },
+          {
+            "title": "Perplexity推出持续负责工作的Teammates",
+            "summary": "面向Max订阅者，把一次次提问变为持续任务；同时增加Mac完全本地模式。",
+            "date": "2026-11-06",
+            "source": "Perplexity官方，2026-11-06",
+            "url": "https://www.perplexity.ai/en-GB/changelog/teammates-fully-local-computer-on-mac-and-voice-mode",
+            "company": "Perplexity",
+            "example": "竞争监控或客服草稿可持续推进，结果交回用户审阅；本地模式有硬件及版本要求。"
+          },
+          {
+            "title": "Nooks发布销售个人助理Node",
+            "summary": "Node进入早期访问，围绕账户目标持续工作；全面可用计划在2027年初。",
+            "date": "2026-11-04",
+            "source": "Nooks官方新闻稿，2026-11-04",
+            "url": "https://www.prnewswire.com/news-releases/nooks-secures-500-million-from-general-catalyst-and-launches-node-the-first-ai-personal-assistant-for-sales-302928795.html",
+            "company": "Nooks",
+            "example": "把账户历史、沟通及跟进动作结合；500M非稀释增长资本不等于股权估值或收入。"
+          }
+        ],
+        "models": [
+          {
+            "title": "Cognition把中训练接入小型编码模型",
+            "summary": "SWE-2 Flash基于Inkling-Small进行中训练与RL，已在Devin Desktop/CLI可用；权重尚未公开。",
+            "date": "2026-11-04",
+            "source": "Cognition官方，2026-11-04",
+            "url": "https://cognition.com/blog/swe-2-flash",
+            "kind": "paradigm"
+          },
+          {
+            "title": "文心5.5 Flash Base开放预训练基座",
+            "summary": "释放未经中训练/后训练的稀疏MoE权重，便于比较领域适配与强化学习方法。",
+            "date": "2026-11-05",
+            "source": "百度官方，2026-11-05",
+            "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+            "kind": "paradigm"
+          },
+          {
+            "title": "混元Hy4正式版增加视觉与电脑操作",
+            "summary": "正式版强化长程任务与视觉理解；权重仅宣布近期开源，不提前记为已开放。",
+            "date": "2026-11-04",
+            "source": "腾讯官方，2026-11-04",
+            "url": "https://www.tencent.com/zh-cn/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+            "kind": "sota"
+          }
+        ],
+        "infra_invest": [
+          {
+            "title": "fal新融资支持生成媒体推理容量",
+            "summary": "公司确认E/F两轮与Sequoia、Bessemer、NVIDIA参与，资金用于容量和研发团队。",
+            "date": "2026-11-03",
+            "source": "fal官方，2026-11-03",
+            "url": "https://fal.ai/blog/series-e-f",
+            "layer": "生成媒体推理基础设施",
+            "players": [
+              "fal",
+              "NVIDIA",
+              "Bessemer",
+              "Sequoia"
+            ],
+            "thesis": "研究判断：应跟踪容量交付、单位推理成本和毛利；融资与收入快速增长不能直接证明资本回报。媒体16B估值/800M收入仍主要来自同一Bloomberg报道。"
+          },
+          {
+            "title": "OpenAI新一轮资金先完成首批交割",
+            "summary": "Reuters与Bloomberg确认首批110亿美元完成，报道轮次估值1.25万亿美元，后续资金仍待完成。",
+            "date": "2026-11-06",
+            "source": "Reuters独立报道；Bloomberg原稿转载，2026-11-06",
+            "url": "https://www.reuters.com/business/openai-secures-11-billion-funding-125-trillion-valuation-bloomberg-news-reports-2026-11-06/",
+            "layer": "前沿模型资本供给",
+            "players": [
+              "OpenAI",
+              "SoftBank"
+            ],
+            "thesis": "研究判断：首批到账改善近期资金可得性，但应分别跟踪后续募资、算力承诺和收入兑现，不能把募资目标当已到位资本。"
+          },
+          {
+            "title": "Anthropic披露算力供应商融资风险",
+            "summary": "修订IPO文件披露巨额算力承诺，供应商依赖外部融资可能影响容量交付。",
+            "date": "2026-11-02",
+            "source": "Reuters根据修订S-1报道，2026-11-02",
+            "url": "https://www.investing.com/news/stock-market-news/anthropics-quarterly-loss-shrinks-revenue-jumps-ahead-of-blockbuster-ipo-4992139",
+            "layer": "算力融资与履约",
+            "players": [
+              "Anthropic",
+              "Amazon",
+              "Google"
+            ],
+            "thesis": "研究判断：模型公司的收入增长必须与算力付款、容量可得性及供应商融资同时评估；整体季度收入不替代API ARR。"
+          }
+        ],
+        "takeaway": "本周主线是持续执行和可审阅工作流：应用向长期任务延伸，模型通过中训练、后训练和低成本推理增强可用性。基础设施投资应优先验证资金到位、容量交付与单位经济性，区分首批交割、整轮融资和未来算力承诺。"
+      }
+    },
+    "coverage": {
+      "rotation": [
+        {
+          "section": "models",
+          "name": "Alibaba Qwen (通义千问)",
+          "checked_fields": [
+            "val",
+            "valPending",
+            "listed",
+            "parent"
+          ],
+          "unverified_fields": [
+            "arr",
+            "arrg",
+            "uc",
+            "tokM",
+            "tokG",
+            "region"
+          ],
+          "note": "确认母子归属与估值空值；Qwen3.8-Max官方页未覆盖库存全部产品，分拆API收入、增速和token量未核实。"
+        },
+        {
+          "section": "models",
+          "name": "Meta (Llama)",
+          "checked_fields": [
+            "val",
+            "valPending",
+            "listed",
+            "parent"
+          ],
+          "unverified_fields": [
+            "arr",
+            "arrg",
+            "uc",
+            "tokM",
+            "tokG",
+            "region"
+          ],
+          "note": "确认内嵌模型线；Wonder产品发布不证明Muse助理已换基座，完整uc及API收入、token量/增速未核实。"
+        },
+        {
+          "section": "models",
+          "name": "Amazon Nova",
+          "checked_fields": [
+            "val",
+            "valPending",
+            "listed",
+            "parent"
+          ],
+          "unverified_fields": [
+            "arr",
+            "arrg",
+            "uc",
+            "tokM",
+            "tokG",
+            "region"
+          ],
+          "note": "确认内嵌模型线；当前主页未覆盖库存Nova2.5 Sonic，未倒退产品描述；分拆收入、token与地区资料未独立复核。"
+        },
+        {
+          "section": "models",
+          "name": "Baidu (ERNIE)",
+          "checked_fields": [
+            "val",
+            "valPending",
+            "uc",
+            "listed",
+            "parent"
+          ],
+          "unverified_fields": [
+            "arr",
+            "arrg",
+            "tokM",
+            "tokG",
+            "region"
+          ],
+          "note": "更新Flash Base产品并确认内嵌身份；不以集团云收入代替API收入，其余未核实字段原样保留。"
+        },
+        {
+          "section": "models",
+          "name": "Tencent Hunyuan (腾讯混元)",
+          "checked_fields": [
+            "val",
+            "valPending",
+            "uc",
+            "listed",
+            "parent"
+          ],
+          "unverified_fields": [
+            "arr",
+            "arrg",
+            "tokM",
+            "tokG",
+            "region"
+          ],
+          "note": "更新Hy4正式版并确认内嵌身份；暂无可核实独立API收入/token数据，地区未重新核验。"
+        },
+        {
+          "section": "apps",
+          "name": "Midjourney",
+          "checked_fields": [
+            "uc",
+            "cat",
+            "biz",
+            "ti"
+          ],
+          "unverified_fields": [
+            "arr",
+            "val",
+            "valPending",
+            "arrg",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "ownModel",
+            "stage"
+          ],
+          "note": "核实版本、视频与分类；ARR200可能来自历史收入口径，未获两份当前独立ARR来源；估值、MAU、增速、模型份额及阶段不确认。"
+        },
+        {
+          "section": "apps",
+          "name": "Cognition",
+          "checked_fields": [
+            "val",
+            "uc",
+            "ownModel",
+            "cat",
+            "biz",
+            "ti"
+          ],
+          "unverified_fields": [
+            "arr",
+            "valPending",
+            "arrg",
+            "listed",
+            "parent",
+            "mau",
+            "maug",
+            "stage"
+          ],
+          "note": "更新SWE-2系列和产品，确认480亿已完成估值及产品分类；Sacra10亿估计与9月公司近9亿不同，ARR未确认。新轮融资洽谈原文不可读，未更新pending，MAU/增速/阶段未核实。"
+        },
+        {
+          "section": "models",
+          "name": "MiniMax",
+          "checked_fields": [
+            "uc",
+            "listed",
+            "tokG",
+            "region"
+          ],
+          "unverified_fields": [
+            "arr",
+            "val",
+            "valPending",
+            "arrg",
+            "parent",
+            "tokM"
+          ],
+          "note": "核实产品、代码、地区和历史token增幅；两个行情源市值54.41/59.44B HKD冲突，估值不确认。8亿为公司ARR不是API；283%为H1公司总收入增长，不能确认API增速；无最新token绝对量。"
+        },
+        {
+          "section": "models",
+          "name": "Zhipu AI",
+          "checked_fields": [
+            "val",
+            "listed",
+            "region"
+          ],
+          "unverified_fields": [
+            "arr",
+            "valPending",
+            "arrg",
+            "uc",
+            "parent",
+            "tokM",
+            "tokG"
+          ],
+          "note": "两行情源与汇率更新市值，核实代码地区；18亿库存为全业务ARR，8月旧数据不能替换9月且API拆分不足；399.7%为H1总收入增长，未确认API增长，旗舰/token缺当前核实。"
+        },
+        {
+          "section": "models",
+          "name": "Anthropic",
+          "checked_fields": [
+            "val",
+            "uc",
+            "listed"
+          ],
+          "unverified_fields": [
+            "arr",
+            "valPending",
+            "arrg",
+            "parent",
+            "tokM",
+            "tokG",
+            "region"
+          ],
+          "note": "确认965B已完成私募、产品与尚未上市；100B公司run-rate不等于API收入，季度总收入也不据此替换；IPO估值报道约1.2–1.5T与旧2T不一致，最终目标尚未确定，pending保留并标未核实。"
+        }
+      ],
+      "queue": {
+        "status": "completed",
+        "note": "prepare中review_queue为空，无存量待仲裁；无force，无下架证据。"
+      },
+      "incremental": {
+        "status": "limited",
+        "note": "对17模型与38应用全池55家分组检索2026-11-01至11-07新闻，追读重要线索；更新OpenAI交割与产品进展。assistant三转折点未有足够新证据；未覆盖到可读正文的公司不宣称已确认不变。"
+      },
+      "discovery": {
+        "status": "limited",
+        "note": "月初执行安全/销售/推理方向发现，核查Armadin、Geordie、Alice、Nooks、fal；Armadin估值达标但ARR未核实，提交候选，其余保留缺口。"
+      },
+      "progress": {
+        "status": "completed",
+        "note": "本周3条企业、3条模型、3条基础设施投资，共9条；区分现已可用、早期访问及未来计划。"
+      }
+    },
+    "evidence": [
+      {
+        "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读11月5日更新的Qwen3.8-Max官方文档，核实产品归属与型号；没有分拆API收入。"
+      },
+      {
+        "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读10月12日官方发布正文，Muse Wonder为Meta模型，API/Muse Code可用；不能由未来接入计划推断助理已更换基座。"
+      },
+      {
+        "url": "https://aws.amazon.com/nova/",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读AWS现行Nova产品介绍，确认Amazon自研产品线；该页未核实库存Nova2.5 Sonic。"
+      },
+      {
+        "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读官方技术说明：280B/14B激活，预训练结束的开放权重，不含中训练或后训练。"
+      },
+      {
+        "url": "https://ernie.baidu.com/",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读首页11月5日发布标记，确定本周发布日期。"
+      },
+      {
+        "url": "https://www.tencent.com/zh-cn/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读11月4日中文官方正文：Hy4正式版增加视觉与Computer Use，模型权重为近期开源计划，未视作已经公开。"
+      },
+      {
+        "url": "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读官方现行版本文档，默认V8.2。"
+      },
+      {
+        "url": "https://docs.midjourney.com/hc/en-us/articles/37460773864589-Video",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读官方图生视频文档、订阅档与GPU时间计费，核实图像视频创意产品。"
+      },
+      {
+        "url": "https://cognition.com/blog/swe-2-flash",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读11月4日官方全文：基于Thinking Machines Inkling-Small，中训练后接RL；Devin Desktop/CLI已可用，权重尚未公开。"
+      },
+      {
+        "url": "https://www.channelnewsasia.com/business/cognition-ai-raises-2-billion-48-billion-valuation-6371096",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读Reuters9月8日融资报道：20亿美元融资、480亿美元估值、接近9亿美元run-rate。"
+      },
+      {
+        "url": "https://sacra.com/c/cognition/",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读Sacra：480亿美元估值交叉；9月ARR估计10亿美元与公司9月8日近9亿口径不同，不确认库存ARR。"
+      },
+      {
+        "url": "https://www.minimax.cn/news/minimax-%E5%8F%91%E5%B8%83-2026-%E5%B9%B4%E4%B8%AD%E6%9C%9F%E4%B8%9A%E7%BB%A9-1787744159",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读8月26日官方中期业绩和现行导航：7月token为1月20倍，M3.1 Flash/M3/海螺；半年收入不能乘2当当前ARR。"
+      },
+      {
+        "url": "https://www.cls.cn/detail/2465458",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读科创板日报8月26日业绩沟通会报道：8亿以上为公司整体ARR，To B约80%，不直接等于纯API ARR。"
+      },
+      {
+        "url": "https://stockanalysis.com/quote/hkg/0100/",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读11月6日收盘155.80港元、市值54.41B HKD、股份349.24M；和另一行情源市值存在差异，未应用估值。"
+      },
+      {
+        "url": "https://cn.investing.com/equities/minimax-group-inc",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读11月6日价格155.80港元但headline市值59.44B HKD，与StockAnalysis不同，保留缺口。"
+      },
+      {
+        "url": "https://stockanalysis.com/quote/hkg/2513/",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读11月6日收盘426.20港元、市值198.45B HKD、股份465.62M、HKEX代码及中国总部。"
+      },
+      {
+        "url": "https://cn.investing.com/equities/knowledge-atlas-tech-joint-stock",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读11月6日426.20港元、198.45B HKD市值，与StockAnalysis交叉。"
+      },
+      {
+        "url": "https://hk.investing.com/currencies/usd-hkd-historical-data",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读历史表11月6日USD/HKD收盘7.8397，供市值换算。"
+      },
+      {
+        "url": "https://companies.caixin.com/2026-08-31/102480428.html",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读8月31日业绩会：8月公司ARR16亿美元、API半年收入占86.5%；不能倒退替换9月库存18亿，不能直接冒充纯API口径。"
+      },
+      {
+        "url": "https://www.anthropic.com/news",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读官方新闻目录，核实现行Claude5.5系列及Claude Code。"
+      },
+      {
+        "url": "https://www.anthropic.com/news/series-h",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读5月28日官方Series H：已融资65B美元、投后965B美元；公司整体run-rate不等于API收入。"
+      },
+      {
+        "url": "https://apnews.com/article/anthropic-ipo-shares-public-ca2f4c282bef3201a392e59e3df2300c",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读AP10月26日IPO报道，交叉最近私募965B美元，IPO仍未定价。"
+      },
+      {
+        "url": "https://www.investing.com/news/stock-market-news/anthropics-quarterly-loss-shrinks-revenue-jumps-ahead-of-blockbuster-ipo-4992139",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读Reuters11月2日：季度总收入16.96B美元、算力承诺及融资风险；非纯API ARR。投资人1.5T预期未等于IPO定价。"
+      },
+      {
+        "url": "https://www.reuters.com/business/openai-secures-11-billion-funding-125-trillion-valuation-bloomberg-news-reports-2026-11-06/",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读Reuters11月6日21:12更新版独立知情人士报道：11B首批完成，轮次估值1.25T；不是仅转述Bloomberg的早期版本。"
+      },
+      {
+        "url": "https://www.moneycontrol.com/artificial-intelligence/openai-completes-11-billion-portion-of-funding-at-1-25-trillion-value-article-14074006.html",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读署名Bloomberg原稿转载：11B已于周五汇款、估值1.25T，余款预计未来数周完成。与Reuters独立来源交叉；未明确投前投后，不自行加募资额。"
+      },
+      {
+        "url": "https://sierra.ai/blog/redesigning-agent-studio-around-ghostwriter",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读11月2日官方正文：在同一会话诊断、修改和测试Agent；上线前保留审阅合并。"
+      },
+      {
+        "url": "https://www.perplexity.ai/en-GB/changelog/teammates-fully-local-computer-on-mac-and-voice-mode",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读11月6日官方更新：Teammates面向Max，Mac本地模式及语音；不外推已披露全产品收入。"
+      },
+      {
+        "url": "https://www.prnewswire.com/news-releases/nooks-secures-500-million-from-general-catalyst-and-launches-node-the-first-ai-personal-assistant-for-sales-302928795.html",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读Nooks11月4日官方稿：500M非稀释增长资本，Node早期访问、GA计划2027年初；无绝对ARR/股权估值可据此入池。"
+      },
+      {
+        "url": "https://fal.ai/blog/series-e-f",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读fal官方11月公告，确认E/F轮与投资人及推理容量用途；页面不披露估值与收入。"
+      },
+      {
+        "url": "https://fal.ai/on-the-record",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读公告列表11月3日日期，定位E/F轮事件。"
+      },
+      {
+        "url": "https://siliconangle.com/2026/11/03/generative-media-inference-startup-fal-raises-1-3b-at-a-16b-valuation/",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读11月3日报道；1.3B、16B估值及800M年化收入均溯源Bloomberg，不把多个转载当独立交叉。"
+      },
+      {
+        "url": "https://www.cooley.com/news/coverage/2026/2026-10-01-armadin-raises-$255-5-million-series-b",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读交易法律顾问10月1日公告，亲历参与Series B255.5M美元、估值超过2.5B美元。"
+      },
+      {
+        "url": "https://www.armadin.com/blog-posts/investors-back-armadin-platform-strategy-with-new-round-of-funding",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读公司10月1日融资公告，确认Series B完成。"
+      },
+      {
+        "url": "https://www.securityweek.com/kevin-mandias-armadin-raises-255-million-at-2-5-billion-valuation/",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读10月1日报道：估值超过2.5B、独立AI-native安全Agent；未见可信绝对ARR。"
+      },
+      {
+        "url": "https://www.geordie.ai/resources/geordie-raises-30m-to-help-enterprises-securely-adopt-agentic-ai-at-scale/",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读5月28日官方：30M融资、1300%ARR增幅；没有绝对ARR或估值，不能据增幅推算。"
+      },
+      {
+        "url": "https://alice.io/blog/alice-raises-140m",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读官方140M融资、接近100M ARR措辞；未得到精确ARR及独立交叉，AI-native判定仍需更多证据。"
+      },
+      {
+        "url": "https://instinct.com/",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读官网电话/短信个人助理介绍，未披露价格、活跃数、基座或公开开放转换日期。"
+      },
+      {
+        "url": "https://manus.im/updates",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "实际打开但仅取得语言导航，无可读更新正文；不据此声称三转折点未发生。"
+      },
+      {
+        "url": "https://openclaw.ai/",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读官方当前产品说明：MIT开源、自托管、自带模型，无订阅/托管收费；11月5-6日团队协作和模型目录更新不构成首次定价或转公开。"
+      },
+      {
+        "url": "https://muse.ai/",
+        "read_at": "2026-11-07T07:05:16.441669+00:00",
+        "note": "已读Meta Muse现行产品介绍；未有可核实的本周首次定价/基座更换公告，不从模型层Wonder发布推定已部署。"
+      }
+    ],
+    "limitations": [
+      "轮转10家均记录字段复核结果，但未完成所有字段的实质核验；未获证实的字段保留原值，不作confirmation。",
+      "MiniMax、智谱、Anthropic库存arr含全公司口径风险；本轮未获得足够的当前API-only交叉证据，不凭比例或旧期数字强改。库存值保留不代表认可其口径。",
+      "MiniMax11月6日两行情源市值冲突；智谱沿用历史headline股份数，未解决股份类别口径问题。",
+      "OpenAI1.25T为首批交割所对应报道估值，文章未明确投前投后；不自行相加形成新估值，后续融资仍未完成。",
+      "AnthropicIPO尚未定价，多来源意向估值区间不同，未确认旧pending2T；Cognition新轮洽谈BI正文不可读。",
+      "全池55家使用分组七日检索；不能把未找到结果当成全部字段已核实不变。",
+      "assistant三转折点未发现足够证据触发patch，但不声称完全排除；Instinct官网信息有限，Manus更新页仅导航，Muse本周基座未核实。OpenClaw保持oss已确认；不把star/装机量当MAU。",
+      "月初重点查安全/销售/推理服务：Armadin入候选；Geordie无绝对ARR/估值，Alice缺精确ARR和独立交叉，Nooks500M是非稀释资本，fal财务报道同源，均未强行入主表。",
+      "现有Google ARR、Midjourney估值、Granola ARR、Ideogram估值缺溯源及creative占比超25%警告未由本轮解决。",
+      "FT11月6日Anthropic正文付费不可读、Yahoo Bloomberg转载抓取失败；OpenAI使用已读Moneycontrol的Bloomberg署名原稿及Reuters独立更新版。"
+    ]
+  },
+  "apply_report": "  + MODEL Baidu (ERNIE).uc: 文心5.1、文心App、千帆平台 -> 文心5.5 Flash Base、5.1与千帆 (百度11月5日开放ERNIE5.5 Flash Base预训练权重；是供后续训练的基座，非已后训练的聊天产品。保留5.1与千帆线。)\n  + MODEL Tencent Hunyuan (腾讯混元).uc: 混元Hy4 preview、Hy3、腾讯元宝 -> 混元Hy4正式版、Hy3与腾讯元宝 (腾讯11月4日正式发布Hy4，增加视觉理解与Computer Use；权重近期开源，不写成已经开源。)\n  + APP Cognition.uc: Devin编码Agent与Devin Desktop IDE -> Devin编码Agent、Desktop与SWE-2 Flash (11月4日官方：SWE-2 Flash在Devin Desktop和CLI可用。)\n  + APP Cognition.ownModel: {'status': 'hybrid', 'tokenShare': None, 'models': ['SWE-1.5', 'SWE-1.5-mini', 'SWE-grep', 'SWE-1']} -> {'status': 'hybrid', 'tokenShare': None, 'models': ['SWE-1.5', 'SWE-1.5-mini', 'SWE-grep', 'SWE-1', 'SWE-2', 'SWE-2 Flash']} (官方披露SWE-2 Flash基于Thinking Machines Inkling-Small进行中训练与RL，补充SWE-2系列；保留hybrid，不推断自研token已过半，tokenShare仍未知。)\n  + MODEL Zhipu AI.val: 28.7 -> 25.31 (StockAnalysis和Investing.com（https://cn.investing.com/equities/knowledge-atlas-tech-joint-stock）交叉11月6日收盘市值198.45B HKD；USD/HKD=7.8397（https://hk.investing.com/currencies/usd-hkd-historical-data），换算25.31B美元。沿用465.62M股headline口径；股份类别差异仍是限制，未自行扩大为全类别市值。)\n  + MODEL OpenAI.val: 852 -> 1250 (Reuters11月6日21:12更新版独立知情人士与Bloomberg原稿（https://www.moneycontrol.com/artificial-intelligence/openai-completes-11-billion-portion-of-funding-at-1-25-trillion-value-article-14074006.html）交叉：11B美元首批资金已交割/汇入，交易报道估值1.25T美元，故更新为1250B。仅首批完成，保留待募部分；未明确投前投后，不自行加融资额推算投后值。)\n  + ai_progress: 9 条\n  = Alibaba Qwen (通义千问).parent confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Alibaba Qwen (通义千问).val confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Alibaba Qwen (通义千问).valPending confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Alibaba Qwen (通义千问).listed confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Meta (Llama).parent confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Meta (Llama).val confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Meta (Llama).valPending confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Meta (Llama).listed confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Amazon Nova.parent confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Amazon Nova.val confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Amazon Nova.valPending confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Amazon Nova.listed confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Baidu (ERNIE).parent confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Baidu (ERNIE).val confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Baidu (ERNIE).valPending confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Baidu (ERNIE).listed confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Tencent Hunyuan (腾讯混元).parent confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Tencent Hunyuan (腾讯混元).val confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Tencent Hunyuan (腾讯混元).valPending confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Tencent Hunyuan (腾讯混元).listed confirmed unchanged (本轮读取官方产品文档/公告，确认属于母公司自研内嵌模型线；按仓库口径保留parent及独立val/valPending/listed空值，不使用母公司收入或市值。)\n  = Midjourney.uc confirmed unchanged (现行官方版本文档（https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version）与视频文档交叉：V8.2、图生视频、面向创作者的订阅及GPU时间消耗，支持现有creative/B2C/high分类；核验日非发布日期。)\n  = Midjourney.cat confirmed unchanged (现行官方版本文档（https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version）与视频文档交叉：V8.2、图生视频、面向创作者的订阅及GPU时间消耗，支持现有creative/B2C/high分类；核验日非发布日期。)\n  = Midjourney.biz confirmed unchanged (现行官方版本文档（https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version）与视频文档交叉：V8.2、图生视频、面向创作者的订阅及GPU时间消耗，支持现有creative/B2C/high分类；核验日非发布日期。)\n  = Midjourney.ti confirmed unchanged (现行官方版本文档（https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version）与视频文档交叉：V8.2、图生视频、面向创作者的订阅及GPU时间消耗，支持现有creative/B2C/high分类；核验日非发布日期。)\n  = Cognition.val confirmed unchanged (Reuters9月8日融资报道（CNA刊载）与本轮读取Sacra独立公司档案 https://sacra.com/c/cognition/ 交叉：最近已完成估值48B美元；未将后续融资洽谈记成完成。)\n  = Cognition.cat confirmed unchanged (官方Devin产品及SWE-2 Flash面向软件工程、企业部署与长程编码任务，支持coding/B2B/ultra分类；不据此推算收入或用户数。)\n  = Cognition.biz confirmed unchanged (官方Devin产品及SWE-2 Flash面向软件工程、企业部署与长程编码任务，支持coding/B2B/ultra分类；不据此推算收入或用户数。)\n  = Cognition.ti confirmed unchanged (官方Devin产品及SWE-2 Flash面向软件工程、企业部署与长程编码任务，支持coding/B2B/ultra分类；不据此推算收入或用户数。)\n  = MiniMax.uc confirmed unchanged (官方中期业绩与现行产品导航核实M3.1 Flash/M3/海螺、HKEX:0100；7月token为1月20倍即增长1900%，是区间增长而非同比。)\n  = MiniMax.listed re-checked (官方中期业绩与现行产品导航核实M3.1 Flash/M3/海螺、HKEX:0100；7月token为1月20倍即增长1900%，是区间增长而非同比。)\n  = MiniMax.tokG confirmed unchanged (官方中期业绩与现行产品导航核实M3.1 Flash/M3/海螺、HKEX:0100；7月token为1月20倍即增长1900%，是区间增长而非同比。)\n  = MiniMax.region confirmed unchanged (行情公司资料核实中国总部，保留CN。)\n  = Zhipu AI.listed confirmed unchanged (现行行情公司资料核实HKEX:2513、中国总部，保留代码与CN。)\n  = Zhipu AI.region confirmed unchanged (现行行情公司资料核实HKEX:2513、中国总部，保留代码与CN。)\n  = Anthropic.val confirmed unchanged (官方Series H已完成965B美元投后估值，AP10月26日独立报道仍列该私募估值：https://apnews.com/article/anthropic-ipo-shares-public-ca2f4c282bef3201a392e59e3df2300c；IPO讨论非完成交易。)\n  = Anthropic.uc confirmed unchanged (官方现行新闻和产品目录核实Claude5.5系列与Claude Code；核验日非发布日期。)\n  = Anthropic.listed confirmed unchanged (Reuters11月2日确认仍处IPO准备阶段，未上市，不将意向代码当交易所已上市代码。)\n  = OpenAI.valPending confirmed unchanged (Bloomberg原稿与Reuters独立报道确认本轮只完成首批11B美元、后续仍在募资；保留1250B美元报道轮次估值供后续跟踪，不把首批交割当整轮完成。)\n  = OpenClaw.access confirmed unchanged (本轮官方首页核实仍为MIT开源自托管，access=oss；本周团队协作及模型目录更新不代表首次公开。)\n  ? Armadin (clears the valuation bar but ARR is unsourced)\n\napplied 7 / confirmed 39 / promoted 0 / queued 1 / skipped 0 / rejected 0\nWARN  models[Google Gemini]: no provenance yet for arr\nWARN  apps[Midjourney]: no provenance yet for val\nWARN  apps[Granola]: no provenance yet for arr\nWARN  apps[Ideogram]: no provenance yet for val\nWARN  category concentration: creative is 10/38 = 26% (limit 25%)\n",
+  "validation": "WARN  models[Google Gemini]: no provenance yet for arr\nWARN  apps[Midjourney]: no provenance yet for val\nWARN  apps[Granola]: no provenance yet for arr\nWARN  apps[Ideogram]: no provenance yet for val\nWARN  category concentration: creative is 10/38 = 26% (limit 25%)\n\n0 error(s), 5 warning(s)"
+}
