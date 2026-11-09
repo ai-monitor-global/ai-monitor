@@ -4,7 +4,7 @@
     "next_update": "2026-09-06",
     "update_notes": "2026-11-07: 7 项已核实更新 — MODEL Baidu; MODEL Tencent Hunyuan; APP Cognition.uc: Devin编码Agent与Devin Desktop IDE -> Devin编码Agent、Desktop与SWE-2 Flash; APP Cognition.ownModel: {'status': 'hybrid', 'tokenShare': None, 'models': ['SWE-1.5', 'SWE-1.5-mini', 'SWE-grep', 'SWE-1']} -> {'status': 'hybrid', 'tokenShare': None, 'models': ['SWE-1.5', 'SWE-1.5-mini', 'SWE-grep', 'SWE-1', 'SWE-2', 'SWE-2 Flash']}; MODEL Zhipu AI.val: 28.7 -> 25.31; MODEL OpenAI.val: 852 -> 1250",
     "schema": 2,
-    "last_run": "2026-11-08",
+    "last_run": "2026-11-09",
     "stale_days": 120,
     "categories": {
       "coding": {
@@ -2805,11 +2805,11 @@
         "error": null
       },
       "openrouter": {
-        "at": "2026-11-08",
+        "at": "2026-11-09",
         "ok": true,
         "error": null,
-        "weeks": 60,
-        "wow_pct": 3.0
+        "weeks": 61,
+        "wow_pct": 8.2
       },
       "routine-weekly": {
         "at": "2026-11-07",
@@ -7435,12 +7435,21 @@
       "nM": 17,
       "nA": 38,
       "nMrev": 12
+    },
+    {
+      "date": "2026-11-09",
+      "mARR": 150.43,
+      "aARR": 13.73,
+      "tok": 9273.8,
+      "nM": 17,
+      "nA": 38,
+      "nMrev": 12
     }
   ],
   "openrouter": {
-    "as_of": "2026-11-07",
-    "fetched": "2026-11-08",
-    "wow_pct": 3.0,
+    "as_of": "2026-11-08",
+    "fetched": "2026-11-09",
+    "wow_pct": 8.2,
     "weekly": [
       {
         "week": "2025-09-08",
@@ -7681,6 +7690,10 @@
       {
         "week": "2026-10-26",
         "tok": 193.59
+      },
+      {
+        "week": "2026-11-02",
+        "tok": 209.52
       }
     ],
     "source": "OpenRouter datasets API（rankings 同源，top50+other 全平台口径）",
