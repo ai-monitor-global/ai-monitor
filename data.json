@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_updated": "2026-11-07",
+    "last_updated": "2026-11-14",
     "next_update": "2026-09-06",
-    "update_notes": "2026-11-07: 7 项已核实更新 — MODEL Baidu; MODEL Tencent Hunyuan; APP Cognition.uc: Devin编码Agent与Devin Desktop IDE -> Devin编码Agent、Desktop与SWE-2 Flash; APP Cognition.ownModel: {'status': 'hybrid', 'tokenShare': None, 'models': ['SWE-1.5', 'SWE-1.5-mini', 'SWE-grep', 'SWE-1']} -> {'status': 'hybrid', 'tokenShare': None, 'models': ['SWE-1.5', 'SWE-1.5-mini', 'SWE-grep', 'SWE-1', 'SWE-2', 'SWE-2 Flash']}; MODEL Zhipu AI.val: 28.7 -> 25.31; MODEL OpenAI.val: 852 -> 1250",
+    "update_notes": "2026-11-14: 33 项已核实更新 — APP Granola.uc: AI会议笔记与企业上下文平台 -> AI会议笔记、语音输入与智能体每日简报; APP Ideogram.uc: Ideogram 4.5图像生成与精确编辑 -> Ideogram 4.5图像编辑与Vector矢量生成; MODEL Doubao; MODEL MiniMax.val: 7.18 -> 6.78; MODEL MiniMax.uc: MiniMax M3.1 Flash、M3、海螺AI -> M3.1 Flash/M3、海螺视频与H3-Image; MODEL MiniMax.arrg: 283 -> 283.1",
     "schema": 2,
-    "last_run": "2026-11-09",
+    "last_run": "2026-11-14",
     "stale_days": 120,
     "categories": {
       "coding": {
@@ -2774,6 +2774,404 @@
         "source": "Reuters11月6日21:12更新版独立知情人士与Bloomberg原稿（https://www.moneycontrol.com/artificial-intelligence/openai-completes-11-billion-portion-of-funding-at-1-25-trillion-value-article-14074006.html）交叉：11B美元首批资金已交割/汇入，交易报道估值1.25T美元，故更新为1250B。仅首批完成，保留待募部分；未明确投前投后，不自行加融资额推算投后值。",
         "conf": "medium",
         "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "Granola",
+        "field": "uc",
+        "old": "AI会议笔记与企业上下文平台",
+        "new": "AI会议笔记、语音输入与智能体每日简报",
+        "source": "Granola 11月11日：从会议生成每日个人工作简报供已连接的智能体使用；产品导航亦列语音输入。 交叉材料：https://www.granola.ai/pricing",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "Ideogram",
+        "field": "uc",
+        "old": "Ideogram 4.5图像生成与精确编辑",
+        "new": "Ideogram 4.5图像编辑与Vector矢量生成",
+        "source": "11月14日核读现行Vector及4.5模型页；可生成并编辑SVG。本项是轮转补核，不把Vector列为本周首发。 交叉材料：https://ideogram.ai/models/4.5/",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "Doubao (ByteDance)",
+        "field": "uc",
+        "old": "豆包App、豆包大模型2.1、Seedance 2.0",
+        "new": "豆包App、大模型2.1与Seedance 2.5 Flash",
+        "source": "11月12日火山引擎发布视频模型Seedance 2.5 Flash，陆续进入创作平台，方舟API计划11月15日开放。字节Seed核实2.5系列。 交叉材料：https://seed.bytedance.com/zh/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5?view_from=homepage_tab；https://www.thepaper.cn/newsDetail_forward_33434649",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "MiniMax",
+        "field": "val",
+        "old": 7.18,
+        "new": 6.78,
+        "source": "11月13日StockAnalysis与Investing.com港股主报价市值均为HKD 53.22B，按同日收盘汇率1 USD=7.8456 HKD，折合USD 6.78B。沿用仓库上市报价口径。 交叉材料：https://cn.investing.com/equities/minimax-group-inc；https://hk.investing.com/currencies/usd-hkd-historical-data",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "MiniMax",
+        "field": "uc",
+        "old": "MiniMax M3.1 Flash、M3、海螺AI",
+        "new": "M3.1 Flash/M3、海螺视频与H3-Image",
+        "source": "MiniMax 11月10日开放H3-Image权重，官方产品导航同时列语言和视频产品。",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "MiniMax",
+        "field": "arrg",
+        "old": 283,
+        "new": 283.1,
+        "source": "MiniMax 8月26日中期公告，公司上半年收入同比283.1%（旧表取整数283%）。这是全公司收入同比，不是API业务同比，也不用于年化API收入。",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "Zhipu AI",
+        "field": "val",
+        "old": 25.31,
+        "new": 24.24,
+        "source": "11月13日StockAnalysis和Investing.com港股主报价市值均为HKD 190.16B，按1 USD=7.8456 HKD折合USD 24.24B；沿用原口径。 交叉材料：https://cn.investing.com/equities/knowledge-atlas-tech-joint-stock；https://hk.investing.com/currencies/usd-hkd-historical-data",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "Zhipu AI",
+        "field": "tokG",
+        "old": 250,
+        "new": 3900,
+        "source": "公司8月31日中期公告：本年初至公告日MaaS平台token调用规模超过起点的40倍。按保守下限40倍水平折算至少+3900%；不是11月环比、同比或月度绝对调用量。 交叉材料：https://www.thepaper.cn/newsDetail_forward_33979752",
+        "conf": "medium",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "xAI",
+        "field": "uc",
+        "old": "Grok 4.7、Voice 3.0、Imagine",
+        "new": "Grok 4.7、Voice 3.0、Imagine与Grok Bot",
+        "source": "xAI 11月2日发布面向团队的Grok Bot 1.0，补充现有语言、语音和图像产品线。",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "Kimi (Moonshot)",
+        "field": "val",
+        "old": 35,
+        "new": 50,
+        "source": "Bloomberg 10月6日引交易知情人称上市前最后一轮已交割、估值约USD 50B；红星资本局报道相同，私募市场Caplight亦标约USD 50B。11月13日WSJ所述拟议IPO不是已上市。 交叉材料：https://finance.eastmoney.com/a/202610063888748225.html；https://www.caplight.com/company/moonshot-ai；https://www.wsj.com/tech/chinas-moonshot-ai-restructures-to-pave-way-for-ipo-49f09abb",
+        "conf": "medium",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "Kimi (Moonshot)",
+        "field": "valPending",
+        "old": 50,
+        "new": null,
+        "source": "已交割的是原来待定的同一轮约500亿美元私募。拟议IPO无已确定估值，不保留重复的待定行。 交叉材料：https://finance.eastmoney.com/a/202610063888748225.html；https://www.caplight.com/company/moonshot-ai",
+        "conf": "medium",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "Kimi (Moonshot)",
+        "field": "uc",
+        "old": "Kimi K3.1 Pro、Kimi Work智能体、API服务",
+        "new": "Kimi K3.1 Pro开放权重、Kimi Work与API",
+        "source": "11月14日核读官方发布仓与产品博客，K3.1 Pro权重已实际提供；补明供应状态，不将此写成本周首发。 交叉材料：https://www.kimi.com/en/blog/kimi-k3-1-pro?trk=article-ssr-frontend-pulse_little-text-block",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "01.AI",
+        "field": "uc",
+        "old": "万策决策中枢、老板AI/销冠AI/投资官AI",
+        "new": "万策企业决策智能体；已停止公共模型API",
+        "source": "10月30日报道及7月对李开复采访：继续企业万策业务；原开放平台9月3日晚停止在线体验及API服务，该举措不等于公司停业。 交叉材料：https://m.nbd.com.cn/articles/2026-07-08/4461780.html",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "DeepSeek",
+        "field": "val",
+        "old": 50.0,
+        "new": 90,
+        "source": "Crunchbase 11月3日按其10月融资数据库记录已完成第二轮、投后约USD 90B；证券时报与WSJ分别向交易人士确认成交。10月30日21财经报道人民币6155亿元，按当日1 USD=6.6541 CNY约USD 92.5B。以十亿美元计只取约90的近似共识，非精确换算或融资额。 交叉材料：https://finance.eastmoney.com/a/202610233906581945.html；https://finance.eastmoney.com/a/202610303916652935.html；https://www.wsj.com/tech/ai/chinese-ai-startup-deekseek-raises-15-billion-ahead-of-potential-ipo-f7fe3a49?mod=wsj_furtherreading_pos_1；https://www.investing.com/currencies/usd-cny-historical-data",
+        "conf": "medium",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "DeepSeek",
+        "field": "valPending",
+        "old": 74.0,
+        "new": null,
+        "source": "旧USD 74B为同一轮的投前/意向；证券时报与WSJ均确认第二轮已完成，改记交割值后清空旧标记。 交叉材料：https://finance.eastmoney.com/a/202610233906581945.html；https://www.wsj.com/tech/ai/chinese-ai-startup-deekseek-raises-15-billion-ahead-of-potential-ipo-f7fe3a49?mod=wsj_furtherreading_pos_1",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "DeepSeek",
+        "field": "uc",
+        "old": "DeepSeek-V4.1-Flash（MoE开源权重）、API平台",
+        "new": "V4.1-Flash与搜索、文件、语音应用API",
+        "source": "DeepSeek 11月13日开放搜索、文件、阅读链接和语音等应用API；官方变更记录同时列V4.1-Flash。",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "Character.ai",
+        "field": "mau",
+        "old": 20,
+        "new": 12,
+        "source": "10月13日CEO首日宣誓书（Doc 18）对当时全球月活的披露约1200万；案件摘要与PPC Land逐项对照。旧2000万是更早的另一来源，改表−40%不等于某月或同比跌幅。 交叉材料：https://ppc.land/character-ai-loses-8m-a-month-despite-2-5m-in-monthly-ad-sales/；https://www.reuters.com/technology/artificial-intelligence/rise-fall-an-ai-chatbot-darling-2026-10-14/",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "Character.ai",
+        "field": "arrg",
+        "old": 66,
+        "new": 218.9,
+        "source": "10月13日首日宣誓书披露FY2025/FY2024总收入约USD 23.6M/7.4M，历史财年同比约+218.9%，更正第三方估算的66%。不是破产期间收入同比。 交叉材料：https://ppc.land/character-ai-loses-8m-a-month-despite-2-5m-in-monthly-ad-sales/",
+        "conf": "medium",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "Character.ai",
+        "field": "uc",
+        "old": "AI角色娱乐（Chapter 11重组中）",
+        "new": "AI角色娱乐服务；Chapter 11资产竞售中",
+        "source": "公司刊载竞售程序，11月10日提交刊登证明：11月24日截止投标，12月1日拟拍卖。Disney是指定资产起始竞买人，不是已完成收购。 交叉材料：https://ppc.land/character-ai-sale-notice-in-usa-today-leaves-9-days-to-object/",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "Mercor",
+        "field": "val",
+        "old": 10.0,
+        "new": 20,
+        "source": "Mercor 11月10日确认D轮7.5亿美元，含员工二级、估值USD 20B；Legion交易数据库11月13日快照列本轮7.5亿美元、200亿美元，Reuters对照公告。早期Bloomberg采访拿到同价条款，本轮公告才作为交割依据。 交叉材料：https://app.uselegion.com/c/mercor；https://www.reuters.com/legal/transactional/ai-training-startup-mercor-valued-20-billion-latest-funding-round-2026-11-10/；https://techcrunch.com/2026/07/09/mercor-is-in-talks-for-a-20b-valuation/",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "Mercor",
+        "field": "valPending",
+        "old": 20.0,
+        "new": null,
+        "source": "Mercor已经宣布原200亿美元待定估值对应的D轮；成交价入val后清空旧valPending。 交叉材料：https://app.uselegion.com/c/mercor；https://www.reuters.com/legal/transactional/ai-training-startup-mercor-valued-20-billion-latest-funding-round-2026-11-10/",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "Anthropic",
+        "field": "uc",
+        "old": "Claude 5.5系列、Claude Code",
+        "new": "Claude Fable/Mythos 5.2、Opus 5.5与Claude Code",
+        "source": "11月9日Anthropic发布Fable/Mythos 5.2；同一底层模型有不同使用渠道。Claude Code的企业部署亦有11月9日客户案例。 交叉材料：https://claude.com/resources/articles/jpmorganchase-expands-claude-code",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "Anthropic",
+        "field": "valPending",
+        "old": 2000,
+        "new": 1400,
+        "source": "路透11月10日按发行区间上限、完全稀释股本计算约USD 1.4T（未摊薄约USD 1.0T）；11月10日发行人公告每股70–78美元。取上限作为公开路演目标，未定价或挂牌，不改已成交估值。 交叉材料：https://www.anthropic.com/news/roadshow-launch?_bhlid=27504d275111970d335ddb75371691910516c4a4；https://www.reuters.com/business/finance/investors-flock-anthropic-ipo-question-durability-ai-lead-2026-11-13/；https://apnews.com/article/8cf2319c870322019712ab658f71ec55",
+        "conf": "medium",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "Google Gemini",
+        "field": "uc",
+        "old": "Gemini 4 Argon/Carbon限测、3.8/Gemma",
+        "new": "Gemini 4 Hydrogen、Carbon、Argon与Gemma",
+        "source": "Google 11月12日发布Hydrogen，可经Gemini API、AI Studio及Gemini应用等使用；Carbon与Argon偏长任务。",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "Alibaba Qwen (通义千问)",
+        "field": "uc",
+        "old": "通义千问Qwen3.8-Max、QwenWork、Qwen App",
+        "new": "Qwen4-Max预览、千问办公与千问App",
+        "source": "阿里云11月11日开始Qwen4-Max-Preview限时预览；Token Plan含个人及团队版。本次非全量正式版。",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "models",
+        "entity": "Baidu (ERNIE)",
+        "field": "uc",
+        "old": "文心5.5 Flash Base、5.1与千帆",
+        "new": "文心5.5 Flash预览及Base、千帆API",
+        "source": "百度11月11日发布Flash Preview，千帆API已提供；计划11月25日开源权重，本轮不记作权重已发布。 交叉材料：https://cloud.baidu.com/product/qianfan_home/model_3.html；https://www1.xinhuanet.com/tech/20261111/183aa161e70b4942b622e10b5e3da605/c.html",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "ElevenLabs",
+        "field": "uc",
+        "old": "ElevenAgents语音智能体与v4语音合成",
+        "new": "ElevenAgents、v4语音合成与Scribe v3转写",
+        "source": "11月10日ElevenLabs宣布Scribe v3与实时版；可用于ElevenAPI，实时版也进ElevenAgents。",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "HeyGen",
+        "field": "uc",
+        "old": "AI视频数字人",
+        "new": "AI数字人视频；Avatar 6企业早期试用",
+        "source": "11月12日企业更新：Avatar 6已向企业工作区提供早期试用，公开上线预定11月17日。",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "Decagon",
+        "field": "uc",
+        "old": "企业自主客服AI智能体",
+        "new": "企业客服智能体、Chord语音与Alto对话模型",
+        "source": "Decagon Labs 11月11日发布Alto用于实时语音对话，配合自训Chord。",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "Decagon",
+        "field": "ownModel",
+        "old": {
+          "status": "none",
+          "models": [
+            "OpenAI GPT",
+            "Anthropic Claude"
+          ],
+          "tokenShare": null
+        },
+        "new": {
+          "status": "primary",
+          "models": [
+            "Alto",
+            "Chord"
+          ],
+          "tokenShare": null
+        },
+        "source": "11月11日官方确认Alto、Chord用于生产；3月24日Decagon Labs称超过80%的全平台模型流量由自训模型承担，10月仍同时调用外部模型。支持primary；历史模型流量不等于当前精确token比例，tokenShare保持null。 交叉材料：https://decagon.ai/blog/introducing-decagon-labs；https://decagon.ai/blog/decagon-partner-community",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "Cresta",
+        "field": "uc",
+        "old": "呼叫中心AI坐席与实时辅助",
+        "new": "呼叫中心AI坐席、实时辅助与跨会话客户历史",
+        "source": "Cresta 11月12日发布Journey Intelligence，将既往交互带入人工与AI坐席的当次服务。",
+        "conf": "high",
+        "forced": null
+      },
+      {
+        "date": "2026-11-14",
+        "pass": "routine-weekly",
+        "section": "apps",
+        "entity": "AlphaSense",
+        "field": "uc",
+        "old": "金融投研AI搜索与摘要平台",
+        "new": "金融投研搜索与SuperAnalyst研究智能体",
+        "source": "AlphaSense 11月10日帮助文档更新：SuperAnalyst用于多步研究、跟踪和可复审的内容产出。",
+        "conf": "high",
+        "forced": null
       }
     ],
     "review_queue": [],
@@ -2812,14 +3210,14 @@
         "wow_pct": 8.2
       },
       "routine-weekly": {
-        "at": "2026-11-07",
+        "at": "2026-11-14",
         "ok": true,
         "error": null,
-        "applied": 7,
+        "applied": 33,
         "rejected": 0,
-        "confirmed": 39,
+        "confirmed": 36,
         "promoted": 0,
-        "queued": 1
+        "queued": 0
       },
       "manual-review": {
         "at": "2026-09-03",
@@ -2882,7 +3280,7 @@
       "trainPerRun": 15,
       "runsPerYear": 4,
       "val": 1250,
-      "m": 31,
+      "m": 35,
       "retired": false,
       "prov": {
         "tokM": {
@@ -2949,7 +3347,7 @@
     },
     {
       "name": "Anthropic",
-      "uc": "Claude 5.5系列、Claude Code",
+      "uc": "Claude Fable/Mythos 5.2、Opus 5.5与Claude Code",
       "region": "US",
       "arr": 100000,
       "arrg": 1361,
@@ -2969,10 +3367,10 @@
           "conf": "high"
         },
         "uc": {
-          "as_of": "2026-11-07",
-          "checked": "2026-11-07",
-          "source": "官方现行新闻和产品目录核实Claude5.5系列与Claude Code；核验日非发布日期。",
-          "url": "https://www.anthropic.com/news",
+          "as_of": "2026-11-09",
+          "checked": "2026-11-14",
+          "source": "11月9日Anthropic发布Fable/Mythos 5.2；同一底层模型有不同使用渠道。Claude Code的企业部署亦有11月9日客户案例。 交叉材料：https://claude.com/resources/articles/jpmorganchase-expands-claude-code",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
           "conf": "high"
         },
         "arr": {
@@ -2997,10 +3395,10 @@
           "conf": "high"
         },
         "valPending": {
-          "as_of": "2026-09-18",
-          "checked": "2026-09-27",
-          "source": "WSJ 2026-09-18(经crypto.news/PYMNTS/Euronews转载): Anthropic推进11月IPO计划，讨论中估值约2万亿美元，另计划募资最多$100B；条款未最终确定，未定价未交割，美元原币",
-          "url": "https://crypto.news/anthropic-targets-november-ipo/",
+          "as_of": "2026-11-10",
+          "checked": "2026-11-14",
+          "source": "路透11月10日按发行区间上限、完全稀释股本计算约USD 1.4T（未摊薄约USD 1.0T）；11月10日发行人公告每股70–78美元。取上限作为公开路演目标，未定价或挂牌，不改已成交估值。 交叉材料：https://www.anthropic.com/news/roadshow-launch?_bhlid=27504d275111970d335ddb75371691910516c4a4；https://www.reuters.com/business/finance/investors-flock-anthropic-ipo-question-durability-ai-lead-2026-11-13/；https://apnews.com/article/8cf2319c870322019712ab658f71ec55",
+          "url": "https://www.reuters.com/business/anthropic-ipo-raise-much-644-billion-latest-draft-prospectus-shows-2026-11-10/",
           "conf": "medium"
         },
         "listed": {
@@ -3011,14 +3409,14 @@
           "conf": "high"
         }
       },
-      "checked_at": "2026-11-07",
+      "checked_at": "2026-11-14",
       "listed": "",
       "parent": "",
-      "valPending": 2000
+      "valPending": 1400
     },
     {
       "name": "Google Gemini",
-      "uc": "Gemini 4 Argon/Carbon限测、3.8/Gemma",
+      "uc": "Gemini 4 Hydrogen、Carbon、Argon与Gemma",
       "region": "US",
       "arr": 3000,
       "arrg": 350,
@@ -3045,10 +3443,10 @@
           "conf": "high"
         },
         "uc": {
-          "as_of": "2026-10-28",
-          "checked": "2026-10-31",
-          "source": "Google 10月28日发布Carbon，先向受信任网络防御者限量提供；保留Argon及既有产品线。",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+          "as_of": "2026-11-12",
+          "checked": "2026-11-14",
+          "source": "Google 11月12日发布Hydrogen，可经Gemini API、AI Studio及Gemini应用等使用；Carbon与Argon偏长任务。",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
           "conf": "high"
         },
         "region": {
@@ -3087,14 +3485,14 @@
           "conf": "high"
         }
       },
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-14",
       "listed": "",
       "parent": "Google",
       "valPending": null
     },
     {
       "name": "xAI",
-      "uc": "Grok 4.7、Voice 3.0、Imagine",
+      "uc": "Grok 4.7、Voice 3.0、Imagine与Grok Bot",
       "region": "US",
       "arr": 500,
       "arrg": 400,
@@ -3107,10 +3505,10 @@
       "retired": false,
       "prov": {
         "uc": {
-          "as_of": "2026-10-14",
-          "checked": "2026-10-17",
-          "source": "xAI 官方 2026-10-14 发布 Grok Voice 3.0；官方新闻列表亦确认 9 月 21 日 Grok 4.7，补充当前产品线。",
-          "url": "https://x.ai/news/grok-voice-3",
+          "as_of": "2026-11-02",
+          "checked": "2026-11-14",
+          "source": "xAI 11月2日发布面向团队的Grok Bot 1.0，补充现有语言、语音和图像产品线。",
+          "url": "https://x.ai/news",
           "conf": "high"
         },
         "arr": {
@@ -3135,21 +3533,42 @@
           "conf": "high"
         },
         "parent": {
-          "as_of": "2026-02-03",
-          "checked": "2026-09-06",
-          "source": "CNBC 2026-02-03《Musk's xAI, SpaceX combo is the biggest merger of all time, valued at $1.25 trillion》：全股票收购已于 2026 年 2 月初交割，xAI 作价 2,500 亿美元并入 SpaceX，成为全资子公司（1 股 xAI 换 0.1433 股 SpaceX）；Sacra 研究《Why SpaceX acquired xAI》与 The D&O Diary 2026-03 同口径；SpaceX 已于 2026-06 在纳斯达克上市（SPCX），xAI 并入 SpaceXAI 部门。按收购政策（Cursor/SpaceX 先例），内嵌实体不再保留独立估值，val 随本 patch 自动清空",
-          "url": "https://www.cnbc.com/2026/02/03/musk-xai-spacex-biggest-merger-ever.html",
+          "as_of": "2026-11-14",
+          "checked": "2026-11-14",
+          "source": "2月2日xAI确认被SpaceX收购；本轮交叉母公司季度披露，该业务并入、未单独挂牌。按母公司规则估值、拟议估值及股票代码为空。 交叉材料：https://www.sec.gov/Archives/edgar/data/1181412/000162828026066482/spaceexplorationtechnologi.htm?lid=lkbt9ae9h48s",
+          "url": "https://x.ai/news/xai-joins-spacex",
+          "conf": "high"
+        },
+        "val": {
+          "as_of": "2026-11-14",
+          "checked": "2026-11-14",
+          "source": "2月2日xAI确认被SpaceX收购；本轮交叉母公司季度披露，该业务并入、未单独挂牌。按母公司规则估值、拟议估值及股票代码为空。 交叉材料：https://www.sec.gov/Archives/edgar/data/1181412/000162828026066482/spaceexplorationtechnologi.htm?lid=lkbt9ae9h48s",
+          "url": "https://x.ai/news/xai-joins-spacex",
+          "conf": "high"
+        },
+        "valPending": {
+          "as_of": "2026-11-14",
+          "checked": "2026-11-14",
+          "source": "2月2日xAI确认被SpaceX收购；本轮交叉母公司季度披露，该业务并入、未单独挂牌。按母公司规则估值、拟议估值及股票代码为空。 交叉材料：https://www.sec.gov/Archives/edgar/data/1181412/000162828026066482/spaceexplorationtechnologi.htm?lid=lkbt9ae9h48s",
+          "url": "https://x.ai/news/xai-joins-spacex",
+          "conf": "high"
+        },
+        "listed": {
+          "as_of": "2026-11-14",
+          "checked": "2026-11-14",
+          "source": "2月2日xAI确认被SpaceX收购；本轮交叉母公司季度披露，该业务并入、未单独挂牌。按母公司规则估值、拟议估值及股票代码为空。 交叉材料：https://www.sec.gov/Archives/edgar/data/1181412/000162828026066482/spaceexplorationtechnologi.htm?lid=lkbt9ae9h48s",
+          "url": "https://x.ai/news/xai-joins-spacex",
           "conf": "high"
         }
       },
-      "checked_at": "2026-10-17",
+      "checked_at": "2026-11-14",
       "listed": "",
       "parent": "SpaceX",
       "valPending": null
     },
     {
       "name": "Kimi (Moonshot)",
-      "uc": "Kimi K3.1 Pro、Kimi Work智能体、API服务",
+      "uc": "Kimi K3.1 Pro开放权重、Kimi Work与API",
       "region": "CN",
       "arr": 1000,
       "arrg": 400,
@@ -3157,22 +3576,22 @@
       "tokG": 380,
       "trainPerRun": 8,
       "runsPerYear": 3,
-      "val": 35,
-      "m": 51,
+      "val": 50,
+      "m": 48,
       "retired": false,
       "prov": {
         "val": {
-          "as_of": "2026-09-12",
-          "checked": "2026-09-27",
-          "source": "腾讯新闻等 2026-09-12: 确认最近一次已交割融资仍为7月29日F轮(投后$35B)，500亿美元一轮仍在推进中未交割，val维持35不变",
-          "url": "https://news.qq.com/rain/a/20260912A06F7500",
-          "conf": "high"
+          "as_of": "2026-10-06",
+          "checked": "2026-11-14",
+          "source": "Bloomberg 10月6日引交易知情人称上市前最后一轮已交割、估值约USD 50B；红星资本局报道相同，私募市场Caplight亦标约USD 50B。11月13日WSJ所述拟议IPO不是已上市。 交叉材料：https://finance.eastmoney.com/a/202610063888748225.html；https://www.caplight.com/company/moonshot-ai；https://www.wsj.com/tech/chinas-moonshot-ai-restructures-to-pave-way-for-ipo-49f09abb",
+          "url": "https://www.straitstimes.com/business/moonshot-said-to-eye-hong-kong-ipo-in-early-2027-after-value-hits-us50-billion",
+          "conf": "medium"
         },
         "uc": {
-          "as_of": "2026-10-23",
-          "checked": "2026-10-24",
-          "source": "Kimi 官方 K3.1 Pro 发布及 Artificial Analysis 2026-10-23 原始评测：应用/API 已上线，权重计划 11 月 4 日发布。",
-          "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+          "as_of": "2026-11-14",
+          "checked": "2026-11-14",
+          "source": "11月14日核读官方发布仓与产品博客，K3.1 Pro权重已实际提供；补明供应状态，不将此写成本周首发。 交叉材料：https://www.kimi.com/en/blog/kimi-k3-1-pro?trk=article-ssr-frontend-pulse_little-text-block",
+          "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
           "conf": "high"
         },
         "arr": {
@@ -3190,44 +3609,44 @@
           "conf": "medium"
         },
         "region": {
-          "as_of": "2026-08-04",
-          "checked": "2026-09-01",
-          "source": "21财经 2026-08-04 / 澎湃新闻 2026-08-07：北京月之暗面科技股份有限公司，中国大模型公司，筹备赴港上市",
-          "url": "https://m.21jingji.com/article/20260804/herald/2e0e062fe890ffea7438d81b5d299b03.html",
+          "as_of": "2026-11-13",
+          "checked": "2026-11-14",
+          "source": "11月13日WSJ：主营业务及承接投资的运营实体在中国，拟赴港IPO仍在筹备，不设已交易代码。",
+          "url": "https://www.wsj.com/tech/chinas-moonshot-ai-restructures-to-pave-way-for-ipo-49f09abb",
           "conf": "high"
         },
         "listed": {
-          "as_of": "2026-09-03",
-          "checked": "2026-09-27",
-          "source": "腾讯新闻/虎嗅/金融界 2026-09-02~03: 已向港交所秘密递交A1上市申请，尚未正式挂牌，listed维持空值",
-          "url": "https://news.qq.com/rain/a/20260903A056P500",
+          "as_of": "2026-11-13",
+          "checked": "2026-11-14",
+          "source": "11月13日WSJ：主营业务及承接投资的运营实体在中国，拟赴港IPO仍在筹备，不设已交易代码。",
+          "url": "https://www.wsj.com/tech/chinas-moonshot-ai-restructures-to-pave-way-for-ipo-49f09abb",
           "conf": "high"
         },
         "valPending": {
-          "as_of": "2026-09-12",
-          "checked": "2026-09-27",
-          "source": "21财经/腾讯新闻/凤凰网 2026-08-04~09-12交叉核实: 500亿美元Pre-IPO(G轮)投前估值仍进行中/未交割，与此前记录一致",
-          "url": "https://www.cls.cn/detail/2445951",
-          "conf": "high"
+          "as_of": "2026-10-06",
+          "checked": "2026-11-14",
+          "source": "已交割的是原来待定的同一轮约500亿美元私募。拟议IPO无已确定估值，不保留重复的待定行。 交叉材料：https://finance.eastmoney.com/a/202610063888748225.html；https://www.caplight.com/company/moonshot-ai",
+          "url": "https://www.straitstimes.com/business/moonshot-said-to-eye-hong-kong-ipo-in-early-2027-after-value-hits-us50-billion",
+          "conf": "medium"
         }
       },
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-11-14",
       "listed": "",
       "parent": "",
-      "valPending": 50
+      "valPending": null
     },
     {
       "name": "MiniMax",
-      "uc": "MiniMax M3.1 Flash、M3、海螺AI",
+      "uc": "M3.1 Flash/M3、海螺视频与H3-Image",
       "region": "CN",
       "arr": 800,
-      "arrg": 283,
+      "arrg": 283.1,
       "tokM": 4,
       "tokG": 1900,
       "trainPerRun": 6,
       "runsPerYear": 2,
-      "val": 7.18,
-      "m": 43,
+      "val": 6.78,
+      "m": 47,
       "retired": false,
       "prov": {
         "arr": {
@@ -3239,48 +3658,48 @@
         },
         "arrg": {
           "as_of": "2026-08-26",
-          "checked": "2026-09-20",
-          "source": "复核一致：2026 年中期业绩，上半年收入同比 +283.1%，本周无新的增速披露（比例数据，不涉及汇率换算）",
-          "url": "https://www.guancha.cn/economy/2026_08_28_829017.shtml",
-          "conf": "high"
-        },
-        "val": {
-          "as_of": "2026-10-30",
-          "checked": "2026-10-31",
-          "source": "StockAnalysis 与 Investing.com 10月30日收盘市值交叉：56.33B HKD，第二来源 https://cn.investing.com/equities/minimax-group-inc；USD/HKD=7.8447（https://hk.investing.com/currencies/usd-hkd-historical-data），换算美元。沿用历史349.24M股对应headline口径，供应商股份类别差异未解决，未改为全类别市值。",
-          "url": "https://stockanalysis.com/quote/hkg/0100/",
-          "conf": "medium"
-        },
-        "uc": {
-          "as_of": "2026-11-07",
-          "checked": "2026-11-07",
-          "source": "官方中期业绩与现行产品导航核实M3.1 Flash/M3/海螺、HKEX:0100；7月token为1月20倍即增长1900%，是区间增长而非同比。",
+          "checked": "2026-11-14",
+          "source": "MiniMax 8月26日中期公告，公司上半年收入同比283.1%（旧表取整数283%）。这是全公司收入同比，不是API业务同比，也不用于年化API收入。",
           "url": "https://www.minimax.cn/news/minimax-%E5%8F%91%E5%B8%83-2026-%E5%B9%B4%E4%B8%AD%E6%9C%9F%E4%B8%9A%E7%BB%A9-1787744159",
           "conf": "high"
         },
+        "val": {
+          "as_of": "2026-11-13",
+          "checked": "2026-11-14",
+          "source": "11月13日StockAnalysis与Investing.com港股主报价市值均为HKD 53.22B，按同日收盘汇率1 USD=7.8456 HKD，折合USD 6.78B。沿用仓库上市报价口径。 交叉材料：https://cn.investing.com/equities/minimax-group-inc；https://hk.investing.com/currencies/usd-hkd-historical-data",
+          "url": "https://stockanalysis.com/quote/hkg/0100/",
+          "conf": "high"
+        },
+        "uc": {
+          "as_of": "2026-11-10",
+          "checked": "2026-11-14",
+          "source": "MiniMax 11月10日开放H3-Image权重，官方产品导航同时列语言和视频产品。",
+          "url": "https://www.minimax.cn/blog/minimax-h3-image",
+          "conf": "high"
+        },
         "region": {
-          "as_of": "2026-11-07",
-          "checked": "2026-11-07",
-          "source": "行情公司资料核实中国总部，保留CN。",
+          "as_of": "2026-11-13",
+          "checked": "2026-11-14",
+          "source": "11月13日行情与公司概况核实HKEX:0100及上海总部。 交叉材料：https://www.minimax.cn/news/minimax-%E5%8F%91%E5%B8%83-2026-%E5%B9%B4%E4%B8%AD%E6%9C%9F%E4%B8%9A%E7%BB%A9-1787744159",
           "url": "https://stockanalysis.com/quote/hkg/0100/",
           "conf": "high"
         },
         "tokG": {
           "as_of": "2026-08-26",
-          "checked": "2026-11-07",
-          "source": "官方中期业绩与现行产品导航核实M3.1 Flash/M3/海螺、HKEX:0100；7月token为1月20倍即增长1900%，是区间增长而非同比。",
+          "checked": "2026-11-14",
+          "source": "8月26日中报：7月平台token消耗为1月的20倍，即两时点增长1900%，不是同比；不据此估算月总量。",
           "url": "https://www.minimax.cn/news/minimax-%E5%8F%91%E5%B8%83-2026-%E5%B9%B4%E4%B8%AD%E6%9C%9F%E4%B8%9A%E7%BB%A9-1787744159",
           "conf": "high"
         },
         "listed": {
-          "as_of": "2026-10-30",
-          "checked": "2026-11-07",
-          "source": "10月30日上市行情和公司资料核实香港上市代码与中国归属。",
+          "as_of": "2026-11-13",
+          "checked": "2026-11-14",
+          "source": "11月13日行情与公司概况核实HKEX:0100及上海总部。 交叉材料：https://www.minimax.cn/news/minimax-%E5%8F%91%E5%B8%83-2026-%E5%B9%B4%E4%B8%AD%E6%9C%9F%E4%B8%9A%E7%BB%A9-1787744159",
           "url": "https://stockanalysis.com/quote/hkg/0100/",
           "conf": "high"
         }
       },
-      "checked_at": "2026-11-07",
+      "checked_at": "2026-11-14",
       "listed": "HKEX:0100",
       "parent": "",
       "valPending": null
@@ -3292,10 +3711,10 @@
       "arr": 1800,
       "arrg": 399.7,
       "tokM": 2.5,
-      "tokG": 250,
+      "tokG": 3900,
       "trainPerRun": 5,
       "runsPerYear": 2,
-      "val": 25.31,
+      "val": 24.24,
       "m": 56,
       "retired": false,
       "prov": {
@@ -3308,41 +3727,48 @@
         },
         "arrg": {
           "as_of": "2026-08-31",
-          "checked": "2026-09-20",
-          "source": "复核一致：仍为 2026 年中期业绩公告的上半年收入同比 +399.7%，本周分析师交流会只更新了 ARR 绝对值与年末指引，未给新的同比增速（比例数据，不涉及汇率换算）",
-          "url": "https://news.qq.com/rain/a/20260916A0ARLA00",
+          "checked": "2026-11-14",
+          "source": "8月31日公司上半年总收入同比399.7%，澎湃和公司公告一致。此为收入同比的原口径，不作为纯API ARR。 交叉材料：https://financialfilings.com/filings/knowledge-atlas-technology-joint-stock-company-limited/interim-quarterly-report/2026/59393106/",
+          "url": "https://www.thepaper.cn/newsDetail_forward_33979752",
           "conf": "high"
         },
         "val": {
-          "as_of": "2026-11-06",
-          "checked": "2026-11-07",
-          "source": "StockAnalysis和Investing.com（https://cn.investing.com/equities/knowledge-atlas-tech-joint-stock）交叉11月6日收盘市值198.45B HKD；USD/HKD=7.8397（https://hk.investing.com/currencies/usd-hkd-historical-data），换算25.31B美元。沿用465.62M股headline口径；股份类别差异仍是限制，未自行扩大为全类别市值。",
+          "as_of": "2026-11-13",
+          "checked": "2026-11-14",
+          "source": "11月13日StockAnalysis和Investing.com港股主报价市值均为HKD 190.16B，按1 USD=7.8456 HKD折合USD 24.24B；沿用原口径。 交叉材料：https://cn.investing.com/equities/knowledge-atlas-tech-joint-stock；https://hk.investing.com/currencies/usd-hkd-historical-data",
           "url": "https://stockanalysis.com/quote/hkg/2513/",
-          "conf": "medium"
+          "conf": "high"
         },
         "uc": {
-          "as_of": "2026-09-18",
-          "checked": "2026-09-20",
-          "source": "复核维持：当前旗舰仍为 GLM-5.3（2026-08-14 发布、08-28 开源权重）+ ZCode + AutoClaw。本周 2026-09-18 上线的 GLM-5.3-FlashX 是同代的速度档变体（最高输出约 200 token/s、推理由约 10 万张国产芯片承载），非新一代基座；2026-09-11 完成的约 50 亿美元融资公告仍称募资用于「下一代 GLM 基座模型及完全自训练体系」，即下一代尚在研发",
-          "url": "https://news.qq.com/rain/a/20260919A0AQ2F00",
-          "conf": "medium"
+          "as_of": "2026-11-14",
+          "checked": "2026-11-14",
+          "source": "11月14日读取智谱产品目录：旗舰GLM-5.3、ZCode与AutoClaw仍列示。",
+          "url": "https://www.zhipuai.cn/v4",
+          "conf": "high"
         },
         "region": {
-          "as_of": "2026-11-06",
-          "checked": "2026-11-07",
-          "source": "现行行情公司资料核实HKEX:2513、中国总部，保留代码与CN。",
-          "url": "https://stockanalysis.com/quote/hkg/2513/",
+          "as_of": "2026-11-13",
+          "checked": "2026-11-14",
+          "source": "公司中期公告列中国注册和港股2513；交叉11月13日的上市行情。 交叉材料：https://stockanalysis.com/quote/hkg/2513/",
+          "url": "https://financialfilings.com/filings/knowledge-atlas-technology-joint-stock-company-limited/interim-quarterly-report/2026/59393106/",
           "conf": "high"
         },
         "listed": {
-          "as_of": "2026-11-06",
-          "checked": "2026-11-07",
-          "source": "现行行情公司资料核实HKEX:2513、中国总部，保留代码与CN。",
-          "url": "https://stockanalysis.com/quote/hkg/2513/",
+          "as_of": "2026-11-13",
+          "checked": "2026-11-14",
+          "source": "公司中期公告列中国注册和港股2513；交叉11月13日的上市行情。 交叉材料：https://stockanalysis.com/quote/hkg/2513/",
+          "url": "https://financialfilings.com/filings/knowledge-atlas-technology-joint-stock-company-limited/interim-quarterly-report/2026/59393106/",
           "conf": "high"
+        },
+        "tokG": {
+          "as_of": "2026-08-31",
+          "checked": "2026-11-14",
+          "source": "公司8月31日中期公告：本年初至公告日MaaS平台token调用规模超过起点的40倍。按保守下限40倍水平折算至少+3900%；不是11月环比、同比或月度绝对调用量。 交叉材料：https://www.thepaper.cn/newsDetail_forward_33979752",
+          "url": "https://financialfilings.com/filings/knowledge-atlas-technology-joint-stock-company-limited/interim-quarterly-report/2026/59393106/",
+          "conf": "medium"
         }
       },
-      "checked_at": "2026-11-07",
+      "checked_at": "2026-11-14",
       "listed": "HKEX:2513",
       "parent": "",
       "valPending": null
@@ -3358,7 +3784,7 @@
       "trainPerRun": 5,
       "runsPerYear": 2,
       "val": 24,
-      "m": 72,
+      "m": 68,
       "retired": false,
       "prov": {
         "val": {
@@ -3413,7 +3839,7 @@
       "trainPerRun": 3,
       "runsPerYear": 2,
       "val": 7,
-      "m": 21,
+      "m": 25,
       "retired": false,
       "prov": {
         "val": {
@@ -3473,7 +3899,7 @@
     },
     {
       "name": "01.AI",
-      "uc": "万策决策中枢、老板AI/销冠AI/投资官AI",
+      "uc": "万策企业决策智能体；已停止公共模型API",
       "region": "CN",
       "arr": 100,
       "arrg": 150,
@@ -3500,10 +3926,10 @@
           "conf": "medium"
         },
         "uc": {
-          "as_of": "2026-07-08",
-          "checked": "2026-10-24",
-          "source": "每日经济新闻 2026-07-08 原创采访核实北京公司及老板AI/销冠AI/投资官AI产品；不拿订单作 API ARR。",
-          "url": "https://m.nbd.com.cn/articles/2026-07-08/4461780.html",
+          "as_of": "2026-10-30",
+          "checked": "2026-11-14",
+          "source": "10月30日报道及7月对李开复采访：继续企业万策业务；原开放平台9月3日晚停止在线体验及API服务，该举措不等于公司停业。 交叉材料：https://m.nbd.com.cn/articles/2026-07-08/4461780.html",
+          "url": "https://www.ithome.com/1/019/877.htm",
           "conf": "high"
         },
         "val": {
@@ -3514,35 +3940,42 @@
           "checked": "2026-09-01"
         },
         "region": {
-          "as_of": "2026-07-21",
-          "source": "中华网/凤凰网科技 2026-07-21、Wikipedia 01.AI：公司注册及总部位于中国北京，计划2027年赴港上市",
-          "url": "https://news.china.com/socialgd/10000169/20260721/49623930.html",
-          "conf": "high",
-          "checked": "2026-10-24"
+          "as_of": "2026-10-30",
+          "checked": "2026-11-14",
+          "source": "10月30日公司与杭州相关签约报道及7月采访：公司独立发展，曾否认被阿里收购，IPO仍是未来计划；中国业务归属。 交叉材料：https://m.nbd.com.cn/articles/2026-07-08/4461780.html",
+          "url": "https://www.ithome.com/1/019/877.htm",
+          "conf": "medium"
         },
         "listed": {
-          "as_of": "2026-07-20",
-          "checked": "2026-09-27",
-          "source": "Bloomberg 2026-07-20: 公司总部仍在北京，计划2027财年后赴港IPO(非2026年内)，当前仍非上市公司，listed维持空值",
-          "url": "https://www.bloomberg.com/news/articles/2026-07-20/ai-pioneer-kai-fu-lee-s-startup-targets-hong-kong-ipo-next-year",
-          "conf": "high"
+          "as_of": "2026-10-30",
+          "checked": "2026-11-14",
+          "source": "10月30日公司与杭州相关签约报道及7月采访：公司独立发展，曾否认被阿里收购，IPO仍是未来计划；中国业务归属。 交叉材料：https://m.nbd.com.cn/articles/2026-07-08/4461780.html",
+          "url": "https://www.ithome.com/1/019/877.htm",
+          "conf": "medium"
+        },
+        "parent": {
+          "as_of": "2026-10-30",
+          "checked": "2026-11-14",
+          "source": "10月30日公司与杭州相关签约报道及7月采访：公司独立发展，曾否认被阿里收购，IPO仍是未来计划；中国业务归属。 交叉材料：https://m.nbd.com.cn/articles/2026-07-08/4461780.html",
+          "url": "https://www.ithome.com/1/019/877.htm",
+          "conf": "medium"
         }
       },
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-11-14",
       "listed": "",
       "parent": "",
       "valPending": null
     },
     {
       "name": "DeepSeek",
-      "uc": "DeepSeek-V4.1-Flash（MoE开源权重）、API平台",
+      "uc": "V4.1-Flash与搜索、文件、语音应用API",
       "arr": 480,
       "arrg": 900.0,
-      "val": 50.0,
+      "val": 90,
       "listed": "",
-      "m": 43,
+      "m": 39,
       "retired": false,
-      "checked_at": "2026-10-08",
+      "checked_at": "2026-11-14",
       "prov": {
         "arr": {
           "as_of": "2026-07-15",
@@ -3552,10 +3985,10 @@
           "conf": "medium"
         },
         "val": {
-          "as_of": "2026-06-18",
-          "checked": "2026-09-02",
-          "source": "The Information via Silicon Republic / Asia Financial 2026-06（约2026-06-18）：DeepSeek首轮融资完成，募资约74亿美元（人民币500亿），投后估值“超过500亿美元”；财经/网易 2026-08-05 亦称首轮4月启动、6月完成交割，募资500亿元、估值超3500亿元人民币（按The Information自身换算隐含汇率约6.76，3500亿元≈518亿美元；若按投后4000亿元则≈592亿美元）。取媒体口径“逾500亿美元”作为最近一轮已交割估值",
-          "url": "https://www.asiafinancial.com/chinas-deepseek-valued-at-over-50-billion-after-funding-round",
+          "as_of": "2026-11-03",
+          "checked": "2026-11-14",
+          "source": "Crunchbase 11月3日按其10月融资数据库记录已完成第二轮、投后约USD 90B；证券时报与WSJ分别向交易人士确认成交。10月30日21财经报道人民币6155亿元，按当日1 USD=6.6541 CNY约USD 92.5B。以十亿美元计只取约90的近似共识，非精确换算或融资额。 交叉材料：https://finance.eastmoney.com/a/202610233906581945.html；https://finance.eastmoney.com/a/202610303916652935.html；https://www.wsj.com/tech/ai/chinese-ai-startup-deekseek-raises-15-billion-ahead-of-potential-ipo-f7fe3a49?mod=wsj_furtherreading_pos_1；https://www.investing.com/currencies/usd-cny-historical-data",
+          "url": "https://news.crunchbase.com/venture/october-2026-global-startup-funding-strong-china-deepseek/",
           "conf": "medium"
         },
         "arrg": {
@@ -3566,32 +3999,32 @@
           "conf": "medium"
         },
         "uc": {
-          "as_of": "2026-10-08",
-          "checked": "2026-10-08",
-          "source": "2026-10-08 读取 DeepSeek 官方 Hugging Face 模型页及 API 文档，当前 V4.1-Flash 和开放权重/API 产品仍列示。",
-          "url": "https://huggingface.co/deepseek-ai",
+          "as_of": "2026-11-13",
+          "checked": "2026-11-14",
+          "source": "DeepSeek 11月13日开放搜索、文件、阅读链接和语音等应用API；官方变更记录同时列V4.1-Flash。",
+          "url": "https://api-docs.deepseek.com/zh-cn/news/news261113/",
           "conf": "high"
         },
         "region": {
-          "as_of": "2026-10-06",
-          "checked": "2026-10-08",
-          "source": "Reuters 2026-10-06 称为中国 AI 企业；中文新浪 2026-07-15 同样确认深度求索中国主体 https://finance.sina.cn/stock/jdts/2026-07-15/detail-inihwrra4786440.d.html?vt=4 。",
-          "url": "https://www.reuters.com/world/asia-pacific/deepseek-raise-least-12-billion-tencent-backed-funding-bloomberg-news-reports-2026-10-06/",
+          "as_of": "2026-10-23",
+          "checked": "2026-11-14",
+          "source": "WSJ访谈及证券时报核实中国模型公司已完成私募、在筹备潜在上市；没有在交易的独立证券代码。 交叉材料：https://finance.eastmoney.com/a/202610233906581945.html",
+          "url": "https://www.wsj.com/tech/ai/chinese-ai-startup-deekseek-raises-15-billion-ahead-of-potential-ipo-f7fe3a49?mod=wsj_furtherreading_pos_1",
           "conf": "high"
         },
         "listed": {
-          "as_of": "2026-08-29",
-          "checked": "2026-09-02",
-          "source": "搜狐(智能纪元AGI) 2026-08-29 / 腾讯新闻 2026-07-19：仍为非上市公司，已启动科创板IPO筹备，或2026年底提交申请、目标2027年挂牌；HKET 2026-08-26称已聘投行筹备明年上市",
-          "url": "https://www.sohu.com/a/1069082275_553580",
+          "as_of": "2026-10-23",
+          "checked": "2026-11-14",
+          "source": "WSJ访谈及证券时报核实中国模型公司已完成私募、在筹备潜在上市；没有在交易的独立证券代码。 交叉材料：https://finance.eastmoney.com/a/202610233906581945.html",
+          "url": "https://www.wsj.com/tech/ai/chinese-ai-startup-deekseek-raises-15-billion-ahead-of-potential-ipo-f7fe3a49?mod=wsj_furtherreading_pos_1",
           "conf": "high"
         },
         "valPending": {
-          "as_of": "2026-10-06",
-          "checked": "2026-10-08",
-          "source": "Reuters 2026-10-06 经 Bloomberg 报道：融资目标估值人民币 5000 亿元约 $74B，仍筹资、计划 10 月完成而非已交割；按报道自身美元换算，隐含 5000/740≈6.76 CNY/USD，库存 $74B 保持。中文新浪 2026-07-15 亦记该目标，未把新融资额当估值。",
-          "url": "https://www.reuters.com/world/asia-pacific/deepseek-raise-least-12-billion-tencent-backed-funding-bloomberg-news-reports-2026-10-06/",
-          "conf": "medium"
+          "as_of": "2026-11-03",
+          "checked": "2026-11-14",
+          "source": "旧USD 74B为同一轮的投前/意向；证券时报与WSJ均确认第二轮已完成，改记交割值后清空旧标记。 交叉材料：https://finance.eastmoney.com/a/202610233906581945.html；https://www.wsj.com/tech/ai/chinese-ai-startup-deekseek-raises-15-billion-ahead-of-potential-ipo-f7fe3a49?mod=wsj_furtherreading_pos_1",
+          "url": "https://news.crunchbase.com/venture/october-2026-global-startup-funding-strong-china-deepseek/",
+          "conf": "high"
         }
       },
       "region": "CN",
@@ -3600,18 +4033,18 @@
       "trainPerRun": null,
       "runsPerYear": null,
       "parent": "",
-      "valPending": 74.0
+      "valPending": null
     },
     {
       "name": "Doubao (ByteDance)",
-      "uc": "豆包App、豆包大模型2.1、Seedance 2.0",
+      "uc": "豆包App、大模型2.1与Seedance 2.5 Flash",
       "arr": 2110.0,
       "arrg": 900.0,
       "val": null,
       "listed": "",
       "m": 75,
       "retired": false,
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-11-14",
       "prov": {
         "arr": {
           "as_of": "2026-09-01",
@@ -3622,24 +4055,59 @@
         },
         "tokM": {
           "as_of": "2026-06-23",
-          "checked": "2026-10-24",
-          "source": "上海证券报/中国证券网 2026-06-23 FORCE 大会：180 万亿 token/天；按 30 天折算 5400 万亿/月（T/月），不是新披露月度实测量。",
-          "url": "https://www.cnstock.com/commonDetail/732816",
+          "checked": "2026-11-14",
+          "source": "6月23日澎湃从火山引擎获悉：日均超过180万亿，过去一年超过10倍。在原表约定下，180×30=5400万亿/月、10倍水平折算为约+900%，均为6月下限代理而非11月实测。",
+          "url": "https://www.thepaper.cn/newsDetail_forward_33434649",
           "conf": "medium"
         },
         "tokG": {
           "as_of": "2026-06-23",
-          "checked": "2026-09-27",
-          "source": "同上信源: 官方称过去一年增长超10倍(约+900%)，与现存tokG=900吻合",
-          "url": "https://finance.sina.com.cn/roll/2026-06-23/doc-iniekknt9788268.shtml",
-          "conf": "high"
+          "checked": "2026-11-14",
+          "source": "6月23日澎湃从火山引擎获悉：日均超过180万亿，过去一年超过10倍。在原表约定下，180×30=5400万亿/月、10倍水平折算为约+900%，均为6月下限代理而非11月实测。",
+          "url": "https://www.thepaper.cn/newsDetail_forward_33434649",
+          "conf": "medium"
         },
         "uc": {
-          "as_of": "2026-06-23",
-          "checked": "2026-09-27",
-          "source": "36氪 + 火山引擎FORCE大会报道: 豆包App、豆包大模型2.1、Seedance 2.0仍为当前核心产品描述，未变化",
-          "url": "https://36kr.com/p/3836973710423429",
-          "conf": "medium"
+          "as_of": "2026-11-12",
+          "checked": "2026-11-14",
+          "source": "11月12日火山引擎发布视频模型Seedance 2.5 Flash，陆续进入创作平台，方舟API计划11月15日开放。字节Seed核实2.5系列。 交叉材料：https://seed.bytedance.com/zh/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5?view_from=homepage_tab；https://www.thepaper.cn/newsDetail_forward_33434649",
+          "url": "https://www.ithome.com/1/026/069.htm",
+          "conf": "high"
+        },
+        "parent": {
+          "as_of": "2026-11-12",
+          "checked": "2026-11-14",
+          "source": "火山引擎以字节跳动旗下服务发布豆包模型，结合字节Seed产品公告核实中国归属；内嵌业务无独立估值、待定估值或证券代码。 交叉材料：https://seed.bytedance.com/zh/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5?view_from=homepage_tab；https://www.thepaper.cn/newsDetail_forward_33434649",
+          "url": "https://www.ithome.com/1/026/069.htm",
+          "conf": "high"
+        },
+        "region": {
+          "as_of": "2026-11-12",
+          "checked": "2026-11-14",
+          "source": "火山引擎以字节跳动旗下服务发布豆包模型，结合字节Seed产品公告核实中国归属；内嵌业务无独立估值、待定估值或证券代码。 交叉材料：https://seed.bytedance.com/zh/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5?view_from=homepage_tab；https://www.thepaper.cn/newsDetail_forward_33434649",
+          "url": "https://www.ithome.com/1/026/069.htm",
+          "conf": "high"
+        },
+        "val": {
+          "as_of": "2026-11-12",
+          "checked": "2026-11-14",
+          "source": "火山引擎以字节跳动旗下服务发布豆包模型，结合字节Seed产品公告核实中国归属；内嵌业务无独立估值、待定估值或证券代码。 交叉材料：https://seed.bytedance.com/zh/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5?view_from=homepage_tab；https://www.thepaper.cn/newsDetail_forward_33434649",
+          "url": "https://www.ithome.com/1/026/069.htm",
+          "conf": "high"
+        },
+        "valPending": {
+          "as_of": "2026-11-12",
+          "checked": "2026-11-14",
+          "source": "火山引擎以字节跳动旗下服务发布豆包模型，结合字节Seed产品公告核实中国归属；内嵌业务无独立估值、待定估值或证券代码。 交叉材料：https://seed.bytedance.com/zh/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5?view_from=homepage_tab；https://www.thepaper.cn/newsDetail_forward_33434649",
+          "url": "https://www.ithome.com/1/026/069.htm",
+          "conf": "high"
+        },
+        "listed": {
+          "as_of": "2026-11-12",
+          "checked": "2026-11-14",
+          "source": "火山引擎以字节跳动旗下服务发布豆包模型，结合字节Seed产品公告核实中国归属；内嵌业务无独立估值、待定估值或证券代码。 交叉材料：https://seed.bytedance.com/zh/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5?view_from=homepage_tab；https://www.thepaper.cn/newsDetail_forward_33434649",
+          "url": "https://www.ithome.com/1/026/069.htm",
+          "conf": "high"
         }
       },
       "region": "CN",
@@ -3652,14 +4120,14 @@
     },
     {
       "name": "Alibaba Qwen (通义千问)",
-      "uc": "通义千问Qwen3.8-Max、QwenWork、Qwen App",
+      "uc": "Qwen4-Max预览、千问办公与千问App",
       "arr": null,
       "arrg": null,
       "val": null,
       "listed": "",
       "m": 0,
       "retired": false,
-      "checked_at": "2026-11-07",
+      "checked_at": "2026-11-14",
       "prov": {
         "arr": {
           "as_of": "2026-09-01",
@@ -3669,11 +4137,11 @@
           "conf": "medium"
         },
         "uc": {
-          "as_of": "2026-09-18",
-          "checked": "2026-10-17",
-          "source": "复核维持：旗舰仍为 Qwen3.8-Max（2026-08 发布的万亿参数稀疏 MoE，含 2026-09-02 的 qwen3.8-max-0902 快照升级），QwenWork 与 Qwen App 为企业侧与 C 端入口。本周 2026-09-18 上线的 Qwen3.8-Omni-Flash 是同代原生全模态 Flash 变体（文/图/音/视频输入、1M 上下文、30 项评测较上代平均 +26%），非新一代旗舰",
-          "url": "https://news.qq.com/rain/a/20260919A0AQ2F00",
-          "conf": "medium"
+          "as_of": "2026-11-11",
+          "checked": "2026-11-14",
+          "source": "阿里云11月11日开始Qwen4-Max-Preview限时预览；Token Plan含个人及团队版。本次非全量正式版。",
+          "url": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/token-plan-product-updates",
+          "conf": "high"
         },
         "region": {
           "as_of": "2026-09-18",
@@ -3859,14 +4327,14 @@
     },
     {
       "name": "Baidu (ERNIE)",
-      "uc": "文心5.5 Flash Base、5.1与千帆",
+      "uc": "文心5.5 Flash预览及Base、千帆API",
       "arr": null,
       "arrg": null,
       "val": null,
       "listed": "",
       "m": 0,
       "retired": false,
-      "checked_at": "2026-11-07",
+      "checked_at": "2026-11-14",
       "prov": {
         "arr": {
           "as_of": "2026-09-01",
@@ -3876,10 +4344,10 @@
           "conf": "medium"
         },
         "uc": {
-          "as_of": "2026-11-05",
-          "checked": "2026-11-07",
-          "source": "百度11月5日开放ERNIE5.5 Flash Base预训练权重；是供后续训练的基座，非已后训练的聊天产品。保留5.1与千帆线。",
-          "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+          "as_of": "2026-11-11",
+          "checked": "2026-11-14",
+          "source": "百度11月11日发布Flash Preview，千帆API已提供；计划11月25日开源权重，本轮不记作权重已发布。 交叉材料：https://cloud.baidu.com/product/qianfan_home/model_3.html；https://www1.xinhuanet.com/tech/20261111/183aa161e70b4942b622e10b5e3da605/c.html",
+          "url": "https://ernie.baidu.com/zh/",
           "conf": "high"
         },
         "region": {
@@ -4196,17 +4664,17 @@
     },
     {
       "name": "Character.ai",
-      "uc": "AI角色娱乐（Chapter 11重组中）",
+      "uc": "AI角色娱乐服务；Chapter 11资产竞售中",
       "cat": "consumer",
       "stage": "scale",
       "arr": 50,
-      "arrg": 66,
-      "mau": 20,
+      "arrg": 218.9,
+      "mau": 12,
       "maug": 0,
       "ti": "high",
       "biz": "B2C",
       "val": 1,
-      "m": 11,
+      "m": 44,
       "retired": false,
       "prov": {
         "arr": {
@@ -4217,11 +4685,11 @@
           "checked": "2026-09-01"
         },
         "arrg": {
-          "as_of": "2025-12-31",
-          "source": "Business of Apps 2026-07-16：2025 年 5,000 万美元、同比 +66%（2024 年约 3,000 万美元）；Sacra 2025-12-14 报告亦称 2025-07 年化约 3,000 万、年底目标 5,000 万",
-          "url": "https://www.businessofapps.com/data/character-ai-statistics/",
-          "conf": "high",
-          "checked": "2026-09-01"
+          "as_of": "2026-10-13",
+          "checked": "2026-11-14",
+          "source": "10月13日首日宣誓书披露FY2025/FY2024总收入约USD 23.6M/7.4M，历史财年同比约+218.9%，更正第三方估算的66%。不是破产期间收入同比。 交叉材料：https://ppc.land/character-ai-loses-8m-a-month-despite-2-5m-in-monthly-ad-sales/",
+          "url": "https://app.bondoro.com/preview/cases/Character_Technologies_Inc/case-summary",
+          "conf": "medium"
         },
         "val": {
           "as_of": "2023-03-23",
@@ -4231,11 +4699,11 @@
           "checked": "2026-09-01"
         },
         "mau": {
-          "as_of": "2026-08-13",
-          "source": "DemandSage, Character AI Statistics 2026, 2026-08-13：全球月活超 2,000 万；与 startuphub.ai 2026 评测（2,000 万月活）及公司 MWC 2026 口径一致",
-          "url": "https://www.demandsage.com/character-ai-statistics/",
-          "conf": "medium",
-          "checked": "2026-09-01"
+          "as_of": "2026-10-13",
+          "checked": "2026-11-14",
+          "source": "10月13日CEO首日宣誓书（Doc 18）对当时全球月活的披露约1200万；案件摘要与PPC Land逐项对照。旧2000万是更早的另一来源，改表−40%不等于某月或同比跌幅。 交叉材料：https://ppc.land/character-ai-loses-8m-a-month-despite-2-5m-in-monthly-ad-sales/；https://www.reuters.com/technology/artificial-intelligence/rise-fall-an-ai-chatbot-darling-2026-10-14/",
+          "url": "https://app.bondoro.com/preview/cases/Character_Technologies_Inc/case-summary",
+          "conf": "high"
         },
         "maug": {
           "as_of": "2026-08-13",
@@ -4245,10 +4713,10 @@
           "checked": "2026-09-01"
         },
         "uc": {
-          "as_of": "2026-10-12",
-          "checked": "2026-10-17",
-          "source": "Character.ai 官方 2026-10-12：已申请 Chapter 11，但服务和订阅继续；仅增加重组状态，不认定停运或收购交割。",
-          "url": "https://blog.character.ai/an-update-on-character-ai/",
+          "as_of": "2026-11-10",
+          "checked": "2026-11-14",
+          "source": "公司刊载竞售程序，11月10日提交刊登证明：11月24日截止投标，12月1日拟拍卖。Disney是指定资产起始竞买人，不是已完成收购。 交叉材料：https://ppc.land/character-ai-sale-notice-in-usa-today-leaves-9-days-to-object/",
+          "url": "https://blog.character.ai/chapter-11-update-and-transaction-notice/",
           "conf": "high"
         },
         "ownModel": {
@@ -4259,10 +4727,10 @@
           "conf": "high"
         },
         "cat": {
-          "as_of": "2026-09-28",
-          "checked": "2026-10-08",
-          "source": "Character.ai 官方 2026-09-28：角色聊天/创作面向消费者，免费及个人订阅产品，维持 consumer 与 B2C。",
-          "url": "https://blog.character.ai/new-styles-new-plan/",
+          "as_of": "2026-10-13",
+          "checked": "2026-11-14",
+          "source": "债务人案件资料列个人AI角色互动、订阅和应用内广告，支持面向消费者的娱乐产品定位。",
+          "url": "https://app.bondoro.com/preview/cases/Character_Technologies_Inc/case-summary",
           "conf": "high"
         },
         "stage": {
@@ -4273,18 +4741,25 @@
           "checked": "2026-09-01"
         },
         "biz": {
-          "as_of": "2026-09-28",
-          "checked": "2026-10-08",
-          "source": "Character.ai 官方 2026-09-28：角色聊天/创作面向消费者，免费及个人订阅产品，维持 consumer 与 B2C。",
-          "url": "https://blog.character.ai/new-styles-new-plan/",
+          "as_of": "2026-10-13",
+          "checked": "2026-11-14",
+          "source": "债务人案件资料列个人AI角色互动、订阅和应用内广告，支持面向消费者的娱乐产品定位。",
+          "url": "https://app.bondoro.com/preview/cases/Character_Technologies_Inc/case-summary",
           "conf": "high"
         },
         "ti": {
-          "as_of": "2025-12-14",
-          "source": "Sacra 公司报告 2025-12-14：成本结构由推理支出主导，用户日均使用约 75 分钟、每月数十亿聊天分钟 → token 强度 high",
-          "url": "https://sacra.com/c/character-ai/",
-          "conf": "medium",
-          "checked": "2026-09-01"
+          "as_of": "2026-10-13",
+          "checked": "2026-11-14",
+          "source": "申报描述月活平均每天约120分钟、2026年前八个月计算费用5610万美元，支持高推理密度的定性分类，不将费用换算token。 交叉材料：https://app.bondoro.com/preview/cases/Character_Technologies_Inc/case-summary",
+          "url": "https://ppc.land/character-ai-loses-8m-a-month-despite-2-5m-in-monthly-ad-sales/",
+          "conf": "medium"
+        },
+        "parent": {
+          "as_of": "2026-11-10",
+          "checked": "2026-11-14",
+          "source": "法院仅批准竞标程序，公司仍是占有中债务人；Google此前为技术授权和人员流动，Disney为报价方，未更换母公司。 交叉材料：https://www.reuters.com/technology/artificial-intelligence/rise-fall-an-ai-chatbot-darling-2026-10-14/；https://ppc.land/character-ai-sale-notice-in-usa-today-leaves-9-days-to-object/",
+          "url": "https://blog.character.ai/chapter-11-update-and-transaction-notice/",
+          "conf": "high"
         }
       },
       "ownModel": {
@@ -4294,7 +4769,7 @@
           "CAI-Image"
         ]
       },
-      "checked_at": "2026-10-17",
+      "checked_at": "2026-11-14",
       "listed": "",
       "parent": "",
       "valPending": null,
@@ -4302,7 +4777,7 @@
     },
     {
       "name": "ElevenLabs",
-      "uc": "ElevenAgents语音智能体与v4语音合成",
+      "uc": "ElevenAgents、v4语音合成与Scribe v3转写",
       "cat": "voice",
       "stage": "scale",
       "arr": 600,
@@ -4312,7 +4787,7 @@
       "ti": "med",
       "biz": "B2B+B2C",
       "val": 22,
-      "m": 58,
+      "m": 56,
       "retired": false,
       "prov": {
         "val": {
@@ -4323,10 +4798,10 @@
           "conf": "high"
         },
         "uc": {
-          "as_of": "2026-09-30",
-          "checked": "2026-10-31",
-          "source": "官方二级交易公告产品部分确认v4/v4 Turbo与语音智能体、企业及创作者业务。",
-          "url": "https://elevenlabs.io/blog/tender-22bn",
+          "as_of": "2026-11-10",
+          "checked": "2026-11-14",
+          "source": "11月10日ElevenLabs宣布Scribe v3与实时版；可用于ElevenAPI，实时版也进ElevenAgents。",
+          "url": "https://elevenlabs.io/blog/scribe-v3",
           "conf": "high"
         },
         "stage": {
@@ -4380,7 +4855,7 @@
           "Eleven v4 Turbo"
         ]
       },
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-14",
       "listed": "",
       "parent": "",
       "valPending": null,
@@ -4474,7 +4949,7 @@
       "ti": "ultra",
       "biz": "B2B+B2C",
       "val": 5.3,
-      "m": 49,
+      "m": 45,
       "retired": false,
       "prov": {
         "uc": {
@@ -4557,7 +5032,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 15.6,
-      "m": 53,
+      "m": 51,
       "retired": false,
       "prov": {
         "arr": {
@@ -4663,7 +5138,7 @@
       "ti": "med",
       "biz": "B2B",
       "val": 7.2,
-      "m": 32,
+      "m": 28,
       "retired": false,
       "prov": {
         "arrg": {
@@ -4833,7 +5308,7 @@
     },
     {
       "name": "HeyGen",
-      "uc": "AI视频数字人",
+      "uc": "AI数字人视频；Avatar 6企业早期试用",
       "cat": "creative",
       "stage": "scale",
       "arr": 200,
@@ -4889,10 +5364,10 @@
           "conf": "high"
         },
         "uc": {
-          "as_of": "2026-06-25",
-          "checked": "2026-10-17",
-          "source": "HeyGen 官方 2026-06-25：数字人视频、个人创作者及企业采用；结合已交叉核实的 USD200M ARR，creative、scale、B2B+B2C 仍适用。",
-          "url": "https://www.heygen.com/blog/heygen-surpasses-200m-arr",
+          "as_of": "2026-11-12",
+          "checked": "2026-11-14",
+          "source": "11月12日企业更新：Avatar 6已向企业工作区提供早期试用，公开上线预定11月17日。",
+          "url": "https://heygen.noticeable.news/publications/november-2026-enterprise-web-releases",
           "conf": "high"
         },
         "ti": {
@@ -4915,7 +5390,7 @@
         "tokenShare": null,
         "models": []
       },
-      "checked_at": "2026-10-17",
+      "checked_at": "2026-11-14",
       "listed": "",
       "parent": "",
       "valPending": null,
@@ -5016,7 +5491,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 1.9,
-      "m": 26,
+      "m": 22,
       "retired": false,
       "prov": {
         "val": {
@@ -5113,7 +5588,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 15.8,
-      "m": 53,
+      "m": 51,
       "retired": false,
       "prov": {
         "val": {
@@ -5172,7 +5647,7 @@
     },
     {
       "name": "Granola",
-      "uc": "AI会议笔记与企业上下文平台",
+      "uc": "AI会议笔记、语音输入与智能体每日简报",
       "cat": "enterprise",
       "stage": "growth",
       "arr": 20,
@@ -5182,34 +5657,34 @@
       "ti": "low",
       "biz": "B2B+B2C",
       "val": 1.5,
-      "m": 57,
+      "m": 56,
       "retired": false,
       "prov": {
         "val": {
           "as_of": "2026-03-25",
-          "checked": "2026-10-24",
-          "source": "Granola 2026-03-25 官方已完成融资 125M，估值 1.5B；TechCrunch 独立报道 https://techcrunch.com/2026/03/25/granola-raises-125m-hits-1-5b-valuation-as-it-expands-from-meeting-notetaker-to-enterprise-ai-app/ 交叉。仅确认这一历史已交割点，日期维持 3 月 25 日，不视为本周融资。",
+          "checked": "2026-11-14",
+          "source": "3月25日Granola融资公告与Bloomberg同日对15亿美元已公告估值的报道相符；领投方Index确认参与。原币USD。 交叉材料：https://www.bloomberg.com/news/articles/2026-03-25/ai-notetaker-granola-hits-1-5-billion-value-in-125-million-funding；https://www.indexventures.com/perspectives/granola-investing-in-what-makes-us-human/",
           "url": "https://www.granola.ai/blog/series-c",
           "conf": "high"
         },
         "stage": {
           "as_of": "2026-03-25",
-          "checked": "2026-09-27",
-          "source": "TechCrunch 2026-03-25 + enterprise client roster confirms continued scaling/growth stage, no contradicting signal found",
-          "url": "https://techcrunch.com/2026/03/25/granola-raises-125m-hits-1-5b-valuation-as-it-expands-from-meeting-notetaker-to-enterprise-ai-app/",
-          "conf": "high"
+          "checked": "2026-11-14",
+          "source": "Granola列出多家采用产品的企业客户；结合领投方对C轮用途的说明，保留growth定性判断。 交叉材料：https://www.indexventures.com/perspectives/granola-investing-in-what-makes-us-human/",
+          "url": "https://www.granola.ai/blog/series-c",
+          "conf": "medium"
         },
         "biz": {
-          "as_of": "2026-10-24",
-          "checked": "2026-10-24",
-          "source": "Granola 当前官方定价与产品页：会议笔记/企业上下文，个人、团队与企业计划，支持现有用途和分类。",
+          "as_of": "2026-11-14",
+          "checked": "2026-11-14",
+          "source": "11月14日实查Granola：个人基础版、Business及Enterprise覆盖个人与企业；会议及工作背景属于横向企业生产力。",
           "url": "https://www.granola.ai/pricing",
           "conf": "high"
         },
         "cat": {
-          "as_of": "2026-10-24",
-          "checked": "2026-10-24",
-          "source": "Granola 当前官方定价与产品页：会议笔记/企业上下文，个人、团队与企业计划，支持现有用途和分类。",
+          "as_of": "2026-11-14",
+          "checked": "2026-11-14",
+          "source": "11月14日实查Granola：个人基础版、Business及Enterprise覆盖个人与企业；会议及工作背景属于横向企业生产力。",
           "url": "https://www.granola.ai/pricing",
           "conf": "high"
         },
@@ -5228,10 +5703,10 @@
           "conf": "medium"
         },
         "uc": {
-          "as_of": "2026-10-24",
-          "checked": "2026-10-24",
-          "source": "Granola 当前官方定价与产品页：会议笔记/企业上下文，个人、团队与企业计划，支持现有用途和分类。",
-          "url": "https://www.granola.ai/pricing",
+          "as_of": "2026-11-11",
+          "checked": "2026-11-14",
+          "source": "Granola 11月11日：从会议生成每日个人工作简报供已连接的智能体使用；产品导航亦列语音输入。 交叉材料：https://www.granola.ai/pricing",
+          "url": "https://www.granola.ai/blog/introducing-your-agent-brief",
           "conf": "high"
         }
       },
@@ -5240,7 +5715,7 @@
         "tokenShare": null,
         "models": []
       },
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-11-14",
       "listed": "",
       "parent": "",
       "valPending": null,
@@ -5445,7 +5920,7 @@
       "ti": "med",
       "biz": "B2C+B2B",
       "val": 1.0,
-      "m": 43,
+      "m": 39,
       "retired": false,
       "prov": {
         "arr": {
@@ -5530,7 +6005,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 5.3,
-      "m": 53,
+      "m": 51,
       "retired": false,
       "prov": {
         "arr": {
@@ -5607,7 +6082,7 @@
     },
     {
       "name": "Ideogram",
-      "uc": "Ideogram 4.5图像生成与精确编辑",
+      "uc": "Ideogram 4.5图像编辑与Vector矢量生成",
       "cat": "creative",
       "stage": "pmf",
       "arr": 7,
@@ -5617,28 +6092,28 @@
       "ti": "high",
       "biz": "B2C+B2B",
       "val": 0.5,
-      "m": 39,
+      "m": 37,
       "retired": false,
       "prov": {
         "uc": {
-          "as_of": "2026-10-24",
-          "checked": "2026-10-24",
-          "source": "Ideogram 官方 4.5 当前产品页，2026-10-24 实际观察；10 月 14 日官方指南已存在，非本周首次发布。",
-          "url": "https://ideogram.ai/models/4.5/",
+          "as_of": "2026-11-14",
+          "checked": "2026-11-14",
+          "source": "11月14日核读现行Vector及4.5模型页；可生成并编辑SVG。本项是轮转补核，不把Vector列为本周首发。 交叉材料：https://ideogram.ai/models/4.5/",
+          "url": "https://ideogram.ai/models/vector/",
           "conf": "high"
         },
         "cat": {
-          "as_of": "2026-10-24",
-          "checked": "2026-10-24",
-          "source": "Ideogram 当前官方产品页支持图像创意分类；App、API 与企业服务支持 B2C+B2B。",
-          "url": "https://ideogram.ai/models/4.5/",
+          "as_of": "2026-11-14",
+          "checked": "2026-11-14",
+          "source": "Ideogram个人、团队和API定价及图像/矢量产品支持创意赛道与B2C+B2B。 交叉材料：https://ideogram.ai/models/vector/",
+          "url": "https://ideogram.ai/pricing/",
           "conf": "high"
         },
         "biz": {
-          "as_of": "2026-10-24",
-          "checked": "2026-10-24",
-          "source": "Ideogram 当前官方产品页支持图像创意分类；App、API 与企业服务支持 B2C+B2B。",
-          "url": "https://ideogram.ai/models/4.5/",
+          "as_of": "2026-11-14",
+          "checked": "2026-11-14",
+          "source": "Ideogram个人、团队和API定价及图像/矢量产品支持创意赛道与B2C+B2B。 交叉材料：https://ideogram.ai/models/vector/",
+          "url": "https://ideogram.ai/pricing/",
           "conf": "high"
         },
         "stage": {
@@ -5668,6 +6143,13 @@
           "source": "GetLatka (fetched 2026-09-27, figure explicitly labeled '$7M (Est.)') + kocpc.com.tw 2026-06-04 (~$7M ARR); no newer/higher 2026 figure found",
           "url": "https://getlatka.com/companies/ideogram.ai",
           "conf": "medium"
+        },
+        "listed": {
+          "as_of": "2026-11-14",
+          "checked": "2026-11-14",
+          "source": "11月14日读取公司剖面：加拿大私营公司，无证券代码。",
+          "url": "https://realalpha.app/companies/ideogram/",
+          "conf": "medium"
         }
       },
       "ownModel": {
@@ -5675,7 +6157,7 @@
         "tokenShare": null,
         "models": []
       },
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-11-14",
       "listed": "",
       "parent": "",
       "valPending": null,
@@ -5693,7 +6175,7 @@
       "ti": "high",
       "biz": "B2B+B2C",
       "val": 0.55,
-      "m": 28,
+      "m": 24,
       "retired": false,
       "prov": {
         "arr": {
@@ -5956,7 +6438,7 @@
     },
     {
       "name": "Cresta",
-      "uc": "呼叫中心AI坐席与实时辅助",
+      "uc": "呼叫中心AI坐席、实时辅助与跨会话客户历史",
       "cat": "support",
       "stage": "growth",
       "arr": 100.0,
@@ -5997,12 +6479,19 @@
           "source": "复核当日 getLatka 与 Tracxn 公司页均显示 $1.6B。该值来自 2022-03 的 C 轮（PRNewswire：估值四倍至 $1.6B）；此后 2024-11 的 $125M D 轮（WiL 与 QIA 联合领投）未披露估值，累计融资约 $2.82 亿。无更新的已交割定价轮次，故维持 1.6",
           "url": "https://getlatka.com/companies/cresta",
           "conf": "medium"
+        },
+        "uc": {
+          "as_of": "2026-11-12",
+          "checked": "2026-11-14",
+          "source": "Cresta 11月12日发布Journey Intelligence，将既往交互带入人工与AI坐席的当次服务。",
+          "url": "https://cresta.com/blog/introducing-cresta-journey-intelligence-dynamic-context-to-personalize-streamline-cx",
+          "conf": "high"
         }
       },
       "listed": "",
       "parent": "",
       "valPending": null,
-      "checked_at": "2026-09-03",
+      "checked_at": "2026-11-14",
       "access": null
     },
     {
@@ -6058,7 +6547,7 @@
     },
     {
       "name": "AlphaSense",
-      "uc": "金融投研AI搜索与摘要平台",
+      "uc": "金融投研搜索与SuperAnalyst研究智能体",
       "cat": "finance",
       "stage": "scale",
       "arr": 700.0,
@@ -6068,7 +6557,7 @@
       "ti": "high",
       "biz": "B2B",
       "val": 7.5,
-      "m": 33,
+      "m": 32,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -6122,17 +6611,17 @@
           "conf": "medium"
         },
         "uc": {
-          "as_of": "2026-10-31",
-          "checked": "2026-10-31",
-          "source": "当前公司研究页核实企业金融研究搜索、摘要及智能体；支持库存基础用途、finance与B2B。",
-          "url": "https://sacra.com/c/alphasense/",
-          "conf": "medium"
+          "as_of": "2026-11-10",
+          "checked": "2026-11-14",
+          "source": "AlphaSense 11月10日帮助文档更新：SuperAnalyst用于多步研究、跟踪和可复审的内容产出。",
+          "url": "https://help.alpha-sense.com/hc/en-us/articles/53909448564243-Getting-Started-with-SuperAnalyst",
+          "conf": "high"
         }
       },
       "listed": "",
       "parent": "",
       "valPending": null,
-      "checked_at": "2026-10-31",
+      "checked_at": "2026-11-14",
       "access": null
     },
     {
@@ -6347,7 +6836,7 @@
       "maug": null,
       "ti": "low",
       "biz": "B2B",
-      "val": 10.0,
+      "val": 20,
       "m": 82,
       "ownModel": {
         "status": "none",
@@ -6371,10 +6860,10 @@
           "checked": "2026-09-02"
         },
         "val": {
-          "as_of": "2026-08-19",
-          "checked": "2026-10-08",
-          "source": "PYMNTS 2026-08-19 在新轮洽谈报道中记载最近已完成估值 $10B https://www.pymnts.com/news/investment-tracker/2026/nvidia-weighs-investment-in-round-valuing-mercor-at-20-billion/ ；Sacra 当前公司页独立记录该轮 https://sacra.com/c/mercor/ ，官方 2025-10-27 公告佐证 https://www.mercor.com/blog/series-c/ 。美元原币，新的 $20B 尚在谈判。",
-          "url": "https://www.pymnts.com/news/investment-tracker/2026/nvidia-weighs-investment-in-round-valuing-mercor-at-20-billion/",
+          "as_of": "2026-11-10",
+          "checked": "2026-11-14",
+          "source": "Mercor 11月10日确认D轮7.5亿美元，含员工二级、估值USD 20B；Legion交易数据库11月13日快照列本轮7.5亿美元、200亿美元，Reuters对照公告。早期Bloomberg采访拿到同价条款，本轮公告才作为交割依据。 交叉材料：https://app.uselegion.com/c/mercor；https://www.reuters.com/legal/transactional/ai-training-startup-mercor-valued-20-billion-latest-funding-round-2026-11-10/；https://techcrunch.com/2026/07/09/mercor-is-in-talks-for-a-20b-valuation/",
+          "url": "https://www.mercor.com/blog/series-d/",
           "conf": "high"
         },
         "listed": {
@@ -6420,17 +6909,17 @@
           "conf": "medium"
         },
         "valPending": {
-          "as_of": "2026-08-19",
-          "checked": "2026-10-08",
-          "source": "The Information 2026-08-19 经 PYMNTS 转述：Nvidia 商谈参加估值 $20B 融资，未确认完成；美元原币，保持待定、单一原始报道。",
-          "url": "https://www.pymnts.com/news/investment-tracker/2026/nvidia-weighs-investment-in-round-valuing-mercor-at-20-billion/",
-          "conf": "medium"
+          "as_of": "2026-11-10",
+          "checked": "2026-11-14",
+          "source": "Mercor已经宣布原200亿美元待定估值对应的D轮；成交价入val后清空旧valPending。 交叉材料：https://app.uselegion.com/c/mercor；https://www.reuters.com/legal/transactional/ai-training-startup-mercor-valued-20-billion-latest-funding-round-2026-11-10/",
+          "url": "https://www.mercor.com/blog/series-d/",
+          "conf": "high"
         }
       },
       "listed": "",
       "parent": "",
-      "valPending": 20.0,
-      "checked_at": "2026-10-31",
+      "valPending": null,
+      "checked_at": "2026-11-14",
       "access": null
     },
     {
@@ -6486,7 +6975,7 @@
     },
     {
       "name": "Decagon",
-      "uc": "企业自主客服AI智能体",
+      "uc": "企业客服智能体、Chord语音与Alto对话模型",
       "cat": "support",
       "stage": "growth",
       "arr": 100,
@@ -6498,10 +6987,10 @@
       "val": 4.5,
       "m": 28,
       "ownModel": {
-        "status": "none",
+        "status": "primary",
         "models": [
-          "OpenAI GPT",
-          "Anthropic Claude"
+          "Alto",
+          "Chord"
         ],
         "tokenShare": null
       },
@@ -6515,11 +7004,11 @@
           "conf": "medium"
         },
         "ownModel": {
-          "as_of": "2026-01-28",
-          "checked": "2026-09-03",
-          "source": "Decagon 官方 Series D 公告与 Sacra 公司页：产品构建在第三方前沿模型之上（OpenAI / Anthropic），按会话或按成功解决计费，未披露自训基座，status 维持 none",
-          "url": "https://decagon.ai/blog/series-d-announcement",
-          "conf": "medium"
+          "as_of": "2026-11-11",
+          "checked": "2026-11-14",
+          "source": "11月11日官方确认Alto、Chord用于生产；3月24日Decagon Labs称超过80%的全平台模型流量由自训模型承担，10月仍同时调用外部模型。支持primary；历史模型流量不等于当前精确token比例，tokenShare保持null。 交叉材料：https://decagon.ai/blog/introducing-decagon-labs；https://decagon.ai/blog/decagon-partner-community",
+          "url": "https://decagon.ai/blog/introducing-alto",
+          "conf": "high"
         },
         "val": {
           "as_of": "2026-01-28",
@@ -6527,12 +7016,19 @@
           "source": "Bloomberg 2026-01-28《AI Customer Support Startup Decagon Valued at $4.5 Billion》与 Forbes 2026-02-06：$250M D 轮由 Coatue 与 Index 领投，估值自 $1.5B 三倍至 $4.5B，已交割。复核未见更新轮次",
           "url": "https://www.bloomberg.com/news/articles/2026-01-28/ai-customer-support-startup-decagon-valued-at-4-5-billion",
           "conf": "high"
+        },
+        "uc": {
+          "as_of": "2026-11-11",
+          "checked": "2026-11-14",
+          "source": "Decagon Labs 11月11日发布Alto用于实时语音对话，配合自训Chord。",
+          "url": "https://decagon.ai/blog/introducing-alto",
+          "conf": "high"
         }
       },
       "listed": "",
       "parent": "",
       "valPending": null,
-      "checked_at": "2026-09-03",
+      "checked_at": "2026-11-14",
       "access": null
     },
     {
@@ -6543,7 +7039,7 @@
       "val": 2.0,
       "listed": "",
       "parent": "",
-      "m": 58,
+      "m": 56,
       "retired": false,
       "checked_at": "2026-09-02",
       "prov": {
@@ -6599,7 +7095,7 @@
       "ti": "med",
       "biz": "B2B",
       "val": 5.1,
-      "m": 33,
+      "m": 30,
       "ownModel": {
         "status": "hybrid",
         "models": [
@@ -6945,106 +7441,96 @@
   "ai_progress": {
     "enterprise": [
       {
-        "title": "Sierra将Agent改进集中到同一会话",
-        "summary": "Ghostwriter贯穿诊断、流程修改与模拟测试，上线前仍需团队审阅合并。",
-        "date": "2026-11-02",
-        "source": "Sierra官方，2026-11-02",
-        "url": "https://sierra.ai/blog/redesigning-agent-studio-around-ghostwriter",
-        "company": "Sierra",
-        "example": "客服解决率下降时，可在同一会话追溯原因、修改journey并测试，证据和变更一起审阅。"
+        "title": "摩根大通把Claude Code扩展至业务团队",
+        "summary": "除软件工程外，产品团队把需求整理成开发待办，部分团队也用于风险控制评估；交付仍保留测试。",
+        "date": "2026-11-09",
+        "source": "Anthropic / 摩根大通案例，2026-11-09",
+        "url": "https://claude.com/resources/articles/jpmorganchase-expands-claude-code",
+        "company": "摩根大通、Anthropic",
+        "example": "财富管理团队把业务专家与技术、产品人员配在一起，要求面客变更在上线前接受检验。"
       },
       {
-        "title": "Perplexity推出持续负责工作的Teammates",
-        "summary": "面向Max订阅者，把一次次提问变为持续任务；同时增加Mac完全本地模式。",
-        "date": "2026-11-06",
-        "source": "Perplexity官方，2026-11-06",
-        "url": "https://www.perplexity.ai/en-GB/changelog/teammates-fully-local-computer-on-mac-and-voice-mode",
-        "company": "Perplexity",
-        "example": "竞争监控或客服草稿可持续推进，结果交回用户审阅；本地模式有硬件及版本要求。"
+        "title": "Avianca让法务在Word中核对跨境合同",
+        "summary": "团队可检索自己的飞机租约、维修条款、监管材料和框架合同，按公司标准比较西语、葡语和英语文件。",
+        "date": "2026-11-13",
+        "source": "Harvey / Avianca客户公告，2026-11-13",
+        "url": "https://www.harvey.ai/blog/avianca-deploys-harvey-across-its-legal-organization",
+        "company": "Avianca、Harvey",
+        "example": "律师可以在Word内把起草中的条款与航司已有条款库并排复核，最终判断仍由律师完成。"
       },
       {
-        "title": "Nooks发布销售个人助理Node",
-        "summary": "Node进入早期访问，围绕账户目标持续工作；全面可用计划在2027年初。",
-        "date": "2026-11-04",
-        "source": "Nooks官方新闻稿，2026-11-04",
-        "url": "https://www.prnewswire.com/news-releases/nooks-secures-500-million-from-general-catalyst-and-launches-node-the-first-ai-personal-assistant-for-sales-302928795.html",
-        "company": "Nooks",
-        "example": "把账户历史、沟通及跟进动作结合；500M非稀释增长资本不等于股权估值或收入。"
+        "title": "Granola将会议背景整理成智能体每日简报",
+        "summary": "简报由用户会议生成，列工作重点、项目、协作者和沟通偏好；连接后的智能体可以读取并定期更新背景。",
+        "date": "2026-11-11",
+        "source": "Granola官方，2026-11-11",
+        "url": "https://www.granola.ai/blog/introducing-your-agent-brief",
+        "company": "Granola",
+        "example": "团队成员次日让助手起草项目进度时，可沿用已授权会议的上下文，减少重新说明。"
       }
     ],
     "models": [
       {
-        "title": "Cognition把中训练接入小型编码模型",
-        "summary": "SWE-2 Flash基于Inkling-Small进行中训练与RL，已在Devin Desktop/CLI可用；权重尚未公开。",
-        "date": "2026-11-04",
-        "source": "Cognition官方，2026-11-04",
-        "url": "https://cognition.com/blog/swe-2-flash",
-        "kind": "paradigm"
-      },
-      {
-        "title": "文心5.5 Flash Base开放预训练基座",
-        "summary": "释放未经中训练/后训练的稀疏MoE权重，便于比较领域适配与强化学习方法。",
-        "date": "2026-11-05",
-        "source": "百度官方，2026-11-05",
-        "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
-        "kind": "paradigm"
-      },
-      {
-        "title": "混元Hy4正式版增加视觉与电脑操作",
-        "summary": "正式版强化长程任务与视觉理解；权重仅宣布近期开源，不提前记为已开放。",
-        "date": "2026-11-04",
-        "source": "腾讯官方，2026-11-04",
-        "url": "https://www.tencent.com/zh-cn/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+        "title": "Claude Fable与Mythos 5.2共享底层模型",
+        "summary": "两种供给方式对应不同的使用限制：Fable面向一般用户，Mythos保留申请制。厂商报告推理、视觉和编程提升。",
+        "date": "2026-11-09",
+        "source": "Anthropic官方，2026-11-09",
+        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
         "kind": "sota"
+      },
+      {
+        "title": "MiniMax开放H3-Image图像模型权重",
+        "summary": "模型把H3预训练与图像后训练、采样步数压缩和部署优化结合；公司报告可在约10秒内生成4096×4096图像。",
+        "date": "2026-11-10",
+        "source": "MiniMax官方，2026-11-10",
+        "url": "https://www.minimax.cn/blog/minimax-h3-image",
+        "kind": "paradigm"
+      },
+      {
+        "title": "Gemini 4 Hydrogen面向快速执行任务",
+        "summary": "Hydrogen进入Gemini API、AI Studio和Gemini应用等渠道；Google将其与面向长时推理的Carbon、Argon区分。",
+        "date": "2026-11-12",
+        "source": "Google官方，2026-11-12",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+        "kind": "sota"
+      },
+      {
+        "title": "DeepSeek把应用内搜索、文件和语音开放为API",
+        "summary": "开发者可在对话接口启用搜索及文件输入，也可分别调用语音等能力；这是服务能力发布，不代表更换底层模型。",
+        "date": "2026-11-13",
+        "source": "DeepSeek官方，2026-11-13",
+        "url": "https://api-docs.deepseek.com/zh-cn/news/news261113/",
+        "kind": "paradigm"
       }
     ],
     "infra_invest": [
       {
-        "title": "fal新融资支持生成媒体推理容量",
-        "summary": "公司确认E/F两轮与Sequoia、Bessemer、NVIDIA参与，资金用于容量和研发团队。",
-        "date": "2026-11-03",
-        "source": "fal官方，2026-11-03",
-        "url": "https://fal.ai/blog/series-e-f",
-        "layer": "生成媒体推理基础设施",
+        "title": "CoreWeave的合同额仍取决于交付",
+        "summary": "三季度收入36.61亿美元；9月底收入积压订单约1325亿美元，包括已承诺但仍须满足服务可用性及交付条件的合同。",
+        "date": "2026-11-10",
+        "source": "CoreWeave财报 / 美国SEC，2026-11-10",
+        "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000461/coreweave3q26earningspress.htm",
+        "layer": "算力云与数据中心",
         "players": [
-          "fal",
-          "NVIDIA",
-          "Bessemer",
-          "Sequoia"
+          "CoreWeave"
         ],
-        "thesis": "研究判断：应跟踪容量交付、单位推理成本和毛利；融资与收入快速增长不能直接证明资本回报。媒体16B估值/800M收入仍主要来自同一Bloomberg报道。"
+        "thesis": "先看有多少已签约容量实际通电、可用并确认收入，再估计回款和毛利；不能把积压订单直接当收入。"
       },
       {
-        "title": "OpenAI新一轮资金先完成首批交割",
-        "summary": "Reuters与Bloomberg确认首批110亿美元完成，报道轮次估值1.25万亿美元，后续资金仍待完成。",
-        "date": "2026-11-06",
-        "source": "Reuters独立报道；Bloomberg原稿转载，2026-11-06",
-        "url": "https://www.reuters.com/business/openai-secures-11-billion-funding-125-trillion-valuation-bloomberg-news-reports-2026-11-06/",
-        "layer": "前沿模型资本供给",
+        "title": "Nebius推迟部分收入确认",
+        "summary": "三季度收入9.808亿美元；公司称部分收入转入2027年初，预计2026年收入位于30亿–34亿美元指引的低端。",
+        "date": "2026-11-12",
+        "source": "Nebius股东信与季度财报，2026-11-12",
+        "url": "https://assets.nebius.com/assets/5bc733ff-bed7-415c-af10-74ce7881a764/Nebius-SHL-2026-Q3.pdf",
+        "layer": "GPU云容量交付",
         "players": [
-          "OpenAI",
-          "SoftBank"
+          "Nebius Group"
         ],
-        "thesis": "研究判断：首批到账改善近期资金可得性，但应分别跟踪后续募资、算力承诺和收入兑现，不能把募资目标当已到位资本。"
-      },
-      {
-        "title": "Anthropic披露算力供应商融资风险",
-        "summary": "修订IPO文件披露巨额算力承诺，供应商依赖外部融资可能影响容量交付。",
-        "date": "2026-11-02",
-        "source": "Reuters根据修订S-1报道，2026-11-02",
-        "url": "https://www.investing.com/news/stock-market-news/anthropics-quarterly-loss-shrinks-revenue-jumps-ahead-of-blockbuster-ipo-4992139",
-        "layer": "算力融资与履约",
-        "players": [
-          "Anthropic",
-          "Amazon",
-          "Google"
-        ],
-        "thesis": "研究判断：模型公司的收入增长必须与算力付款、容量可得性及供应商融资同时评估；整体季度收入不替代API ARR。"
+        "thesis": "即便需求已落实，上架进度也能改变当季收入。交付里程碑、预付款与资本开支到期时间比单看订单增速更有解释力。"
       }
     ],
-    "takeaway": "本周主线是持续执行和可审阅工作流：应用向长期任务延伸，模型通过中训练、后训练和低成本推理增强可用性。基础设施投资应优先验证资金到位、容量交付与单位经济性，区分首批交割、整轮融资和未来算力承诺。",
-    "week_of": "2026-11-07",
-    "generated_at": "2026-11-07 07:05 UTC",
+    "takeaway": "企业端最有力的证据是工具进入现有工作：法务在Word比对租约，银行产品和风控团队在交付前测试变更。模型新增能力要同时看可用渠道、成本和权重是否开放。算力投资则应把合同额、可交付容量和已确认收入分开：订单强劲可以与收入递延同时发生。",
+    "week_of": "2026-11-14",
+    "generated_at": "2026-11-14 07:35 UTC",
     "model": "subscription-routine"
   },
   "candidates": [
@@ -7438,6 +7924,15 @@
     },
     {
       "date": "2026-11-09",
+      "mARR": 150.43,
+      "aARR": 13.73,
+      "tok": 9273.8,
+      "nM": 17,
+      "nA": 38,
+      "nMrev": 12
+    },
+    {
+      "date": "2026-11-14",
       "mARR": 150.43,
       "aARR": 13.73,
       "tok": 9273.8,
